@@ -19,7 +19,7 @@ msgstr "2010-12-16"
 
 #: fcitx-remote.1.xml:8(refentrytitle)
 msgid "FCITX"
-msgstr "FCITX"
+msgstr "fcitx-remote"
 
 #: fcitx-remote.1.xml:9(manvolnum)
 msgid "1"

@@ -1,0 +1,63 @@
+.\" -*- coding: UTF-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH fcitx 1 2010-12-16 "" ""
+.SH NAME
+fcitx \- 一个灵活的输入法框架
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBfcitx\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[\fI选项\fR]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH 描述
+本手册页简明地记录了 \fBfcitx\fR 命令的用法。
+.PP
+\fBfcitx\fR 是一个用于 XIM 的中文输入法框架，有意地设计为不依赖任何桌面环境。它默认包含了拼音和码表输入法，但也支持其它输入法。
+.SH 选项
+.TP 
+\*(T<\fB\-r\fR\*(T>
+替换已在运行中的 fcitx
+.TP 
+\*(T<\fB\-d\fR\*(T>
+作为守护进程运行 (默认)
+.TP 
+\*(T<\fB\-D\fR\*(T>
+不作为守护进程运行
+.TP 
+\*(T<\fB\-s\fR\*(T>\fI睡眠时间\fR
+覆盖配置文件中的延迟启动时间，0 表示立即启动。
+.TP 
+\*(T<\fB\-u, \-\-ui\fR\*(T>[\fIui 名称\fR]
+强制使用指定用户界面
+.TP 
+\*(T<\fB\-\-enable\fR\*(T>\fI附加组件 A，附加组件 B\fR
+指定一个将覆盖 enable 选项的附加组件的逗号分隔列表
+.TP 
+\*(T<\fB\-\-disable\fR\*(T>\fI附加组件 A，附加组件 B\fR
+指定一个将显式禁用的附加组件的逗号分隔列表，优先级高于 --enable
+.TP 
+\*(T<\fB\-v\fR\*(T>
+显示版本信息并退出
+.TP 
+\*(T<\fB\-h\fR\*(T>
+显示帮助并退出
+.SH 环境
+.TP 
+\fIXMODIFIERS\fR
+若设置了 $\fIXMODIFIERS\fR，fcitx 将以 $\fIXMODIFIERS\fR 中指定的名称运行，否则将以 fcitx 这个输入法名称运行。
+.SH 继续阅读
+请访问我们位于 \fI
+.URL http://www.fcitx.org/ http://www.fcitx-im.org/
+\fR和 \fI
+.URL http://fcitx.googlecode.com/ https://github.com/fcitx/
+\fR的主页。

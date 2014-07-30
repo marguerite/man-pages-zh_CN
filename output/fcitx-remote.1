@@ -1,0 +1,51 @@
+.\" -*- coding: UTF-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH fcitx-remote 1 2010-12-16 "" ""
+.SH NAME
+fcitx-remote \- 通过终端控制 fcitx 状态的工具
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBfcitx-remote\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[\fI选项\fR]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH 选项
+.TP 
+\*(T<\fB\-c\fR\*(T>
+取消激活输入法
+.TP 
+\*(T<\fB\-o\fR\*(T>
+激活输入法
+.TP 
+\*(T<\fB\-r\fR\*(T>
+重新加载 fcitx 配置
+.TP 
+\*(T<\fB\-t\fR\*(T>
+在激活/非激活状态间切换
+.TP 
+\*(T<\fB\-s\fR\*(T>\fI输入法名称\fR
+切换到通过\fI输入法名称\fR唯一标识的输入法。
+.TP 
+[\fI无选项\fR]
+显示 fcitx 状态，0 表示关闭，1 表示非激活，2 表示激活
+.TP 
+\*(T<\fB\-h\fR\*(T>
+显示帮助并退出
+.SH 文件
+fcitx 将在 \*(T<\fI/tmp/fcitx\-socket\-<displayname>\fR\*(T> 创建套接字，因此用户必须有 \*(T<\fI/tmp\fR\*(T> 文件夹的访问权限。
+.SH 继续阅读
+请访问我们位于 \fI
+.URL http://www.fcitx.org/ http://www.fcitx-im.org/
+\fR和 \fI
+.URL http://fcitx.googlecode.com/ https://github.com/fcitx/
+\fR的主页。

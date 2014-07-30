@@ -24,6 +24,10 @@ If not, I will do my own translations here.
 * xml middle file (xml) directory
 * zh_CN po file directory
 * finished_po translated po files go there
+* xml_cn translated xml files converted from po
+* mxml middle file converted from translated xml
+* output uncompressed manpages (ideal for put into package sources)
+* compressed compressed manpages (ideal for use directly)
 
 ### How to convert Linux manpages to human readable format (.po) ?
 
@@ -35,11 +39,16 @@ You need `xml2po` program installed, for openSUSE:
 * Run the `unpack_manpage.sh` script, it will unpack the .gz manpages.
 * Run the `man2xml.sh` script, it will generate xml files in xml directory.
 * Run the `xml2pot.sh` script, it will generate pot files in 50-pot directory.
-* Run the `merge.sh` script, it will merge the pot into the po files. (But you have to manually copy the pot to po if there's a brand new translation)
+* Run the `merge.sh` script, it will merge the pot into the po files.
 
 Then translate as you want.
 
 ### How to convert .po files into manages?
 
-To be written.
+You need `xml2po` and `docbook2x` packages installed, for openSUSE:
 
+ sudo zypper in xml2po docbook2x
+
+* Copy the finished po to `finished_po` directory
+* Run `po2xml.sh` script, it'll generate translated xml in `xml_cn` directory
+* Run `xml2man.sh` script, it'll generate uncompressed manpage in `output` directory and compressed ones in `compressed` directory
