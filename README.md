@@ -1,5 +1,10 @@
 ## Modern manpage localization project for Chinese language
 
+It's based on manpages-zh project, a successor for CMPP linux man
+pages translation project (discontinued), and Linux CN linux man
+pages translation project, with some new addons from openSUSE
+maintainers.
+
 It's been used by openSUSE project as source for man-pages-zh_CN package.
 
 ### History
