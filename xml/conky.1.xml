@@ -23,7 +23,7 @@ URL listing suppressed (immutable) -->
 </refsynopsisdiv>
 
 
-<refsect1 id='g1406734946.784277'><title>描述</title>
+<refsect1 id='g1406741437.121271'><title>描述</title>
 <para>Conky 是一个最初基于 torsmo 的用于 X 的系统监视器。自开天辟地以来，Conky 比起它的前身已经有了很大改动，同时也保存了简单和可配置的特征。Cony �&nbsp;乎可以显示任何东西，不管是在您的�&nbsp;�桌面还是在它自己的窗口里。Conky 不但有许多内置对象，它也可以用脚本或其它外界程序显示任何信息片段。</para>
 
 <para>Conky 有大于 250 个内置对象，包括超多的操作系统统计支持 (uname, uptime, CPU 用量，内存用量，磁盘用量，像 "top" 一�&nbsp;�的进程统计和网络监控，随便点名�&nbsp;个)，内置的 IMAP 和 POP3 支持，内置的许多流行音乐播放器支持 (MPD, XMMS2, BMPx, Audacious)，等等等等。Conky 可以文字、或带有不同字体和颜色的简单进度条和图形挂件来显示这些信息。</para>
@@ -33,7 +33,7 @@ URL listing suppressed (immutable) -->
 <para>感谢关注 Conky。</para>
 </refsect1>
 
-<refsect1 id='g1406734946.785039'><title>编译</title>
+<refsect1 id='g1406741437.122127'><title>编译</title>
 <para>那些在使用二进制预编译软件包的发行版如伟大的 openSUSE 上从源代�&nbsp;�编译的用户，请确保您安装了 X 开发用函数库软件包 (除非您附�&nbsp; "--disable-x11" 运行 configure)。X 开发用函数库软件包应该是一个沿袭 "libX11-devel" 或 "xorg-x11-devel" 命名�&nbsp;惯的软件包，同�&nbsp;�其它库也需要类似的 "-devel" �&nbsp;�式的软件包 (取决于您的配置选项启用没启用对这个库提供的功能的整合)。通过阅读您运行'./configure' 得出的错误，您应该能够看到您需要安装那些额外软件包。您可以通过对 configure �&nbsp;递选项来启用/禁用东西，但禁用时请留心。例如：使用 --disable-math 您不会看到错误，但是对数曲线图就会变成正常的直线图，并且�&nbsp;�尺也会丢失其刻度。</para>
 
 <para>Conky 已经 (有一段时间了) 可以从多数流行发行版的软件源中撷取了。这里是一些发行版的安装指南：</para>
@@ -53,13 +53,13 @@ URL listing suppressed (immutable) -->
 </variablelist>
 </refsect1>
 
-<refsect1 id='g1406734946.787805'><title>您应知应会的</title>
+<refsect1 id='g1406741437.125081'><title>您应知应会的</title>
 <para>Conky 不是永动机。也就是说，您试图让它做的事情越多，它消耗的资源就越多。</para>
 
 <para>一个简单的强制 Conky 重载您的 ～/.conkyrc 的方法："killall -SIGUSR1 conky"。省去了您 kill 然后重启它的麻烦。您对 SIGHUP 也可以做同�&nbsp;�的事。</para>
 </refsect1>
 
-<refsect1 id='g1406734946.78823'><title>选项</title>
+<refsect1 id='g1406741437.125516'><title>选项</title>
 <para>命令行选项将覆盖定义在配置文件中的配置选项。</para>
 <variablelist remap='TP'>
   <varlistentry>
@@ -179,7 +179,7 @@ URL listing suppressed (immutable) -->
 </variablelist>
 </refsect1>
 
-<refsect1 id='g1406734946.797443'><title>配置设置</title>
+<refsect1 id='g1406741437.135001'><title>配置设置</title>
 <para>默认配置文件位置是 $HOME/.conkyrc 或 ${sysconfdir}/conky/conky.conf。在多数系统上面，sysconfdir 就是 /etc，并且您可以在那里找到�&nbsp;�本配置文件 (/etc/conky/conky.conf)。</para>
 
 <para>您可能想要把它复制到 $HOME/.conkyrc 然后开始修改它。其它的配置可以在 〈http://conky.sf.net/〉 找到</para>
@@ -717,7 +717,7 @@ URL listing suppressed (immutable) -->
 </variablelist>
 </refsect1>
 
-<refsect1 id='g1406734946.838943'><title>对象/变量</title>
+<refsect1 id='g1406741437.202284'><title>对象/变量</title>
 <para>将使用 XParsecolor() 解析颜色，这里可能有一个支持的颜色列表：/usr/share/X11/rgb.txt。颜色也可以使用 #rrggbb �&nbsp;�式 (十六进制)。</para>
 
 <para>有些对象可以创建线程，有时候这些线程在 Conky 终止前不会被摧毁。在 Conky 运行时没有办法摧毁或清理这些线程。例如，若您使用了一个MPD 变量，MPD 线程将持续运行到 Conky 退出。有些线程对象将使用一个参数作为一个 '键'，�&nbsp;此您只能有一个相关的线程在运行 (例如，$curl，$rss 和 $weather 对象只会对每个 URI 启动一个线程)。</para>
@@ -3758,7 +3758,7 @@ configuration file.</para>
 </variablelist>
 </refsect1>
 
-<refsect1 id='g1406734947.015048'><title>范例</title>
+<refsect1 id='g1406741437.373438'><title>范例</title>
 <variablelist remap='TP'>
   <varlistentry>
   <term>conky <option>-t '${time %D %H:%M}' -o -u 30</option></term>
@@ -3781,7 +3781,7 @@ configuration file.</para>
 </variablelist>
 </refsect1>
 
-<refsect1 id='g1406734947.017347'><title>文件</title>
+<refsect1 id='g1406741437.374912'><title>文件</title>
 <variablelist remap='TP'>
   <varlistentry>
   <term><emphasis remap='I'>${sysconfdir}/conky/conky.conf</emphasis></term>
@@ -3798,11 +3798,11 @@ configuration file.</para>
 </variablelist>
 </refsect1>
 
-<refsect1 id='g1406734947.018556'><title>故障</title>
+<refsect1 id='g1406741437.375842'><title>故障</title>
 <para>直接画到桌面环境�&nbsp;�窗口或其它桌面窗口上不是对全部窗口管理器都有效。尤其是 GNOME 不行，也有报告说 KDE 也不行。可使用 gconf-editor 程序禁用 Nautilus 往桌面上画图。在 /apps/nautilus/preferences/ 里取消勾选 show_desktop 即可。Conky 中有一个 -w 切换可以设置一些指定窗口 ID。您在查找要画到的窗口时可能会觉得 xwininfo -tree 挺有用的。您也可以是用 -o 参数来让 Conky 创建它自己的窗口。若您尝试了在其自身窗口中运行 Conky，请确保读完了 own_window_type 设置并做了点实验。</para>
 </refsect1>
 
-<refsect1 id='g1406734947.018957'><title>参考</title>
+<refsect1 id='g1406741437.376195'><title>参考</title>
 <para>〈〉
 <ulink url="http://conky.sourceforge.net/">http://conky.sourceforge.net/〉</ulink></para>
 
@@ -3815,11 +3815,11 @@ configuration file.</para>
 <para>irc.freenode.net 上的 #conky 频道</para>
 </refsect1>
 
-<refsect1 id='g1406734947.019693'><title>版权</title>
+<refsect1 id='g1406741437.376851'><title>版权</title>
 <para>Copyright (c) 2005-2010 Brenden Matthews, Philip Kovacs 等人。任何原始的torsmo 代�&nbsp;�均以 BSD 许可证授权 (副本见 LICENSE.BSD)。全部自派生 torsmo 后所写代�&nbsp;�均以 GPL 授权 (副本见 LICENSE.GPL)，除了特别�&nbsp;�明之处 (诸如 portmon 代�&nbsp;�、时控线程代�&nbsp;�、和 audacious 代�&nbsp;�以 LGPL 授权，prss 以 MIT 风�&nbsp;�的许可证授权)。</para>
 </refsect1>
 
-<refsect1 id='g1406734947.02007'><title>作者</title>
+<refsect1 id='g1406741437.377188'><title>作者</title>
 <para>Conky 开发团队 (完整贡献者列表请见 AUTHORS)。</para>
 </refsect1>
 </refentry>

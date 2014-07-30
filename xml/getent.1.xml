@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='getent1'>
+<!-- Copyright (c) 2011, Mark R. Bannister &lt;cambridge@users.sourceforge.net&gt; -->
+
+<!-- %%%LICENSE_START(GPLv2+_DOC_FULL)
+This is free documentation; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of
+the License, or (at your option) any later version. -->
+
+<!-- The GNU General Public License's references to "object code"
+and "executables" are to be interpreted as the output of any
+document formatting or typesetting system, including
+intermediate and printed output. -->
+
+<!-- This manual is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details. -->
+
+<!-- You should have received a copy of the GNU General Public
+License along with this manual; if not, see
+&lt;<ulink url='http://www.gnu.org/licenses/&gt;'>http://www.gnu.org/licenses/&gt;</ulink>.
+%%%LICENSE_END -->
+
+<refentryinfo><date>2013-03-15</date></refentryinfo>
+<refmeta>
+<refentrytitle>GETENT</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='date'>2013-03-15</refmiscinfo>
+<refmiscinfo class='source'>Linux</refmiscinfo>
+<refmiscinfo class='manual'>User Commands</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>getent</refname>
+<refpurpose>get entries from Name Service Switch libraries</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>getent</command>    
+    <arg choice='plain'><replaceable>database</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>key</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>The
+<command>getent</command>
+command displays entries from databases supported by the
+Name Service Switch libraries,
+which are configured in
+<filename>/etc/nsswitch.conf</filename>.
+If one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided,
+then only the entries that match the supplied keys will be displayed.
+Otherwise, if no
+<emphasis remap='I'>key</emphasis>
+is provided, all entries will be displayed (unless the database does not
+support enumeration).</para>
+
+<para>The
+<emphasis remap='I'>database</emphasis>
+may be any of those supported by the GNU C Library, listed below:</para>
+  <blockquote remap='RS'>
+  <variablelist remap='TP'>
+    <varlistentry>
+    <term><emphasis remap='B'>ahosts</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>sethostent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>gethostent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endhostent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the hosts database.
+This is identical to using
+<emphasis remap='B'>hosts</emphasis>.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each
+<emphasis remap='I'>key</emphasis>
+in succession to
+<citerefentry><refentrytitle>getaddrinfo</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+with the address family
+<emphasis remap='B'>AF_UNSPEC</emphasis>,
+enumerating each socket address structure returned.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>ahostsv4</emphasis></term>
+    <listitem>
+<para>Same as
+<emphasis remap='B'>ahosts</emphasis>,
+but use the address family
+<emphasis remap='B'>AF_INET</emphasis>.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>ahostsv6</emphasis></term>
+    <listitem>
+<para>Same as
+<emphasis remap='B'>ahosts</emphasis>,
+but use the address family
+<emphasis remap='B'>AF_INET6</emphasis>.
+The call to
+<citerefentry><refentrytitle>getaddrinfo</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+in this case includes the
+<emphasis remap='B'>AI_V4MAPPED</emphasis>
+flag.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>aliases</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>setaliasent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>getaliasent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endaliasent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the aliases database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each
+<emphasis remap='I'>key</emphasis>
+in succession to
+<citerefentry><refentrytitle>getaliasbyname</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>ethers</emphasis></term>
+    <listitem>
+<para>When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each
+<emphasis remap='I'>key</emphasis>
+in succession to
+<citerefentry><refentrytitle>ether_aton</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and
+<citerefentry><refentrytitle>ether_hostton</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+until a result is obtained, and display the result.
+Enumeration is not supported on
+<emphasis remap='B'>ethers</emphasis>,
+so a
+<emphasis remap='I'>key</emphasis>
+must be provided.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>group</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>setgrent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>getgrent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endgrent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the group database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each numeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getgrgid</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and each nonnumeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getgrnam</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>gshadow</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>setsgent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>getsgent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endsgent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the gshadow database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each
+<emphasis remap='I'>key</emphasis>
+in succession to
+<citerefentry><refentrytitle>getsgnam</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>hosts</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>sethostent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>gethostent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endhostent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the hosts database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>gethostbyaddr</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+or
+<citerefentry><refentrytitle>gethostbyname2</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+depending on whether a call to
+<citerefentry><refentrytitle>inet_pton</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+indicates that the
+<emphasis remap='I'>key</emphasis>
+is an IPv6 or IPv4 address or not, and display the result.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>initgroups</emphasis></term>
+    <listitem>
+<para>When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each
+<emphasis remap='I'>key</emphasis>
+in succession to
+<citerefentry><refentrytitle>getgrouplist</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.
+Enumeration is not supported on
+<emphasis remap='B'>initgroups</emphasis>,
+so a
+<emphasis remap='I'>key</emphasis>
+must be provided.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>netgroup</emphasis></term>
+    <listitem>
+<para>When one
+<emphasis remap='I'>key</emphasis>
+is provided, pass the
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>setnetgrent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and, using
+<citerefentry><refentrytitle>getnetgrent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+display the resulting string triple
+(<emphasis remap='I'>hostname</emphasis>, <emphasis remap='I'>username</emphasis>, <emphasis remap='I'>domainname</emphasis>).
+Alternatively, three
+<emphasis remap='I'>keys</emphasis>
+may be provided, which are interpreted as the
+<emphasis remap='I'>hostname</emphasis>,
+<emphasis remap='I'>username</emphasis>
+and
+<emphasis remap='I'>domainname</emphasis>
+to match to a netgroup name via
+<citerefentry><refentrytitle>innetgr</refentrytitle><manvolnum>3</manvolnum></citerefentry>.
+Enumeration is not supported on
+<emphasis remap='B'>netgroup</emphasis>,
+so either one or three
+<emphasis remap='I'>keys</emphasis>
+must be provided.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>networks</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>setnetent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>getnetent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endnetent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the networks database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each numeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getnetbyaddr</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and each nonnumeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getnetbyname</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>passwd</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>setpwent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>getpwent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endpwent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the passwd database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each numeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getpwuid</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and each nonnumeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getpwnam</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>protocols</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>setprotoent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>getprotoent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endprotoent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the protocols database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each numeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getprotobynumber</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and each nonnumeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getprotobyname</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>rpc</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>setrpcent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>getrpcent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endrpcent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the rpc database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each numeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getrpcbynumber</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and each nonnumeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getrpcbyname</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>services</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>setservent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>getservent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endservent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the services database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each numeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getservbynumber</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and each nonnumeric
+<emphasis remap='I'>key</emphasis>
+to
+<citerefentry><refentrytitle>getservbyname</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><emphasis remap='B'>shadow</emphasis></term>
+    <listitem>
+<para>When no
+<emphasis remap='I'>key</emphasis>
+is provided, use
+<citerefentry><refentrytitle>setspent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>getspent</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<citerefentry><refentrytitle>endspent</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+to enumerate the shadow database.
+When one or more
+<emphasis remap='I'>key</emphasis>
+arguments are provided, pass each
+<emphasis remap='I'>key</emphasis>
+in succession to
+<citerefentry><refentrytitle>getspnam</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+and display the result.</para>
+    </listitem>
+    </varlistentry>
+  </variablelist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='exit_status'><title>EXIT STATUS</title>
+<para>One of the following exit values can be returned by
+<command>getent</command>:</para>
+  <blockquote remap='RS'>
+  <variablelist remap='TP'>
+    <varlistentry>
+    <term><literal>0</literal></term>
+    <listitem>
+<para>Command completed successfully.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><literal>1</literal></term>
+    <listitem>
+<para>Missing arguments, or
+<emphasis remap='I'>database</emphasis>
+unknown.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><literal>2</literal></term>
+    <listitem>
+<para>One or more supplied
+<emphasis remap='I'>key</emphasis>
+could not be found in the
+<emphasis remap='I'>database</emphasis>.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term><literal>3</literal></term>
+    <listitem>
+<para>Enumeration not supported on this
+<emphasis remap='I'>database</emphasis>.</para>
+    </listitem>
+    </varlistentry>
+  </variablelist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<para><citerefentry><refentrytitle>nsswitch.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry></para>
+</refsect1>
+
+<refsect1 id='colophon'><title>COLOPHON</title>
+<para>This page is part of release 3.70 of the Linux
+<emphasis remap='I'>man-pages</emphasis>
+project.
+A description of the project,
+information about reporting bugs,
+and the latest version of this page,
+can be found at
+&shy;<ulink url='http://www.kernel.org/doc/man-pages/'>http://www.kernel.org/doc/man-pages/</ulink>.</para>
+</refsect1>
+</refentry>
+

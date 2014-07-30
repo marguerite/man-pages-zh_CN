@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-05-05 11:47+0800\n"
+"POT-Creation-Date: 2014-07-31 01:30+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -420,10 +420,11 @@ msgstr ""
 
 #: getent.1.xml:462(para)
 msgid ""
-"This page is part of release 3.51 of the Linux <emphasis remap=\"I\">man-"
-"pages</emphasis> project. A description of the project, and information "
-"about reporting bugs, can be found at <ulink url=\"http://www.kernel.org/doc/"
-"man-pages/\">http://www.kernel.org/doc/man-pages/</ulink>."
+"This page is part of release 3.70 of the Linux <emphasis remap=\"I\">man-"
+"pages</emphasis> project. A description of the project, information about "
+"reporting bugs, and the latest version of this page, can be found at &shy;"
+"<ulink url=\"http://www.kernel.org/doc/man-pages/\">http://www.kernel.org/"
+"doc/man-pages/</ulink>."
 msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
