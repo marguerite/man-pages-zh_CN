@@ -1,0 +1,3910 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry>
+<!-- Copyright (c) 2001&bsol;-2003 The Open Group, All Rights Reserved -->
+<refentryinfo><date>2003</date></refentryinfo>
+<refmeta>
+<refentrytitle>PAX</refentrytitle>
+<manvolnum>P</manvolnum>
+<refmiscinfo class='date'>2003</refmiscinfo>
+<refmiscinfo class='source'>IEEE/The Open Group</refmiscinfo>
+<refmiscinfo class='manual'>POSIX Programmer's Manual</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>pax</refname>
+<refpurpose>portable archive interchange</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>pax</command>    <arg choice='opt'>-cdnv </arg>
+    <group choice='opt'><arg choice='plain'>-H </arg><arg choice='plain'>-L </arg></group>
+    <arg choice='opt'>-f <replaceable>archive</replaceable></arg>
+    <arg choice='opt' rep='repeat'>-s <replaceable>replstr</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>pattern</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>pax</command>    <arg choice='plain'>-r </arg>
+    <arg choice='opt'>-cdiknuv </arg>
+    <group choice='opt'><arg choice='plain'>-H </arg><arg choice='plain'>-L </arg></group>
+    <arg choice='opt'>-f <replaceable>archive</replaceable></arg>
+    <arg choice='opt' rep='repeat'>-o <replaceable>options</replaceable></arg>
+    <arg choice='opt' rep='repeat'>-p <replaceable>string</replaceable></arg>
+    
+    <sbr/>
+    <arg choice='opt' rep='repeat'>-s <replaceable>replstr</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>pattern</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>pax</command>    <arg choice='plain'>-w </arg>
+    <arg choice='opt'>-dituvX </arg>
+    <group choice='opt'><arg choice='plain'>-H </arg><arg choice='plain'>-L </arg></group>
+    <arg choice='opt'>-b <replaceable>blksize</replaceable></arg>
+    <arg choice='opt'>-a </arg>
+    <arg choice='opt'>-f <replaceable>archive</replaceable></arg>
+    <arg choice='opt' rep='repeat'>-o <replaceable>options</replaceable></arg>
+    
+    <sbr/>
+    <arg choice='opt' rep='repeat'>-s <replaceable>replstr</replaceable></arg>
+    <arg choice='opt'>-x <replaceable>format</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>file</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>pax</command>    <arg choice='plain'>-r </arg>
+    <arg choice='plain'>-w </arg>
+    <arg choice='opt'>-diklntuvX </arg>
+    <group choice='opt'><arg choice='plain'>-H </arg><arg choice='plain'>-L </arg></group>
+    <arg choice='opt' rep='repeat'>-p <replaceable>string</replaceable></arg>
+    <arg choice='opt' rep='repeat'>-s <replaceable>replstr</replaceable></arg>
+    
+    <sbr/>
+    <arg choice='opt' rep='repeat'><replaceable>file</replaceable></arg>
+    <arg choice='plain'><replaceable>directory</replaceable></arg>
+    <sbr/>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>The <command>pax</command> utility shall read, write, and write lists of the members
+of archive files and copy directory hierarchies. A
+variety of archive formats shall be supported; see the <option>-x</option> <replaceable>format</replaceable>
+option.</para>
+
+<para>The action to be taken depends on the presence of the <option>-r</option> and
+<option>-w</option> options. The four combinations of <option>-r</option> and
+<option>-w</option> are referred to as the four modes of operation: <emphasis remap='B'>list</emphasis>,
+<emphasis remap='B'>read</emphasis>, <emphasis remap='B'>write</emphasis>, and <emphasis remap='B'>copy</emphasis> modes,
+corresponding respectively to the four forms shown in the SYNOPSIS
+section.</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='B'>list</emphasis></term>
+  <listitem>
+<para>In <emphasis remap='B'>list</emphasis> mode (when neither <option>-r</option> nor <option>-w</option> are specified),
+<command>pax</command> shall write the names of the members of
+the archive file read from the standard input, with pathnames matching
+the specified patterns, to standard output. If a named file
+is of type directory, the file hierarchy rooted at that file shall
+be listed as well.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>read</emphasis></term>
+  <listitem>
+<para>In <emphasis remap='B'>read</emphasis> mode (when <option>-r</option> is specified, but <option>-w</option> is not),
+<command>pax</command> shall extract the members of the archive
+file read from the standard input, with pathnames matching the specified
+patterns. If an extracted file is of type directory, the
+file hierarchy rooted at that file shall be extracted as well. The
+extracted files shall be created performing pathname resolution
+with the directory in which <command>pax</command> was invoked as the current working
+directory.</para> 
+
+<para>If an attempt is made to extract a directory when the directory already
+exists, this shall not be considered an error. If an
+attempt is made to extract a FIFO when the FIFO already exists, this
+shall not be considered an error.</para>
+
+<para>The ownership, access, and modification times, and file mode of the
+restored files are discussed under the <option>-p</option> option.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>write</emphasis></term>
+  <listitem>
+<para>In <emphasis remap='B'>write</emphasis> mode (when <option>-w</option> is specified, but <option>-r</option> is not),
+<command>pax</command> shall write the contents of the
+<emphasis remap='I'>file</emphasis> operands to the standard output in an archive format. If
+no <emphasis remap='I'>file</emphasis> operands are specified, a list of files to
+copy, one per line, shall be read from the standard input. A file
+of type directory shall include all of the files in the file
+hierarchy rooted at the file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>copy</emphasis></term>
+  <listitem>
+<para>In <emphasis remap='B'>copy</emphasis> mode (when both <option>-r</option> and <option>-w</option> are specified),
+<command>pax</command> shall copy the <emphasis remap='I'>file</emphasis> operands to the
+destination directory.</para> 
+
+<para>If no <emphasis remap='I'>file</emphasis> operands are specified, a list of files to copy,
+one per line, shall be read from the standard input. A file
+of type directory shall include all of the files in the file hierarchy
+rooted at the file.</para>
+
+<para>The effect of the <emphasis remap='B'>copy</emphasis> shall be as if the copied files were
+written to an archive file and then subsequently extracted,
+except that there may be hard links between the original and the copied
+files. If the destination directory is a subdirectory of
+one of the files to be copied, the results are unspecified. If the
+destination directory is a file of a type not defined by the
+System Interfaces volume of IEEE&nbsp;Std&nbsp;1003.1-2001, the results are
+implementation-defined; otherwise, it shall be an error
+for the file named by the <emphasis remap='I'>directory</emphasis> operand not to exist, not
+be writable by the user, or not be a file of type
+directory.</para>
+
+
+<para>In <emphasis remap='B'>read</emphasis> or <emphasis remap='B'>copy</emphasis> modes, if intermediate directories are
+necessary to extract an archive member, <command>pax</command> shall
+perform actions equivalent to the <emphasis remap='I'>mkdir</emphasis>() function defined in
+the System Interfaces
+volume of IEEE&nbsp;Std&nbsp;1003.1-2001, called with the following arguments:</para>
+  <variablelist remap='IP'>
+    <varlistentry>
+    <term> *</term>
+    <listitem>
+<para>The intermediate directory used as the <emphasis remap='I'>path</emphasis> argument</para>
+
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term> *</term>
+    <listitem>
+<para>The value of the bitwise-inclusive OR of S_IRWXU, S_IRWXG, and S_IRWXO
+as the <emphasis remap='I'>mode</emphasis> argument</para>
+
+
+<para>If any specified <emphasis remap='I'>pattern</emphasis> or <emphasis remap='I'>file</emphasis> operands are not matched
+by at least one file or archive member, <command>pax</command> shall
+write a diagnostic message to standard error for each one that did
+not match and exit with a non-zero exit status.</para>
+
+<para>The archive formats described in the EXTENDED DESCRIPTION section
+shall be automatically detected on input. The default output
+archive format shall be implementation-defined.</para>
+
+<para>A single archive can span multiple files. The <command>pax</command> utility shall
+determine, in an implementation-defined manner, what file
+to read or write as the next file.</para>
+
+<para>If the selected archive format supports the specification of linked
+files, it shall be an error if these files cannot be linked
+when the archive is extracted. For archive formats that do not store
+file contents with each name that causes a hard link, if the
+file that contains the data is not extracted during this <command>pax</command>
+session, either the data shall be restored from the original
+file, or a diagnostic message shall be displayed with the name of
+a file that can be used to extract the data. In traversing
+directories, <command>pax</command> shall detect infinite loops; that is, entering
+a previously visited directory that is an ancestor of the
+last file visited. When it detects an infinite loop, <command>pax</command> shall
+write a diagnostic message to standard error and shall
+terminate.</para>
+    </listitem>
+    </varlistentry>
+  </variablelist>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='options'><title>OPTIONS</title>
+<para>The <command>pax</command> utility shall conform to the Base Definitions volume
+of IEEE&nbsp;Std&nbsp;1003.1-2001, Section 12.2, Utility Syntax Guidelines,
+except that the order of presentation of the
+<option>-o</option>, <option>-p</option>, and <option>-s</option> options is significant.</para>
+
+<para>The following options shall be supported:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><option>-r</option></term>
+  <listitem>
+<para>Read an archive file from standard input.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-w</option></term>
+  <listitem>
+<para>Write files to the standard output in the specified archive format.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-a</option></term>
+  <listitem>
+<para>Append files to the end of the archive. It is implementation-defined
+which devices on the system support appending. Additional
+file formats unspecified by this volume of IEEE&nbsp;Std&nbsp;1003.1-2001
+may impose restrictions on appending.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-b </option> <emphasis remap='I'>blocksize</emphasis></term>
+  <listitem>
+<para>Block the output at a positive decimal integer number of bytes per
+write to the archive file. Devices and archive formats may
+impose restrictions on blocking. Blocking shall be automatically determined
+on input. Conforming applications shall not specify a
+<emphasis remap='I'>blocksize</emphasis> value larger than 32256. Default blocking when creating
+archives depends on the archive format. (See the <option>-x</option>
+option below.)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-c</option></term>
+  <listitem>
+<para>Match all file or archive members except those specified by the <emphasis remap='I'>pattern</emphasis>
+or <emphasis remap='I'>file</emphasis> operands.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-d</option></term>
+  <listitem>
+<para>Cause files of type directory being copied or archived or archive
+members of type directory being extracted or listed to match
+only the file or archive member itself and not the file hierarchy
+rooted at the file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-f </option> <emphasis remap='I'>archive</emphasis></term>
+  <listitem>
+<para>Specify the pathname of the input or output archive, overriding the
+default standard input (in <emphasis remap='B'>list</emphasis> or <emphasis remap='B'>read</emphasis>
+modes) or standard output ( <emphasis remap='B'>write</emphasis> mode).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-H</option></term>
+  <listitem>
+<para>If a symbolic link referencing a file of type directory is specified
+on the command line, <command>pax</command> shall archive the file
+hierarchy rooted in the file referenced by the link, using the name
+of the link as the root of the file hierarchy. Otherwise, if a
+symbolic link referencing a file of any other file type which <command>pax</command>
+can normally archive is specified on the command line,
+then <command>pax</command> shall archive the file referenced by the link, using
+the name of the link. The default behavior shall be to archive
+the symbolic link itself.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-i</option></term>
+  <listitem>
+<para>Interactively rename files or archive members. For each archive member
+matching a <emphasis remap='I'>pattern</emphasis> operand or file matching a
+<emphasis remap='I'>file</emphasis> operand, a prompt shall be written to the file <filename>/dev/tty</filename>.
+The prompt shall contain the name of the file or
+archive member, but the format is otherwise unspecified. A line shall
+then be read from <filename>/dev/tty</filename>. If this line is blank, the
+file or archive member shall be skipped. If this line consists of
+a single period, the file or archive member shall be processed
+with no modification to its name. Otherwise, its name shall be replaced
+with the contents of the line. The <command>pax</command> utility shall
+immediately exit with a non-zero exit status if end-of-file is encountered
+when reading a response or if <filename>/dev/tty</filename> cannot be
+opened for reading and writing.</para> 
+
+<para>The results of extracting a hard link to a file that has been renamed
+during extraction are unspecified.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-k</option></term>
+  <listitem>
+<para>Prevent the overwriting of existing files.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-l</option></term>
+  <listitem>
+<para>(The letter ell.) In <emphasis remap='B'>copy</emphasis> mode, hard links shall be made between
+the source and destination file hierarchies whenever
+possible. If specified in conjunction with <option>-H</option> or <option>-L</option>, when
+a symbolic link is encountered, the hard link created in
+the destination file hierarchy shall be to the file referenced by
+the symbolic link. If specified when neither <option>-H</option> nor
+<option>-L</option> is specified, when a symbolic link is encountered, the implementation
+shall create a hard link to the symbolic link in
+the source file hierarchy or copy the symbolic link to the destination.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-L</option></term>
+  <listitem>
+<para>If a symbolic link referencing a file of type directory is specified
+on the command line or encountered during the traversal of
+a file hierarchy, <command>pax</command> shall archive the file hierarchy rooted
+in the file referenced by the link, using the name of the link
+as the root of the file hierarchy. Otherwise, if a symbolic link referencing
+a file of any other file type which <command>pax</command> can
+normally archive is specified on the command line or encountered during
+the traversal of a file hierarchy, <command>pax</command> shall archive
+the file referenced by the link, using the name of the link. The default
+behavior shall be to archive the symbolic link
+itself.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-n</option></term>
+  <listitem>
+<para>Select the first archive member that matches each <emphasis remap='I'>pattern</emphasis> operand.
+No more than one archive member shall be matched for
+each pattern (although members of type directory shall still match
+the file hierarchy rooted at that file).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-o </option> <emphasis remap='I'>options</emphasis></term>
+  <listitem>
+<para>Provide information to the implementation to modify the algorithm
+for extracting or writing files. The value of <emphasis remap='I'>options</emphasis>
+shall consist of one or more comma-separated keywords of the form:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='I'>keyword</emphasis><emphasis remap='B'>[[</emphasis><emphasis remap='B'>:</emphasis><emphasis remap='B'>]</emphasis><emphasis remap='B'>=</emphasis><emphasis remap='I'>value</emphasis><emphasis remap='B'>][</emphasis><emphasis remap='B'>,</emphasis><emphasis remap='I'>keyword</emphasis><emphasis remap='B'>[[</emphasis><emphasis remap='B'>:</emphasis><emphasis remap='B'>]</emphasis><emphasis remap='B'>=</emphasis><emphasis remap='I'>value</emphasis><emphasis remap='B'>]</emphasis><emphasis remap='B'>, ...</emphasis><emphasis remap='B'>]</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Some keywords apply only to certain file formats, as indicated with
+each description. Use of keywords that are inapplicable to
+the file format being processed produces undefined results.</para>
+
+<para>Keywords in the <emphasis remap='I'>options</emphasis> argument shall be a string that would
+be a valid portable filename as described in the Base
+Definitions volume of IEEE&nbsp;Std&nbsp;1003.1-2001, Section 3.276, Portable
+Filename Character Set.</para> 
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>Note:</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+<para>Keywords are not expected to be filenames, merely to follow the same
+character composition rules as portable filenames.
+    </para></blockquote> <!-- remap='RE' -->
+
+
+<para>Keywords can be preceded with white space. The <emphasis remap='I'>value</emphasis> field shall
+consist of zero or more characters; within <emphasis remap='I'>value</emphasis>,
+the application shall precede any literal comma with a backslash,
+which shall be ignored, but preserves the comma as part of
+<emphasis remap='I'>value</emphasis>. A comma as the final character, or a comma followed solely
+by white space as the final characters, in <emphasis remap='I'>options</emphasis>
+shall be ignored. Multiple <option>-o</option> options can be specified; if keywords
+given to these multiple <option>-o</option> options conflict, the
+keywords and values appearing later in command line sequence shall
+take precedence and the earlier shall be silently ignored. The
+following keyword values of <emphasis remap='I'>options</emphasis> shall be supported for the
+file formats as indicated:</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>delete</emphasis>=<emphasis remap='I'>pattern</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+
+<para>(Applicable only to the <option>-x</option> <replaceable>pax</replaceable> format.) When used in <emphasis remap='B'>write</emphasis>
+or <emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall omit from
+extended header records that it produces any keywords matching the
+string pattern. When used in <emphasis remap='B'>read</emphasis> or <emphasis remap='B'>list</emphasis> mode,
+<command>pax</command> shall ignore any keywords matching the string pattern in
+the extended header records. In both cases, matching shall be
+performed using the pattern matching notation described in <emphasis remap='I'>Patterns
+Matching a Single
+Character</emphasis> and <emphasis remap='I'>Patterns Matching Multiple Characters</emphasis> . For
+example:</para> 
+
+<literallayout remap='.nf'>
+
+<option>-o</option> <replaceable>delete</replaceable><emphasis remap='B'>=</emphasis><emphasis remap='I'>security</emphasis><emphasis remap='B'>.*
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>would suppress security-related information. See pax Extended Header
+for extended header record
+keyword usage.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>exthdr.name</emphasis>=<emphasis remap='I'>string</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+
+<para>(Applicable only to the <option>-x</option> <replaceable>pax</replaceable> format.) This keyword allows
+user control over the name that is written into the
+<emphasis remap='B'>ustar</emphasis> header blocks for the extended header produced under the
+circumstances described in pax
+Header Block . The name shall be the contents of <emphasis remap='I'>string</emphasis>, after
+the following character substitutions have been made:</para> 
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='6' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <colspec colname='c6'/>
+    <tbody>
+      <row>
+        <entry align='center'><emphasis remap='I'>string</emphasis></entry>
+        <entry align='right'><!-- na -->
+<para><emphasis remap='B'>&nbsp;</emphasis>
+<!-- ad --></para></entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='B'>Includes:</emphasis></entry>
+        <entry align='right'><!-- na -->
+<emphasis remap='B'>Replaced By:</emphasis>
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>%d</entry>
+        <entry align='right'><!-- na -->
+The directory name of the file, equivalent to the result of the <emphasis remap='I'>dirname</emphasis> utility on the translated pathname.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>%f</entry>
+        <entry align='right'><!-- na -->
+The filename of the file, equivalent to the result of the <emphasis remap='I'>basename</emphasis> utility on the translated pathname.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>%p</entry>
+        <entry align='right'><!-- na -->
+The process ID of the <command>pax</command> process.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>%%</entry>
+        <entry align='right'><!-- na -->
+A <emphasis remap='B'>'%'</emphasis> character.
+<!-- ad --></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+<para>Any other <emphasis remap='B'>'%'</emphasis> characters in <emphasis remap='I'>string</emphasis> produce undefined results.</para>
+
+<para>If no <option>-o</option> <replaceable>exthdr.name=</replaceable> <emphasis remap='I'>string</emphasis> is specified, <command>pax</command>
+shall use the following default value:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>%d/PaxHeaders.%p/%f
+</emphasis>
+</literallayout> <!-- .fi -->
+    </blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>globexthdr.name</emphasis>=<emphasis remap='I'>string</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+
+<para>(Applicable only to the <option>-x</option> <replaceable>pax</replaceable> format.) When used in <emphasis remap='B'>write</emphasis>
+or <emphasis remap='B'>copy</emphasis> mode with the appropriate options,
+<command>pax</command> shall create global extended header records with <emphasis remap='B'>ustar</emphasis>
+header blocks that will be treated as regular files by
+previous versions of <command>pax</command>. This keyword allows user control over
+the name that is written into the <emphasis remap='B'>ustar</emphasis> header blocks
+for global extended header records. The name shall be the contents
+of string, after the following character substitutions have been
+made:</para> 
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='6' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <colspec colname='c6'/>
+    <tbody>
+      <row>
+        <entry align='center'><emphasis remap='I'>string</emphasis></entry>
+        <entry align='right'><!-- na -->
+<para><emphasis remap='B'>&nbsp;</emphasis>
+<!-- ad --></para></entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='B'>Includes:</emphasis></entry>
+        <entry align='right'><!-- na -->
+<emphasis remap='B'>Replaced By:</emphasis>
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>%n</entry>
+        <entry align='right'><!-- na -->
+An integer that represents the sequence number of the global extended header record in the archive, starting at 1.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>%p</entry>
+        <entry align='right'><!-- na -->
+The process ID of the <command>pax</command> process.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>%%</entry>
+        <entry align='right'><!-- na -->
+A <emphasis remap='B'>'%'</emphasis> character.
+<!-- ad --></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+<para>Any other <emphasis remap='B'>'%'</emphasis> characters in <emphasis remap='I'>string</emphasis> produce undefined results.</para>
+
+<para>If no <option>-o</option> <replaceable>globexthdr.name=</replaceable> <emphasis remap='I'>string</emphasis> is specified, <command>pax</command>
+shall use the following default value:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>$TMPDIR/GlobalHead.%p.%n
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>where $ <envar>TMPDIR</envar> represents the value of the <envar>TMPDIR</envar> environment
+variable. If <envar>TMPDIR</envar> is not set, <command>pax</command>
+shall use <filename>/tmp</filename>.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>invalid</emphasis>=<emphasis remap='I'>action</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+
+<para>(Applicable only to the <option>-x</option> <replaceable>pax</replaceable> format.) This keyword allows
+user control over the action <command>pax</command> takes upon
+encountering values in an extended header record that, in <emphasis remap='B'>read</emphasis>
+or <emphasis remap='B'>copy</emphasis> mode, are invalid in the destination hierarchy
+or, in <emphasis remap='B'>list</emphasis> mode, cannot be written in the codeset and current
+locale of the implementation. The following are invalid
+values that shall be recognized by <command>pax</command>:</para> 
+      <variablelist remap='IP'>
+        <varlistentry>
+        <term> *</term>
+        <listitem>
+<para>In <emphasis remap='B'>read</emphasis> or <emphasis remap='B'>copy</emphasis> mode, a filename or link name that contains
+character encodings invalid in the destination
+hierarchy. (For example, the name may contain embedded NULs.)</para>
+
+        </listitem>
+        </varlistentry>
+        <varlistentry>
+        <term> *</term>
+        <listitem>
+<para>In <emphasis remap='B'>read</emphasis> or <emphasis remap='B'>copy</emphasis> mode, a filename or link name that is
+longer than the maximum allowed in the destination hierarchy
+(for either a pathname component or the entire pathname).</para>
+
+        </listitem>
+        </varlistentry>
+        <varlistentry>
+        <term> *</term>
+        <listitem>
+<para>In <emphasis remap='B'>list</emphasis> mode, any character string value (filename, link name,
+user name, and so on) that cannot be written in the
+codeset and current locale of the implementation.</para>
+
+        </listitem>
+        </varlistentry>
+      </variablelist>
+
+<para>The following mutually-exclusive values of the <emphasis remap='I'>action</emphasis> argument
+are supported:</para>
+    <variablelist remap='TP'>
+      <varlistentry>
+      <term><emphasis remap='B'>bypass</emphasis></term>
+      <listitem>
+      <blockquote remap='RS'>
+<para>In <emphasis remap='B'>read</emphasis> or <emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall bypass the file,
+causing no change to the destination hierarchy. In
+<emphasis remap='B'>list</emphasis> mode, <command>pax</command> shall write all requested valid values
+for the file, but its method for writing invalid values is
+unspecified.
+        </para></blockquote> <!-- remap='RE' -->
+      </listitem>
+      </varlistentry>
+      <varlistentry>
+      <term><emphasis remap='B'>rename</emphasis></term>
+      <listitem>
+      <blockquote remap='RS'>
+<para>In <emphasis remap='B'>read</emphasis> or <emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall act as if the <option>-i</option>
+option were in effect for each file with invalid
+filename or link name values, allowing the user to provide a replacement
+name interactively. In <emphasis remap='B'>list</emphasis> mode, <command>pax</command> shall
+behave identically to the <emphasis remap='B'>bypass</emphasis> action.
+        </para></blockquote> <!-- remap='RE' -->
+      </listitem>
+      </varlistentry>
+      <varlistentry>
+      <term><emphasis remap='B'>UTF-8</emphasis></term>
+      <listitem>
+      <blockquote remap='RS'>
+<para>When used in <emphasis remap='B'>read</emphasis>, <emphasis remap='B'>copy</emphasis>, or <emphasis remap='B'>list</emphasis> mode and a filename,
+link name, owner name, or any other field in an
+extended header record cannot be translated from the <command>pax</command> UTF-8
+codeset format to the codeset and current locale of the
+implementation, <command>pax</command> shall use the actual UTF-8 encoding for
+the name.
+        </para></blockquote> <!-- remap='RE' -->
+      </listitem>
+      </varlistentry>
+      <varlistentry>
+      <term><emphasis remap='B'>write</emphasis></term>
+      <listitem>
+      <blockquote remap='RS'>
+<para>In <emphasis remap='B'>read</emphasis> or <emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall write the file,
+translating or truncating the name, regardless of whether
+this may overwrite an existing file with a valid name. In <emphasis remap='B'>list</emphasis>
+mode, <command>pax</command> shall behave identically to the
+<emphasis remap='B'>bypass</emphasis> action.
+        </para></blockquote> <!-- remap='RE' -->
+
+
+<para>If no <option>-o</option> <replaceable>invalid=</replaceable> option is specified, <command>pax</command> shall
+act as if <option>-o</option> <replaceable>invalid=</replaceable> <emphasis remap='B'>bypass</emphasis> were
+specified. Any overwriting of existing files that may be allowed by
+the <option>-o</option> <replaceable>invalid=</replaceable> actions shall be subject to
+permission ( <option>-p</option>) and modification time ( <option>-u</option>) restrictions,
+and shall be suppressed if the <option>-k</option> option is also
+specified.</para>
+      </listitem>
+      </varlistentry>
+    </variablelist>
+    </blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>linkdata</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+
+<para>(Applicable only to the <option>-x</option> <replaceable>pax</replaceable> format.) In <emphasis remap='B'>write</emphasis>
+mode, <command>pax</command> shall write the contents of a file to the
+archive even when that file is merely a hard link to a file whose
+contents have already been written to the archive.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>listopt</emphasis>=<emphasis remap='I'>format</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+
+<para>This keyword specifies the output format of the table of contents
+produced when the <option>-v</option> option is specified in <emphasis remap='B'>list</emphasis>
+mode. See List Mode Format Specifications . To avoid ambiguity, the
+<emphasis remap='B'>listopt=</emphasis> <emphasis remap='I'>format</emphasis>
+shall be the only or final <emphasis remap='B'>keyword=</emphasis> <emphasis remap='I'>value</emphasis> pair in a <option>-o</option>
+option-argument; all characters in the remainder of the
+option-argument shall be considered part of the format string. When
+multiple <option>-o</option> <replaceable>listopt=</replaceable> <emphasis remap='I'>format</emphasis> options are
+specified, the format strings shall be considered a single, concatenated
+string, evaluated in command line order.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>times</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+
+<para>(Applicable only to the <option>-x</option> <replaceable>pax</replaceable> format.) When used in <emphasis remap='B'>write</emphasis>
+or <emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall include
+<emphasis remap='B'>atime</emphasis>, <emphasis remap='B'>ctime</emphasis>, and <emphasis remap='B'>mtime</emphasis> extended header records
+for each file. See pax Extended
+Header File Times .
+    </para></blockquote> <!-- remap='RE' -->
+
+
+<para>In addition to these keywords, if the <option>-x</option> <replaceable>pax</replaceable> format is
+specified, any of the keywords and values defined in pax Extended
+Header , including implementation extensions, can be used in <option>-o</option>
+option-arguments,
+in either of two modes:</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>keyword</emphasis>=<emphasis remap='I'>value</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+
+<para>When used in <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> mode, these keyword/value pairs
+shall be included at the beginning of the archive as
+<emphasis remap='B'>typeflag</emphasis> <emphasis remap='B'>g</emphasis> global extended header records. When used in
+<emphasis remap='B'>read</emphasis> or <emphasis remap='B'>list</emphasis> mode, these keyword/value pairs
+shall act as if they had been at the beginning of the archive as <emphasis remap='B'>typeflag</emphasis>
+<emphasis remap='B'>g</emphasis> global extended header records.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>keyword</emphasis>:=<emphasis remap='I'>value</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+
+<para>When used in <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> mode, these keyword/value pairs
+shall be included as records at the beginning of a
+<emphasis remap='B'>typeflag</emphasis> <emphasis remap='B'>x</emphasis> extended header for each file. (This shall
+be equivalent to the equal-sign form except that it creates no
+<emphasis remap='B'>typeflag</emphasis> <emphasis remap='B'>g</emphasis> global extended header records.) When used
+in <emphasis remap='B'>read</emphasis> or <emphasis remap='B'>list</emphasis> mode, these keyword/value pairs
+shall act as if they were included as records at the end of each extended
+header; thus, they shall override any global or
+file-specific extended header record keywords of the same names. For
+example, in the command:</para> 
+
+<literallayout remap='.nf'>
+
+<userinput>pax -r -o "
+gname:=mygroup,
+" &lt;archive
+</userinput>
+</literallayout> <!-- .fi -->
+
+<para>the group name will be forced to a new value for all files read from
+the archive.
+    </para></blockquote> <!-- remap='RE' -->
+
+
+<para>The precedence of <option>-o</option> keywords over various fields in the archive
+is described in pax Extended
+Header Keyword Precedence .</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-p </option> <emphasis remap='I'>string</emphasis></term>
+  <listitem>
+<para>Specify one or more file characteristic options (privileges). The
+<emphasis remap='I'>string</emphasis> option-argument shall be a string specifying
+file characteristics to be retained or discarded on extraction. The
+string shall consist of the specification characters <emphasis remap='B'>a</emphasis>
+, <emphasis remap='B'>e</emphasis> , <emphasis remap='B'>m</emphasis> , <emphasis remap='B'>o</emphasis> , and <emphasis remap='B'>p</emphasis> . Other implementation-defined
+characters can be included. Multiple
+characteristics can be concatenated within the same string and multiple
+<option>-p</option> options can be specified. The meaning of the
+specification characters are as follows:</para> 
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>a</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+<para>Do not preserve file access times.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>e</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+<para>Preserve the user ID, group ID, file mode bits (see the Base Definitions
+volume of IEEE&nbsp;Std&nbsp;1003.1-2001, Section 3.168, File Mode Bits),
+access time, modification time, and any other
+implementation-defined file characteristics.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>m</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+<para>Do not preserve file modification times.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>o</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+<para>Preserve the user ID and group ID.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>p</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+<para>Preserve the file mode bits. Other implementation-defined file mode
+attributes may be preserved.
+    </para></blockquote> <!-- remap='RE' -->
+
+
+<para>In the preceding list, "preserve" indicates that an attribute stored
+in the archive shall be given to the extracted file,
+subject to the permissions of the invoking process. The access and
+modification times of the file shall be preserved unless
+otherwise specified with the <option>-p</option> option or not stored in the
+archive. All attributes that are not preserved shall be
+determined as part of the normal file creation action (see <emphasis remap='I'>File
+Read, Write, and
+Creation</emphasis> ).</para>
+
+<para>If neither the <emphasis remap='B'>e</emphasis> nor the <emphasis remap='B'>o</emphasis> specification character is
+specified, or the user ID and group ID are not preserved
+for any reason, <command>pax</command> shall not set the S_ISUID and S_ISGID bits
+of the file mode.</para>
+
+<para>If the preservation of any of these items fails for any reason, <command>pax</command>
+shall write a diagnostic message to standard error.
+Failure to preserve these items shall affect the final exit status,
+but shall not cause the extracted file to be deleted.</para>
+
+<para>If file characteristic letters in any of the <emphasis remap='I'>string</emphasis> option-arguments
+are duplicated or conflict with each other, the ones
+given last shall take precedence. For example, if <option>-p</option> <replaceable>eme</replaceable>
+is specified, file modification times are preserved.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-s </option> <emphasis remap='I'>replstr</emphasis></term>
+  <listitem>
+<para>Modify file or archive member names named by <emphasis remap='I'>pattern</emphasis> or <emphasis remap='I'>file</emphasis>
+operands according to the substitution expression
+<emphasis remap='I'>replstr</emphasis>, using the syntax of the <emphasis remap='I'>ed</emphasis> utility. The concepts
+of "address" and
+"line" are meaningless in the context of the <command>pax</command> utility, and
+shall not be supplied. The format shall be:</para> 
+
+<literallayout remap='.nf'>
+
+<option>-s /</option><emphasis remap='I'>old</emphasis><emphasis remap='B'>/</emphasis><emphasis remap='I'>new</emphasis><emphasis remap='B'>/</emphasis><emphasis remap='B'>[</emphasis><emphasis remap='B'>gp</emphasis><emphasis remap='B'>]</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>where as in <emphasis remap='I'>ed</emphasis>, <emphasis remap='I'>old</emphasis> is a basic regular expression and
+<emphasis remap='I'>new</emphasis> can contain an
+ampersand, <emphasis remap='B'>'&bsol;n'</emphasis> (where <emphasis remap='I'>n</emphasis> is a digit) backreferences,
+or subexpression matching. The <emphasis remap='I'>old</emphasis> string shall also be
+permitted to contain &lt;newline&gt;s.</para>
+
+<para>Any non-null character can be used as a delimiter ( <emphasis remap='B'>'/'</emphasis> shown
+here). Multiple <option>-s</option> expressions can be specified;
+the expressions shall be applied in the order specified, terminating
+with the first successful substitution. The optional trailing
+<emphasis remap='B'>'g'</emphasis> is as defined in the <emphasis remap='I'>ed</emphasis> utility. The optional trailing
+<emphasis remap='B'>'p'</emphasis> shall
+cause successful substitutions to be written to standard error. File
+or archive member names that substitute to the empty string
+shall be ignored when reading and writing archives.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-t</option></term>
+  <listitem>
+<para>When reading files from the file system, and if the user has the permissions
+required by <emphasis remap='I'>utime</emphasis>() to do so, set the access time of each file
+read to the access time that it had before
+being read by <command>pax</command>.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-u</option></term>
+  <listitem>
+<para>Ignore files that are older (having a less recent file modification
+time) than a pre-existing file or archive member with the
+same name. In <emphasis remap='B'>read</emphasis> mode, an archive member with the same name
+as a file in the file system shall be extracted if the archive
+member is newer than the file. In <emphasis remap='B'>write</emphasis> mode, an archive file
+member with the same name as a file in the file system shall
+be superseded if the file is newer than the archive member. If <option>-a</option>
+is also specified, this is accomplished by appending to
+the archive; otherwise, it is unspecified whether this is accomplished
+by actual replacement in the archive or by appending to the
+archive. In <emphasis remap='B'>copy</emphasis> mode, the file in the destination hierarchy
+shall be replaced by the file in the source hierarchy or by a
+link to the file in the source hierarchy if the file in the source
+hierarchy is newer.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-v</option></term>
+  <listitem>
+<para>In <emphasis remap='B'>list</emphasis> mode, produce a verbose table of contents (see the STDOUT
+section). Otherwise, write archive member pathnames to
+standard error (see the STDERR section).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-x </option> <emphasis remap='I'>format</emphasis></term>
+  <listitem>
+<para>Specify the output archive format. The <command>pax</command> utility shall support
+the following formats:</para> 
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>cpio</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+<para>The <emphasis remap='B'>cpio</emphasis> interchange format; see the EXTENDED DESCRIPTION section.
+The default <emphasis remap='I'>blocksize</emphasis> for this format for
+character special archive files shall be 5120. Implementations shall
+support all <emphasis remap='I'>blocksize</emphasis> values less than or equal to
+32256 that are multiples of 512.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><command>pax</command></term>
+  <listitem>
+  <blockquote remap='RS'>
+<para>The <command>pax</command> interchange format; see the EXTENDED DESCRIPTION section.
+The default <emphasis remap='I'>blocksize</emphasis> for this format for
+character special archive files shall be 5120. Implementations shall
+support all <emphasis remap='I'>blocksize</emphasis> values less than or equal to
+32256 that are multiples of 512.
+    </para></blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>ustar</emphasis></term>
+  <listitem>
+  <blockquote remap='RS'>
+<para>The <emphasis remap='B'>tar</emphasis> interchange format; see the EXTENDED DESCRIPTION section.
+The default <emphasis remap='I'>blocksize</emphasis> for this format for
+character special archive files shall be 10240. Implementations shall
+support all <emphasis remap='I'>blocksize</emphasis> values less than or equal to
+32256 that are multiples of 512.
+    </para></blockquote> <!-- remap='RE' -->
+
+
+<para>Implementation-defined formats shall specify a default block size
+as well as any other block sizes supported for character
+special archive files.</para>
+
+<para>Any attempt to append to an archive file in a format different from
+the existing archive format shall cause <command>pax</command> to exit
+immediately with a non-zero exit status.</para>
+
+<para>In <emphasis remap='B'>copy</emphasis> mode, if no <option>-x</option> format is specified, <command>pax</command>
+shall behave as if <option>-x</option> <replaceable>pax</replaceable> were specified.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-X</option></term>
+  <listitem>
+<para>When traversing the file hierarchy specified by a pathname, <command>pax</command>
+shall not descend into directories that have a different
+device ID ( <emphasis remap='I'>st_dev</emphasis>; see the System Interfaces volume of IEEE&nbsp;Std&nbsp;1003.1-2001,
+<emphasis remap='I'>stat</emphasis>()).</para>
+
+
+<para>The options that operate on the names of files or archive members
+( <option>-c</option>, <option>-i</option>, <option>-n</option>, <option>-s</option>, <option>-u</option>, and
+<option>-v</option>) shall interact as follows. In <emphasis remap='B'>read</emphasis> mode, the archive
+members shall be selected based on the user-specified
+<emphasis remap='I'>pattern</emphasis> operands as modified by the <option>-c</option>, <option>-n</option>, and
+<option>-u</option> options. Then, any <option>-s</option> and <option>-i</option> options
+shall modify, in that order, the names of the selected files. The
+<option>-v</option> option shall write names resulting from these
+modifications.</para>
+
+<para>In <emphasis remap='B'>write</emphasis> mode, the files shall be selected based on the user-specified
+pathnames as modified by the <option>-n</option> and
+<option>-u</option> options. Then, any <option>-s</option> and <option>-i</option> options shall modify,
+in that order, the names of these selected files. The
+<option>-v</option> option shall write names resulting from these modifications.</para>
+
+<para>If both the <option>-u</option> and <option>-n</option> options are specified, <command>pax</command>
+shall not consider a file selected unless it is newer than
+the file to which it is compared.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+
+<refsect2 id='list_mode_format_specifications'><title>List Mode Format Specifications</title>
+
+<para>In <emphasis remap='B'>list</emphasis> mode with the <option>-o</option> <replaceable>listopt=</replaceable> <emphasis remap='I'>format</emphasis> option,
+the <emphasis remap='I'>format</emphasis> argument shall be applied for
+each selected file. The <command>pax</command> utility shall append a &lt;newline&gt;
+to the <emphasis remap='B'>listopt</emphasis> output for each selected file. The
+<emphasis remap='I'>format</emphasis> argument shall be used as the <emphasis remap='I'>format</emphasis> string described
+in the Base Definitions volume of
+IEEE&nbsp;Std&nbsp;1003.1-2001, Chapter 5, File Format Notation, with the
+exceptions 1.
+through 5. defined in the EXTENDED DESCRIPTION section of <emphasis remap='I'>printf</emphasis>,
+plus the following
+exceptions:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term>6.</term>
+  <listitem>
+<para>The sequence ( <emphasis remap='I'>keyword</emphasis>) can occur before a format conversion
+specifier. The conversion argument is defined by the value
+of <emphasis remap='I'>keyword</emphasis>. The implementation shall support the following keywords:</para>
+    <variablelist remap='IP'>
+      <varlistentry>
+      <term> *</term>
+      <listitem>
+<para>Any of the Field Name entries in ustar Header Block and Octet-Oriented
+cpio
+Archive Entry . The implementation may support the <emphasis remap='I'>cpio</emphasis> keywords
+without the leading <emphasis remap='B'>c_</emphasis> in addition to the form
+required by Values for cpio c_mode Field .</para>
+
+      </listitem>
+      </varlistentry>
+      <varlistentry>
+      <term> *</term>
+      <listitem>
+<para>Any keyword defined for the extended header in pax Extended Header
+.</para>
+
+      </listitem>
+      </varlistentry>
+      <varlistentry>
+      <term> *</term>
+      <listitem>
+<para>Any keyword provided as an implementation-defined extension within
+the extended header defined in pax Extended Header .</para>
+
+      </listitem>
+      </varlistentry>
+    </variablelist>
+
+<para>For example, the sequence <emphasis remap='B'>"%(charset)s"</emphasis> is the string value
+of the name of the character set in the extended
+header.</para>
+
+<para>The result of the keyword conversion argument shall be the value from
+the applicable header field or extended header, without
+any trailing NULs.</para>
+
+<para>All keyword values used as conversion arguments shall be translated
+from the UTF-8 encoding to the character set appropriate for
+the local file system, user database, and so on, as applicable.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>7.</term>
+  <listitem>
+<para>An additional conversion specifier character, <emphasis remap='B'>T</emphasis> , shall be used
+to specify time formats. The <emphasis remap='B'>T</emphasis> conversion
+specifier character can be preceded by the sequence ( <emphasis remap='I'>keyword=</emphasis>
+<emphasis remap='I'>subformat</emphasis>), where <emphasis remap='I'>subformat</emphasis> is a date format as
+defined by <emphasis remap='I'>date</emphasis> operands. The default <emphasis remap='I'>keyword</emphasis> shall be
+<emphasis remap='B'>mtime</emphasis> and the
+default subformat shall be:</para> 
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>%b %e %H:%M %Y
+</emphasis>
+</literallayout> <!-- .fi -->
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>8.</term>
+  <listitem>
+<para>An additional conversion specifier character, <emphasis remap='B'>M</emphasis> , shall be used
+to specify the file mode string as defined in <emphasis remap='I'>ls</emphasis> Standard Output.
+If ( <emphasis remap='I'>keyword</emphasis>) is omitted, the <emphasis remap='B'>mode</emphasis> keyword shall be used.
+For
+example, <emphasis remap='B'>%.1M</emphasis> writes the single character corresponding to the
+&lt;<emphasis remap='I'>entry&nbsp;type</emphasis>&gt; field of the <emphasis remap='I'>ls</emphasis> <option>-l</option> command.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>9.</term>
+  <listitem>
+<para>An additional conversion specifier character, <emphasis remap='B'>D</emphasis> , shall be used
+to specify the device for block or special files, if
+applicable, in an implementation-defined format. If not applicable,
+and ( <emphasis remap='I'>keyword</emphasis>) is specified, then this conversion shall
+be equivalent to <emphasis remap='B'>%(</emphasis><emphasis remap='I'>keyword</emphasis><emphasis remap='B'>)u</emphasis>. If not applicable,
+and ( <emphasis remap='I'>keyword</emphasis>) is omitted, then this conversion
+shall be equivalent to &lt;space&gt;.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>10.</term>
+  <listitem>
+<para>An additional conversion specifier character, <emphasis remap='B'>F</emphasis> , shall be used
+to specify a pathname. The <emphasis remap='B'>F</emphasis> conversion
+character can be preceded by a sequence of comma-separated keywords:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>(</emphasis><emphasis remap='I'>keyword</emphasis><emphasis remap='B'>[</emphasis><emphasis remap='B'>,</emphasis><emphasis remap='I'>keyword</emphasis><emphasis remap='B'>]</emphasis> <emphasis remap='B'>... )
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>The values for all the keywords that are non-null shall be concatenated
+together, each separated by a <emphasis remap='B'>'/'</emphasis> . The default
+shall be ( <emphasis remap='B'>path</emphasis>) if the keyword <emphasis remap='B'>path</emphasis> is defined; otherwise,
+the default shall be ( <emphasis remap='B'>prefix</emphasis>, <emphasis remap='B'>name</emphasis>).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>11.</term>
+  <listitem>
+<para>An additional conversion specifier character, <emphasis remap='B'>L</emphasis> , shall be used
+to specify a symbolic line expansion. If the current
+file is a symbolic link, then <emphasis remap='B'>%L</emphasis> shall expand to:</para> 
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>"%s -&gt; %s", &lt;</emphasis><emphasis remap='I'>value of keyword</emphasis><emphasis remap='B'>&gt;, &lt;</emphasis><emphasis remap='I'>contents of link</emphasis><emphasis remap='B'>&gt;
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Otherwise, the <emphasis remap='B'>%L</emphasis> conversion specification shall be the equivalent
+of <emphasis remap='B'>%F</emphasis> .</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+
+<refsect1 id='operands'><title>OPERANDS</title>
+<para>The following operands shall be supported:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='I'>directory</emphasis></term>
+  <listitem>
+<para>The destination directory pathname for <emphasis remap='B'>copy</emphasis> mode.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>file</emphasis></term>
+  <listitem>
+<para>A pathname of a file to be copied or archived.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pattern</emphasis></term>
+  <listitem>
+<para>A pattern matching one or more pathnames of archive members. A pattern
+must be given in the name-generating notation of the
+pattern matching notation in <emphasis remap='I'>Pattern Matching Notation</emphasis> , including
+the filename
+expansion rules in <emphasis remap='I'>Patterns Used for Filename Expansion</emphasis> . The
+default, if no
+<emphasis remap='I'>pattern</emphasis> is specified, is to select all members in the archive.</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='stdin'><title>STDIN</title>
+<para>In <emphasis remap='B'>write</emphasis> mode, the standard input shall be used only if no <emphasis remap='I'>file</emphasis>
+operands are specified. It shall be a text file
+containing a list of pathnames, one per line, without leading or trailing
+&lt;blank&gt;s.</para>
+
+<para>In <emphasis remap='B'>list</emphasis> and <emphasis remap='B'>read</emphasis> modes, if <option>-f</option> is not specified,
+the standard input shall be an archive file.</para>
+
+<para>Otherwise, the standard input shall not be used.</para>
+</refsect1>
+
+<refsect1 id='input_files'><title>INPUT FILES</title>
+<para>The input file named by the <emphasis remap='I'>archive</emphasis> option-argument, or standard
+input when the archive is read from there, shall be a
+file formatted according to one of the specifications in the EXTENDED
+DESCRIPTION section or some other implementation-defined
+format.</para>
+
+<para>The file <filename>/dev/tty</filename> shall be used to write prompts and read responses.</para>
+</refsect1>
+
+<refsect1 id='environment_variables'><title>ENVIRONMENT VARIABLES</title>
+<para>The following environment variables shall affect the execution of
+<command>pax</command>:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><envar>LANG</envar></term>
+  <listitem>
+<para>Provide a default value for the internationalization variables that
+are unset or null. (See the Base Definitions volume of
+IEEE&nbsp;Std&nbsp;1003.1-2001, Section 8.2, Internationalization Variables
+for
+the precedence of internationalization variables used to determine
+the values of locale categories.)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><envar>LC_ALL</envar></term>
+  <listitem>
+<para>If set to a non-empty string value, override the values of all the
+other internationalization variables.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>LC_COLLATE</emphasis></term>
+  <listitem>
+
+<para>Determine the locale for the behavior of ranges, equivalence classes,
+and multi-character collating elements used in the pattern
+matching expressions for the <emphasis remap='I'>pattern</emphasis> operand, the basic regular
+expression for the <option>-s</option> option, and the extended
+regular expression defined for the <emphasis remap='B'>yesexpr</emphasis> locale keyword in
+the <envar>LC_MESSAGES</envar> category.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>LC_CTYPE</emphasis></term>
+  <listitem>
+<para>Determine the locale for the interpretation of sequences of bytes
+of text data as characters (for example, single-byte as
+opposed to multi-byte characters in arguments and input files), the
+behavior of character classes used in the extended regular
+expression defined for the <emphasis remap='B'>yesexpr</emphasis> locale keyword in the <envar>LC_MESSAGES</envar>
+category, and pattern matching.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><envar>LC_MESSAGES</envar></term>
+  <listitem>
+<para>Determine the locale for the processing of affirmative responses that
+should be used to affect the format and contents of
+diagnostic messages written to standard error.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>LC_TIME</emphasis></term>
+  <listitem>
+<para>Determine the format and contents of date and time strings when the
+<option>-v</option> option is specified.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><envar>NLSPATH</envar></term>
+  <listitem>
+<para>Determine the location of message catalogs for the processing of <emphasis remap='I'>LC_MESSAGES
+.</emphasis></para> 
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><envar>TMPDIR</envar></term>
+  <listitem>
+<para>Determine the pathname that provides part of the default global extended
+header record file, as described for the <option>-o</option>
+<replaceable>globexthdr=</replaceable> keyword in the OPTIONS section.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><envar>TZ</envar></term>
+  <listitem>
+<para>Determine the timezone used to calculate date and time strings when
+the <option>-v</option> option is specified. If <envar>TZ</envar> is unset or
+null, an unspecified default timezone shall be used.</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='asynchronous_events'><title>ASYNCHRONOUS EVENTS</title>
+<para>Default.</para>
+</refsect1>
+
+<refsect1 id='stdout'><title>STDOUT</title>
+<para>In <emphasis remap='B'>write</emphasis> mode, if <option>-f</option> is not specified, the standard output
+shall be the archive formatted according to one of the
+specifications in the EXTENDED DESCRIPTION section, or some other
+implementation-defined format (see <option>-x</option> <replaceable>format</replaceable>).</para>
+
+<para>In <emphasis remap='B'>list</emphasis> mode, when the <option>-o</option> <replaceable>listopt</replaceable>= <emphasis remap='I'>format</emphasis>
+has been specified, the selected archive members shall be
+written to standard output using the format described under List Mode
+Format Specifications . In
+<emphasis remap='B'>list</emphasis> mode without the <option>-o</option> <replaceable>listopt</replaceable>= <emphasis remap='I'>format</emphasis> option,
+the table of contents of the selected archive members
+shall be written to standard output using the following format:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>"%s&bsol;n", &lt;</emphasis><emphasis remap='I'>pathname</emphasis><emphasis remap='B'>&gt;
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>If the <option>-v</option> option is specified in <emphasis remap='B'>list</emphasis> mode, the table
+of contents of the selected archive members shall be written
+to standard output using the following formats.</para>
+
+<para>For pathnames representing hard links to previous members of the archive:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>"%s == %s&bsol;n", &lt;</emphasis><emphasis remap='I'>ls</emphasis> <option>-l</option> <replaceable>listing</replaceable><emphasis remap='B'>&gt;, &lt;</emphasis><emphasis remap='I'>linkname</emphasis><emphasis remap='B'>&gt;
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>For all other pathnames:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>"%s&bsol;n", &lt;</emphasis><emphasis remap='I'>ls</emphasis> <option>-l</option> <replaceable>listing</replaceable><emphasis remap='B'>&gt;
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>where &lt;<emphasis remap='I'>ls&nbsp;</emphasis> -l&nbsp;<emphasis remap='I'>listing</emphasis>&gt; shall be the format specified
+by the <emphasis remap='I'>ls</emphasis> utility with the <option>-l</option> option. When writing pathnames
+in this format, it is unspecified
+what is written for fields for which the underlying archive format
+does not have the correct information, although the correct
+number of &lt;blank&gt;-separated fields shall be written.</para>
+
+<para>In <emphasis remap='B'>list</emphasis> mode, standard output shall not be buffered more than
+a line at a time.</para>
+</refsect1>
+
+<refsect1 id='stderr'><title>STDERR</title>
+<para>If <option>-v</option> is specified in <emphasis remap='B'>read</emphasis>, <emphasis remap='B'>write</emphasis>, or <emphasis remap='B'>copy</emphasis>
+modes, <command>pax</command> shall write the pathnames it processes
+to the standard error output using the following format:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>"%s&bsol;n", &lt;</emphasis><emphasis remap='I'>pathname</emphasis><emphasis remap='B'>&gt;
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>These pathnames shall be written as soon as processing is begun on
+the file or archive member, and shall be flushed to standard
+error. The trailing &lt;newline&gt;, which shall not be buffered, is written
+when the file has been read or written.</para>
+
+<para>If the <option>-s</option> option is specified, and the replacement string has
+a trailing <emphasis remap='B'>'p'</emphasis> , substitutions shall be written to
+standard error in the following format:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>"%s &gt;&gt; %s&bsol;n", &lt;</emphasis><emphasis remap='I'>original pathname</emphasis><emphasis remap='B'>&gt;, &lt;</emphasis><emphasis remap='I'>new pathname</emphasis><emphasis remap='B'>&gt;
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>In all operating modes of <command>pax</command>, optional messages of unspecified
+format concerning the input archive format and volume
+number, the number of files, blocks, volumes, and media parts as well
+as other diagnostic messages may be written to standard
+error.</para>
+
+<para>In all formats, for both standard output and standard error, it is
+unspecified how non-printable characters in pathnames or link
+names are written.</para>
+
+<para>When <command>pax</command> is in <emphasis remap='B'>read</emphasis> mode or <emphasis remap='B'>list</emphasis> mode, using the
+<option>-x</option> <replaceable>pax</replaceable> archive format, and a filename, link
+name, owner name, or any other field in an extended header record
+cannot be translated from the <command>pax</command> UTF-8 codeset format to
+the codeset and current locale of the implementation, <command>pax</command> shall
+write a diagnostic message to standard error, shall process
+the file as described for the <option>-o</option> <replaceable>invalid=</replaceable> option, and
+then shall process the next file in the archive.</para>
+</refsect1>
+
+<refsect1 id='output_files'><title>OUTPUT FILES</title>
+<para>In <emphasis remap='B'>read</emphasis> mode, the extracted output files shall be of the archived
+file type. In <emphasis remap='B'>copy</emphasis> mode, the copied output files
+shall be the type of the file being copied. In either mode, existing
+files in the destination hierarchy shall be overwritten only
+when all permission ( <option>-p</option>), modification time ( <option>-u</option>), and
+invalid-value ( <option>-o</option> <replaceable>invalid</replaceable>=) tests allow
+it.</para>
+
+<para>In <emphasis remap='B'>write</emphasis> mode, the output file named by the <option>-f</option> option-argument
+shall be a file formatted according to one of the
+specifications in the EXTENDED DESCRIPTION section, or some other
+implementation-defined format.</para>
+</refsect1>
+
+<refsect1 id='extended_description'><title>EXTENDED DESCRIPTION</title>
+
+<refsect2 id='pax_interchange_format'><title>pax Interchange Format</title>
+
+<para>A <command>pax</command> archive tape or file produced in the <option>-x</option> <replaceable>pax</replaceable>
+format shall contain a series of blocks. The physical
+layout of the archive shall be identical to the <emphasis remap='B'>ustar</emphasis> format
+described in ustar Interchange
+Format . Each file archived shall be represented by the following
+sequence:</para>
+<variablelist remap='IP'>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>An optional header block with extended header records. This header
+block is of the form described in pax Header Block , with a <emphasis remap='I'>typeflag</emphasis>
+value of <emphasis remap='B'>x</emphasis> or <emphasis remap='B'>g</emphasis>. The extended header records,
+described in pax Extended Header , shall be included as the data for
+this header block.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>A header block that describes the file. Any fields in the preceding
+optional extended header shall override the associated
+fields in this header block for this file.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Zero or more blocks that contain the contents of the file.</para>
+
+
+<para>At the end of the archive file there shall be two 512-byte blocks
+filled with binary zeros, interpreted as an end-of-archive
+indicator.</para>
+
+<para>A schematic of an example archive with global extended header records
+and two actual files is shown in pax
+Format Archive Example . In the example, the second file in the archive
+has no extended header preceding it, presumably because
+it has no need for extended attributes.</para>
+
+    <variablelist remap='TP'>
+      <varlistentry>
+      <term><blockquote remap='RS'></term>
+      <listitem>
+<para><emphasis remap='B'>Figure: pax Format Archive Example</emphasis></para>
+      </listitem>
+      </varlistentry>
+    </variablelist>
+    </blockquote> <!-- remap='RE' -->
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='pax_header_block'><title>pax Header Block</title>
+
+<para>The <command>pax</command> header block shall be identical to the <emphasis remap='B'>ustar</emphasis> header
+block described in ustar
+Interchange Format , except that two additional <emphasis remap='I'>typeflag</emphasis> values
+are defined:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='B'>x</emphasis></term>
+  <listitem>
+<para>Represents extended header records for the following file in the archive
+(which shall have its own <emphasis remap='B'>ustar</emphasis> header block).
+The format of these extended header records shall be as described
+in pax Extended Header .</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>g</emphasis></term>
+  <listitem>
+<para>Represents global extended header records for the following files
+in the archive. The format of these extended header records
+shall be as described in pax Extended Header . Each value shall affect
+all subsequent files that do
+not override that value in their own extended header record and until
+another global extended header record is reached that
+provides another value for the same field. The <emphasis remap='I'>typeflag</emphasis> <emphasis remap='B'>g</emphasis>
+global headers should not be used with interchange media
+that could suffer partial data loss in transporting the archive.</para>
+
+
+<para>For both of these types, the <emphasis remap='I'>size</emphasis> field shall be the size of
+the extended header records in octets. The other fields in
+the header block are not meaningful to this version of the <command>pax</command>
+utility. However, if this archive is read by a <command>pax</command>
+utility conforming to the ISO&nbsp;POSIX-2:1993 standard, the header block
+fields are used to create a regular file that contains
+the extended header records as data. Therefore, header block field
+values should be selected to provide reasonable file access to
+this regular file.</para>
+
+<para>A further difference from the <emphasis remap='B'>ustar</emphasis> header block is that data
+blocks for files of <emphasis remap='I'>typeflag</emphasis> 1 (the digit one) (hard
+link) may be included, which means that the size field may be greater
+than zero. Archives created by <command>pax</command> <option>-o</option>
+<replaceable>linkdata</replaceable> shall include these data blocks with the hard links.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='pax_extended_header'><title>pax Extended Header</title>
+
+<para>A <command>pax</command> extended header contains values that are inappropriate
+for the <emphasis remap='B'>ustar</emphasis> header block because of limitations in
+that format: fields requiring a character encoding other than that
+described in the ISO/IEC&nbsp;646:1991 standard, fields
+representing file attributes not described in the <emphasis remap='B'>ustar</emphasis> header,
+and fields whose format or length do not fit the
+requirements of the <emphasis remap='B'>ustar</emphasis> header. The values in an extended
+header add attributes to the following file (or files; see the
+description of the <emphasis remap='I'>typeflag</emphasis> <emphasis remap='B'>g</emphasis> header block) or override
+values in the following header block(s), as indicated in the
+following list of keywords.</para>
+
+<para>An extended header shall consist of one or more records, each constructed
+as follows:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>"%d %s=%s&bsol;n", &lt;</emphasis><emphasis remap='I'>length</emphasis><emphasis remap='B'>&gt;, &lt;</emphasis><emphasis remap='I'>keyword</emphasis><emphasis remap='B'>&gt;, &lt;</emphasis><emphasis remap='I'>value</emphasis><emphasis remap='B'>&gt;
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>The extended header records shall be encoded according to the ISO/IEC&nbsp;10646-1:2000
+standard (UTF-8). The
+&lt;<emphasis remap='I'>length</emphasis>&gt; field, &lt;blank&gt;, equals sign, and &lt;newline&gt; shown shall
+be limited to the portable character set,
+as encoded in UTF-8. The &lt;<emphasis remap='I'>keyword</emphasis>&gt; and &lt;<emphasis remap='I'>value</emphasis>&gt; fields
+can be any UTF-8 characters. The
+&lt;<emphasis remap='I'>length</emphasis>&gt; field shall be the decimal length of the extended header
+record in octets, including the trailing
+&lt;newline&gt;.</para>
+
+<para>The &lt;<emphasis remap='I'>keyword</emphasis>&gt; field shall be one of the entries from the following
+list or a keyword provided as an implementation
+extension. Keywords consisting entirely of lowercase letters, digits,
+and periods are reserved for future standardization. A
+keyword shall not include an equals sign. (In the following list,
+the notations "file(s)" or "block(s)" is used to acknowledge
+that a keyword affects the following single file after a <emphasis remap='I'>typeflag</emphasis>
+<emphasis remap='B'>x</emphasis> extended header, but possibly multiple files
+after <emphasis remap='I'>typeflag</emphasis> <emphasis remap='B'>g</emphasis>. Any requirements in the list for <command>pax</command>
+to include a record when in <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis>
+mode shall apply only when such a record has not already been provided
+through the use of the <option>-o</option> option. When used in
+<emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall behave as if an archive had been
+created with applicable extended header records and then
+extracted.)</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='B'>atime</emphasis></term>
+  <listitem>
+<para>The file access time for the following file(s), equivalent to the
+value of the <emphasis remap='I'>st_atime</emphasis> member of the <emphasis remap='B'>stat</emphasis>
+structure for a file, as described by the <emphasis remap='I'>stat</emphasis>() function. The
+access time shall be
+restored if the process has the appropriate privilege required to
+do so. The format of the &lt;<emphasis remap='I'>value</emphasis>&gt; shall be as
+described in pax Extended Header File Times .</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>charset</emphasis></term>
+  <listitem>
+<para>The name of the character set used to encode the data in the following
+file(s). The entries in the following table are defined
+to refer to known standards; additional names may be agreed on between
+the originator and recipient.</para> 
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='6' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <colspec colname='c6'/>
+    <tbody>
+      <row>
+        <entry align='center'><emphasis remap='B'>&lt;value&gt;</emphasis></entry>
+        <entry align='right'><emphasis remap='B'>Formal Standard</emphasis></entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 646 1990</entry>
+        <entry align='right'>ISO/IEC 646:1990</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 1 1998</entry>
+        <entry align='right'>ISO/IEC 8859-1:1998</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 2 1999</entry>
+        <entry align='right'>ISO/IEC 8859-2:1999</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 3 1999</entry>
+        <entry align='right'>ISO/IEC 8859-3:1999</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 4 1998</entry>
+        <entry align='right'>ISO/IEC 8859-4:1998</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 5 1999</entry>
+        <entry align='right'>ISO/IEC 8859-5:1999</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 6 1999</entry>
+        <entry align='right'>ISO/IEC 8859-6:1999</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 7 1987</entry>
+        <entry align='right'>ISO/IEC 8859-7:1987</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 8 1999</entry>
+        <entry align='right'>ISO/IEC 8859-8:1999</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 9 1999</entry>
+        <entry align='right'>ISO/IEC 8859-9:1999</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 10 1998</entry>
+        <entry align='right'>ISO/IEC 8859-10:1998</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 13 1998</entry>
+        <entry align='right'>ISO/IEC 8859-13:1998</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 14 1998</entry>
+        <entry align='right'>ISO/IEC 8859-14:1998</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 8859 15 1999</entry>
+        <entry align='right'>ISO/IEC 8859-15:1999</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 10646 2000</entry>
+        <entry align='right'>ISO/IEC 10646:2000</entry>
+      </row>
+      <row>
+        <entry align='center'>ISO-IR 10646 2000 UTF-8</entry>
+        <entry align='right'>ISO/IEC 10646, UTF-8 encoding</entry>
+      </row>
+      <row>
+        <entry align='center'>BINARY</entry>
+        <entry align='right'>None.</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+<para>The encoding is included in an extended header for information only;
+when <command>pax</command> is used as described in
+IEEE&nbsp;Std&nbsp;1003.1-2001, it shall not translate the file data into
+any other encoding. The <emphasis remap='B'>BINARY</emphasis> entry indicates
+unencoded binary data.</para>
+
+<para>When used in <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> mode, it is implementation-defined
+whether <command>pax</command> includes a <emphasis remap='B'>charset</emphasis>
+extended header record for a file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>comment</emphasis></term>
+  <listitem>
+<para>A series of characters used as a comment. All characters in the &lt;<emphasis remap='I'>value</emphasis>&gt;
+field shall be ignored by <command>pax</command>.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>ctime</emphasis></term>
+  <listitem>
+<para>The file creation time for the following file(s), equivalent to the
+value of the <emphasis remap='I'>st_ctime</emphasis> member of the <emphasis remap='B'>stat</emphasis>
+structure for a file, as described by the <emphasis remap='I'>stat</emphasis>() function. The
+creation time shall be
+restored if the process has the appropriate privilege required to
+do so. The format of the &lt;<emphasis remap='I'>value</emphasis>&gt; shall be as
+described in pax Extended Header File Times .</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>gid</emphasis></term>
+  <listitem>
+<para>The group ID of the group that owns the file, expressed as a decimal
+number using digits from the ISO/IEC&nbsp;646:1991
+standard. This record shall override the <emphasis remap='I'>gid</emphasis> field in the following
+header block(s). When used in <emphasis remap='B'>write</emphasis> or
+<emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall include a <emphasis remap='I'>gid</emphasis> extended header
+record for each file whose group ID is greater than 2097151
+(octal 7777777).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>gname</emphasis></term>
+  <listitem>
+<para>The group of the file(s), formatted as a group name in the group database.
+This record shall override the <emphasis remap='I'>gid</emphasis> and
+<emphasis remap='I'>gname</emphasis> fields in the following header block(s), and any <emphasis remap='I'>gid</emphasis>
+extended header record. When used in <emphasis remap='B'>read</emphasis>,
+<emphasis remap='B'>copy</emphasis>, or <emphasis remap='B'>list</emphasis> mode, <command>pax</command> shall translate the name
+from the UTF-8 encoding in the header record to the character
+set appropriate for the group database on the receiving system. If
+any of the UTF-8 characters cannot be translated, and if the
+<option>-o</option> <replaceable>invalid=</replaceable> UTF-8 option is not specified, the results
+are implementation-defined. When used in <emphasis remap='B'>write</emphasis> or
+<emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall include a <emphasis remap='B'>gname</emphasis> extended header
+record for each file whose group name cannot be
+represented entirely with the letters and digits of the portable character
+set.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>linkpath</emphasis></term>
+  <listitem>
+<para>The pathname of a link being created to another file, of any type,
+previously archived. This record shall override the
+<emphasis remap='I'>linkname</emphasis> field in the following <emphasis remap='B'>ustar</emphasis> header block(s).
+The following <emphasis remap='B'>ustar</emphasis> header block shall determine the
+type of link created. If <emphasis remap='I'>typeflag</emphasis> of the following header block
+is 1, it shall be a hard link. If <emphasis remap='I'>typeflag</emphasis> is 2, it
+shall be a symbolic link and the <emphasis remap='B'>linkpath</emphasis> value shall be the
+contents of the symbolic link. The <command>pax</command> utility shall
+translate the name of the link (contents of the symbolic link) from
+the UTF-8 encoding to the character set appropriate for the
+local file system. When used in <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> mode, <command>pax</command>
+shall include a <emphasis remap='B'>linkpath</emphasis> extended header record
+for each link whose pathname cannot be represented entirely with the
+members of the portable character set other than NUL.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>mtime</emphasis></term>
+  <listitem>
+<para>The file modification time of the following file(s), equivalent to
+the value of the <emphasis remap='I'>st_mtime</emphasis> member of the <emphasis remap='B'>stat</emphasis>
+structure for a file, as described in the <emphasis remap='I'>stat</emphasis>() function. This
+record shall override
+the <emphasis remap='I'>mtime</emphasis> field in the following header block(s). The modification
+time shall be restored if the process has the appropriate
+privilege required to do so. The format of the &lt;<emphasis remap='I'>value</emphasis>&gt; shall
+be as described in pax
+Extended Header File Times .</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>path</emphasis></term>
+  <listitem>
+<para>The pathname of the following file(s). This record shall override
+the <emphasis remap='I'>name</emphasis> and <emphasis remap='I'>prefix</emphasis> fields in the following
+header block(s). The <command>pax</command> utility shall translate the pathname
+of the file from the UTF-8 encoding to the character set
+appropriate for the local file system.</para> 
+
+<para>When used in <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall include
+a <emphasis remap='I'>path</emphasis> extended header record for each file whose
+pathname cannot be represented entirely with the members of the portable
+character set other than NUL.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>realtime.</emphasis><emphasis remap='I'>any</emphasis></term>
+  <listitem>
+<para>The keywords prefixed by "realtime." are reserved for future standardization.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>security.</emphasis><emphasis remap='I'>any</emphasis></term>
+  <listitem>
+<para>The keywords prefixed by "security." are reserved for future standardization.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>size</emphasis></term>
+  <listitem>
+<para>The size of the file in octets, expressed as a decimal number using
+digits from the ISO/IEC&nbsp;646:1991 standard. This record
+shall override the <emphasis remap='I'>size</emphasis> field in the following header block(s).
+When used in <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> mode, <command>pax</command>
+shall include a <emphasis remap='I'>size</emphasis> extended header record for each file with
+a size value greater than 8589934591 (octal
+77777777777).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>uid</emphasis></term>
+  <listitem>
+<para>The user ID of the file owner, expressed as a decimal number using
+digits from the ISO/IEC&nbsp;646:1991 standard. This record
+shall override the <emphasis remap='I'>uid</emphasis> field in the following header block(s).
+When used in <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> mode, <command>pax</command>
+shall include a <emphasis remap='I'>uid</emphasis> extended header record for each file whose
+owner ID is greater than 2097151 (octal 7777777).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>uname</emphasis></term>
+  <listitem>
+<para>The owner of the following file(s), formatted as a user name in the
+user database. This record shall override the <emphasis remap='I'>uid</emphasis>
+and <emphasis remap='I'>uname</emphasis> fields in the following header block(s), and any <emphasis remap='I'>uid</emphasis>
+extended header record. When used in <emphasis remap='B'>read</emphasis>,
+<emphasis remap='B'>copy</emphasis>, or <emphasis remap='B'>list</emphasis> mode, <command>pax</command> shall translate the name
+from the UTF-8 encoding in the header record to the character
+set appropriate for the user database on the receiving system. If
+any of the UTF-8 characters cannot be translated, and if the
+<option>-o</option> <replaceable>invalid=</replaceable> UTF-8 option is not specified, the results
+are implementation-defined. When used in <emphasis remap='B'>write</emphasis> or
+<emphasis remap='B'>copy</emphasis> mode, <command>pax</command> shall include a <emphasis remap='B'>uname</emphasis> extended header
+record for each file whose user name cannot be
+represented entirely with the letters and digits of the portable character
+set.</para>
+
+
+<para>If the &lt;<emphasis remap='I'>value</emphasis>&gt; field is zero length, it shall delete any header
+block field, previously entered extended header
+value, or global extended header value of the same name.</para>
+
+<para>If a keyword in an extended header record (or in a <option>-o</option> option-argument)
+overrides or deletes a corresponding field in the
+<emphasis remap='B'>ustar</emphasis> header block, <command>pax</command> shall ignore the contents of that
+header block field.</para>
+
+<para>Unlike the <emphasis remap='B'>ustar</emphasis> header block fields, NULs shall not delimit
+&lt;<emphasis remap='I'>value</emphasis>&gt;s; all characters within the
+&lt;<emphasis remap='I'>value</emphasis>&gt; field shall be considered data for the field. None of
+the length limitations of the <emphasis remap='B'>ustar</emphasis> header block
+fields in ustar Header Block shall apply to the extended header records.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='pax_extended_header_keyword_precedence'><title>pax Extended Header Keyword Precedence</title>
+
+<para>This section describes the precedence in which the various header
+records and fields and command line options are selected to
+apply to a file in the archive. When <command>pax</command> is used in <emphasis remap='B'>read</emphasis>
+or <emphasis remap='B'>list</emphasis> modes, it shall determine a file attribute in
+the following sequence:</para>
+<variablelist remap='IP'>
+  <varlistentry>
+  <term> 1.</term>
+  <listitem>
+<para>If <option>-o</option> <replaceable>delete=</replaceable> <emphasis remap='I'>keyword-prefix</emphasis> is used, the affected
+attributes shall be determined from step 7., if
+applicable, or ignored otherwise.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> 2.</term>
+  <listitem>
+<para>If <option>-o</option> <replaceable>keyword</replaceable>:= is used, the affected attributes shall
+be ignored.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> 3.</term>
+  <listitem>
+<para>If <option>-o</option> <replaceable>keyword</replaceable> <emphasis remap='B'>:=</emphasis> <emphasis remap='I'>value</emphasis> is used, the affected
+attribute shall be assigned the value.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> 4.</term>
+  <listitem>
+<para>If there is a <emphasis remap='I'>typeflag</emphasis> <emphasis remap='B'>x</emphasis> extended header record, the affected
+attribute shall be assigned the
+&lt;<emphasis remap='I'>value</emphasis>&gt;. When extended header records conflict, the last one
+given in the header shall take precedence.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> 5.</term>
+  <listitem>
+<para>If <option>-o</option> <replaceable>keyword</replaceable> <emphasis remap='B'>=</emphasis> <emphasis remap='I'>value</emphasis> is used, the affected
+attribute shall be assigned the value.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> 6.</term>
+  <listitem>
+<para>If there is a <emphasis remap='I'>typeflag</emphasis> <emphasis remap='B'>g</emphasis> global extended header record,
+the affected attribute shall be assigned the
+&lt;<emphasis remap='I'>value</emphasis>&gt;. When global extended header records conflict, the last
+one given in the global header shall take
+precedence.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> 7.</term>
+  <listitem>
+<para>Otherwise, the attribute shall be determined from the <emphasis remap='B'>ustar</emphasis>
+header block.</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='pax_extended_header_file_times'><title>pax Extended Header File Times</title>
+
+<para>The <command>pax</command> utility shall write an <emphasis remap='B'>mtime</emphasis> record for each file
+in <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> modes if the file's
+modification time cannot be represented exactly in the <emphasis remap='B'>ustar</emphasis>
+header logical record described in ustar Interchange Format . This
+can occur if the time is out of <emphasis remap='B'>ustar</emphasis> range, or if the file
+system
+of the underlying implementation supports non-integer time granularities
+and the time is not an integer. All of these time records
+shall be formatted as a decimal representation of the time in seconds
+since the Epoch. If a period ( <emphasis remap='B'>'.'</emphasis> ) decimal point
+character is present, the digits to the right of the point shall represent
+the units of a subsecond timing granularity, where the
+first digit is tenths of a second and each subsequent digit is a tenth
+of the previous digit. In <emphasis remap='B'>read</emphasis> or <emphasis remap='B'>copy</emphasis> mode,
+the <command>pax</command> utility shall truncate the time of a file to the greatest
+value that is not greater than the input header file time.
+In <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> mode, the <command>pax</command> utility shall output
+a time exactly if it can be represented exactly as a
+decimal number, and otherwise shall generate only enough digits so
+that the same time shall be recovered if the file is extracted
+on a system whose underlying implementation supports the same time
+granularity.</para>
+</refsect2>
+
+<refsect2 id='ustar_interchange_format'><title>ustar Interchange Format</title>
+
+<para>A <emphasis remap='B'>ustar</emphasis> archive tape or file shall contain a series of logical
+records. Each logical record shall be a fixed-size logical
+record of 512 octets (see below). Although this format may be thought
+of as being stored on 9-track industry-standard 12.7 mm (0.5
+in) magnetic tape, other types of transportable media are not excluded.
+Each file archived shall be represented by a header logical
+record that describes the file, followed by zero or more logical records
+that give the contents of the file. At the end of the
+archive file there shall be two 512-octet logical records filled with
+binary zeros, interpreted as an end-of-archive indicator.</para>
+
+<para>The logical records may be grouped for physical I/O operations, as
+described under the <option>-b</option> <replaceable>blocksize</replaceable> and <option>-x</option>
+<replaceable>ustar</replaceable> options. Each group of logical records may be written
+with a single operation equivalent to the <emphasis remap='I'>write</emphasis>() function.
+On magnetic tape, the result of this write shall be a single tape
+physical
+block. The last physical block shall always be the full size, so logical
+records after the two zero logical records may contain
+undefined data.</para>
+
+<para>The header logical record shall be structured as shown in the following
+table. All lengths and offsets are in decimal.</para>
+<!-- br -->
+
+  <blockquote remap='RS'>
+<para></para>
+
+<table pgwide='0' frame='none'>
+  <title>Table: ustar Header Block</title>
+  <tgroup cols='7' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <colspec colname='c6'/>
+    <colspec colname='c7'/>
+    <tbody>
+      <row>
+        <entry align='center'><emphasis remap='B'>Field Name</emphasis></entry>
+        <entry align='right'><emphasis remap='B'>Octet Offset</emphasis></entry>
+        <entry align='right' namest='c3' nameend='c4'><emphasis remap='B'>Length (in Octets)</emphasis></entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>name</emphasis></entry>
+        <entry align='right'>0</entry>
+        <entry align='right' namest='c3' nameend='c4'>100</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>mode</emphasis></entry>
+        <entry align='right'>100</entry>
+        <entry align='right' namest='c3' nameend='c4'>8</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>uid</emphasis></entry>
+        <entry align='right'>108</entry>
+        <entry align='right' namest='c3' nameend='c4'>8</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>gid</emphasis></entry>
+        <entry align='right'>116</entry>
+        <entry align='right' namest='c3' nameend='c4'>8</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>size</emphasis></entry>
+        <entry align='right'>124</entry>
+        <entry align='right' namest='c3' nameend='c4'>12</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>mtime</emphasis></entry>
+        <entry align='right'>136</entry>
+        <entry align='right' namest='c3' nameend='c4'>12</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>chksum</emphasis></entry>
+        <entry align='right'>148</entry>
+        <entry align='right' namest='c3' nameend='c4'>8</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>typeflag</emphasis></entry>
+        <entry align='right'>156</entry>
+        <entry align='right' namest='c3' nameend='c4'>1</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>linkname</emphasis></entry>
+        <entry align='right'>157</entry>
+        <entry align='right' namest='c3' nameend='c4'>100</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>magic</emphasis></entry>
+        <entry align='right'>257</entry>
+        <entry align='right' namest='c3' nameend='c4'>6</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>version</emphasis></entry>
+        <entry align='right'>263</entry>
+        <entry align='right' namest='c3' nameend='c4'>2</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>uname</emphasis></entry>
+        <entry align='right'>265</entry>
+        <entry align='right' namest='c3' nameend='c4'>32</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>gname</emphasis></entry>
+        <entry align='right'>297</entry>
+        <entry align='right' namest='c3' nameend='c4'>32</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>devmajor</emphasis></entry>
+        <entry align='right'>329</entry>
+        <entry align='right' namest='c3' nameend='c4'>8</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>devminor</emphasis></entry>
+        <entry align='right'>337</entry>
+        <entry align='right' namest='c3' nameend='c4'>8</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>prefix</emphasis></entry>
+        <entry align='right'>345</entry>
+        <entry align='right' namest='c3' nameend='c4'>155</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>
+
+
+  </blockquote> <!-- remap='RE' -->
+
+<para>All characters in the header logical record shall be represented in
+the coded character set of the ISO/IEC&nbsp;646:1991
+standard. For maximum portability between implementations, names should
+be selected from characters represented by the portable
+filename character set as octets with the most significant bit zero.
+If an implementation supports the use of characters outside of
+slash and the portable filename character set in names for files,
+users, and groups, one or more implementation-defined encodings
+of these characters shall be provided for interchange purposes.</para>
+
+<para>However, the <command>pax</command> utility shall never create filenames on the
+local system that cannot be accessed via the procedures
+described in IEEE&nbsp;Std&nbsp;1003.1-2001. If a filename is found on the
+medium that would create an invalid filename, it is
+implementation-defined whether the data from the file is stored on
+the file hierarchy and under what name it is stored. The
+<command>pax</command> utility may choose to ignore these files as long as it produces
+an error indicating that the file is being ignored.</para>
+
+<para>Each field within the header logical record is contiguous; that is,
+there is no padding used. Each character on the archive
+medium shall be stored contiguously.</para>
+
+<para>The fields <emphasis remap='I'>magic</emphasis>, <emphasis remap='I'>uname</emphasis>, and <emphasis remap='I'>gname</emphasis> are character
+strings each terminated by a NUL character. The fields
+<emphasis remap='I'>name</emphasis>, <emphasis remap='I'>linkname</emphasis>, and <emphasis remap='I'>prefix</emphasis> are NUL-terminated character
+strings except when all characters in the array
+contain non-NUL characters including the last character. The <emphasis remap='I'>version</emphasis>
+field is two octets containing the characters
+<emphasis remap='B'>"00"</emphasis> (zero-zero). The <emphasis remap='I'>typeflag</emphasis> contains a single character.
+All other fields are leading zero-filled octal numbers
+using digits from the ISO/IEC&nbsp;646:1991 standard IRV. Each numeric
+field is terminated by one or more &lt;space&gt; or NUL
+characters.</para>
+
+<para>The <emphasis remap='I'>name</emphasis> and the <emphasis remap='I'>prefix</emphasis> fields shall produce the pathname
+of the file. A new pathname shall be formed, if
+<emphasis remap='I'>prefix</emphasis> is not an empty string (its first character is not NUL),
+by concatenating <emphasis remap='I'>prefix</emphasis> (up to the first NUL
+character), a slash character, and <emphasis remap='I'>name</emphasis>; otherwise, <emphasis remap='I'>name</emphasis>
+is used alone. In either case, <emphasis remap='I'>name</emphasis> is terminated at
+the first NUL character. If <emphasis remap='I'>prefix</emphasis> begins with a NUL character,
+it shall be ignored. In this manner, pathnames of at most
+256 characters can be supported. If a pathname does not fit in the
+space provided, <command>pax</command> shall notify the user of the error,
+and shall not store any part of the file-header or data-on the medium.</para>
+
+<para>The <emphasis remap='I'>linkname</emphasis> field, described below, shall not use the <emphasis remap='I'>prefix</emphasis>
+to produce a pathname. As such, a <emphasis remap='I'>linkname</emphasis> is
+limited to 100 characters. If the name does not fit in the space provided,
+<command>pax</command> shall notify the user of the error, and shall
+not attempt to store the link on the medium.</para>
+
+<para>The <emphasis remap='I'>mode</emphasis> field provides 12 bits encoded in the ISO/IEC&nbsp;646:1991
+standard octal digit representation. The encoded
+bits shall represent the following values:</para>
+<!-- br -->
+
+  <blockquote remap='RS'>
+<para></para>
+
+<table pgwide='0' frame='none'>
+  <title>Table: ustar <emphasis remap='I'>mode</emphasis> Field</title>
+  <tgroup cols='7' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <colspec colname='c6'/>
+    <colspec colname='c7'/>
+    <tbody>
+      <row>
+        <entry align='center'><emphasis remap='B'>Bit Value</emphasis></entry>
+        <entry align='right'><emphasis remap='B'>IEEE&nbsp;Std&nbsp;1003.1-2001 Bit</emphasis></entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+<para><emphasis remap='B'>Description</emphasis>
+<!-- ad --></para></entry>
+      </row>
+      <row>
+        <entry align='center'>04000</entry>
+        <entry align='right'>S_ISUID</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Set UID on execution.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>02000</entry>
+        <entry align='right'>S_ISGID</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Set GID on execution.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>01000</entry>
+        <entry align='right'>&lt;reserved&gt;</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Reserved for future standardization.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>00400</entry>
+        <entry align='right'>S_IRUSR</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Read permission for file owner class.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>00200</entry>
+        <entry align='right'>S_IWUSR</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Write permission for file owner class.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>00100</entry>
+        <entry align='right'>S_IXUSR</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Execute/search permission for file owner class.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>00040</entry>
+        <entry align='right'>S_IRGRP</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Read permission for file group class.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>00020</entry>
+        <entry align='right'>S_IWGRP</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Write permission for file group class.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>00010</entry>
+        <entry align='right'>S_IXGRP</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Execute/search permission for file group class.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>00004</entry>
+        <entry align='right'>S_IROTH</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Read permission for file other class.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>00002</entry>
+        <entry align='right'>S_IWOTH</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Write permission for file other class.
+<!-- ad --></entry>
+      </row>
+      <row>
+        <entry align='center'>00001</entry>
+        <entry align='right'>S_IXOTH</entry>
+        <entry align='right' namest='c3' nameend='c4'><!-- na -->
+Execute/search permission for file other class.
+<!-- ad --></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>
+
+
+  </blockquote> <!-- remap='RE' -->
+
+<para>When appropriate privilege is required to set one of these mode bits,
+and the user restoring the files from the archive does not
+have the appropriate privilege, the mode bits for which the user does
+not have appropriate privilege shall be ignored. Some of the
+mode bits in the archive format are not mentioned elsewhere in this
+volume of IEEE&nbsp;Std&nbsp;1003.1-2001. If the implementation
+does not support those bits, they may be ignored.</para>
+
+<para>The <emphasis remap='I'>uid</emphasis> and <emphasis remap='I'>gid</emphasis> fields are the user and group ID of the
+owner and group of the file, respectively.</para>
+
+<para>The <emphasis remap='I'>size</emphasis> field is the size of the file in octets. If the <emphasis remap='I'>typeflag</emphasis>
+field is set to specify a file to be of type 1
+(a link) or 2 (a symbolic link), the <emphasis remap='I'>size</emphasis> field shall be specified
+as zero. If the <emphasis remap='I'>typeflag</emphasis> field is set to specify a
+file of type 5 (directory), the <emphasis remap='I'>size</emphasis> field shall be interpreted
+as described under the definition of that record type. No
+data logical records are stored for types 1, 2, or 5. If the <emphasis remap='I'>typeflag</emphasis>
+field is set to 3 (character special file), 4 (block
+special file), or 6 (FIFO), the meaning of the <emphasis remap='I'>size</emphasis> field is
+unspecified by this volume of IEEE&nbsp;Std&nbsp;1003.1-2001,
+and no data logical records shall be stored on the medium. Additionally,
+for type 6, the <emphasis remap='I'>size</emphasis> field shall be ignored when
+reading. If the <emphasis remap='I'>typeflag</emphasis> field is set to any other value, the
+number of logical records written following the header shall
+be ( <emphasis remap='I'>size</emphasis>+511)/512, ignoring any fraction in the result of the
+division.</para>
+
+<para>The <emphasis remap='I'>mtime</emphasis> field shall be the modification time of the file at
+the time it was archived. It is the ISO/IEC&nbsp;646:1991
+standard representation of the octal value of the modification time
+obtained from the <emphasis remap='I'>stat</emphasis>() function.</para>
+
+<para>The <emphasis remap='I'>chksum</emphasis> field shall be the ISO/IEC&nbsp;646:1991 standard IRV
+representation of the octal value of the simple sum of
+all octets in the header logical record. Each octet in the header
+shall be treated as an unsigned value. These values shall be
+added to an unsigned integer, initialized to zero, the precision of
+which is not less than 17 bits. When calculating the checksum,
+the <emphasis remap='I'>chksum</emphasis> field is treated as if it were all spaces.</para>
+
+<para>The <emphasis remap='I'>typeflag</emphasis> field specifies the type of file archived. If a
+particular implementation does not recognize the type, or
+the user does not have appropriate privilege to create that type,
+the file shall be extracted as if it were a regular file if the
+file type is defined to have a meaning for the <emphasis remap='I'>size</emphasis> field that
+could cause data logical records to be written on the medium
+(see the previous description for <emphasis remap='I'>size</emphasis>). If conversion to a
+regular file occurs, the <command>pax</command> utility shall produce an
+error indicating that the conversion took place. All of the <emphasis remap='I'>typeflag</emphasis>
+fields shall be coded in the ISO/IEC&nbsp;646:1991
+standard IRV:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><literal>0</literal></term>
+  <listitem>
+<para>Represents a regular file. For backwards-compatibility, a <emphasis remap='I'>typeflag</emphasis>
+value of binary zero ( <emphasis remap='B'>'&bsol;0'</emphasis> ) should be
+recognized as meaning a regular file when extracting files from the
+archive. Archives written with this version of the archive file
+format create regular files with a <emphasis remap='I'>typeflag</emphasis> value of the ISO/IEC&nbsp;646:1991
+standard IRV <emphasis remap='B'>'0'</emphasis> .</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><literal>1</literal></term>
+  <listitem>
+<para>Represents a file linked to another file, of any type, previously
+archived. Such files are identified by each file having the
+same device and file serial number. The linked-to name is specified
+in the <emphasis remap='I'>linkname</emphasis> field with a NUL-character terminator if
+it is less than 100 octets in length.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><literal>2</literal></term>
+  <listitem>
+<para>Represents a symbolic link. The contents of the symbolic link shall
+be stored in the <emphasis remap='I'>linkname</emphasis> field.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>3,4</emphasis></term>
+  <listitem>
+<para>Represent character special files and block special files respectively.
+In this case the <emphasis remap='I'>devmajor</emphasis> and <emphasis remap='I'>devminor</emphasis>
+fields shall contain information defining the device, the format of
+which is unspecified by this volume of
+IEEE&nbsp;Std&nbsp;1003.1-2001. Implementations may map the device specifications
+to their own local specification or may ignore
+the entry.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><literal>5</literal></term>
+  <listitem>
+<para>Specifies a directory or subdirectory. On systems where disk allocation
+is performed on a directory basis, the <emphasis remap='I'>size</emphasis>
+field shall contain the maximum number of octets (which may be rounded
+to the nearest disk block allocation unit) that the
+directory may hold. A <emphasis remap='I'>size</emphasis> field of zero indicates no such limiting.
+Systems that do not support limiting in this manner
+should ignore the <emphasis remap='I'>size</emphasis> field.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><literal>6</literal></term>
+  <listitem>
+<para>Specifies a FIFO special file. Note that the archiving of a FIFO file
+archives the existence of this file and not its
+contents.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><literal>7</literal></term>
+  <listitem>
+<para>Reserved to represent a file to which an implementation has associated
+some high-performance attribute. Implementations without
+such extensions should treat this file as a regular file (type 0).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>A-Z</emphasis></term>
+  <listitem>
+<para>The letters <emphasis remap='B'>'A'</emphasis> to <emphasis remap='B'>'Z'</emphasis> , inclusive, are reserved for custom
+implementations. All other values are reserved
+for future versions of IEEE&nbsp;Std&nbsp;1003.1-2001.</para>
+
+
+<para>Attempts to archive a socket using <emphasis remap='B'>ustar</emphasis> interchange format
+shall produce a diagnostic message. Handling of other file
+types is implementation-defined.</para>
+
+<para>The <emphasis remap='I'>magic</emphasis> field is the specification that this archive was output
+in this archive format. If this field contains
+<emphasis remap='B'>ustar</emphasis> (the five characters from the ISO/IEC&nbsp;646:1991 standard
+IRV shown followed by NUL), the <emphasis remap='I'>uname</emphasis> and
+<emphasis remap='I'>gname</emphasis> fields shall contain the ISO/IEC&nbsp;646:1991 standard IRV
+representation of the owner and group of the file,
+respectively (truncated to fit, if necessary). When the file is restored
+by a privileged, protection-preserving version of the
+utility, the user and group databases shall be scanned for these names.
+If found, the user and group IDs contained within these
+files shall be used rather than the values contained within the <emphasis remap='I'>uid</emphasis>
+and <emphasis remap='I'>gid</emphasis> fields.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='cpio_interchange_format'><title>cpio Interchange Format</title>
+
+<para>The octet-oriented <emphasis remap='B'>cpio</emphasis> archive format shall be a series of
+entries, each comprising a header that describes the file,
+the name of the file, and then the contents of the file.</para>
+
+<para>An archive may be recorded as a series of fixed-size blocks of octets.
+This blocking shall be used only to make physical I/O
+more efficient. The last group of blocks shall always be at the full
+size.</para>
+
+<para>For the octet-oriented <emphasis remap='B'>cpio</emphasis> archive format, the individual entry
+information shall be in the order indicated and
+described by the following table; see also the <emphasis remap='I'>&lt;cpio.h&gt;</emphasis> header.</para>
+<!-- br -->
+
+  <blockquote remap='RS'>
+<para></para>
+
+<table pgwide='0' frame='none'>
+  <title>Table: Octet-Oriented cpio Archive Entry</title>
+  <tgroup cols='7' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <colspec colname='c6'/>
+    <colspec colname='c7'/>
+    <tbody>
+      <row>
+        <entry align='center'><emphasis remap='B'>Header Field Name</emphasis></entry>
+        <entry align='right'><emphasis remap='B'>Length (in Octets)</emphasis></entry>
+        <entry align='right' namest='c3' nameend='c4'><emphasis remap='B'>Interpreted as</emphasis></entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_magic</emphasis></entry>
+        <entry align='right'>6</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_dev</emphasis></entry>
+        <entry align='right'>6</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_ino</emphasis></entry>
+        <entry align='right'>6</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_mode</emphasis></entry>
+        <entry align='right'>6</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_uid</emphasis></entry>
+        <entry align='right'>6</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_gid</emphasis></entry>
+        <entry align='right'>6</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_nlink</emphasis></entry>
+        <entry align='right'>6</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_rdev</emphasis></entry>
+        <entry align='right'>6</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_mtime</emphasis></entry>
+        <entry align='right'>11</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_namesize</emphasis></entry>
+        <entry align='right'>6</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_filesize</emphasis></entry>
+        <entry align='right'>11</entry>
+        <entry align='right' namest='c3' nameend='c4'>Octal number</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='B'>Filename Field Name</emphasis></entry>
+        <entry align='right'><emphasis remap='B'>Length</emphasis></entry>
+        <entry align='right' namest='c3' nameend='c4'><emphasis remap='B'>Interpreted as</emphasis></entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_name</emphasis></entry>
+        <entry align='right'><emphasis remap='I'>c_namesize</emphasis></entry>
+        <entry align='right' namest='c3' nameend='c4'>Pathname string</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='B'>File Data Field Name</emphasis></entry>
+        <entry align='right'><emphasis remap='B'>Length</emphasis></entry>
+        <entry align='right' namest='c3' nameend='c4'><emphasis remap='B'>Interpreted as</emphasis></entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='I'>c_filedata</emphasis></entry>
+        <entry align='right'><emphasis remap='I'>c_filesize</emphasis></entry>
+        <entry align='right' namest='c3' nameend='c4'>Data</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>
+
+
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+
+<refsect2 id='cpio_header'><title>cpio Header</title>
+
+<para>For each file in the archive, a header as defined previously shall
+be written. The information in the header fields is written
+as streams of the ISO/IEC&nbsp;646:1991 standard characters interpreted
+as octal numbers. The octal numbers shall be extended to
+the necessary length by appending the ISO/IEC&nbsp;646:1991 standard IRV
+zeros at the most-significant-digit end of the number; the
+result is written to the most-significant digit of the stream of octets
+first. The fields shall be interpreted as follows:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='I'>c_magic</emphasis></term>
+  <listitem>
+<para>Identify the archive as being a transportable archive by containing
+the identifying value <emphasis remap='B'>"070707"</emphasis> .</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>c_dev</emphasis>, <emphasis remap='I'>c_ino</emphasis></term>
+  <listitem>
+<para>Contains values that uniquely identify the file within the archive
+(that is, no files contain the same pair of <emphasis remap='I'>c_dev</emphasis> and
+<emphasis remap='I'>c_ino</emphasis> values unless they are links to the same file). The values
+shall be determined in an unspecified manner.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>c_mode</emphasis></term>
+  <listitem>
+<para>Contains the file type and access permissions as defined in the following
+table.</para>
+<!-- br -->
+
+  <blockquote remap='RS'>
+<para></para>
+
+<table pgwide='0' frame='none'>
+  <title>Table: Values for cpio c_mode Field</title>
+  <tgroup cols='7' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <colspec colname='c6'/>
+    <colspec colname='c7'/>
+    <tbody>
+      <row>
+        <entry align='center'><emphasis remap='B'>File Permissions Name</emphasis></entry>
+        <entry align='right'><emphasis remap='B'>Value</emphasis></entry>
+        <entry align='right' namest='c3' nameend='c4'><emphasis remap='B'>Indicates</emphasis></entry>
+      </row>
+      <row>
+        <entry align='center'>C_IRUSR</entry>
+        <entry align='right'>000400</entry>
+        <entry align='right' namest='c3' nameend='c4'>Read by owner</entry>
+      </row>
+      <row>
+        <entry align='center'>C_IWUSR</entry>
+        <entry align='right'>000200</entry>
+        <entry align='right' namest='c3' nameend='c4'>Write by owner</entry>
+      </row>
+      <row>
+        <entry align='center'>C_IXUSR</entry>
+        <entry align='right'>000100</entry>
+        <entry align='right' namest='c3' nameend='c4'>Execute by owner</entry>
+      </row>
+      <row>
+        <entry align='center'>C_IRGRP</entry>
+        <entry align='right'>000040</entry>
+        <entry align='right' namest='c3' nameend='c4'>Read by group</entry>
+      </row>
+      <row>
+        <entry align='center'>C_IWGRP</entry>
+        <entry align='right'>000020</entry>
+        <entry align='right' namest='c3' nameend='c4'>Write by group</entry>
+      </row>
+      <row>
+        <entry align='center'>C_IXGRP</entry>
+        <entry align='right'>000010</entry>
+        <entry align='right' namest='c3' nameend='c4'>Execute by group</entry>
+      </row>
+      <row>
+        <entry align='center'>C_IROTH</entry>
+        <entry align='right'>000004</entry>
+        <entry align='right' namest='c3' nameend='c4'>Read by others</entry>
+      </row>
+      <row>
+        <entry align='center'>C_IWOTH</entry>
+        <entry align='right'>000002</entry>
+        <entry align='right' namest='c3' nameend='c4'>Write by others</entry>
+      </row>
+      <row>
+        <entry align='center'>C_IXOTH</entry>
+        <entry align='right'>000001</entry>
+        <entry align='right' namest='c3' nameend='c4'>Execute by others</entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISUID</entry>
+        <entry align='right'>004000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Set <emphasis remap='I'>uid</emphasis></entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISGID</entry>
+        <entry align='right'>002000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Set <emphasis remap='I'>gid</emphasis></entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISVTX</entry>
+        <entry align='right'>001000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Reserved</entry>
+      </row>
+      <row>
+        <entry align='center'><emphasis remap='B'>File Type Name</emphasis></entry>
+        <entry align='right'><emphasis remap='B'>Value</emphasis></entry>
+        <entry align='right' namest='c3' nameend='c4'><emphasis remap='B'>Indicates</emphasis></entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISDIR</entry>
+        <entry align='right'>040000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Directory</entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISFIFO</entry>
+        <entry align='right'>010000</entry>
+        <entry align='right' namest='c3' nameend='c4'>FIFO</entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISREG</entry>
+        <entry align='right'>0100000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Regular file</entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISLNK</entry>
+        <entry align='right'>0120000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Symbolic link</entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISBLK</entry>
+        <entry align='right'>060000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Block special file</entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISCHR</entry>
+        <entry align='right'>020000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Character special file</entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISSOCK</entry>
+        <entry align='right'>0140000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Socket</entry>
+      </row>
+      <row>
+        <entry align='center'>C_ISCTG</entry>
+        <entry align='right'>0110000</entry>
+        <entry align='right' namest='c3' nameend='c4'>Reserved</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>
+
+
+    </blockquote> <!-- remap='RE' -->
+
+<para>Directories, FIFOs, symbolic links, and regular files shall be supported
+on a system conforming to this volume of
+IEEE&nbsp;Std&nbsp;1003.1-2001; additional values defined previously are reserved
+for compatibility with existing systems.
+Additional file types may be supported; however, such files should
+not be written to archives intended to be transported to other
+systems.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>c_uid</emphasis></term>
+  <listitem>
+<para>Contains the user ID of the owner.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>c_gid</emphasis></term>
+  <listitem>
+<para>Contains the group ID of the group.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>c_nlink</emphasis></term>
+  <listitem>
+<para>Contains the number of links referencing the file at the time the
+archive was created.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>c_rdev</emphasis></term>
+  <listitem>
+<para>Contains implementation-defined information for character or block
+special files.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>c_mtime</emphasis></term>
+  <listitem>
+<para>Contains the latest time of modification of the file at the time the
+archive was created.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>c_namesize</emphasis></term>
+  <listitem>
+<para>Contains the length of the pathname, including the terminating NUL
+character.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>c_filesize</emphasis></term>
+  <listitem>
+<para>Contains the length of the file in octets. This shall be the length
+of the data section following the header structure.</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='cpio_filename'><title>cpio Filename</title>
+
+<para>The <emphasis remap='I'>c_name</emphasis> field shall contain the pathname of the file. The
+length of this field in octets is the value of
+<emphasis remap='I'>c_namesize</emphasis>.</para>
+
+<para>If a filename is found on the medium that would create an invalid
+pathname, it is implementation-defined whether the data from
+the file is stored on the file hierarchy and under what name it is
+stored.</para>
+
+<para>All characters shall be represented in the ISO/IEC&nbsp;646:1991 standard
+IRV. For maximum portability between implementations,
+names should be selected from characters represented by the portable
+filename character set as octets with the most significant bit
+zero. If an implementation supports the use of characters outside
+the portable filename character set in names for files, users,
+and groups, one or more implementation-defined encodings of these
+characters shall be provided for interchange purposes. However,
+the <command>pax</command> utility shall never create filenames on the local system
+that cannot be accessed via the procedures described
+previously in this volume of IEEE&nbsp;Std&nbsp;1003.1-2001. If a filename
+is found on the medium that would create an invalid
+filename, it is implementation-defined whether the data from the file
+is stored on the local file system and under what name it is
+stored. The <command>pax</command> utility may choose to ignore these files as
+long as it produces an error indicating that the file is being
+ignored.</para>
+</refsect2>
+
+<refsect2 id='cpio_file_data'><title>cpio File Data</title>
+
+<para>Following <emphasis remap='I'>c_name</emphasis>, there shall be <emphasis remap='I'>c_filesize</emphasis> octets of
+data. Interpretation of such data occurs in a manner
+dependent on the file. If <emphasis remap='I'>c_filesize</emphasis> is zero, no data shall
+be contained in <emphasis remap='I'>c_filedata</emphasis>.</para>
+
+<para>When restoring from an archive:</para>
+<variablelist remap='IP'>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>If the user does not have the appropriate privilege to create a file
+of the specified type, <command>pax</command> shall ignore the entry
+and write an error message to standard error.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Only regular files have data to be restored. Presuming a regular file
+meets any selection criteria that might be imposed on the
+format-reading utility by the user, such data shall be restored.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>If a user does not have appropriate privilege to set a particular
+mode flag, the flag shall be ignored. Some of the mode flags
+in the archive format are not mentioned elsewhere in this volume of
+IEEE&nbsp;Std&nbsp;1003.1-2001. If the implementation does not
+support those flags, they may be ignored.</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='cpio_special_entries'><title>cpio Special Entries</title>
+
+<para>FIFO special files, directories, and the trailer shall be recorded
+with <emphasis remap='I'>c_filesize</emphasis> equal to zero. For other special
+files, <emphasis remap='I'>c_filesize</emphasis> is unspecified by this volume of IEEE&nbsp;Std&nbsp;1003.1-2001.
+The header for the next file entry in the
+archive shall be written directly after the last octet of the file
+entry preceding it. A header denoting the filename
+<emphasis remap='B'>TRAILER!!!</emphasis> shall indicate the end of the archive; the contents
+of octets in the last block of the archive following such a
+header are undefined.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='exit_status'><title>EXIT STATUS</title>
+<para>The following exit values shall be returned:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term> 0</term>
+  <listitem>
+<para>All files were processed successfully.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>&gt;0</term>
+  <listitem>
+<para>An error occurred.</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='consequences_of_errors'><title>CONSEQUENCES OF ERRORS</title>
+<para>If <command>pax</command> cannot create a file or a link when reading an archive
+or cannot find a file when writing an archive, or cannot
+preserve the user ID, group ID, or file mode when the <option>-p</option> option
+is specified, a diagnostic message shall be written to
+standard error and a non-zero exit status shall be returned, but processing
+shall continue. In the case where <command>pax</command> cannot
+create a link to a file, <command>pax</command> shall not, by default, create a
+second copy of the file.</para>
+
+<para>If the extraction of a file from an archive is prematurely terminated
+by a signal or error, <command>pax</command> may have only partially
+extracted the file or (if the <option>-n</option> option was not specified) may
+have extracted a file of the same name as that specified by
+the user, but which is not the file the user wanted. Additionally,
+the file modes of extracted directories may have additional bits
+from the S_IRWXU mask set as well as incorrect modification and access
+times.</para>
+
+<para><emphasis remap='I'>The following sections are informative.</emphasis></para>
+</refsect1>
+
+<refsect1 id='application_usage'><title>APPLICATION USAGE</title>
+<para>The <option>-p</option> (privileges) option was invented to reconcile differences
+between historical <emphasis remap='I'>tar</emphasis> and <emphasis remap='I'>cpio</emphasis>
+implementations. In particular, the two utilities use <option>-m</option> in
+diametrically opposed ways. The <option>-p</option> option also provides a
+consistent means of extending the ways in which future file attributes
+can be addressed, such as for enhanced security systems or
+high-performance files. Although it may seem complex, there are really
+two modes that are most commonly used:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><option>-p e</option></term>
+  <listitem>
+<para>``Preserve everything". This would be used by the historical superuser,
+someone with all the appropriate privileges, to
+preserve all aspects of the files as they are recorded in the archive.
+The <emphasis remap='B'>e</emphasis> flag is the sum of <emphasis remap='B'>o</emphasis> and <emphasis remap='B'>p</emphasis>, and
+other implementation-defined attributes.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-p p</option></term>
+  <listitem>
+<para>``Preserve" the file mode bits. This would be used by the user with
+regular privileges who wished to preserve aspects of the
+file other than the ownership. The file times are preserved by default,
+but two other flags are offered to disable these and use
+the time of extraction.</para>
+
+
+<para>The one pathname per line format of standard input precludes pathnames
+containing &lt;newline&gt;s. Although such pathnames
+violate the portable filename guidelines, they may exist and their
+presence may inhibit usage of <command>pax</command> within shell scripts.
+This problem is inherited from historical archive programs. The problem
+can be avoided by listing filename arguments on the command
+line instead of on standard input.</para>
+
+<para>It is almost certain that appropriate privileges are required for
+<command>pax</command> to accomplish parts of this volume of
+IEEE&nbsp;Std&nbsp;1003.1-2001. Specifically, creating files of type block
+special or character special, restoring file access
+times unless the files are owned by the user (the <option>-t</option> option),
+or preserving file owner, group, and mode (the <option>-p</option>
+option) all probably require appropriate privileges.</para>
+
+<para>In <emphasis remap='B'>read</emphasis> mode, implementations are permitted to overwrite files
+when the archive has multiple members with the same name.
+This may fail if permissions on the first version of the file do not
+permit it to be overwritten.</para>
+
+<para>The <emphasis remap='B'>cpio</emphasis> and <emphasis remap='B'>ustar</emphasis> formats can only support files up to
+8589934592 bytes (8 * 2^30) in size.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='examples'><title>EXAMPLES</title>
+<para>The following command:</para>
+
+<literallayout remap='.nf'>
+
+<userinput>pax -w -f /dev/rmt/1m .
+</userinput>
+</literallayout> <!-- .fi -->
+
+<para>copies the contents of the current directory to tape drive 1, medium
+density (assuming historical System V device naming
+procedures-the historical BSD device name would be <filename>/dev/rmt9</filename>).</para>
+
+<para>The following commands:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>mkdir</emphasis> <emphasis remap='I'>newdir</emphasis><userinput>pax -rw</userinput> <emphasis remap='I'>olddir newdir</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>copy the <emphasis remap='I'>olddir</emphasis> directory hierarchy to <emphasis remap='I'>newdir</emphasis>.</para>
+
+<literallayout remap='.nf'>
+
+<userinput>pax -r -s ',^//*usr//*,,' -f a.pax
+</userinput>
+</literallayout> <!-- .fi -->
+
+<para>reads the archive <emphasis remap='B'>a.pax</emphasis>, with all files rooted in <filename>/usr</filename>
+in the archive extracted relative to the current
+directory.</para>
+
+<para>Using the option:</para>
+
+<literallayout remap='.nf'>
+
+<option>-o listopt="%M %(atime)T %(size)D %(name)s"
+</option>
+</literallayout> <!-- .fi -->
+
+<para>overrides the default output description in Standard Output and instead
+writes:</para>
+
+<literallayout remap='.nf'>
+
+<option>-rw-rw--- Jan 12 15:53 1492 /usr/foo/bar
+</option>
+</literallayout> <!-- .fi -->
+
+<para>Using the options:</para>
+
+<literallayout remap='.nf'>
+
+<option>-o listopt='%L&bsol;t%(size)D&bsol;n%.7' &bsol;
+-o listopt='(name)s&bsol;n%(ctime)T&bsol;n%T'
+</option>
+</literallayout> <!-- .fi -->
+
+<para>overrides the default output description in Standard Output and instead
+writes:</para>
+
+<literallayout remap='.nf'>
+
+<filename>/usr/foo/bar -&gt; /tmp   1492
+/usr/fo
+Jan 12 1991
+Jan 31 15:53
+</filename>
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='rationale'><title>RATIONALE</title>
+<para>The <command>pax</command> utility was new for the ISO&nbsp;POSIX-2:1993 standard.
+It represents a peaceful compromise between advocates of
+the historical <emphasis remap='I'>tar</emphasis> and <emphasis remap='I'>cpio</emphasis> utilities.</para>
+
+<para>A fundamental difference between <emphasis remap='I'>cpio</emphasis> and <emphasis remap='I'>tar</emphasis> was in the
+way directories were treated. The <emphasis remap='I'>cpio</emphasis> utility did
+not treat directories differently from other files, and to select
+a directory and its contents required that each file in the
+hierarchy be explicitly specified. For <emphasis remap='I'>tar</emphasis>, a directory matched
+every file in the file hierarchy it rooted.</para>
+
+<para>The <command>pax</command> utility offers both interfaces; by default, directories
+map into the file hierarchy they root. The <option>-d</option>
+option causes <command>pax</command> to skip any file not explicitly referenced,
+as <emphasis remap='I'>cpio</emphasis> historically did. The <emphasis remap='I'>tar</emphasis> <emphasis remap='B'>-</emphasis>
+<emphasis remap='I'>style</emphasis> behavior was chosen as the default because it was believed
+that this was the more common usage and because <emphasis remap='I'>tar</emphasis>
+is the more commonly available interface, as it was historically provided
+on both System V and BSD implementations.</para>
+
+<para>The data interchange format specification in this volume of IEEE&nbsp;Std&nbsp;1003.1-2001
+requires that processes with
+"appropriate privileges" shall always restore the ownership and permissions
+of extracted files exactly as archived. If viewed
+from the historic equivalence between superuser and "appropriate privileges",
+there are two problems with this requirement.
+First, users running as superusers may unknowingly set dangerous permissions
+on extracted files. Second, it is needlessly limiting,
+in that superusers cannot extract files and own them as superuser
+unless the archive was created by the superuser. (It should be
+noted that restoration of ownerships and permissions for the superuser,
+by default, is historical practice in <emphasis remap='I'>cpio</emphasis>, but not
+in <emphasis remap='I'>tar</emphasis>.) In order to avoid these two problems, the <command>pax</command>
+specification has an additional "privilege" mechanism, the
+<option>-p</option> option. Only a <command>pax</command> invocation with the privileges needed,
+and which has the <option>-p</option> option set using the
+<emphasis remap='B'>e</emphasis> specification character, has the "appropriate privilege" to
+restore full ownership and permission information.</para>
+
+<para>Note also that this volume of IEEE&nbsp;Std&nbsp;1003.1-2001 requires that
+the file ownership and access permissions shall be
+set, on extraction, in the same fashion as the <emphasis remap='I'>creat</emphasis>() function
+when provided with the
+mode stored in the archive. This means that the file creation mask
+of the user is applied to the file permissions.</para>
+
+<para>Users should note that directories may be created by <command>pax</command> while
+extracting files with permissions that are different from
+those that existed at the time the archive was created. When extracting
+sensitive information into a directory hierarchy that no
+longer exists, users are encouraged to set their file creation mask
+appropriately to protect these files during extraction.</para>
+
+<para>The table of contents output is written to standard output to facilitate
+pipeline processing.</para>
+
+<para>An early proposal had hard links displaying for all pathnames. This
+was removed because it complicates the output of the case
+where <option>-v</option> is not specified and does not match historical <emphasis remap='I'>cpio</emphasis>
+usage. The hard-link information is available in the
+<option>-v</option> display.</para>
+
+<para>The description of the <option>-l</option> option allows implementations to make
+hard links to symbolic links.
+IEEE&nbsp;Std&nbsp;1003.1-2001 does not specify any way to create a hard link
+to a symbolic link, but many implementations provide
+this capability as an extension. If there are hard links to symbolic
+links when an archive is created, the implementation is
+required to archive the hard link in the archive (unless <option>-H</option>
+or <option>-L</option> is specified). When in <emphasis remap='B'>read</emphasis> mode and in
+<emphasis remap='B'>copy</emphasis> mode, implementations supporting hard links to symbolic
+links should use them when appropriate.</para>
+
+<para>The archive formats inherited from the POSIX.1-1990 standard have
+certain restrictions that have been brought along from
+historical usage. For example, there are restrictions on the length
+of pathnames stored in the archive. When <command>pax</command> is used in
+<emphasis remap='B'>copy</emphasis>( <option>-rw</option>) mode (copying directory hierarchies), the ability
+to use extensions from the <option>-x</option> <replaceable>pax</replaceable> format
+overcomes these restrictions.</para>
+
+<para>The default <emphasis remap='I'>blocksize</emphasis> value of 5120 bytes for <emphasis remap='I'>cpio</emphasis> was
+selected because it is one of the standard block-size
+values for <emphasis remap='I'>cpio</emphasis>, set when the <option>-B</option> option is specified.
+(The other default block-size value for <emphasis remap='I'>cpio</emphasis> is 512
+bytes, and this was considered to be too small.) The default block
+value of 10240 bytes for <emphasis remap='I'>tar</emphasis> was selected because that is
+the standard block-size value for BSD <emphasis remap='I'>tar</emphasis>. The maximum block
+size of 32256 bytes (2**15-512 bytes)
+is the largest multiple of 512 bytes that fits into a signed 16-bit
+tape controller transfer register. There are known limitations
+in some historical systems that would prevent larger blocks from being
+accepted. Historical values were chosen to improve
+compatibility with historical scripts using <emphasis remap='I'>dd</emphasis> or similar utilities
+to manipulate
+archives. Also, default block sizes for any file type other than character
+special file has been deleted from this volume of
+IEEE&nbsp;Std&nbsp;1003.1-2001 as unimportant and not likely to affect the
+structure of the resulting archive.</para>
+
+<para>Implementations are permitted to modify the block-size value based
+on the archive format or the device to which the archive is
+being written. This is to provide implementations with the opportunity
+to take advantage of special types of devices, and it should
+not be used without a great deal of consideration as it almost certainly
+decreases archive portability.</para>
+
+<para>The intended use of the <option>-n</option> option was to permit extraction of
+one or more files from the archive without processing the
+entire archive. This was viewed by the standard developers as offering
+significant performance advantages over historical
+implementations. The <option>-n</option> option in early proposals had three
+effects; the first was to cause special characters in patterns
+to not be treated specially. The second was to cause only the first
+file that matched a pattern to be extracted. The third was to
+cause <command>pax</command> to write a diagnostic message to standard error when
+no file was found matching a specified pattern. Only the
+second behavior is retained by this volume of IEEE&nbsp;Std&nbsp;1003.1-2001,
+for many reasons. First, it is in general not
+acceptable for a single option to have multiple effects. Second, the
+ability to make pattern matching characters act as normal
+characters is useful for parts of <command>pax</command> other than file extraction.
+Third, a finer degree of control over the special
+characters is useful because users may wish to normalize only a single
+special character in a single filename. Fourth, given a more
+general escape mechanism, the previous behavior of the <option>-n</option> option
+can be easily obtained using the <option>-s</option> option or a <emphasis remap='I'>sed</emphasis> script.
+Finally, writing a diagnostic message when a pattern specified by
+the user is
+unmatched by any file is useful behavior in all cases.</para>
+
+<para>In this version, the <option>-n</option> was removed from the <emphasis remap='B'>copy</emphasis> mode
+synopsis of <command>pax</command>; it is inapplicable because there
+are no pattern operands specified in this mode.</para>
+
+<para>There is another method than <command>pax</command> for copying subtrees in IEEE&nbsp;Std&nbsp;1003.1-2001
+described as part of the <emphasis remap='I'>cp</emphasis> utility. Both methods are historical
+practice: <emphasis remap='I'>cp</emphasis>
+provides a simpler, more intuitive interface, while <command>pax</command> offers
+a finer granularity of control. Each provides additional
+functionality to the other; in particular, <command>pax</command> maintains the
+hard-link structure of the hierarchy while <emphasis remap='I'>cp</emphasis> does not. It is
+the intention of the standard developers that the results be similar
+(using
+appropriate option combinations in both utilities). The results are
+not required to be identical; there seemed insufficient gain to
+applications to balance the difficulty of implementations having to
+guarantee that the results would be exactly identical.</para>
+
+<para>A single archive may span more than one file. It is suggested that
+implementations provide informative messages to the user on
+standard error whenever the archive file is changed.</para>
+
+<para>The <option>-d</option> option (do not create intermediate directories not listed
+in the archive) found in early proposals was originally
+provided as a complement to the historic <option>-d</option> option of <emphasis remap='I'>cpio</emphasis>.
+It has been deleted.</para>
+
+<para>The <option>-s</option> option in early proposals specified a subset of the substitution
+command from the <emphasis remap='I'>ed</emphasis> utility. As there was no reason for only
+a subset to be supported, the <option>-s</option> option is now
+compatible with the current <emphasis remap='I'>ed</emphasis> specification. Since the delimiter
+can be any non-null
+character, the following usage with single spaces is valid:</para>
+
+<literallayout remap='.nf'>
+
+<userinput>pax -s " foo bar " ...
+</userinput>
+</literallayout> <!-- .fi -->
+
+<para>The <option>-t</option> description is worded so as to note that this may cause
+the access time update caused by some other activity
+(which occurs while the file is being read) to be overwritten.</para>
+
+<para>The default behavior of <command>pax</command> with regard to file modification
+times is the same as historical implementations of
+<emphasis remap='I'>tar</emphasis>. It is not the historical behavior of <emphasis remap='I'>cpio</emphasis>.</para>
+
+<para>Because the <option>-i</option> option uses <filename>/dev/tty</filename>, utilities without
+a controlling terminal are not able to use this option.</para>
+
+<para>The <option>-y</option> option, found in early proposals, has been deleted because
+a line containing a single period for the <option>-i</option>
+option has equivalent functionality. The special lines for the <option>-i</option>
+option (a single period and the empty line) are historical
+practice in <emphasis remap='I'>cpio</emphasis>.</para>
+
+<para>In early drafts, a <option>-e</option> <replaceable>charmap</replaceable> option was included to increase
+portability of files between systems using different
+coded character sets. This option was omitted because it was apparent
+that consensus could not be formed for it. In this version,
+the use of UTF-8 should be an adequate substitute.</para>
+
+<para>The <option>-k</option> option was added to address international concerns about
+the dangers involved in the character set transformations
+of <option>-e</option> (if the target character set were different from the source,
+the filenames might be transformed into names matching
+existing files) and also was made more general to protect files transferred
+between file systems with different {NAME_MAX} values
+(truncating a filename on a smaller system might also inadvertently
+overwrite existing files). As stated, it prevents any
+overwriting, even if the target file is older than the source. This
+version adds more granularity of options to solve this problem
+by introducing the <option>-o</option> <replaceable>invalid=</replaceable> option-specifically the
+UTF-8 action. (Note that an existing file that is named with a
+UTF-8 encoding is still subject to overwriting in this case. The <option>-k</option>
+option closes that loophole.)</para>
+
+<para>Some of the file characteristics referenced in this volume of IEEE&nbsp;Std&nbsp;1003.1-2001
+might not be supported by some
+archive formats. For example, neither the <emphasis remap='B'>tar</emphasis> nor <emphasis remap='B'>cpio</emphasis>
+formats contain the file access time. For this reason, the
+<emphasis remap='B'>e</emphasis> specification character has been provided, intended to cause
+all file characteristics specified in the archive to be
+retained.</para>
+
+<para>It is required that extracted directories, by default, have their
+access and modification times and permissions set to the
+values specified in the archive. This has obvious problems in that
+the directories are almost certainly modified after being
+extracted and that directory permissions may not permit file creation.
+One possible solution is to create directories with the mode
+specified in the archive, as modified by the <emphasis remap='I'>umask</emphasis> of the user,
+with sufficient
+permissions to allow file creation. After all files have been extracted,
+<command>pax</command> would then reset the access and modification
+times and permissions as necessary.</para>
+
+<para>The list-mode formatting description borrows heavily from the one
+defined by the <emphasis remap='I'>printf</emphasis> utility. However, since there is no separate
+operand list to get conversion arguments,
+the format was extended to allow specifying the name of the conversion
+argument as part of the conversion specification.</para>
+
+<para>The <emphasis remap='B'>T</emphasis> conversion specifier allows time fields to be displayed
+in any of the date formats. Unlike the <emphasis remap='I'>ls</emphasis> utility, <command>pax</command>
+does not adjust the format when the date is less than six months in
+the
+past. This makes parsing the output more predictable.</para>
+
+<para>The <emphasis remap='B'>D</emphasis> conversion specifier handles the ability to display the
+major/minor or file size, as with <emphasis remap='I'>ls</emphasis>, by using <emphasis remap='B'>%-8(</emphasis><emphasis remap='I'>size</emphasis><emphasis remap='B'>)D</emphasis>.</para>
+
+<para>The <emphasis remap='B'>L</emphasis> conversion specifier handles the <emphasis remap='I'>ls</emphasis> display for
+symbolic links.</para>
+
+<para>Conversion specifiers were added to generate existing known types
+used for <emphasis remap='I'>ls</emphasis>.</para>
+
+<refsect2 id='pax_interchange_format2'><title>pax Interchange Format</title>
+
+<para>The new POSIX data interchange format was developed primarily to satisfy
+international concerns that the <emphasis remap='B'>ustar</emphasis> and
+<emphasis remap='B'>cpio</emphasis> formats did not provide for file, user, and group names
+encoded in characters outside a subset of the
+ISO/IEC&nbsp;646:1991 standard. The standard developers realized that
+this new POSIX data interchange format should be very
+extensible because there were other requirements they foresaw in the
+near future:</para>
+<variablelist remap='IP'>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Support international character encodings and locale information</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Support security information (ACLs, and so on)</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Support future file types, such as realtime or contiguous files</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Include data areas for implementation use</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Support systems with words larger than 32 bits and timers with subsecond
+granularity</para>
+
+
+<para>The following were not goals for this format because these are better
+handled by separate utilities or are inappropriate for a
+portable format:</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Encryption</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Compression</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Data translation between locales and codesets</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para><emphasis remap='I'>inode</emphasis> storage</para>
+
+
+<para>The format chosen to support the goals is an extension of the <emphasis remap='B'>ustar</emphasis>
+format. Of the two formats previously available, only
+the <emphasis remap='B'>ustar</emphasis> format was selected for extensions because:</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>It was easier to extend in an upwards-compatible way. It offered version
+flags and header block type fields with room for future
+standardization. The <emphasis remap='B'>cpio</emphasis> format, while possessing a more flexible
+file naming methodology, could not be extended without
+breaking some theoretical implementation or using a dummy filename
+that could be a legitimate filename.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>Industry experience since the original " <emphasis remap='I'>tar</emphasis> wars" fought in
+developing the ISO&nbsp;POSIX-1 standard has clearly been
+in favor of the <emphasis remap='B'>ustar</emphasis> format, which is generally the default
+output format selected for <command>pax</command> implementations on new
+systems.</para>
+
+
+<para>The new format was designed with one additional goal in mind: reasonable
+behavior when an older <emphasis remap='I'>tar</emphasis> or <command>pax</command> utility
+happened to read an archive. Since the POSIX.1-1990 standard mandated
+that a "format-reading utility" had to treat unrecognized
+<emphasis remap='I'>typeflag</emphasis> values as regular files, this allowed the format to
+include all the extended information in a pseudo-regular file
+that preceded each real file. An option is given that allows the archive
+creator to set up reasonable names for these files on the
+older systems. Also, the normative text suggests that reasonable file
+access values be used for this <emphasis remap='B'>ustar</emphasis> header block.
+Making these header files inaccessible for convenient reading and
+deleting would not be reasonable. File permissions of 600 or 700
+are suggested.</para>
+
+<para>The <emphasis remap='B'>ustar</emphasis> <emphasis remap='I'>typeflag</emphasis> field was used to accommodate the additional
+functionality of the new format rather than magic
+or version because the POSIX.1-1990 standard (and, by reference, the
+previous version of <command>pax</command>), mandated the behavior of the
+format-reading utility when it encountered an unknown <emphasis remap='I'>typeflag</emphasis>,
+but was silent about the other two fields.</para>
+
+<para>Early proposals of the first revision to IEEE&nbsp;Std&nbsp;1003.1-2001 contained
+a proposed archive format that was based on
+compatibility with the standard for tape files (ISO&nbsp;1001, similar
+to the format used historically on many mainframes and
+minicomputers). This format was overly complex and required considerable
+overhead in volume and header records. Furthermore, the
+standard developers felt that it would not be acceptable to the community
+of POSIX developers, so it was later changed to be a
+format more closely related to historical practice on POSIX systems.</para>
+
+<para>The prefix and name split of pathnames in <emphasis remap='B'>ustar</emphasis> was replaced
+by the single path extended header record for
+simplicity.</para>
+
+<para>The concept of a global extended header ( <emphasis remap='I'>typeflag</emphasis> <emphasis remap='B'>g</emphasis>)
+was controversial. If this were applied to an archive being
+recorded on magnetic tape, a few unreadable blocks at the beginning
+of the tape could be a serious problem; a utility attempting to
+extract as many files as possible from a damaged archive could lose
+a large percentage of file header information in this case.
+However, if the archive were on a reliable medium, such as a CD-ROM,
+the global extended header offers considerable potential size
+reductions by eliminating redundant information. Thus, the text warns
+against using the global method for unreliable media and
+provides a method for implanting global information in the extended
+header for each file, rather than in the <emphasis remap='I'>typeflag</emphasis>
+<emphasis remap='B'>g</emphasis> records.</para>
+
+<para>No facility for data translation or filtering on a per-file basis
+is included because the standard developers could not invent
+an interface that would allow this in an efficient manner. If a filter,
+such as encryption or compression, is to be applied to all
+the files, it is more efficient to apply the filter to the entire
+archive as a single file. The standard developers considered
+interfaces that would invoke a shell script for each file going into
+or out of the archive, but the system overhead in this
+approach was considered to be too high.</para>
+
+<para>One such approach would be to have <emphasis remap='B'>filter=</emphasis> records that give
+a pathname for an executable. When the program is invoked,
+the file and archive would be open for standard input/output and all
+the header fields would be available as environment variables
+or command-line arguments. The standard developers did discuss such
+schemes, but they were omitted from
+IEEE&nbsp;Std&nbsp;1003.1-2001 due to concerns about excessive overhead. Also,
+the program itself would need to be in the archive
+if it were to be used portably.</para>
+
+<para>There is currently no portable means of identifying the character
+set(s) used for a file in the file system. Therefore,
+<command>pax</command> has not been given a mechanism to generate charset records
+automatically. The only portable means of doing this is for
+the user to write the archive using the <option>-o</option> <replaceable>charset=</replaceable> <emphasis remap='I'>string</emphasis>
+command line option. This assumes that all of the
+files in the archive use the same encoding. The "implementation-defined"
+text is included to allow for a system that can identify
+the encodings used for each of its files.</para>
+
+<para>The table of standards that accompanies the charset record description
+is acknowledged to be very limited. Only a limited number
+of character set standards is reasonable for maximal interchange.
+Any character set is, of course, possible by prior agreement. It
+was suggested that EBCDIC be listed, but it was omitted because it
+is not defined by a formal standard. Formal standards, and then
+only those with reasonably large followings, can be included here,
+simply as a matter of practicality. The &lt;<emphasis remap='I'>value</emphasis>&gt;s
+represent names of officially registered character sets in the format
+required by the ISO&nbsp;2375:1985 standard.</para>
+
+<para>The normal comma or &lt;blank&gt;-separated list rules are not followed
+in the case of keyword options to allow ease of argument
+parsing for <emphasis remap='I'>getopts</emphasis>.</para>
+
+<para>Further information on character encodings is in pax Archive Character
+Set Encoding/Decoding
+.</para>
+
+<para>The standard developers have reserved keyword name space for vendor
+extensions. It is suggested that the format to be used
+is:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='I'>VENDOR.keyword</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>where <emphasis remap='I'>VENDOR</emphasis> is the name of the vendor or organization in all
+uppercase letters. It is further suggested that the keyword
+following the period be named differently than any of the standard
+keywords so that it could be used for future standardization, if
+appropriate, by omitting the <emphasis remap='I'>VENDOR</emphasis> prefix.</para>
+
+<para>The &lt;<emphasis remap='I'>length</emphasis>&gt; field in the extended header record was included
+to make it simpler to step through the records, even
+if a record contains an unknown format (to a particular <command>pax</command>)
+with complex interactions of special characters. It also
+provides a minor integrity checkpoint within the records to aid a
+program attempting to recover files from a damaged archive.</para>
+
+<para>There are no extended header versions of the <emphasis remap='I'>devmajor</emphasis> and <emphasis remap='I'>devminor</emphasis>
+fields because the unspecified format
+<emphasis remap='B'>ustar</emphasis> header field should be sufficient. If they are not, vendor-specific
+extended keywords (such as <emphasis remap='I'>VENDOR.devmajor</emphasis>)
+should be used.</para>
+
+<para>Device and <emphasis remap='I'>i</emphasis>-number labeling of files was not adopted from <emphasis remap='I'>cpio</emphasis>;
+files are interchanged strictly on a symbolic
+name basis, as in <emphasis remap='B'>ustar</emphasis>.</para>
+
+<para>Just as with the <emphasis remap='B'>ustar</emphasis> format descriptions, the new format makes
+no special arrangements for multi-volume archives. Each
+of the <command>pax</command> archive types is assumed to be inside a single POSIX
+file and splitting that file over multiple volumes
+(diskettes, tape cartridges, and so on), processing their labels,
+and mounting each in the proper sequence are considered to be
+implementation details that cannot be described portably.</para>
+
+<para>The <command>pax</command> format is intended for interchange, not only for backup
+on a single (family of) systems. It is not as densely
+packed as might be possible for backup:</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>It contains information as coded characters that could be coded in
+binary.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>It identifies extended records with name fields that could be omitted
+in favor of a fixed-field layout.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>It translates names into a portable character set and identifies locale-related
+information, both of which are probably
+unnecessary for backup.</para>
+
+
+<para>The requirements on restoring from an archive are slightly different
+from the historical wording, allowing for non-monolithic
+privilege to bring forward as much as possible. In particular, attributes
+such as "high performance file" might be broadly but
+not universally granted while set-user-ID or <emphasis remap='I'>chown</emphasis>() might be
+much more restricted.
+There is no implication in IEEE&nbsp;Std&nbsp;1003.1-2001 that the security
+information be honored after it is restored to the file
+hierarchy, in spite of what might be improperly inferred by the silence
+on that topic. That is a topic for another standard.</para>
+
+<para>Links are recorded in the fashion described here because a link can
+be to any file type. It is desirable in general to be able
+to restore part of an archive selectively and restore all of those
+files completely. If the data is not associated with each link,
+it is not possible to do this. However, the data associated with a
+file can be large, and when selective restoration is not needed,
+this can be a significant burden. The archive is structured so that
+files that have no associated data can always be restored by
+the name of any link name of any link, and the user may choose whether
+data is recorded with each instance of a file that contains
+data. The format permits mixing of both types of links in a single
+archive; this can be done for special needs, and <command>pax</command> is
+expected to interpret such archives on input properly, despite the
+fact that there is no <command>pax</command> option that would force this
+mixed case on output. (When <option>-o</option> <replaceable>linkdata</replaceable> is used, the output
+must contain the duplicate data, but the implementation
+is free to include it or omit it when <option>-o</option> <replaceable>linkdata</replaceable> is not
+used.)</para>
+
+<para>The time values are included as extended header records for those
+implementations needing more than the eleven octal digits
+allowed by the <emphasis remap='B'>ustar</emphasis> format. Portable file timestamps cannot
+be negative. If <command>pax</command> encounters a file with a negative
+timestamp in <emphasis remap='B'>copy</emphasis> or <emphasis remap='B'>write</emphasis> mode, it can reject the file,
+substitute a non-negative timestamp, or generate a
+non-portable timestamp with a leading <emphasis remap='B'>'-'</emphasis> . Even though some
+implementations can support finer file-time granularities
+than seconds, the normative text requires support only for seconds
+since the Epoch because the ISO&nbsp;POSIX-1 standard states
+them that way. The <emphasis remap='B'>ustar</emphasis> format includes only <emphasis remap='I'>mtime</emphasis>; the
+new format adds <emphasis remap='I'>atime</emphasis> and <emphasis remap='I'>ctime</emphasis> for symmetry.
+The <emphasis remap='I'>atime</emphasis> access time restored to the file system will be affected
+by the <option>-p</option> <replaceable>a</replaceable> and <option>-p</option> <replaceable>e</replaceable> options.
+The <emphasis remap='I'>ctime</emphasis> creation time (actually <emphasis remap='I'>inode</emphasis> modification time)
+is described with "appropriate privilege" so that it can
+be ignored when writing to the file system. POSIX does not provide
+a portable means to change file creation time. Nothing is
+intended to prevent a non-portable implementation of <command>pax</command> from
+restoring the value.</para>
+
+<para>The <emphasis remap='I'>gid</emphasis>, <emphasis remap='I'>size</emphasis>, and <emphasis remap='I'>uid</emphasis> extended header records were
+included to allow expansion beyond the sizes specified
+in the regular <emphasis remap='I'>tar</emphasis> header. New file system architectures are
+emerging that will exhaust the 12-digit size field. There are
+probably not many systems requiring more than 8 digits for user and
+group IDs, but the extended header values were included for
+completeness, allowing overrides for all of the decimal values in
+the <emphasis remap='I'>tar</emphasis> header.</para>
+
+<para>The standard developers intended to describe the effective results
+of <command>pax</command> with regard to file ownerships and permissions;
+implementations are not restricted in timing or sequencing the restoration
+of such, provided the results are as specified.</para>
+
+<para>Much of the text describing the extended headers refers to use in
+" <emphasis remap='B'>write</emphasis> or <emphasis remap='B'>copy</emphasis> modes". The <emphasis remap='B'>copy</emphasis> mode
+references are due to the normative text: "The effect of the copy
+shall be as if the copied files were written to an archive file
+and then subsequently extracted ...". There is certainly no way to
+test whether <command>pax</command> is actually generating the extended
+headers in <emphasis remap='B'>copy</emphasis> mode, but the effects must be as if it had.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='pax_archive_character_set_encodingdecodi'><title>pax Archive Character Set Encoding/Decoding</title>
+
+<para>There is a need to exchange archives of files between systems of different
+native codesets. Filenames, group names, and user
+names must be preserved to the fullest extent possible when an archive
+is read on the receiving platform. Translation of the
+contents of files is not within the scope of the <command>pax</command> utility.</para>
+
+<para>There will also be the need to represent characters that are not available
+on the receiving platform. These unsupported
+characters cannot be automatically folded to the local set of characters
+due to the chance of collisions. This could result in
+overwriting previous extracted files from the archive or pre-existing
+files on the system.</para>
+
+<para>For these reasons, the codeset used to represent characters within
+the extended header records of the <command>pax</command> archive must be
+sufficiently rich to handle all commonly used character sets. The
+fields requiring translation include, at a minimum, filenames,
+user names, group names, and link pathnames. Implementations may wish
+to have localized extended keywords that use non-portable
+characters.</para>
+
+<para>The standard developers considered the following options:</para>
+<variablelist remap='IP'>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>The archive creator specifies the well-defined name of the source
+codeset. The receiver must then recognize the codeset name and
+perform the appropriate translations to the destination codeset.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>The archive creator includes within the archive the character mapping
+table for the source codeset used to encode extended
+header records. The receiver must then read the character mapping
+table and perform the appropriate translations to the destination
+codeset.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> *</term>
+  <listitem>
+<para>The archive creator translates the extended header records in the
+source codeset into a canonical form. The receiver must then
+perform the appropriate translations to the destination codeset.</para>
+
+
+<para>The approach that incorporates the name of the source codeset poses
+the problem of codeset name registration, and makes the
+archive useless to <command>pax</command> archive decoders that do not recognize
+that codeset.</para>
+
+<para>Because parts of an archive may be corrupted, the standard developers
+felt that including the character map of the source
+codeset was too fragile. The loss of this one key component could
+result in making the entire archive useless. (The difference
+between this and the global extended header decision was that the
+latter has a workaround-duplicating extended header records on
+unreliable media-but this would be too burdensome for large character
+set maps.)</para>
+
+<para>Both of the above approaches also put an undue burden on the <command>pax</command>
+archive receiver to handle the cross-product of all
+source and destination codesets.</para>
+
+<para>To simplify the translation from the source codeset to the canonical
+form and from the canonical form to the destination
+codeset, the standard developers decided that the internal representation
+should be a stateless encoding. A stateless encoding is
+one where each codepoint has the same meaning, without regard to the
+decoder being in a specific state. An example of a stateful
+encoding would be the Japanese Shift-JIS; an example of a stateless
+encoding would be the ISO/IEC&nbsp;646:1991 standard
+(equivalent to 7-bit ASCII).</para>
+
+<para>For these reasons, the standard developers decided to adopt a canonical
+format for the representation of file information
+strings. The obvious, well-endorsed candidate is the ISO/IEC&nbsp;10646-1:2000
+standard (based in part on Unicode), which can be
+used to represent the characters of virtually all standardized character
+sets. The standard developers initially agreed upon using
+UCS2 (16-bit Unicode) as the internal representation. This repertoire
+of characters provides a sufficiently rich set to represent
+all commonly-used codesets.</para>
+
+<para>However, the standard developers found that the 16-bit Unicode representation
+had some problems. It forced the issue of
+standardizing byte ordering. The 2-byte length of each character made
+the extended header records twice as long for the case of
+strings coded entirely from historical 7-bit ASCII. For these reasons,
+the standard developers chose the UTF-8 defined in the
+ISO/IEC&nbsp;10646-1:2000 standard. This multi-byte representation encodes
+UCS2 or UCS4 characters reliably and deterministically,
+eliminating the need for a canonical byte ordering. In addition, NUL
+octets and other characters possibly confusing to POSIX file
+systems do not appear, except to represent themselves. It was realized
+that certain national codesets take up more space after the
+encoding, due to their placement within the UCS range; it was felt
+that the usefulness of the encoding of the names outweighs the
+disadvantage of size increase for file, user, and group names.</para>
+
+<para>The encoding of UTF-8 is as follows:</para>
+
+<literallayout remap='.nf'>
+
+<emphasis remap='B'>UCS4 Hex Encoding  UTF-8 Binary Encoding
+
+
+00000000-0000007F  0xxxxxxx
+00000080-000007FF  110xxxxx 10xxxxxx
+00000800-0000FFFF  1110xxxx 10xxxxxx 10xxxxxx
+00010000-001FFFFF  11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+00200000-03FFFFFF  111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
+04000000-7FFFFFFF  1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
+</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>where each <emphasis remap='B'>'x'</emphasis> represents a bit value from the character being
+translated.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='ustar_interchange_format2'><title>ustar Interchange Format</title>
+
+<para>The description of the <emphasis remap='B'>ustar</emphasis> format reflects numerous enhancements
+over pre-1988 versions of the historical <emphasis remap='I'>tar</emphasis>
+utility. The goal of these changes was not only to provide the functional
+enhancements desired, but also to retain compatibility
+between new and old versions. This compatibility has been retained.
+Archives written using the old archive format are compatible
+with the new format.</para>
+
+<para>Implementors should be aware that the previous file format did not
+include a mechanism to archive directory type files. For this
+reason, the convention of using a filename ending with slash was adopted
+to specify a directory on the archive.</para>
+
+<para>The total size of the <emphasis remap='I'>name</emphasis> and <emphasis remap='I'>prefix</emphasis> fields have been
+set to meet the minimum requirements for {PATH_MAX}. If a
+pathname will fit within the <emphasis remap='I'>name</emphasis> field, it is recommended that
+the pathname be stored there without the use of the
+<emphasis remap='I'>prefix</emphasis> field. Although the name field is known to be too small
+to contain {PATH_MAX} characters, the value was not changed
+in this version of the archive file format to retain backwards-compatibility,
+and instead the prefix was introduced. Also, because
+of the earlier version of the format, there is no way to remove the
+restriction on the <emphasis remap='I'>linkname</emphasis> field being limited in size
+to just that of the <emphasis remap='I'>name</emphasis> field.</para>
+
+<para>The <emphasis remap='I'>size</emphasis> field is required to be meaningful in all implementation
+extensions, although it could be zero. This is required
+so that the data blocks can always be properly counted.</para>
+
+<para>It is suggested that if device special files need to be represented
+that cannot be represented in the standard format, that one
+of the extension types ( <emphasis remap='B'>A</emphasis>- <emphasis remap='B'>Z</emphasis>) be used, and that the additional
+information for the special file be represented as
+data and be reflected in the <emphasis remap='I'>size</emphasis> field.</para>
+
+<para>Attempting to restore a special file type, where it is converted to
+ordinary data and conflicts with an existing filename, need
+not be specially detected by the utility. If run as an ordinary user,
+<command>pax</command> should not be able to overwrite the entries in,
+for example, <filename>/dev</filename> in any case (whether the file is converted
+to another type or not). If run as a privileged user, it should
+be able to do so, and it would be considered a bug if it did not.
+The same is true of ordinary data files and similarly named
+special files; it is impossible to anticipate the needs of the user
+(who could really intend to overwrite the file), so the
+behavior should be predictable (and thus regular) and rely on the
+protection system as required.</para>
+
+<para>The value 7 in the <emphasis remap='I'>typeflag</emphasis> field is intended to define how
+contiguous files can be stored in a <emphasis remap='B'>ustar</emphasis> archive.
+IEEE&nbsp;Std&nbsp;1003.1-2001 does not require the contiguous file extension,
+but does define a standard way of archiving such
+files so that all conforming systems can interpret these file types
+in a meaningful and consistent manner. On a system that does
+not support extended file types, the <command>pax</command> utility should do the
+best it can with the file and go on to the next.</para>
+
+<para>The file protection modes are those conventionally used by the <emphasis remap='I'>ls</emphasis>
+utility. This is
+extended beyond the usage in the ISO&nbsp;POSIX-2 standard to support
+the "shared text" or "sticky" bit. It is intended that
+the conformance document should not document anything beyond the existence
+of and support of such a mode. Further extensions are
+expected to these bits, particularly with overloading the set-user-ID
+and set-group-ID flags.</para>
+</refsect2>
+
+<refsect2 id='cpio_interchange_format2'><title>cpio Interchange Format</title>
+
+<para>The reference to appropriate privilege in the <emphasis remap='B'>cpio</emphasis> format refers
+to an error on standard output; the <emphasis remap='B'>ustar</emphasis> format
+does not make comparable statements.</para>
+
+<para>The model for this format was the historical System V <emphasis remap='I'>cpio</emphasis> <option>-c</option>
+data interchange format. This model documents the
+portable version of the <emphasis remap='B'>cpio</emphasis> format and not the binary version.
+It has the flexibility to transfer data of any type
+described within IEEE&nbsp;Std&nbsp;1003.1-2001, yet is extensible to transfer
+data types specific to extensions beyond
+IEEE&nbsp;Std&nbsp;1003.1-2001 (for example, contiguous files). Because it
+describes existing practice, there is no question of
+maintaining upwards-compatibility.</para>
+</refsect2>
+
+<refsect2 id='cpio_header2'><title>cpio Header</title>
+
+<para>There has been some concern that the size of the <emphasis remap='I'>c_ino</emphasis> field
+of the header is too small to handle those systems that have
+very large <emphasis remap='I'>inode</emphasis> numbers. However, the <emphasis remap='I'>c_ino</emphasis> field in
+the header is used strictly as a hard-link resolution mechanism
+for archives. It is not necessarily the same value as the <emphasis remap='I'>inode</emphasis>
+number of the file in the location from which that file is
+extracted.</para>
+
+<para>The name <emphasis remap='I'>c_magic</emphasis> is based on historical usage.</para>
+</refsect2>
+
+<refsect2 id='cpio_filename2'><title>cpio Filename</title>
+
+<para>For most historical implementations of the <emphasis remap='I'>cpio</emphasis> utility, {PATH_MAX}
+octets can be used to describe the pathname without
+the addition of any other header fields (the NUL character would be
+included in this count). {PATH_MAX} is the minimum value for
+pathname size, documented as 256 bytes. However, an implementation
+may use <emphasis remap='I'>c_namesize</emphasis> to determine the exact length of the
+pathname. With the current description of the <emphasis remap='I'>&lt;cpio.h&gt;</emphasis> header,
+this pathname
+size can be as large as a number that is described in six octal digits.</para>
+
+<para>Two values are documented under the <emphasis remap='I'>c_mode</emphasis> field values to provide
+for extensibility for known file types:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='B'>0110 000</emphasis></term>
+  <listitem>
+<para>Reserved for contiguous files. The implementation may treat the rest
+of the information for this archive like a regular file.
+If this file type is undefined, the implementation may create the
+file as a regular file.</para>
+
+
+<para>This provides for extensibility of the <emphasis remap='B'>cpio</emphasis> format while allowing
+for the ability to read old archives. Files of an
+unknown type may be read as "regular files" on some implementations.
+On a system that does not support extended file types, the
+<command>pax</command> utility should do the best it can with the file and go on
+to the next.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+
+<refsect1 id='future_directions'><title>FUTURE DIRECTIONS</title>
+<para>None.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<para><emphasis remap='I'>Shell Command Language</emphasis> , <emphasis remap='I'>cp</emphasis> , <emphasis remap='I'>ed</emphasis> , <emphasis remap='I'>getopts</emphasis>
+, <emphasis remap='I'>ls</emphasis> , <emphasis remap='I'>printf</emphasis>() , the Base Definitions volume of IEEE&nbsp;Std&nbsp;1003.1-2001,
+<emphasis remap='I'>&lt;cpio.h&gt;</emphasis>, the System Interfaces volume of IEEE&nbsp;Std&nbsp;1003.1-2001,
+<emphasis remap='I'>chown</emphasis>(), <emphasis remap='I'>creat</emphasis>(), <emphasis remap='I'>mkdir</emphasis>(), <emphasis remap='I'>mkfifo</emphasis>(), <emphasis remap='I'>stat</emphasis>(),
+<emphasis remap='I'>utime</emphasis>(), <emphasis remap='I'>write</emphasis>()</para>
+</refsect1>
+
+<refsect1 id='copyright'><title>COPYRIGHT</title>
+<para>Portions of this text are reprinted and reproduced in electronic form
+from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+-- Portable Operating System Interface (POSIX), The Open Group Base
+Specifications Issue 6, Copyright (C) 2001-2003 by the Institute of
+Electrical and Electronics Engineers, Inc and The Open Group. In the
+event of any discrepancy between this version and the original IEEE and
+The Open Group Standard, the original IEEE and The Open Group Standard
+is the referee document. The original Standard can be obtained online at
+<ulink url='http://www.opengroup.org/unix/online.html'>http://www.opengroup.org/unix/online.html</ulink> .</para>
+</refsect1>
+</refentry>
+

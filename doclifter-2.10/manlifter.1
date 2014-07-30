@@ -1,0 +1,203 @@
+'\" t
+.\"     Title: manlifter
+.\"    Author: [see the "Author" section]
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 03/18/2013
+.\"    Manual: Documentation Tools
+.\"    Source: manlifter
+.\"  Language: English
+.\"
+.TH "MANLIFTER" "1" "03/18/2013" "manlifter" "Documentation Tools"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+manlifter \- mass\-conversion script and test harness for doclifter
+.SH "SYNOPSIS"
+.HP \w'\fBmanlifter\fR\ 'u
+\fBmanlifter\fR [\-d\ \fIoption\fR] [\-e] [\-f\ \fIlistfile\fR] [\-h] [\-I\ \fImandir\fR] [\-m] [\-M] [\-o\ \fIoutdir\fR] [\-p\ \fIpatch\-directory\fR] [\-P] [\-q] [\-v] [\-s\ \fIsection\fR] [\-X\ \fIexclude\fR] \fIname\fR...
+.HP \w'\fBmanlifter\fR\ 'u
+\fBmanlifter\fR [\-S]
+.SH "DESCRIPTION"
+.PP
+\fBmanlifter\fR
+is a script that sequences
+\fBdoclifter\fR(1)
+to convert an entire manual\-page tree to XML\-Docbook, optionally also generating HTML from the XML\&. Another use is as a torture\-test tool for doclifter; it logs errors to standard output and collects timings\&.
+.PP
+Called without any file arguments, manlifter tries to convert all eligible man pages installed on the system, placing the resulting xml files under
+xmlman
+in the current directory\&. Each successfully translated page foo\&.N is copied to manN/foo\&.xml beneath the output directory, regardless of what source directory it came from\&.
+.PP
+A maniual page is considered ineligibile for batch conversion if it contains text indicating it has been generated from DocBook masters of from Doxygen\&.
+.PP
+For each source file examined, if the destination file exists and is newer than the source, the conversion is skipped; thus, incremental runs of
+\fBmanlifter\fR
+do the least work needed to keep the target XML tree up to date\&. Likewise, in \-h mode derived HTML files are only made when necessary\&.
+.PP
+Stub pages that are just
+\fB\&.so\fR
+redirections are translated to corresponding symlinks of XML files (and, with \-h, HTML files)\&.
+.PP
+\fBmanlifter\fR
+may also be called with a single file argument, which is interpreted as the stem name of a potential manual page\&.
+\fBmanlifter\fR
+then searches all selected manual sections for a matching page and attempts to convert it\&. In this case, a copy of the man page and the converted version are dropped immediately beheath the output directory, with the names foobar\&.man and foobar\&.man\&.xml, respectively\&. This mode is normally only of interest only to
+\fBdoclifter\fR
+developers for debugging that program\&.
+.PP
+In either of the above cases,
+\fBmanlifter\fR
+will uncompress the file if it has a
+\&.gz,
+\&.bz2
+or
+\&.Z
+suffix on the name\&.
+.PP
+Options are as follows:
+.PP
+\-d
+.RS 4
+Pass the string argument to each doclifter call as options\&. Each space\-separated token in the string becomes a separate argument in the call\&.
+.RE
+.PP
+\-e
+.RS 4
+Run in log\-filter mode (mainly of interest to
+\fBdoclifter\fR
+developers)\&. In this mode,
+\fBmanlifter\fR
+reads a test log from standard input and filters it in a a way dependent on the \-f and \-q options\&. If neither of these is given, messages from successful runs are stripped out and only errors passed through to standard output\&.
+.RE
+.PP
+\-f
+.RS 4
+Normally, run doclifter on the files named by each line in the argument file\&. In error\-filter mode the argument is instead interpreted as a filtering regular expression\&.
+.RE
+.PP
+\-h
+.RS 4
+Also generate HTML translations into the output directory\&. DocBook citerefentry markup is transformed to hyperlinks in the directory, and a contents listing is generated to
+index\&.html\&.
+.RE
+.PP
+\-I
+.RS 4
+Specify the root of the manual\-page tree\&. By default this is
+/usr/share/man\&.
+.RE
+.PP
+\-m
+.RS 4
+Make a patch to correct the last page fetched\&. It is copied, an editor is called on the copy (using the environment variable
+\fB$EDITOR\fR), and then
+\fBdiff\fR(1)
+is called to drop the patch in the prepatch directory\&. Fails with an error if such a patch is already present\&.
+.RE
+.PP
+\-M
+.RS 4
+Lift the specified files, then do the equivalent of the \-m option\&.
+.RE
+.PP
+\-o
+.RS 4
+Set the output directory into which XML\-DocBook translations will be dropped\&. By default this is
+xmlman
+under the current directory in batch mode, or the current directory otherwise\&.
+.RE
+.PP
+\-p
+.RS 4
+Interpret the argument as the name of a patch directory (the default name is
+prepatch
+under the current directory)\&. Each file named
+foo\&.N\&.patch
+is interpreted as a patch to be applied to the manual page foo(N) before doclifter translates it\&.
+.RE
+.PP
+\-P
+.RS 4
+Enable profiling using the Python hotshot module; this is only useful for tuning
+doclifter
+so it runs faster\&. Raw data is written to
+manlifter\&.prof, and a digested report is appended to the log on standard output\&. Warning: the raw data files can become huge, and the postprocessing for report generation can take as long as the actual processing (or longer!)\&.
+.RE
+.PP
+\-q
+.RS 4
+Normally, pass the \-q (quiet) option to each doclifter call\&. In error\-filter mode, return a list of files on which translation failed\&.
+.RE
+.PP
+\-v
+.RS 4
+Pass the \-v (verbose) option to each doclifter call\&. This option can be repeated to increase the verbosity level\&.
+.RE
+.PP
+\-s
+.RS 4
+Specify a section to scan\&. Use this with an argument; it should not be necessary when doing a conversion of the entire tree\&.
+.RE
+.PP
+\-S
+.RS 4
+Compile error statistics from a
+\fBmanlifter\fR
+logfile presented on standard input\&. This option will be of interest mainly to
+\fBdoclifter\fR
+developers\&.
+.RE
+.PP
+\-X
+.RS 4
+In batch mode exclude pages listed in the argument file\&. Meant to be used for pages that are known good and take an extremely long time to lift, in order to cut down the time for a test run\&. (Most pages lift in less than a half second, but a few can take 15 minutes or longer\&.)
+.RE
+.PP
+\fBmanlifter\fR
+emits a logfile to standard output\&. The file begins with a timestamp line and a blank line, and ends with a line giving run time and various interesting statistics\&. Between these are stanzas, separated by blank lines, one for each file on which
+\fBdoclifter\fR
+was run\&.
+.PP
+The first line of each stanza beguns with "! ", followed by the pathname of the source manual pager, followed by "=" and the return status of doclifter run on that file\&. Following that is a space and
+\fBdoclifter\fR\*(Aqs runtime in seconds\&.
+.PP
+This initial line may be followed by information messages and the error output of the doclifter run\&.
+.PP
+\fBmanlifter\fR
+must find a copy of
+\fBdoclifter\fR
+in either the current directory or one of the command directories in your
+\fBPATH\fR
+in order to run\&.
+.SH "BUGS"
+.PP
+HTML generation is painfully slow\&. Unfortunately, there is little we can do to remedy this, because XSLT engines are painfully slow\&.
+.SH "SEE ALSO"
+.PP
+
+\fBdoclifter\fR(1),
+\fBxmlto\fR(1)
+.SH "AUTHOR"
+.PP
+Eric S\&. Raymond
+esr@thyrsus\&.com
+.PP
+There is a project web page at
+\m[blue]\fBhttp://www\&.catb\&.org/~esr/doclifter/\fR\m[]\&.

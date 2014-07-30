@@ -1,0 +1,5023 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-10-06 18:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: conky.1.xml:8(date) conky.1.xml:12(refmiscinfo)
+msgid "2012-05-03"
+msgstr ""
+
+#: conky.1.xml:10(refentrytitle) conky.1.xml:15(refname) conky.1.xml:21(command)
+msgid "conky"
+msgstr ""
+
+#: conky.1.xml:11(manvolnum)
+msgid "1"
+msgstr ""
+
+#: conky.1.xml:16(refpurpose)
+msgid "A system monitor for X originally based on the torsmo code, but more kickass. It just keeps on given'er. Yeah."
+msgstr ""
+
+#: conky.1.xml:21(replaceable)
+msgid "kx"
+msgstr ""
+
+#: conky.1.xml:22(replaceable)
+msgid "options"
+msgstr ""
+
+#: conky.1.xml:27(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: conky.1.xml:28(para)
+msgid "Conky is a system monitor for X originally based on torsmo. Since its inception, Conky has changed significantly from its predecessor, while maintaining simplicity and configurability. Conky can display just about anything, either on your root desktop or in its own window. Not only does Conky have many built-in objects, it can also display just about any piece of information by using scripts and other external programs."
+msgstr ""
+
+#: conky.1.xml:37(para)
+msgid "Conky has more than 250 built in objects, including support for a plethora of OS stats (uname, uptime, CPU usage, mem usage, disk usage, \"top\" like process stats, and network monitoring, just to name a few), built in IMAP and POP3 support, built in support for many popular music players (MPD, XMMS2, BMPx, Audacious), and much much more. Conky can display this info either as text, or using simple progress bars and graph widgets, with different fonts and colours."
+msgstr ""
+
+#: conky.1.xml:47(para)
+msgid "We are always looking for help, whether its reporting bugs, writing patches, or writing docs. Please use the facilities at SourceForge to make bug reports, feature requests, and submit patches, or stop by #conky on irc.freenode.net if you have questions or want to contribute."
+msgstr ""
+
+#: conky.1.xml:54(para)
+msgid "Thanks for your interest in Conky."
+msgstr ""
+
+#: conky.1.xml:57(title)
+msgid "COMPILING"
+msgstr ""
+
+#: conky.1.xml:58(para)
+msgid "For users compiling from source on a binary distro, make sure you have the X development libraries installed (Unless you provide configure with \"--disable-x11\"). This should be a package along the lines of \"libx11-dev\" or \"xorg-x11-dev\" for X11 libs, and similar \"-dev\" format for the other libs required (depending on your configure options). You should be able to see which extra packages you need to install by reading errors that you get from './configure'. You can enable/disable stuff by giving options to configure, but be careful with disabling. For example: with --disable-math you won't get errors but logarithmic graphs will be normal graphs and gauges will miss their line."
+msgstr ""
+
+#: conky.1.xml:72(para)
+msgid "Conky has (for some time) been available in the repositories of most popular distributions. Here are some installation instructions for a few:"
+msgstr ""
+
+#: conky.1.xml:76(para)
+msgid "Gentoo users -- Conky is in Gentoo's Portage... simply use \"emerge app-admin/conky\" for installation."
+msgstr ""
+
+#: conky.1.xml:80(para)
+msgid "Debian, etc. users -- Conky should be in your repositories, and can be installed by doing \"aptitude install conky\"."
+msgstr ""
+
+#: conky.1.xml:84(para)
+msgid "Example to compile and run Conky with all optional components (note that some configure options may differ for your system):"
+msgstr ""
+
+#: conky.1.xml:89(emphasis)
+msgid "sh autogen.sh"
+msgstr ""
+
+#: conky.1.xml:89(emphasis)
+msgid "# Only required if building from the git repo"
+msgstr ""
+
+#: conky.1.xml:90(emphasis)
+msgid "./configure"
+msgstr ""
+
+#: conky.1.xml:90(option)
+msgid "--prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --datadir=/usr/share --sysconfdir=/etc --localstatedir=/var/lib --disable-own-window --enable-audacious[=yes|no|legacy] --enable-bmpx --disable-hddtemp --disable-mpd --enable-xmms2 --disable-portmon --disable-network --enable-debug --disable-x11 --disable-double-buffer --disable-xdamage --disable-xft"
+msgstr ""
+
+#: conky.1.xml:91(emphasis)
+msgid "make"
+msgstr ""
+
+#: conky.1.xml:92(emphasis)
+msgid "make install"
+msgstr ""
+
+#: conky.1.xml:92(emphasis)
+msgid "# Optional"
+msgstr ""
+
+#: conky.1.xml:93(emphasis)
+msgid "src/conky"
+msgstr ""
+
+#: conky.1.xml:96(para)
+msgid "Conky has been tested to be compatible with C99 C, however it has not been tested with anything other than gcc, and is not guaranteed to work with other compilers."
+msgstr ""
+
+#: conky.1.xml:106(title)
+msgid "YOU SHOULD KNOW"
+msgstr ""
+
+#: conky.1.xml:107(para)
+msgid "Conky is generally very good on resources. That said, the more you try to make Conky do, the more resources it is going to consume."
+msgstr ""
+
+#: conky.1.xml:111(para)
+msgid "An easy way to force Conky to reload your ~/.conkyrc: \"killall -SIGUSR1 conky\". Saves you the trouble of having to kill and then restart. You can now also do the same with SIGHUP."
+msgstr ""
+
+#: conky.1.xml:117(title)
+msgid "OPTIONS"
+msgstr ""
+
+#: conky.1.xml:118(para)
+msgid "Command line options override configurations defined in configuration file."
+msgstr ""
+
+#: conky.1.xml:122(option)
+msgid "-v | -V | --version"
+msgstr ""
+
+#: conky.1.xml:124(para)
+msgid "Prints version and exits"
+msgstr ""
+
+#: conky.1.xml:129(option)
+msgid "-q | --quiet"
+msgstr ""
+
+#: conky.1.xml:131(para)
+msgid "Run Conky in 'quiet mode' (ie. no output)"
+msgstr ""
+
+#: conky.1.xml:136(option)
+msgid "-D | --debug"
+msgstr ""
+
+#: conky.1.xml:138(para)
+msgid "Increase debugging output, ie. -DD for more debugging"
+msgstr ""
+
+#: conky.1.xml:144(option)
+msgid "-a | --alignment="
+msgstr ""
+
+#: conky.1.xml:144(emphasis)
+msgid "ALIGNMENT"
+msgstr ""
+
+#: conky.1.xml:146(para)
+msgid "Text alignment on screen, {top,bottom,middle}_{left,right,middle} or none. Can also be abbreviated with first chars of position, ie. tr for top_right."
+msgstr ""
+
+#: conky.1.xml:154(option)
+msgid "-b | --double-buffer"
+msgstr ""
+
+#: conky.1.xml:156(para)
+msgid "Use double buffering (eliminates \"flicker\")"
+msgstr ""
+
+#: conky.1.xml:161(option)
+msgid "-c | --config="
+msgstr ""
+
+#: conky.1.xml:161(emphasis)
+msgid "FILE"
+msgstr ""
+
+#: conky.1.xml:163(para)
+msgid "Config file to load instead of $HOME/.conkyrc"
+msgstr ""
+
+#: conky.1.xml:168(option)
+msgid "-C | --print-config"
+msgstr ""
+
+#: conky.1.xml:170(para)
+msgid "Print builtin default config to stdout. See also the section EXAMPLES for more information."
+msgstr ""
+
+#: conky.1.xml:176(option)
+msgid "-d | --daemonize"
+msgstr ""
+
+#: conky.1.xml:178(para)
+msgid "Daemonize Conky, aka fork to background"
+msgstr ""
+
+#: conky.1.xml:183(option)
+msgid "-f | --font="
+msgstr ""
+
+#: conky.1.xml:183(emphasis)
+msgid "FONT"
+msgstr ""
+
+#: conky.1.xml:185(para)
+msgid "Font to use"
+msgstr ""
+
+#: conky.1.xml:190(option)
+msgid "-h | --help"
+msgstr ""
+
+#: conky.1.xml:192(para)
+msgid "Prints command line help and exits"
+msgstr ""
+
+#: conky.1.xml:197(option)
+msgid "-o | --own-window"
+msgstr ""
+
+#: conky.1.xml:199(para)
+msgid "Create own window to draw"
+msgstr ""
+
+#: conky.1.xml:204(option)
+msgid "-t | --text="
+msgstr ""
+
+#: conky.1.xml:204(emphasis) conky.1.xml:274(emphasis)
+msgid "TEXT"
+msgstr ""
+
+#: conky.1.xml:206(para)
+msgid "Text to render, remember single quotes, like -t ' $uptime '"
+msgstr ""
+
+#: conky.1.xml:212(option)
+msgid "-p | --pause="
+msgstr ""
+
+#: conky.1.xml:212(emphasis) conky.1.xml:219(emphasis)
+msgid "SECONDS"
+msgstr ""
+
+#: conky.1.xml:214(para)
+msgid "Time to pause before actually starting Conky"
+msgstr ""
+
+#: conky.1.xml:219(option)
+msgid "-u | --interval="
+msgstr ""
+
+#: conky.1.xml:221(para) conky.1.xml:989(para)
+msgid "Update interval"
+msgstr ""
+
+#: conky.1.xml:226(option)
+msgid "-w | --window-id="
+msgstr ""
+
+#: conky.1.xml:226(emphasis)
+msgid "WIN_ID"
+msgstr ""
+
+#: conky.1.xml:228(para)
+msgid "Window id to draw"
+msgstr ""
+
+#: conky.1.xml:233(option)
+msgid "-X | --display="
+msgstr ""
+
+#: conky.1.xml:233(emphasis)
+msgid "DISPLAY"
+msgstr ""
+
+#: conky.1.xml:235(para)
+msgid "X11 display to use"
+msgstr ""
+
+#: conky.1.xml:240(option)
+msgid "-x"
+msgstr ""
+
+#: conky.1.xml:240(replaceable)
+msgid "X_COORDINATE"
+msgstr ""
+
+#: conky.1.xml:242(para)
+msgid "X position"
+msgstr ""
+
+#: conky.1.xml:247(option)
+msgid "-y"
+msgstr ""
+
+#: conky.1.xml:247(replaceable)
+msgid "Y_COORDINATE"
+msgstr ""
+
+#: conky.1.xml:249(para)
+msgid "Y position"
+msgstr ""
+
+#: conky.1.xml:254(option)
+msgid "-i"
+msgstr ""
+
+#: conky.1.xml:254(replaceable)
+msgid "COUNT"
+msgstr ""
+
+#: conky.1.xml:256(para)
+msgid "Number of times to update Conky (and quit)"
+msgstr ""
+
+#: conky.1.xml:263(title)
+msgid "CONFIGURATION SETTINGS"
+msgstr ""
+
+#: conky.1.xml:264(para)
+msgid "Default configuration file location is $HOME/.conkyrc or ${sysconfdir}/conky/conky.conf. On most systems, sysconfdir is /etc, and you can find the sample config file there (/etc/conky/conky.conf)."
+msgstr ""
+
+#: conky.1.xml:269(para)
+msgid "You might want to copy it to $HOME/.conkyrc and then start modifying it. Other configs can be found at <ulink url=\"http://conky.sf.net/\">http://conky.sf.net/</ulink>"
+msgstr ""
+
+#: conky.1.xml:276(para)
+msgid "After this begins text to be formatted on screen. Backslash (&bsol;) escapes newlines in the text section. This can be useful for cleaning up config files where conky is used to pipe input to dzen2."
+msgstr ""
+
+#: conky.1.xml:284(emphasis)
+msgid "alignment"
+msgstr ""
+
+#: conky.1.xml:286(para)
+msgid "Aligned position on screen, may be top_left, top_right, top_middle, bottom_left, bottom_right, bottom_middle, middle_left, middle_middle, middle_right, or none (also can be abreviated as tl, tr, tm, bl, br, bm, ml, mm, mr). See also gap_x and gap_y."
+msgstr ""
+
+#: conky.1.xml:295(emphasis)
+msgid "append_file"
+msgstr ""
+
+#: conky.1.xml:297(para)
+msgid "Append the file given as argument."
+msgstr ""
+
+#: conky.1.xml:302(emphasis)
+msgid "background"
+msgstr ""
+
+#: conky.1.xml:304(para)
+msgid "Boolean value, if true, Conky will be forked to background when started."
+msgstr ""
+
+#. br
+#: conky.1.xml:310(emphasis) conky.1.xml:4419(emphasis)
+msgid "border_inner_margin"
+msgstr ""
+
+#: conky.1.xml:312(para)
+msgid "Inner border margin in pixels (the margin between the border and text)."
+msgstr ""
+
+#. br
+#: conky.1.xml:318(emphasis) conky.1.xml:4423(emphasis)
+msgid "border_outer_margin"
+msgstr ""
+
+#: conky.1.xml:320(para)
+msgid "Outer border margin in pixels (the margin between the border and the edge of the window)."
+msgstr ""
+
+#. br
+#: conky.1.xml:326(emphasis) conky.1.xml:4427(emphasis)
+msgid "border_width"
+msgstr ""
+
+#: conky.1.xml:328(para)
+msgid "Border width in pixels."
+msgstr ""
+
+#: conky.1.xml:333(emphasis) conky.1.xml:1487(emphasis)
+msgid "colorN"
+msgstr ""
+
+#: conky.1.xml:335(para)
+msgid "Predefine a color for use inside TEXT segments. Substitute N by a digit between 0 and 9, inclusively. When specifying the color value in hex, omit the leading hash (#)."
+msgstr ""
+
+#: conky.1.xml:343(emphasis)
+msgid "cpu_avg_samples"
+msgstr ""
+
+#: conky.1.xml:345(para)
+msgid "The number of samples to average for CPU monitoring."
+msgstr ""
+
+#: conky.1.xml:351(emphasis)
+msgid "default_bar_size"
+msgstr ""
+
+#: conky.1.xml:353(para)
+msgid "Specify a default width and height for bars. Example: 'default_bar_size 0 6'. This is particularly useful for execbar and execibar as they do not take size arguments."
+msgstr ""
+
+#: conky.1.xml:361(emphasis)
+msgid "default_color"
+msgstr ""
+
+#: conky.1.xml:363(para)
+msgid "Default color and border color"
+msgstr ""
+
+#: conky.1.xml:368(emphasis)
+msgid "default_gauge_size"
+msgstr ""
+
+#: conky.1.xml:370(para)
+msgid "Specify a default width and height for gauges. Example: 'default_gauge_size 25 25'. This is particularly useful for execgauge and execigauge as they do not take size arguments"
+msgstr ""
+
+#: conky.1.xml:378(emphasis)
+msgid "default_graph_size"
+msgstr ""
+
+#: conky.1.xml:380(para)
+msgid "Specify a default width and height for graphs. Example: 'default_graph_size 0 25'. This is particularly useful for execgraph and execigraph as they do not take size arguments"
+msgstr ""
+
+#: conky.1.xml:388(emphasis)
+msgid "default_outline_color"
+msgstr ""
+
+#: conky.1.xml:390(para)
+msgid "Default outline color"
+msgstr ""
+
+#: conky.1.xml:395(emphasis)
+msgid "default_shade_color"
+msgstr ""
+
+#: conky.1.xml:397(para)
+msgid "Default shading color and border's shading color"
+msgstr ""
+
+#: conky.1.xml:402(emphasis)
+msgid "disable_auto_reload"
+msgstr ""
+
+#: conky.1.xml:404(para)
+msgid "Enable to disable the inotify-based auto config reload feature."
+msgstr ""
+
+#: conky.1.xml:409(emphasis)
+msgid "diskio_avg_samples"
+msgstr ""
+
+#: conky.1.xml:411(para)
+msgid "The number of samples to average for disk I/O monitoring."
+msgstr ""
+
+#. br
+#: conky.1.xml:417(emphasis) conky.1.xml:4408(emphasis)
+msgid "display"
+msgstr ""
+
+#: conky.1.xml:419(para)
+msgid "Specify an X display to connect to."
+msgstr ""
+
+#: conky.1.xml:424(emphasis)
+msgid "double_buffer"
+msgstr ""
+
+#: conky.1.xml:426(para)
+msgid "Use the Xdbe extension? (eliminates flicker) It is highly recommended to use own window with this one so double buffer won't be so big."
+msgstr ""
+
+#: conky.1.xml:433(emphasis)
+msgid "draw_borders"
+msgstr ""
+
+#: conky.1.xml:435(para)
+msgid "Draw borders around text?"
+msgstr ""
+
+#: conky.1.xml:440(emphasis)
+msgid "draw_graph_borders"
+msgstr ""
+
+#: conky.1.xml:442(para)
+msgid "Draw borders around graphs?"
+msgstr ""
+
+#: conky.1.xml:447(emphasis)
+msgid "draw_outline"
+msgstr ""
+
+#: conky.1.xml:449(para)
+msgid "Draw outlines?"
+msgstr ""
+
+#: conky.1.xml:454(emphasis)
+msgid "draw_shades"
+msgstr ""
+
+#: conky.1.xml:456(para)
+msgid "Draw shades?"
+msgstr ""
+
+#: conky.1.xml:461(emphasis)
+msgid "extra_newline"
+msgstr ""
+
+#: conky.1.xml:463(para)
+msgid "Put an extra newline at the end when writing to stdout, useful for writing to awesome's wiboxes."
+msgstr ""
+
+#: conky.1.xml:469(emphasis) conky.1.xml:1896(emphasis)
+msgid "font"
+msgstr ""
+
+#: conky.1.xml:471(para)
+msgid "Font name in X, xfontsel can be used to get a nice font"
+msgstr ""
+
+#: conky.1.xml:477(emphasis)
+msgid "format_human_readable"
+msgstr ""
+
+#: conky.1.xml:479(para)
+msgid "If enabled, values which are in bytes will be printed in human readable format (i.e., KiB, MiB, etc). If disabled, the number of bytes is printed instead."
+msgstr ""
+
+#: conky.1.xml:486(emphasis)
+msgid "gap_x"
+msgstr ""
+
+#: conky.1.xml:488(para)
+msgid "Gap, in pixels, between right or left border of screen, same as passing -x at command line, e.g. gap_x 10. For other position related stuff, see 'alignment'."
+msgstr ""
+
+#: conky.1.xml:495(emphasis)
+msgid "gap_y"
+msgstr ""
+
+#: conky.1.xml:497(para)
+msgid "Gap, in pixels, between top or bottom border of screen, same as passing -y at command line, e.g. gap_y 10. For other position related stuff, see 'alignment'."
+msgstr ""
+
+#: conky.1.xml:504(emphasis)
+msgid "hddtemp_host"
+msgstr ""
+
+#: conky.1.xml:506(para)
+msgid "Hostname to connect to for hddtemp objects. Defaults to \"127.0.0.1\"."
+msgstr ""
+
+#: conky.1.xml:512(emphasis)
+msgid "hddtemp_port"
+msgstr ""
+
+#: conky.1.xml:514(para)
+msgid "Port to use for hddtemp connections. Defaults to 7634."
+msgstr ""
+
+#: conky.1.xml:520(emphasis)
+msgid "if_up_strictness"
+msgstr ""
+
+#: conky.1.xml:522(para)
+msgid "How strict should if_up be when testing an interface for being up? The value is one of up, link or address, to check for the interface being solely up, being up and having link or being up, having link and an assigned IP address."
+msgstr ""
+
+#: conky.1.xml:531(emphasis)
+msgid "imap"
+msgstr ""
+
+#: conky.1.xml:533(para)
+msgid "Default global IMAP server. Arguments are: \"host user pass [-i interval (in seconds)] [-f 'folder'] [-p port] [-e 'command'] [-r retries]\". Default port is 143, default folder is 'INBOX', default interval is 5 minutes, and default number of retries before giving up is 5. If the password is supplied as '*', you will be prompted to enter the password when Conky starts."
+msgstr ""
+
+#: conky.1.xml:544(emphasis)
+msgid "imlib_cache_flush_interval"
+msgstr ""
+
+#: conky.1.xml:546(para)
+msgid "Interval (in seconds) to flush Imlib2 cache."
+msgstr ""
+
+#: conky.1.xml:551(emphasis)
+msgid "imlib_cache_size"
+msgstr ""
+
+#: conky.1.xml:553(para)
+msgid "Imlib2 image cache size, in bytes. Defaults to 4MiB. Increase this value if you use $image lots. Set to 0 to disable the image cache."
+msgstr ""
+
+#: conky.1.xml:560(emphasis)
+msgid "lua_draw_hook_post"
+msgstr ""
+
+#: conky.1.xml:560(emphasis) conky.1.xml:574(emphasis) conky.1.xml:595(emphasis) conky.1.xml:609(emphasis)
+msgid "function_name [function arguments]"
+msgstr ""
+
+#: conky.1.xml:562(para)
+msgid "This function, if defined, will be called by Conky through each iteration after drawing to the window. Requires X support. Takes any number of optional arguments. Use this hook for drawing things on top of what Conky draws. Conky puts 'conky_' in front of function_name to prevent accidental calls to the wrong function unless you place 'conky_' in front of it yourself."
+msgstr ""
+
+#: conky.1.xml:574(emphasis)
+msgid "lua_draw_hook_pre"
+msgstr ""
+
+#: conky.1.xml:576(para)
+msgid "This function, if defined, will be called by Conky through each iteration before drawing to the window. Requires X support. Takes any number of optional arguments. Use this hook for drawing things on top of what Conky draws. Conky puts 'conky_' in front of function_name to prevent accidental calls to the wrong function unless you place 'conky_' in front of it yourself."
+msgstr ""
+
+#: conky.1.xml:588(emphasis)
+msgid "lua_load"
+msgstr ""
+
+#: conky.1.xml:590(para)
+msgid "Loads the Lua scripts separated by spaces."
+msgstr ""
+
+#: conky.1.xml:595(emphasis)
+msgid "lua_shutdown_hook"
+msgstr ""
+
+#: conky.1.xml:597(para)
+msgid "This function, if defined, will be called by Conky at shutdown or when the configuration is reloaded. Use this hook to clean up after yourself, such as freeing memory which has been allocated by external libraries via Lua. Conky puts 'conky_' in front of function_name to prevent accidental calls to the wrong function unless you place 'conky_' in front of it yourself."
+msgstr ""
+
+#: conky.1.xml:609(emphasis)
+msgid "lua_startup_hook"
+msgstr ""
+
+#: conky.1.xml:611(para)
+msgid "This function, if defined, will be called by Conky at startup or when the configuration is reloaded. Use this hook to initialize values, or for any run-once applications. Conky puts 'conky_' in front of function_name to prevent accidental calls to the wrong function unless you place 'conky_' in front of it yourself."
+msgstr ""
+
+#: conky.1.xml:622(emphasis)
+msgid "mail_spool"
+msgstr ""
+
+#: conky.1.xml:624(para)
+msgid "Mail spool for mail checking"
+msgstr ""
+
+#: conky.1.xml:629(emphasis)
+msgid "max_port_monitor_connections"
+msgstr ""
+
+#: conky.1.xml:631(para)
+msgid "Allow each port monitor to track at most this many connections (if 0 or not set, default is 256)"
+msgstr ""
+
+#: conky.1.xml:637(emphasis)
+msgid "max_specials"
+msgstr ""
+
+#: conky.1.xml:639(para)
+msgid "Maximum number of special things, e.g. fonts, offsets, aligns, etc. (default is 512)"
+msgstr ""
+
+#: conky.1.xml:645(emphasis)
+msgid "max_text_width"
+msgstr ""
+
+#. br
+#: conky.1.xml:645(emphasis) conky.1.xml:4413(emphasis)
+msgid "width"
+msgstr ""
+
+#: conky.1.xml:647(para)
+msgid "When a line in the output contains 'width' chars and the end isn't reached, the next char will start on a new line. If you want to make sure that lines don't get broken, set 'width' to 0"
+msgstr ""
+
+#: conky.1.xml:655(emphasis)
+msgid "max_user_text"
+msgstr ""
+
+#: conky.1.xml:655(emphasis) conky.1.xml:940(emphasis)
+msgid "bytes"
+msgstr ""
+
+#: conky.1.xml:657(para)
+msgid "Maximum size of user text buffer, i.e. layout below TEXT line in config file (default is 16384 bytes)"
+msgstr ""
+
+#: conky.1.xml:663(emphasis)
+msgid "maximum_width"
+msgstr ""
+
+#: conky.1.xml:663(emphasis)
+msgid "pixels"
+msgstr ""
+
+#: conky.1.xml:665(para)
+msgid "Maximum width of window"
+msgstr ""
+
+#: conky.1.xml:670(emphasis)
+msgid "minimum_size"
+msgstr ""
+
+#: conky.1.xml:670(emphasis)
+msgid "width (height)"
+msgstr ""
+
+#: conky.1.xml:672(para)
+msgid "Minimum size of window"
+msgstr ""
+
+#: conky.1.xml:677(emphasis)
+msgid "mpd_host"
+msgstr ""
+
+#: conky.1.xml:679(para)
+msgid "Host of MPD server"
+msgstr ""
+
+#: conky.1.xml:684(emphasis)
+msgid "mpd_password"
+msgstr ""
+
+#: conky.1.xml:686(para)
+msgid "MPD server password"
+msgstr ""
+
+#: conky.1.xml:691(emphasis)
+msgid "mpd_port"
+msgstr ""
+
+#: conky.1.xml:693(para)
+msgid "Port of MPD server"
+msgstr ""
+
+#: conky.1.xml:698(emphasis)
+msgid "music_player_interval"
+msgstr ""
+
+#: conky.1.xml:700(para)
+msgid "Music player thread update interval (defaults to Conky's update interval)"
+msgstr ""
+
+#: conky.1.xml:706(emphasis)
+msgid "net_avg_samples"
+msgstr ""
+
+#: conky.1.xml:708(para)
+msgid "The number of samples to average for net data"
+msgstr ""
+
+#: conky.1.xml:713(emphasis)
+msgid "no_buffers"
+msgstr ""
+
+#: conky.1.xml:715(para)
+msgid "Subtract (file system) buffers from used memory?"
+msgstr ""
+
+#: conky.1.xml:720(emphasis)
+msgid "nvidia_display"
+msgstr ""
+
+#: conky.1.xml:722(para)
+msgid "The display that the nvidia variable will use (defaults to the value of the display variable)"
+msgstr ""
+
+#: conky.1.xml:728(emphasis)
+msgid "out_to_console"
+msgstr ""
+
+#: conky.1.xml:730(para)
+msgid "Print text to stdout."
+msgstr ""
+
+#: conky.1.xml:735(emphasis)
+msgid "out_to_ncurses"
+msgstr ""
+
+#: conky.1.xml:737(para)
+msgid "Print text in the console, but use ncurses so that conky can print the text of a new update over the old text. (In the future this will provide more useful things)"
+msgstr ""
+
+#: conky.1.xml:744(emphasis)
+msgid "out_to_stderr"
+msgstr ""
+
+#: conky.1.xml:746(para)
+msgid "Print text to stderr."
+msgstr ""
+
+#: conky.1.xml:751(emphasis)
+msgid "out_to_x"
+msgstr ""
+
+#: conky.1.xml:753(para)
+msgid "When set to no, there will be no output in X (useful when you also use things like out_to_console). If you set it to no, make sure that it's placed before all other X-related setting (take the first line of your configfile to be sure). Default value is yes"
+msgstr ""
+
+#: conky.1.xml:762(emphasis)
+msgid "override_utf8_locale"
+msgstr ""
+
+#: conky.1.xml:764(para)
+msgid "Force UTF8? requires XFT"
+msgstr ""
+
+#: conky.1.xml:769(emphasis)
+msgid "overwrite_file"
+msgstr ""
+
+#: conky.1.xml:771(para)
+msgid "Overwrite the file given as argument."
+msgstr ""
+
+#: conky.1.xml:776(emphasis)
+msgid "own_window"
+msgstr ""
+
+#: conky.1.xml:778(para)
+msgid "Boolean, create own window to draw?"
+msgstr ""
+
+#: conky.1.xml:783(emphasis)
+msgid "own_window_class"
+msgstr ""
+
+#: conky.1.xml:785(para)
+msgid "Manually set the WM_CLASS name. Defaults to \"Conky\"."
+msgstr ""
+
+#: conky.1.xml:791(emphasis)
+msgid "own_window_colour"
+msgstr ""
+
+#: conky.1.xml:791(emphasis)
+msgid "colour"
+msgstr ""
+
+#: conky.1.xml:793(para)
+msgid "If own_window_transparent no, set a specified background colour (defaults to black). Takes either a hex value (e.g. ffffff, note the lack of '#') or a valid RGB name (see /usr/lib/X11/rgb.txt)"
+msgstr ""
+
+#: conky.1.xml:801(emphasis)
+msgid "own_window_hints"
+msgstr ""
+
+#: conky.1.xml:801(emphasis)
+msgid "undecorated,below,above,sticky,skip_taskbar,skip_pager"
+msgstr ""
+
+#: conky.1.xml:803(para)
+msgid "If own_window is yes, you may use these window manager hints to affect the way Conky displays. Notes: Use own_window_type desktop as another way to implement many of these hints implicitly. If you use own_window_type override, window manager hints have no meaning and are ignored."
+msgstr ""
+
+#: conky.1.xml:813(emphasis)
+msgid "own_window_title"
+msgstr ""
+
+#: conky.1.xml:815(para)
+msgid "Manually set the window name. Defaults to \"&lt;hostname&gt; - conky\"."
+msgstr ""
+
+#: conky.1.xml:821(emphasis)
+msgid "own_window_argb_visual"
+msgstr ""
+
+#: conky.1.xml:823(para)
+msgid "Boolean, use ARGB visual? ARGB can be used for real transparency, note that a composite manager is required for real transparency. This option will not work as desired (in most cases) in conjunction with 'own_window_type override'."
+msgstr ""
+
+#: conky.1.xml:831(emphasis)
+msgid "own_window_argb_value"
+msgstr ""
+
+#: conky.1.xml:833(para)
+msgid "When ARGB visuals are enabled, this use this to modify the alpha value used. Valid range is 0-255, where 0 is 0% opacity, and 255 is 100% opacity."
+msgstr ""
+
+#: conky.1.xml:838(emphasis)
+msgid "own_window_transparent"
+msgstr ""
+
+#: conky.1.xml:840(para)
+msgid "Boolean, set transparency? If ARGB visual is enabled, sets background opacity to 0%."
+msgstr ""
+
+#: conky.1.xml:846(emphasis)
+msgid "own_window_type"
+msgstr ""
+
+#: conky.1.xml:848(para)
+msgid "if own_window is yes, you may specify type normal, desktop, dock, panel or override (default: normal). Desktop windows are special windows that have no window decorations; are always visible on your desktop; do not appear in your pager or taskbar; and are sticky across all workspaces. Panel windows reserve space along a desktop edge, just like panels and taskbars, preventing maximized windows from overlapping them. The edge is chosen based on the alignment option. Override windows are not under the control of the window manager. Hints are ignored. This type of window can be useful for certain situations."
+msgstr ""
+
+#: conky.1.xml:863(emphasis)
+msgid "pad_percents"
+msgstr ""
+
+#: conky.1.xml:865(para)
+msgid "Pad percentages to this many decimals (0 = no padding)"
+msgstr ""
+
+#: conky.1.xml:871(emphasis)
+msgid "pop3"
+msgstr ""
+
+#: conky.1.xml:873(para)
+msgid "Default global POP3 server. Arguments are: \"host user pass [-i interval (in seconds)] [-p port] [-e 'command'] [-r retries]\". Default port is 110, default interval is 5 minutes, and default number of retries before giving up is 5. If the password is supplied as '*', you will be prompted to enter the password when Conky starts."
+msgstr ""
+
+#: conky.1.xml:883(emphasis)
+msgid "short_units"
+msgstr ""
+
+#: conky.1.xml:885(para)
+msgid "Shortens units to a single character (kiB-&gt;k, GiB-&gt;G, etc.). Default is off."
+msgstr ""
+
+#: conky.1.xml:891(emphasis)
+msgid "show_graph_range"
+msgstr ""
+
+#: conky.1.xml:893(para)
+msgid "Shows the time range covered by a graph."
+msgstr ""
+
+#: conky.1.xml:898(emphasis)
+msgid "show_graph_scale"
+msgstr ""
+
+#: conky.1.xml:900(para)
+msgid "Shows the maximum value in scaled graphs."
+msgstr ""
+
+#: conky.1.xml:905(emphasis)
+msgid "stippled_borders"
+msgstr ""
+
+#: conky.1.xml:907(para)
+msgid "Border stippling (dashing) in pixels"
+msgstr ""
+
+#: conky.1.xml:912(emphasis)
+msgid "temperature_unit"
+msgstr ""
+
+#: conky.1.xml:914(para)
+msgid "Desired output unit of all objects displaying a temperature. Parameters are either \"fahrenheit\" or \"celsius\". The default unit is degree Celsius."
+msgstr ""
+
+#: conky.1.xml:921(emphasis) conky.1.xml:3632(emphasis)
+msgid "templateN"
+msgstr ""
+
+#: conky.1.xml:923(para)
+msgid "Define a template for later use inside TEXT segments. Substitute N by a digit between 0 and 9, inclusively. The value of the variable is being inserted into the stuff below TEXT at the corresponding position, but before some substitutions are applied:"
+msgstr ""
+
+#: conky.1.xml:929(para)
+msgid "'&bsol;n' -&gt; newline '&bsol;&bsol;' -&gt; backslash '&bsol; ' -&gt; space '&bsol;N' -&gt; template argument N"
+msgstr ""
+
+#: conky.1.xml:940(emphasis)
+msgid "text_buffer_size"
+msgstr ""
+
+#: conky.1.xml:942(para)
+msgid "Size of the standard text buffer (default is 256 bytes). This buffer is used for intermediary text, such as individual lines, output from $exec vars, and various other variables. Increasing the size of this buffer can drastically reduce Conky's performance, but will allow for more text display per variable. The size of this buffer cannot be smaller than the default value of 256 bytes."
+msgstr ""
+
+#: conky.1.xml:953(emphasis)
+msgid "times_in_seconds"
+msgstr ""
+
+#: conky.1.xml:955(para)
+msgid "If true, variables that output times output a number that represents seconds. This doesn't affect $time, $tztime and $utime"
+msgstr ""
+
+#: conky.1.xml:962(emphasis)
+msgid "top_cpu_separate"
+msgstr ""
+
+#: conky.1.xml:964(para)
+msgid "If true, cpu in top will show usage of one processor's power. If false, cpu in top will show the usage of all processors' power combined."
+msgstr ""
+
+#: conky.1.xml:971(emphasis)
+msgid "top_name_width"
+msgstr ""
+
+#: conky.1.xml:973(para)
+msgid "Width for $top name value (defaults to 15 characters)."
+msgstr ""
+
+#: conky.1.xml:979(emphasis)
+msgid "total_run_times"
+msgstr ""
+
+#: conky.1.xml:981(para)
+msgid "Total number of times for Conky to update before quitting. Zero makes Conky run forever"
+msgstr ""
+
+#: conky.1.xml:987(emphasis) conky.1.xml:4458(emphasis)
+msgid "update_interval"
+msgstr ""
+
+#: conky.1.xml:987(emphasis) conky.1.xml:994(emphasis)
+msgid "seconds"
+msgstr ""
+
+#: conky.1.xml:994(emphasis)
+msgid "update_interval_on_battery"
+msgstr ""
+
+#: conky.1.xml:996(para)
+msgid "Update interval when running on batterypower"
+msgstr ""
+
+#: conky.1.xml:1001(emphasis)
+msgid "uppercase"
+msgstr ""
+
+#: conky.1.xml:1003(para)
+msgid "Boolean value, if true, text is rendered in upper case"
+msgstr ""
+
+#: conky.1.xml:1009(emphasis)
+msgid "use_spacer"
+msgstr ""
+
+#: conky.1.xml:1011(para)
+msgid "Adds spaces around certain objects to stop them from moving other things around. Arguments are left, right, and none (default). The old true/false values are deprecated and default to right/none respectively. Note that this only helps if you are using a mono font, such as Bitstream Vera Sans Mono."
+msgstr ""
+
+#: conky.1.xml:1021(emphasis)
+msgid "use_xft"
+msgstr ""
+
+#: conky.1.xml:1023(para)
+msgid "Use Xft (anti-aliased font and stuff)"
+msgstr ""
+
+#: conky.1.xml:1028(emphasis)
+msgid "xftalpha"
+msgstr ""
+
+#: conky.1.xml:1030(para)
+msgid "Alpha of Xft font. Must be a value at or between 1 and 0."
+msgstr ""
+
+#: conky.1.xml:1036(emphasis)
+msgid "xftfont"
+msgstr ""
+
+#: conky.1.xml:1038(para)
+msgid "Xft font to use."
+msgstr ""
+
+#: conky.1.xml:1045(title)
+msgid "OBJECTS/VARIABLES"
+msgstr ""
+
+#: conky.1.xml:1046(para)
+msgid "Colours are parsed using XParsecolor(), there might be a list of them: /usr/share/X11/rgb.txt. Colour can be also in #rrggbb format (hex)."
+msgstr ""
+
+#: conky.1.xml:1051(para)
+msgid "Some objects may create threads, and sometimes these threads will not be destroyed until Conky terminates. There is no way to destroy or clean up threads while Conky is running. For example, if you use an MPD variable, the MPD thread will keep running until Conky dies. Some threaded objects will use one of the parameters as a 'key', so that you only have 1 relevant thread running (for example, the $curl, $rss and $weather objects launch one thread per URI)."
+msgstr ""
+
+#: conky.1.xml:1061(emphasis)
+msgid "acpiacadapter"
+msgstr ""
+
+#: conky.1.xml:1061(emphasis)
+msgid "(adapter)"
+msgstr ""
+
+#: conky.1.xml:1063(para)
+msgid "ACPI ac adapter state. On linux, the adapter option specifies the subfolder of /sys/class/power_supply containing the state information (tries \"AC\" and \"ADP1\" if there is no argument given). Non-linux systems ignore it."
+msgstr ""
+
+#: conky.1.xml:1070(emphasis)
+msgid "acpifan"
+msgstr ""
+
+#: conky.1.xml:1072(para)
+msgid "ACPI fan state"
+msgstr ""
+
+#: conky.1.xml:1077(emphasis)
+msgid "acpitemp"
+msgstr ""
+
+#: conky.1.xml:1079(para)
+msgid "ACPI temperature in C."
+msgstr ""
+
+#: conky.1.xml:1084(emphasis)
+msgid "addr"
+msgstr ""
+
+#: conky.1.xml:1084(emphasis) conky.1.xml:1092(emphasis) conky.1.xml:2329(emphasis)
+msgid "(interface)"
+msgstr ""
+
+#: conky.1.xml:1086(para)
+msgid "IP address for an interface, or \"No Address\" if no address is assigned."
+msgstr ""
+
+#: conky.1.xml:1092(emphasis)
+msgid "addrs"
+msgstr ""
+
+#: conky.1.xml:1094(para)
+msgid "IP addresses for an interface (if one - works like addr). Linux only."
+msgstr ""
+
+#: conky.1.xml:1100(emphasis)
+msgid "adt746xcpu"
+msgstr ""
+
+#: conky.1.xml:1102(para)
+msgid "CPU temperature from therm_adt746x"
+msgstr ""
+
+#: conky.1.xml:1107(emphasis)
+msgid "adt746xfan"
+msgstr ""
+
+#: conky.1.xml:1109(para)
+msgid "Fan speed from therm_adt746x"
+msgstr ""
+
+#: conky.1.xml:1114(emphasis)
+msgid "alignc"
+msgstr ""
+
+#: conky.1.xml:1114(emphasis) conky.1.xml:1121(emphasis) conky.1.xml:1358(emphasis) conky.1.xml:1376(emphasis) conky.1.xml:1385(emphasis) conky.1.xml:1397(emphasis)
+msgid "(num)"
+msgstr ""
+
+#: conky.1.xml:1116(para)
+msgid "Align text to centre"
+msgstr ""
+
+#: conky.1.xml:1121(emphasis)
+msgid "alignr"
+msgstr ""
+
+#: conky.1.xml:1123(para)
+msgid "Right-justify text, with space of N"
+msgstr ""
+
+#: conky.1.xml:1128(emphasis)
+msgid "apcupsd"
+msgstr ""
+
+#: conky.1.xml:1128(emphasis)
+msgid "host"
+msgstr ""
+
+#: conky.1.xml:1128(emphasis)
+msgid "port"
+msgstr ""
+
+#: conky.1.xml:1130(para)
+msgid "Sets up the connection to apcupsd daemon. Prints nothing, defaults to localhost:3551"
+msgstr ""
+
+#: conky.1.xml:1136(emphasis)
+msgid "apcupsd_cable"
+msgstr ""
+
+#: conky.1.xml:1138(para)
+msgid "Prints the UPS connection type."
+msgstr ""
+
+#: conky.1.xml:1143(emphasis)
+msgid "apcupsd_charge"
+msgstr ""
+
+#: conky.1.xml:1145(para)
+msgid "Current battery capacity in percent."
+msgstr ""
+
+#: conky.1.xml:1150(emphasis)
+msgid "apcupsd_lastxfer"
+msgstr ""
+
+#: conky.1.xml:1152(para)
+msgid "Reason for last transfer from line to battery."
+msgstr ""
+
+#: conky.1.xml:1157(emphasis)
+msgid "apcupsd_linev"
+msgstr ""
+
+#: conky.1.xml:1159(para)
+msgid "Nominal input voltage."
+msgstr ""
+
+#: conky.1.xml:1164(emphasis)
+msgid "apcupsd_load"
+msgstr ""
+
+#: conky.1.xml:1166(para)
+msgid "Current load in percent."
+msgstr ""
+
+#: conky.1.xml:1171(emphasis)
+msgid "apcupsd_loadbar"
+msgstr ""
+
+#: conky.1.xml:1173(para)
+msgid "Bar showing current load."
+msgstr ""
+
+#: conky.1.xml:1178(emphasis)
+msgid "apcupsd_loadgauge"
+msgstr ""
+
+#: conky.1.xml:1178(emphasis) conky.1.xml:1258(emphasis) conky.1.xml:1736(emphasis) conky.1.xml:2568(emphasis) conky.1.xml:2590(emphasis) conky.1.xml:2788(emphasis) conky.1.xml:3496(emphasis) conky.1.xml:4231(emphasis)
+msgid "(height),(width)"
+msgstr ""
+
+#: conky.1.xml:1180(para)
+msgid "Gauge that shows current load."
+msgstr ""
+
+#: conky.1.xml:1185(emphasis)
+msgid "apcupsd_loadgraph"
+msgstr ""
+
+#: conky.1.xml:1185(emphasis) conky.1.xml:2457(emphasis) conky.1.xml:2598(emphasis)
+msgid "(height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)"
+msgstr ""
+
+#: conky.1.xml:1187(para)
+msgid "History graph of current load."
+msgstr ""
+
+#: conky.1.xml:1192(emphasis)
+msgid "apcupsd_model"
+msgstr ""
+
+#: conky.1.xml:1194(para)
+msgid "Prints the model of the UPS."
+msgstr ""
+
+#: conky.1.xml:1199(emphasis)
+msgid "apcupsd_name"
+msgstr ""
+
+#: conky.1.xml:1201(para)
+msgid "Prints the UPS user-defined name."
+msgstr ""
+
+#: conky.1.xml:1206(emphasis)
+msgid "apcupsd_status"
+msgstr ""
+
+#: conky.1.xml:1208(para)
+msgid "Prints current status (on-line, on-battery)."
+msgstr ""
+
+#: conky.1.xml:1213(emphasis)
+msgid "apcupsd_temp"
+msgstr ""
+
+#: conky.1.xml:1215(para)
+msgid "Current internal temperature."
+msgstr ""
+
+#: conky.1.xml:1220(emphasis)
+msgid "apcupsd_timeleft"
+msgstr ""
+
+#: conky.1.xml:1222(para)
+msgid "Time left to run on battery."
+msgstr ""
+
+#: conky.1.xml:1227(emphasis)
+msgid "apcupsd_upsmode"
+msgstr ""
+
+#: conky.1.xml:1229(para)
+msgid "Prints the UPS mode (e.g. standalone)."
+msgstr ""
+
+#: conky.1.xml:1234(emphasis)
+msgid "apm_adapter"
+msgstr ""
+
+#: conky.1.xml:1236(para)
+msgid "Display APM AC adapter status (FreeBSD only)"
+msgstr ""
+
+#: conky.1.xml:1241(emphasis)
+msgid "apm_battery_life"
+msgstr ""
+
+#: conky.1.xml:1243(para)
+msgid "Display APM battery life in percent (FreeBSD only)"
+msgstr ""
+
+#: conky.1.xml:1249(emphasis)
+msgid "apm_battery_time"
+msgstr ""
+
+#: conky.1.xml:1251(para)
+msgid "Display remaining APM battery life in hh:mm:ss or \"unknown\" if AC adapterstatus is on-line or charging (FreeBSD only)"
+msgstr ""
+
+#: conky.1.xml:1258(emphasis)
+msgid "audacious_bar"
+msgstr ""
+
+#: conky.1.xml:1260(para)
+msgid "Progress bar"
+msgstr ""
+
+#: conky.1.xml:1265(emphasis)
+msgid "audacious_bitrate"
+msgstr ""
+
+#: conky.1.xml:1267(para)
+msgid "Bitrate of current tune"
+msgstr ""
+
+#: conky.1.xml:1272(emphasis)
+msgid "audacious_channels"
+msgstr ""
+
+#: conky.1.xml:1274(para)
+msgid "Number of audio channels of current tune"
+msgstr ""
+
+#: conky.1.xml:1279(emphasis)
+msgid "audacious_filename"
+msgstr ""
+
+#: conky.1.xml:1281(para)
+msgid "Full path and filename of current tune"
+msgstr ""
+
+#: conky.1.xml:1286(emphasis)
+msgid "audacious_frequency"
+msgstr ""
+
+#: conky.1.xml:1288(para)
+msgid "Sampling frequency of current tune"
+msgstr ""
+
+#: conky.1.xml:1293(emphasis)
+msgid "audacious_length"
+msgstr ""
+
+#: conky.1.xml:1295(para)
+msgid "Total length of current tune as MM:SS"
+msgstr ""
+
+#: conky.1.xml:1300(emphasis)
+msgid "audacious_length_seconds"
+msgstr ""
+
+#: conky.1.xml:1302(para)
+msgid "Total length of current tune in seconds"
+msgstr ""
+
+#: conky.1.xml:1307(emphasis)
+msgid "audacious_main_volume"
+msgstr ""
+
+#: conky.1.xml:1309(para)
+msgid "The current volume fetched from Audacious"
+msgstr ""
+
+#: conky.1.xml:1314(emphasis)
+msgid "audacious_playlist_length"
+msgstr ""
+
+#: conky.1.xml:1316(para)
+msgid "Number of tunes in playlist"
+msgstr ""
+
+#: conky.1.xml:1321(emphasis)
+msgid "audacious_playlist_position"
+msgstr ""
+
+#: conky.1.xml:1323(para)
+msgid "Playlist position of current tune"
+msgstr ""
+
+#: conky.1.xml:1328(emphasis)
+msgid "audacious_position"
+msgstr ""
+
+#: conky.1.xml:1330(para)
+msgid "Position of current tune (MM:SS)"
+msgstr ""
+
+#: conky.1.xml:1335(emphasis)
+msgid "audacious_position_seconds"
+msgstr ""
+
+#: conky.1.xml:1337(para)
+msgid "Position of current tune in seconds"
+msgstr ""
+
+#: conky.1.xml:1342(emphasis)
+msgid "audacious_status"
+msgstr ""
+
+#: conky.1.xml:1344(para)
+msgid "Player status (Playing/Paused/Stopped/Not running)"
+msgstr ""
+
+#: conky.1.xml:1350(emphasis)
+msgid "audacious_title"
+msgstr ""
+
+#: conky.1.xml:1350(emphasis) conky.1.xml:2858(emphasis) conky.1.xml:2873(emphasis)
+msgid "(max length)"
+msgstr ""
+
+#: conky.1.xml:1352(para)
+msgid "Title of current tune with optional maximum length specifier"
+msgstr ""
+
+#: conky.1.xml:1358(emphasis)
+msgid "battery"
+msgstr ""
+
+#: conky.1.xml:1360(para)
+msgid "Battery status and remaining percentage capacity of ACPI or APM battery. ACPI battery number can be given as argument (default is BAT0)."
+msgstr ""
+
+#: conky.1.xml:1367(emphasis)
+msgid "battery_bar"
+msgstr ""
+
+#: conky.1.xml:1367(emphasis)
+msgid "(height),(width) (num)"
+msgstr ""
+
+#: conky.1.xml:1369(para)
+msgid "Battery percentage remaining of ACPI battery in a bar. ACPI battery number can be given as argument (default is BAT0)."
+msgstr ""
+
+#: conky.1.xml:1376(emphasis)
+msgid "battery_percent"
+msgstr ""
+
+#: conky.1.xml:1378(para)
+msgid "Battery percentage remaining for ACPI battery. ACPI battery number can be given as argument (default is BAT0)."
+msgstr ""
+
+#: conky.1.xml:1385(emphasis)
+msgid "battery_short"
+msgstr ""
+
+#: conky.1.xml:1387(para)
+msgid "Battery status and remaining percentage capacity of ACPI or APM battery. ACPI battery number can be given as argument (default is BAT0). This mode display a short status, which means that C is displayed instead of charging, D for discharging, F for full, N for not present, E for empty and U for unknown."
+msgstr ""
+
+#: conky.1.xml:1397(emphasis)
+msgid "battery_time"
+msgstr ""
+
+#: conky.1.xml:1399(para)
+msgid "Battery charge/discharge time remaining of ACPI battery. ACPI battery number can be given as argument (default is BAT0)."
+msgstr ""
+
+#: conky.1.xml:1406(emphasis)
+msgid "blink"
+msgstr ""
+
+#: conky.1.xml:1406(emphasis)
+msgid "text_and_other_conky_vars"
+msgstr ""
+
+#: conky.1.xml:1408(para)
+msgid "Let 'text_and_other_conky_vars' blink on and off."
+msgstr ""
+
+#: conky.1.xml:1413(emphasis)
+msgid "bmpx_album"
+msgstr ""
+
+#: conky.1.xml:1415(para)
+msgid "Album in current BMPx track"
+msgstr ""
+
+#: conky.1.xml:1420(emphasis)
+msgid "bmpx_artist"
+msgstr ""
+
+#: conky.1.xml:1422(para)
+msgid "Artist in current BMPx track"
+msgstr ""
+
+#: conky.1.xml:1427(emphasis)
+msgid "bmpx_bitrate"
+msgstr ""
+
+#: conky.1.xml:1429(para)
+msgid "Bitrate of the current BMPx track"
+msgstr ""
+
+#: conky.1.xml:1434(emphasis)
+msgid "bmpx_title"
+msgstr ""
+
+#: conky.1.xml:1436(para)
+msgid "Title of the current BMPx track"
+msgstr ""
+
+#: conky.1.xml:1441(emphasis)
+msgid "bmpx_track"
+msgstr ""
+
+#: conky.1.xml:1443(para)
+msgid "Track number of the current BMPx track"
+msgstr ""
+
+#: conky.1.xml:1448(emphasis)
+msgid "bmpx_uri"
+msgstr ""
+
+#: conky.1.xml:1450(para)
+msgid "URI of the current BMPx track"
+msgstr ""
+
+#: conky.1.xml:1455(emphasis)
+msgid "buffers"
+msgstr ""
+
+#: conky.1.xml:1457(para)
+msgid "Amount of memory buffered"
+msgstr ""
+
+#: conky.1.xml:1462(emphasis)
+msgid "cached"
+msgstr ""
+
+#: conky.1.xml:1464(para)
+msgid "Amount of memory cached"
+msgstr ""
+
+#: conky.1.xml:1469(emphasis)
+msgid "cmdline_to_pid"
+msgstr ""
+
+#: conky.1.xml:1469(emphasis) conky.1.xml:1760(emphasis) conky.1.xml:4467(emphasis) conky.1.xml:4475(emphasis) conky.1.xml:4482(emphasis) conky.1.xml:4489(emphasis) conky.1.xml:4496(emphasis)
+msgid "string"
+msgstr ""
+
+#: conky.1.xml:1471(para)
+msgid "PID of the first process that has string in it's commandline"
+msgstr ""
+
+#: conky.1.xml:1477(emphasis)
+msgid "color"
+msgstr ""
+
+#: conky.1.xml:1477(emphasis) conky.1.xml:2964(emphasis) conky.1.xml:3416(emphasis)
+msgid "(color)"
+msgstr ""
+
+#: conky.1.xml:1479(para)
+msgid "Change drawing color to 'color' which is a name of a color or a hexcode preceded with # (for example #0A1B2C ). If you use ncurses only the following colors are supported: red,green,yellow,blue,magenta,cyan,black,white."
+msgstr ""
+
+#: conky.1.xml:1489(para)
+msgid "Change drawing color to colorN configuration option, where N is a digit between 0 and 9, inclusively."
+msgstr ""
+
+#: conky.1.xml:1495(emphasis)
+msgid "combine"
+msgstr ""
+
+#: conky.1.xml:1495(emphasis)
+msgid "var1 var2"
+msgstr ""
+
+#: conky.1.xml:1497(para)
+msgid "Places the lines of var2 to the right of the lines of var1 separated by the chars that are put between var1 and var2. For example: ${combine ${head /proc/cpuinfo 2} - ${head /proc/meminfo 1}} gives as output \"cpuinfo_line1 - meminfo_line1\" on line 1 and \"cpuinfo_line2 -\" on line 2. $combine vars can also be nested to place more vars next to each other."
+msgstr ""
+
+#: conky.1.xml:1508(emphasis) conky.1.xml:4482(emphasis)
+msgid "conky_build_arch"
+msgstr ""
+
+#: conky.1.xml:1510(para)
+msgid "CPU architecture Conky was built for"
+msgstr ""
+
+#: conky.1.xml:1515(emphasis) conky.1.xml:4475(emphasis)
+msgid "conky_build_date"
+msgstr ""
+
+#: conky.1.xml:1517(para)
+msgid "Date Conky was built"
+msgstr ""
+
+#: conky.1.xml:1522(emphasis) conky.1.xml:4489(emphasis)
+msgid "conky_version"
+msgstr ""
+
+#: conky.1.xml:1524(para)
+msgid "Conky version"
+msgstr ""
+
+#: conky.1.xml:1529(emphasis)
+msgid "cpu"
+msgstr ""
+
+#: conky.1.xml:1529(emphasis)
+msgid "(cpuN)"
+msgstr ""
+
+#: conky.1.xml:1531(para)
+msgid "CPU usage in percents. For SMP machines, the CPU number can be provided as an argument. ${cpu cpu0} is the total usage, and ${cpu cpuX} (X &gt;= 1) are individual CPUs."
+msgstr ""
+
+#: conky.1.xml:1539(emphasis)
+msgid "cpubar"
+msgstr ""
+
+#: conky.1.xml:1539(emphasis) conky.1.xml:1547(emphasis)
+msgid "(cpuN) (height),(width)"
+msgstr ""
+
+#: conky.1.xml:1541(para)
+msgid "Bar that shows CPU usage, height is bar's height in pixels. See $cpu for more info on SMP."
+msgstr ""
+
+#: conky.1.xml:1547(emphasis)
+msgid "cpugauge"
+msgstr ""
+
+#: conky.1.xml:1549(para)
+msgid "Elliptical gauge that shows CPU usage, height and width are gauge's vertical and horizontal axis respectively. See $cpu for more info on SMP."
+msgstr ""
+
+#: conky.1.xml:1556(emphasis)
+msgid "cpugraph"
+msgstr ""
+
+#: conky.1.xml:1556(emphasis)
+msgid "(cpuN) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)"
+msgstr ""
+
+#: conky.1.xml:1558(para)
+msgid "CPU usage graph, with optional colours in hex, minus the #. See $cpu for more info on SMP. Uses a logarithmic scale (to see small numbers) when you use the -l switch. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see)."
+msgstr ""
+
+#: conky.1.xml:1569(emphasis)
+msgid "curl"
+msgstr ""
+
+#: conky.1.xml:1569(emphasis)
+msgid "url (interval_in_minutes)"
+msgstr ""
+
+#: conky.1.xml:1571(para)
+msgid "Download data from URI using Curl at the specified interval. The interval may be a floating point value greater than 0, otherwise defaults to 15 minutes. Most useful when used in conjunction with Lua and the Lua API. This object is threaded, and once a thread is created it can't be explicitly destroyed. One thread will run for each URI specified. You can use any protocol that Curl supports."
+msgstr ""
+
+#: conky.1.xml:1582(emphasis)
+msgid "desktop"
+msgstr ""
+
+#: conky.1.xml:1584(para)
+msgid "Number of the desktop on which conky is running or the message \"Not running in X\" if this is the case."
+msgstr ""
+
+#: conky.1.xml:1590(emphasis)
+msgid "desktop_name"
+msgstr ""
+
+#: conky.1.xml:1592(para)
+msgid "Name of the desktop on which conky is running or the message \"Not running in X\" if this is the case."
+msgstr ""
+
+#: conky.1.xml:1598(emphasis)
+msgid "desktop_number"
+msgstr ""
+
+#: conky.1.xml:1600(para)
+msgid "Number of desktops or the message \"Not running in X\" if this is the case."
+msgstr ""
+
+#: conky.1.xml:1606(emphasis)
+msgid "disk_protect"
+msgstr ""
+
+#: conky.1.xml:1606(emphasis)
+msgid "device"
+msgstr ""
+
+#: conky.1.xml:1608(para)
+msgid "Disk protection status, if supported (needs kernel-patch). Prints either \"frozen\" or \"free \" (note the padding)."
+msgstr ""
+
+#: conky.1.xml:1615(emphasis)
+msgid "diskio"
+msgstr ""
+
+#: conky.1.xml:1615(emphasis) conky.1.xml:1624(emphasis) conky.1.xml:1632(emphasis) conky.1.xml:2623(emphasis) conky.1.xml:2638(emphasis) conky.1.xml:2646(emphasis) conky.1.xml:2654(emphasis) conky.1.xml:2663(emphasis) conky.1.xml:2671(emphasis)
+msgid "(device)"
+msgstr ""
+
+#: conky.1.xml:1617(para)
+msgid "Displays current disk IO. Device is optional, and takes the form of sda for /dev/sda. Individual partitions are allowed."
+msgstr ""
+
+#: conky.1.xml:1624(emphasis)
+msgid "diskio_read"
+msgstr ""
+
+#: conky.1.xml:1626(para)
+msgid "Displays current disk IO for reads. Device as in diskio."
+msgstr ""
+
+#: conky.1.xml:1632(emphasis)
+msgid "diskio_write"
+msgstr ""
+
+#: conky.1.xml:1634(para)
+msgid "Displays current disk IO for writes. Device as in diskio."
+msgstr ""
+
+#: conky.1.xml:1640(emphasis)
+msgid "diskiograph"
+msgstr ""
+
+#: conky.1.xml:1640(emphasis) conky.1.xml:1653(emphasis) conky.1.xml:1666(emphasis)
+msgid "(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)"
+msgstr ""
+
+#: conky.1.xml:1642(para)
+msgid "Disk IO graph, colours defined in hex, minus the #. If scale is non-zero, it becomes the scale for the graph. Uses a logarithmic scale (to see small numbers) when you use -l switch. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see)."
+msgstr ""
+
+#: conky.1.xml:1653(emphasis)
+msgid "diskiograph_read"
+msgstr ""
+
+#: conky.1.xml:1655(para)
+msgid "Disk IO graph for reads, colours defined in hex, minus the #. If scale is non-zero, it becomes the scale for the graph. Device as in diskio. Uses a logarithmic scale (to see small numbers) when you use -l switch. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see)."
+msgstr ""
+
+#: conky.1.xml:1666(emphasis)
+msgid "diskiograph_write"
+msgstr ""
+
+#: conky.1.xml:1668(para)
+msgid "Disk IO graph for writes, colours defined in hex, minus the #. If scale is non-zero, it becomes the scale for the graph. Device as in diskio. Uses a logarithmic scale (to see small numbers) when you use -l switch. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see)."
+msgstr ""
+
+#: conky.1.xml:1679(emphasis)
+msgid "downspeed"
+msgstr ""
+
+#: conky.1.xml:1679(emphasis) conky.1.xml:1686(emphasis) conky.1.xml:3791(emphasis) conky.1.xml:3801(emphasis) conky.1.xml:3885(emphasis) conky.1.xml:3892(emphasis) conky.1.xml:4153(emphasis) conky.1.xml:4160(emphasis) conky.1.xml:4167(emphasis) conky.1.xml:4181(emphasis) conky.1.xml:4188(emphasis) conky.1.xml:4195(emphasis) conky.1.xml:4202(emphasis)
+msgid "(net)"
+msgstr ""
+
+#: conky.1.xml:1681(para)
+msgid "Download speed in suitable IEC units"
+msgstr ""
+
+#: conky.1.xml:1686(emphasis)
+msgid "downspeedf"
+msgstr ""
+
+#: conky.1.xml:1688(para)
+msgid "Download speed in KiB with one decimal"
+msgstr ""
+
+#: conky.1.xml:1693(emphasis)
+msgid "downspeedgraph"
+msgstr ""
+
+#: conky.1.xml:1693(emphasis) conky.1.xml:3899(emphasis)
+msgid "(netdev) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)"
+msgstr ""
+
+#: conky.1.xml:1695(para)
+msgid "Download speed graph, colours defined in hex, minus the #. If scale is non-zero, it becomes the scale for the graph. Uses a logarithmic scale (to see small numbers) when you use -l switch. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see)."
+msgstr ""
+
+#: conky.1.xml:1706(emphasis)
+msgid "draft_mails"
+msgstr ""
+
+#: conky.1.xml:1706(emphasis) conky.1.xml:1887(emphasis) conky.1.xml:1925(emphasis) conky.1.xml:3352(emphasis) conky.1.xml:3407(emphasis) conky.1.xml:3808(emphasis) conky.1.xml:3842(emphasis) conky.1.xml:3851(emphasis) conky.1.xml:3860(emphasis) conky.1.xml:3869(emphasis)
+msgid "(maildir)"
+msgstr ""
+
+#: conky.1.xml:1706(emphasis) conky.1.xml:1887(emphasis) conky.1.xml:1925(emphasis) conky.1.xml:2540(emphasis) conky.1.xml:2902(emphasis) conky.1.xml:3352(emphasis) conky.1.xml:3407(emphasis) conky.1.xml:3808(emphasis) conky.1.xml:3842(emphasis) conky.1.xml:3851(emphasis) conky.1.xml:3860(emphasis) conky.1.xml:3869(emphasis)
+msgid "(interval)"
+msgstr ""
+
+#: conky.1.xml:1708(para)
+msgid "Number of mails marked as draft in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:1715(emphasis)
+msgid "else"
+msgstr ""
+
+#: conky.1.xml:1717(para)
+msgid "Text to show if any of the above are not true"
+msgstr ""
+
+#: conky.1.xml:1722(emphasis)
+msgid "endif"
+msgstr ""
+
+#: conky.1.xml:1724(para)
+msgid "Ends an $if block."
+msgstr ""
+
+#: conky.1.xml:1729(emphasis)
+msgid "entropy_avail"
+msgstr ""
+
+#: conky.1.xml:1731(para)
+msgid "Current entropy available for crypto freaks"
+msgstr ""
+
+#: conky.1.xml:1736(emphasis)
+msgid "entropy_bar"
+msgstr ""
+
+#: conky.1.xml:1738(para)
+msgid "Normalized bar of available entropy for crypto freaks"
+msgstr ""
+
+#: conky.1.xml:1744(emphasis)
+msgid "entropy_perc"
+msgstr ""
+
+#: conky.1.xml:1746(para)
+msgid "Percentage of entropy available in comparison to the poolsize"
+msgstr ""
+
+#: conky.1.xml:1752(emphasis)
+msgid "entropy_poolsize"
+msgstr ""
+
+#: conky.1.xml:1754(para)
+msgid "Total size of system entropy pool for crypto freaks"
+msgstr ""
+
+#: conky.1.xml:1760(emphasis)
+msgid "eval"
+msgstr ""
+
+#: conky.1.xml:1762(para)
+msgid "Evaluates given string according to the rules of TEXT interpretation, i.e. parsing any contained text object specifications into their output, any occuring '$$' into a single '$' and so on. The output is then being parsed again."
+msgstr ""
+
+#: conky.1.xml:1771(emphasis)
+msgid "eve"
+msgstr ""
+
+#: conky.1.xml:1771(emphasis)
+msgid "api_userid api_key character_id"
+msgstr ""
+
+#: conky.1.xml:1773(para)
+msgid "Fetches your currently training skill from the Eve Online API servers (<ulink url=\"http://www.eve-online.com/\">http://www.eve-online.com/</ulink>) and displays the skill along with the remaining training time."
+msgstr ""
+
+#: conky.1.xml:1780(emphasis)
+msgid "exec"
+msgstr ""
+
+#: conky.1.xml:1780(emphasis) conky.1.xml:1790(emphasis) conky.1.xml:1800(emphasis) conky.1.xml:1858(emphasis)
+msgid "command"
+msgstr ""
+
+#: conky.1.xml:1782(para)
+msgid "Executes a shell command and displays the output in conky. warning: this takes a lot more resources than other variables. I'd recommend coding wanted behaviour in C and posting a patch."
+msgstr ""
+
+#: conky.1.xml:1790(emphasis)
+msgid "execbar"
+msgstr ""
+
+#: conky.1.xml:1792(para)
+msgid "Same as exec, except if the first value return is a value between 0-100, it will use that number for a bar. The size for bars can be controlled via the default_bar_size config setting."
+msgstr ""
+
+#: conky.1.xml:1800(emphasis)
+msgid "execgauge"
+msgstr ""
+
+#: conky.1.xml:1802(para)
+msgid "Same as exec, except if the first value returned is a value between 0-100, it will use that number for a gauge. The size for gauges can be controlled via the default_gauge_size config setting."
+msgstr ""
+
+#: conky.1.xml:1810(emphasis)
+msgid "execgraph"
+msgstr ""
+
+#: conky.1.xml:1810(emphasis)
+msgid "(-t) (-l) command"
+msgstr ""
+
+#: conky.1.xml:1812(para)
+msgid "Same as execbar, but graphs values. Uses a logaritmic scale when the log option (-l switch) is given (to see small numbers). Values still have to be between 0 and 100. The size for graphs can be controlled via the default_graph_size config setting. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see). If -t or -l is your first argument, you may need to preceed it by a space (' ')."
+msgstr ""
+
+#: conky.1.xml:1825(emphasis)
+msgid "execi"
+msgstr ""
+
+#: conky.1.xml:1825(emphasis) conky.1.xml:1834(emphasis) conky.1.xml:1841(emphasis) conky.1.xml:1877(emphasis) conky.1.xml:3714(emphasis)
+msgid "interval command"
+msgstr ""
+
+#: conky.1.xml:1827(para)
+msgid "Same as exec but with specific interval. Interval can't be less than update_interval in configuration. See also $texeci"
+msgstr ""
+
+#: conky.1.xml:1834(emphasis)
+msgid "execibar"
+msgstr ""
+
+#: conky.1.xml:1836(para)
+msgid "Same as execbar, except with an interval"
+msgstr ""
+
+#: conky.1.xml:1841(emphasis)
+msgid "execigauge"
+msgstr ""
+
+#: conky.1.xml:1843(para)
+msgid "Same as execgauge, but takes an interval arg and gauges values."
+msgstr ""
+
+#: conky.1.xml:1849(emphasis)
+msgid "execigraph"
+msgstr ""
+
+#: conky.1.xml:1849(emphasis)
+msgid "interval (-t) (-l) command"
+msgstr ""
+
+#: conky.1.xml:1851(para)
+msgid "Same as execgraph, but takes an interval arg and graphs values. If -t or -l is your first argument, you may need to preceed it by a space (' ')."
+msgstr ""
+
+#: conky.1.xml:1858(emphasis)
+msgid "execp"
+msgstr ""
+
+#: conky.1.xml:1860(para)
+msgid "Executes a shell command and displays the output in conky. warning: this takes a lot more resources than other variables. I'd recommend coding wanted behaviour in C and posting a patch. This differs from $exec in that it parses the output of the command, so you can insert things like ${color red}hi!${color} in your script and have it correctly parsed by Conky. Caveats: Conky parses and evaluates the output of $execp every time Conky loops, and then destroys all the objects. If you try to use anything like $execi within an $execp statement, it will functionally run at the same interval that the $execp statement runs, as it is created and destroyed at every interval."
+msgstr ""
+
+#: conky.1.xml:1877(emphasis)
+msgid "execpi"
+msgstr ""
+
+#: conky.1.xml:1879(para)
+msgid "Same as execp but with specific interval. Interval can't be less than update_interval in configuration. Note that the output from the $execpi command is still parsed and evaluated at every interval."
+msgstr ""
+
+#: conky.1.xml:1887(emphasis)
+msgid "flagged_mails"
+msgstr ""
+
+#: conky.1.xml:1889(para)
+msgid "Number of mails marked as flagged in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:1896(emphasis)
+msgid "(font)"
+msgstr ""
+
+#: conky.1.xml:1898(para)
+msgid "Specify a different font. This new font will apply to the current line and everything following. You can use a $font with no arguments to change back to the default font (much like with $color)"
+msgstr ""
+
+#: conky.1.xml:1906(emphasis)
+msgid "format_time"
+msgstr ""
+
+#: conky.1.xml:1906(emphasis)
+msgid "seconds format"
+msgstr ""
+
+#: conky.1.xml:1908(para)
+msgid "Format time given in seconds. This var only works when the times_in_seconds configuration setting is on. Format is a string that should start and end with a \"-char. The \"-chars are not part of the output, &bsol;w,&bsol;d,&bsol;h,&bsol;m,&bsol;s,&bsol;(,&bsol;) and &bsol;&bsol; are replaced by weeks,days,hours,minutes,seconds,(,) and &bsol;. If you leave out a unit, it's value will be expressed in the highest unite lower then the one left out. Text between ()-chars will not be visible if a replaced unit in this text is 0. If seconds is a decimal number then you can see the numbers behind the point by using &bsol;S followed by a number that specifies the amount of digits behind the point that you want to see (maximum 9). You can also place a 'x' behind &bsol;S so you have all digits behind the point and no trailing zero's. (also maximum 9)"
+msgstr ""
+
+#: conky.1.xml:1925(emphasis)
+msgid "forwarded_mails"
+msgstr ""
+
+#: conky.1.xml:1927(para)
+msgid "Number of mails marked as forwarded in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:1934(emphasis)
+msgid "freq"
+msgstr ""
+
+#: conky.1.xml:1934(emphasis) conky.1.xml:1942(emphasis) conky.1.xml:3977(emphasis) conky.1.xml:3985(emphasis)
+msgid "(n)"
+msgstr ""
+
+#: conky.1.xml:1936(para)
+msgid "Returns CPU #n's frequency in MHz. CPUs are counted from 1. If omitted, the parameter defaults to 1."
+msgstr ""
+
+#: conky.1.xml:1942(emphasis)
+msgid "freq_g"
+msgstr ""
+
+#: conky.1.xml:1944(para)
+msgid "Returns CPU #n's frequency in GHz. CPUs are counted from 1. If omitted, the parameter defaults to 1."
+msgstr ""
+
+#: conky.1.xml:1950(emphasis)
+msgid "fs_bar"
+msgstr ""
+
+#: conky.1.xml:1950(emphasis) conky.1.xml:1959(emphasis)
+msgid "(height),(width) fs"
+msgstr ""
+
+#: conky.1.xml:1952(para)
+msgid "Bar that shows how much space is used on a file system. height is the height in pixels. fs is any file on that file system."
+msgstr ""
+
+#: conky.1.xml:1959(emphasis)
+msgid "fs_bar_free"
+msgstr ""
+
+#: conky.1.xml:1961(para)
+msgid "Bar that shows how much space is free on a file system. height is the height in pixels. fs is any file on that file system."
+msgstr ""
+
+#: conky.1.xml:1968(emphasis)
+msgid "fs_free"
+msgstr ""
+
+#: conky.1.xml:1968(emphasis) conky.1.xml:1975(emphasis) conky.1.xml:1983(emphasis) conky.1.xml:1990(emphasis) conky.1.xml:1997(emphasis) conky.1.xml:2004(emphasis)
+msgid "(fs)"
+msgstr ""
+
+#: conky.1.xml:1970(para)
+msgid "Free space on a file system available for users."
+msgstr ""
+
+#: conky.1.xml:1975(emphasis)
+msgid "fs_free_perc"
+msgstr ""
+
+#: conky.1.xml:1977(para)
+msgid "Free percentage of space on a file system available for users."
+msgstr ""
+
+#: conky.1.xml:1983(emphasis)
+msgid "fs_size"
+msgstr ""
+
+#: conky.1.xml:1985(para)
+msgid "File system size."
+msgstr ""
+
+#: conky.1.xml:1990(emphasis)
+msgid "fs_type"
+msgstr ""
+
+#: conky.1.xml:1992(para)
+msgid "File system type."
+msgstr ""
+
+#: conky.1.xml:1997(emphasis)
+msgid "fs_used"
+msgstr ""
+
+#: conky.1.xml:1999(para)
+msgid "File system used space."
+msgstr ""
+
+#: conky.1.xml:2004(emphasis)
+msgid "fs_used_perc"
+msgstr ""
+
+#: conky.1.xml:2006(para)
+msgid "Percent of file system used space."
+msgstr ""
+
+#: conky.1.xml:2011(emphasis)
+msgid "goto"
+msgstr ""
+
+#: conky.1.xml:2011(emphasis)
+msgid "x"
+msgstr ""
+
+#: conky.1.xml:2013(para)
+msgid "The next element will be printed at position 'x'."
+msgstr ""
+
+#: conky.1.xml:2018(emphasis)
+msgid "gw_iface"
+msgstr ""
+
+#: conky.1.xml:2020(para)
+msgid "Displays the default route's interface or \"multiple\"/\"none\" accordingly."
+msgstr ""
+
+#: conky.1.xml:2026(emphasis)
+msgid "gw_ip"
+msgstr ""
+
+#: conky.1.xml:2028(para)
+msgid "Displays the default gateway's IP or \"multiple\"/\"none\" accordingly."
+msgstr ""
+
+#: conky.1.xml:2034(emphasis)
+msgid "hddtemp"
+msgstr ""
+
+#: conky.1.xml:2034(emphasis)
+msgid "(dev)"
+msgstr ""
+
+#: conky.1.xml:2036(para)
+msgid "Displays temperature of a selected hard disk drive as reported by the hddtemp daemon. Use hddtemp_host and hddtemp_port to specify a host and port for all hddtemp objects. If no dev parameter is given, the first disk returned by the hddtemp daemon is used."
+msgstr ""
+
+#: conky.1.xml:2045(emphasis)
+msgid "head"
+msgstr ""
+
+#: conky.1.xml:2045(emphasis) conky.1.xml:3539(emphasis)
+msgid "logfile lines (next_check)"
+msgstr ""
+
+#: conky.1.xml:2047(para)
+msgid "Displays first N lines of supplied text file. The file is checked every 'next_check' update. If next_check is not supplied, Conky defaults to 2. Max of 30 lines can be displayed, or until the text buffer is filled."
+msgstr ""
+
+#: conky.1.xml:2055(emphasis)
+msgid "hr"
+msgstr ""
+
+#: conky.1.xml:2055(emphasis)
+msgid "(height)"
+msgstr ""
+
+#: conky.1.xml:2057(para)
+msgid "Horizontal line, height is the height in pixels"
+msgstr ""
+
+#: conky.1.xml:2062(emphasis)
+msgid "hwmon"
+msgstr ""
+
+#: conky.1.xml:2062(emphasis) conky.1.xml:2078(emphasis) conky.1.xml:3282(emphasis)
+msgid "(dev) type n (factor offset)"
+msgstr ""
+
+#: conky.1.xml:2064(para)
+msgid "Hwmon sensor from sysfs (Linux 2.6). Parameter dev may be omitted if you have only one hwmon device. Parameter type is either 'in' or 'vol' meaning voltage; 'fan' meaning fan; 'temp' meaning temperature. Parameter n is number of the sensor. See /sys/class/hwmon/ on your local computer. The optional arguments 'factor' and 'offset' allow precalculation of the raw input, which is being modified as follows: 'input = input * factor + offset'. Note that they have to be given as decimal values (i.e. contain at least one decimal place)."
+msgstr ""
+
+#: conky.1.xml:2078(emphasis)
+msgid "i2c"
+msgstr ""
+
+#: conky.1.xml:2080(para)
+msgid "I2C sensor from sysfs (Linux 2.6). Parameter dev may be omitted if you have only one I2C device. Parameter type is either 'in' or 'vol' meaning voltage; 'fan' meaning fan; 'temp' meaning temperature. Parameter n is number of the sensor. See /sys/bus/i2c/devices/ on your local computer. The optional arguments 'factor' and 'offset' allow precalculation of the raw input, which is being modified as follows: 'input = input * factor + offset'. Note that they have to be given as decimal values (i.e. contain at least one decimal place)."
+msgstr ""
+
+#: conky.1.xml:2094(emphasis)
+msgid "i8k_ac_status"
+msgstr ""
+
+#: conky.1.xml:2096(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays whether ac power is on, as listed in /proc/i8k (translated to human-readable). Beware that this is by default not enabled by i8k itself."
+msgstr ""
+
+#: conky.1.xml:2104(emphasis)
+msgid "i8k_bios"
+msgstr ""
+
+#: conky.1.xml:2106(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays the bios version as listed in /proc/i8k."
+msgstr ""
+
+#: conky.1.xml:2112(emphasis)
+msgid "i8k_buttons_status"
+msgstr ""
+
+#: conky.1.xml:2114(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays the volume buttons status as listed in /proc/i8k."
+msgstr ""
+
+#: conky.1.xml:2121(emphasis)
+msgid "i8k_cpu_temp"
+msgstr ""
+
+#: conky.1.xml:2123(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays the cpu temperature in Celsius, as reported by /proc/i8k."
+msgstr ""
+
+#: conky.1.xml:2130(emphasis)
+msgid "i8k_left_fan_rpm"
+msgstr ""
+
+#: conky.1.xml:2132(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays the left fan's rate of rotation, in revolutions per minute as listed in /proc/i8k. Beware, some laptops i8k reports these fans in reverse order."
+msgstr ""
+
+#: conky.1.xml:2140(emphasis)
+msgid "i8k_left_fan_status"
+msgstr ""
+
+#: conky.1.xml:2142(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays the left fan status as listed in /proc/i8k (translated to human-readable). Beware, some laptops i8k reports these fans in reverse order."
+msgstr ""
+
+#: conky.1.xml:2150(emphasis)
+msgid "i8k_right_fan_rpm"
+msgstr ""
+
+#: conky.1.xml:2152(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays the right fan's rate of rotation, in revolutions per minute as listed in /proc/i8k. Beware, some laptops i8k reports these fans in reverse order."
+msgstr ""
+
+#: conky.1.xml:2160(emphasis)
+msgid "i8k_right_fan_status"
+msgstr ""
+
+#: conky.1.xml:2162(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays the right fan status as listed in /proc/i8k (translated to human-readable). Beware, some laptops i8k reports these fans in reverse order."
+msgstr ""
+
+#: conky.1.xml:2170(emphasis)
+msgid "i8k_serial"
+msgstr ""
+
+#: conky.1.xml:2172(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays your laptop serial number as listed in /proc/i8k."
+msgstr ""
+
+#: conky.1.xml:2179(emphasis)
+msgid "i8k_version"
+msgstr ""
+
+#: conky.1.xml:2181(para)
+msgid "If running the i8k kernel driver for Inspiron laptops, displays the version formatting of /proc/i8k."
+msgstr ""
+
+#: conky.1.xml:2187(emphasis)
+msgid "ibm_brightness"
+msgstr ""
+
+#: conky.1.xml:2189(para)
+msgid "If running the IBM ACPI, displays the brigtness of the laptops's LCD (0-7)."
+msgstr ""
+
+#: conky.1.xml:2195(emphasis)
+msgid "ibm_fan"
+msgstr ""
+
+#: conky.1.xml:2197(para)
+msgid "If running the IBM ACPI, displays the fan speed."
+msgstr ""
+
+#: conky.1.xml:2202(emphasis)
+msgid "ibm_temps"
+msgstr ""
+
+#: conky.1.xml:2202(emphasis)
+msgid "N"
+msgstr ""
+
+#: conky.1.xml:2204(para)
+msgid "If running the IBM ACPI, displays the temperatures from the IBM temperature sensors (N=0..7) Sensor 0 is on the CPU, 3 is on the GPU."
+msgstr ""
+
+#: conky.1.xml:2211(emphasis)
+msgid "ibm_volume"
+msgstr ""
+
+#: conky.1.xml:2213(para)
+msgid "If running the IBM ACPI, displays the \"master\" volume, controlled by the volume keys (0-14)."
+msgstr ""
+
+#: conky.1.xml:2219(emphasis)
+msgid "iconv_start"
+msgstr ""
+
+#: conky.1.xml:2219(emphasis)
+msgid "codeset_from codeset_to"
+msgstr ""
+
+#: conky.1.xml:2221(para)
+msgid "Convert text from one codeset to another using GNU iconv. Needs to be stopped with iconv_stop."
+msgstr ""
+
+#: conky.1.xml:2227(emphasis)
+msgid "iconv_stop"
+msgstr ""
+
+#: conky.1.xml:2229(para)
+msgid "Stop iconv codeset conversion."
+msgstr ""
+
+#: conky.1.xml:2234(emphasis)
+msgid "if_empty"
+msgstr ""
+
+#: conky.1.xml:2234(emphasis)
+msgid "(var)"
+msgstr ""
+
+#: conky.1.xml:2236(para)
+msgid "if conky variable VAR is empty, display everything between $if_empty and the matching $endif"
+msgstr ""
+
+#: conky.1.xml:2242(emphasis)
+msgid "if_existing"
+msgstr ""
+
+#: conky.1.xml:2242(emphasis)
+msgid "file (string)"
+msgstr ""
+
+#: conky.1.xml:2244(para)
+msgid "if FILE exists, display everything between if_existing and the matching $endif. The optional second parameter checks for FILE containing the specified string and prints everything between $if_existing and the matching $endif."
+msgstr ""
+
+#: conky.1.xml:2253(emphasis)
+msgid "if_gw"
+msgstr ""
+
+#: conky.1.xml:2255(para)
+msgid "if there is at least one default gateway, display everything between $if_gw and the matching $endif"
+msgstr ""
+
+#: conky.1.xml:2261(emphasis)
+msgid "if_match"
+msgstr ""
+
+#: conky.1.xml:2261(emphasis)
+msgid "expression"
+msgstr ""
+
+#: conky.1.xml:2263(para)
+msgid "Evaluates the given boolean expression, printing everything between $if_match and the matching $endif depending on whether the evaluation returns true or not. Valid expressions consist of a left side, an operator and a right side. Left and right sides are being parsed for contained text objects before evaluation. Recognised left and right side types are:"
+msgstr ""
+
+#: conky.1.xml:2271(para)
+msgid "<emphasis remap=\"B\">double</emphasis>Argument consists of only digits and a single dot. <emphasis remap=\"B\">long</emphasis>Argument consists of only digits. <emphasis remap=\"B\">string</emphasis>Argument is enclosed in quotation marks (\")"
+msgstr ""
+
+#: conky.1.xml:2280(para)
+msgid "Valid operands are: '&gt;', '&lt;', '&gt;=', '&lt;=', '==', '!='."
+msgstr ""
+
+#: conky.1.xml:2286(emphasis)
+msgid "if_mixer_mute"
+msgstr ""
+
+#: conky.1.xml:2286(emphasis)
+msgid "(mixer)"
+msgstr ""
+
+#: conky.1.xml:2288(para)
+msgid "If mixer exists, display everything between $if_mixer_mute and the matching $endif. If no mixer is specified, \"Vol\" is used."
+msgstr ""
+
+#: conky.1.xml:2295(emphasis)
+msgid "if_mounted"
+msgstr ""
+
+#: conky.1.xml:2295(emphasis)
+msgid "(mountpoint)"
+msgstr ""
+
+#: conky.1.xml:2297(para)
+msgid "if MOUNTPOINT is mounted, display everything between $if_mounted and the matching $endif"
+msgstr ""
+
+#: conky.1.xml:2303(emphasis)
+msgid "if_mpd_playing"
+msgstr ""
+
+#: conky.1.xml:2305(para)
+msgid "if mpd is playing or paused, display everything between $if_mpd_playing and the matching $endif"
+msgstr ""
+
+#: conky.1.xml:2311(emphasis)
+msgid "if_running"
+msgstr ""
+
+#: conky.1.xml:2311(emphasis)
+msgid "(process)"
+msgstr ""
+
+#: conky.1.xml:2313(para)
+msgid "if PROCESS is running, display everything $if_running and the matching $endif. This uses the &ldquo;pidof&rdquo; command, so the -x switch is also supported."
+msgstr ""
+
+#: conky.1.xml:2320(emphasis)
+msgid "if_smapi_bat_installed"
+msgstr ""
+
+#: conky.1.xml:2320(emphasis) conky.1.xml:3443(emphasis)
+msgid "(INDEX)"
+msgstr ""
+
+#: conky.1.xml:2322(para)
+msgid "when using smapi, if the battery with index INDEX is installed, display everything between $if_smapi_bat_installed and the matching $endif"
+msgstr ""
+
+#: conky.1.xml:2329(emphasis)
+msgid "if_up"
+msgstr ""
+
+#: conky.1.xml:2331(para)
+msgid "if INTERFACE exists and is up, display everything between $if_up and the matching $endif"
+msgstr ""
+
+#: conky.1.xml:2337(emphasis)
+msgid "if_updatenr"
+msgstr ""
+
+#: conky.1.xml:2337(emphasis)
+msgid "(updatenr)"
+msgstr ""
+
+#: conky.1.xml:2339(para)
+msgid "If it's the UPDATENR-th time that conky updates, display everything between $if_updatenr and the matching $endif. The counter resets when the highest UPDATENR is reached. Example : \"{$if_updatenr 1}foo$endif{$if_updatenr 2}bar$endif{$if_updatenr 4}$endif\" shows foo 25% of the time followed by bar 25% of the time followed by nothing the other half of the time."
+msgstr ""
+
+#: conky.1.xml:2350(emphasis)
+msgid "if_xmms2_connected"
+msgstr ""
+
+#: conky.1.xml:2352(para)
+msgid "Display everything between $if_xmms2_connected and the matching $endif if xmms2 is running."
+msgstr ""
+
+#: conky.1.xml:2358(emphasis)
+msgid "image"
+msgstr ""
+
+#: conky.1.xml:2358(emphasis)
+msgid "&lt;path to image&gt; (-p x,y) (-s WxH) (-n) (-f interval)"
+msgstr ""
+
+#: conky.1.xml:2360(para)
+msgid "Renders an image from the path specified using Imlib2. Takes 4 optional arguments: a position, a size, a no-cache switch, and a cache flush interval. Changing the x,y position will move the position of the image, and changing the WxH will scale the image. If you specify the no-cache flag (-n), the image will not be cached. Alternately, you can specify the -f int switch to specify a cache flust interval for a particular image. Example: ${image /home/brenden/cheeseburger.jpg -p 20,20 -s 200x200} will render 'cheeseburger.jpg' at (20,20) scaled to 200x200 pixels. Conky does not make any attempt to adjust the position (or any other formatting) of images, they are just rendered as per the arguments passed. The only reason $image is part of the TEXT section, is to allow for runtime modifications, through $execp $lua_parse, or some other method."
+msgstr ""
+
+#: conky.1.xml:2380(emphasis)
+msgid "imap_messages"
+msgstr ""
+
+#: conky.1.xml:2380(emphasis) conky.1.xml:2395(emphasis) conky.1.xml:3298(emphasis) conky.1.xml:3313(emphasis)
+msgid "(args)"
+msgstr ""
+
+#: conky.1.xml:2382(para)
+msgid "Displays the number of messages in your global IMAP inbox by default. You can define individual IMAP inboxes separately by passing arguments to this object. Arguments are: \"host user pass [-i interval (in seconds)] [-f 'folder'] [-p port] [-e 'command'] [-r retries]\". Default port is 143, default folder is 'INBOX', default interval is 5 minutes, and default number of retries before giving up is 5. If the password is supplied as '*', you will be prompted to enter the password when Conky starts."
+msgstr ""
+
+#: conky.1.xml:2395(emphasis)
+msgid "imap_unseen"
+msgstr ""
+
+#: conky.1.xml:2397(para)
+msgid "Displays the number of unseen messages in your global IMAP inbox by default. You can define individual IMAP inboxes separately by passing arguments to this object. Arguments are: \"host user pass [-i interval (in seconds)] [-f 'folder'] [-p port] [-e 'command'] [-r retries]\". Default port is 143, default folder is 'INBOX', default interval is 5 minutes, and default number of retries before giving up is 5. If the password is supplied as '*', you will be prompted to enter the password when Conky starts."
+msgstr ""
+
+#: conky.1.xml:2410(emphasis)
+msgid "include"
+msgstr ""
+
+#: conky.1.xml:2410(emphasis)
+msgid "path"
+msgstr ""
+
+#: conky.1.xml:2412(para)
+msgid "Loads the configfile at path, places the configsettings behind the configsettings in the orginal config and places the vars where the includevar stood."
+msgstr ""
+
+#: conky.1.xml:2419(emphasis)
+msgid "ioscheduler"
+msgstr ""
+
+#: conky.1.xml:2419(emphasis)
+msgid "disk"
+msgstr ""
+
+#: conky.1.xml:2421(para)
+msgid "Prints the current ioscheduler used for the given disk name (i.e. e.g. \"hda\" or \"sdb\")"
+msgstr ""
+
+#: conky.1.xml:2427(emphasis)
+msgid "kernel"
+msgstr ""
+
+#: conky.1.xml:2429(para)
+msgid "Kernel version"
+msgstr ""
+
+#: conky.1.xml:2434(emphasis)
+msgid "laptop_mode"
+msgstr ""
+
+#: conky.1.xml:2436(para)
+msgid "The value of /proc/sys/vm/laptop_mode"
+msgstr ""
+
+#: conky.1.xml:2441(emphasis)
+msgid "lines"
+msgstr ""
+
+#: conky.1.xml:2441(emphasis) conky.1.xml:4210(emphasis)
+msgid "textfile"
+msgstr ""
+
+#: conky.1.xml:2443(para)
+msgid "Displays the number of lines in the given file"
+msgstr ""
+
+#: conky.1.xml:2448(emphasis)
+msgid "loadavg"
+msgstr ""
+
+#: conky.1.xml:2448(emphasis)
+msgid "(1|2|3)"
+msgstr ""
+
+#: conky.1.xml:2450(para)
+msgid "System load average, 1 is for past 1 minute, 2 for past 5 minutes and 3 for past 15 minutes. Without argument, prints all three values separated by whitespace."
+msgstr ""
+
+#: conky.1.xml:2457(emphasis)
+msgid "loadgraph"
+msgstr ""
+
+#: conky.1.xml:2459(para)
+msgid "Load1 average graph, similar to xload, with optional colours in hex, minus the #. Uses a logarithmic scale (to see small numbers) when you use the -l switch. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see)."
+msgstr ""
+
+#: conky.1.xml:2469(emphasis)
+msgid "lua"
+msgstr ""
+
+#: conky.1.xml:2469(emphasis) conky.1.xml:2520(emphasis)
+msgid "function_name (function parameters)"
+msgstr ""
+
+#: conky.1.xml:2471(para)
+msgid "Executes a Lua function with given parameters, then prints the returned string. See also 'lua_load' on how to load scripts. Conky puts 'conky_' in front of function_name to prevent accidental calls to the wrong function unless you put you place 'conky_' in front of it yourself."
+msgstr ""
+
+#: conky.1.xml:2481(emphasis)
+msgid "lua_bar"
+msgstr ""
+
+#: conky.1.xml:2481(emphasis) conky.1.xml:2493(emphasis)
+msgid "(height, width) function_name (function parameters)"
+msgstr ""
+
+#: conky.1.xml:2483(para)
+msgid "Executes a Lua function with given parameters and draws a bar. Expects result value to be an integer between 0 and 100. See also 'lua_load' on how to load scripts. Conky puts 'conky_' in front of function_name to prevent accidental calls to the wrong function unless you put you place 'conky_' in front of it yourself."
+msgstr ""
+
+#: conky.1.xml:2493(emphasis)
+msgid "lua_gauge"
+msgstr ""
+
+#: conky.1.xml:2495(para)
+msgid "Executes a Lua function with given parameters and draws a gauge. Expects result value to be an integer between 0 and 100. See also 'lua_load' on how to load scripts. Conky puts 'conky_' in front of function_name to prevent accidental calls to the wrong function unless you put you place 'conky_' in front of it yourself."
+msgstr ""
+
+#: conky.1.xml:2505(emphasis)
+msgid "lua_graph"
+msgstr ""
+
+#: conky.1.xml:2505(emphasis)
+msgid "function_name (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)"
+msgstr ""
+
+#: conky.1.xml:2507(para)
+msgid "Executes a Lua function with and draws a graph. Expects result value to be any number, and by default will scale to show the full range. See also 'lua_load' on how to load scripts. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see). Conky puts 'conky_' in front of function_name to prevent accidental calls to the wrong function unless you put you place 'conky_' in front of it yourself."
+msgstr ""
+
+#: conky.1.xml:2520(emphasis)
+msgid "lua_parse"
+msgstr ""
+
+#: conky.1.xml:2522(para)
+msgid "Executes a Lua function with given parameters as per $lua, then parses and prints the result value as per the syntax for Conky's TEXT section. See also 'lua_load' on how to load scripts. Conky puts 'conky_' in front of function_name to prevent accidental calls to the wrong function unless you put you place 'conky_' in front of it yourself."
+msgstr ""
+
+#: conky.1.xml:2533(emphasis)
+msgid "machine"
+msgstr ""
+
+#: conky.1.xml:2535(para)
+msgid "Machine, i686 for example"
+msgstr ""
+
+#: conky.1.xml:2540(emphasis)
+msgid "mails"
+msgstr ""
+
+#: conky.1.xml:2540(emphasis) conky.1.xml:2902(emphasis)
+msgid "(mailbox)"
+msgstr ""
+
+#: conky.1.xml:2542(para)
+msgid "Mail count in the specified mailbox or your mail spool if not. Both mbox and maildir type mailboxes are supported. You can use a program like fetchmail to get mails from some server using your favourite protocol. See also new_mails."
+msgstr ""
+
+#: conky.1.xml:2551(emphasis)
+msgid "mboxscan"
+msgstr ""
+
+#: conky.1.xml:2551(emphasis)
+msgid "(-n number of messages to print) (-fw from width) (-sw subject width) mbox"
+msgstr ""
+
+#: conky.1.xml:2553(para)
+msgid "Print a summary of recent messages in an mbox format mailbox. mbox parameter is the filename of the mailbox (can be encapsulated using '\"', ie. ${mboxscan -n 10 \"/home/brenden/some box\"}"
+msgstr ""
+
+#: conky.1.xml:2561(emphasis)
+msgid "mem"
+msgstr ""
+
+#: conky.1.xml:2563(para)
+msgid "Amount of memory in use"
+msgstr ""
+
+#: conky.1.xml:2568(emphasis)
+msgid "membar"
+msgstr ""
+
+#: conky.1.xml:2570(para)
+msgid "Bar that shows amount of memory in use"
+msgstr ""
+
+#: conky.1.xml:2575(emphasis)
+msgid "memeasyfree"
+msgstr ""
+
+#: conky.1.xml:2577(para)
+msgid "Amount of free memory including the memory that is very easily freed (buffers/cache)"
+msgstr ""
+
+#: conky.1.xml:2583(emphasis)
+msgid "memfree"
+msgstr ""
+
+#: conky.1.xml:2585(para)
+msgid "Amount of free memory"
+msgstr ""
+
+#: conky.1.xml:2590(emphasis)
+msgid "memgauge"
+msgstr ""
+
+#: conky.1.xml:2592(para)
+msgid "Gauge that shows amount of memory in use (see cpugauge)"
+msgstr ""
+
+#: conky.1.xml:2598(emphasis)
+msgid "memgraph"
+msgstr ""
+
+#: conky.1.xml:2600(para)
+msgid "Memory usage graph. Uses a logarithmic scale (to see small numbers) when you use the -l switch. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see)."
+msgstr ""
+
+#: conky.1.xml:2609(emphasis)
+msgid "memmax"
+msgstr ""
+
+#: conky.1.xml:2611(para)
+msgid "Total amount of memory"
+msgstr ""
+
+#: conky.1.xml:2616(emphasis)
+msgid "memperc"
+msgstr ""
+
+#: conky.1.xml:2618(para)
+msgid "Percentage of memory in use"
+msgstr ""
+
+#: conky.1.xml:2623(emphasis)
+msgid "mixer"
+msgstr ""
+
+#: conky.1.xml:2625(para)
+msgid "Prints the mixer value as reported by the OS. On Linux, this variable uses the OSS emulation, so you need the proper kernel module loaded. Default mixer is \"Vol\", but you can specify one of the available OSS controls: \"Vol\", \"Bass\", \"Trebl\", \"Synth\", \"Pcm\", \"Spkr\", \"Line\", \"Mic\", \"CD\", \"Mix\", \"Pcm2 \", \"Rec\", \"IGain\", \"OGain\", \"Line1\", \"Line2\", \"Line3\", \"Digital1\", \"Digital2\", \"Digital3\", \"PhoneIn\", \"PhoneOut\", \"Video\", \"Radio\" and \"Monitor\"."
+msgstr ""
+
+#: conky.1.xml:2638(emphasis)
+msgid "mixerbar"
+msgstr ""
+
+#: conky.1.xml:2640(para)
+msgid "Displays mixer value in a bar as reported by the OS. See docs for $mixer for details on arguments."
+msgstr ""
+
+#: conky.1.xml:2646(emphasis)
+msgid "mixerl"
+msgstr ""
+
+#: conky.1.xml:2648(para)
+msgid "Prints the left channel mixer value as reported by the OS. See docs for $mixer for details on arguments."
+msgstr ""
+
+#: conky.1.xml:2654(emphasis)
+msgid "mixerlbar"
+msgstr ""
+
+#: conky.1.xml:2656(para)
+msgid "Displays the left channel mixer value in a bar as reported by the OS. See docs for $mixer for details on arguments."
+msgstr ""
+
+#: conky.1.xml:2663(emphasis)
+msgid "mixerr"
+msgstr ""
+
+#: conky.1.xml:2665(para)
+msgid "Prints the right channel mixer value as reported by the OS. See docs for $mixer for details on arguments."
+msgstr ""
+
+#: conky.1.xml:2671(emphasis)
+msgid "mixerrbar"
+msgstr ""
+
+#: conky.1.xml:2673(para)
+msgid "Displays the right channel mixer value in a bar as reported by the OS. See docs for $mixer for details on arguments."
+msgstr ""
+
+#: conky.1.xml:2680(emphasis)
+msgid "moc_album"
+msgstr ""
+
+#: conky.1.xml:2682(para)
+msgid "Album of the current MOC song"
+msgstr ""
+
+#: conky.1.xml:2687(emphasis)
+msgid "moc_artist"
+msgstr ""
+
+#: conky.1.xml:2689(para)
+msgid "Artist of the current MOC song"
+msgstr ""
+
+#: conky.1.xml:2694(emphasis)
+msgid "moc_bitrate"
+msgstr ""
+
+#: conky.1.xml:2696(para)
+msgid "Bitrate in the current MOC song"
+msgstr ""
+
+#: conky.1.xml:2701(emphasis)
+msgid "moc_curtime"
+msgstr ""
+
+#: conky.1.xml:2703(para)
+msgid "Current time of the current MOC song"
+msgstr ""
+
+#: conky.1.xml:2708(emphasis)
+msgid "moc_file"
+msgstr ""
+
+#: conky.1.xml:2710(para)
+msgid "File name of the current MOC song"
+msgstr ""
+
+#: conky.1.xml:2715(emphasis)
+msgid "moc_rate"
+msgstr ""
+
+#: conky.1.xml:2717(para)
+msgid "Rate of the current MOC song"
+msgstr ""
+
+#: conky.1.xml:2722(emphasis)
+msgid "moc_song"
+msgstr ""
+
+#: conky.1.xml:2724(para)
+msgid "The current song name being played in MOC."
+msgstr ""
+
+#: conky.1.xml:2729(emphasis)
+msgid "moc_state"
+msgstr ""
+
+#: conky.1.xml:2731(para)
+msgid "Current state of MOC; playing, stopped etc."
+msgstr ""
+
+#: conky.1.xml:2736(emphasis)
+msgid "moc_timeleft"
+msgstr ""
+
+#: conky.1.xml:2738(para)
+msgid "Time left in the current MOC song"
+msgstr ""
+
+#: conky.1.xml:2743(emphasis)
+msgid "moc_title"
+msgstr ""
+
+#: conky.1.xml:2745(para)
+msgid "Title of the current MOC song"
+msgstr ""
+
+#: conky.1.xml:2750(emphasis)
+msgid "moc_totaltime"
+msgstr ""
+
+#: conky.1.xml:2752(para)
+msgid "Total length of the current MOC song"
+msgstr ""
+
+#: conky.1.xml:2757(emphasis)
+msgid "monitor"
+msgstr ""
+
+#: conky.1.xml:2759(para)
+msgid "Number of the monitor on which conky is running or the message \"Not running in X\" if this is the case."
+msgstr ""
+
+#: conky.1.xml:2765(emphasis)
+msgid "monitor_number"
+msgstr ""
+
+#: conky.1.xml:2767(para)
+msgid "Number of monitors or the message \"Not running in X\" if this is the case."
+msgstr ""
+
+#: conky.1.xml:2773(emphasis)
+msgid "mpd_album"
+msgstr ""
+
+#: conky.1.xml:2775(para)
+msgid "Album in current MPD song"
+msgstr ""
+
+#: conky.1.xml:2780(emphasis)
+msgid "mpd_artist"
+msgstr ""
+
+#: conky.1.xml:2782(para)
+msgid "Artist in current MPD song must be enabled at compile"
+msgstr ""
+
+#: conky.1.xml:2788(emphasis)
+msgid "mpd_bar"
+msgstr ""
+
+#: conky.1.xml:2790(para)
+msgid "Bar of mpd's progress"
+msgstr ""
+
+#: conky.1.xml:2795(emphasis)
+msgid "mpd_bitrate"
+msgstr ""
+
+#: conky.1.xml:2797(para) conky.1.xml:4240(para)
+msgid "Bitrate of current song"
+msgstr ""
+
+#: conky.1.xml:2802(emphasis)
+msgid "mpd_date"
+msgstr ""
+
+#: conky.1.xml:2804(para)
+msgid "Date of current song"
+msgstr ""
+
+#: conky.1.xml:2809(emphasis)
+msgid "mpd_elapsed"
+msgstr ""
+
+#: conky.1.xml:2811(para) conky.1.xml:4268(para)
+msgid "Song's elapsed time"
+msgstr ""
+
+#: conky.1.xml:2816(emphasis)
+msgid "mpd_file"
+msgstr ""
+
+#: conky.1.xml:2818(para)
+msgid "Prints the file name of the current MPD song"
+msgstr ""
+
+#: conky.1.xml:2823(emphasis)
+msgid "mpd_length"
+msgstr ""
+
+#: conky.1.xml:2825(para)
+msgid "Song's length"
+msgstr ""
+
+#: conky.1.xml:2830(emphasis)
+msgid "mpd_name"
+msgstr ""
+
+#: conky.1.xml:2832(para)
+msgid "Prints the MPD name field"
+msgstr ""
+
+#: conky.1.xml:2837(emphasis)
+msgid "mpd_percent"
+msgstr ""
+
+#: conky.1.xml:2839(para) conky.1.xml:4289(para)
+msgid "Percent of song's progress"
+msgstr ""
+
+#: conky.1.xml:2844(emphasis)
+msgid "mpd_random"
+msgstr ""
+
+#: conky.1.xml:2846(para)
+msgid "Random status (On/Off)"
+msgstr ""
+
+#: conky.1.xml:2851(emphasis)
+msgid "mpd_repeat"
+msgstr ""
+
+#: conky.1.xml:2853(para)
+msgid "Repeat status (On/Off)"
+msgstr ""
+
+#: conky.1.xml:2858(emphasis)
+msgid "mpd_smart"
+msgstr ""
+
+#: conky.1.xml:2860(para) conky.1.xml:4310(para)
+msgid "Prints the song name in either the form \"artist - title\" or file name, depending on whats available"
+msgstr ""
+
+#: conky.1.xml:2866(emphasis)
+msgid "mpd_status"
+msgstr ""
+
+#: conky.1.xml:2868(para)
+msgid "Playing, stopped, et cetera."
+msgstr ""
+
+#: conky.1.xml:2873(emphasis)
+msgid "mpd_title"
+msgstr ""
+
+#: conky.1.xml:2875(para)
+msgid "Title of current MPD song"
+msgstr ""
+
+#: conky.1.xml:2880(emphasis)
+msgid "mpd_track"
+msgstr ""
+
+#: conky.1.xml:2882(para)
+msgid "Prints the MPD track field"
+msgstr ""
+
+#: conky.1.xml:2887(emphasis)
+msgid "mpd_vol"
+msgstr ""
+
+#: conky.1.xml:2889(para)
+msgid "MPD's volume"
+msgstr ""
+
+#: conky.1.xml:2894(emphasis)
+msgid "nameserver"
+msgstr ""
+
+#: conky.1.xml:2894(emphasis)
+msgid "(index)"
+msgstr ""
+
+#: conky.1.xml:2896(para)
+msgid "Print a nameserver from /etc/resolv.conf. Index starts at and defaults to 0."
+msgstr ""
+
+#: conky.1.xml:2902(emphasis)
+msgid "new_mails"
+msgstr ""
+
+#: conky.1.xml:2904(para)
+msgid "Unread mail count in the specified mailbox or mail spool if not. Both mbox and maildir type mailboxes are supported."
+msgstr ""
+
+#: conky.1.xml:2911(emphasis)
+msgid "nodename"
+msgstr ""
+
+#: conky.1.xml:2913(para)
+msgid "Hostname"
+msgstr ""
+
+#: conky.1.xml:2918(emphasis)
+msgid "nodename_short"
+msgstr ""
+
+#: conky.1.xml:2920(para)
+msgid "Short hostname (same as 'hostname -s' shell command)."
+msgstr ""
+
+#: conky.1.xml:2925(emphasis)
+msgid "nvidia"
+msgstr ""
+
+#: conky.1.xml:2925(emphasis) conky.1.xml:2932(emphasis)
+msgid "threshold"
+msgstr ""
+
+#. br
+#: conky.1.xml:2925(emphasis) conky.1.xml:2936(emphasis)
+msgid "temp"
+msgstr ""
+
+#. br
+#: conky.1.xml:2925(emphasis) conky.1.xml:2940(emphasis)
+msgid "ambient"
+msgstr ""
+
+#. br
+#: conky.1.xml:2925(emphasis) conky.1.xml:2944(emphasis)
+msgid "gpufreq"
+msgstr ""
+
+#. br
+#: conky.1.xml:2925(emphasis) conky.1.xml:2947(emphasis)
+msgid "memfreq"
+msgstr ""
+
+#. br
+#: conky.1.xml:2925(emphasis) conky.1.xml:2950(emphasis)
+msgid "imagequality"
+msgstr ""
+
+#: conky.1.xml:2927(para)
+msgid "Nvidia graficcard support for the XNVCtrl library. Each option can be shortened to the least significant part. Temperatures are printed as float, all other values as integer."
+msgstr ""
+
+#: conky.1.xml:2933(emphasis)
+msgid "The thresholdtemperature at which the gpu slows down"
+msgstr ""
+
+#: conky.1.xml:2937(emphasis)
+msgid "Gives the gpu current temperature"
+msgstr ""
+
+#: conky.1.xml:2941(emphasis)
+msgid "Gives current air temperature near GPU case"
+msgstr ""
+
+#: conky.1.xml:2945(emphasis)
+msgid "Gives the current gpu frequency"
+msgstr ""
+
+#: conky.1.xml:2948(emphasis)
+msgid "Gives the current mem frequency"
+msgstr ""
+
+#: conky.1.xml:2951(emphasis)
+msgid "Which imagequality should be chosen by OpenGL applications"
+msgstr ""
+
+#: conky.1.xml:2957(emphasis)
+msgid "offset"
+msgstr ""
+
+#: conky.1.xml:2957(emphasis) conky.1.xml:3969(emphasis)
+msgid "(pixels)"
+msgstr ""
+
+#: conky.1.xml:2959(para)
+msgid "Move text over by N pixels. See also $voffset."
+msgstr ""
+
+#: conky.1.xml:2964(emphasis)
+msgid "outlinecolor"
+msgstr ""
+
+#: conky.1.xml:2966(para)
+msgid "Change outline color"
+msgstr ""
+
+#: conky.1.xml:2971(emphasis)
+msgid "pb_battery"
+msgstr ""
+
+#: conky.1.xml:2971(emphasis)
+msgid "item"
+msgstr ""
+
+#: conky.1.xml:2973(para)
+msgid "If running on Apple powerbook/ibook, display information on battery status. The item parameter specifies, what information to display. Exactly one item must be specified. Valid items are:"
+msgstr ""
+
+#: conky.1.xml:2978(emphasis)
+msgid "status"
+msgstr ""
+
+#: conky.1.xml:2979(emphasis)
+msgid "Display if battery is fully charged, charging, discharging or absent (running on AC)"
+msgstr ""
+
+#. br
+#: conky.1.xml:2983(emphasis)
+msgid "percent"
+msgstr ""
+
+#: conky.1.xml:2984(emphasis)
+msgid "Display charge of battery in percent, if charging or discharging. Nothing will be displayed, if battery is fully charged or absent."
+msgstr ""
+
+#. br
+#: conky.1.xml:2988(emphasis) conky.1.xml:3738(emphasis)
+msgid "time"
+msgstr ""
+
+#: conky.1.xml:2989(emphasis)
+msgid "Display the time remaining until the battery will be fully charged or discharged at current rate. Nothing is displayed, if battery is absent or if it's present but fully charged and not discharging."
+msgstr ""
+
+#: conky.1.xml:2998(emphasis)
+msgid "pid_chroot"
+msgstr ""
+
+#: conky.1.xml:2998(emphasis) conky.1.xml:3006(emphasis) conky.1.xml:3013(emphasis) conky.1.xml:3027(emphasis) conky.1.xml:3034(emphasis) conky.1.xml:3041(emphasis) conky.1.xml:3048(emphasis) conky.1.xml:3055(emphasis) conky.1.xml:3062(emphasis) conky.1.xml:3069(emphasis) conky.1.xml:3076(emphasis) conky.1.xml:3083(emphasis) conky.1.xml:3093(emphasis) conky.1.xml:3100(emphasis) conky.1.xml:3107(emphasis) conky.1.xml:3114(emphasis) conky.1.xml:3121(emphasis) conky.1.xml:3128(emphasis) conky.1.xml:3135(emphasis) conky.1.xml:3142(emphasis) conky.1.xml:3149(emphasis) conky.1.xml:3156(emphasis) conky.1.xml:3163(emphasis) conky.1.xml:3170(emphasis) conky.1.xml:3177(emphasis) conky.1.xml:3184(emphasis) conky.1.xml:3191(emphasis) conky.1.xml:3198(emphasis) conky.1.xml:3205(emphasis) conky.1.xml:3212(emphasis) conky.1.xml:3219(emphasis) conky.1.xml:3226(emphasis) conky.1.xml:3233(emphasis) conky.1.xml:3240(emphasis) conky.1.xml:3247(emphasis) conky.1.xml:3254(emphasis) conky.1.xml:3261(emphasis) conky.1.xml:3268(emphasis) conky.1.xml:3275(emphasis)
+msgid "pid"
+msgstr ""
+
+#: conky.1.xml:3000(para)
+msgid "Directory used as rootdirectory by the process (this will be \"/\" unless the process did a chroot syscall)"
+msgstr ""
+
+#: conky.1.xml:3006(emphasis)
+msgid "pid_cmdline"
+msgstr ""
+
+#: conky.1.xml:3008(para)
+msgid "Command line this process was invoked with"
+msgstr ""
+
+#: conky.1.xml:3013(emphasis)
+msgid "pid_cwd"
+msgstr ""
+
+#: conky.1.xml:3015(para)
+msgid "Current working directory of the process"
+msgstr ""
+
+#: conky.1.xml:3020(emphasis)
+msgid "pid_environ"
+msgstr ""
+
+#: conky.1.xml:3020(emphasis)
+msgid "pid varname"
+msgstr ""
+
+#: conky.1.xml:3022(para)
+msgid "Contents of a environment-var of the process"
+msgstr ""
+
+#: conky.1.xml:3027(emphasis)
+msgid "pid_environ_list"
+msgstr ""
+
+#: conky.1.xml:3029(para)
+msgid "List of environment-vars that the process can see"
+msgstr ""
+
+#: conky.1.xml:3034(emphasis)
+msgid "pid_exe"
+msgstr ""
+
+#: conky.1.xml:3036(para)
+msgid "Path to executed command that started the process"
+msgstr ""
+
+#: conky.1.xml:3041(emphasis)
+msgid "pid_nice"
+msgstr ""
+
+#: conky.1.xml:3043(para)
+msgid "The nice value of the process"
+msgstr ""
+
+#: conky.1.xml:3048(emphasis)
+msgid "pid_openfiles"
+msgstr ""
+
+#: conky.1.xml:3050(para)
+msgid "List of files that the process has open"
+msgstr ""
+
+#: conky.1.xml:3055(emphasis)
+msgid "pid_parent"
+msgstr ""
+
+#: conky.1.xml:3057(para)
+msgid "The pid of the parent of the process"
+msgstr ""
+
+#: conky.1.xml:3062(emphasis)
+msgid "pid_priority"
+msgstr ""
+
+#: conky.1.xml:3064(para)
+msgid "The priority of the process (see 'priority' in \"man 5 proc\")"
+msgstr ""
+
+#: conky.1.xml:3069(emphasis)
+msgid "pid_read"
+msgstr ""
+
+#: conky.1.xml:3071(para)
+msgid "Total number of bytes read by the process"
+msgstr ""
+
+#: conky.1.xml:3076(emphasis)
+msgid "pid_state"
+msgstr ""
+
+#: conky.1.xml:3078(para)
+msgid "State of the process"
+msgstr ""
+
+#: conky.1.xml:3083(emphasis)
+msgid "pid_state_short"
+msgstr ""
+
+#: conky.1.xml:3085(para)
+msgid "One of the chars in \"RSDZTW\" representing the state of the process where R is running, S is sleeping in an interruptible wait, D is waiting in uninterruptible disk sleep, Z is zombie, T is traced or stopped (on a signal), and W is paging"
+msgstr ""
+
+#: conky.1.xml:3093(emphasis)
+msgid "pid_stderr"
+msgstr ""
+
+#: conky.1.xml:3095(para)
+msgid "Filedescriptor binded to the STDERR of the process"
+msgstr ""
+
+#: conky.1.xml:3100(emphasis)
+msgid "pid_stdin"
+msgstr ""
+
+#: conky.1.xml:3102(para)
+msgid "Filedescriptor binded to the STDIN of the process"
+msgstr ""
+
+#: conky.1.xml:3107(emphasis)
+msgid "pid_stdout"
+msgstr ""
+
+#: conky.1.xml:3109(para)
+msgid "Filedescriptor binded to the STDOUT of the process"
+msgstr ""
+
+#: conky.1.xml:3114(emphasis)
+msgid "pid_threads"
+msgstr ""
+
+#: conky.1.xml:3116(para)
+msgid "Number of threads in process containing this thread"
+msgstr ""
+
+#: conky.1.xml:3121(emphasis)
+msgid "pid_thread_list"
+msgstr ""
+
+#: conky.1.xml:3123(para)
+msgid "List with pid's from threads from this process"
+msgstr ""
+
+#: conky.1.xml:3128(emphasis)
+msgid "pid_time_kernelmode"
+msgstr ""
+
+#: conky.1.xml:3130(para)
+msgid "Amount of time that the process has been scheduled in kernel mode in seconds"
+msgstr ""
+
+#: conky.1.xml:3135(emphasis)
+msgid "pid_time_usermode"
+msgstr ""
+
+#: conky.1.xml:3137(para)
+msgid "Amount of time that the process has been scheduled in user mode in seconds"
+msgstr ""
+
+#: conky.1.xml:3142(emphasis)
+msgid "pid_time"
+msgstr ""
+
+#: conky.1.xml:3144(para)
+msgid "Sum of $pid_time_kernelmode and $pid_time_usermode"
+msgstr ""
+
+#: conky.1.xml:3149(emphasis)
+msgid "pid_uid"
+msgstr ""
+
+#: conky.1.xml:3151(para)
+msgid "The real uid of the process"
+msgstr ""
+
+#: conky.1.xml:3156(emphasis)
+msgid "pid_euid"
+msgstr ""
+
+#: conky.1.xml:3158(para)
+msgid "The effective uid of the process"
+msgstr ""
+
+#: conky.1.xml:3163(emphasis)
+msgid "pid_suid"
+msgstr ""
+
+#: conky.1.xml:3165(para)
+msgid "The saved set uid of the process"
+msgstr ""
+
+#: conky.1.xml:3170(emphasis)
+msgid "pid_fsuid"
+msgstr ""
+
+#: conky.1.xml:3172(para)
+msgid "The file system uid of the process"
+msgstr ""
+
+#: conky.1.xml:3177(emphasis)
+msgid "pid_gid"
+msgstr ""
+
+#: conky.1.xml:3179(para)
+msgid "The real gid of the process"
+msgstr ""
+
+#: conky.1.xml:3184(emphasis)
+msgid "pid_egid"
+msgstr ""
+
+#: conky.1.xml:3186(para)
+msgid "The effective gid of the process"
+msgstr ""
+
+#: conky.1.xml:3191(emphasis)
+msgid "pid_sgid"
+msgstr ""
+
+#: conky.1.xml:3193(para)
+msgid "The saved set gid of the process"
+msgstr ""
+
+#: conky.1.xml:3198(emphasis)
+msgid "pid_fsgid"
+msgstr ""
+
+#: conky.1.xml:3200(para)
+msgid "The file system gid of the process"
+msgstr ""
+
+#: conky.1.xml:3205(emphasis)
+msgid "pid_vmpeak"
+msgstr ""
+
+#: conky.1.xml:3207(para)
+msgid "Peak virtual memory size of the process"
+msgstr ""
+
+#: conky.1.xml:3212(emphasis)
+msgid "pid_vmsize"
+msgstr ""
+
+#: conky.1.xml:3214(para)
+msgid "Virtual memory size of the process"
+msgstr ""
+
+#: conky.1.xml:3219(emphasis)
+msgid "pid_vmlck"
+msgstr ""
+
+#: conky.1.xml:3221(para)
+msgid "Locked memory size of the process"
+msgstr ""
+
+#: conky.1.xml:3226(emphasis)
+msgid "pid_vmhwm"
+msgstr ""
+
+#: conky.1.xml:3228(para)
+msgid "Peak resident set size (\"high water mark\") of the process"
+msgstr ""
+
+#: conky.1.xml:3233(emphasis)
+msgid "pid_vmrss"
+msgstr ""
+
+#: conky.1.xml:3235(para)
+msgid "Resident set size of the process"
+msgstr ""
+
+#: conky.1.xml:3240(emphasis)
+msgid "pid_vmdata"
+msgstr ""
+
+#: conky.1.xml:3242(para)
+msgid "Data segment size of the process"
+msgstr ""
+
+#: conky.1.xml:3247(emphasis)
+msgid "pid_vmstk"
+msgstr ""
+
+#: conky.1.xml:3249(para)
+msgid "Stack segment size of the process"
+msgstr ""
+
+#: conky.1.xml:3254(emphasis)
+msgid "pid_vmexe"
+msgstr ""
+
+#: conky.1.xml:3256(para)
+msgid "Text segment size of the process"
+msgstr ""
+
+#: conky.1.xml:3261(emphasis)
+msgid "pid_vmlib"
+msgstr ""
+
+#: conky.1.xml:3263(para)
+msgid "Shared library code size of the process"
+msgstr ""
+
+#: conky.1.xml:3268(emphasis)
+msgid "pid_vmpte"
+msgstr ""
+
+#: conky.1.xml:3270(para)
+msgid "Page table entries size of the process"
+msgstr ""
+
+#: conky.1.xml:3275(emphasis)
+msgid "pid_write"
+msgstr ""
+
+#: conky.1.xml:3277(para)
+msgid "Total number of bytes written by the process"
+msgstr ""
+
+#: conky.1.xml:3282(emphasis)
+msgid "platform"
+msgstr ""
+
+#: conky.1.xml:3284(para)
+msgid "Platform sensor from sysfs (Linux 2.6). Parameter dev may be omitted if you have only one platform device. Platform type is either 'in' or 'vol' meaning voltage; 'fan' meaning fan; 'temp' meaning temperature. Parameter n is number of the sensor. See /sys/bus/platform/devices/ on your local computer. The optional arguments 'factor' and 'offset' allow precalculation of the raw input, which is being modified as follows: 'input = input * factor + offset'. Note that they have to be given as decimal values (i.e. contain at least one decimal place)."
+msgstr ""
+
+#: conky.1.xml:3298(emphasis)
+msgid "pop3_unseen"
+msgstr ""
+
+#: conky.1.xml:3300(para)
+msgid "Displays the number of unseen messages in your global POP3 inbox by default. You can define individual POP3 inboxes separately by passing arguments to this object. Arguments are: \"host user pass [-i interval (in seconds)] [-p port] [-e 'command'] [-r retries]\". Default port is 110, default interval is 5 minutes, and default number of retries before giving up is 5. If the password is supplied as '*', you will be prompted to enter the password when Conky starts."
+msgstr ""
+
+#: conky.1.xml:3313(emphasis)
+msgid "pop3_used"
+msgstr ""
+
+#: conky.1.xml:3315(para)
+msgid "Displays the amount of space (in MiB, 2^20) used in your global POP3 inbox by default. You can define individual POP3 inboxes separately by passing arguments to this object. Arguments are: \"host user pass [-i interval (in seconds)] [-p port] [-e 'command'] [-r retries]\". Default port is 110, default interval is 5 minutes, and default number of retries before giving up is 5. If the password is supplied as '*', you will be prompted to enter the password when Conky starts."
+msgstr ""
+
+#: conky.1.xml:3328(emphasis)
+msgid "pre_exec"
+msgstr ""
+
+#: conky.1.xml:3328(emphasis)
+msgid "shell command"
+msgstr ""
+
+#: conky.1.xml:3330(para)
+msgid "Executes a shell command one time before conky displays anything and puts output as text."
+msgstr ""
+
+#: conky.1.xml:3336(emphasis)
+msgid "processes"
+msgstr ""
+
+#: conky.1.xml:3338(para)
+msgid "Total processes (sleeping and running)"
+msgstr ""
+
+#: conky.1.xml:3343(emphasis)
+msgid "read_tcp"
+msgstr ""
+
+#: conky.1.xml:3343(emphasis)
+msgid "(host) port"
+msgstr ""
+
+#: conky.1.xml:3345(para)
+msgid "Connects to a tcp port on a host (default is localhost), reads every char available at the moment and shows them."
+msgstr ""
+
+#: conky.1.xml:3352(emphasis)
+msgid "replied_mails"
+msgstr ""
+
+#: conky.1.xml:3354(para)
+msgid "Number of mails marked as replied in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:3361(emphasis)
+msgid "rss"
+msgstr ""
+
+#: conky.1.xml:3361(emphasis)
+msgid "uri interval_in_minutes action (num_par (spaces_in_front))"
+msgstr ""
+
+#: conky.1.xml:3363(para)
+msgid "Download and parse RSS feeds. The interval may be a floating point value greater than 0, otherwise defaults to 15 minutes. Action may be one of the following: feed_title, item_title (with num par), item_desc (with num par) and item_titles (when using this action and spaces_in_front is given conky places that many spaces in front of each item). This object is threaded, and once a thread is created it can't be explicitly destroyed. One thread will run for each URI specified. You can use any protocol that Curl supports."
+msgstr ""
+
+#: conky.1.xml:3377(emphasis)
+msgid "running_processes"
+msgstr ""
+
+#: conky.1.xml:3379(para)
+msgid "Running processes (not sleeping), requires Linux 2.6"
+msgstr ""
+
+#: conky.1.xml:3385(emphasis)
+msgid "running_threads"
+msgstr ""
+
+#: conky.1.xml:3387(para)
+msgid "Number of running (runnable) threads. Linux only."
+msgstr ""
+
+#: conky.1.xml:3392(emphasis)
+msgid "scroll"
+msgstr ""
+
+#: conky.1.xml:3392(emphasis)
+msgid "length (step) text"
+msgstr ""
+
+#: conky.1.xml:3394(para)
+msgid "Scroll 'text' by 'step' characters showing 'length' number of characters at the same time. The text may also contain variables. 'step' is optional and defaults to 1 if not set. If a var creates output on multiple lines then the lines are placed behind each other separated with a '|'-sign. If you change the textcolor inside $scroll it will automatically have it's old value back at the end of $scroll. The end and the start of text will be separated by 'length' number of spaces."
+msgstr ""
+
+#: conky.1.xml:3407(emphasis)
+msgid "seen_mails"
+msgstr ""
+
+#: conky.1.xml:3409(para)
+msgid "Number of mails marked as seen in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:3416(emphasis)
+msgid "shadecolor"
+msgstr ""
+
+#: conky.1.xml:3418(para)
+msgid "Change shading color"
+msgstr ""
+
+#: conky.1.xml:3423(emphasis)
+msgid "smapi"
+msgstr ""
+
+#: conky.1.xml:3423(emphasis)
+msgid "(ARGS)"
+msgstr ""
+
+#: conky.1.xml:3425(para)
+msgid "when using smapi, display contents of the /sys/devices/platform/smapi directory. ARGS are either '(FILENAME)' or 'bat (INDEX) (FILENAME)' to display the corresponding files' content. This is a very raw method of accessing the smapi values. When available, better use one of the smapi_* variables instead."
+msgstr ""
+
+#: conky.1.xml:3435(emphasis)
+msgid "smapi_bat_bar"
+msgstr ""
+
+#: conky.1.xml:3435(emphasis)
+msgid "(INDEX),(height),(width)"
+msgstr ""
+
+#: conky.1.xml:3437(para)
+msgid "when using smapi, display the remaining capacity of the battery with index INDEX as a bar."
+msgstr ""
+
+#: conky.1.xml:3443(emphasis)
+msgid "smapi_bat_perc"
+msgstr ""
+
+#: conky.1.xml:3445(para)
+msgid "when using smapi, display the remaining capacity in percent of the battery with index INDEX. This is a separate variable because it supports the 'use_spacer' configuration option."
+msgstr ""
+
+#: conky.1.xml:3453(emphasis)
+msgid "smapi_bat_power"
+msgstr ""
+
+#: conky.1.xml:3453(emphasis) conky.1.xml:3464(emphasis)
+msgid "INDEX"
+msgstr ""
+
+#: conky.1.xml:3455(para)
+msgid "when using smapi, display the current power of the battery with index INDEX in watt. This is a separate variable because the original read out value is being converted from mW. The sign of the output reflects charging (positive) or discharging (negative) state."
+msgstr ""
+
+#: conky.1.xml:3464(emphasis)
+msgid "smapi_bat_temp"
+msgstr ""
+
+#: conky.1.xml:3466(para)
+msgid "when using smapi, display the current temperature of the battery with index INDEX in degree Celsius. This is a separate variable because the original read out value is being converted from milli degree Celsius."
+msgstr ""
+
+#: conky.1.xml:3474(emphasis)
+msgid "sony_fanspeed"
+msgstr ""
+
+#: conky.1.xml:3476(para)
+msgid "Displays the Sony VAIO fanspeed information if sony-laptop kernel support is enabled. Linux only."
+msgstr ""
+
+#: conky.1.xml:3482(emphasis)
+msgid "stippled_hr"
+msgstr ""
+
+#: conky.1.xml:3482(emphasis)
+msgid "(space)"
+msgstr ""
+
+#: conky.1.xml:3484(para)
+msgid "Stippled (dashed) horizontal line"
+msgstr ""
+
+#: conky.1.xml:3489(emphasis)
+msgid "swap"
+msgstr ""
+
+#: conky.1.xml:3491(para)
+msgid "Amount of swap in use"
+msgstr ""
+
+#: conky.1.xml:3496(emphasis)
+msgid "swapbar"
+msgstr ""
+
+#: conky.1.xml:3498(para)
+msgid "Bar that shows amount of swap in use"
+msgstr ""
+
+#: conky.1.xml:3503(emphasis)
+msgid "swapfree"
+msgstr ""
+
+#: conky.1.xml:3505(para)
+msgid "Amount of free swap"
+msgstr ""
+
+#: conky.1.xml:3510(emphasis)
+msgid "swapmax"
+msgstr ""
+
+#: conky.1.xml:3512(para)
+msgid "Total amount of swap"
+msgstr ""
+
+#: conky.1.xml:3517(emphasis)
+msgid "swapperc"
+msgstr ""
+
+#: conky.1.xml:3519(para)
+msgid "Percentage of swap in use"
+msgstr ""
+
+#: conky.1.xml:3524(emphasis)
+msgid "sysname"
+msgstr ""
+
+#: conky.1.xml:3526(para)
+msgid "System name, Linux for example"
+msgstr ""
+
+#: conky.1.xml:3531(emphasis)
+msgid "tab"
+msgstr ""
+
+#: conky.1.xml:3531(emphasis)
+msgid "(width, (start))"
+msgstr ""
+
+#: conky.1.xml:3533(para)
+msgid "Puts a tab of the specified width, starting from column 'start'. The unit is pixels for both arguments."
+msgstr ""
+
+#: conky.1.xml:3539(emphasis)
+msgid "tail"
+msgstr ""
+
+#: conky.1.xml:3541(para)
+msgid "Displays last N lines of supplied text file. The file is checked every 'next_check' update. If next_check is not supplied, Conky defaults to 2. Max of 30 lines can be displayed, or until the text buffer is filled."
+msgstr ""
+
+#: conky.1.xml:3549(emphasis)
+msgid "tcp_portmon"
+msgstr ""
+
+#: conky.1.xml:3549(emphasis)
+msgid "port_begin port_end item (index)"
+msgstr ""
+
+#: conky.1.xml:3551(para)
+msgid "TCP port (both IPv6 and IPv4) monitor for specified local ports. Port numbers must be in the range 1 to 65535. Valid items are:"
+msgstr ""
+
+#: conky.1.xml:3555(emphasis)
+msgid "count"
+msgstr ""
+
+#: conky.1.xml:3556(emphasis)
+msgid "Total number of connections in the range"
+msgstr ""
+
+#. br
+#: conky.1.xml:3559(emphasis)
+msgid "rip"
+msgstr ""
+
+#: conky.1.xml:3560(emphasis)
+msgid "Remote ip address"
+msgstr ""
+
+#. br
+#: conky.1.xml:3562(emphasis)
+msgid "rhost"
+msgstr ""
+
+#: conky.1.xml:3563(emphasis)
+msgid "Remote host name"
+msgstr ""
+
+#. br
+#: conky.1.xml:3565(emphasis)
+msgid "rport"
+msgstr ""
+
+#: conky.1.xml:3566(emphasis)
+msgid "Remote port number"
+msgstr ""
+
+#. br
+#: conky.1.xml:3568(emphasis)
+msgid "rservice"
+msgstr ""
+
+#: conky.1.xml:3569(emphasis)
+msgid "Remote service name from /etc/services"
+msgstr ""
+
+#. br
+#: conky.1.xml:3572(emphasis)
+msgid "lip"
+msgstr ""
+
+#: conky.1.xml:3573(emphasis)
+msgid "Local ip address"
+msgstr ""
+
+#. br
+#: conky.1.xml:3575(emphasis)
+msgid "lhost"
+msgstr ""
+
+#: conky.1.xml:3576(emphasis)
+msgid "Local host name"
+msgstr ""
+
+#. br
+#: conky.1.xml:3578(emphasis)
+msgid "lport"
+msgstr ""
+
+#: conky.1.xml:3579(emphasis)
+msgid "Local port number"
+msgstr ""
+
+#. br
+#: conky.1.xml:3581(emphasis)
+msgid "lservice"
+msgstr ""
+
+#: conky.1.xml:3582(emphasis)
+msgid "Local service name from /etc/services"
+msgstr ""
+
+#: conky.1.xml:3585(para)
+msgid "The connection index provides you with access to each connection in the port monitor. The monitor will return information for index values from 0 to n-1 connections. Values higher than n-1 are simply ignored. For the \"count\" item, the connection index must be omitted. It is required for all other items."
+msgstr ""
+
+#: conky.1.xml:3592(para)
+msgid "Examples:"
+msgstr ""
+
+#: conky.1.xml:3594(emphasis)
+msgid "${tcp_portmon 6881 6999 count}"
+msgstr ""
+
+#: conky.1.xml:3596(emphasis)
+msgid "Displays the number of connections in the bittorrent port range"
+msgstr ""
+
+#. br
+#: conky.1.xml:3599(emphasis)
+msgid "${tcp_portmon 22 22 rip 0}"
+msgstr ""
+
+#: conky.1.xml:3600(emphasis)
+msgid "Displays the remote host ip of the first sshd connection"
+msgstr ""
+
+#. br
+#: conky.1.xml:3603(emphasis)
+msgid "${tcp_portmon 22 22 rip 9}"
+msgstr ""
+
+#: conky.1.xml:3604(emphasis)
+msgid "Displays the remote host ip of the tenth sshd connection"
+msgstr ""
+
+#. br
+#: conky.1.xml:3607(emphasis)
+msgid "${tcp_portmon 1 1024 rhost 0}"
+msgstr ""
+
+#: conky.1.xml:3609(emphasis)
+msgid "Displays the remote host name of the first connection on a privileged port"
+msgstr ""
+
+#. br
+#: conky.1.xml:3612(emphasis)
+msgid "${tcp_portmon 1 1024 rport 4}"
+msgstr ""
+
+#: conky.1.xml:3614(emphasis)
+msgid "Displays the remote host port of the fifth connection on a privileged port"
+msgstr ""
+
+#. br
+#: conky.1.xml:3617(emphasis)
+msgid "${tcp_portmon 1 65535 lservice 14}"
+msgstr ""
+
+#: conky.1.xml:3619(emphasis)
+msgid "Displays the local service name of the fifteenth connection in the range of all ports"
+msgstr ""
+
+#: conky.1.xml:3623(para)
+msgid "Note that port monitor variables which share the same port range actually refer to the same monitor, so many references to a single port range for different items and different indexes all use the same monitor internally. In other words, the program avoids creating redundant monitors."
+msgstr ""
+
+#: conky.1.xml:3632(emphasis)
+msgid "(arg1)"
+msgstr ""
+
+#: conky.1.xml:3632(emphasis)
+msgid "(arg2)"
+msgstr ""
+
+#: conky.1.xml:3632(emphasis)
+msgid "(arg3 ...)"
+msgstr ""
+
+#: conky.1.xml:3634(para)
+msgid "Evaluate the content of the templateN configuration variable (where N is a value between 0 and 9, inclusively), applying substitutions as described in the documentation of the corresponding configuration variable. The number of arguments is optional, but must match the highest referred index in the template. You can use the same special sequences in each argument as the ones valid for a template definition, e.g. to allow an argument to contain a whitespace. Also simple nesting of templates is possible this way."
+msgstr ""
+
+#: conky.1.xml:3646(para)
+msgid "Here are some examples of template definitions:"
+msgstr ""
+
+#: conky.1.xml:3649(para)
+msgid "template0 $&bsol;1&bsol;2 template1 &bsol;1: ${fs_used &bsol;2} / ${fs_size &bsol;2} template2 &bsol;1 &bsol;2"
+msgstr ""
+
+#: conky.1.xml:3656(para)
+msgid "The following list shows sample usage of the templates defined above, with the equivalent syntax when not using any template at all:"
+msgstr ""
+
+#: conky.1.xml:3666(entry)
+msgid "using template"
+msgstr ""
+
+#: conky.1.xml:3667(entry)
+msgid "same without template"
+msgstr ""
+
+#: conky.1.xml:3670(entry)
+msgid ".T&amp;"
+msgstr ""
+
+#: conky.1.xml:3674(entry)
+msgid "_ _"
+msgstr ""
+
+#: conky.1.xml:3678(entry) conky.1.xml:3682(entry)
+msgid "l l"
+msgstr ""
+
+#: conky.1.xml:3686(entry)
+msgid "l l."
+msgstr ""
+
+#: conky.1.xml:3690(entry)
+msgid "${template0 node name}"
+msgstr ""
+
+#: conky.1.xml:3691(entry)
+msgid "$nodename"
+msgstr ""
+
+#: conky.1.xml:3694(entry)
+msgid "${template1 root /}"
+msgstr ""
+
+#: conky.1.xml:3695(para)
+msgid "root: ${fs_free /} / ${fs_size /}"
+msgstr ""
+
+#: conky.1.xml:3699(entry)
+msgid "${template1 ${template2&bsol; disk&bsol; root} /}"
+msgstr ""
+
+#: conky.1.xml:3702(entry)
+msgid "disk root: ${fs_free /} / ${fs_size /}"
+msgstr ""
+
+#: conky.1.xml:3714(emphasis)
+msgid "texeci"
+msgstr ""
+
+#: conky.1.xml:3716(para)
+msgid "Runs a command at an interval inside a thread and displays the output. Same as $execi, except the command is run inside a thread. Use this if you have a slow script to keep Conky updating. You should make the interval slightly longer then the time it takes your script to execute. For example, if you have a script that take 5 seconds to execute, you should make the interval at least 6 seconds. See also $execi. This object will clean up the thread when it is destroyed, so it can safely be used in a nested fashion, though it may not produce the desired behaviour if used this way."
+msgstr ""
+
+#: conky.1.xml:3731(emphasis)
+msgid "threads"
+msgstr ""
+
+#: conky.1.xml:3733(para)
+msgid "Total threads"
+msgstr ""
+
+#: conky.1.xml:3738(emphasis) conky.1.xml:3962(emphasis)
+msgid "(format)"
+msgstr ""
+
+#: conky.1.xml:3740(para)
+msgid "Local time, see man strftime to get more information about format"
+msgstr ""
+
+#: conky.1.xml:3746(emphasis)
+msgid "to_bytes"
+msgstr ""
+
+#: conky.1.xml:3746(emphasis)
+msgid "size"
+msgstr ""
+
+#: conky.1.xml:3748(para)
+msgid "If 'size' is a number followed by a size-unit (kilobyte,mb,GiB,...) then it converts the size to bytes and shows it without unit, otherwise it just shows 'size'."
+msgstr ""
+
+#: conky.1.xml:3755(emphasis)
+msgid "top"
+msgstr ""
+
+#: conky.1.xml:3755(emphasis) conky.1.xml:3767(emphasis) conky.1.xml:3775(emphasis) conky.1.xml:3783(emphasis)
+msgid "type num"
+msgstr ""
+
+#: conky.1.xml:3757(para)
+msgid "This takes arguments in the form:top (name) (number) Basically, processes are ranked from highest to lowest in terms of cpu usage, which is what (num) represents. The types are: \"name\", \"pid\", \"cpu\", \"mem\", \"mem_res\", \"mem_vsize\", \"time\", \"uid\", \"user\", \"io_perc\", \"io_read\" and \"io_write\". There can be a max of 10 processes listed."
+msgstr ""
+
+#: conky.1.xml:3767(emphasis)
+msgid "top_io"
+msgstr ""
+
+#: conky.1.xml:3769(para)
+msgid "Same as top, except sorted by the amount of I/O the process has done during the update interval"
+msgstr ""
+
+#: conky.1.xml:3775(emphasis)
+msgid "top_mem"
+msgstr ""
+
+#: conky.1.xml:3777(para)
+msgid "Same as top, except sorted by mem usage instead of cpu"
+msgstr ""
+
+#: conky.1.xml:3783(emphasis)
+msgid "top_time"
+msgstr ""
+
+#: conky.1.xml:3785(para)
+msgid "Same as top, except sorted by total CPU time instead of current CPU usage"
+msgstr ""
+
+#: conky.1.xml:3791(emphasis)
+msgid "totaldown"
+msgstr ""
+
+#: conky.1.xml:3793(para)
+msgid "Total download, overflows at 4 GB on Linux with 32-bit arch and there doesn't seem to be a way to know how many times it has already done that before conky has started."
+msgstr ""
+
+#: conky.1.xml:3801(emphasis)
+msgid "totalup"
+msgstr ""
+
+#: conky.1.xml:3803(para)
+msgid "Total upload, this one too, may overflow"
+msgstr ""
+
+#: conky.1.xml:3808(emphasis)
+msgid "trashed_mails"
+msgstr ""
+
+#: conky.1.xml:3810(para)
+msgid "Number of mails marked as trashed in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:3817(emphasis)
+msgid "tztime"
+msgstr ""
+
+#: conky.1.xml:3817(emphasis)
+msgid "(timezone (format))"
+msgstr ""
+
+#: conky.1.xml:3819(para)
+msgid "Local time for specified timezone, see man strftime to get more information about format. The timezone argument is specified in similar fashion as TZ environment variable. For hints, look in /usr/share/zoneinfo. e.g. US/Pacific, Europe/Zurich, etc."
+msgstr ""
+
+#: conky.1.xml:3828(emphasis)
+msgid "gid_name"
+msgstr ""
+
+#: conky.1.xml:3828(emphasis)
+msgid "gid"
+msgstr ""
+
+#: conky.1.xml:3830(para)
+msgid "Name of group with this gid"
+msgstr ""
+
+#: conky.1.xml:3835(emphasis)
+msgid "uid_name"
+msgstr ""
+
+#: conky.1.xml:3835(emphasis)
+msgid "uid"
+msgstr ""
+
+#: conky.1.xml:3837(para)
+msgid "Username of user with this uid"
+msgstr ""
+
+#: conky.1.xml:3842(emphasis)
+msgid "unflagged_mails"
+msgstr ""
+
+#: conky.1.xml:3844(para)
+msgid "Number of mails not marked as flagged in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:3851(emphasis)
+msgid "unforwarded_mails"
+msgstr ""
+
+#: conky.1.xml:3853(para)
+msgid "Number of mails not marked as forwarded in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:3860(emphasis)
+msgid "unreplied_mails"
+msgstr ""
+
+#: conky.1.xml:3862(para)
+msgid "Number of mails not marked as replied in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:3869(emphasis)
+msgid "unseen_mails"
+msgstr ""
+
+#: conky.1.xml:3871(para)
+msgid "Number of new or unseen mails in the specified mailbox or mail spool if not. Only maildir type mailboxes are supported, mbox type will return -1."
+msgstr ""
+
+#: conky.1.xml:3878(emphasis)
+msgid "updates"
+msgstr ""
+
+#: conky.1.xml:3878(emphasis)
+msgid "Number of updates"
+msgstr ""
+
+#: conky.1.xml:3880(para)
+msgid "for debugging"
+msgstr ""
+
+#: conky.1.xml:3885(emphasis)
+msgid "upspeed"
+msgstr ""
+
+#: conky.1.xml:3887(para)
+msgid "Upload speed in suitable IEC units"
+msgstr ""
+
+#: conky.1.xml:3892(emphasis)
+msgid "upspeedf"
+msgstr ""
+
+#: conky.1.xml:3894(para)
+msgid "Upload speed in KiB with one decimal"
+msgstr ""
+
+#: conky.1.xml:3899(emphasis)
+msgid "upspeedgraph"
+msgstr ""
+
+#: conky.1.xml:3901(para)
+msgid "Upload speed graph, colours defined in hex, minus the #. If scale is non-zero, it becomes the scale for the graph. Uses a logarithmic scale (to see small numbers) when you use the -l switch. Takes the switch '-t' to use a temperature gradient, which makes the gradient values change depending on the amplitude of a particular graph value (try it and see)."
+msgstr ""
+
+#. br
+#: conky.1.xml:3912(emphasis) conky.1.xml:4462(emphasis)
+msgid "uptime"
+msgstr ""
+
+#: conky.1.xml:3914(para)
+msgid "Uptime"
+msgstr ""
+
+#: conky.1.xml:3919(emphasis)
+msgid "uptime_short"
+msgstr ""
+
+#: conky.1.xml:3921(para)
+msgid "Uptime in a shorter format"
+msgstr ""
+
+#: conky.1.xml:3926(emphasis)
+msgid "user_names"
+msgstr ""
+
+#: conky.1.xml:3928(para)
+msgid "Lists the names of the users logged in"
+msgstr ""
+
+#: conky.1.xml:3933(emphasis)
+msgid "user_number"
+msgstr ""
+
+#: conky.1.xml:3935(para)
+msgid "Number of users logged in"
+msgstr ""
+
+#: conky.1.xml:3940(emphasis)
+msgid "user_terms"
+msgstr ""
+
+#: conky.1.xml:3942(para)
+msgid "Lists the consoles in use"
+msgstr ""
+
+#: conky.1.xml:3947(emphasis)
+msgid "user_times"
+msgstr ""
+
+#: conky.1.xml:3949(para)
+msgid "Lists how long users have been logged in for"
+msgstr ""
+
+#: conky.1.xml:3954(emphasis)
+msgid "user_time"
+msgstr ""
+
+#: conky.1.xml:3954(emphasis)
+msgid "console"
+msgstr ""
+
+#: conky.1.xml:3956(para)
+msgid "Lists how long the user for the given console has been logged in for"
+msgstr ""
+
+#: conky.1.xml:3962(emphasis)
+msgid "utime"
+msgstr ""
+
+#: conky.1.xml:3964(para)
+msgid "Display time in UTC (universal coordinate time)."
+msgstr ""
+
+#: conky.1.xml:3969(emphasis)
+msgid "voffset"
+msgstr ""
+
+#: conky.1.xml:3971(para)
+msgid "Change vertical offset by N pixels. Negative values will cause text to overlap. See also $offset."
+msgstr ""
+
+#: conky.1.xml:3977(emphasis)
+msgid "voltage_mv"
+msgstr ""
+
+#: conky.1.xml:3979(para)
+msgid "Returns CPU #n's voltage in mV. CPUs are counted from 1. If omitted, the parameter defaults to 1."
+msgstr ""
+
+#: conky.1.xml:3985(emphasis)
+msgid "voltage_v"
+msgstr ""
+
+#: conky.1.xml:3987(para)
+msgid "Returns CPU #n's voltage in V. CPUs are counted from 1. If omitted, the parameter defaults to 1."
+msgstr ""
+
+#: conky.1.xml:3993(emphasis)
+msgid "weather"
+msgstr ""
+
+#: conky.1.xml:3993(emphasis)
+msgid "URI locID data_type (interval_in_minutes)"
+msgstr ""
+
+#: conky.1.xml:3995(para)
+msgid "Download, parse and display METAR data."
+msgstr ""
+
+#: conky.1.xml:3997(para)
+msgid "For the 'URI', there are two possibilities:"
+msgstr ""
+
+#: conky.1.xml:4000(ulink)
+msgid "http://weather.noaa.gov/pub/data/observations/metar/stations/"
+msgstr ""
+
+#. br
+#: conky.1.xml:4002(ulink)
+msgid "http://xoap.weather.com/weather/local/"
+msgstr ""
+
+#: conky.1.xml:4004(para)
+msgid "The first one is free to use but the second requires you to register and obtain your partner ID and license key. These two must be written, separated by a space, into a file called .xoaprc which needs to be placed into your home directory."
+msgstr ""
+
+#: conky.1.xml:4010(para)
+msgid "'locID' must be a valid location identifier for the required uri. For the NOAA site this must be a valid ICAO (see for instance https://pilotweb.nas.faa.gov/qryhtml/icao/). For the weather.com site this must be a valid location ID (see for instance <ulink url=\"http://aspnetresources.com/tools/locid.aspx\">http://aspnetresources.com/tools/locid.aspx</ulink>)."
+msgstr ""
+
+#: conky.1.xml:4018(para) conky.1.xml:4098(para)
+msgid "'data_type' must be one of the following:"
+msgstr ""
+
+#: conky.1.xml:4020(para)
+msgid "<emphasis remap=\"B\">last_update</emphasis> The date and time stamp of the data. The result depends on the URI used. For the NOAA site it is date (yyyy/mm/dd) and UTC time. For the weather.com one it is date ([m]m/[d]d/yy) and Local Time of the station. <emphasis remap=\"B\">temperature</emphasis>"
+msgstr ""
+
+#: conky.1.xml:4030(para)
+msgid "Air temperature (you can use the 'temperature_unit' config setting to change units) <emphasis remap=\"B\">cloud_cover</emphasis>"
+msgstr ""
+
+#: conky.1.xml:4036(para)
+msgid "The highest cloud cover status <emphasis remap=\"B\">pressure</emphasis>"
+msgstr ""
+
+#: conky.1.xml:4040(para)
+msgid "Air pressure in millibar <emphasis remap=\"B\">wind_speed</emphasis>"
+msgstr ""
+
+#: conky.1.xml:4044(para)
+msgid "Wind speed in km/h <emphasis remap=\"B\">wind_dir</emphasis>"
+msgstr ""
+
+#: conky.1.xml:4048(para)
+msgid "Wind direction <emphasis remap=\"B\">wind_dir_DEG</emphasis>"
+msgstr ""
+
+#: conky.1.xml:4052(para)
+msgid "Compass wind direction <emphasis remap=\"B\">humidity</emphasis>"
+msgstr ""
+
+#: conky.1.xml:4056(para)
+msgid "Relative humidity in % <emphasis remap=\"B\">weather</emphasis>"
+msgstr ""
+
+#: conky.1.xml:4060(para)
+msgid "Any relevant weather event (rain, snow, etc.). This is not used if you are querying the weather.com site since this data is aggregated into the cloud_cover one <emphasis remap=\"B\">icon</emphasis>"
+msgstr ""
+
+#: conky.1.xml:4067(para)
+msgid "Weather icon (only for www.weather.com). Can be used together with the icon kit provided upon registering to their service."
+msgstr ""
+
+#: conky.1.xml:4072(para)
+msgid "'delay_in_minutes' (optional, default 30) cannot be less than 30 minutes."
+msgstr ""
+
+#: conky.1.xml:4075(para)
+msgid "This object is threaded, and once a thread is created it can't be explicitly destroyed. One thread will run for each URI specified."
+msgstr ""
+
+#: conky.1.xml:4079(para) conky.1.xml:4148(para)
+msgid "Note that these variables are still EXPERIMENTAL and can be subject to many future changes."
+msgstr ""
+
+#: conky.1.xml:4084(emphasis)
+msgid "weather_forecast"
+msgstr ""
+
+#: conky.1.xml:4084(emphasis)
+msgid "URI locID day data_type (interval_in_minutes)"
+msgstr ""
+
+#: conky.1.xml:4086(para)
+msgid "Download, parse and display weather forecast data for a given day (daytime only)."
+msgstr ""
+
+#: conky.1.xml:4089(para)
+msgid "For the 'URI', for the time being only <ulink url=\"http://xoap.weather.com/weather/local/\">http://xoap.weather.com/weather/local/</ulink> is supported. See 'weather' above for details of usage"
+msgstr ""
+
+#: conky.1.xml:4093(para)
+msgid "'locID', see 'weather' above."
+msgstr ""
+
+#: conky.1.xml:4095(para)
+msgid "'day' is a number from 0 (today) to 4 (3 days after tomorrow)."
+msgstr ""
+
+#: conky.1.xml:4100(emphasis)
+msgid "day"
+msgstr ""
+
+#: conky.1.xml:4101(emphasis)
+msgid "Day of the week"
+msgstr ""
+
+#. br
+#: conky.1.xml:4103(emphasis)
+msgid "date"
+msgstr ""
+
+#: conky.1.xml:4104(emphasis)
+msgid "Date, in the form MMM DD (ie. Jul 14)"
+msgstr ""
+
+#. br
+#: conky.1.xml:4106(emphasis)
+msgid "low"
+msgstr ""
+
+#: conky.1.xml:4107(emphasis)
+msgid "Minimun temperature (you can use the 'temperature_unit' config setting to change units)"
+msgstr ""
+
+#. br
+#: conky.1.xml:4111(emphasis)
+msgid "hi"
+msgstr ""
+
+#: conky.1.xml:4112(emphasis)
+msgid "Maximum temperature (you can use the 'temperature_unit' config setting to change units)"
+msgstr ""
+
+#. br
+#: conky.1.xml:4116(emphasis)
+msgid "icon"
+msgstr ""
+
+#: conky.1.xml:4117(emphasis)
+msgid "Weather icon. Can be used together with the icon kit provided upon registering to the weather.com service"
+msgstr ""
+
+#. br
+#: conky.1.xml:4121(emphasis)
+msgid "forecast"
+msgstr ""
+
+#: conky.1.xml:4122(emphasis)
+msgid "Weather forecast (sunny, rainy, etc.)"
+msgstr ""
+
+#. br
+#: conky.1.xml:4124(emphasis)
+msgid "wind_speed"
+msgstr ""
+
+#: conky.1.xml:4125(emphasis)
+msgid "Wind speed in km/h"
+msgstr ""
+
+#. br
+#: conky.1.xml:4127(emphasis)
+msgid "wind_dir"
+msgstr ""
+
+#: conky.1.xml:4128(emphasis)
+msgid "Wind direction"
+msgstr ""
+
+#. br
+#: conky.1.xml:4130(emphasis)
+msgid "wind_dir_DEG"
+msgstr ""
+
+#: conky.1.xml:4131(emphasis)
+msgid "Compass wind direction"
+msgstr ""
+
+#. br
+#: conky.1.xml:4133(emphasis)
+msgid "humidity"
+msgstr ""
+
+#: conky.1.xml:4134(emphasis)
+msgid "Relative humidity in %"
+msgstr ""
+
+#. br
+#: conky.1.xml:4136(emphasis)
+msgid "precipitation"
+msgstr ""
+
+#: conky.1.xml:4137(emphasis)
+msgid "Probability of having a precipitation (in %)"
+msgstr ""
+
+#: conky.1.xml:4140(para)
+msgid "'delay_in_minutes' (optional, default 210) cannot be lower than 210 min."
+msgstr ""
+
+#: conky.1.xml:4143(para)
+msgid "This object is threaded, and once a thread is created it can't be explicitly destroyed. One thread will run for each URI specified. You can use any protocol that Curl supports."
+msgstr ""
+
+#: conky.1.xml:4153(emphasis)
+msgid "wireless_ap"
+msgstr ""
+
+#: conky.1.xml:4155(para)
+msgid "Wireless access point MAC address (Linux only)"
+msgstr ""
+
+#: conky.1.xml:4160(emphasis)
+msgid "wireless_bitrate"
+msgstr ""
+
+#: conky.1.xml:4162(para)
+msgid "Wireless bitrate (ie 11 Mb/s) (Linux only)"
+msgstr ""
+
+#: conky.1.xml:4167(emphasis)
+msgid "wireless_essid"
+msgstr ""
+
+#: conky.1.xml:4169(para)
+msgid "Wireless access point ESSID (Linux only)"
+msgstr ""
+
+#: conky.1.xml:4174(emphasis)
+msgid "wireless_link_bar"
+msgstr ""
+
+#: conky.1.xml:4174(emphasis)
+msgid "(height),(width) (net)"
+msgstr ""
+
+#: conky.1.xml:4176(para)
+msgid "Wireless link quality bar (Linux only)"
+msgstr ""
+
+#: conky.1.xml:4181(emphasis)
+msgid "wireless_link_qual"
+msgstr ""
+
+#: conky.1.xml:4183(para)
+msgid "Wireless link quality (Linux only)"
+msgstr ""
+
+#: conky.1.xml:4188(emphasis)
+msgid "wireless_link_qual_max"
+msgstr ""
+
+#: conky.1.xml:4190(para)
+msgid "Wireless link quality maximum value (Linux only)"
+msgstr ""
+
+#: conky.1.xml:4195(emphasis)
+msgid "wireless_link_qual_perc"
+msgstr ""
+
+#: conky.1.xml:4197(para)
+msgid "Wireless link quality in percents (Linux only)"
+msgstr ""
+
+#: conky.1.xml:4202(emphasis)
+msgid "wireless_mode"
+msgstr ""
+
+#: conky.1.xml:4204(para)
+msgid "Wireless mode (Managed/Ad-Hoc/Master) (Linux only)"
+msgstr ""
+
+#: conky.1.xml:4210(emphasis)
+msgid "words"
+msgstr ""
+
+#: conky.1.xml:4212(para)
+msgid "Displays the number of words in the given file"
+msgstr ""
+
+#: conky.1.xml:4217(emphasis)
+msgid "xmms2_album"
+msgstr ""
+
+#: conky.1.xml:4219(para)
+msgid "Album in current XMMS2 song"
+msgstr ""
+
+#: conky.1.xml:4224(emphasis)
+msgid "xmms2_artist"
+msgstr ""
+
+#: conky.1.xml:4226(para)
+msgid "Artist in current XMMS2 song"
+msgstr ""
+
+#: conky.1.xml:4231(emphasis)
+msgid "xmms2_bar"
+msgstr ""
+
+#: conky.1.xml:4233(para)
+msgid "Bar of XMMS2's progress"
+msgstr ""
+
+#: conky.1.xml:4238(emphasis)
+msgid "xmms2_bitrate"
+msgstr ""
+
+#: conky.1.xml:4245(emphasis)
+msgid "xmms2_comment"
+msgstr ""
+
+#: conky.1.xml:4247(para)
+msgid "Comment in current XMMS2 song"
+msgstr ""
+
+#: conky.1.xml:4252(emphasis)
+msgid "xmms2_date"
+msgstr ""
+
+#: conky.1.xml:4254(para)
+msgid "Returns song's date."
+msgstr ""
+
+#: conky.1.xml:4259(emphasis)
+msgid "xmms2_duration"
+msgstr ""
+
+#: conky.1.xml:4261(para)
+msgid "Duration of current song"
+msgstr ""
+
+#: conky.1.xml:4266(emphasis)
+msgid "xmms2_elapsed"
+msgstr ""
+
+#: conky.1.xml:4273(emphasis)
+msgid "xmms2_genre"
+msgstr ""
+
+#: conky.1.xml:4275(para)
+msgid "Genre in current XMMS2 song"
+msgstr ""
+
+#: conky.1.xml:4280(emphasis)
+msgid "xmms2_id"
+msgstr ""
+
+#: conky.1.xml:4282(para)
+msgid "XMMS2 id of current song"
+msgstr ""
+
+#: conky.1.xml:4287(emphasis)
+msgid "xmms2_percent"
+msgstr ""
+
+#: conky.1.xml:4294(emphasis)
+msgid "xmms2_playlist"
+msgstr ""
+
+#: conky.1.xml:4296(para)
+msgid "Returns the XMMS2 playlist."
+msgstr ""
+
+#: conky.1.xml:4301(emphasis)
+msgid "xmms2_size"
+msgstr ""
+
+#: conky.1.xml:4303(para)
+msgid "Size of current song"
+msgstr ""
+
+#: conky.1.xml:4308(emphasis)
+msgid "xmms2_smart"
+msgstr ""
+
+#: conky.1.xml:4316(emphasis)
+msgid "xmms2_status"
+msgstr ""
+
+#: conky.1.xml:4318(para)
+msgid "XMMS2 status (Playing, Paused, Stopped, or Disconnected)"
+msgstr ""
+
+#: conky.1.xml:4324(emphasis)
+msgid "xmms2_timesplayed"
+msgstr ""
+
+#: conky.1.xml:4326(para)
+msgid "Number of times a song was played (presumably)."
+msgstr ""
+
+#: conky.1.xml:4331(emphasis)
+msgid "xmms2_title"
+msgstr ""
+
+#: conky.1.xml:4333(para)
+msgid "Title in current XMMS2 song"
+msgstr ""
+
+#: conky.1.xml:4338(emphasis)
+msgid "xmms2_tracknr"
+msgstr ""
+
+#: conky.1.xml:4340(para)
+msgid "Track number in current XMMS2 song"
+msgstr ""
+
+#: conky.1.xml:4345(emphasis)
+msgid "xmms2_url"
+msgstr ""
+
+#: conky.1.xml:4347(para)
+msgid "Full path to current song"
+msgstr ""
+
+#: conky.1.xml:4354(title)
+msgid "LUA API"
+msgstr ""
+
+#: conky.1.xml:4355(para)
+msgid "Conky features a Lua Programming API, and also ships with Lua bindings for some useful libraries. Conky defines certain global functions and variables which can be accessed from Lua code running in Conky."
+msgstr ""
+
+#: conky.1.xml:4360(para)
+msgid "To use Lua Conky, you first need to make sure you have a version of Conky with Lua support enabled (&ldquo;conky -v&rdquo; will report this). Scripts must first be loaded using the lua_load configuration option. You then call functions in Lua via Conky's $lua, $lua_read, and Lua hooks."
+msgstr ""
+
+#: conky.1.xml:4366(para)
+msgid "Be careful when creating threaded objects through the Lua API. You could wind up with a whole bunch of threads running if a thread is created with each iteration."
+msgstr ""
+
+#: conky.1.xml:4370(para)
+msgid "At this time, the Lua API should not be considered stable and may change drastically from one release to another as it matures."
+msgstr ""
+
+#: conky.1.xml:4373(para)
+msgid "NOTE: In order to accommodate certain features in the cairo library's API, Conky will export a few additional functions for the creation of certain structures. These are documented below."
+msgstr ""
+
+#: conky.1.xml:4378(emphasis)
+msgid "conky_parse(string)"
+msgstr ""
+
+#: conky.1.xml:4378(emphasis) conky.1.xml:4386(emphasis) conky.1.xml:4503(emphasis) conky.1.xml:4509(emphasis) conky.1.xml:4515(emphasis)
+msgid "function"
+msgstr ""
+
+#: conky.1.xml:4380(para)
+msgid "This function takes a string that is evaluated as per Conky's TEXT section, and then returns a string with the result."
+msgstr ""
+
+#: conky.1.xml:4386(emphasis)
+msgid "conky_set_update_interval(number)"
+msgstr ""
+
+#: conky.1.xml:4388(para)
+msgid "Sets Conky's update interval (in seconds) to 'number'."
+msgstr ""
+
+#: conky.1.xml:4393(emphasis)
+msgid "conky_window"
+msgstr ""
+
+#: conky.1.xml:4393(emphasis) conky.1.xml:4452(emphasis)
+msgid "table"
+msgstr ""
+
+#: conky.1.xml:4395(para)
+msgid "This table contains some information about Conky's window. The following table describes the values contained:"
+msgstr ""
+
+#: conky.1.xml:4399(emphasis)
+msgid "drawable"
+msgstr ""
+
+#: conky.1.xml:4400(emphasis)
+msgid "Window's drawable (Xlib Drawable), requires Lua extras enabled at compile time."
+msgstr ""
+
+#. br
+#: conky.1.xml:4404(emphasis)
+msgid "visual"
+msgstr ""
+
+#: conky.1.xml:4405(emphasis)
+msgid "Window's visual (Xlib Visual), requires Lua extras enabled at compile time."
+msgstr ""
+
+#: conky.1.xml:4409(emphasis)
+msgid "Window's display (Xlib Display), requires Lua extras enabled at compile time."
+msgstr ""
+
+#: conky.1.xml:4414(emphasis)
+msgid "Window width (in pixels)."
+msgstr ""
+
+#. br
+#: conky.1.xml:4416(emphasis)
+msgid "height"
+msgstr ""
+
+#: conky.1.xml:4417(emphasis)
+msgid "Window height (in pixels)."
+msgstr ""
+
+#: conky.1.xml:4420(emphasis)
+msgid "Window's inner border margin (in pixels)."
+msgstr ""
+
+#: conky.1.xml:4424(emphasis)
+msgid "Window's outer border margin (in pixels)."
+msgstr ""
+
+#: conky.1.xml:4428(emphasis)
+msgid "Window's border width (in pixels)."
+msgstr ""
+
+#. br
+#: conky.1.xml:4431(emphasis)
+msgid "text_start_x"
+msgstr ""
+
+#: conky.1.xml:4432(emphasis)
+msgid "The x component of the starting coordinate of text drawing."
+msgstr ""
+
+#. br
+#: conky.1.xml:4435(emphasis)
+msgid "text_start_y"
+msgstr ""
+
+#: conky.1.xml:4436(emphasis)
+msgid "The y component of the starting coordinate of text drawing."
+msgstr ""
+
+#. br
+#: conky.1.xml:4439(emphasis)
+msgid "text_width"
+msgstr ""
+
+#: conky.1.xml:4440(emphasis)
+msgid "The width of the text drawing region."
+msgstr ""
+
+#. br
+#: conky.1.xml:4443(emphasis)
+msgid "text_height"
+msgstr ""
+
+#: conky.1.xml:4444(emphasis)
+msgid "The height of the text drawing region."
+msgstr ""
+
+#: conky.1.xml:4447(para)
+msgid "NOTE: This table is only defined when X support is enabled."
+msgstr ""
+
+#: conky.1.xml:4452(emphasis)
+msgid "conky_info"
+msgstr ""
+
+#: conky.1.xml:4454(para)
+msgid "This table contains some information about Conky's internal data. The following table describes the values contained:"
+msgstr ""
+
+#: conky.1.xml:4459(emphasis)
+msgid "Conky's update interval (in seconds)."
+msgstr ""
+
+#: conky.1.xml:4463(emphasis)
+msgid "System uptime, in seconds."
+msgstr ""
+
+#: conky.1.xml:4467(emphasis)
+msgid "conky_build_info"
+msgstr ""
+
+#: conky.1.xml:4469(para)
+msgid "A string containing the build info for this particular instance of Conky, including the version, build date, and architecture."
+msgstr ""
+
+#: conky.1.xml:4477(para)
+msgid "A string containing the build date for this particular instance of Conky."
+msgstr ""
+
+#: conky.1.xml:4484(para)
+msgid "A string containing the build architecture for this particular instance of Conky."
+msgstr ""
+
+#: conky.1.xml:4491(para)
+msgid "A string containing the version of the current instance of Conky."
+msgstr ""
+
+#: conky.1.xml:4496(emphasis)
+msgid "conky_config"
+msgstr ""
+
+#: conky.1.xml:4498(para)
+msgid "A string containing the path of the current Conky configuration file."
+msgstr ""
+
+#: conky.1.xml:4503(emphasis)
+msgid "cairo_text_extents_t:create()"
+msgstr ""
+
+#: conky.1.xml:4505(para)
+msgid "Call this function to return a new cairo_text_extents_t structure. A creation function for this structure is not provided by the cairo API. After calling this, you should use tolua.takeownership() on the return value to ensure ownership is passed properly."
+msgstr ""
+
+#: conky.1.xml:4509(emphasis)
+msgid "cairo_font_extents_t:create()"
+msgstr ""
+
+#: conky.1.xml:4511(para)
+msgid "Call this function to return a new cairo_font_extents_t structure. A creation function for this structure is not provided by the cairo API. After calling this, you should use tolua.takeownership() on the return value to ensure ownership is passed properly."
+msgstr ""
+
+#: conky.1.xml:4515(emphasis)
+msgid "cairo_matrix_t:create()"
+msgstr ""
+
+#: conky.1.xml:4517(para)
+msgid "Call this function to return a new cairo_matrix_t structure. A creation function for this structure is not provided by the cairo API. After calling this, you should use tolua.takeownership() on the return value to ensure ownership is passed properly."
+msgstr ""
+
+#: conky.1.xml:4523(title)
+msgid "EXAMPLES"
+msgstr ""
+
+#: conky.1.xml:4526(term)
+msgid "conky <option>-t '${time %D %H:%M}' -o -u 30</option>"
+msgstr ""
+
+#: conky.1.xml:4528(para)
+msgid "Start Conky in its own window with date and clock as text and 30 sec update interval."
+msgstr ""
+
+#: conky.1.xml:4534(term)
+msgid "conky <option>-a top_left -x 5 -y 500 -d</option>"
+msgstr ""
+
+#: conky.1.xml:4536(para)
+msgid "Start Conky to background at coordinates (5, 500)."
+msgstr ""
+
+#: conky.1.xml:4541(term)
+msgid "conky <option>-C &gt; ~/.conkyrc</option>"
+msgstr ""
+
+#: conky.1.xml:4543(para)
+msgid "Do not start Conky, but have it output the builtin default config file to ~/.conkyrc for later customising."
+msgstr ""
+
+#: conky.1.xml:4551(title)
+msgid "FILES"
+msgstr ""
+
+#: conky.1.xml:4554(emphasis)
+msgid "${sysconfdir}/conky/conky.conf"
+msgstr ""
+
+#: conky.1.xml:4556(para)
+msgid "Default system-wide configuration file. The value of ${sysconfdir} depends on the compile-time options (most likely /etc)."
+msgstr ""
+
+#: conky.1.xml:4562(filename)
+msgid "~/.conkyrc"
+msgstr ""
+
+#: conky.1.xml:4564(para)
+msgid "Default personal configuration file."
+msgstr ""
+
+#: conky.1.xml:4571(title)
+msgid "BUGS"
+msgstr ""
+
+#: conky.1.xml:4572(para)
+msgid "Drawing to root or some other desktop window directly doesn't work with all window managers. Especially doesn't work well with Gnome and it has been reported that it doesn't work with KDE either. Nautilus can be disabled from drawing to desktop with program gconf-editor. Uncheck show_desktop in /apps/nautilus/preferences/. There is -w switch in Conky to set some specific window id. You might find xwininfo -tree useful to find the window to draw to. You can also use -o argument which makes Conky to create its own window. If you do try running Conky in its own window, be sure to read up on the own_window_type settings and experiment."
+msgstr ""
+
+#: conky.1.xml:4586(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: conky.1.xml:4587(ulink)
+msgid "http://conky.sourceforge.net/&rang;"
+msgstr ""
+
+#: conky.1.xml:4589(ulink)
+msgid "http://www.sourceforge.net/projects/conky&rang;"
+msgstr ""
+
+#: conky.1.xml:4591(ulink)
+msgid "http://wiki.conky.be&rang;"
+msgstr ""
+
+#: conky.1.xml:4593(para)
+msgid "#conky on irc.freenode.net"
+msgstr ""
+
+#: conky.1.xml:4596(title)
+msgid "COPYING"
+msgstr ""
+
+#: conky.1.xml:4597(para)
+msgid "Copyright (c) 2005-2010 Brenden Matthews, Philip Kovacs, et. al. Any original torsmo code is licensed under the BSD license (see LICENSE.BSD for a copy). All code written since the fork of torsmo is licensed under the GPL (see LICENSE.GPL for a copy), except where noted differently (such as in portmon code, timed thread code, and audacious code which are LGPL, and prss which is an MIT-style license)."
+msgstr ""
+
+#: conky.1.xml:4607(title)
+msgid "AUTHORS"
+msgstr ""
+
+#: conky.1.xml:4608(para)
+msgid "The Conky dev team (see AUTHORS for a full list of contributors)."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: conky.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

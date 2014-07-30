@@ -1,0 +1,432 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-05-05 11:47+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: getent.1.xml:29(date) getent.1.xml:33(refmiscinfo)
+msgid "2013-03-15"
+msgstr ""
+
+#: getent.1.xml:31(refentrytitle)
+msgid "GETENT"
+msgstr ""
+
+#: getent.1.xml:32(manvolnum) getent.1.xml:430(literal)
+msgid "1"
+msgstr ""
+
+#: getent.1.xml:34(refmiscinfo)
+msgid "Linux"
+msgstr ""
+
+#: getent.1.xml:35(refmiscinfo)
+msgid "User Commands"
+msgstr ""
+
+#: getent.1.xml:38(refname) getent.1.xml:44(command)
+msgid "getent"
+msgstr ""
+
+#: getent.1.xml:39(refpurpose)
+msgid "get entries from Name Service Switch libraries"
+msgstr ""
+
+#: getent.1.xml:45(replaceable)
+msgid "database"
+msgstr ""
+
+#: getent.1.xml:46(replaceable)
+msgid "key"
+msgstr ""
+
+#: getent.1.xml:51(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: getent.1.xml:52(para)
+msgid ""
+"The <command>getent</command> command displays entries from databases "
+"supported by the Name Service Switch libraries, which are configured in "
+"<filename>/etc/nsswitch.conf</filename>. If one or more <emphasis remap=\"I"
+"\">key</emphasis> arguments are provided, then only the entries that match "
+"the supplied keys will be displayed. Otherwise, if no <emphasis remap=\"I"
+"\">key</emphasis> is provided, all entries will be displayed (unless the "
+"database does not support enumeration)."
+msgstr ""
+
+#: getent.1.xml:67(para)
+msgid ""
+"The <emphasis remap=\"I\">database</emphasis> may be any of those supported "
+"by the GNU C Library, listed below:"
+msgstr ""
+
+#: getent.1.xml:73(emphasis)
+msgid "ahosts"
+msgstr ""
+
+#: getent.1.xml:75(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>sethostent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>gethostent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endhostent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the hosts database. This is identical "
+"to using <emphasis remap=\"B\">hosts</emphasis>. When one or more <emphasis "
+"remap=\"I\">key</emphasis> arguments are provided, pass each <emphasis remap="
+"\"I\">key</emphasis> in succession to "
+"<citerefentry><refentrytitle>getaddrinfo</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> with the address family <emphasis remap=\"B"
+"\">AF_UNSPEC</emphasis>, enumerating each socket address structure returned."
+msgstr ""
+
+#: getent.1.xml:97(emphasis)
+msgid "ahostsv4"
+msgstr ""
+
+#: getent.1.xml:99(para)
+msgid ""
+"Same as <emphasis remap=\"B\">ahosts</emphasis>, but use the address family "
+"<emphasis remap=\"B\">AF_INET</emphasis>."
+msgstr ""
+
+#: getent.1.xml:106(emphasis)
+msgid "ahostsv6"
+msgstr ""
+
+#: getent.1.xml:108(para)
+msgid ""
+"Same as <emphasis remap=\"B\">ahosts</emphasis>, but use the address family "
+"<emphasis remap=\"B\">AF_INET6</emphasis>. The call to "
+"<citerefentry><refentrytitle>getaddrinfo</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> in this case includes the <emphasis remap=\"B"
+"\">AI_V4MAPPED</emphasis> flag."
+msgstr ""
+
+#: getent.1.xml:120(emphasis)
+msgid "aliases"
+msgstr ""
+
+#: getent.1.xml:122(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>setaliasent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>getaliasent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endaliasent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the aliases database. When one or "
+"more <emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"<emphasis remap=\"I\">key</emphasis> in succession to "
+"<citerefentry><refentrytitle>getaliasbyname</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and display the result."
+msgstr ""
+
+#: getent.1.xml:140(emphasis)
+msgid "ethers"
+msgstr ""
+
+#: getent.1.xml:142(para)
+msgid ""
+"When one or more <emphasis remap=\"I\">key</emphasis> arguments are "
+"provided, pass each <emphasis remap=\"I\">key</emphasis> in succession to "
+"<citerefentry><refentrytitle>ether_aton</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and <citerefentry><refentrytitle>ether_hostton</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry> until a result is "
+"obtained, and display the result. Enumeration is not supported on <emphasis "
+"remap=\"B\">ethers</emphasis>, so a <emphasis remap=\"I\">key</emphasis> "
+"must be provided."
+msgstr ""
+
+#: getent.1.xml:159(emphasis)
+msgid "group"
+msgstr ""
+
+#: getent.1.xml:161(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>setgrent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>getgrent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endgrent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the group database. When one or more "
+"<emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"numeric <emphasis remap=\"I\">key</emphasis> to "
+"<citerefentry><refentrytitle>getgrgid</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and each nonnumeric <emphasis remap=\"I\">key</"
+"emphasis> to <citerefentry><refentrytitle>getgrnam</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry> and display the result."
+msgstr ""
+
+#: getent.1.xml:183(emphasis)
+msgid "gshadow"
+msgstr ""
+
+#: getent.1.xml:185(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>setsgent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>getsgent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endsgent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the gshadow database. When one or "
+"more <emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"<emphasis remap=\"I\">key</emphasis> in succession to "
+"<citerefentry><refentrytitle>getsgnam</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and display the result."
+msgstr ""
+
+#: getent.1.xml:203(emphasis)
+msgid "hosts"
+msgstr ""
+
+#: getent.1.xml:205(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>sethostent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>gethostent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endhostent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the hosts database. When one or more "
+"<emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"<emphasis remap=\"I\">key</emphasis> to "
+"<citerefentry><refentrytitle>gethostbyaddr</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> or <citerefentry><refentrytitle>gethostbyname2</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, depending on whether "
+"a call to <citerefentry><refentrytitle>inet_pton</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry> indicates that the "
+"<emphasis remap=\"I\">key</emphasis> is an IPv6 or IPv4 address or not, and "
+"display the result."
+msgstr ""
+
+#: getent.1.xml:229(emphasis)
+msgid "initgroups"
+msgstr ""
+
+#: getent.1.xml:231(para)
+msgid ""
+"When one or more <emphasis remap=\"I\">key</emphasis> arguments are "
+"provided, pass each <emphasis remap=\"I\">key</emphasis> in succession to "
+"<citerefentry><refentrytitle>getgrouplist</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and display the result. Enumeration is not "
+"supported on <emphasis remap=\"B\">initgroups</emphasis>, so a <emphasis "
+"remap=\"I\">key</emphasis> must be provided."
+msgstr ""
+
+#: getent.1.xml:246(emphasis)
+msgid "netgroup"
+msgstr ""
+
+#: getent.1.xml:248(para)
+msgid ""
+"When one <emphasis remap=\"I\">key</emphasis> is provided, pass the "
+"<emphasis remap=\"I\">key</emphasis> to "
+"<citerefentry><refentrytitle>setnetgrent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and, using "
+"<citerefentry><refentrytitle>getnetgrent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> display the resulting string triple (<emphasis "
+"remap=\"I\">hostname</emphasis>, <emphasis remap=\"I\">username</emphasis>, "
+"<emphasis remap=\"I\">domainname</emphasis>). Alternatively, three <emphasis "
+"remap=\"I\">keys</emphasis> may be provided, which are interpreted as the "
+"<emphasis remap=\"I\">hostname</emphasis>, <emphasis remap=\"I\">username</"
+"emphasis> and <emphasis remap=\"I\">domainname</emphasis> to match to a "
+"netgroup name via <citerefentry><refentrytitle>innetgr</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>. Enumeration is not "
+"supported on <emphasis remap=\"B\">netgroup</emphasis>, so either one or "
+"three <emphasis remap=\"I\">keys</emphasis> must be provided."
+msgstr ""
+
+#: getent.1.xml:275(emphasis)
+msgid "networks"
+msgstr ""
+
+#: getent.1.xml:277(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>setnetent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>getnetent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endnetent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the networks database. When one or "
+"more <emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"numeric <emphasis remap=\"I\">key</emphasis> to "
+"<citerefentry><refentrytitle>getnetbyaddr</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and each nonnumeric <emphasis remap=\"I\">key</"
+"emphasis> to <citerefentry><refentrytitle>getnetbyname</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry> and display the result."
+msgstr ""
+
+#: getent.1.xml:299(emphasis)
+msgid "passwd"
+msgstr ""
+
+#: getent.1.xml:301(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>setpwent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>getpwent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endpwent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the passwd database. When one or more "
+"<emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"numeric <emphasis remap=\"I\">key</emphasis> to "
+"<citerefentry><refentrytitle>getpwuid</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and each nonnumeric <emphasis remap=\"I\">key</"
+"emphasis> to <citerefentry><refentrytitle>getpwnam</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry> and display the result."
+msgstr ""
+
+#: getent.1.xml:323(emphasis)
+msgid "protocols"
+msgstr ""
+
+#: getent.1.xml:325(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>setprotoent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>getprotoent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endprotoent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the protocols database. When one or "
+"more <emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"numeric <emphasis remap=\"I\">key</emphasis> to "
+"<citerefentry><refentrytitle>getprotobynumber</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and each nonnumeric <emphasis remap=\"I\">key</"
+"emphasis> to <citerefentry><refentrytitle>getprotobyname</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry> and display the result."
+msgstr ""
+
+#: getent.1.xml:347(emphasis)
+msgid "rpc"
+msgstr ""
+
+#: getent.1.xml:349(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>setrpcent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>getrpcent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endrpcent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the rpc database. When one or more "
+"<emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"numeric <emphasis remap=\"I\">key</emphasis> to "
+"<citerefentry><refentrytitle>getrpcbynumber</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and each nonnumeric <emphasis remap=\"I\">key</"
+"emphasis> to <citerefentry><refentrytitle>getrpcbyname</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry> and display the result."
+msgstr ""
+
+#: getent.1.xml:371(emphasis)
+msgid "services"
+msgstr ""
+
+#: getent.1.xml:373(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>setservent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>getservent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endservent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the services database. When one or "
+"more <emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"numeric <emphasis remap=\"I\">key</emphasis> to "
+"<citerefentry><refentrytitle>getservbynumber</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and each nonnumeric <emphasis remap=\"I\">key</"
+"emphasis> to <citerefentry><refentrytitle>getservbyname</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry> and display the result."
+msgstr ""
+
+#: getent.1.xml:395(emphasis)
+msgid "shadow"
+msgstr ""
+
+#: getent.1.xml:397(para)
+msgid ""
+"When no <emphasis remap=\"I\">key</emphasis> is provided, use "
+"<citerefentry><refentrytitle>setspent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>getspent</"
+"refentrytitle><manvolnum>3</manvolnum></citerefentry>, and "
+"<citerefentry><refentrytitle>endspent</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> to enumerate the shadow database. When one or more "
+"<emphasis remap=\"I\">key</emphasis> arguments are provided, pass each "
+"<emphasis remap=\"I\">key</emphasis> in succession to "
+"<citerefentry><refentrytitle>getspnam</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry> and display the result."
+msgstr ""
+
+#: getent.1.xml:418(title)
+msgid "EXIT STATUS"
+msgstr ""
+
+#: getent.1.xml:419(para)
+msgid ""
+"One of the following exit values can be returned by <command>getent</"
+"command>:"
+msgstr ""
+
+#: getent.1.xml:424(literal)
+msgid "0"
+msgstr ""
+
+#: getent.1.xml:426(para)
+msgid "Command completed successfully."
+msgstr ""
+
+#: getent.1.xml:432(para)
+msgid ""
+"Missing arguments, or <emphasis remap=\"I\">database</emphasis> unknown."
+msgstr ""
+
+#: getent.1.xml:438(literal)
+msgid "2"
+msgstr ""
+
+#: getent.1.xml:440(para)
+msgid ""
+"One or more supplied <emphasis remap=\"I\">key</emphasis> could not be found "
+"in the <emphasis remap=\"I\">database</emphasis>."
+msgstr ""
+
+#: getent.1.xml:447(literal)
+msgid "3"
+msgstr ""
+
+#: getent.1.xml:449(para)
+msgid ""
+"Enumeration not supported on this <emphasis remap=\"I\">database</emphasis>."
+msgstr ""
+
+#: getent.1.xml:457(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: getent.1.xml:458(refentrytitle)
+msgid "nsswitch.conf"
+msgstr ""
+
+#: getent.1.xml:458(manvolnum)
+msgid "5"
+msgstr ""
+
+#: getent.1.xml:461(title)
+msgid "COLOPHON"
+msgstr ""
+
+#: getent.1.xml:462(para)
+msgid ""
+"This page is part of release 3.51 of the Linux <emphasis remap=\"I\">man-"
+"pages</emphasis> project. A description of the project, and information "
+"about reporting bugs, can be found at <ulink url=\"http://www.kernel.org/doc/"
+"man-pages/\">http://www.kernel.org/doc/man-pages/</ulink>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: getent.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""

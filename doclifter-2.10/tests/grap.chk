@@ -1,0 +1,1434 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from mdoc+troff by doclifter -->
+<refentry>
+<!-- &bsol;-*&bsol;-nroff&bsol;-*&bsol;-
+This file is (c) 1998&bsol;-2006 Ted Faber (faber@lunabase.org) see
+COPYRIGHT for the full copyright and limitations of liabilities. -->
+
+
+<refmeta>
+<refentrytitle>GRAP</refentrytitle>
+<manvolnum>1</manvolnum>
+</refmeta>
+
+<refnamediv id='purpose'>
+<refname> grap </refname>
+<refpurpose> Kernighan and Bentley's language for typesetting graphs </refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>grap</command>    
+    <arg choice='plain'>--d <replaceable>defines_file</replaceable></arg>
+    <arg choice='plain'>--D </arg>
+    <arg choice='plain'>--l </arg>
+    <arg choice='plain'>--M <replaceable>include</replaceable></arg>
+    <arg choice='plain'><replaceable>path</replaceable></arg>
+    <arg choice='plain'>--R </arg>
+    <arg choice='plain'>--r </arg>
+    <arg choice='plain'>--v </arg>
+    <arg choice='plain'>--u </arg>
+    <arg choice='plain'>--C </arg>
+    <arg choice='plain'>--c </arg>
+    <arg choice='plain'>--h </arg>
+    <arg choice='plain' rep='repeat'><replaceable>filename</replaceable></arg>
+    
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para><command remap='Nm'> grap </command>
+is an implementation of Kernighan and Bentley's language for
+typesetting graphs, as described in &ldquo;Grap-A Language for Typesetting
+Graphs, Tutorial and User Manual,&rdquo; by Jon L. Bentley and Brian W.
+Kernighan, revised May 1991, which is the primary source for
+information on how to use
+<command remap='Nm'> grap </command>
+As of this writing, it is available electronically at 
+<literal>http://www.kohala.com/start/troff/cstr114.ps</literal>.
+Additional documentation and examples, packaged with
+<command remap='Nm'> grap </command>
+may have been installed locally as well.  If available, paths to them
+can be displayed using
+<command remap='Nm'> grap </command>
+<option>-h</option>
+or 
+<command remap='Nm'> grap </command>
+<option>-v</option>
+(or 
+<command remap='Nm'> grap </command>
+<option>--help</option>
+/
+<command remap='Nm'> grap </command>
+<option>--version</option>)</para>
+
+<para>This version is a black box implementation of 
+<command remap='Nm'> grap </command>
+and some inconsistencies are to be expected.  The remainder of this
+manual page will briefly outline the
+<command remap='Nm'> grap </command>
+language as implemented here.</para>
+
+<para><command remap='Nm'> grap </command>
+is a 
+<citerefentry><refentrytitle>pic</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+pre-processor.  It takes commands embedded in a 
+<citerefentry><refentrytitle>troff</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+source file which are surrounded by 
+<command remap='Ic'>.G1</command>
+and
+<command remap='Ic'>.G2</command>
+macros, and rewrites them into 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+commands to display the graph.
+Other lines are copied.  Output is always to the standard output,
+which is usually redirected.  Input is from the given
+<replaceable>filename</replaceable>,s
+which are read in order.  A 
+<replaceable>filename</replaceable>
+of 
+-
+is the standard input.
+If no 
+<replaceable>filename</replaceable>s
+are given, input is read from the standard input.</para>
+
+<para>Because
+<command remap='Nm'> grap </command>
+is a 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+preprocessor, and GNU 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+will output TeX, it is possible to use
+<command remap='Nm'> grap </command>
+with TeX.</para>
+
+<para>The 
+<option>-d</option>
+option specifies a file of macro definitions to be read at startup,
+and defaults to /usr/local/share/grap/grap.defines .
+The
+<option>-D</option>
+option inhibits the reading of any initial macros file
+(the
+<option>-l</option>
+flag is a synonym for 
+<option>-D</option>,
+though I do not remember why).  The defines
+file can also be given using the 
+<envar>GRAP_DEFINES</envar>
+environment variable. (See below).</para>
+
+<para><option>-v</option>
+prints the version information on the standard output and exits.
+<option>--version</option>
+is a synonym for 
+<option>-v</option>.</para>
+
+<para><option>-u</option>
+makes labels unaligned by default.  This version of 
+<command remap='Nm'> grap </command>
+uses new features of GNU 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+to align the left and right labels with
+the axes, that is that the left and right labels run at right angles
+to the text of the paper.  This may be useful in porting old 
+<command remap='Nm'> grap </command>
+programs.
+<option>-c</option>
+makes plot strings unclipped by default.  Some versions of 
+<command remap='Nm'> grap </command>
+allow users to place a string anywhere in the coordinate space, rather than
+only in the frame.  By default this version of 
+<command remap='Nm'> grap </command>
+does not plot any string centered outside the frame.  
+<option>-c</option>
+allows strings to be placed anywhere.  See also the 
+<command remap='Ic'>clipped</command>
+and 
+<command remap='Ic'>unclipped</command>
+string modifiers described in the
+<command remap='Ic'>plot</command>
+statement.</para>
+
+<para><option>-M</option>
+is followed by a colon-separated list of directories used to search
+for relative pathnames included via 
+<command remap='Ic'>copy</command>.
+The path is also used to locate the defines file, so if the 
+<option>-d</option>
+changes the defines file name to a relative name, it will be searched
+for in the path given by 
+<option>-M</option>.
+The search path always includes the current directory, and by default
+that directory is searched last.</para>
+
+<para>All numbers used internally by 
+<command remap='Nm'> grap </command>
+are double precision floating point values.  Sometimes using floating point
+numbers has unintended consequences.  To help avoid these problems,
+<command remap='Nm'> grap </command>
+can use two thresholds for comparison of floating point numbers, set by
+<option>-R</option>
+or 
+<option>-r</option>.
+The 
+<option>-R</option>
+flag sets coarse comparison mode, which is suitable for most applications.  If
+you are plotting small values &ndash; less than 1e-6 or so &ndash; consider using
+<option>-r</option>
+which uses very fine comparisons between numbers.  You may also want to rescale your plotted values to be larger in magnitude. The coarse comarisons are
+used by default.</para>
+
+<para>To be precise, the value by which two numbers must differ for 
+<command remap='Nm'> grap </command>
+to consider them not equal is called the comparison limit and the smallest
+non-zero number is called the minimum value.  The values a given version of 
+<command remap='Nm'> grap </command>
+uses for these are included in the output of
+<option>-v</option>
+or 
+<option>-h</option>.</para>
+
+<para>All
+<command remap='Nm'> grap </command>
+commands are included between 
+<command remap='Ic'>.G1</command>
+and
+<command remap='Ic'>.G2</command>
+macros, which are consumed by 
+<command remap='Nm'> grap </command>
+The output contains 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+between
+<command remap='Ic'>.PS</command>
+and
+<command remap='Ic'>.PE</command>
+macros.  Any arguments to the
+<command remap='Ic'>.G1</command>
+macro in the input are arguments to the
+<command remap='Ic'>.PS</command>
+macro in the output, so graphs can be scaled just like 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+diagrams.
+If 
+<option>-C</option>
+is given, any macro beginning with .G1 or .G2 is treated as a .G1 or
+.G2 macro, for compatibility with old versions of troff.  Using 
+<option>-C</option>
+also forces pure troff syntax on embedded font change commands when strings
+have the
+<command remap='Ic'>size</command>
+attribute, and all strings to be 
+<command remap='Ic'>unclipped</command>.</para>
+
+<para>The 
+<option>-h</option>
+flag prints a brief help message and exits.  
+<option>--help</option>
+is a synonym for
+<option>-h</option>.</para>
+
+<para>It is possible for someone to cause 
+<command remap='Nm'> grap </command>
+to fail by passing a bad format string and data to the
+<command remap='Ic'>sprintf</command>
+command.  If 
+<command remap='Nm'> grap </command>
+is integrated as part of the printing system, this could conceivably
+provided a path to breaching security on the machine.  If you choose to
+use 
+<command remap='Nm'> grap </command>
+as part of a printing system run by the super-user, you should disable
+<command remap='Ic'>sprintf</command>
+commands.  This can be done by calling 
+<command remap='Nm'> grap </command>
+with the 
+<option>-S</option>
+flag, setting the
+<envar>GRAP_SAFER</envar>
+environment variable, or compiling with the GRAP_SAFER preprocessor
+symbol defined.  (The GNU configure script included with
+<command remap='Nm'> grap </command>
+will define that preprocessor symbol if the
+<option>--with-grap-safe</option>
+option is given.)</para>
+
+<para>The 
+<command remap='Nm'> grap </command>
+commands are sketched below.  Refer to Kernighan and Bentley's paper
+for the details.</para>
+
+<para>New versions of
+<citerefentry><refentrytitle>groff</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+will invoke 
+<command remap='Nm'> grap </command>
+if 
+<option>-G</option>
+is given.</para>
+
+<refsect2 id='commands'><title>Commands</title>
+
+<para>Commands are separated from one another by newlines or semicolons (;).</para>
+
+<para><command remap='Ic'>frame</command>
+<replaceable>line_description</replaceable>
+[Bk -words <command>ht</command> <replaceable>height</replaceable> &verbar; <command>wid</command> <replaceable>width</replaceable> <replaceable>Ek</replaceable>]
+[Bk -words [Sm off (<command>top</command> &verbar; <command>bottom</command> &verbar; <command>left</command> &verbar; Sm on <command>right</command>) <replaceable>line_description</replaceable> <replaceable>Ek</replaceable>]
+...
+]</para>
+
+<para><command remap='Ic'>frame</command>
+[Bk -words <command>ht</command> <replaceable>height</replaceable> &verbar; <command>wid</command> <replaceable>width</replaceable> <replaceable>Ek</replaceable>]
+<replaceable>line_description</replaceable>
+[Bk -words [Sm off (<command>top</command> &verbar; <command>bottom</command> &verbar; <command>left</command> &verbar; Sm on <command>right</command>) <replaceable>line_description</replaceable> <replaceable>Ek</replaceable>]
+...
+]
+This describes how the axes for the graph are drawn. A
+<replaceable>line_description</replaceable>
+is a 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+line description, e.g., 
+<literal>dashed</literal>
+<literal>0.5</literal>,
+or the literal
+<literal>solid</literal>.
+It may also include a 
+<command remap='Ic'>color</command>
+keyword followed by the color to draw the string in double quotes.  Any color
+understood by the underlying groff system can be used.  Color can only be used
+under GNU pic, and is not available in compatibility mode.  Similarly, for 
+pic implementations that understand
+<command remap='Ic'>thickness</command>,
+that attribute may be used with a real valued parameter.  
+<command remap='Ic'>Thickness</command>
+is not available in compatibility mode.</para>
+
+<para>If the first 
+<replaceable>line_description</replaceable>
+is given, the frame is drawn with that style.  The default is 
+<literal>solid</literal>.
+The height and width of the frame can also be specified in inches.
+The default line style can be over-ridden for sides of the frame by
+specifying additional parameters to
+<command remap='Ic'>frame</command>.</para>
+
+<para>If no plotting commands have been given before the 
+<command remap='Ic'>frame</command>
+command is issued, the frame will be output at that point in the
+plotting stream relative to embedded 
+<citerefentry><refentrytitle>troff</refentrytitle></citerefentry>
+or
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+commands.  Otherwise the frame is output before the first plotted
+object (even invisible ones).</para>
+
+<para><command remap='Ic'>ht</command>
+and
+<command remap='Ic'>wid</command>
+are in inches by default, but can be any
+<citerefentry><refentrytitle>groff</refentrytitle></citerefentry>
+unit.  If omitted, the dimensions are 2 inches high by 3 inches wide.</para>
+
+<para><command remap='Ic'>coord</command>
+<replaceable>name</replaceable>
+<command>x</command> <replaceable>expr</replaceable>, <replaceable>expr</replaceable>
+<command>y</command> <replaceable>expr</replaceable>, <replaceable>expr</replaceable>
+[<command>log</command> <command>x</command> &verbar; <command>log</command> <command>y</command> &verbar; <command>log</command> <command>log</command>]
+The
+<command remap='Ic'>coord</command>
+command specifies a new coordinate system or sets limits on the
+default system.  It defines the largest and smallest values that can
+be plotted, and therefore the scale of the data in the frame.  The
+limits for the x and y coordinate systems can be given separately.  If
+a 
+<replaceable>name</replaceable>
+is given, that coordinate system is defined, if not the default system
+is modified.</para>
+
+<para>A coordinate system created by one 
+<command remap='Ic'>coord</command>
+command may be modified by subsequent 
+<command remap='Ic'>coord</command>
+commands.  A
+<command remap='Nm'> grap </command>
+program may declare a coordinate space using
+<command remap='Ic'>coord</command>,
+<command remap='Ic'>copy</command>
+a file of data through a macro that plots the data and finds its
+maxima and minima, and then define the size of the coordinate system
+with a second 
+<command remap='Ic'>coord</command>
+statement.</para>
+
+<para>This command also determines if a scale is plotted logarithmically.  
+<command>log</command> <command>log</command>
+means the same thing as 
+<command>log</command> <command>x</command> <command>log</command> <command>y</command>.</para>
+
+<para><command remap='Ic'>draw</command>
+<replaceable>line_name</replaceable>
+<replaceable>line_description</replaceable>
+<replaceable>plot_string</replaceable>
+The
+<command remap='Ic'>draw</command>
+command defines the style with which a given line will be plotted.  If
+<replaceable>line_name</replaceable>
+is given, the style is associated with that name, otherwise the
+default style is set.  
+<replaceable>line_description</replaceable>
+is a 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+line description, and the optional
+<replaceable>plot_string</replaceable>
+is a string to be centered at each point.  The default line
+description is
+<literal>invis</literal>,
+and the default plotting string is a centered bullet, so by default
+each point is a filled circle, and they are unconnected.
+If points are being connected, each
+<command remap='Ic'>draw</command>
+command ends any current line and begins a new one.</para>
+
+<para>When defining a line style, that is the first 
+<command remap='Ic'>draw</command>
+command for a given line name, specifying no plot string means that
+there are to be no plot strings.  Omitting the plot string on
+subsequent 
+<command remap='Ic'>draw</command>
+commands addressing the same named line means not to change the plot
+string.  If a line has been defined with a plot string, and the format
+is changed by a subsequent
+<command remap='Ic'>draw</command>
+statement, the plot string can be removed by specifying "" in the
+<command remap='Ic'>draw</command>
+statement.</para>
+
+<para>The plot string can have its format changed through several string_modifiers.
+String_modifiers are described in the description of the 
+<command remap='Ic'>plot</command>
+command.</para>
+
+<para>The standard defines file includes several macros useful as plot strings, 
+including 
+<command remap='Ic'>bullet</command>,
+<command remap='Ic'>square</command>,
+and
+<command remap='Ic'>delta</command>.</para>
+
+<para><command remap='Ic'>new</command>
+is a synonym for 
+<command remap='Ic'>draw</command>.</para>
+
+<para><command remap='Ic'>next</command>
+<replaceable>line_name</replaceable>
+<command>at</command>
+<replaceable>coordinates_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable>
+<replaceable>line_description</replaceable>
+The 
+<command remap='Ic'>next</command>
+command plots the given point using the line style given by
+<replaceable>line_name</replaceable>,
+or the default if none is given.  If
+<replaceable>line_name</replaceable>
+is given, it should have been defined by an earlier
+<command remap='Ic'>draw</command>
+command, if not a new line style with that name is created,
+initialized the same way as the default style.  The two expressions
+give the point's x and y values, relative to the optional coordinate
+system.  That system should have been defined by an earlier
+<command remap='Ic'>coord</command>
+command, if not, grap will exit.  If the optional
+<replaceable>line_description</replaceable>
+is given, it overrides the style's default line description.  You
+cannot over-ride the plotting string.  To use a different plotting
+string use the 
+<command remap='Ic'>plot</command>
+command.</para>
+
+<para>The coordinates may optionally be enclosed in parentheses: 
+(<replaceable>expr</replaceable>, <replaceable>expr</replaceable>)</para>
+
+<para><replaceable>quoted_string</replaceable>
+<replaceable>string_modifiers</replaceable>
+[, <replaceable>quoted_string</replaceable> [<replaceable>string_modifiers</replaceable>]
+]
+...
+<command>at</command>
+<replaceable>coordinates_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable></para>
+
+<para><command remap='Ic'>plot</command>
+<replaceable>expr</replaceable>
+<replaceable>format_string</replaceable>
+<command>at</command>
+<replaceable>coordinates_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable>
+These commands both plot a string at the given point.  In the first
+case the literal strings are stacked above each other.  The string_modifiers
+include the
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+justification modifiers 
+, (<command remap='Ic'>ljust</command>
+<command remap='Ic'>rjust</command>,
+<command remap='Ic'>above</command>,
+and
+<command remap='Ic'>below</command>),
+and absolute and relative
+<literal>size</literal>
+modifiers.  See the
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+documentation for the description of the justification modifiers.
+<command remap='Nm'> grap </command>
+also supports the 
+<command remap='Ic'>aligned</command>
+and
+<command remap='Ic'>unaligned</command>
+modifiers which are briefly noted in the description of the 
+<command remap='Ic'>label</command>
+command.</para>
+
+<para>The standard defines file includes several macros useful as plot strings, 
+including 
+<command remap='Ic'>bullet</command>,
+<command remap='Ic'>square</command>,
+and
+<command remap='Ic'>delta</command>.</para>
+
+<para>Strings placed by either format of the 
+<command remap='Ic'>plot</command>
+command are restricted to being within the frame.  This can be overridden by
+using the 
+<command remap='Ic'>unclipped</command>
+attribute, which allows a string to be plotted in or out of the frame.  The 
+<option>-c</option>
+and 
+<option>-C</option>
+flags set 
+<command remap='Ic'>unclipped</command>
+on all strings, and to prevent a string from being plotted outside the frame
+when those flags are active, the 
+<command remap='Ic'>clipped</command>
+attribute can be used to retore clipping behavior.  Though 
+<command remap='Ic'>clipped</command>
+or 
+<command remap='Ic'>unclipped</command>
+can be applied to any string, it only has meaning for 
+<command remap='Ic'>plot</command>
+statements.</para>
+
+<para><literal>size</literal>
+<replaceable>expr</replaceable>
+sets the string size to 
+<replaceable>expr</replaceable>
+points.  If 
+<replaceable>expr</replaceable>
+is preceded by a + or -, the size is increased or decreased by that
+many points.</para>
+
+<para>If 
+<command remap='Ic'>color</command>
+and a color name in double quotes appears, the string will be rendered in that
+color under a version of GNU troff that supports color.  Color is not available
+in compatibility mode.</para>
+
+<para>In the second version, the 
+<replaceable>expr</replaceable>
+is converted to a string and placed on the graph.  
+<replaceable>format_string</replaceable>
+is a 
+<citerefentry><refentrytitle>printf</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+format string.  Only formatting escapes for printing
+floating point numbers make sense.  The format string is only respected
+if the 
+<command remap='Ic'>sprintf</command>
+command is also active.  See the description of 
+<command remap='Ic'>sprintf</command>
+for the various ways to disable it.  
+<command remap='Ic'>Plot</command>
+and 
+<command remap='Ic'>sprintf</command>
+respond differently when 
+<command remap='Nm'> grap </command>
+is running safely.  
+<command remap='Ic'>Sprintf</command>
+ignores any arguments, passing the format string through without
+substitution. 
+<command remap='Ic'>plot</command>
+ignores the format string completely, plotting
+<replaceable>expr</replaceable>
+using the 
+"%g"
+format.</para>
+
+<para>Points are specified the same way as for 
+<command remap='Ic'>next</command>
+commands, with the same consequences for undefined coordinate systems.</para>
+
+<para>The second form of this command is because the first form can be used
+with a
+<command remap='Nm'> grap </command>
+<command remap='Ic'>sprintf</command>
+expression (See
+<link  linkend='expressions'>Expressions</link>).</para>
+
+<para><command remap='Ic'>ticks</command>
+<!-- blank -->
+(<command>left</command> &verbar; <command>right</command> &verbar; <command>top</command> &verbar; <command>bottom</command>)
+[Smon(<command>in</command>&verbar;<command>out</command>)<replaceable>expr</replaceable>]
+<!-- blank -->
+[<command>on&verbar;autoSmon</command><replaceable>coord_name</replaceable>]</para>
+
+<para><command remap='Ic'>ticks</command>
+<!-- blank -->
+(<command>left</command> &verbar; <command>right</command> &verbar; <command>top</command> &verbar; <command>bottom</command>)
+<!-- blank -->
+(<command>in</command>&verbar;<command>out</command>)
+<replaceable>expr</replaceable>
+[<command>up</command> <replaceable>expr</replaceable> &verbar; <command>down</command> <replaceable>expr</replaceable> &verbar; <command>left</command> <replaceable>expr</replaceable> &verbar; <command>right</command> <replaceable>expr</replaceable>]
+<command>at</command>
+<replaceable>coord_name</replaceable>
+<replaceable>expr</replaceable>
+<replaceable>format_string</replaceable>
+[[, <replaceable>expr</replaceable> [<replaceable>format_string</replaceable>]
+]
+
+]</para>
+
+<para><command remap='Ic'>ticks</command>
+<!-- blank -->
+(<command>left</command> &verbar; <command>right</command> &verbar; <command>top</command> &verbar; <command>bottom</command>)
+<!-- blank -->
+(<command>in</command>&verbar;<command>out</command>)
+<replaceable>expr</replaceable>
+[<command>up</command> <replaceable>expr</replaceable> &verbar; <command>down</command> <replaceable>expr</replaceable> &verbar; <command>left</command> <replaceable>expr</replaceable> &verbar; <command>right</command> <replaceable>expr</replaceable>]
+<command>from</command>
+[coord_name]
+<replaceable>start_expr</replaceable>
+<command>to</command>
+<replaceable>end_expr</replaceable>
+[<command>by</command> <command>Sm</command> <command>off</command> [+ &verbar; - &verbar; * &verbar; / Sm on]
+<replaceable>by_expr</replaceable>
+]
+[format_string]</para>
+
+<para><command remap='Ic'>ticks</command>
+<!-- blank -->
+[<command>left</command> &verbar; <command>right</command> &verbar; <command>top</command> &verbar; <command>bottom</command>]
+<!-- blank -->
+<command>off</command>
+This command controls the placement of ticks on the frame.  By
+default, ticks are automatically generated on the left and bottom
+sides of the frame.</para>
+
+<para>The first version of this command turns on the automatic tick
+generation for a given side.  The 
+<command>in</command>
+or
+<command>out</command>
+parameter controls the direction and length of the ticks.  If a 
+<replaceable>coord_name</replaceable>
+is specified, the ticks are automatically generated using that
+coordinate system.  If no system is specified, the default coordinate
+system is used.  As with
+<command remap='Ic'>next</command>
+and
+<command remap='Ic'>plot</command>,
+the coordinate system must be declared before the 
+<command remap='Ic'>ticks</command>
+statement that references it.  This syntax for requesting
+automatically generated ticks is an extension, and will not port to
+older 
+<command remap='Nm'> grap </command>
+implementations.</para>
+
+<para>The second version of the
+<command remap='Ic'>ticks</command>
+command overrides the automatic placement of the ticks by specifying
+a list of coordinates at which to place the ticks.  If the ticks are
+not defined with respect to the default coordinate system, the
+<replaceable>coord_name</replaceable>
+parameter must be given.  For each tick a 
+<citerefentry><refentrytitle>printf</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+style format string can be given.  The
+<replaceable>format_string</replaceable>
+defaults to
+"%g".
+The format string can also take string modifiers as described in the 
+<command remap='Ic'>plot</command>
+command.
+To place ticks with no labels, specify 
+<replaceable>format_string</replaceable>
+as
+"".</para>
+
+<para>If 
+<command remap='Ic'>sprintf</command>
+is disabled, 
+<command remap='Ic'>ticks</command>
+behaves as
+<command remap='Ic'>plot</command>
+with respect to the format string.</para>
+
+<para>The labels on the ticks may be shifted by specifying a direction and
+the distance in inches to offset the label.  That is the optional
+direction and expression immediately preceding the 
+<command>at</command>.</para>
+
+<para>The third format of the 
+<command remap='Ic'>ticks</command>
+command over-rides the default tick generation with a set of ticks ar
+regular intervals.  The syntax is reminiscent of programming
+language for loops.  Ticks are placed starting at
+<replaceable>start_expr</replaceable>
+ending at
+<replaceable>end_expr</replaceable>
+one unit apart.  If the
+<command>by</command>
+clause is specified, ticks are
+<replaceable>by_expr</replaceable>
+units apart.  If an operator appears before
+<replaceable>by_expr</replaceable>
+each tick is operated on by that operator instead of +.  For example</para>
+<programlisting remap='Bd'>
+ticks left out from 2 to 32 by *2
+</programlisting> <!-- remap='Ed (block)' -->
+
+<para>will put ticks at 2, 4, 8, 16, and 32.  If
+<replaceable>format_string</replaceable>
+is specified, all ticks are formatted using it.</para>
+
+<para>The parameters preceding the
+<command>from</command>
+act as described above.</para>
+
+<para>The 
+<command>at</command>
+and 
+<command>for</command>
+forms of tick command may both be issued on the same
+side of a frame.  For example:</para>
+<programlisting remap='Bd'>
+ticks left out from 2 to 32 by *2
+ticks left in 3, 5, 7
+</programlisting> <!-- remap='Ed (block)' -->
+
+<para>will put ticks on the left side of the frame pointing out at 2, 4, 8,
+16, and 32 and in at 3, 5, and 7.</para>
+
+<para>The final form of 
+<command remap='Ic'>ticks</command>
+turns off ticks on a given side.  If no side is given the ticks for
+all sides are cancelled.</para>
+
+<para><command remap='Ic'>tick</command>
+is a synonym for 
+<command remap='Ic'>ticks</command>.</para>
+
+<para><command remap='Ic'>grid</command>
+<!-- blank -->
+(<command>left</command> &verbar; <command>right</command> &verbar; <command>top</command> &verbar; <command>bottom</command>)
+<!-- blank -->
+<literal>ticks</literal> <literal>off</literal>
+<replaceable>line_description</replaceable>
+[<command>up</command> <replaceable>expr</replaceable> &verbar; <command>down</command> <replaceable>expr</replaceable> &verbar; <command>left</command> <replaceable>expr</replaceable> &verbar; <command>right</command> <replaceable>expr</replaceable>]
+[Sm off <command>on</command> <command>&verbar;</command> <command>auto</command> <command>Sm</command> <command>on</command> <replaceable>coord_name</replaceable>]</para>
+
+<para><command remap='Ic'>grid</command>
+<!-- blank -->
+(<command>left</command> &verbar; <command>right</command> &verbar; <command>top</command> &verbar; <command>bottom</command>)
+<!-- blank -->
+<literal>ticks</literal> <literal>off</literal>
+<replaceable>line_description</replaceable>
+[<command>up</command> <replaceable>expr</replaceable> &verbar; <command>down</command> <replaceable>expr</replaceable> &verbar; <command>left</command> <replaceable>expr</replaceable> &verbar; <command>right</command> <replaceable>expr</replaceable>]
+<command>at</command>
+<replaceable>coord_name</replaceable>
+<replaceable>expr</replaceable>
+<replaceable>format_string</replaceable>
+[[, <replaceable>expr</replaceable> [<replaceable>format_string</replaceable>]
+]
+
+]</para>
+
+<para><command remap='Ic'>grid</command>
+<!-- blank -->
+(<command>left</command> &verbar; <command>right</command> &verbar; <command>top</command> &verbar; <command>bottom</command>)
+<!-- blank -->
+<literal>ticks</literal> <literal>off</literal>
+<replaceable>line_description</replaceable>
+[<command>up</command> <replaceable>expr</replaceable> &verbar; <command>down</command> <replaceable>expr</replaceable> &verbar; <command>left</command> <replaceable>expr</replaceable> &verbar; <command>right</command> <replaceable>expr</replaceable>]
+<command>from</command>
+[coord_name]
+<replaceable>start_expr</replaceable>
+<command>to</command>
+<replaceable>end_expr</replaceable>
+[<command>by</command> <command>Sm</command> <command>off</command> [+ &verbar; - &verbar; * &verbar; / Sm on]
+<replaceable>by_expr</replaceable>
+]
+[format_string]
+The
+<command remap='Ic'>grid</command>
+command is similar to the 
+<command remap='Ic'>ticks</command>
+command except that 
+<command remap='Ic'>grid</command>
+specifies the placement of lines in the frame.  The syntax is similar
+to 
+<command remap='Ic'>ticks</command>
+as well.</para>  
+
+<para>By specifying 
+<literal>ticks</literal> <literal>off</literal>
+in the command, no ticks are drawn on that side of the frame.  If
+ticks appear on a side by default, or have been declared by an earlier
+<command remap='Ic'>ticks</command>
+command, 
+<command remap='Ic'>grid</command>
+does not cancel them unless 
+<literal>ticks</literal> <literal>off</literal>
+is specified.</para>
+
+<para>Instead of a direction for ticks, 
+<command remap='Ic'>grid</command>
+allows the user to pick a line description for the grid lines.  The
+usual
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+line descriptions are allowed.</para>
+
+<para>Grids are labelled by default.  To omit labels, specify the format
+string as 
+"".</para>
+
+<para>If 
+<command remap='Ic'>sprintf</command>
+is disabled, 
+<command remap='Ic'>grid</command>
+behaves as
+<command remap='Ic'>plot</command>
+with respect to the format string.</para>
+
+<para><command remap='Ic'>label</command>
+<!-- blank -->
+(<command>left</command> &verbar; <command>right</command> &verbar; <command>top</command> &verbar; <command>bottom</command>)
+<!-- blank -->
+<replaceable>quoted_string</replaceable>
+<replaceable>string_modifiers</replaceable>
+[, <replaceable>quoted_string</replaceable> [<replaceable>string_modifiers</replaceable>]
+]
+...
+[<command>up</command> <replaceable>expr</replaceable> &verbar; <command>down</command> <replaceable>expr</replaceable> &verbar; <command>left</command> <replaceable>expr</replaceable> &verbar; <command>right</command> <replaceable>expr</replaceable>]
+The 
+<command remap='Ic'>label</command>
+command places a label on the given axis.  It is possible to specify
+several labels, which will be stacked over each other as in 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>.
+The final argument, if present, specifies how many inches the label is
+shifted from the axis.</para>
+
+<para>By default the labels on the left and right labels run parallel to the
+frame.  You can cancel this by specifying 
+<literal>unaligned</literal>
+as a 
+<replaceable>string_modifier</replaceable>.</para>
+
+<para><command remap='Ic'>circle</command>
+<command>at</command>
+<replaceable>coordinate_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable>
+<command>radius</command> <replaceable>expr</replaceable>
+<replaceable>linedesc</replaceable>
+This draws an circle at the point indicated.  By default, the
+circle is small, 0.025 inches.  This can be over-ridden by specifying
+a radius.  The coordinates of the point are relative to the named
+coordinate system, or the default system if none is specified.</para>
+
+<para>This command has been extended to take a line description,
+e.g., 
+<literal>dotted</literal>.
+It also accepts the filling extensions described below in the
+<command remap='Ic'>bar</command>
+command.  It will also accept a 
+<command remap='Ic'>color</command>
+keyword that gives the color of the outline of the circle in double
+quotes and a
+<command remap='Ic'>fillcolor</command>
+command that sets the color to fill the circle with similarly.  Colors
+are only available when compatibility mode is off, and using a version
+of GNU pic that supports color.</para>
+
+<para><command remap='Ic'>line</command>
+<replaceable>line_description</replaceable>
+<command>from</command>
+<replaceable>coordinate_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable>
+<command>to</command>
+<replaceable>coordinate_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable>
+<replaceable>line_description</replaceable></para>
+
+<para><command remap='Ic'>arrow</command>
+<replaceable>line_description</replaceable>
+<command>from</command>
+<replaceable>coordinate_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable>
+<command>to</command>
+<replaceable>coordinate_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable>
+<replaceable>line_description</replaceable>
+This draws a line or arrow from the first point to the second using
+the given style.  The default line style is 
+<literal>solid</literal>.
+The 
+<replaceable>line_description</replaceable>
+can be given either before the
+<command>from</command>
+or after the 
+<command>to</command>
+clause.  If both are given the second is used.  It is possible to
+specify one point in one coordinate system and one in another, note
+that if both points are in a named coordinate system (even if they are
+in the same named coordinate system), both points must have
+<replaceable>coordinate_name</replaceable>
+given.</para>
+
+
+<para><command remap='Ic'>copy</command>
+"Ar filename"
+<command>until</command> "Ar string"
+<command>thru</command> <replaceable>macro</replaceable>
+The
+<command remap='Ic'>copy</command>
+command imports data from another file into the current graph.  The
+form with only a filename given is a simple file inclusion; the
+included file is simply read into the input stream and can contain
+arbitrary
+<command remap='Nm'> grap </command>
+commands.  The more common case is that it is a number list; see
+<link role='Sx' linkend='number_lists'>Number Lists</link>
+below.</para>
+
+<para>The second form takes lines from the file, splits them into words
+delimited by one or more spaces, and calls the given macro with those
+words as parameters.  The macro may either be defined here, or be a
+macro defined earlier.  See
+<link  linkend='macros'>Macros</link>
+for more information on macros.</para>
+
+<para>The
+<replaceable>filename</replaceable>
+may be omitted if the 
+<command>until</command>
+clause is present.  If so the current file is treated as the input
+file until
+<replaceable>string</replaceable>
+is encountered at the beginning of the line.</para>
+
+<para><command remap='Ic'>copy</command>
+is one of the workhorses of 
+<command remap='Nm'> grap </command>
+Check out the paper and 
+<filename>/usr/local/share/examples/grap</filename>
+for more details.  Confirm the location of the examples directory using the 
+<option>-v</option>
+flag.</para>
+<para><command remap='Ic'>print</command>
+<!-- blank -->
+(<replaceable>expr&verbar;string</replaceable>)
+<!-- blank -->
+Prints its argument to the standard error.</para>
+
+<para><command remap='Ic'>sh</command> <replaceable>block</replaceable>
+This passes 
+<replaceable>block</replaceable>
+to 
+<citerefentry><refentrytitle>sh</refentrytitle><manvolnum>1</manvolnum></citerefentry>.
+Unlike K&amp;B 
+<command remap='Nm'> grap </command>
+no macro or variable expansion is done.  I believe that this is also
+true for GNU 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+version 1.10.  See the 
+<link  linkend='macros'>Macros</link>
+section for information on defining blocks.</para>
+
+<para><command remap='Ic'>pic</command> <replaceable>pic_statement</replaceable>
+This issues the given 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+statements  in the enclosing
+<command remap='Ic'>.PS</command>
+and 
+<command remap='Ic'>.PE</command>
+at the point where the command is issued.</para>
+
+<para>Statements that begin with a period are considered to be 
+<citerefentry><refentrytitle>troff</refentrytitle><manvolnum>statements</manvolnum></citerefentry>
+and are output in the enclosing
+<command remap='Ic'>.PS</command>
+and 
+<command remap='Ic'>.PE</command>
+at the point where the command appears.</para>
+
+<para>For the purposes of relative placement of 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+or 
+<citerefentry><refentrytitle>troff</refentrytitle></citerefentry>
+commands, the frame is output immediately before the first plotted
+object, or the 
+<command remap='Ic'>frame</command>
+statement, if any.  If the user specifies
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+or 
+<citerefentry><refentrytitle>troff</refentrytitle></citerefentry>
+commands and neither any plotable object nor a 
+<command remap='Ic'>frame</command>
+command, the commands will not be output.</para>
+
+<para><command remap='Ic'>graph</command> <replaceable>Name</replaceable> <replaceable>pic_commands</replaceable>
+This command is used to position graphs with respect to each other.
+The current graph is given the
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+name
+<replaceable>Name</replaceable>
+(names used by 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+begin with capital letters).  Any 
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+commands following the graph are used to position the next graph.  The
+frame of the graph is available for use with
+<citerefentry><refentrytitle>pic</refentrytitle></citerefentry>
+name
+<literal>Frame.</literal>
+The following places a second graph below the first:</para>
+<programlisting remap='Bd'>
+graph Linear
+[ graph description ]
+<funcsynopsis>
+<funcsynopsisinfo>
+graph Exponential with .Frame.n at &bsol;
+</funcsynopsisinfo>
+</funcsynopsis>
+	Linear.Frame.s - (0, .05)
+[ graph description ]
+</programlisting> <!-- remap='Ed (block)' -->
+
+<para><replaceable>name</replaceable> <replaceable>=</replaceable> <replaceable>expr</replaceable>
+This assigns 
+<replaceable>expr</replaceable>
+to the variable
+<replaceable>name</replaceable>.
+<command remap='Nm'> grap </command>
+has only numeric (double) variables.</para>
+
+<para>Assignment creates a variable if it does not exist.  Variables persist
+across graphs.  Assignments can cascade; 
+<literal>a</literal> <literal>=</literal> <literal>b</literal> <literal>=</literal> <literal>35</literal>
+assigns 35 to 
+<literal>a</literal>
+and 
+<literal>b</literal>.</para>
+
+<para><command remap='Ic'>bar</command>
+<!-- blank -->
+()<command>up</command> &verbar; <command>right</command>
+<!-- blank -->
+<replaceable>coordinates_name</replaceable>
+<replaceable>offset</replaceable>
+<command>ht</command>
+<replaceable>height</replaceable>
+<command>wid</command> <replaceable>width</replaceable>
+<command>base</command> <replaceable>base_offset</replaceable>
+<replaceable>line_description</replaceable></para>
+
+<para><command remap='Ic'>bar</command>
+<replaceable>coordinates_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable>,
+<replaceable>coordinates_name</replaceable>
+<replaceable>expr</replaceable>, <replaceable>expr</replaceable>,
+<replaceable>line_description</replaceable>
+The 
+<command remap='Ic'>bar</command>
+command facilitates drawing bar graphs.  The first form of the
+command describes the bar somewhat generally and has 
+<command remap='Nm'> grap </command>
+place it.
+The bar may extend up or to the right, is centered on 
+<replaceable>offset</replaceable>
+and extends up or right 
+<replaceable>height</replaceable>
+units (in the given coordinate system).  For example</para>
+<programlisting remap='Bd'>
+bar up 3 ht 2
+</programlisting> <!-- remap='Ed (block)' -->
+
+<para>draws a 2 unit high bar sitting on the x axis, centered on x=3.  By
+default bars are 1 unit wide, but this can be changed with the 
+<command remap='Ic'>wid</command>
+keyword.  By default bars sit on the base axis, i.e., bars directed up
+will extend from y=0.  That may be overridden by the 
+<command remap='Ic'>base</command>
+keyword.  (The bar described above has corners (2.5, 0) and (3.5, 2).)</para>
+
+<para>The line description has been extended to include a 
+<command remap='Ic'>fill</command> <replaceable>expr</replaceable>
+keyword that specifies the shading inside the bar.  Bars may be drawn
+in any line style.  They support the
+<command remap='Ic'>color</command>
+and 
+<command remap='Ic'>fillcolor</command>
+keywords described under
+<command remap='Ic'>circle</command>.</para>
+
+<para>The second form of the command draws a box with the two points as
+corners.  This can be used to draw boxes highlighting certain data as
+well as bar graphs.  Note that filled bars will cover data drawn under
+them.</para>
+</refsect2>
+
+<refsect2 id='control_flow'><title>Control Flow</title>
+
+<para><command remap='Ic'>if</command> <replaceable>expr</replaceable> <command remap='Ic'>then</command> <replaceable>block</replaceable>
+<command remap='Ic'>else</command> <replaceable>block</replaceable>
+The
+<command remap='Ic'>if</command>
+statement provides simple conditional execution.  If
+<replaceable>expr</replaceable>
+is non-zero, the 
+<replaceable>block</replaceable>
+after the 
+<command remap='Ic'>then</command>
+statement is executed.  If not the 
+<replaceable>block</replaceable>
+after the
+<command remap='Ic'>else</command>
+is executed, if present.  See
+<link  linkend='macros'>Macros</link>
+for the definition of blocks.  Early versions of this implementation
+of
+<command remap='Nm'> grap </command>
+treated the blocks as macros that were defined and expanded in place.
+This led to unnecessary confusion because explicit separators were
+sometimes called for.  Now,
+<command remap='Nm'> grap </command>
+inserts a separator (;) after the last character in 
+<replaceable>block</replaceable>,
+so constructs like</para> 
+<programlisting remap='Bd'>
+if (x == 3) { y = y + 1 }
+x = x + 1
+
+</programlisting> <!-- remap='Ed (block)' -->
+<para>behave as expected.  A separator is also appended to the end of a
+<command remap='Ic'>for</command>
+block.</para>
+
+<para><command remap='Ic'>for</command> <replaceable>name</replaceable> <command remap='Ic'>from</command> <replaceable>from_expr</replaceable> <command remap='Ic'>to</command> <replaceable>to_expr</replaceable>
+[<command remap='Ic'>by</command> +&verbar;-&verbar;*&verbar;/ <replaceable>by_expr</replaceable>]
+<command remap='Ic'>do</command>
+<replaceable>block</replaceable>
+This command executes 
+<replaceable>block</replaceable>
+iteratively.  The variable
+<replaceable>name</replaceable>
+is set to 
+<replaceable>from_expr</replaceable>
+and incremented by
+<replaceable>by_expr</replaceable>
+until it exceeds 
+<replaceable>to_expr</replaceable>.
+The iteration has the semantics defined in the 
+<command remap='Ic'>ticks</command>
+command.  The definition of
+<replaceable>block</replaceable>
+is discussed in 
+<link  linkend='macros'>Macros</link>.
+See also the note about implicit separators in the description of the
+<command remap='Ic'>if</command>
+command.</para>
+
+<para>An 
+<command remap='Ic'>=</command>
+can be used in place of 
+<command remap='Ic'>from</command>.</para>
+</refsect2>
+
+<refsect2 id='expressions'><title>Expressions</title>
+
+<para><command remap='Nm'> grap </command>
+supports most standard arithmetic operators: + - / * ^.  The carat
+(^) is exponentiation.  In an 
+<command remap='Ic'>if</command>
+statement
+<command remap='Nm'> grap </command>
+also supports the C logical operators ==, !=,
+&amp;&amp;, || and unary !.  Also in an
+<command remap='Ic'>if</command>,
+== and != are overloaded for the comparison of
+quoted strings.  Parentheses are used for grouping.</para>  
+
+<para>Assignment is not allowed in an expression in any context, except for
+simple cascading of assignments.
+<literal>a</literal> <literal>=</literal> <literal>b</literal> <literal>=</literal> <literal>35</literal>
+works as expected;
+<literal>a</literal> <literal>=</literal> <literal>3.5</literal> <literal>*</literal> <literal>(b</literal> <literal>=</literal> <literal>10)</literal>
+does not execute.</para>
+
+<para><command remap='Nm'> grap </command>
+supports the following functions that take one argument:
+<command remap='Ic'>log</command>, <command remap='Ic'>exp</command>, <command remap='Ic'>int</command>, <command remap='Ic'>sin</command>, <command remap='Ic'>cos</command>, <command remap='Ic'>sqrt</command>, <command remap='Ic'>rand</command>.
+The logarithms are base 10 and the trigonometric functions are in
+radians.  
+<command remap='Ic'>eexp</command>
+returns Euler's number to the given power and
+<command remap='Ic'>ln</command>
+returns the natural logarithm.  The natural log and exponentiation
+functions are extensions and are probably not available in other
+<command remap='Nm'> grap </command>
+implementations.</para>
+
+<para><command remap='Ic'>rand</command>
+returns a random number uniformly
+distributed on [0,1).  The following two-argument functions are supported:
+<command remap='Ic'>atan2</command>, <command remap='Ic'>min</command>, <command remap='Ic'>max</command>.
+<command remap='Ic'>atan2</command>
+works just like
+<citerefentry><refentrytitle>atan2</refentrytitle><manvolnum>3</manvolnum></citerefentry>.
+The random number generator can be seeded by calling 
+<command remap='Ic'>srand</command>
+with a single parameter (converted internally to an integer).  Because
+its return value is of no use, you must use 
+<command remap='Ic'>srand</command>
+as a separate statement, it is not part of a valid expression.
+<command remap='Ic'>srand</command>
+is not portable.</para>
+
+<para>The
+<command remap='Ic'>getpid</command>
+function takes no arguments and returns the process id.  This may be
+used to seed the random number generator, but do not expect
+cryptographically random values to result.</para>
+
+<para>Other than string comparison, no expressions can use strings.  One
+string valued function exists: 
+<command remap='Ic'>sprintf</command> (, <replaceable>format</replaceable>
+[<replaceable>expr</replaceable> <replaceable>,</replaceable> <replaceable>expr</replaceable>]
+).  It operates like
+<citerefentry><refentrytitle>sprintf</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+except returning the value.  It can be used anywhere a quoted string
+is used.  If 
+<command remap='Nm'> grap </command>
+is run with 
+<option>-S</option>,
+the environment variable
+<envar>GRAP_SAFER</envar>
+is defined, or 
+<command remap='Nm'> grap </command>
+has been compiled for safer operation, the 
+<command remap='Ic'>sprintf</command>
+command will return the format string.  This mode of operation is only
+intended to be used only if
+<command remap='Nm'> grap </command>
+is being used as part of a super-user enabled print system.</para>
+</refsect2>
+
+<refsect2 id='macros'><title>Macros</title>
+<para><command remap='Nm'> grap </command>
+has a simple but powerful macro facility.  Macros are defined using
+the 
+<command remap='Ic'>define</command>
+command :</para>
+
+<para><command remap='Ic'>define</command> <replaceable>name</replaceable> <replaceable>block</replaceable>
+<!-- br -->
+<command remap='Ic'>undefine</command> <replaceable>name</replaceable>
+Every occurrence of 
+<replaceable>name</replaceable>
+in the program text is replaced by the contents of 
+<replaceable>block</replaceable>.
+<replaceable>block</replaceable>
+is defined by a series of statements in nested { }'s, or a series of
+statements surrounded by the same letter.  An example of the latter is</para>
+<programlisting remap='Bd'>
+define foo  X coord x 1,3 X
+</programlisting> <!-- remap='Ed (block)' -->
+<para>Each time 
+<literal>foo</literal>
+appears in the text, it will be replaced by 
+<literal>coord</literal> <literal>x</literal> <literal>1,3</literal>.
+Macros are literal, and can contain newlines.  If a macro does not
+span multiple lines, it should end in a semicolon to avoid parsing
+errors.</para>
+
+<para>Macros can take parameters, too.  If a macro call is followed by a
+parenthesized, comma-separated list the values starting with $1 will
+be replaced in the macro with the elements of the list.  A $ not
+followed by a digit is left unchanged.  This parsing
+is very rudimentary; no nesting or parentheses or escaping of commas
+is allowed.  Also, there is no way to say argument 1 followed by a
+digit (${1}0 in sh(1)).</para>
+
+<para>The following will draw a line with slope 1.</para>
+<programlisting remap='Bd'>
+<synopsis>
+define foo { next at $1, $2 }
+for i from 1 to 5 { foo(i,i) }
+</synopsis>
+</programlisting> <!-- remap='Ed (block)' -->
+<para>Macros persist across graphs.  The file 
+<filename>/usr/local/share/grap/grap.defines</filename>
+contains simple macros for plotting common characters.  The 
+<command remap='Ic'>undefine</command>
+command deletes a macro.</para>
+
+<para>See the directory
+<filename>/usr/local/share/examples/grap</filename>
+for more examples of macros.
+Confirm the location of the examples directory using the 
+<option>-v</option>
+flag.</para>
+</refsect2>
+
+<refsect2 id='number_lists'><title>Number Lists</title>
+
+<para>A whitespace-separated list of numbers is treated specially.  The list
+is taken to be points to be plotted using the default line style on
+the default coordinate system.  If more than two numbers are given,
+the extra numbers are taken to be additional y values to plot at the
+first x value.  Number lists in DWB 
+<command remap='Nm'> grap </command>
+can be comma-separated, and this 
+<command remap='Nm'> grap </command>
+supports that as well.  More precisely, numbers in number lists can be
+separated by either whitespace, commas, or both.</para>
+<programlisting remap='Bd'>
+1 2 3
+4 5 6
+</programlisting> <!-- remap='Ed (block)' -->
+
+<para>Will plot points using the default line style at (1,2), (1,3),(4,5)
+and (4,6).  A simple way to plot a set of numbers in a file named 
+<filename>./data</filename>
+is:</para>
+<programlisting remap='Bd'>
+.G1
+copy "./data"
+.G2
+</programlisting> <!-- remap='Ed (block)' -->
+</refsect2>
+
+<refsect2 id='pic_macros'><title>Pic Macros</title>
+
+<para><command remap='Nm'> grap </command>
+defines pic macros that can be used in embedded pic code to place
+elements in the graph.  The macros are
+<command remap='Ic'>x_gg</command>,
+<command remap='Ic'>y_gg</command>,
+and
+<command remap='Ic'>xy_gg</command>.
+These macros define pic distances that correspond to the given
+argument.  They can be used to size boxes or to plot pic constructs on
+the graph.  To place a given construct on the graph, you should add
+Frame.Origin to it.
+Other coordinate spaces can be used by replacing 
+<command remap='Ic'>gg</command>
+with the name of the coordinate space.  A coordinate space named
+<command remap='Ic'>gg</command>
+cannot be reliably accessed by these macros.</para>
+
+<para>The macros are emitted immediately before the frame is drawn.</para>
+
+<para>DWB
+<command remap='Nm'> grap </command>
+may use these as part of its implementation.  This
+<command remap='Nm'> grap </command>
+provides them only for compatibility.  Note that these are very simple
+macros, and may not do what you expect under complex conditions.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='environment_variables'><title>ENVIRONMENT VARIABLES</title>
+
+<para>If the environment variable 
+<envar>GRAP_DEFINES</envar>
+is defined, 
+<command remap='Nm'> grap </command>
+will look for its defines file there.  If that value is a relative path
+name the path specified in the
+<option>-M</option>
+option will be searched for it.
+<envar>GRAP_DEFINES</envar>
+overrides the compiled in location of the defines file, but may be
+overridden by the
+<option>-d</option>
+or
+<option>-D</option>
+flags.</para>
+
+<para>If
+<envar>GRAP_SAFER</envar>
+is set, 
+<command remap='Ic'>sprintf</command>
+is disabled to prevent forcing 
+<command remap='Nm'> grap </command>
+to core dump or smash the stack.</para>
+</refsect1>
+
+<refsect1 id='files'><title>FILES</title>
+<para><filename>/usr/local/share/grap/grap.defines</filename></para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<para><citerefentry><refentrytitle>atan2</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>groff</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>pic</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>printf</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>sh</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>sprintf</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>troff</refentrytitle><manvolnum>1</manvolnum></citerefentry></para>
+
+<para>If documentation and examples have been installed, 
+<command remap='Nm'> grap </command>
+<option>--version</option>
+or 
+<command remap='Nm'> grap </command>
+<option>--help</option>
+will display the locations.</para>
+</refsect1>
+
+<refsect1 id='bugs'><title>BUGS</title>
+
+<para>There are several small incompatibilities with K&amp;R
+<command remap='Nm'> grap </command>
+They include the
+<command remap='Ic'>sh</command>
+command not expanding variables and macros, and a more strict
+adherence to parameter order in the internal commands.</para>
+
+<para>Although much improved, the error reporting code can still be
+confused.  Notably, an error in a macro is not detected until the
+macro is used, and it produces unusual output in the error message.</para>
+
+<para>Iterating many times over a macro with no newlines can run 
+<command remap='Nm'> grap </command>
+out of memory.</para>
+</refsect1>
+
+<refsect1 id='author'><title>AUTHOR</title>
+<para>This implementation was done by
+phrase Ted Faber Ao faber@lunabase.org Ac Ns role='author'.
+phrase Bruce Lilly Ao blilly@erols.com Ac role='author'
+contributed many bug fixes, including a considerable revamp of the
+error reporting code.  If you can actually find an error in your  
+<command remap='Nm'> grap </command>
+code, you can probably thank him.
+<command remap='Nm'> grap </command>
+was designed and specified by 
+phrase Brian Kernighan role='author'
+and 
+phrase Jon Bentley role='author'.</para>
+</refsect1>
+</refentry>
+

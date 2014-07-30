@@ -1,0 +1,238 @@
+<!DOCTYPE refentry PUBLIC 
+   "-//OASIS//DTD DocBook XML V4.1.2//EN"
+   "docbook/docbookx.dtd">
+<refentry id='manlifter.1'>
+<refmeta>
+<refentrytitle>manlifter</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='date'> Sun Nov 28 2004</refmiscinfo>
+<refmiscinfo class='source'>manlifter</refmiscinfo>
+<refmiscinfo class='productname'>manlifter</refmiscinfo>
+<refmiscinfo class='manual'>Documentation Tools</refmiscinfo>
+</refmeta>
+<refnamediv id='name'>
+<refname>manlifter</refname>
+<refpurpose>mass-conversion script and test harness for doclifter</refpurpose>
+</refnamediv>
+<refsynopsisdiv id='synopsis'>
+
+<cmdsynopsis>
+  <command>manlifter</command>  
+  <arg choice='opt'>-d <replaceable>option</replaceable></arg>
+  <arg choice='opt'>-e</arg>
+  <arg choice='opt'>-f <replaceable>listfile</replaceable></arg>
+  <arg choice='opt'>-h</arg>
+  <arg choice='opt'>-I <replaceable>mandir</replaceable></arg>
+  <arg choice='opt'>-m</arg>
+  <arg choice='opt'>-M</arg>
+  <arg choice='opt'>-o <replaceable>outdir</replaceable></arg>
+  <arg choice='opt'>-p <replaceable>patch-directory</replaceable></arg>
+  <arg choice='opt'>-P</arg>
+  <arg choice='opt'>-q</arg>
+  <arg choice='opt'>-v</arg>
+  <arg choice='opt'>-s <replaceable>section</replaceable></arg>
+  <arg choice='opt'>-X <replaceable>exclude</replaceable></arg>
+  <arg choice='plain' rep='repeat'><replaceable>name</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>manlifter</command> <arg choice='opt'>-S</arg>  
+</cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1><title>Description</title>
+
+<para><command>manlifter</command> is a script that sequences
+<citerefentry><refentrytitle>doclifter</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+to convert an entire manual-page tree to XML-Docbook, optionally also
+generating HTML from the XML.  Another use is as a torture-test tool
+for doclifter; it logs errors to standard output and collects
+timings.</para>
+
+<para>Called without any file arguments, manlifter tries to convert
+all eligible man pages installed on the system, placing the resulting xml files
+under <filename>xmlman</filename> in the current directory.  Each
+successfully translated page foo.N is copied to manN/foo.xml beneath
+the output directory, regardless of what source directory it came
+from.
+</para>
+
+<para>A maniual page is considered ineligibile for batch conversion if
+it contains text indicating it has been generated from DocBook masters
+of from Doxygen.</para>
+
+<para>For each source file examined, if the destination file exists
+and is newer than the source, the conversion is skipped; thus,
+incremental runs of <command>manlifter</command> do the least work
+needed to keep the target XML tree up to date.  Likewise, in -h mode derived
+HTML files are only made when necessary.</para>
+
+<para>Stub pages that are just <markup>.so</markup> redirections are
+translated to corresponding symlinks of XML files (and, with -h, HTML
+files).</para>
+
+<para><command>manlifter</command> may also be called with a single
+file argument, which is interpreted as the stem name of a potential
+manual page.  <command>manlifter</command> then searches all selected
+manual sections for a matching page and attempts to convert it.  In
+this case, a copy of the man page and the converted version are
+dropped immediately beheath the output directory, with the names
+foobar.man and foobar.man.xml, respectively.  This mode is normally
+only of interest only to <command>doclifter</command> developers for
+debugging that program.</para>
+
+<para>In either of the above cases, <command>manlifter</command> will
+uncompress the file if it has a <filename>.gz</filename>, 
+<filename>.bz2</filename> or <filename>.Z</filename> suffix on the
+name.</para>
+
+<para>Options are as follows:</para>
+
+<variablelist>
+<varlistentry>
+<term>-d</term>
+<listitem><para>Pass the string argument to each doclifter call as options.
+Each space-separated token in the string becomes a separate argument
+in the call.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-e</term>
+<listitem><para>Run in log-filter mode (mainly of interest to
+<command>doclifter</command> developers).  In this mode,
+<command>manlifter</command> reads a test log from standard input and
+filters it in a a way dependent on the -f and -q options.  If neither
+of these is given, messages from successful runs are stripped out and
+only errors passed through to standard output.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-f</term>
+<listitem><para>Normally, run doclifter on the files named by each line in the
+argument file.  In error-filter mode the argument is instead
+interpreted as a filtering regular expression.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-h</term>
+<listitem><para>Also generate HTML translations into the output
+directory. DocBook citerefentry markup is transformed to hyperlinks in
+the directory, and a contents listing is generated to
+<filename>index.html</filename>.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-I</term>
+<listitem><para>Specify the root of the manual-page tree.  By default
+this is <filename>/usr/share/man</filename>.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-m</term>
+<listitem><para>Make a patch to correct the last page fetched. It is
+copied, an editor is called on the copy (using the environment
+variable <envar>$EDITOR</envar>), and then
+<citerefentry><refentrytitle>diff</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+is called to drop the patch in the prepatch directory. Fails with an
+error if such a patch is already present.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-M</term>
+<listitem><para>Lift the specified files, then do the equivalent of
+the -m option.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-o</term>
+<listitem><para>Set the output directory into which
+XML-DocBook translations will be dropped.  By default this is
+<filename>xmlman</filename> under the current directory in batch mode, 
+or the current directory otherwise.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-p</term>
+<listitem><para>Interpret the argument as the name of a patch
+directory (the default name is <filename>prepatch</filename> under the
+current directory).  Each file named <filename>foo.N.patch</filename> is
+interpreted as a patch to be applied to the manual page foo(N) before
+doclifter translates it.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-P</term>
+<listitem><para>Enable profiling using the Python hotshot module; this
+is only useful for tuning <application>doclifter</application> so it
+runs faster. Raw data is written to
+<filename>manlifter.prof</filename>, and a digested report is appended
+to the log on standard output.  Warning: the raw data files can become
+huge, and the postprocessing for report generation can take as long
+as the actual processing (or longer!).</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-q</term>
+<listitem><para>Normally, pass the -q (quiet) option to each doclifter call.
+In error-filter mode, return a list of files on which translation failed.
+</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-v</term> <listitem><para>Pass the -v (verbose) option to each
+doclifter call.  This option can be repeated to increase the verbosity
+level.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-s</term>
+<listitem><para>Specify a section to scan.  Use this with an argument;
+it should not be necessary when doing a conversion of the entire
+tree.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-S</term>
+<listitem><para>Compile error statistics from a
+<command>manlifter</command> logfile presented on standard input.
+This option will be of interest mainly to <command>doclifter</command>
+developers.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>-X</term>
+<listitem><para>In batch mode exclude pages listed in the argument file.  
+Meant to be used for pages that are known good and take an extremely
+long time to lift, in order to cut down the time for a test run. (Most
+pages lift in less than a half second, but a few can take 15 minutes
+or longer.)
+</para></listitem>
+</varlistentry>
+</variablelist>
+
+<para><command>manlifter</command> emits a logfile to standard
+output. The file begins with a timestamp line and a blank line,
+and ends with a line giving run time and various interesting
+statistics.  Between these are stanzas, separated by blank lines,
+one for each file on which <command>doclifter</command> was
+run.</para>
+
+<para>The first line of each stanza beguns with "! ", followed by the 
+pathname of the source manual pager, followed by "=" and the return
+status of doclifter run on that file.  Following that is a space
+and <command>doclifter</command>'s runtime in seconds.</para>
+
+<para>This initial line may be followed by information messages and
+the error output of the doclifter run.</para>
+
+<para><command>manlifter</command> must find a copy of
+<command>doclifter</command> in either the current directory or one of
+the command directories in your <envar>PATH</envar> in order to
+run.</para>
+</refsect1>
+
+<refsect1><title>Bugs</title> 
+<para>HTML generation is painfully slow.  Unfortunately, there is
+little we can do to remedy this, because XSLT engines are painfully
+slow.</para>
+</refsect1>
+
+<refsect1><title>See Also</title>
+<para>
+<citerefentry><refentrytitle>doclifter</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>xmlto</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+</para>
+</refsect1>
+
+<refsect1><title>Author</title>
+<para>Eric S. Raymond <email>esr@thyrsus.com</email></para>
+
+<para>There is a project web page at
+<ulink url="http://www.catb.org/~esr/doclifter/">http://www.catb.org/~esr/doclifter/</ulink>.</para>
+</refsect1>
+</refentry>

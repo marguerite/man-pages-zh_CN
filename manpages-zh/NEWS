@@ -1,0 +1,26 @@
+manpages-zh
+
+Version 1.5.2 (2010-07-09)
+* remove git.1
+
+Version 1.5.1 (2008-04-01)
+* remove .spec file
+* fix url in ChangeLog
+* fix typo bug in Makefile.am
+* remove .BS .BE from loadTk.3tk
+* fix section in man7/perl*.7
+
+Version 1.5.1-rc3 (2008-03-13)
+* generate utf8 encoding manpage by default, you can use
+  `--disable-utf8' to generate the origin gbk and big5 encoding manpage.
+* add --disable-zhcn and --disable-zhtw option for configure
+
+Version 1.5.1-rc2 (2008-03-01)
+* 使用 autotools 替换原来的 Makefile。
+* 支持 make install 及 make dist。
+
+Version 1.5.1-rc1 (2008-02-29)
+* 从 CMPP 项目中分支出本项目。
+* 保证 Debian 打包时无警告。
+* tcl 和 tk 的大部分内容改到 3tcl 及 3tk 节。
+* 纯文档的内容改至 7 和 7tcl 节。

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry>
+<refentryinfo><date>2011-09-28</date></refentryinfo>
+<refmeta>
+<refentrytitle>PRINTF</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo class='date'>2011-09-28</refmiscinfo>
+<refmiscinfo class='source'>GNU</refmiscinfo>
+<refmiscinfo class='manual'>Linux Programmer's Manual</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>printf</refname>
+<refname>fprintf</refname>
+<refname>sprintf</refname>
+<refname>snprintf</refname>
+<refname>vprintf</refname>
+<refname>vfprintf</refname>
+<refname>vsprintf</refname>
+<refname>vsnprintf</refname>
+<refpurpose>formatted output conversion</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This is a stripped manpage intended to test a common evaluation case
+of the &bsol;w conditiol in groff.</para>
+</refsect1>
+
+<refsect1 id='example'><title>EXAMPLE</title>
+<para>To print pi to five decimal places:</para>
+</refsect1>
+</refentry>
+

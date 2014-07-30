@@ -1,0 +1,32 @@
+.Dt MORE(1) "" "User Commands"
+.Os util-linux
+.Sh NAME
+.Nm more
+.Nd file perusal filter for crt viewing
+.Sh DESCRIPTION
+This is a partial manual page stripped down to exhibit translation of
+the Xo and Xc macros.
+.Bl -tag -width Ic
+.It Ic h No or Ic ?
+Help: display a summary of these commands.
+If you forget all the other commands, remember this one.
+.It Ic SPACE
+Display next k lines of text.  Defaults to current screen size.
+.It Ic z
+Display next k lines of text.  Defaults to current screen size.  Argument
+becomes new default.
+.It Ic RETURN
+Display next k lines of text.  Defaults to 1.  Argument becomes new
+default.
+.It Ic d No or Ic \&^D
+Scroll k lines.  Default is current scroll size, initially 11.  Argument
+becomes new default.
+.It Xo
+.Ic q
+.No or
+.Ic Q
+.No or
+.Ic INTERRUPT
+.Xc
+Exit.
+.El

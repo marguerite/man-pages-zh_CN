@@ -1,0 +1,32 @@
+What the various test loads are for:
+
+basic.troff
+	Test translation of some low-level troff idioms.
+
+capabilities.man:
+	Tests lists nested within .RS.
+
+console_ioctl.man
+	Tests table and display processing.
+
+corosync.conf.man
+	Tests recognition of a bare filename in the Synopsis section
+
+docliftertest1.man
+	General test for many features, including section and paragraph
+	recognition and highlight mapping.
+
+grap.man
+	Tests lists nested within .Bd/.Ed.
+
+groff_char.man:
+	Tests recognition of every special chracter groff knows about.
+
+pax.man
+	Test the kluge to avoid excess font closes in table entries.
+
+stringwidth.man
+	Test a common evaluation case of the \w macro.
+
+xoxc.man
+	Tests translation of .Xo/.Xc construct in BSD macros.

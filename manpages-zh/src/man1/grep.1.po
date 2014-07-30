@@ -1,0 +1,681 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-05-05 13:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: grep.1.xml:12(refentrytitle)
+msgid "GREP"
+msgstr ""
+
+#: grep.1.xml:13(manvolnum)
+msgid "1"
+msgstr ""
+
+#: grep.1.xml:14(refmiscinfo)
+msgid "GNU Project"
+msgstr ""
+
+#: grep.1.xml:17(refname) grep.1.xml:25(command) grep.1.xml:31(command)
+msgid "grep"
+msgstr ""
+
+#: grep.1.xml:18(refname)
+msgid "egrep"
+msgstr ""
+
+#: grep.1.xml:19(refname)
+msgid "fgrep"
+msgstr ""
+
+#: grep.1.xml:20(refpurpose)
+msgid "æå°å¹éç»å®æ¨¡å¼çè¡"
+msgstr ""
+
+#: grep.1.xml:26(replaceable) grep.1.xml:32(replaceable)
+msgid "options"
+msgstr ""
+
+#: grep.1.xml:27(replaceable) grep.1.xml:33(replaceable)
+msgid "PATTERN"
+msgstr ""
+
+#: grep.1.xml:28(replaceable) grep.1.xml:33(replaceable) grep.1.xml:34(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: grep.1.xml:33(arg)
+msgid "-e"
+msgstr ""
+
+#: grep.1.xml:33(arg)
+msgid "-f"
+msgstr ""
+
+#: grep.1.xml:39(title)
+msgid "æè¿° DESCRIPTION"
+msgstr ""
+
+#: grep.1.xml:40(para)
+msgid "<emphasis remap=\"B\">Grep</emphasis> æç´¢ä»¥ <emphasis remap=\"I\">FILE</emphasis> å½åçæä»¶è¾å¥ (æèæ¯æ&nbsp;åè¾å¥ï¼å¦ææ²¡ææå®æä»¶åï¼æèç»åºçæä»¶åæ¯ <emphasis remap=\"B\">-</emphasis> çè¯)ï¼å¯»æ¾å«æä¸ç»å®çæ¨¡å¼ <emphasis remap=\"I\">PATTERN</emphasis> ç¸å¹éçåå®¹çè¡ã é»è®¤æåµä¸ï¼ <command>grep</command> å°æå«æå¹éåå®¹çè¡æå°åºæ¥ã"
+msgstr ""
+
+#: grep.1.xml:52(para)
+msgid "å¦å¤ï¼ä¹å¯ä»¥ä½¿ç¨ä¸¤ä¸ªåç§ç¨åº <emphasis remap=\"B\">egrep</emphasis> å <emphasis remap=\"B\">fgrep</emphasis> ã <emphasis remap=\"B\">Egrep</emphasis> ä¸ <userinput>grep&nbsp;-E</userinput> ç¸åã <emphasis remap=\"B\">Fgrep</emphasis> ä¸ <userinput>grep&nbsp;-F</userinput> ç¸åã"
+msgstr ""
+
+#: grep.1.xml:67(title)
+msgid "éé¡¹ OPTIONS"
+msgstr ""
+
+#: grep.1.xml:70(term)
+msgid "<option>-A</option><replaceable> NUM</replaceable>,<emphasis remap=\"P-&gt;B\"> --after-context=</emphasis><emphasis remap=\"I\">NUM</emphasis>"
+msgstr ""
+
+#: grep.1.xml:72(para)
+msgid "æå°åºç´§éå¹éçè¡ä¹åçä¸æ <emphasis remap=\"I\">NUM</emphasis> è¡ãå¨ç¸é»çå¹éç»ä¹é´å°ä¼æå°åå®¹æ¯ <option>--</option> çä¸è¡ã"
+msgstr ""
+
+#: grep.1.xml:80(term)
+msgid "<option>-a</option>, <option>--text</option>"
+msgstr ""
+
+#: grep.1.xml:82(para)
+msgid "å°ä¸ä¸ªäºè¿å¶æä»¶è§ä¸ºä¸ä¸ªææ¬æä»¶æ¥å¤çï¼å®ä¸ <option>--binary-files=text</option> éé¡¹ç­ä»·ã"
+msgstr ""
+
+#: grep.1.xml:88(term)
+msgid "<option>-B</option><replaceable> NUM</replaceable>,<emphasis remap=\"P-&gt;B\"> --before-context=</emphasis><emphasis remap=\"I\">NUM</emphasis>"
+msgstr ""
+
+#: grep.1.xml:90(para)
+msgid "æå°åºå¹éçè¡ä¹åçä¸æ <emphasis remap=\"I\">NUM</emphasis> è¡ãå¨ç¸é»çå¹éç»ä¹é´å°ä¼æå°åå®¹æ¯ <option>--</option> çä¸è¡ã"
+msgstr ""
+
+#: grep.1.xml:98(term)
+msgid "<option>-C</option><replaceable> NUM</replaceable>,<emphasis remap=\"P-&gt;B\"> --context=</emphasis><emphasis remap=\"I\">NUM</emphasis>"
+msgstr ""
+
+#: grep.1.xml:100(para)
+msgid "æå°åºå¹éçè¡çä¸ä¸æååå <emphasis remap=\"I\">NUM</emphasis> è¡ãå¨ç¸é»çå¹éç»ä¹é´å°ä¼æå°åå®¹æ¯ <option>--</option> çä¸è¡ã"
+msgstr ""
+
+#: grep.1.xml:108(term)
+msgid "<option>-b</option>, <option>--byte-offset</option>"
+msgstr ""
+
+#: grep.1.xml:110(para)
+msgid "å¨è¾åºçæ¯è¡åé¢åæ¶æå°åºå½åè¡å¨è¾å¥æä»¶ä¸­çå­èåç§»éã"
+msgstr ""
+
+#: grep.1.xml:114(option)
+msgid "--binary-files="
+msgstr ""
+
+#: grep.1.xml:114(replaceable)
+msgid "TYPE"
+msgstr ""
+
+#: grep.1.xml:116(para)
+msgid "å¦æä¸ä¸ªæä»¶çèµ·å§å&nbsp;ä¸ªå­èè¡¨ææä»¶åå«äºè¿å¶æ°æ®ï¼é£ä¹åå®æä»¶æ¯ <emphasis remap=\"I\">TYPE</emphasis> ç±»åçãé»è®¤æåµä¸ï¼ <emphasis remap=\"I\">TYPE</emphasis> æ¯ <emphasis remap=\"B\">binary</emphasis> ï¼å¹¶ä¸ <command>grep</command> ä¸è¬ä¼è¾åºä¸ä¸ªä¸è¡çæ¶æ¯è¯´ä¸ä¸ªäºè¿å¶æä»¶å¹éï¼æèå¦ææ²¡æå¹éçè¯å°±æ²¡ææ¶æ¯è¾åºãå¦æç±»å <emphasis remap=\"I\">TYPE</emphasis> æ¯ <emphasis remap=\"B\">without-match</emphasis> ï¼é£ä¹ <command>grep</command> åå®äºè¿å¶æä»¶ä¸ä¼å¹éï¼è¿æ&nbsp;·åä¸ <option>-I</option> éé¡¹ç­ä»·ãå¦æç±»å <emphasis remap=\"I\">TYPE</emphasis> æ¯ <emphasis remap=\"B\">text</emphasis> ï¼é£ä¹ <command>grep</command> å°ä¸ä¸ªäºè¿å¶æä»¶è§ä¸ºææ¬æä»¶æ¥å¤çï¼å®ä¸ <option>-a</option> éé¡¹ç­ä»·ã <emphasis remap=\"I\">è­¦åï¼</emphasis><userinput>grep --binary-files=text</userinput> å¯è½ä¼è¾åºäºè¿å¶çæ&nbsp;ç¨åå®¹ãå¦æè¾åºè®¾å¤æ¯ä¸ä¸ªç»ç«¯ï¼å¹¶ä¸ç»ç«¯çé©±å¨å°è¿äºè¾åºä¸­çä¸äºå½ä½å½ä»¤ï¼å¯è½ä¼å¸¦æ¥æ¶å£çå¯ä½ç¨ã"
+msgstr ""
+
+#: grep.1.xml:147(term)
+msgid "<option>--colour[=</option><replaceable>WHEN</replaceable>]<emphasis remap=\"I\">, </emphasis><option>--color[=</option><replaceable>WHEN</replaceable>]"
+msgstr ""
+
+#: grep.1.xml:149(para)
+msgid "å¨å¹éçè¡å¨å´ä»¥ <emphasis remap=\"B\">GREP_COLOR</emphasis> ç¯å¢åéä¸­æå®çè®°å·æ¥æ&nbsp;è®°ãWHEN å¯ä»¥æ¯ `never', `always', ææ¯ `auto'ã"
+msgstr ""
+
+#: grep.1.xml:155(term)
+msgid "<option>-c</option>, <option>--count</option>"
+msgstr ""
+
+#: grep.1.xml:157(para)
+msgid "ç¦æ­¢éå¸¸çè¾åºï¼ä½ä¸ºæ¿ä»£ï¼ä¸ºæ¯ä¸ä¸ªè¾å¥æä»¶æå°ä¸ä¸ªå¹éçè¡çæ»æ°ãå¦æä½¿ç¨ <option>-v</option>, <option>--invert-match</option> éé¡¹ (åè§ä¸é¢)ï¼å°æ¯ä¸å¹éçè¡çæ»æ°ã"
+msgstr ""
+
+#: grep.1.xml:163(term)
+msgid "<option>-D</option><replaceable> ACTION</replaceable>,<emphasis remap=\"P-&gt;B\"> --devices=</emphasis><emphasis remap=\"I\">ACTION</emphasis>"
+msgstr ""
+
+#: grep.1.xml:165(para)
+msgid "å¦æè¾å¥æä»¶æ¯ä¸ä¸ªè®¾å¤ï¼FIFO ææ¯å¥æ¥å­ (socket) ï¼ä½¿ç¨å¨ä½ <emphasis remap=\"I\">ACTION</emphasis> æ¥å¤çå®ãé»è®¤æåµä¸ï¼å¨ä½ <emphasis remap=\"I\">ACTION</emphasis> æ¯ <emphasis remap=\"B\">read</emphasis> ï¼æå³çè®¾å¤å°è§ä¸ºæ®éæä»¶é£æ&nbsp;·æ¥è¯»ãå¦æå¨ä½ <emphasis remap=\"I\">ACTION</emphasis> æ¯ <emphasis remap=\"B\">skip</emphasis> ï¼å°ä¸å¤çèç´æ¥è·³è¿è®¾å¤ã"
+msgstr ""
+
+#: grep.1.xml:179(term)
+msgid "<option>-d</option><replaceable> ACTION</replaceable>,<emphasis remap=\"P-&gt;B\"> --directories=</emphasis><emphasis remap=\"I\">ACTION</emphasis>"
+msgstr ""
+
+#: grep.1.xml:181(para)
+msgid "å¦æè¾å¥æä»¶æ¯ä¸ä¸ªç®å½ï¼ä½¿ç¨å¨ä½ <emphasis remap=\"I\">ACTION</emphasis> æ¥å¤çå®ãé»è®¤æåµä¸ï¼å¨ä½ <emphasis remap=\"I\">ACTION</emphasis> æ¯ <emphasis remap=\"B\">read</emphasis> ï¼æå³çç®å½å°è§ä¸ºæ®éæä»¶é£æ&nbsp;·æ¥è¯»ãå¦æå¨ä½ <emphasis remap=\"I\">ACTION</emphasis> æ¯ <emphasis remap=\"B\">skip</emphasis> ï¼å°ä¸å¤çèç´æ¥è·³è¿ç®å½ãå¦æå¨ä½ <emphasis remap=\"I\">ACTION</emphasis> æ¯ <emphasis remap=\"B\">recurse</emphasis> ï¼ <command>grep</command> å°éå½å°è¯»æ¯ä¸ç®å½ä¸çæææä»¶ãè¿æ&nbsp;·åå <option>-r</option> éé¡¹ç­ä»·ã"
+msgstr ""
+
+#: grep.1.xml:203(term)
+msgid "<option>-E</option>, <option>--extended-regexp</option>"
+msgstr ""
+
+#: grep.1.xml:205(para)
+msgid "å°æ¨¡å¼ <emphasis remap=\"I\">PATTERN</emphasis> ä½ä¸ºä¸ä¸ªæ©å±çæ­£åè¡¨è¾¾å¼æ¥è§£é (åè§ä¸é¢)ã"
+msgstr ""
+
+#: grep.1.xml:211(term)
+msgid "<option>-e</option><replaceable> PATTERN</replaceable>,<emphasis remap=\"P-&gt;B\"> --regexp=</emphasis><emphasis remap=\"I\">PATTERN</emphasis>"
+msgstr ""
+
+#: grep.1.xml:213(para)
+msgid "ä½¿ç¨æ¨¡å¼ <emphasis remap=\"I\">PATTERN</emphasis> ä½ä¸ºæ¨¡å¼ï¼å¨ä¿æ¤ä»¥ <emphasis remap=\"B\">-</emphasis> ä¸ºèµ·å§çæ¨¡å¼æ¶æç¨ã"
+msgstr ""
+
+#: grep.1.xml:221(term)
+msgid "<option>-F</option>, <option>--fixed-strings</option>"
+msgstr ""
+
+#: grep.1.xml:223(para)
+msgid "å°æ¨¡å¼ <emphasis remap=\"I\">PATTERN</emphasis> è§ä¸ºä¸ä¸ªåºå®çå­ç¬¦ä¸²çåè¡¨ï¼ç¨æ°è¡ (newlines) åéï¼åªè¦å¹éå¶ä¸­ä¹ä¸å³å¯ã"
+msgstr ""
+
+#: grep.1.xml:229(term)
+msgid "<option>-P</option>, <option>--perl-regexp</option>"
+msgstr ""
+
+#: grep.1.xml:231(para)
+msgid "å°æ¨¡å¼ <emphasis remap=\"I\">PATTERN</emphasis> ä½ä¸ºä¸ä¸ª Perl æ­£åè¡¨è¾¾å¼æ¥è§£éã"
+msgstr ""
+
+#: grep.1.xml:237(term)
+msgid "<option>-f</option><replaceable> FILE</replaceable>,<emphasis remap=\"P-&gt;B\"> --file=</emphasis><emphasis remap=\"I\">FILE</emphasis>"
+msgstr ""
+
+#: grep.1.xml:239(para)
+msgid "ä»æä»¶ <emphasis remap=\"I\">FILE</emphasis> ä¸­è·åæ¨¡å¼ï¼æ¯è¡ä¸ä¸ªãç©ºæä»¶å«æ0ä¸ªæ¨¡å¼ï¼å&nbsp;æ­¤ä¸å¹éä»»ä½ä¸è¥¿ã"
+msgstr ""
+
+#: grep.1.xml:245(term)
+msgid "<option>-G</option>, <option>--basic-regexp</option>"
+msgstr ""
+
+#: grep.1.xml:247(para)
+msgid "å°æ¨¡å¼ <emphasis remap=\"I\">PATTERN</emphasis> ä½ä¸ºä¸ä¸ªåºæ¬çæ­£åè¡¨è¾¾å¼ (åè§ä¸é¢) æ¥è§£éãè¿æ¯é»è®¤å¼ã"
+msgstr ""
+
+#: grep.1.xml:253(term)
+msgid "<option>-H</option>, <option>--with-filename</option>"
+msgstr ""
+
+#: grep.1.xml:255(para)
+msgid "ä¸ºæ¯ä¸ªå¹éæå°æä»¶åã"
+msgstr ""
+
+#: grep.1.xml:259(term)
+msgid "<option>-h</option>, <option>--no-filename</option>"
+msgstr ""
+
+#: grep.1.xml:261(para)
+msgid "å½æç´¢å¤ä¸ªæä»¶æ¶ï¼ç¦æ­¢å¨è¾åºçåé¢å&nbsp;ä¸æä»¶ååç¼ã"
+msgstr ""
+
+#: grep.1.xml:265(option)
+msgid "--help"
+msgstr ""
+
+#: grep.1.xml:267(para)
+msgid "è¾åºä¸ä¸ªç®ç­çå¸®å©ä¿¡æ¯ã"
+msgstr ""
+
+#: grep.1.xml:271(option)
+msgid "-I"
+msgstr ""
+
+#: grep.1.xml:273(para)
+msgid "å¤çä¸ä¸ªäºè¿å¶æä»¶ï¼ä½æ¯è®¤ä¸ºå®ä¸åå«å¹éçåå®¹ãè¿å <option>--binary-files=without-match</option> éé¡¹ç­ä»·ã"
+msgstr ""
+
+#: grep.1.xml:279(term)
+msgid "<option>-i</option>, <option>--ignore-case</option>"
+msgstr ""
+
+#: grep.1.xml:281(para)
+msgid "å¿½ç¥æ¨¡å¼ <emphasis remap=\"I\">PATTERN</emphasis> åè¾å¥æä»¶ä¸­çå¤§å°åçåå«ã"
+msgstr ""
+
+#: grep.1.xml:287(term)
+msgid "<option>-L</option>, <option>--files-without-match</option>"
+msgstr ""
+
+#: grep.1.xml:289(para)
+msgid "ç¦æ­¢éå¸¸çè¾åºï¼ä½ä¸ºæ¿ä»£ï¼æå°åºæ¯ä¸ªå¨éå¸¸æåµä¸ä¸ä¼äº§çè¾åºçè¾å¥æä»¶çåå­ãå¯¹æ¯ä¸ªæä»¶çæ«æå¨éå°ç¬¬ä¸ä¸ªå¹éçæ¶åå°±ä¼åæ­¢ã"
+msgstr ""
+
+#: grep.1.xml:293(term)
+msgid "<option>-l</option>, <option>--files-with-matches</option>"
+msgstr ""
+
+#: grep.1.xml:295(para)
+msgid "ç¦æ­¢éå¸¸çè¾åºï¼ä½ä¸ºæ¿ä»£ï¼æå°åºæ¯ä¸ªå¨éå¸¸æåµä¸ä¼äº§çè¾åºçè¾å¥æä»¶çåå­ãå¯¹æ¯ä¸ªæä»¶çæ«æå¨éå°ç¬¬ä¸ä¸ªå¹éçæ¶åå°±ä¼åæ­¢ã"
+msgstr ""
+
+#: grep.1.xml:299(term)
+msgid "<option>-m</option><replaceable> NUM</replaceable>,<emphasis remap=\"P-&gt;B\"> --max-count=</emphasis><emphasis remap=\"I\">NUM</emphasis>"
+msgstr ""
+
+#: grep.1.xml:301(para)
+msgid "å¨æ¾å° <emphasis remap=\"I\">NUM</emphasis> ä¸ªå¹éçè¡ä¹åï¼ä¸åè¯»è¿ä¸ªæä»¶ãå¦æè¾å¥æ¯æ¥èªä¸ä¸ªæ®éæä»¶çæ&nbsp;åè¾å¥ï¼å¹¶ä¸å·²ç»è¾åºäº <emphasis remap=\"I\">NUM</emphasis> ä¸ªå¹éçè¡ï¼ <command>grep</command> ä¿è¯æ&nbsp;åè¾å¥è¢«å®ä½äºéåºæ¶çæåä¸æ¬¡å¹éçè¡ä¹åï¼ä¸ç®¡æ¯å¦æå®äºè¦è¾åºç´§éçä¸æçè¡ãè¿æ&nbsp;·å¯ä»¥ä½¿ä¸ä¸ªè°ç¨ç¨åºæ¢å¤æç´¢ãå½ <command>grep</command> å¨ <emphasis remap=\"I\">NUM</emphasis> ä¸ªå¹éçè¡ä¹ååæ­¢ï¼å®ä¼è¾åºä»»ä½ç´§éçä¸æçè¡ãå½ä½¿ç¨äº <option>-c</option> æ <option>--count</option> éé¡¹çæ¶åï¼ <command>grep</command> ä¸ä¼è¾åºæ¯ <emphasis remap=\"I\">NUM</emphasis> æ´å¤çè¡ãå½æå®äº <option>-v</option> æ <option>--invert-match</option> éé¡¹çæ¶åï¼ <command>grep</command> ä¼å¨è¾åº <emphasis remap=\"I\">NUM</emphasis> ä¸ªä¸å¹éçè¡ä¹ååæ­¢ã"
+msgstr ""
+
+#: grep.1.xml:331(option)
+msgid "--mmap"
+msgstr ""
+
+#: grep.1.xml:333(para)
+msgid "å¦æå¯è½çè¯ï¼ä½¿ç¨ <citerefentry><refentrytitle>mmap</refentrytitle><manvolnum>2</manvolnum></citerefentry> ç³»ç»è°ç¨æ¥è¯»åè¾å¥ï¼èä¸æ¯é»è®¤ç <citerefentry><refentrytitle>read</refentrytitle><manvolnum>2</manvolnum></citerefentry> ç³»ç»è°ç¨ãå¨ä¸äºæåµä¸ï¼ <option>--mmap</option> æä¾è¾å¥½çæ§è½ãä½æ¯ï¼å¦æä¸ä¸ªè¾å¥æä»¶å¨ <command>grep</command> æ­£å¨æä½æ¶å¤§å°åçååï¼æèå¦æåçäºä¸ä¸ª I/O éè¯¯ï¼ <option>--mmap</option> å¯è½å¯¼è´ä¸å¯ç¥çè¡ä¸º (åæ¬core dumps)ã"
+msgstr ""
+
+#: grep.1.xml:347(term)
+msgid "<option>-n</option>, <option>--line-number</option>"
+msgstr ""
+
+#: grep.1.xml:349(para)
+msgid "å¨è¾åºçæ¯è¡åé¢å&nbsp;ä¸å®æå¨çæä»¶ä¸­å®çè¡å·ã"
+msgstr ""
+
+#: grep.1.xml:353(term)
+msgid "<option>-o</option>, <option>--only-matching</option>"
+msgstr ""
+
+#: grep.1.xml:355(para)
+msgid "åªæ¾ç¤ºå¹éçè¡ä¸­ä¸ <emphasis remap=\"I\">PATTERN</emphasis> ç¸å¹éçé¨åã"
+msgstr ""
+
+#: grep.1.xml:361(option)
+msgid "--label="
+msgstr ""
+
+#: grep.1.xml:361(replaceable)
+msgid "LABEL"
+msgstr ""
+
+#: grep.1.xml:363(para)
+msgid "å°å®éä¸æ¥èªæ&nbsp;åè¾å¥çè¾å¥è§ä¸ºæ¥èªè¾å¥æä»¶ <emphasis remap=\"I\">LABEL</emphasis> ãè¿å¯¹äº zgrep è¿æ&nbsp;·çå·¥å·éå¸¸æç¨ï¼ä¾å¦ï¼ <userinput>gzip -cd foo.gz |grep --label=foo something</userinput>"
+msgstr ""
+
+#: grep.1.xml:370(option)
+msgid "--line-buffering"
+msgstr ""
+
+#: grep.1.xml:372(para)
+msgid "ä½¿ç¨è¡ç¼å²ï¼it can be a performance penality."
+msgstr ""
+
+#: grep.1.xml:376(term)
+msgid "<option>-q</option>, <option>--quiet</option>, <option>--silent</option>"
+msgstr ""
+
+#: grep.1.xml:378(para)
+msgid "å®éãä¸åæ&nbsp;åè¾åºåä»»ä½ä¸è¥¿ãå¦ææ¾å°ä»»ä½å¹éçåå®¹å°±ç«å³ä»¥ç¶æå¼ 0 éåºï¼å³ä½¿æ£æµå°äºéè¯¯ã åè§ <option>-s</option> æ <option>--no-messages</option> éé¡¹ã"
+msgstr ""
+
+#: grep.1.xml:387(term)
+msgid "<option>-R</option>, <option>-r</option>, <option>--recursive</option>"
+msgstr ""
+
+#: grep.1.xml:389(para)
+msgid "éå½å°è¯»æ¯ä¸ç®å½ä¸çæææä»¶ãè¿æ&nbsp;·åå <option>-d recurse</option> éé¡¹ç­ä»·ã"
+msgstr ""
+
+#: grep.1.xml:395(term)
+msgid "<emphasis remap=\"P-&gt;B\"> --include=</emphasis>PATTERN"
+msgstr ""
+
+#: grep.1.xml:397(para)
+msgid "ä»ä»å¨æç´¢å¹é <emphasis remap=\"I\">PATTERN</emphasis> çæä»¶æ¶å¨ç®å½ä¸­éå½æç´¢ã"
+msgstr ""
+
+#: grep.1.xml:403(term)
+msgid "<emphasis remap=\"P-&gt;B\"> --exclude=</emphasis>PATTERN"
+msgstr ""
+
+#: grep.1.xml:405(para)
+msgid "å¨ç®å½ä¸­éå½æç´¢ï¼ä½æ¯è·³è¿å¹é <emphasis remap=\"I\">PATTERN</emphasis> çæä»¶ã"
+msgstr ""
+
+#: grep.1.xml:411(term)
+msgid "<option>-s</option>, <option>--no-messages</option>"
+msgstr ""
+
+#: grep.1.xml:413(para)
+msgid "ç¦æ­¢è¾åºå³äºæä»¶ä¸å­å¨æä¸å¯è¯»çéè¯¯ä¿¡æ¯ã å¯¹äºå¯ç§»æ¤æ§éè¦æ³¨æï¼ä¸ <?troff ps -1?>GNU<?troff ps 0?><command>grep</command> ä¸åï¼ä¼&nbsp;ç»ç <command>grep</command> ä¸éµå® <?troff ps -1?>POSIX.2<?troff ps 0?> è§èï¼å&nbsp;ä¸ºä¼&nbsp;ç»ç <command>grep</command> ç¼ºå°ä¸ä¸ª <option>-q</option> éé¡¹ï¼èå®ç <option>-s</option> éé¡¹ä¸ <?troff ps -1?>GNU<?troff ps 0?><command>grep</command> ç <option>-q</option> éé¡¹è¡ä¸ºç¸ä¼¼ãéè¦å¯ç§»æ¤å°ä¼&nbsp;ç» <command>grep</command> ç shell èæ¬åºå½é¿åä½¿ç¨ <option>-q</option> å <option>-s</option> éé¡¹ï¼èåºå½å°è¾åºéå®åå° /dev/null ã"
+msgstr ""
+
+#: grep.1.xml:438(term)
+msgid "<option>-U</option>, <option>--binary</option>"
+msgstr ""
+
+#: grep.1.xml:440(para)
+msgid "å°æä»¶è§ä¸ºäºè¿å¶ãé»è®¤æåµä¸ï¼å¨ MS-DOS å MS-Windows ç³»ç»ä¸­ï¼ <command>grep</command> éè¿ä»æä»¶ä¸­è¯»åå¤´é¨ç 32kB åå®¹æ¥å¤æ­å®çæä»¶ç±»åãå¦æ <command>grep</command> å¤æ­æä»¶æ¯ä¸ä¸ªææ¬æä»¶ï¼å®å°åå§æä»¶åå®¹ä¸­ç CR å­ç¬¦å»é¤ (ä½¿å¾å«æ <emphasis remap=\"B\">^</emphasis> å <emphasis remap=\"B\">$</emphasis> çæ­£åè¡¨è¾¾å¼å¯ä»¥æ­£å¸¸å·¥ä½)ãæå® <option>-U</option> å°ä¸è¿è¡è¿äºå·¥ä½ï¼èä½¿æææä»¶ä¿æä¸åå°è¯»åå¹¶ä¼&nbsp;éç»å¹éæºå¶ãå¦ææä»¶æ¯ä¸ä¸ªä»¥ CR/LF æ¢è¡çææ¬æä»¶ï¼è¿æ&nbsp;·ä½å°å¯¼è´ä¸äºæ­£åè¡¨è¾¾å¼å¤±è´¥ãè¿ä¸ªéé¡¹å¨ MS-DOS å MS-Windows ä¹å¤çç³»ç»ä¸­æ&nbsp;æã"
+msgstr ""
+
+#: grep.1.xml:454(term)
+msgid "<option>-u</option>, <option>--unix-byte-offsets</option>"
+msgstr ""
+
+#: grep.1.xml:456(para)
+msgid "æ¥å Unix é£æ&nbsp;¼çå­èåç§»éãè¿ä¸ªå¼å³ä½¿å¾ <command>grep</command> æ¥åå­èåç§»éæ¶ï¼å°æä»¶ä½ä¸º Unix é£æ&nbsp;¼çææ¬æä»¶çå¾ï¼ä¹å°±æ¯è¯´å° CR å­ç¬¦å»æãè¿å°äº§çä¸å¨ä¸å° Unix ä¸»æºä¸è¿è¡ <command>grep</command> å®å¨ç¸åçç»æãé¤éåæ¶ä½¿ç¨ <option>-b</option> éé¡¹ï¼å¦åè¿ä¸ªéé¡¹æ&nbsp;æãè¿ä¸ªéé¡¹å¨ MS-DOS å MS-Windows ä¹å¤çç³»ç»ä¸­æ&nbsp;æã"
+msgstr ""
+
+#: grep.1.xml:466(term)
+msgid "<option>-V</option>, <option>--version</option>"
+msgstr ""
+
+#: grep.1.xml:468(para)
+msgid "åæ&nbsp;åéè¯¯è¾åºæå° <command>grep</command> ççæ¬å·ãçæ¬å·åºå½åå«å¨ææç bug æ¥åä¸­ (åè§ä¸é¢)ã"
+msgstr ""
+
+#: grep.1.xml:474(term)
+msgid "<option>-v</option>, <option>--invert-match</option>"
+msgstr ""
+
+#: grep.1.xml:476(para)
+msgid "æ¹åå¹éçæä¹ï¼åªéæ©ä¸å¹éçè¡ã"
+msgstr ""
+
+#: grep.1.xml:480(term)
+msgid "<option>-w</option>, <option>--word-regexp</option>"
+msgstr ""
+
+#: grep.1.xml:482(para)
+msgid "åªéæ©å«æè½ç»æå®æ´çè¯çå¹éçè¡ãå¤æ­æ¹æ³æ¯å¹éçå­å­ç¬¦ä¸²å¿é¡»æ¯ä¸è¡çå¼å§ï¼æèæ¯å¨ä¸ä¸ªä¸å¯è½æ¯è¯çç»æçå­ç¬¦ä¹åãä¸æ­¤ç¸ä¼¼ï¼å®å¿é¡»æ¯ä¸è¡çç»æï¼æèæ¯å¨ä¸ä¸ªä¸å¯è½æ¯è¯çç»æçå­ç¬¦ä¹åãè¯çç»æå­ç¬¦æ¯å­æ¯ï¼æ°å­ï¼è¿æä¸åçº¿ã"
+msgstr ""
+
+#: grep.1.xml:486(term)
+msgid "<option>-x</option>, <option>--line-regexp</option>"
+msgstr ""
+
+#: grep.1.xml:488(para)
+msgid "åªéæ©è½å¹éå®æ´ä¸è¡çå¹éã"
+msgstr ""
+
+#: grep.1.xml:492(option)
+msgid "-y"
+msgstr ""
+
+#: grep.1.xml:494(para)
+msgid "<option>-i</option> çåä¹è¯ï¼åºå¼ä¸ç¨ã"
+msgstr ""
+
+#: grep.1.xml:499(term)
+msgid "<option>-Z</option>, <option>--null</option>"
+msgstr ""
+
+#: grep.1.xml:501(para)
+msgid "è¾åºä¸ä¸ªå¨é¶å­è (<?troff ps -1?>ASCII<?troff ps 0?> ç&nbsp;ä¸­ç <emphasis remap=\"B\">NUL</emphasis> å­ç¬¦) èä¸æ¯ä¸è¬æåµä¸è¾åºå¨æä»¶åä¹åçå­ç¬¦ãä¾å¦ï¼ <userinput>grep -lZ</userinput> å¨æ¯ä¸ªæä»¶åä¹åè¾åºä¸ä¸ªå¨é¶å­èèä¸æ¯æ®éçæ°è¡ç¬¦ãè¿ä¸ªéé¡¹ä½¿å¾è¾åºæ¸æ¥æç½ï¼å³ä½¿æä»¶åçè¡¨ç¤ºä¸­åå«ç¹æ®å­ç¬¦æ¯å¦æ°è¡ç¬¦ãè¿ä¸ªéé¡¹å¯ä»¥ä¸å½ä»¤ <userinput>find -print0</userinput>, <userinput>perl -0</userinput>, <userinput>sort -z</userinput>, å <userinput>xargs -0</userinput> ä¸èµ·ä½¿ç¨ï¼æ¥å¤çä»»æçæä»¶åï¼å³ä½¿æ¯é£äºå«ææ°è¡ç¬¦çæä»¶åã"
+msgstr ""
+
+#: grep.1.xml:517(title)
+msgid "æ­£åè¡¨è¾¾å¼ REGULAR EXPRESSIONS"
+msgstr ""
+
+#: grep.1.xml:518(para)
+msgid "ä¸ä¸ªæ­£åè¡¨è¾¾å¼æ¯ä¸ä¸ªæè¿°äºä¸ä¸ªå­ç¬¦ä¸²éåçæ¨¡å¼ãæ­£åè¡¨è¾¾å¼çæé&nbsp;ç±»ä¼¼äºç®æ¯è¡¨è¾¾å¼ï¼ä½¿ç¨åç§åæ&nbsp;·çæä½ç¬¦æ¥å°æ´å°çè¡¨è¾¾å¼è¿å¨ä¸èµ·ã"
+msgstr ""
+
+#: grep.1.xml:520(para)
+msgid "<emphasis remap=\"B\">Grep</emphasis> è½çè§£ä¸¤ç§ä¸åçæ¬çæ­£åè¡¨è¾¾å¼è¯­æ³ï¼&ldquo;basic&rdquo; å &ldquo;extended&rdquo;ãå¨ <?troff ps -1?>GNU<?troff ps 0?>&nbsp;<command>grep</command> ä¸­ï¼ä¸¤ç§è¯­æ³å¯ä»¥å®ç°çåè½æ¯æ²¡æåºå«çãå¨å¶ä»å®ç°ä¸­ï¼åºæ¬ (basic) æ­£åè¡¨è¾¾å¼è¡¨è¾¾è½åè¦å¼±ä¸ç¹ãä¸é¢çæè¿°éç¨äºæ©å±ç (extended) æ­£åè¡¨è¾¾å¼ï¼å®ä¸åºæ¬æ­£åè¡¨è¾¾å¼çåºå«ä¼å¨æååä¸ä¸ªæ»ç»ã"
+msgstr ""
+
+#: grep.1.xml:525(para)
+msgid "åºæ¬çæé&nbsp;åæ¯å¹éåä¸ªå­ç¬¦çæ­£åè¡¨è¾¾å¼ãå¤§é¨åå­ç¬¦ï¼åæ¬ææå­æ¯åæ°å­ï¼æ¯å¹éå®ä»¬èªèº«çæ­£åè¡¨è¾¾å¼ãä»»ä½å·æç¹æ®å«ä¹çåå­ç¬¦å¯ä»¥éè¿åç½®ä¸ä¸ªåææ&nbsp;æ¥å¼ç¨ã(may be quoted by preceding it with a backslash.)"
+msgstr ""
+
+#: grep.1.xml:527(para)
+msgid "<emphasis remap=\"I\">æ¹æ¬å·è¡¨è¾¾å¼ (bracket)</emphasis> æ¯ä¸ä¸ªå­ç¬¦åºåï¼æ¾å¨ <emphasis remap=\"B\">[</emphasis> å <emphasis remap=\"B\">]</emphasis> å½ä¸­ãå®å¹éåºåä¸­çä»»ä½ä¸ä¸ªå­ç¬¦ï¼å¦æåºåä¸­çç¬¬ä¸ä¸ªå­ç¬¦æ¯è±å­ç¬¦ (caret) <emphasis remap=\"B\">^</emphasis> é£ä¹å®å¹é <emphasis remap=\"I\">ä¸å¨</emphasis> åºåä¸­çä»»ä½ä¸ä¸ªå­ç¬¦ãä¾å¦ï¼æ­£åè¡¨è¾¾å¼ <emphasis remap=\"B\">[0123456789]</emphasis> å¹éä»»ä½ä¸ä¸ªæ°å­ã"
+msgstr ""
+
+#: grep.1.xml:540(para)
+msgid "å¨æ¹æ¬å·è¡¨è¾¾å¼ä¹ä¸­ï¼ä¸ä¸ª <emphasis remap=\"I\">èå´è¡¨è¾¾å¼ (range)</emphasis> ç±ä¸¤ä¸ªå­ç¬¦ç»æï¼ä¸­é´ç¨ä¸ä¸ªè¿å­ç¬¦ (hyphen) åéãå®å¹éå¨è¿ä¸¤ä¸ªå­ç¬¦ä¹é´çä»»ä½ä¸ä¸ªå­ç¬¦ï¼ä½¿ç¨æ¬å°åçåºåé¡ºåºåå­ç¬¦éã(that sorts between the two characters,inclusive, using the locale's collating sequence and character set.) ä¾å¦ï¼å¨é»è®¤ç C localeä¸­ï¼ <emphasis remap=\"B\">[a-d]</emphasis> ä¸ <emphasis remap=\"B\">[abcd]</emphasis> ç­ä»·ãå¸åçï¼è®¸å¤ locale å°å­ç¬¦ä»¥å­å¸é¡ºåºæåºï¼å¨è¿äº locale ä¸­ï¼ <emphasis remap=\"B\">[a-d]</emphasis> ä¸ä¸ <emphasis remap=\"B\">[abcd]</emphasis> ç­ä»·ï¼ä¾å¦å®å¯è½ä¸ <emphasis remap=\"B\">[aBbCcDd]</emphasis> ç­ä»·ãè¦è·å¾ä¼&nbsp;ç»çå¯¹æ¹æ¬å·è¡¨è¾¾å¼çè§£éï¼å¯ä»¥è®¾å®ç¯å¢åé <envar>LC_ALL</envar> å¼ä¸º <emphasis remap=\"B\">C</emphasis> æ¥ä½¿ç¨ locale C ã"
+msgstr ""
+
+#: grep.1.xml:558(para)
+msgid "æåï¼å¨æ¹æ¬å·è¡¨è¾¾å¼ä¸­æä¸äºé¢å®ä¹çå­ç¬¦ç±»ï¼å¦ä¸æç¤ºãå®ä»¬çåå­æ¯èªè¯´æçï¼å®ä»¬æ¯ <emphasis remap=\"B\">[:alnum:]</emphasis>(å­æ¯åæ°å­), <emphasis remap=\"B\">[:alpha:]</emphasis>(å­æ¯), <emphasis remap=\"B\">[:cntrl:]</emphasis>(), <emphasis remap=\"B\">[:digit:]</emphasis>(æ°å­), <emphasis remap=\"B\">[:graph:]</emphasis>(), <emphasis remap=\"B\">[:lower:]</emphasis>(å°åå­æ¯), <emphasis remap=\"B\">[:print:]</emphasis>(å¯æå°å­ç¬¦), <emphasis remap=\"B\">[:punct:]</emphasis>(), <emphasis remap=\"B\">[:space:]</emphasis>(ç©ºæ&nbsp;¼), <emphasis remap=\"B\">[:upper:]</emphasis>(å¤§åå­æ¯), å <emphasis remap=\"B\">[:xdigit:]</emphasis> ãä¾å¦ï¼ <emphasis remap=\"B\">[[:alnum:]]</emphasis> æææ¯ <emphasis remap=\"B\">[0-9A-Za-z]</emphasis> ï¼ä½æ¯åä¸ç§è¡¨ç¤ºæ¹æ³ä¾èµäº locale C å<?troff ps -1?>ASCII<?troff ps 0?> å­ç¬¦ç¼ç&nbsp;ï¼èåä¸ç§æ¯ä¸ locale åå­ç¬¦éæ&nbsp;å³çã(æ³¨æè¿äºå­ç¬¦ç±»åä¸­çæ¹æ¬å·ä¹æ¯ç¬¦å·åç§°çä¸é¨åï¼å¿é¡»åå«å¨ç¨æ¥ä¸ºåºåå®ççæ¹æ¬å·ä¹ä¸­ã)"
+msgstr ""
+
+#: grep.1.xml:577(para)
+msgid "å¤§å¤æ°åå­ç¬¦å¤äºåºåä¸­æ¶ä¼å¤±å»å®ä»¬çç¹æ®æä¹ãä¸ºäºåå«ä¸ä¸ªå­é¢æä¹ (literal) ç <emphasis remap=\"B\">]</emphasis> ï¼éè¦å°å®æ¾å¨åºåçæåãä¸æ­¤ç¸ä¼¼ï¼ä¸ºäºåå«ä¸ä¸ªå­é¢æä¹ (literal) ç <emphasis remap=\"B\">^</emphasis> ï¼éè¦å°å®æ¾å¨é¤äºåºåæåä¹å¤çå¶ä»ä½ç½®ãæåï¼ä¸ºäºåå«ä¸ä¸ªå­é¢æä¹ (literal) ç <emphasis remap=\"B\">-</emphasis> ï¼éè¦å°å®æ¾å¨åºåæåã"
+msgstr ""
+
+#: grep.1.xml:585(para)
+msgid "å¥ç¹ç¬¦ (period) <literal>.</literal> å¹éä»»ä½ä¸ä¸ªå­ç¬¦ãç¬¦å· <emphasis remap=\"B\">&bsol;w</emphasis> æ¯ <emphasis remap=\"B\">[[:alnum:]]</emphasis> çåä¹è¯ï¼ <emphasis remap=\"B\">&bsol;W</emphasis> æ¯ <emphasis remap=\"B\">[^[:alnum]]</emphasis> çåä¹è¯ã"
+msgstr ""
+
+#: grep.1.xml:597(para)
+msgid "è±å­ç¬¦ (caret) <emphasis remap=\"B\">^</emphasis> åç¾åæ&nbsp;è®° (dollar) <emphasis remap=\"B\">$</emphasis> åå«æ¯å¹éä¸è¡çé¦é¨åå°¾é¨çç©ºå­ä¸²çåå­ç¬¦ãç¬¦å· <emphasis remap=\"B\">&bsol;&lt;</emphasis> å <emphasis remap=\"B\">&bsol;&gt;</emphasis> åå«æ¯å¹éä¸ä¸ªè¯çé¦é¨åå°¾é¨çç©ºå­ä¸²çåå­ç¬¦ãç¬¦å· <emphasis remap=\"B\">&bsol;b</emphasis> å¹éä¸ä¸ªè¯è¾¹ç¼ (edge) çç©ºå­ä¸²ï¼ç¬¦å· <emphasis remap=\"B\">&bsol;B</emphasis> å¹é <emphasis remap=\"I\">ä¸</emphasis> å¤äºä¸ä¸ªè¯çè¾¹ç¼çç©ºå­ä¸²ã"
+msgstr ""
+
+#: grep.1.xml:613(para)
+msgid "ä¸ä¸ªæ­£åè¡¨è¾¾å¼åé¢å¯ä»¥è·éå¤ç§éå¤æä½ç¬¦ä¹ä¸ã"
+msgstr ""
+
+#: grep.1.xml:617(emphasis)
+msgid "?"
+msgstr ""
+
+#: grep.1.xml:619(para)
+msgid "ååçé¡¹æ¯å¯éçï¼æå¤å¹éä¸æ¬¡ã"
+msgstr ""
+
+#: grep.1.xml:623(emphasis)
+msgid "*"
+msgstr ""
+
+#: grep.1.xml:625(para)
+msgid "ååçé¡¹å¯ä»¥å¹éé¶æ¬¡æå¤æ¬¡ã"
+msgstr ""
+
+#: grep.1.xml:629(emphasis)
+msgid "+"
+msgstr ""
+
+#: grep.1.xml:631(para)
+msgid "ååçé¡¹å¯ä»¥å¹éä¸æ¬¡æå¤æ¬¡ã"
+msgstr ""
+
+#: grep.1.xml:635(emphasis) grep.1.xml:643(emphasis) grep.1.xml:651(emphasis)
+msgid "{"
+msgstr ""
+
+#: grep.1.xml:635(emphasis) grep.1.xml:643(emphasis) grep.1.xml:651(emphasis)
+msgid "n"
+msgstr ""
+
+#: grep.1.xml:635(emphasis) grep.1.xml:651(emphasis)
+msgid "}"
+msgstr ""
+
+#: grep.1.xml:637(para)
+msgid "ååçé¡¹å°å¹éæ°å¥½ <emphasis remap=\"I\">n</emphasis> æ¬¡ã"
+msgstr ""
+
+#: grep.1.xml:643(emphasis)
+msgid ",}"
+msgstr ""
+
+#: grep.1.xml:645(para)
+msgid "ååçé¡¹å¯ä»¥å¹é <emphasis remap=\"I\">n</emphasis> ææ´å¤æ¬¡ã"
+msgstr ""
+
+#: grep.1.xml:651(emphasis)
+msgid ","
+msgstr ""
+
+#: grep.1.xml:651(emphasis)
+msgid "m"
+msgstr ""
+
+#: grep.1.xml:653(para)
+msgid "ååçé¡¹å°å¹éè³å° <emphasis remap=\"I\">n</emphasis> è¯ï¼ä½æ¯ä¸ä¼è¶è¿ <emphasis remap=\"I\">m</emphasis> æ¬¡ã"
+msgstr ""
+
+#. PD
+#: grep.1.xml:660(para)
+msgid "ä¸¤ä¸ªæ­£åè¡¨è¾¾å¼å¯ä»¥è¿æ¥å°ä¸èµ·ï¼å¾åºçæ­£åè¡¨è¾¾å¼å¯ä»¥å¹éä»»ä½ç±ä¸¤ä¸ªåå«å¹éè¿æ¥åçå­è¡¨è¾¾å¼çå­å­ç¬¦ä¸²è¿æ¥èæçå­ç¬¦ä¸²ã"
+msgstr ""
+
+#: grep.1.xml:662(para)
+msgid "ä¸¤ä¸ªæ­£åè¡¨è¾¾å¼å¯ä»¥ç¨ä¸­ç¼æä½ç¬¦ <emphasis remap=\"B\">|</emphasis> èåå°ä¸èµ·ï¼å¾åºçæ­£åè¡¨è¾¾å¼å¯ä»¥å¹éä»»ä½å¹éèååçä»»ä½ä¸ä¸ªå­è¡¨è¾¾å¼çå­ç¬¦ä¸²ã"
+msgstr ""
+
+#: grep.1.xml:666(para)
+msgid "éå¤æä½ç¬¦çä¼åçº§æ¯è¿æ¥é«ï¼æ¥ä¸æ¥åæ¯éæ©çä¼åçº§é«ãä¸ä¸ªå®æ´çå­è¡¨è¾¾å¼å¯ä»¥ç¨åæ¬å· (parentheses) æ¬ä½æ¥è¶è¶è¿äºä¼åçº§è§åã(to override these precedence rules.)"
+msgstr ""
+
+#: grep.1.xml:668(para)
+msgid "ååå¼ç¨ <emphasis remap=\"B\">&bsol;</emphasis><emphasis remap=\"I\">n</emphasis> ä¸­ï¼ <emphasis remap=\"I\">n</emphasis> æ¯ä¸ä¸ªæ°å­ï¼å¹éæ­£åè¡¨è¾¾å¼ä¸­ï¼ä»¥ç¬¬ <emphasis remap=\"I\">n</emphasis> ä¸ªåæ¬å·æ¬ä½çå­è¡¨è¾¾å¼å·²å¹éçå­å­ç¬¦ä¸²ã"
+msgstr ""
+
+#: grep.1.xml:675(para)
+msgid "å¨åºæ¬æ­£åè¡¨è¾¾å¼ä¸­ï¼åå­ç¬¦ <emphasis remap=\"B\">?</emphasis>, <emphasis remap=\"B\">+</emphasis>, <emphasis remap=\"B\">{</emphasis>, <emphasis remap=\"B\">|</emphasis>, <emphasis remap=\"B\">(</emphasis>, å <emphasis remap=\"B\">)</emphasis> ä¸§å¤±äºå®ä»¬çç¹æ®æä¹ï¼ä½ä¸ºæ¿ä»£ï¼ä½¿ç¨å&nbsp;åææ&nbsp;ç (backslash) çæ¬ <emphasis remap=\"B\">&bsol;?</emphasis>, <emphasis remap=\"B\">&bsol;+</emphasis>, <emphasis remap=\"B\">&bsol;{</emphasis>, <emphasis remap=\"B\">&bsol;|</emphasis>, <emphasis remap=\"B\">&bsol;(</emphasis>, å <emphasis remap=\"B\">&bsol;)</emphasis> ã"
+msgstr ""
+
+#: grep.1.xml:693(para)
+msgid "ä¼&nbsp;ç»ç <emphasis remap=\"B\">egrep</emphasis> ä¸æ¯æåå­ç¬¦ <emphasis remap=\"B\">{</emphasis> ï¼å¹¶ä¸ä¸äº <emphasis remap=\"B\">egrep</emphasis> çå®ç°éè¿æ¯æ <emphasis remap=\"B\">&bsol;{</emphasis> æ¥ä»£æ¿å®ï¼å&nbsp;æ­¤å¯ç§»æ¤çèæ¬åºå½é¿å å¨ <emphasis remap=\"B\">egrep</emphasis> ä¸­ä½¿ç¨ <emphasis remap=\"B\">{</emphasis> æ¨¡å¼ï¼åºå½ä½¿ç¨ <emphasis remap=\"B\">[{]</emphasis> æ¥å¹éä¸ä¸ªå­é¢æä¹ (literal) ç <emphasis remap=\"B\">{</emphasis> ã"
+msgstr ""
+
+#: grep.1.xml:712(para)
+msgid "<?troff ps -1?>GNU<?troff ps 0?><emphasis remap=\"B\">egrep</emphasis> éè¿åè®¾å¦æ <emphasis remap=\"B\">{</emphasis> å¤äº an invalid interval specification çèµ·å§ï¼å°±ä¸æ¯ä¸ä¸ªç¹æ®å­ç¬¦ï¼æ¥æ¯æä¼&nbsp;ç»çç¨æ³ãä¾å¦ï¼shell å½ä»¤ <emphasis remap=\"B\">egrep '{1'</emphasis> å°ä¼æç´¢è¿ä¸ªä¸¤å­ç¬¦çå­ç¬¦ä¸² <emphasis remap=\"B\">{1</emphasis> èä¸æ¯æ¥åå¨æ­£åè¡¨è¾¾å¼ä¸­åçäºè¯­æ³éè¯¯ã<?troff ps -1?>POSIX.2<?troff ps 0?> åè®¸è¿ä¸ªè¡ä¸ºï¼å°å¶è§ä¸ºä¸ä¸ªæ©å±ï¼ä½æ¯å¯ç§»æ¤çèæ¬åºå½é¿åä½¿ç¨å®ã"
+msgstr ""
+
+#: grep.1.xml:726(title)
+msgid "ç¯å¢åé ENVIRONMENT VARIABLES"
+msgstr ""
+
+#: grep.1.xml:727(para)
+msgid "<emphasis remap=\"B\">Grep</emphasis> çè¡ä¸ºåä¸åç¯å¢åéå½±åã"
+msgstr ""
+
+#: grep.1.xml:730(para)
+msgid "ä¸ä¸ª locale <emphasis remap=\"B\">LC_</emphasis><emphasis remap=\"I\">foo</emphasis> æ¯éè¿æä¸é¢çé¡ºåºï¼ <envar>LC_ALL</envar>, <emphasis remap=\"B\">LC_</emphasis><emphasis remap=\"I\">foo</emphasis>, <envar>LANG</envar>, æ£æ¥è¿ä¸ä¸ªç¯å¢åéçåå¼èç¡®å®çãè®¾ç½®äºçç¬¬ä¸ä¸ªåéæå®äº localeãä¾å¦ï¼å¦æ <envar>LC_ALL</envar> æ²¡æè®¾ç½®ï¼ä½æ¯ <envar>LC_MESSAGES</envar> è®¾ç½®ä¸º <emphasis remap=\"B\">pt_BR</emphasis> ï¼é£ä¹å·´è¥¿çè¡èçè¯­ (Brazilian Portuguese) å°ç¨ä½ <envar>LC_MESSAGES</envar> locale çå¼ãå¦ææ²¡æè®¾ç½®è¿å¶ä¸­ä»»ä½ä¸ä¸ªç¯å¢åéï¼æèæ²¡æå®è£æè®¾ç½®ç locale ç®å½ï¼æèå¦æ <command>grep</command> æ²¡æå°å½å®¶åè¯­è¨æ¯æ (national language support (<?troff ps -1?>NLS<?troff ps 0?>)) ç¼è¯å¨åï¼å°é»è®¤ä½¿ç¨ locale Cã"
+msgstr ""
+
+#: grep.1.xml:749(emphasis)
+msgid "GREP_OPTIONS"
+msgstr ""
+
+#: grep.1.xml:751(para)
+msgid "è¿ä¸ªåéæå®äºå°æ¾å¨æææ¾å¼æå®çéé¡¹ä¹åçé»è®¤éé¡¹ãä¾å¦ï¼å¦æ <emphasis remap=\"B\">GREP_OPTIONS</emphasis> æ¯ <emphasis remap=\"B\">'--binary-files=without-match --directories=skip'</emphasis> çè¯ï¼ <command>grep</command> å°åå·²ç»å¨ä»»ä½æ¾å¼æå®çéé¡¹ä¹åæå®äº <option>--binary-files=without-match</option> å <option>--directories=skip</option> éé¡¹é£æ&nbsp;·æ¥è¿ä½ãéé¡¹ä»¥ç©ºç½ (whitespace) åéãä¸ä¸ªåææ&nbsp; (backslash) ä½¿å¾ä¸ä¸ä¸ªå­ç¬¦è½¬ä¹ (escape)ï¼å&nbsp;æ­¤å¯ä»¥ç¨æ¥æå®ä¸ä¸ªå«æç©ºç½æèåææ&nbsp;çéé¡¹ã"
+msgstr ""
+
+#: grep.1.xml:765(emphasis)
+msgid "GREP_COLOR"
+msgstr ""
+
+#: grep.1.xml:767(para)
+msgid "æå®ç¨æ¥é«äº®æ¾ç¤ºçæ&nbsp;è®°ã"
+msgstr ""
+
+#: grep.1.xml:771(term)
+msgid "<envar>LC_ALL</envar>, <emphasis remap=\"B\">LC_COLLATE</emphasis>, <envar>LANG</envar>"
+msgstr ""
+
+#: grep.1.xml:773(para)
+msgid "è¿äºåéæå®äº locale <emphasis remap=\"B\">LC_COLLATE</emphasis> ï¼å³å®äºè§£éç±»ä¼¼ <emphasis remap=\"B\">[a-z]</emphasis> çèå´è¡¨è¾¾å¼æ¶çåºåé¡ºåº (collating sequence) ã"
+msgstr ""
+
+#: grep.1.xml:781(term)
+msgid "<envar>LC_ALL</envar>, <emphasis remap=\"B\">LC_CTYPE</emphasis>, <envar>LANG</envar>"
+msgstr ""
+
+#: grep.1.xml:783(para)
+msgid "è¿äºéé¡¹æå®äº locale <emphasis remap=\"B\">LC_CTYPE</emphasis> ï¼å³å®äºå­ç¬¦çç±»åï¼ä¾å¦ï¼åªäºå­ç¬¦æ¯ç©ºç½ (whitespace) ã"
+msgstr ""
+
+#: grep.1.xml:789(term)
+msgid "<envar>LC_ALL</envar>, <envar>LC_MESSAGES</envar>, <envar>LANG</envar>"
+msgstr ""
+
+#: grep.1.xml:791(para)
+msgid "è¿äºéé¡¹æå®äº locale <envar>LC_MESSAGES</envar> ï¼å³å®äº <command>grep</command> çæ¶æ¯ä½¿ç¨çè¯­è¨ãé»è®¤ç locale C ä½¿ç¨ç¾å½è±è¯­çæ¶æ¯ã"
+msgstr ""
+
+#: grep.1.xml:799(envar)
+msgid "POSIXLY_CORRECT"
+msgstr ""
+
+#: grep.1.xml:801(para)
+msgid "å¦æè®¾ç½®äºçè¯ï¼ <command>grep</command> å°å <?troff ps -1?>POSIX.2<?troff ps 0?> è¦æ±çé£æ&nbsp;·æ¥è¿ä½ï¼å¦åï¼ <command>grep</command> å°åå¶ä» <?troff ps -1?>GNU<?troff ps 0?> ç¨åºä¸æ&nbsp;·æ¥è¿ä½ã<?troff ps -1?>POSIX.2<?troff ps 0?> è¦æ±æä»¶åä¹åçéé¡¹å¿é¡»è§ä¸ºæä»¶åï¼é»è®¤æåµä¸ï¼è¿äºéé¡¹è¢«äº¤æ¢å°æä½æ°åè¡¨çåé¢ï¼è¢«å½ä½éé¡¹æ¥å¤çãåæ¶ï¼ <?troff ps -1?>POSIX.2<?troff ps 0?> è¦æ±ä¸å¯è¯å«çéé¡¹å¨è¯æ­æ¶æ¯ä¸­è¡¨ç¤ºä¸º &ldquo;illegal&rdquo;ï¼ä½æ¯æ¢ç¶å®ä»¬æ²¡æçæ­£è§¦ç¯æ³å¾ï¼å&nbsp;æ­¤é»è®¤æåµä¸å®ä»¬å¨è¯æ­ (diagnose) æ¶æ¯ä¸­è¡¨ç¤ºä¸º &ldquo;invalid&rdquo;ã <envar>POSIXLY_CORRECT</envar> åæ¶ç¦æ­¢äºä¸é¢æè¿°ç <emphasis remap=\"B\">_</emphasis><emphasis remap=\"I\">N</emphasis><emphasis remap=\"B\">_GNU_nonoption_argv_flags_</emphasis>ã"
+msgstr ""
+
+#: grep.1.xml:811(emphasis)
+msgid "_"
+msgstr ""
+
+#: grep.1.xml:811(emphasis)
+msgid "N"
+msgstr ""
+
+#: grep.1.xml:811(emphasis)
+msgid "_GNU_nonoption_argv_flags_"
+msgstr ""
+
+#: grep.1.xml:813(para)
+msgid "(è¿é <emphasis remap=\"I\">N</emphasis> æ¯ <command>grep</command>'s æ°å­å½¢å¼çè¿ç¨IDã) å¦æè¿ä¸ªç¯å¢åéçå¼çç¬¬ <emphasis remap=\"I\">i</emphasis> ä¸ªå­ç¬¦æ¯ <literal>1</literal> ï¼é£ä¹ä¸å° <command>grep</command> çç¬¬ <emphasis remap=\"I\">i</emphasis> ä¸ªæä½æ°è§ä¸ºä¸ä¸ªéé¡¹ï¼å³ä½¿å®çä¸å»åãshell å¯ä»¥å°è¿ä¸ªåéè®¾ç½®å¨å®è¿è¡çæ¯ä¸ªå½ä»¤çç¯å¢ä¸­ï¼æå®åªä¸ªæä½æ°æ¯æä»¶åééç¬¦æ©å±çç»æï¼å&nbsp;æ­¤ä¸åºå½è¢«è§ä¸ºéé¡¹ãè¿ä¸ªè¡ä¸ºåªæå¨ä½¿ç¨ <?troff ps -1?>GNU<?troff ps 0?> C åºæ¶ææï¼å¹¶ä¸åªæå¨ <envar>POSIXLY_CORRECT</envar> æ²¡æè®¾ç½®çæ¶åã"
+msgstr ""
+
+#: grep.1.xml:833(title)
+msgid "è¯æ­ DIAGNOSTICS"
+msgstr ""
+
+#: grep.1.xml:834(para)
+msgid "ä¸è¬å°ï¼å¦ææ¾å°äºéæ©çè¡ï¼éåºæ¶ç¶æå¼ä¸º0ï¼å¦åä¸º1ãä½æ¯å¦æåçéè¯¯ï¼éåºæ¶ç¶æå¼æ¯2ï¼é¤éæå®äº <option>-q</option> æ <option>--quiet</option> æ <option>--silent</option> éé¡¹ï¼å¹¶ä¸æ¾å°äºéæ©çè¡ã"
+msgstr ""
+
+#: grep.1.xml:843(title)
+msgid "BUGS"
+msgstr ""
+
+#: grep.1.xml:844(para)
+msgid "bug æ¥åççµå­é®ä»¶å°åæ¯ <emphasis remap=\"B\">bug-gnu-utils@gnu.org</emphasis>ã ä¸å®è¦å¨&ldquo;Subject:&rdquo;ä¸­å¸¦æ &ldquo;grep&rdquo; è¿ä¸ªè¯ã"
+msgstr ""
+
+#: grep.1.xml:848(para)
+msgid "å¨ <emphasis remap=\"B\">{</emphasis><emphasis remap=\"I\">n</emphasis><emphasis remap=\"B\">,</emphasis><emphasis remap=\"I\">m</emphasis><emphasis remap=\"B\">}</emphasis> ç»æä¸­éå¤æ¬¡æ°è¿å¤ä¼å¯¼è´ <command>grep</command> ä½¿ç¨å¤§éåå­ãå¦å¤ï¼ä¸äºè¿åæ¦æ¶©çæ­£åè¡¨è¾¾å¼éè¦ææ°çº§çæ¶é´åç©ºé´ï¼å¯è½ä¼å¯¼è´ <command>grep</command> èå°½ææåå­ã"
+msgstr ""
+
+#: grep.1.xml:856(para)
+msgid "ååå¼ç¨ (backreferences) éå¸¸æ¢ï¼å¯è½éè¦ææ°çº§çæ¶é´ã"
+msgstr ""
+
+#: grep.1.xml:859(title)
+msgid "[ä¸­æçç»´æ¤äºº]"
+msgstr ""
+
+#: grep.1.xml:860(emphasis)
+msgid "è¢ä¹é§ &lt;bbbush@163.com&gt;"
+msgstr ""
+
+#: grep.1.xml:863(title)
+msgid "[ä¸­æçææ°æ´æ°]"
+msgstr ""
+
+#: grep.1.xml:864(literal)
+msgid "2003.11.03"
+msgstr ""
+
+#: grep.1.xml:867(title)
+msgid "ãä¸­å½linuxè®ºåmanæåé¡µç¿»è¯è®¡åã:"
+msgstr ""
+
+#: grep.1.xml:868(ulink)
+msgid "http://cmpp.linuxforum.net"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: grep.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,950 @@
+# All known problems with the manual pages in a desktop Ubuntu installation
+#
+# Send 1 was on 09 Dec 2003
+# Send 2 was on 17 Feb 2004
+# Send 3 was on 11 Jul 2004
+# Send 4 was on 20 Nov 2004
+# Send 5 was on 14 Jan 2005
+# Send 6 was on 01 Jan 2007
+#
+A	Dot or single-quote at start of line turns it into a garbage command.
+	This is a serious error; some lines of your page get silently lost 
+	when it is formatted.
+B	Bogus macro definition.
+C	Broken command synopsis syntax.  This may mean you're using a 
+	construction in the command synopsis other than the standard 
+	[ ] | { }, or it may mean you have running text in the command synopsis
+ 	section (the latter is not technically an error, but most cases of it
+	are impossible to translate into DocBook markup), or it may mean the 
+	command syntax fails to match the description.
+D	Non-break space prevents doclifter from incorrectly interpreting
+	"Feature Test" as end of function synopsis.
+E	My translator trips over a useless command in list markup. 
+F	Non-English-language page incorrectly installed.
+G	The extended macros from the *roff pages screw up third-party readers
+	like Xman and the KDE help browser as well as doclifter.
+H	Renaming SYNOPSIS because either (a) third-party viewers and 
+	translators will try to interpret it as a command synopsis and become 
+	confused, or (b) it actually needs to be named "SYNOPSIS" with no 
+	parsing for function protoypes to be properly recognized.
+I	Use of low-level troff hackery to set special indents or breaks can't 
+	be translated. The page will have rendering faults in HTML, and 
+	probably also under third-party man page browsers such as Xman, 
+	Rosetta, and the KDE help browser.  This patch eliminates .br, .ta, .ti,
+	.ce, .in, and \h in favor of requests like .RS/.RE that have
+	structural translations.
+J	Ambiguous or invalid backslash.  This doesn't cause groff a problem.
+	but it confuses doclifter and may confuse older troff implementations.
+K	Renaming stock man macros throws warnings in doclifter and is likely 
+	to cause failures on third-party manual browsers.  Please redo this 
+	page so it uses distinct names for the custom macros.
+L	List syntax error. This means .IP, .TP or .RS/.RE markup is garbled.
+	Common causes include .TP just before a section header, .TP entries
+	with tags but no bodies, and mandoc lists with no trailing .El.
+	These confuse doclifter, and may also mess up stricter man-page 
+	browsers like Xman and Rosetta.
+M	Feature test macros (running text) included in a function 
+	synopsis prevents translation to DocBook.
+N	Extraneous . at start of line.
+O	Wrong order of arguments in .Dd macro.
+P	Removed unused ds to suppress a doclifter warning.
+Q	Spelling error or typo.
+R	.ce markup can't be structually translated, and is likely
+	to cause rendering flaws in generated HTML.
+S	DEPRECATED: in function syntax cannot be translated.  Also, the
+	code and examples need to be marked up better.
+T	Junk at the beginning of the manual page.
+U	Unbalanced group in command synopis. You probably forgot 
+	to open or close a [ ] or { } group properly.	
+V	Missing body content in list trips up doclifter and is likely to
+	cause rendering problems in other viewers.  I have been able to fill
+	in what was missing except for what should be under TAR_LONGLINK_100.
+W	Missing or garbled name section.  The most common form of garbling
+	is a missing - or extra -. Or your manual page may have been generated
+	by a tool that doesn't emit a NAME section as it should.  Or your page
+	may add running text such as a version or authorship banner.  These 
+	problems make it impossible to lift the page to DocBook.  They
+	can also confuse third-party manpage browsers and some implementations 
+	of man -k.
+X	Unknown or invalid macro.  That is, one that does not fit in the
+	macro set that the man page seems to be using.  This is a serious
+	error; it often means part of your text is being lost or rendered
+	incorrectly.
+Y	I have been unable to identify an upstream maintainer for this
+	Ubuntu/Debian package, and am notifying the generic "Maintainer"
+	address in the package.  Please forward appropriately.  Also
+	fix the package metadata so it identifies the upstream maintainers.
+Z	Your Synopsis is exceptionally creative.  Unfortunately, that means 
+	it cannot be translated to structural markup even when things like
+	running-text inclusions have been moved elswhere.
+a	".fi" request was omitted or typoed as ".if".
+b	Attempt to interpolate unknown string.
+c	The composer of this man page misunderstood and seriously overused
+	the \c escape.  Some uses were broken; others (notably the sequence 
+	"\\c\n\\&") are bad style.
+d	Huge and unused macro preamble triggered spurious warnings.
+e	Macro definitions in the NAME section comfuse doclifter and are
+	likely to screw up third-party man viewers with their own parsers.
+f	Replacing .in pairs with .RS/.RE makes translation to structural
+	markup possible.
+g	Use of a double quote for inch measurements often confuses people
+	who aren't from the Anglosphere.
+h	Unnecessary and unused .ta call may cause converters to error out.
+i	Non-ASCII character is document synopsis can't be parsed.
+j	Parenthesized comments in command synopsis.  This is impossible
+	to translate to DocBook.
+l	Incorrect formation of plural - beware the exiguous apostrophe!
+m	Contains a request or escape that is outside the portable subset that 
+        can be rendered by non-groff viewers such as the KDE and GNOME help 
+	browsers.
+n	Invalid Sx reference - not a section on this page.
+o	TBL markup not used where it should be.  Tables stitched together
+	with .ta or list requests can't be lifted to DocBook and will often
+	choke third-party viewers such as TKMan, XMan, Rosetta, etc.
+p	Synopsis was incomplete and somewhat garbled.
+q	Unused macro causes parsing problems.
+r	I supplied a missing mail addess. Without it, the .TP at the end of the
+	authors list was ill-formed.
+s	Changed page to use the .URL macro now preferred on man(7).
+t	.Id macro that would define Dt is never called.
+u	Use local definitions of .EX/.EE or .DS/.DE to avoid low-level troff
+	requests in the page body.  There are plans to add these to groff man;
+	in the interim, this patch adds a compatible definition to your page.
+v	Missing DESCRIPTION section.
+w	.SS markup in name section seriously confuses parsing, and sections
+	don't follow standard naming conventions.
+x	Syntax had to be arranged because of an options callout.
+	This is still excessively complicated; third-party man-page
+	viewers are likely to choke on it.
+y	I realize this man page is generated from POD or HTML sources.  Please
+	fix the upstream markup so that it generates a well-formed manual
+	page with the indicated corrections. 
+z	Garbled or missing text near .SS tags. It's not clear to me what's
+	going on here, but .SS tags on adjacent lines defeat any attempt
+	to parse the markup.  I have inserted text lines indicating that
+	something needs to be written here.
+k	kdemangen.pl stuttered two copies of a page.  Also, .SS markup
+	is garbled.
+1	Garbled comment leader is likely to confuse third-party readers.
+2	Use of man or mandoc lists to simulate literal displays defeats any
+	attempt at structural translation.
+3	Use of .RS/RE or list markup to produce indentation in examples
+	and screenshots makes structural translation impossible.
+4	\c is an obscure feature; third-party viewers sometimes don't 
+	intepret it. Plain \ is safer. 
+5	Unbalanced .RS tag.
+6	Presentation-level use of nested SS could not be structurally 
+	translated. I changed lower-level instances to .TP.
+7	This page wins an award for exceptionally creative and perverse
+	abuse of list syntax.
+8	C function syntax has extra paren.
+9	I replaced '-->' with a troff right arrow, which doclifter will 
+	translate properly to an XML/HTML arrow glyph.
+0	Function declarations had to be modified in order to fit into
+	the DocBook DTD. This is not an error in troff usage, but it 
+	reduces the quality of the HTML that can be generated from this page
+	through the DocBook toolchain.
+%%
+y|ac.1			|	|sgk@sgk.tiac.net
+nA|acl.5		|I	|acl-devel@nongnu.org
+y|aconnect.1		|	|tiwai@suse.de,alsa-devel@lists.sourceforge.net
+nA|admin.1posix		|C	|Francesco Paolo Lovergine <frankie@debian.org>
+gA|afm2pl.1		|I	|tex-live@tug.org
+nA|aio.7		|I	|mtk-manpages@gmx.net
+nA|alt-nvidia-current-settings.1|fY	|ubuntu-devel-discuss@lists.ubuntu.com
+nA|alt-nvidia-current-smi.1|CLY	|ubuntu-devel-discuss@lists.ubuntu.com
+nA|american.5,english.5	|I9	|geoff@cs.hmc.edu
+y|amidi.1,amixer.1,aplay.1,arecord.1	|	|Clemens Ladisch <clemens@ladisch.de>
+nA|amf.conf.5		|Y2	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+y|amrecover.8		|	|
+nA|analog.1		|CZ	|analog-author@lists.meer.net
+y|animate.1,compare.1,conjure.1,composite.1,convert.1,display.1,identify.1,import.1,mogrify.1,montage.1	|	|magick-bugs@imagemagick.org
+y|apport-retrace.1	|	|martin.pitt@ubuntu.com
+y|appres.1x		|	|xorg@lists.freedesktop.org
+6nA|arp.7		|p	|Bernd Eckenfels <net-tools@lina.inka.de>
+nA|as.1			|Zy	|bug-binutils@gnu.org
+y|aspell.1		|	|pyro@debian.org
+y|atmsigd.conf.4	|	|Werner.Almesberger@epfl.ch
+y|auditd.8		|	|linux-audit@redhat.com
+nA|audit.rules.7	|a	|linux-audit@redhat.com
+nA|auth_destroy.3	|I	|mtk-manpages@gmx.net
+nA|authnone_create.3	|I	|mtk-manpages@gmx.net
+nA|authunix_create.3	|I	|mtk-manpages@gmx.net
+nA|authunix_create_default.3	|I	|mtk-manpages@gmx.net
+y|awk.1		|	|bug-gawk@gnu.org
+y|pgawk.1,gawk.1	|	|bug-gawk@gnu.org
+y|bash.1		|	|bug-bash@gnu.org
+nA|bc.1			|J	|bug-bc@gnu.org
+y|bgpd.8		|	|bug-zebra@gnu.org
+1p|bitmap.1		|oJ	|xorg@lists.freedesktop.org
+p|BitmapBitOrder.3,BitmapPad.3,BitmapUnit.3,DisplayHeight.3,DisplayHeightMM.3,DisplayWidth.3,DisplayWidthMM.3,ImageByteOrder.3,XAddHosts.3|I	|xorg@lists.freedesktop.org
+y|bounce.5,aliases.5,relocated.5,virtual.8|	|wietse@porcupine.org
+1nA|header_checks.5	|m	|wietse@porcupine.org
+nA|bootparam.7		|Iu7	|mtk-manpages@gmx.net
+nA|brltty.1		|J	|BRLTTY@mielke.cc
+nA|btcflash.8		|J	|Daniel Baumann <daniel@debian.org>
+y|bzadmin.6		|	|bzflag-dev@lists.sourceforge.net
+y|bzfquery.6		|	|bzflag-dev@lists.sourceforge.net
+nA|bzfs.6		|Jo	|bzflag-dev@lists.sourceforge.net
+nA|bzr.1		|AX	|bazaar@lists.canonical.com
+y|cadaver.1		|	|Joe Orton <cadaver@webdav.org>
+nA|capabilities.7	|L	|mtk-manpages@gmx.net
+nA|callrpc.3	|I	|mtk-manpages@gmx.net
+y|cancel-cups.1,cancel.1,lp.1,lp-cups.1	|	|
+y|cannastat.1		|	|Canna@nec.co.jp
+nA|cbrt.3,cbrtf.3,cbrtl.3|5	|mtk-manpages@gmx.net
+nA|cdparanoia.1		|L	|monty@xiph.org
+y|cdrdao.1		|	|cdrdao-devel@lists.sourceforge.net
+bnA|chat.8		|J	|paulus@samba.org
+y|chcat.8		|	|dwalsh@redhat.com
+6nA|chmoddic.1		|C	|Canna@nec.co.jp
+nA|chroot.2		|EL	|bug-coreutils@gnu.org
+nA|clnt_broadcast.3	|I	|mtk-manpages@gmx.net
+nA|clnt_call.3	|I	|mtk-manpages@gmx.net
+nA|clnt_control.3	|I	|mtk-manpages@gmx.net
+nA|clnt_create.3	|I	|mtk-manpages@gmx.net
+nA|clnt_destroy.3	|I	|mtk-manpages@gmx.net
+nA|clnt_freeres.3	|I	|mtk-manpages@gmx.net
+nA|clnt_geterr.3	|I	|mtk-manpages@gmx.net
+nA|clnt_pcreateerror.3	|I	|mtk-manpages@gmx.net
+nA|clnt_perrno.3	|I	|mtk-manpages@gmx.net
+nA|clnt_perror.3	|I	|mtk-manpages@gmx.net
+nA|clnt_spcreateerror.3	|I	|mtk-manpages@gmx.net
+nA|clnt_sperrno.3	|I	|mtk-manpages@gmx.net
+nA|clnt_sperror.3	|I	|mtk-manpages@gmx.net
+nA|clntraw_create.3	|I	|mtk-manpages@gmx.net
+nA|clnttcp_create.3	|I	|mtk-manpages@gmx.net
+nA|clntudp_bufcreate.3	|I	|mtk-manpages@gmx.net
+nA|clntudp_create.3	|I	|mtk-manpages@gmx.net
+1nA|co.1		|o	|rcs-bugs@gnu.org
+nA|codepage.1		|C	|mckinstry@computer.org
+nA|compose.1,edit.1	|u	|Brian White <bcwhite@pobox.com>
+y|compress.1,uncompress.1	|	|peter@ncs.nl
+nA|console_codes.4	|I	|mtk-manpages@gmx.net
+nA|console_ioctl.4	|Iol	|mtk-manpages@gmx.net
+nA|core.5		|I	|mtk-manpages@gmx.net
+nA|corosync.conf.5	|LIY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+y|cpufreq-info.1,cpufreq-set.1	|I	|linux@brodo.de,malattia@gmail.com
+nA|cpuset.7		|R	|mtk-manpages@gmx.net
+y|crash.8		|	|fenlason@redhat.com
+y|CrtImgType.3,Tk_InitImageArgs.3|	|tcl-core@lists.sourceforge.net
+1nA|ctangle.1,cweave.1,cweb.1|L	|
+6nA|cshost.1		|W	|Canna@nec.co.jp
+y|cscope.1		|	|broeker@users.sourceforge.net
+y|curl.1		|	|
+1nA|cvs.1		|L	|cvs-dev@nongnu.org
+bnA|cxpm.1		|W	|lehors@sophia.inria.fr
+nA|dash.1,sh.1		|J	|herbert@gondor.apana.org.au
+y|dasher.1		|	|
+nA|DBD::Gofer.3pm	|Jy	|
+y|dbz.3		|	|inn-bugs@isc.org
+nA|dcut.1		|R	|Thomas Viehmann <tv@beamnet.de>
+y|ddd.1		|	|ddd@gnu.org
+nA|Parse::DebControl::Error.3pm|Wy	|Jay Bonci <jaybonci@cpan.org>
+nA|devnag.1		|J	|Zdenek Wagner <wagner@cesnet.cz>, tex-live@tug.org
+nA|dh_install.1		|iy	|joeyh@debian.org
+nA|dh_movefiles.1	|Uy	|joeyh@debian.org
+y|dhclient.8		|	|dhcp-client@isc.org
+nA|dhcp-eval.5		|JY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+1nA|dicar.1		|X	|Canna@nec.co.jp
+y|dictfmt.1		|	|faith@cs.unc.edu
+y|dictl.1		|	|hilliard@debian.org, vle@gmx.net
+y|diffstat.1		|	|
+nA|directomatic.1	|oG	|till.kamppeter@gmail.com
+y|dislocate.1		|	|Don Libes <libes@nist.gov>
+nA|dkms.8		|XJ	|dkms-devel@dell.com
+y|dmraid.8		|	|Heinz Mauelshagen <Mauelshagen@RedHat.com>
+nA|dpkg.1,dpkg-source.1	|L	|debian-dpkg@lists.debian.org
+nA|dosbox.1		|L	|dosbox-crew@gmail.com
+y|doxytag.1		|	|doxygen-users@lists.sourceforge.net
+bnA|dpromdic.1		|X	|
+nA|dump-acct.8		|U	|Daniel Baumann <daniel@debian.org>, Mathieu Trudel <mathieu.tl@gmail.com>
+nA|duplicity.1		|L3	|Kenneth Loafman <kenneth@loafman.com>
+nA|dv2dt.1		|C	|tex-live@tug.org
+y|dvgrab.1		|h	|nn4lyahoode@thyrsus.com
+1nA|dvipdf.1,font2c.1	|R	|epm@easysw.com
+nA|dvitodvi.1		|R	|tex-live@tug.org
+y|dvipdfm.1		|	|mwicks@kettering.edu
+1n|editres.1		|I	|xorg@lists.freedesktop.org
+1nA|e2fsck.8		|o	|tytso@thunk.org
+nA|e2image.8		|J	|tytso@thunk.org
+1nA|efax.1		|Jug	|edc@cce.com
+nA|egrep.1,fgrep.1,grep.1|t	|bug-grep@gnu.org
+y|enscript.1		|	|mtr@iki.fi
+y|elinkskeys.5		|	|elinks-dev@linuxfromscratch.org
+y|emacs.1		|	|bug-gnu-emacs@prep.ai.mit.edu	
+y|epoll_ctl.2		|	|aeb@cwi.nl, davidel@xmailserver.org
+y|epoll.4		|	|aeb@cwi.nl, davidel@xmailserver.org
+p|eqn.1,geqn.1		|C	|bug-groff@gnu.org
+y|error.3		|	|mtk-manpages@gmx.net
+nA|expire.ctl.5		|oY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+1nA|openais_overview.8	|W	|scd@broked.com
+y|cpg_overview.8,evs_overview	|	|	
+nA|exiv2.1		|L	|Andreas Huggel <ahuggel@gmx.net>, KELEMEN Peter <fuji@debian.org>
+y|expect.1		|	|Don Libes <libes@nist.gov>
+1nA|extractres.1		|R	|angus@harlequin.co.uk
+nA|f2py.1,f2py2.7.1	|C	|f2py-users@cens.ioc.ee
+nA|faked-sysv.1,faked-tcp.1,faked.1,fakeroot-sysv.1,fakeroot-tcp.1,fakeroot.1|r	|schizo@debian.org
+y|fbset.8		|	|Geert.Uytterhoeven@cs.kuleuven.ac.be, zippel@fh-brandenburg.de
+nA|fence_drac.8		|J	|cluster-devel@redhat.com
+nA|fence_na.8		|Wy	|cluster-devel@redhat.com
+nA|fence_drac5.8		|J	|cluster-devel@redhat.com
+y|fig2dev.1x		|	|bvsmith@lbl.gov
+1nA|fig2ps2tex.1		|R	|bvsmith@lbl.gov
+y|findchip.8,irdadump.8,irdaping.8,irpsion5.8,irattach.8|	|wehe@tuxmobil.org
+nA|findhyph.1		|C	|tex-live@tug.org
+y|firefox.1		|	|
+y|flock.1		|	|adam@yggdrasil.com
+y|foomatic-ppdfile.1	|	|till.kamppeter@gmail.com
+1nA|foomatic-rip.1,lpdomatic.8|oG	|till.kamppeter@gmail.com
+nA|formail.1,lockfile.1,procmail.1,procmailex.5,procmailrc.5,procmailsc.5|K	|srb@cuci.nl, guenther@sendmail.com
+nA|forsort.1		|X	|Canna@nec.co.jp
+y|free.1		|	|albert@users.sf.net
+nA|fsck.8,fsck.ext2.8,fsck.ext3.8,fsck.ext4.8,fsck.ext4dev.8|o	|util-linux@vger.kernel.org
+nA|fsck.msdos.8,fsck.vfat.8,dosfsck.8|C	|Daniel Baumann <daniel@debian.org>
+y|fsinfo.8		|	|ezk@cs.columbia.edu
+nA|ftm.7		|D	|mtk-manpages@gmx.net
+nA|fuser.1		|J	|Werner Almesberger <werner@almesberger.net>, Craig Small <csmall@enc.com.au>
+nA|fuzzyflakes.6x	|C	|Barry Dmytro <badcherry@mailc.net>
+nA|gacutil.1,cli-gacutil.1,gacutil2.1|N	|mono-docs-list@lists.ximian.com
+y|gaim.1		|	|Rob Flynn <gaim@robflynn.com>
+nA|gdb.1,gdbtui.1	|cJ	|
+nA|genisoimage.1	|o	|debburn-devel@lists.alioth.debian.org
+1nA|getafm.1		|R	|rj@rainbow.in-berlin.de
+y|getcon.3,getexeccon.3	|	|russell@coker.com.au
+nA|getent.1		|Pd	|util-linux@vger.kernel.org
+nA|getnonfreefonts.1,getnonfreefonts-sys.1	|X	|Reinhard Kotucha <reinhard.kotucha@web.de>
+nA|getpass.3		|L	|mtk-manpages@gmx.net
+y|GetUid.3		|	|tcl-core@lists.sourceforge.net
+nA|get_myaddress.3	|I	|mtk-manpages@gmx.net
+y|getcontext.2		|	|mtk-manpages@gmx.net
+y|getrpcport.3		|	|
+nA|getty.8		|I	|util-linux@vger.kernel.org
+y|gfdl.7		|	|
+bnA|gftodvi.1		|I	|
+y|ghostscript.1	|	|giles@snow.thaumas.net
+y|gij.1		|	|
+nA|gipddecode.1,hbpldecode.1|1	|Rick Richardson <rick.richardson@comcast.net>
+nA|gmcs.1		|L	|mono-docs-list@lists.ximian.com
+y|gnome-session.1	|	|Miguel de Icaza <miguel@gnu.org>
+nA|gnome-control-center.1|C	|Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
+nA|gnumeric.1		|L	|gnumeric-list@gnome.org, Jan Schaumann <jschauma@netmeister.org>, Adrian Custer <acuster@gnome.org>
+y|gnuplot.1		|	|gnuplot-info@lists.sourceforge.net
+y|gob2.1		|	|George Lebl <jirka@5z.com>
+y|gpic.1,pic.1		|	|bug-groff@gnu.org
+nA|gpm-types.7		|JC	|gpm@lists.linux.it
+nA|grap.1		|Q	|faber@lunabase.org
+p|grn.1			|C	|bug-groff@gnu.org
+y|groff.1		|	|bug-groff@gnu.org
+y|groff_diff.7		|	|bug-groff@gnu.org
+p|groff_char.7		|Io	|bug-groff@gnu.org
+p|groff_mdoc.7		|no	|bug-groff@gnu.org
+p|groff_me.7		|Io	|bug-groff@gnu.org
+p|groff_mom.7		|s	|bug-groff@gnu.org
+p|groffer.1		|L	|bug-groff@gnu.org
+p|grodvi.1,grolj4.1,grops.1	|C7	|bug-groff@gnu.org
+nA|gs.1,ghostscript.1	|CY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+y|gthumb.1		|	|paolo.bacch@tin.it
+nA|gvcolor.1		|C	|Stephen C. North <north@research.att.com>, Emden R. Gansner <erg@research.att.com>
+nA|gvpr.1		|WI	|Emden R. Gansner <erg@research.att.com>
+6nA|hformat.1,hfsutils.1,hmount.1	|HXJ	|Robert Leslie <rob@mars.org>
+nA|hgrc.5		|H	|mercurial-devel@selenic.com
+y|hidd.1		|	|bluez-devel@lists.sourceforge.net
+y|hostname.1		|	|Bernd Eckenfels <net-tools@lina.inka.de> 
+nA|hosts_access.5,hosts.allow.5,hosts.deny.5,hosts_options.5|IY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+bA|hp-plugin.1		|v	|
+nA|html2text.1		|C	|Martin Bayer <mail@mbayer.de>, Eugene  V.  Lyubimkin <jackyf.devel@gmail.com>
+nA|html2textrc.5	|X	|Martin Bayer <mbayer@zedat.fu-berlin.de>
+y|htfuzzy.1		|	|htdig-dev@htdig.org
+y|hwclock.8		|	|bunk@stusta.de
+nA|hypertorus.6x	|C	|Carsten Steger <carsten@mirsanmir.org>
+1nA|ibod.1		|X	|Bjoern Smith <bjorn@Compound.SE>
+y|ibod_cf.4		|	|Bjoern Smith <bjorn@Compound.SE>
+y|icc2ps.1,jpegicc.1	|	|shiju.p@gmail.com
+1nA|icclink.1		|E	|shiju.p@gmail.com
+nA|icctrans.1		|L	|shiju.p@gmail.com
+1nA|tifficc.1		|E	|shiju.p@gmail.com
+nA|icmp.7		|o	|mtk-manpages@gmx.net
+nA|idmapd.conf.5	|XW	|linux-nfs@vger.kernel.org
+y|idna_strerror.3,idna_to_ascii_4i.3,idna_to_ascii_4z.3,idna_to_ascii_8z.3,idna_to_ascii_lz.3,idna_to_unicode_44i.3,idna_to_unicode_4z4z.3,idna_to_unicode_8z4z.3,idna_to_unicode_8z8z.3,idna_to_unicode_8zlz.3,idna_to_unicode_lzlz.3,pr29_4.3,pr29_4z.3,pr29_8z.3,pr29_strerror.3,punycode_decode.3,punycode_strerror.3,stringprep.3,stringprep_4i.3,stringprep_4zi.3,stringprep_check_version.3,stringprep_convert.3,stringprep_locale_charset.3,stringprep_locale_to_utf8.3,stringprep_profile.3,stringprep_strerror.3,stringprep_ucs4_nfkc_normalize.3,stringprep_ucs4_to_utf8.3,stringprep_unichar_to_utf8.3,stringprep_utf8_nfkc_normalize.3,stringprep_utf8_to_locale.3,stringprep_utf8_to_ucs4.3,stringprep_utf8_to_unichar.3,tld_check_4.3,tld_check_4t.3,tld_check_4tz.3,tld_check_4z.3,tld_check_8z.3,tld_check_lz.3,tld_default_table.3,tld_get_4.3,tld_get_4z.3,tld_get_table.3,tld_get_z.3,tld_strerror.3	|	|bug-libidn@gnu.org
+y|punycode_encode.3	|	|bug-libidn@gnu.org
+nA|icedax.1		|AI	|Heiko Eissfeldt <heiko@colossus.escape.de>, debburn-devel@lists.alioth.debian.org
+nA|ilbmtoppm.1		|L	|bryanh@giraffe-data.com
+1nA|includeres.1	|R	|giles@artifex.com
+y|ImageMagick.1		|	|magick-bugs-owner@imagemagick.org
+1n|imake.1		|I	|xorg@lists.freedesktop.org
+nA|inet.3		|IM	|mtk-manpages@gmx.net
+y|inews.1		|	|inn-bugs@isc.org
+nA|init.5		|I	|upstart-devel@lists.ubuntu.com
+nA|innfeed.8		|B	|inn-bugs@isc.org
+nA|inotify.7		|I	|mtk-manpages@gmx.net
+y|install.1		|	|bug-coreutils@gnu.org
+p|intel.4		|L	|xorg@lists.freedesktop.org
+nA|IO::WrapTie.3pm	|WC	|David F. Skoll <dfs@roaringpenguin.com>
+nA|ipcrm.1		|C	|util-linux@vger.kernel.org
+1nA|ipppd.8		|L	|keil@isdn4linux.de
+y|ip6tables.8		|	|netfilter-devel@lists.netfilter.org
+nA|IPPROTO_ICMP.7	|I	|mtk-manpages@gmx.net
+1nA|iptables.8		|CJL	|netfilter-devel@lists.netfilter.org
+nA|ip6tables-save.8	|U	|netfilter-devel@lists.netfilter.org
+nA|ipptoolfile.5		|J	|cups-dev@easysw.com
+y|iptraf.8		|	|riker@seul.org
+1nA|ipv6calc.8		|Lo	|pb@bieringer.de
+y|irb.1		|	|ruby-doc@ruby-lang.org
+nA|irda.7		|0	|Jean Tourrilhes <jt@hpl.hp.com>
+y|irnet.4		|	|jt@hpl.hp.com
+y|irsend.1		|	|lirc@bartelmus.de
+y|isadump.8,isaset.8	|	|phil@philedelbrock.com
+nA|ispell.1,buildhash.1,munchlist.1,findaffix.1,tryaffix.1,icombine.1,ijoin.1|C	|ispell-bugs@itcorp.com
+nA|ispell-wrapper.1	|CY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+bA|keytool.1		|W	|
+nA|kioclient.1		|k	|Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
+nA|lamboot.1		|X	|lam-devel@lam-mpi.org
+nA|lam-helpfile.5	|I	|lam-devel@lam-mpi.org
+1nA|lastcomm.1		|I	|Markus Gothe <nihilus@member.fsf.org>
+y|lastlog.8		|	|
+y|latex.1		|	|te@dbs.uni-hannover.de
+nA|latin2.7,iso_8859-2.7,iso_8859_2.7,iso-8859-2.7|*	|mtk-manpages@gmx.net
+y|LDP.7 		|	|
+nA|ld-linux.8,ld-linux.so.8|L	|mtk-manpages@gmx.net
+1nA|ld.so.8		|L	|mtk-manpages@gmx.net
+6nA|less.1,pager.1	|J	|bug-less@gnu.org
+nA|lftp.1		|I	|lav@yars.free.net,
+nA|libcaca-authors.3caca|W	|Sam Hocevar <sam@hocevar.net>
+nA|libcaca-canvas.3caca	|WJ	|Sam Hocevar <sam@hocevar.net>
+nA|libcaca-env.3caca	|WL	|Sam Hocevar <sam@hocevar.net>
+nA|libcaca-font.3caca	|WJ	|Sam Hocevar <sam@hocevar.net>
+nA|libcaca-ruby.3caca	|W	|Sam Hocevar <sam@hocevar.net>
+nA|libcaca-tutorial.3caca|W	|Sam Hocevar <sam@hocevar.net>
+4nA|libpng.3		|SJ	|png-mng-implement@lists.sourceforge.net 
+y|libpngpf.3		|	|png-mng-implement@lists.sourceforge.net
+nA|libreoffice.1,loffice.1,lofromtemplate.1|J	|Rene Engelhard <rene@debian.org>, Philipp Weissenbacher <philipp.weissenbacher@gmail.com>
+nA|libtiff.3tiff		|I	|tiff@lists.maptools.org
+nA|licensecheck.1	|CY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+nA|list_audio_tracks.1	|W	|Heiko Eissfeldt <heiko@colossus.escape.de>, debburn-devel@lists.alioth.debian.org
+1nA|ln.1		|j	|bug-coreutils@gnu.org
+y|locate.1		|	|mitr@redhat.com
+nA|logger.1		|O	|util-linux@vger.kernel.org
+y|logrotate.8		|	|
+nA|logsys_overview.8	|JY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+p|lookbib.1,indxbib.1,lkbib.1|C	|bug-groff@gnu.org
+6nA|lpr.1		|U	|papowell@lprng.com
+y|lpstat.1,lpstat-cups.1|	|papowell@lprng.com
+nA|lrf2lrs.1		|L	|Kovid Goyal <kovid@kovidgoyal.net>
+y|lsof.8		|	|abe@purdue.edu
+nA|lynx.1,www-browser.1	|C	|lynx-dev@nongnu.org
+y|mag.1		|	|te@dbs.uni-hannover.de
+nA|makeindex.1		|J	|tex-live@tug.org
+y|man.1,manpath.1	|	|mtk-manpages@gmx.net
+nA|mawk.1		|R	|Mike Brennan <brennan@whidbey.com>
+y|mcs.8		|	|
+6nA|mdel.1		|I	|mtools@mtools.linux.lu
+nA|mdoc.7		|J	|mtk-manpages@gmx.net
+y|merge.1		|	|bug-rcs@gnu.org
+y|mev.1			|	|gpm@lists.linux.it
+y|mf.1,inimf.1,virmf.1	|	|te@dbs.uni-hannover.de
+nA|mkdosfs.8,mkfs.msdos.8,mkfs.vfat.8|C	|Daniel Baumann <daniel@debian.org>
+y|mkdtemp.3		|	|mtk-manpages@gmx.net
+nA|mkjobtexmf.1		|Ly	|tex-live@tug.org
+y|mkzftree.1		|	|hpa@zytor.com
+nA|mlocate.db.5		|J	|Miloslav Trmac <mitr@redhat.com>
+nA|mono.1,cli.1		|JX	|mono-docs-list@lists.ximian.com
+nA|mono-config.5	|X	|mono-docs-list@lists.ximian.com
+nA|more.1		|O	|util-linux@vger.kernel.org
+y|motd.news.5		|	|inn-bugs@isc.org
+nA|mount.fuse.8		|X	|fuse-devel@lists.sourceforge.net
+y|mozplugger.7		|	|louis@bavoil.net
+y|mpcd.8		|	|Heikki Vatiainen <hessu@cs.tut.fi>, Sampo Saaristo <s156953@cs.tut.fi>
+1nA|mpiexec.1		|X	|lam-devel@lam-mpi.org
+1nA|mpiexec.lam.1	|X	|lam-devel@lam-mpi.org
+nA|mpimsg.1,mpitask.1	|I	|lam-devel@lam-mpi.org
+nA|mpirun.1,mpirun.lam.1|*	|lam-devel@lam-mpi.org
+y|mpost.1		|	|
+nA|mq_overview.7	|I	|mtk-manpages@gmx.net
+nA|mtr.8		|J	|mtr@lists.xmission.com
+y|mtx.1		|	|eric@badtux.org
+nA|mutt.1		|JQ	|mutt-dev@mutt.org
+nA|muttrc.5		|JXu	|mutt-dev@mutt.org
+y|mysqld.1,mysqld_multi.1,mysqldump.1,mysql_zap.1,mysqladmin.1,mysqlshow.1|	|monty@tcx.se
+y|named.conf.5		|	|bind9-bugs@isc.org
+y|nasm.1,ndisasm.1	|	|nasm-devel@lists.sourceforge.net
+nA|nautilus.1		|L	|Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
+nA|nautilus-connect-server.1|L|nautilus-list@gnome.org
+y|nbp_name.3		|	|netatalk-devel@lists.sourceforge.net
+nA|netpbm.1		|J	|bryanh@giraffe-data.com
+nA|netstat.8		|Cz	|ecki@linux.de
+y|newgrp.1		|	|Julianne Frances Haugh <jockgrrl@ix.netcom.com>
+y|nfsd.7		|	|neilb@cse.unsw.edu.au
+nA|nfsmount.conf.5	|CY	|ubuntu-devel-discuss@lists.ubuntu.com
+y|NetworkManager.1,nm-tool.1	|	|networkmanager-list@gnome.org
+nA|nsgmls.1		|CI	|James Clark <jjc@jclark.com>
+y|nslookup.1		|	|
+nA|ntfs-3g.secaudit.8	|CY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+nA|ntfs-3g.usermap.8	|C	|ntfs-3g-devel@lists.sf.net
+y|ntpdate.1		|	|mills@udel.edu
+y|ntpq.1		|	|mills@udel.edu
+nA|nvidia-settings.1	|IxY	|ubuntu-devel-discuss@lists.ubuntu.com
+nA|nvidia-smi.1		|I6Y	|ubuntu-devel-discuss@lists.ubuntu.com
+y|octave-config.1	|	|jwe@bevo.che.wisc.edu, edd@debian.org
+nA|ode.1		|e	|bug-gnu-utils@gnu.org
+nA|oldfind.1,find.1	|J	|findutils-patches@gnu.org
+nA|omfonts.1		|W	|tex-live@tug.org
+y|on_ac_power.1	|	|Richard Hughes <richard@hughsie.com>
+1nA|openvt.1,open.1	|L	|aeb@cwi.nl
+y|operator.7		|	|mtk-manpages@gmx.net
+nA|orbd.1		|WyY	|ubuntu-devel-discuss@lists.ubuntu.com
+nA|orca.1		|s	|orca-list@gnome.org
+nA|osage.1,mm2gv.1	|J	|Emden R. Gansner <erg@research.att.com>
+y|parted.8		|	|bug-parted@gnu.org
+nA|patch.1		|It	|bug-patch@gnu.org
+nA|pax.1posix		|WJL	|Francesco Paolo Lovergine <frankie@debian.org>
+nA|pbmclean.1,pnmcomp.1,pnmnorm.1,pnmpad.1,pnmquant.1,pnmremap.1,pnmtotiff.1,pgmnorm.1,ppmcolors.1,ppmnorm.1,ppmntsc.1,ppmquant.1,ppmrainbow.1,ppmtogif.1,ppmtoxpm.1,tifftopnm.1|C	|bryanh@giraffe-data.com
+nA|pbget.1,pbput.1,pbputs.1	|W	|Dustin  Kirkland  <kirkland@ubuntu.com>
+nA|pbmtextps.1		|C	|Bryan Henderson <bryanh@giraffe-data.com>
+nA|pcap-filter.7	|I	|tcpdump-workers@lists.tcpdump.org
+y|pcre.3,pcrebuild.3	|	|ph10@cam.ac.uk
+nA|pcreapi.3		|I	|exim-dev@exim.org
+nA|pcreposix.3		|H	|exim-dev@exim.org
+y|pcreprecompile.3	|	|ph10@cam.ac.uk
+y|pcrepattern.3,pcrecallout.3,pcrepartial.3|	|ph10@cam.ac.uk
+nA|pdfseparate.1	|A	|poppler@lists.freedesktop.org
+y|pgmabel.1,pgmtopgm.1,pnmstitch.1,pgmmorphconv.1,pnmtoddif.1,ppmtopj.1	|	|Bryan Henderson <bryanh@giraffe-data.com>
+y|php.1		|	|phpdoc@lists.php.net
+nA|pidgin.1		|T	|Sean Egan <seanegan@gmail.com>, Ben Tegarden <tegarden@uclink.berkeley.edu>, John Bailey <rekkanoryo@pidgin.im>
+y|pipe.8		|	|wietse@porcupine.org
+nA|pkg-config.1		|q	|pkg-config@lists.freedesktop.org
+y|play.1		|	|
+nA|playsound.1		|C	|icculus@clutteredmind.org
+nA|plot.1,plotfont.1	|W	|bug-gnu-utils@gnu.org
+nA|pmap_getmaps.3	|I	|mtk-manpages@gmx.net
+nA|pmap_getport.3	|I	|mtk-manpages@gmx.net
+nA|pmap_rmtcall.3	|I	|mtk-manpages@gmx.net
+nA|pmap_set.3		|I	|mtk-manpages@gmx.net
+nA|pmap_unset.3		|I	|mtk-manpages@gmx.net
+nA|pnmhisteq.1,ppmcie.1,ppmlabel.1,sbigtopgm.1|R	|Bryan Henderson <bryanh@giraffe-data.com>
+nA|pnmpaste.1		|X	|Bryan Henderson <bryanh@giraffe-data.com>
+nA|pnmtotiffcmyk.1	|C	|Bryan Henderson <bryanh@giraffe-data.com>
+nA|pnmtofiasco.1		|e	|Bryan Henderson <bryanh@giraffe-data.com>
+nA|policytool.1		|Wy	|openjdk@lists.launchpad.net
+nA|servertool.1		|Cy	|openjdk@lists.launchpad.net
+y|postconf.5		|	|wietse@porcupine.org
+y|postmap.1,postsuper.1	|	|wietse@porcupine.org
+nA|proc.5		|Io	|mtk-manpages@gmx.net
+y|ps.1			|	|acahalan@cs.uml.edu
+bA|pstops.1		|R	|
+y|proxymap.8		|	|wietse@porcupine.org
+6nA|ps2epsi.1		|j	|giles@artifex.com
+y|ps2pdf.1,ps2pdf12.1,ps2pdf13.1|	|giles@artifex.com
+nA|ps2pdfwr.1		|R	|giles@artifex.com
+1nA|psnup.1		|J	|giles@artifex.com
+1nA|pthreads.7		|I	|mtk-manpages@gmx.net
+6nA|ptx.1		|j	|bug-gnu-utils@gnu.org
+nA|pytest.1		|C	|doc-sig@python.org
+y|quotactl.2		|	|jkar8572@sers.sourceforge.net
+1nA|qos.7		|L	|linux-atm-general@lists.sourceforge.net
+nA|qsub.1posix		|I	|Francesco Paolo Lovergine <frankie@debian.org>
+y|racoon.conf.5	|	|bugs@lists.freeswan.org
+y|random.4		|	|mtk-manpages@gmx.net
+y|ram.4		|	|mtk-manpages@gmx.net
+y|raw2tiff.1,tiffcmp.1	|	|tiff@lists.maptools.org
+bA|rc-alert.1		|u	|Julian Gilbey <jdg@debian.org>, Adam D. Barratt  <adam@adam-barratt.org.uk>
+y|rcsintro.1		|u	|bug-rcs@gnu.org
+p|refer.1		|C	|bug-groff@gnu.org
+nA|registerrpc.3	|I	|mtk-manpages@gmx.net
+nA|regulatory.bin.5	|w	|linux-wireless@vger.kernel.org
+bA|renice.1		|O	|http://userweb.kernel.org/~kzak/util-linux/
+y|replace.1,isamchk.1,isamlog.1|	|monty@tcx.se
+nA|resize2fs.8		|o	|tytso@thunk.org
+y|rexec.3		|	|
+bA|rev.1		|OL	|http://userweb.kernel.org/~kzak/util-linux/
+y|rdump.8,dump.8,restore.8,rrestore.8	|	|Stelian Pop <stelian@popies.net>
+nA|rhythmbox-client.1	|L	|Sven Arvidsson <sa@whiz.se>, gnome-doc-list@gnome.org
+nA|rlog.1		|L	|rcs-bugs@gnu.org
+nA|rlogin.1		|nY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+nA|rmid.1		|Wy	|openjdk@lists.launchpad.net
+nA|rmiregistry.1	|Wy	|openjdk@lists.launchpad.net
+y|roff.7		|	|bug-groff@gnu.org
+nA|rotatelogs.8		|*	|docs@httpd.apache.org
+nA|rpc.3		|I	|mtk-manpages@gmx.net
+nA|rpc.5		|c	|mtk-manpages@gmx.net
+nA|rsh.1,ssh.1,authorized_keys.5,sshd.8|nY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+p|rstartd.1		|I	|xorg@lists.freedesktop.org
+nA|rsyslog.conf.5	|J	|rsyslog@lists.adiscon.com
+p|s3.4			|I	|xorg@lists.freedesktop.org
+nA|sane-apple.5		|L	|sane-devel@lists.alioth.debian.org
+nA|sane-lexmark.5	|Lo	|sane-devel@lists.alioth.debian.org
+nA|sane-mustek_pp.5	|Lo	|sane-devel@lists.alioth.debian.org
+nA|sane-pixma.5		|W	|sane-devel@lists.alioth.debian.org
+nA|scons.1		|Ju	|scons-dev@scons.org
+nA|scons-time.1		|L	|scons-dev@scons.org
+nA|script.1		|O	|util-linux@vger.kernel.org
+1nA|SDL_Init.3		|L	|sdl@lists.libsdl.org
+nA|SDL_CDPlayTracks.3	|8	|docs@lists.libsdl.org
+y|security.3		|	|xorg@lists.freedesktop.org
+nA|see.1,run-mailcap.1,print.1	|C	|Brian White <bcwhite@pobox.com>
+y|send-uucp.8		|	|inn-bugs@isc.org
+nA|setcap.8		|C	|Andrew G. Morgan <morgan@kernel.org>
+nA|setpci.8		|X	|Martin Mares <mj@ucw.cz>
+y|sg_senddiag.8,sg_wr_mode.8	|	|dgilbert@interlog.com
+nA|sg_sat_phy_event.8	|C	|dgilbert@interlog.com
+nA|sgmlspl.1		|L	|Ardo van Rangelrooij <ardo@debian.org>
+nA|signal.7		|I	|mtk-manpages@gmx.net
+y|sk98lin.4		|	|linux@syskonnect.de
+y|slapd.8		|	|OpenLDAP-devel@OpenLDAP.org
+y|slapdn.8,slapacl.8,slapadd.8	|u	|OpenLDAP-devel@OpenLDAP.org
+1nA|slapd.conf.5		|LI	|OpenLDAP-devel@OpenLDAP.org
+nA|slapd-config.5	|LI	|OpenLDAP-devel@OpenLDAP.org
+nA|slapo-constraint.5	|L	|OpenLDAP-devel@OpenLDAP.org
+nA|slogin.1		|n	|openssh-unix-dev@mindrot.org
+y|snmpvacm.1		|	|net-snmp-coders@lists.sourceforge.net
+y|snmpd.conf.5		|	|net-snmp-coders@lists.sourceforge.net
+y|snmp.conf.5		|	|net-snmp-coders@lists.sourceforge.net
+nA|snmpd.examples.5snmp	|J	|net-snmp-coders@lists.sourceforge.net
+nA|socket-event.7	|X	|https://bugs.launchpad.net/upstart/+bug/1018925
+bA|software-properties-gtk.1	|W	|
+nA|spam.1		|C	|
+nA|spufs.7		|I	|mtk-manpages@gmx.net
+y|squid_ldap_auth.8,squid_ldap_group.8	|	|squid-bugs@squid-cache.org
+3pA|sshd_config.5,ssh_config.5	|n	|brad@openbsd.org
+nA|ssh-keygen.1		|Rn	|Colin Watson <cjwatson@ubuntu.com>
+y|states.1		|	|mtr@iki.fi
+nA|svc_destroy.3	|I	|mtk-manpages@gmx.net
+nA|svc_freeargs.3	|I	|mtk-manpages@gmx.net
+nA|svc_getargs.3	|I	|mtk-manpages@gmx.net
+nA|svc_getcaller.3	|I	|mtk-manpages@gmx.net
+nA|svc_getreq.3		|I	|mtk-manpages@gmx.net
+nA|svc_getreqset.3	|I	|mtk-manpages@gmx.net
+nA|svc_register.3	|I	|mtk-manpages@gmx.net
+nA|svc_run.3		|I	|mtk-manpages@gmx.net
+nA|svc_sendreply.3	|I	|mtk-manpages@gmx.net
+nA|svc_unregister.3	|I	|mtk-manpages@gmx.net
+nA|svcerr_auth.3	|I	|mtk-manpages@gmx.net
+nA|svcerr_decode.3	|I	|mtk-manpages@gmx.net
+nA|svcerr_noprog.3	|I	|mtk-manpages@gmx.net
+nA|svcerr_noproc.3	|I	|mtk-manpages@gmx.net
+nA|svcerr_progvers.3	|I	|mtk-manpages@gmx.net
+nA|svcerr_systemerr.3	|I	|mtk-manpages@gmx.net
+nA|svcerr_weakauth.3	|I	|mtk-manpages@gmx.net
+nA|svcfd_create.3	|I	|mtk-manpages@gmx.net
+nA|svcraw_create.3	|I	|mtk-manpages@gmx.net
+nA|svctcp_create.3	|I	|mtk-manpages@gmx.net
+nA|svcudp_bufcreate.3	|I	|mtk-manpages@gmx.net
+nA|svcudp_create.3	|I	|mtk-manpages@gmx.net
+y|synclient.1		|	|mtk-manpages@gmx.net
+nA|synctex.1		|X	|tex-live@tug.org
+nA|synctex.5		|2	|tex-live@tug.org
+6nA|rb.1,rx.1,rz.1,sb.1,sx.1,sz.1|e	|Uwe Ohse <uwe@ohse.de>
+nA|tar.1		|CV	|bug-tar@gnu.org
+nA|tc-prio.8,tc-htb.8,tc-cbq.8,tc-cbq-details.8	|C	|net@vger.kernel.org
+nA|tc-stab.8		|IJ	|net@vger.kernel.org
+1nA|tcpd.8		|I	|wietse@porcupine.org
+nA|tcpdmatch.8		|I	|wietse@porcupine.org
+nA|tek2plot.1		|W	|bug-gnu-utils@gnu.org
+nA|telnet.1,telnet.netkit.1|XY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+nA|test.1,[.1		|	|bug-coreutils@gnu.org
+y|texdoctk.1		|	|bunk@fs.tum.de, ruedas@geophysik.uni-frankfurt.de
+bA|terminfo.5		|Ia	|bug-ncurses@gnu.org
+p|tfmtodit.1		|C	|bug-groff@gnu.org
+nA|TIFFGetField.3tiff	|I	|tiff@lists.maptools.org
+nA|TIFFmemory.3tiff	|4	|tiff@lists.maptools.org
+nA|Tk::Internals.3pm	|WY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+nA|tnameserv.1		|Wy	|openjdk@lists.launchpad.net
+nA|tgatoppm.1		|A	|bryanh@giraffe-data.com
+1nA|tidy.1		|Wm	|tidy-develop@lists.sourceforge.net,html-tidy@w3.org
+nA|time.1		|J	|bug-gnu-utils@prep.ai.mit.edu
+y|transfig.1x		|	|bvsmith@lbl.gov
+1nA|tree.1		|b	|Steve Baker <ice@mama.indstate.edu>
+nA|ttf2tfm.1		|Io	|tex-live@tug.org
+nA|tty_ioctl.4		|L	|mtk-manpages@gmx.net
+6nA|tune2fs.8		|C	|tytso@thunk.org
+y|tzfile.5		|	|mtk-manpages@gmx.net
+y|udevd.8,udevsend.8	|	|Kay Sievers <kay.sievers@vrfy.org>
+y|units.1		|	|adrian@cam.cornell.edu
+nA|unity-2d-shell.1	|CJY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+nA|unity-2d-spread.1	|CY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+nA|upstart-events.7	|I	|James Hunt <james.hunt@ubuntu.com>
+nA|usb-creator-gtk.8	|W	|Evan Dandrea  <evand@ubuntu.com>, Roderick B. Greening <roderick.greening@gmail.com>
+nA|xz.1,xzcat.1,unxz.1,unlzma.1,lzcat.1,lzma.1|C	|lasse.collin@tukaani.org
+nA|unshare.1		|L	|util-linux@vger.kernel.org
+y|unzip.1,unzipsfx.1	|	|roelofs@pobox.com
+nA|updatedb.conf.5	|J	|Miloslav Trmac <mitr@redhat.com>
+y|uuencode.1		|	|bug-gnu-utils@gnu.org
+nA|uuencode.1posix	|I	|Francesco Paolo Lovergine <frankie@debian.org>
+p|viewres.1		|I	|xorg@lists.freedesktop.org
+n*A|vlna.1		|F	|tex-live@tug.org
+nA|vmstat.8		|a	|Henry Ware <al172@yfn.ysu.edu>, Fabian Frédérick <ffrederick@users.sourceforge.net>
+1nA|wall.1		|LO	|util-linux@vger.kernel.org
+y|wget.1		|	|mtortonesi@ing.unife.it
+1nA|whereis.1		|L	|bunk@stusta.de
+y|which.1		|	|
+nA|whois.1		|LY	|Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+p|XAddHost.3		|I	|xorg@lists.freedesktop.org
+1n|XAllocWMHints.3	|I	|xorg@lists.freedesktop.org
+y|Xaw.3x		|	|xorg@lists.freedesktop.org
+y|XcmsColor.3x		|	|xorg@lists.freedesktop.org
+y|XDrawArc.3x		|	|xorg@lists.freedesktop.org
+nA|xdr.3,xdr_array.3	|I	|mtk-manpages@gmx.net
+p|X.7			|ILo	|xorg@lists.freedesktop.org
+y|XQueryColor.3x	|	|xorg@lists.freedesktop.org
+y|XLoadFont.3x		|	|xorg@lists.freedesktop.org
+y|XrmGetFileDatabase.3x	|	|xorg@lists.freedesktop.org
+p|XSizeHints.3		|I	|xorg@lists.freedesktop.org
+p|XAllocClassHint.3	|I	|xorg@lists.freedesktop.org
+p|XAllocIconSize.3	|I	|xorg@lists.freedesktop.org
+p|XAllocSizeHints.3	|I	|xorg@lists.freedesktop.org
+p|XAllocStandardColormap.3	|I	|xorg@lists.freedesktop.org
+p|XAnyEvent.3		|I	|xorg@lists.freedesktop.org
+p|XAutoRepeatOn.3	|I	|xorg@lists.freedesktop.org
+p|XAutoRepeatOff.3	|I	|xorg@lists.freedesktop.org
+p|XBell.3		|I	|xorg@lists.freedesktop.org
+p|XButtonEvent.3	|I	|xorg@lists.freedesktop.org
+p|XChangeGC.3		|I	|xorg@lists.freedesktop.org
+p|XChangeKeyboardControl.3|I	|xorg@lists.freedesktop.org
+p|XChangeKeyboardMapping.3|I	|xorg@lists.freedesktop.org
+p|XCirculateEvent.3	|I	|xorg@lists.freedesktop.org
+p|XCirculateRequestEvent.3	|I	|xorg@lists.freedesktop.org
+p|XClassHint.3		|I	|xorg@lists.freedesktop.org
+p|XClientMessageEvent.3	|I	|xorg@lists.freedesktop.org
+p|XColor.3		|I	|xorg@lists.freedesktop.org
+p|XColormapEvent.3	|I	|xorg@lists.freedesktop.org
+p|XConfigureEvent.3	|I	|xorg@lists.freedesktop.org
+p|XConfigureRequestEvent.3	|I	|xorg@lists.freedesktop.org
+p|XConfigureWindow.3	|I	|xorg@lists.freedesktop.org
+p|XCopyColormapAndFree.3|I	|xorg@lists.freedesktop.org
+p|XCopyGC.3		|I	|xorg@lists.freedesktop.org
+p|XCreateColormap.3	|I	|xorg@lists.freedesktop.org
+p|XCreateGC.3		|I	|xorg@lists.freedesktop.org
+p|XCreateSimpleWindow.3	|I	|xorg@lists.freedesktop.org
+p|XCreateWindow.3	|I	|xorg@lists.freedesktop.org
+p|XCreateWindowEvent.3	|I	|xorg@lists.freedesktop.org
+p|XCrossingEvent.3	|I	|xorg@lists.freedesktop.org
+p|XDefaultString.3	|I	|xorg@lists.freedesktop.org
+p|XDeleteModifiermapEntry.3	|I	|xorg@lists.freedesktop.org
+p|XDestroyWindowEvent.3	|I	|xorg@lists.freedesktop.org
+p|XDisableAccessControl.3	|I	|xorg@lists.freedesktop.org
+p|XDisplayKeycodes.3	|I	|xorg@lists.freedesktop.org
+p|XDisplayMotionBufferSize.3	|I	|xorg@lists.freedesktop.org
+p|XDrawLine.3		|I	|xorg@lists.freedesktop.org
+p|XDrawLines.3		|I	|xorg@lists.freedesktop.org
+p|XDrawPoint.3		|I	|xorg@lists.freedesktop.org
+p|XDrawPoints.3		|I	|xorg@lists.freedesktop.org
+p|XDrawRectangle.3	|I	|xorg@lists.freedesktop.org
+p|XDrawRectangles.3	|I	|xorg@lists.freedesktop.org
+p|XDrawSegments.3	|I	|xorg@lists.freedesktop.org
+p|XDrawText.3		|I	|xorg@lists.freedesktop.org
+p|XDrawText16.3		|I	|xorg@lists.freedesktop.org
+p|XEnableAccessControl.3|I	|xorg@lists.freedesktop.org
+p|XErrorEvent.3		|I	|xorg@lists.freedesktop.org
+p|XEvent.3		|I	|xorg@lists.freedesktop.org
+p|XExposeEvent.3	|I	|xorg@lists.freedesktop.org
+p|XFocusChangeEvent.3	|I	|xorg@lists.freedesktop.org
+p|XFontSetExtents.3	|I	|xorg@lists.freedesktop.org
+p|XFreeColormap.3	|I	|xorg@lists.freedesktop.org
+p|XFreeEventData.3	|I	|xorg@lists.freedesktop.org
+p|XFreeGC.3		|I	|xorg@lists.freedesktop.org
+p|XFreeModifiermap.3	|I	|xorg@lists.freedesktop.org
+p|XFreeStringList.3	|I	|xorg@lists.freedesktop.org
+p|XGCValues.3		|I	|xorg@lists.freedesktop.org
+p|XGContextFromGC.3	|I	|xorg@lists.freedesktop.org
+p|XGenericEventCookie.3	|I	|xorg@lists.freedesktop.org
+p|XGetClassHint.3	|I	|xorg@lists.freedesktop.org
+p|XGetEventData.3	|I	|xorg@lists.freedesktop.org
+p|XGetGCValues.3	|I	|xorg@lists.freedesktop.org
+p|XGetGeometry.3	|I	|xorg@lists.freedesktop.org
+p|XGetIconSizes.3	|I	|xorg@lists.freedesktop.org
+p|XGetKeyboardControl.3	|I	|xorg@lists.freedesktop.org
+p|XGetKeyboardMapping.3	|I	|xorg@lists.freedesktop.org
+p|XGetModifierMapping.3	|I	|xorg@lists.freedesktop.org
+p|XGetMotionEvents.3	|I	|xorg@lists.freedesktop.org
+p|XGetRGBColormaps.3	|I	|xorg@lists.freedesktop.org
+p|XGetVisualInfo.3	|I	|xorg@lists.freedesktop.org
+p|XGetWMHints.3		|I	|xorg@lists.freedesktop.org
+p|XGetWMNormalHints.3	|I	|xorg@lists.freedesktop.org
+p|XGetWMSizeHints.3	|I	|xorg@lists.freedesktop.org
+p|XGetWindowAttributes.3|I	|xorg@lists.freedesktop.org
+p|XGraphicsExposeEvent.3|I	|xorg@lists.freedesktop.org
+p|XGravityEvent.3	|I	|xorg@lists.freedesktop.org
+p|XHostAddress.3	|I	|xorg@lists.freedesktop.org
+p|XIconSize.3		|I	|xorg@lists.freedesktop.org
+p|XInsertModifiermapEntry.3	|I	|xorg@lists.freedesktop.org
+p|XKeyEvent.3		|I	|xorg@lists.freedesktop.org
+p|XKeyboardControl.3	|I	|xorg@lists.freedesktop.org
+p|XKeymapEvent.3	|I	|xorg@lists.freedesktop.org
+p|XListHosts.3		|I	|xorg@lists.freedesktop.org
+p|XListPixmapFormats.3	|I	|xorg@lists.freedesktop.org
+p|XMapEvent.3		|I	|xorg@lists.freedesktop.org
+p|XMapRequestEvent.3	|I	|xorg@lists.freedesktop.org
+p|XMappingEvent.3	|I	|xorg@lists.freedesktop.org
+p|XMatchVisualInfo.3	|I	|xorg@lists.freedesktop.org
+p|XModifierKeymap.3	|I	|xorg@lists.freedesktop.org
+p|XMotionEvent.3	|I	|xorg@lists.freedesktop.org
+p|XMoveResizeWindow.3	|I	|xorg@lists.freedesktop.org
+p|XMoveWindow.3		|I	|xorg@lists.freedesktop.org
+p|XNewModifiermap.3	|I	|xorg@lists.freedesktop.org
+p|XNoExposeEvent.3	|I	|xorg@lists.freedesktop.org
+p|XPixmapFormatValues.3	|I	|xorg@lists.freedesktop.org
+p|XPoint.3		|I	|xorg@lists.freedesktop.org
+p|XPropertyEvent.3	|I	|xorg@lists.freedesktop.org
+p|XQueryKeymap.3	|I	|xorg@lists.freedesktop.org
+p|XRectangle.3		|I	|xorg@lists.freedesktop.org
+p|XRemoveHost.3		|I	|xorg@lists.freedesktop.org
+p|XRemoveHosts.3	|I	|xorg@lists.freedesktop.org
+p|XReparentEvent.3	|I	|xorg@lists.freedesktop.org
+p|XResizeRequestEvent.3	|I	|xorg@lists.freedesktop.org
+p|XResizeWindow.3	|I	|xorg@lists.freedesktop.org
+p|XSegment.3		|I	|xorg@lists.freedesktop.org
+p|XSelectionClearEvent.3|I	|xorg@lists.freedesktop.org
+p|XSelectionEvent.3	|I	|xorg@lists.freedesktop.org
+p|XSelectionRequestEvent.3	|I	|xorg@lists.freedesktop.org
+p|XSendEvent.3		|I	|xorg@lists.freedesktop.org
+p|XSetAccessControl.3	|I	|xorg@lists.freedesktop.org
+p|XSetClassHint.3	|I	|xorg@lists.freedesktop.org
+p|XSetIconSizes.3	|I	|xorg@lists.freedesktop.org
+p|XSetModifierMapping.3	|I	|xorg@lists.freedesktop.org
+p|XSetRGBColormaps.3	|I	|xorg@lists.freedesktop.org
+p|XSetWMHints.3	|I	|xorg@lists.freedesktop.org
+p|XSetWMNormalHints.3	|I	|xorg@lists.freedesktop.org
+p|XSetWMSizeHints.3	|I	|xorg@lists.freedesktop.org
+p|XSetWindowAttributes.3	|I	|xorg@lists.freedesktop.org
+p|XSetWindowBorderWidth.3	|I	|xorg@lists.freedesktop.org
+p|XShape.3		|Iu	|xorg@lists.freedesktop.org
+p|XShapeCombineMask.3	|Iu	|xorg@lists.freedesktop.org
+p|XShapeCombineRectangles.3	|Iu	|xorg@lists.freedesktop.org
+p|XShapeCombineRegion.3	|Iu	|xorg@lists.freedesktop.org
+p|XShapeCombineShape.3	|Iu	|xorg@lists.freedesktop.org
+p|XShapeGetRectangles.3	|Iu	|xorg@lists.freedesktop.org
+p|XShapeInputSelected.3	|Iu	|xorg@lists.freedesktop.org
+p|XShapeOffsetShape.3	|Iu	|xorg@lists.freedesktop.org
+p|XShapeQueryExtension.3|Iu	|xorg@lists.freedesktop.org
+p|XShapeQueryExtents.3	|Iu	|xorg@lists.freedesktop.org
+p|XShapeQueryVersion.3	|Iu	|xorg@lists.freedesktop.org
+p|XShapeSelectInput.3	|Iu	|xorg@lists.freedesktop.org
+p|XStandardColormap.3	|I	|xorg@lists.freedesktop.org
+p|XStringListToTextProperty.3	|I	|xorg@lists.freedesktop.org
+p|XTextItem.3		|I	|xorg@lists.freedesktop.org
+p|XTextItem16.3		|I	|xorg@lists.freedesktop.org
+p|XTextProperty.3	|I	|xorg@lists.freedesktop.org
+p|XTextPropertyToStringList.3	|I	|xorg@lists.freedesktop.org
+p|XTimeCoord.3		|I	|xorg@lists.freedesktop.org
+p|XUnmapEvent.3		|I	|xorg@lists.freedesktop.org
+p|XVisibilityEvent.3	|I	|xorg@lists.freedesktop.org
+p|XVisualIDFromVisual.3	|I	|xorg@lists.freedesktop.org
+p|XVisualInfo.3		|I	|xorg@lists.freedesktop.org
+p|XWMHints.3		|I	|xorg@lists.freedesktop.org
+p|XWindowAttributes.3	|I	|xorg@lists.freedesktop.org
+p|XWindowChanges.3	|I	|xorg@lists.freedesktop.org
+p|Xau.3			|I	|xorg@lists.freedesktop.org
+p|XkbGetNamedGeometry.3	|I	|xorg@lists.freedesktop.org
+p|XkbSASetGroup.3	|I	|xorg@lists.freedesktop.org
+p|XkbSetDetectableAutoRepeat.3	|I	|xorg@lists.freedesktop.org
+p|XkbSetDeviceButtonActions.3	|I	|xorg@lists.freedesktop.org
+p|XmbDrawText.3		|I	|xorg@lists.freedesktop.org
+p|XmbTextListToTextProperty.3	|I	|xorg@lists.freedesktop.org
+p|XmbTextPropertyToTextList.3	|I	|xorg@lists.freedesktop.org
+p|Xmbuf.3		|I	|xorg@lists.freedesktop.org
+p|XmbufChangeBufferAttributes.3	|I	|xorg@lists.freedesktop.org
+p|XmbufChangeWindowAttributes.3	|I	|xorg@lists.freedesktop.org
+p|XmbufCreateBuffers.3	|I	|xorg@lists.freedesktop.org
+p|XmbufCreateStereoWindow.3	|I	|xorg@lists.freedesktop.org
+p|XmbufDestroyBuffers.3	|I	|xorg@lists.freedesktop.org
+p|XmbufDisplayBuffers.3	|I	|xorg@lists.freedesktop.org
+p|XmbufGetBufferAttributes.3	|I	|xorg@lists.freedesktop.org
+p|XmbufGetScreenInfo.3	|I	|xorg@lists.freedesktop.org
+p|XmbufGetVersion.3	|I	|xorg@lists.freedesktop.org
+p|XmbufGetWindowAttributes.3	|I	|xorg@lists.freedesktop.org
+p|XmbufQueryExtension.3	|I	|xorg@lists.freedesktop.org
+p|XrmEnumerateDatabase.3	|I	|xorg@lists.freedesktop.org
+p|XrmInitialize.3	|I	|xorg@lists.freedesktop.org
+p|XrmOptionDescRec.3	|I	|xorg@lists.freedesktop.org
+p|XrmOptionKind.3	|I	|xorg@lists.freedesktop.org
+p|XrmParseCommand.3	|I	|xorg@lists.freedesktop.org
+p|XrmValue.3	|I	|xorg@lists.freedesktop.org
+p|XtPopdown.3,XtCallbackPopdown.3,MenuPopdown.3	|I	|xorg@lists.freedesktop.org
+p|XtSetArg.3,XtMergeArgLists.3	|I	|xorg@lists.freedesktop.org
+p|Xutf8DrawText.3	|I	|xorg@lists.freedesktop.org
+p|Xutf8TextListToTextProperty.3	|I	|xorg@lists.freedesktop.org
+p|Xutf8TextPropertyToTextList.3	|I	|xorg@lists.freedesktop.org
+p|XwcDrawText.3	|I	|xorg@lists.freedesktop.org
+p|XwcFreeStringList.3	|I	|xorg@lists.freedesktop.org
+p|XwcTextListToTextProperty.3	|I	|xorg@lists.freedesktop.org
+p|XwcTextPropertyToTextList.3	|I	|xorg@lists.freedesktop.org
+y|XrmUniqueQuark.3x	|	|xorg@lists.freedesktop.org
+y|Xnest.1x		|	|xorg@lists.freedesktop.org
+y|x11perf.1x,x11perfcomp.1x|	|xorg@lists.freedesktop.org
+p|xcalc.1		|Io	|xorg@lists.freedesktop.org
+p|xclipboard.1		|I	|xorg@lists.freedesktop.org
+p|xclock.1		|I	|xorg@lists.freedesktop.org
+p|xconsole.1		|I	|xorg@lists.freedesktop.org
+nA|xdr.3			|I	|mtk-manpages@gmx.net
+nA|xdr_accepted_reply.3	|I	|mtk-manpages@gmx.net
+nA|xdr_array.3		|I	|mtk-manpages@gmx.net
+nA|xdr_authunix_parms.3	|I	|mtk-manpages@gmx.net
+nA|xdr_bool.3		|I	|mtk-manpages@gmx.net
+nA|xdr_bytes.3		|I	|mtk-manpages@gmx.net
+nA|xdr_callhdr.3	|I	|mtk-manpages@gmx.net
+nA|xdr_callmsg.3	|I	|mtk-manpages@gmx.net
+nA|xdr_char.3		|I	|mtk-manpages@gmx.net
+nA|xdr_destroy.3	|I	|mtk-manpages@gmx.net
+nA|xdr_double.3		|I	|mtk-manpages@gmx.net
+nA|xdr_enum.3		|I	|mtk-manpages@gmx.net
+nA|xdr_float.3		|I	|mtk-manpages@gmx.net
+nA|xdr_free.3		|I	|mtk-manpages@gmx.net
+nA|xdr_getpos.3		|I	|mtk-manpages@gmx.net
+nA|xdr_inline.3		|I	|mtk-manpages@gmx.net
+nA|xdr_int.3		|I	|mtk-manpages@gmx.net
+nA|xdr_long.3		|I	|mtk-manpages@gmx.net
+nA|xdr_opaque.3		|I	|mtk-manpages@gmx.net
+nA|xdr_opaque_auth.3	|I	|mtk-manpages@gmx.net
+nA|xdr_pmap.3		|I	|mtk-manpages@gmx.net
+nA|xdr_pmaplist.3	|I	|mtk-manpages@gmx.net
+nA|xdr_pointer.3	|I	|mtk-manpages@gmx.net
+nA|xdr_reference.3	|I	|mtk-manpages@gmx.net
+nA|xdr_rejected_reply.3	|I	|mtk-manpages@gmx.net
+nA|xdr_replymsg.3	|I	|mtk-manpages@gmx.net
+nA|xdr_setpos.3		|I	|mtk-manpages@gmx.net
+nA|xdr_short.3		|I	|mtk-manpages@gmx.net
+nA|xdr_string.3		|I	|mtk-manpages@gmx.net
+nA|xdr_u_char.3		|I	|mtk-manpages@gmx.net
+nA|xdr_u_int.3		|I	|mtk-manpages@gmx.net
+nA|xdr_u_long.3		|I	|mtk-manpages@gmx.net
+nA|xdr_u_short.3	|I	|mtk-manpages@gmx.net
+nA|xdr_union.3		|I	|mtk-manpages@gmx.net
+nA|xdr_vector.3		|I	|mtk-manpages@gmx.net
+nA|xdr_void.3		|I	|mtk-manpages@gmx.net
+nA|xdr_wrapstring.3	|I	|mtk-manpages@gmx.net
+nA|xdrmem_create.3	|I	|mtk-manpages@gmx.net
+nA|xdrrec_create.3	|I	|mtk-manpages@gmx.net
+nA|xdrrec_endofrecord.3	|I	|mtk-manpages@gmx.net
+nA|xdrrec_eof.3		|I	|mtk-manpages@gmx.net
+nA|xdrrec_skiprecord.3	|I	|mtk-manpages@gmx.net
+nA|xdrstdio_create.3	|I	|mtk-manpages@gmx.net
+p|xedit.1		|Io	|xorg@lists.freedesktop.org
+1n|xfd.1		|o	|xorg@lists.freedesktop.org
+y|xfontsel.1x,xlsfonts.1x	|	|xorg@lists.freedesktop.org
+1n|xkbevd.1		|J	|xorg@lists.freedesktop.org
+p|xload.1		|I	|xorg@lists.freedesktop.org
+p|xlogo.1		|I	|xorg@lists.freedesktop.org
+p|xman.1		|Io	|xorg@lists.freedesktop.org
+y|Xmark.1x		|	|xorg@lists.freedesktop.org
+y|xminicom.1		|	|miquels@cistron.nl
+y|xml_pp.1		|	|Michel Rodriguez <mirod@xmltwig.com>
+y|xml_spellcheck.1	|	|Michel Rodriguez <mirod@xmltwig.com>
+gA|xmlto.1		|I	|tim@cyberelk.net
+1p|xorg.conf.5,xorg.conf.d.5|Lu	|xorg@lists.freedesktop.org
+nA|xprt_register.3	|I	|mtk-manpages@gmx.net
+nA|xprt_unregister.3	|I	|mtk-manpages@gmx.net
+y|xrdb.1x		|	|xorg@lists.freedesktop.org
+p|xrandr.1		|C	|xorg@lists.freedesktop.org
+p|Xsecurity.7		|W	|xorg@lists.freedesktop.org
+p|XStandards.7		|H	|xorg@lists.freedesktop.org
+1n|xterm.1		|LI	|xorg@lists.freedesktop.org
+y|XQueryExtension.3x	|	|xorg@lists.freedesktop.org
+y|xscreensaver-text.1	|	|jwz@jwz.org
+y|xset.1x		|	|xorg@lists.freedesktop.org
+y|xsltproc.1		|	|xslt@gnome.org
+p|xtotroff.1		|C	|bug-groff@gnu.org
+nA|zic.8		|I	|patches@eglibc.org
+pA|zip.1		|J	|Info-ZIP-Dev@goatley.com
+nA|zipinfo.1		|*	|newt@pobox.com
+pA|zipcloak.1,zipnote.1,zipsplit.1|I	|Info-ZIP-Dev@goatley.com
+nA|zlib.3		|C	|zlib@gzip.org

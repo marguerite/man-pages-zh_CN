@@ -1,0 +1,4670 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+<!ENTITY lh '&#x261E;'>
+<!ENTITY rh '&#x261C;'>
+<!ENTITY CR '&#x240D;'>
+<!ENTITY fo '&#x2039;'>
+<!ENTITY fc '&#x203a;'>
+<!ENTITY an '&#x23af;'>
+<!ENTITY lb '&#x23a9;'>
+<!ENTITY lc '&#x23a1;'>
+<!ENTITY lf '&#x23a3;'>
+<!ENTITY lk '&#x23a8;'>
+<!ENTITY tlt '&#x23a7;'>
+<!ENTITY rb '&#x23ad;'>
+<!ENTITY rc '&#x23a4;'>
+<!ENTITY rf '&#x23a6;'>
+<!ENTITY rk '&#x23ac;'>
+<!ENTITY rt '&#x23ab;'>
+<!ENTITY bracerightmid '&#x23ac;'>
+<!ENTITY bracerightex '&#x23aa;'>
+<!ENTITY parenlefttp '&#x239b;'>
+<!ENTITY parenleftbt '&#x239d;'>
+<!ENTITY parenleftex '&#x239c;'>
+<!ENTITY parenrighttp '&#x239e;'>
+<!ENTITY parenrightbt '&#x23a0;'>
+<!ENTITY parenrightex '&#x239f;'>
+<!ENTITY radicalex '&#x203e;'>
+<!ENTITY sqrtex '&#x203e;'>
+<!ENTITY jnodot '&#0237;'>
+]>
+<!-- lifted from man+troff by doclifter -->
+<refentry>
+<refentryinfo><date>01 April 2012</date></refentryinfo>
+<refmeta>
+<refentrytitle>GROFF_CHAR</refentrytitle>
+<manvolnum>7</manvolnum>
+<refmiscinfo class='date'>01 April 2012</refmiscinfo>
+<refmiscinfo class='source'>Groff Version 1.21</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>groff_char</refname>
+<refpurpose>groff glyph names</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<!-- The lines above were designed to satisfy `apropos'. -->
+
+<!-- For best results, format this document with `groff' (GNU roff). -->
+
+
+
+<!-- Legal terms -->
+
+
+<!-- .ig
+groff_char(7)
+
+This file is part of groff (GNU roff).
+
+File position: &lt;groff_src_top&gt;/man/groff_char.man
+
+Copyright (C) 1989&mdash;2000, 2001, 2002, 2003, 2004, 2006, 2007, 2008, 2009
+  Free Software Foundation, Inc.
+written by Werner Lemberg &lt;wl@gnu.org&gt;
+with additions by Bernd Warken &lt;bwarken@mayn.de&gt;
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being this .ig&mdash;section and AUTHOR, with no
+Front&mdash;Cover Texts, and with no Back&mdash;Cover Texts.
+
+A copy of the Free Documentation License is included as a file called
+FDL in the main directory of the groff source package.
+..
+.ig
+A copy of the GNU Free Documentation License is also available in this
+Debian package as /usr/share/doc/groff/copyright.
+.. -->
+
+
+<!-- Setup -->
+
+
+<!-- cp 0 -->
+
+<!-- groff only
+.if 0 .ne 2v
+.if 0 .sv 2v -->
+
+
+<!-- non&bsol;-groff -->
+
+
+
+
+
+<!-- .SH DESCRIPTION -->
+
+
+<para>This manual page lists the standard
+<emphasis remap='B'>groff</emphasis>
+glyph names and the default input mapping, &shy;latin1.
+
+The glyphs in this document look different depending
+on which output device was chosen (with option
+<option>-T</option>
+for the
+<citerefentry><refentrytitle>man</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+program or the roff formatter).
+
+Glyphs not available for the device that
+is being used to print or view this manual page are marked with
+`(N/A)'.</para>
+
+
+
+<para>In the actual version, 
+<emphasis remap='B'>groff</emphasis>
+provides only &shy;8-bit characters for direct input and named entities
+for further glyphs.
+
+On ASCII platforms, input character codes in the range 0 to 127 (decimal)
+represent the usual &shy;7-bit ASCII characters, while codes between 127
+and 255 are interpreted as the corresponding characters in the
+<emphasis remap='I'>&shy;latin1</emphasis>
+(<emphasis remap='I'>&shy;ISO-8859-1</emphasis>)
+code set by default.
+
+This mapping is contained in the file <emphasis remap='CW'>latin1.tmac</emphasis>
+and can be changed by loading a different input encoding.
+
+Note that some of the input characters are reserved by
+<emphasis remap='B'>groff</emphasis>,
+either for internal use or for special input purposes.
+
+On EBCDIC platforms, only code page
+<emphasis remap='I'>cp1047</emphasis>
+is supported (which contains the same characters as &shy;latin1; the
+input encoding file is called <emphasis remap='CW'>cp1047.tmac</emphasis>).
+
+Again, some input characters are reserved for internal and special purposes.</para>
+
+
+
+<para>All roff systems provide the concept of named glyphs.
+
+In traditional roff systems, only names of length&nbsp;2 were used, while
+groff also provides support for longer names.
+
+It is strongly suggested that only named glyphs are used for all
+character representations outside of the printable &shy;7-bit ASCII range.</para>
+
+
+
+<para>Some of the predefined groff escape sequences (with names of length&nbsp;1)
+also produce single glyphs; these exist for historical reasons or
+are printable versions of syntactical characters.
+
+They include `<emphasis remap='CW'>&bsol;&bsol;</emphasis>', `<emphasis remap='CW'>&bsol;&acute;</emphasis>', `<emphasis remap='CW'>&bsol;`</emphasis>', `<emphasis remap='CW'>&bsol;-</emphasis>',
+`<emphasis remap='CW'>&bsol;.</emphasis>', and `<emphasis remap='CW'>&bsol;e</emphasis>'; see
+<citerefentry><refentrytitle>groff</refentrytitle><manvolnum>7</manvolnum></citerefentry>.</para>
+
+
+
+<para>In groff, all of these different types of characters and glyphs can be
+tested positively with the `<emphasis remap='CW'>.if&nbsp;c</emphasis>' conditional.</para>
+
+
+
+</refsect1>
+
+<refsect1 id='reference'><title>REFERENCE</title>
+
+<para>In this section, the glyphs in groff are specified in tabular
+form.
+
+The meaning of the columns is as follows.</para>
+
+
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='I'>Output</emphasis></term>
+  <listitem>
+<para>shows how the glyph is printed for the current device; although
+this can have quite a different shape on other devices, it always
+represents the same glyph.</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>Input</emphasis></term>
+  <listitem>
+<para>specifies how the glyph is input either directly by a key on the
+keyboard, or by a groff escape sequence.</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>Code</emphasis></term>
+  <listitem>
+<para>applies to glyphs which can be input with a single character, and
+gives the ISO &shy;latin1 decimal code of that input character.
+
+Note that this code is equivalent to the lowest 256 Unicode characters,
+including &shy;7-bit ASCII in the range 0 to&nbsp;127.</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>PostScript</emphasis></term>
+  <listitem>
+<para>gives the usual PostScript name of the glyph.</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>Unicode</emphasis></term>
+  <listitem>
+<para>is the glyph name used in composite glyph names.</para>
+
+
+
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+
+<refsect2 id='x7bit_character_codes_32126'><title>7-bit Character Codes 32-126</title>
+
+
+<para>These are the basic glyphs having 7-bit ASCII code values assigned.
+
+They are identical to the printable characters of the
+character standards &shy;ISO-8859-1 (&shy;latin1) and Unicode (range
+<emphasis remap='I'>Basic Latin</emphasis>).
+
+The glyph names used in composite glyph names are `u0020' up to `u007E'.</para>
+
+
+
+<para>Note that input characters in the range &shy;0-31 and character 127 are
+<emphasis remap='I'>not</emphasis>
+printable characters.
+
+Most of them are invalid input characters for
+<emphasis remap='B'>groff</emphasis>
+anyway, and the valid ones have special meaning.
+
+For EBCDIC, the printable characters are in the range &shy;66-255.</para>
+
+
+<variablelist remap='TP'>
+  <varlistentry>
+  <term>48-57</term>
+  <listitem>
+<para>Decimal digits 0 to&nbsp;9 (print as themselves).</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>65-90</term>
+  <listitem>
+<para>Upper case letters A-Z (print as themselves).</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>97-122</term>
+  <listitem>
+<para>Lower case letters a-z (print as themselves).</para>
+
+
+
+<para>Most of the remaining characters not in the just described ranges print as
+themselves; the only exceptions are the following characters:</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>&grave;</emphasis></term>
+  <listitem>
+<para>the ISO &shy;latin1 `Grave Accent' (code&nbsp;96) prints as `, a left single
+quotation mark; the original character can be obtained with `<emphasis remap='CW'>&bsol;`</emphasis>'.</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>'</emphasis></term>
+  <listitem>
+<para>the ISO &shy;latin1 `Apostrophe' (code&nbsp;39) prints as ', a right single
+quotation mark; the original character can be obtained with `<emphasis remap='CW'>&bsol;(aq</emphasis>'.</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>-</emphasis></term>
+  <listitem>
+<para>the ISO &shy;latin1 `Hyphen, Minus Sign' (code&nbsp;45) prints as a hyphen; a
+minus sign can be obtained with `<emphasis remap='CW'>&bsol;-</emphasis>'.</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>~</emphasis></term>
+  <listitem>
+<para>the ISO &shy;latin1 `Tilde' (code&nbsp;126) is reduced in size to be usable as
+a diacritic; a larger glyph can be obtained with `<emphasis remap='CW'>&bsol;(ti</emphasis>'.</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>^</emphasis></term>
+  <listitem>
+<para>the ISO &shy;latin1 `Circumflex Accent' (code&nbsp;94) is reduced in size to be
+usable as a diacritic; a larger glyph can be obtained with `<emphasis remap='CW'>&bsol;(ha</emphasis>'.</para>
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output  </entry>
+        <entry align='left'>Input   </entry>
+        <entry align='left'>Code</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode </entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&#33;</entry>
+        <entry align='left'>&#33;</entry>
+        <entry align='left'>33</entry>
+        <entry align='left'>exclam  </entry>
+        <entry align='left'>u0021</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#34;</entry>
+        <entry align='left'>&#34;</entry>
+        <entry align='left'>34</entry>
+        <entry align='left'>quotedbl</entry>
+        <entry align='left'>u0022</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#35;</entry>
+        <entry align='left'>&#35;</entry>
+        <entry align='left'>35</entry>
+        <entry align='left'>numbersign</entry>
+        <entry align='left'>u0023</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#36;</entry>
+        <entry align='left'>&#36;</entry>
+        <entry align='left'>36</entry>
+        <entry align='left'>dollar  </entry>
+        <entry align='left'>u0024</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#37;</entry>
+        <entry align='left'>&#37;</entry>
+        <entry align='left'>37</entry>
+        <entry align='left'>percent </entry>
+        <entry align='left'>u0025</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#38;</entry>
+        <entry align='left'>&#38;</entry>
+        <entry align='left'>38</entry>
+        <entry align='left'>ampersand</entry>
+        <entry align='left'>u0026</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#39;</entry>
+        <entry align='left'>&#39;</entry>
+        <entry align='left'>39</entry>
+        <entry align='left'>quoteright</entry>
+        <entry align='left'>u0027</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#40;</entry>
+        <entry align='left'>&#40;</entry>
+        <entry align='left'>40</entry>
+        <entry align='left'>parenleft</entry>
+        <entry align='left'>u0028</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#41;</entry>
+        <entry align='left'>&#41;</entry>
+        <entry align='left'>41</entry>
+        <entry align='left'>parenright</entry>
+        <entry align='left'>u0029</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#42;</entry>
+        <entry align='left'>&#42;</entry>
+        <entry align='left'>42</entry>
+        <entry align='left'>asterisk</entry>
+        <entry align='left'>u002A</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#43;</entry>
+        <entry align='left'>&#43;</entry>
+        <entry align='left'>43</entry>
+        <entry align='left'>plus    </entry>
+        <entry align='left'>u002B</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#44;</entry>
+        <entry align='left'>&#44;</entry>
+        <entry align='left'>44</entry>
+        <entry align='left'>comma   </entry>
+        <entry align='left'>u002C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#45;</entry>
+        <entry align='left'>&#45;</entry>
+        <entry align='left'>45</entry>
+        <entry align='left'>hyphen  </entry>
+        <entry align='left'>u2010</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#46;</entry>
+        <entry align='left'>&#46;</entry>
+        <entry align='left'>46</entry>
+        <entry align='left'>period  </entry>
+        <entry align='left'>u002E</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#47;</entry>
+        <entry align='left'>&#47;</entry>
+        <entry align='left'>47</entry>
+        <entry align='left'>slash   </entry>
+        <entry align='left'>u002F</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#58;</entry>
+        <entry align='left'>&#58;</entry>
+        <entry align='left'>58</entry>
+        <entry align='left'>colon   </entry>
+        <entry align='left'>u003A</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#59;</entry>
+        <entry align='left'>&#59;</entry>
+        <entry align='left'>59</entry>
+        <entry align='left'>semicolon</entry>
+        <entry align='left'>u003B</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#60;</entry>
+        <entry align='left'>&#60;</entry>
+        <entry align='left'>60</entry>
+        <entry align='left'>less    </entry>
+        <entry align='left'>u003C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#61;</entry>
+        <entry align='left'>&#61;</entry>
+        <entry align='left'>61</entry>
+        <entry align='left'>equal   </entry>
+        <entry align='left'>u003D</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#62;</entry>
+        <entry align='left'>&#62;</entry>
+        <entry align='left'>62</entry>
+        <entry align='left'>greater </entry>
+        <entry align='left'>u003E</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#63;</entry>
+        <entry align='left'>&#63;</entry>
+        <entry align='left'>63</entry>
+        <entry align='left'>question</entry>
+        <entry align='left'>u003F</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#64;</entry>
+        <entry align='left'>&#64;</entry>
+        <entry align='left'>64</entry>
+        <entry align='left'>at      </entry>
+        <entry align='left'>u0040</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#91;</entry>
+        <entry align='left'>&#91;</entry>
+        <entry align='left'>91</entry>
+        <entry align='left'>bracketleft</entry>
+        <entry align='left'>u005B</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#92;</entry>
+        <entry align='left'>&#92;</entry>
+        <entry align='left'>92</entry>
+        <entry align='left'>backslash</entry>
+        <entry align='left'>u005C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#93;</entry>
+        <entry align='left'>&#93;</entry>
+        <entry align='left'>93</entry>
+        <entry align='left'>bracketright</entry>
+        <entry align='left'>u005D</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#94;</entry>
+        <entry align='left'>&#94;</entry>
+        <entry align='left'>94</entry>
+        <entry align='left'>circumflex</entry>
+        <entry align='left'>u005E</entry>
+        <entry align='left'>circumflex accent</entry>
+      </row>
+      <row>
+        <entry align='left'>&#95;</entry>
+        <entry align='left'>&#95;</entry>
+        <entry align='left'>95</entry>
+        <entry align='left'>underscore</entry>
+        <entry align='left'>u005F</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#96;</entry>
+        <entry align='left'>&#96;</entry>
+        <entry align='left'>96</entry>
+        <entry align='left'>quoteleft</entry>
+        <entry align='left'>u0060</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#123;</entry>
+        <entry align='left'>&#123;</entry>
+        <entry align='left'>123</entry>
+        <entry align='left'>braceleft</entry>
+        <entry align='left'>u007B</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#124;</entry>
+        <entry align='left'>&#124;</entry>
+        <entry align='left'>124</entry>
+        <entry align='left'>bar     </entry>
+        <entry align='left'>u007C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#125;</entry>
+        <entry align='left'>&#125;</entry>
+        <entry align='left'>125</entry>
+        <entry align='left'>braceright</entry>
+        <entry align='left'>u007D</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#126;</entry>
+        <entry align='left'>&#126;</entry>
+        <entry align='left'>126</entry>
+        <entry align='left'>tilde   </entry>
+        <entry align='left'>u007E</entry>
+        <entry align='left'>tilde accent</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='x8bit_character_codes_160_to_255'><title>8-bit Character Codes 160 to 255</title>
+
+
+<para>They are interpreted as printable characters according to the
+<emphasis remap='I'>latin1</emphasis>
+(<emphasis remap='I'>ISO-8859-1</emphasis>)
+code set, being identical to the Unicode range
+<emphasis remap='I'>Latin-1 Supplement</emphasis>.</para>
+
+
+
+<para>Input characters in range 128-159 (on non-EBCDIC hosts) are not printable
+characters.</para>
+
+
+<variablelist remap='TP'>
+  <varlistentry>
+  <term>160</term>
+  <listitem>
+
+<para>the ISO &shy;latin1
+<emphasis remap='I'>no-break space</emphasis>
+is mapped to `<emphasis remap='CW'>&bsol;~</emphasis>', the stretchable space character.</para>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>173</term>
+  <listitem>
+
+<para>the soft hyphen control character.
+
+<emphasis remap='B'>groff</emphasis>
+never uses this character for output (thus it is omitted in the
+table below); the input character&nbsp;173 is mapped onto `<emphasis remap='CW'>&bsol;%</emphasis>'.</para>
+
+
+
+<para>The remaining ranges (&shy;161-172, &shy;174-255)
+are printable characters that print as themselves.
+
+Although they can be specified directly with the keyboard on systems
+with a &shy;latin1 code page, it is better to use their glyph names;
+see next section.</para>
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output  </entry>
+        <entry align='left'>Input   </entry>
+        <entry align='left'>Code</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&#161;</entry>
+        <entry align='left'>&#161;</entry>
+        <entry align='left'>161</entry>
+        <entry align='left'>exclamdown</entry>
+        <entry align='left'>u00A1</entry>
+        <entry align='left'>inverted exclamation mark</entry>
+      </row>
+      <row>
+        <entry align='left'>&#162;</entry>
+        <entry align='left'>&#162;</entry>
+        <entry align='left'>162</entry>
+        <entry align='left'>cent    </entry>
+        <entry align='left'>u00A2</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#163;</entry>
+        <entry align='left'>&#163;</entry>
+        <entry align='left'>163</entry>
+        <entry align='left'>sterling</entry>
+        <entry align='left'>u00A3</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#164;</entry>
+        <entry align='left'>&#164;</entry>
+        <entry align='left'>164</entry>
+        <entry align='left'>currency</entry>
+        <entry align='left'>u00A4</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#165;</entry>
+        <entry align='left'>&#165;</entry>
+        <entry align='left'>165</entry>
+        <entry align='left'>yen     </entry>
+        <entry align='left'>u00A5</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#166;</entry>
+        <entry align='left'>&#166;</entry>
+        <entry align='left'>166</entry>
+        <entry align='left'>brokenbar</entry>
+        <entry align='left'>u00A6</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#167;</entry>
+        <entry align='left'>&#167;</entry>
+        <entry align='left'>167</entry>
+        <entry align='left'>section </entry>
+        <entry align='left'>u00A7</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#168;</entry>
+        <entry align='left'>&#168;</entry>
+        <entry align='left'>168</entry>
+        <entry align='left'>dieresis</entry>
+        <entry align='left'>u00A8</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#169;</entry>
+        <entry align='left'>&#169;</entry>
+        <entry align='left'>169</entry>
+        <entry align='left'>copyright</entry>
+        <entry align='left'>u00A9</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#170;</entry>
+        <entry align='left'>&#170;</entry>
+        <entry align='left'>170</entry>
+        <entry align='left'>ordfeminine</entry>
+        <entry align='left'>u00AA</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#171;</entry>
+        <entry align='left'>&#171;</entry>
+        <entry align='left'>171</entry>
+        <entry align='left'>guillemotleft</entry>
+        <entry align='left'>u00AB</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#172;</entry>
+        <entry align='left'>&#172;</entry>
+        <entry align='left'>172</entry>
+        <entry align='left'>logicalnot</entry>
+        <entry align='left'>u00AC</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#174;</entry>
+        <entry align='left'>&#174;</entry>
+        <entry align='left'>174</entry>
+        <entry align='left'>registered</entry>
+        <entry align='left'>u00AE</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#175;</entry>
+        <entry align='left'>&#175;</entry>
+        <entry align='left'>175</entry>
+        <entry align='left'>macron  </entry>
+        <entry align='left'>u00AF</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#176;</entry>
+        <entry align='left'>&#176;</entry>
+        <entry align='left'>176</entry>
+        <entry align='left'>degree  </entry>
+        <entry align='left'>u00B0</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#177;</entry>
+        <entry align='left'>&#177;</entry>
+        <entry align='left'>177</entry>
+        <entry align='left'>plusminus</entry>
+        <entry align='left'>u00B1</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#178;</entry>
+        <entry align='left'>&#178;</entry>
+        <entry align='left'>178</entry>
+        <entry align='left'>twosuperior</entry>
+        <entry align='left'>u00B2</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#179;</entry>
+        <entry align='left'>&#179;</entry>
+        <entry align='left'>179</entry>
+        <entry align='left'>threesuperior</entry>
+        <entry align='left'>u00B3</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#180;</entry>
+        <entry align='left'>&#180;</entry>
+        <entry align='left'>180</entry>
+        <entry align='left'>acute   </entry>
+        <entry align='left'>u00B4</entry>
+        <entry align='left'>acute accent</entry>
+      </row>
+      <row>
+        <entry align='left'>&#181;</entry>
+        <entry align='left'>&#181;</entry>
+        <entry align='left'>181</entry>
+        <entry align='left'>mu      </entry>
+        <entry align='left'>u00B5</entry>
+        <entry align='left'>micro sign</entry>
+      </row>
+      <row>
+        <entry align='left'>&#182;</entry>
+        <entry align='left'>&#182;</entry>
+        <entry align='left'>182</entry>
+        <entry align='left'>paragraph</entry>
+        <entry align='left'>u00B6</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#183;</entry>
+        <entry align='left'>&#183;</entry>
+        <entry align='left'>183</entry>
+        <entry align='left'>periodcentered</entry>
+        <entry align='left'>u00B7</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#184;</entry>
+        <entry align='left'>&#184;</entry>
+        <entry align='left'>184</entry>
+        <entry align='left'>cedilla </entry>
+        <entry align='left'>u00B8</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#185;</entry>
+        <entry align='left'>&#185;</entry>
+        <entry align='left'>185</entry>
+        <entry align='left'>onesuperior</entry>
+        <entry align='left'>u00B9</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#186;</entry>
+        <entry align='left'>&#186;</entry>
+        <entry align='left'>186</entry>
+        <entry align='left'>ordmasculine</entry>
+        <entry align='left'>u00BA</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#187;</entry>
+        <entry align='left'>&#187;</entry>
+        <entry align='left'>187</entry>
+        <entry align='left'>guillemotright</entry>
+        <entry align='left'>u00BB</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#188;</entry>
+        <entry align='left'>&#188;</entry>
+        <entry align='left'>188</entry>
+        <entry align='left'>onequarter</entry>
+        <entry align='left'>u00BC</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#189;</entry>
+        <entry align='left'>&#189;</entry>
+        <entry align='left'>189</entry>
+        <entry align='left'>onehalf </entry>
+        <entry align='left'>u00BD</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#190;</entry>
+        <entry align='left'>&#190;</entry>
+        <entry align='left'>190</entry>
+        <entry align='left'>threequarters</entry>
+        <entry align='left'>u00BE</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#191;</entry>
+        <entry align='left'>&#191;</entry>
+        <entry align='left'>191</entry>
+        <entry align='left'>questiondown</entry>
+        <entry align='left'>u00BF</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#192;</entry>
+        <entry align='left'>&#192;</entry>
+        <entry align='left'>192</entry>
+        <entry align='left'>Agrave  </entry>
+        <entry align='left'>u0041_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#193;</entry>
+        <entry align='left'>&#193;</entry>
+        <entry align='left'>193</entry>
+        <entry align='left'>Aacute  </entry>
+        <entry align='left'>u0041_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#194;</entry>
+        <entry align='left'>&#194;</entry>
+        <entry align='left'>194</entry>
+        <entry align='left'>Acircumflex</entry>
+        <entry align='left'>u0041_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#195;</entry>
+        <entry align='left'>&#195;</entry>
+        <entry align='left'>195</entry>
+        <entry align='left'>Atilde  </entry>
+        <entry align='left'>u0041_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#196;</entry>
+        <entry align='left'>&#196;</entry>
+        <entry align='left'>196</entry>
+        <entry align='left'>Adieresis</entry>
+        <entry align='left'>u0041_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#197;</entry>
+        <entry align='left'>&#197;</entry>
+        <entry align='left'>197</entry>
+        <entry align='left'>Aring   </entry>
+        <entry align='left'>u0041_030A</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#198;</entry>
+        <entry align='left'>&#198;</entry>
+        <entry align='left'>198</entry>
+        <entry align='left'>AE      </entry>
+        <entry align='left'>u00C6</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#199;</entry>
+        <entry align='left'>&#199;</entry>
+        <entry align='left'>199</entry>
+        <entry align='left'>Ccedilla</entry>
+        <entry align='left'>u0043_0327</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#200;</entry>
+        <entry align='left'>&#200;</entry>
+        <entry align='left'>200</entry>
+        <entry align='left'>Egrave  </entry>
+        <entry align='left'>u0045_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#201;</entry>
+        <entry align='left'>&#201;</entry>
+        <entry align='left'>201</entry>
+        <entry align='left'>Eacute  </entry>
+        <entry align='left'>u0045_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#202;</entry>
+        <entry align='left'>&#202;</entry>
+        <entry align='left'>202</entry>
+        <entry align='left'>Ecircumflex</entry>
+        <entry align='left'>u0045_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#203;</entry>
+        <entry align='left'>&#203;</entry>
+        <entry align='left'>203</entry>
+        <entry align='left'>Edieresis</entry>
+        <entry align='left'>u0045_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#204;</entry>
+        <entry align='left'>&#204;</entry>
+        <entry align='left'>204</entry>
+        <entry align='left'>Igrave  </entry>
+        <entry align='left'>u0049_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#205;</entry>
+        <entry align='left'>&#205;</entry>
+        <entry align='left'>205</entry>
+        <entry align='left'>Iacute  </entry>
+        <entry align='left'>u0049_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#206;</entry>
+        <entry align='left'>&#206;</entry>
+        <entry align='left'>206</entry>
+        <entry align='left'>Icircumflex</entry>
+        <entry align='left'>u0049_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#207;</entry>
+        <entry align='left'>&#207;</entry>
+        <entry align='left'>207</entry>
+        <entry align='left'>Idieresis</entry>
+        <entry align='left'>u0049_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#208;</entry>
+        <entry align='left'>&#208;</entry>
+        <entry align='left'>208</entry>
+        <entry align='left'>Eth     </entry>
+        <entry align='left'>u00D0</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#209;</entry>
+        <entry align='left'>&#209;</entry>
+        <entry align='left'>209</entry>
+        <entry align='left'>Ntilde  </entry>
+        <entry align='left'>u004E_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#210;</entry>
+        <entry align='left'>&#210;</entry>
+        <entry align='left'>210</entry>
+        <entry align='left'>Ograve  </entry>
+        <entry align='left'>u004F_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#211;</entry>
+        <entry align='left'>&#211;</entry>
+        <entry align='left'>211</entry>
+        <entry align='left'>Oacute  </entry>
+        <entry align='left'>u004F_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#212;</entry>
+        <entry align='left'>&#212;</entry>
+        <entry align='left'>212</entry>
+        <entry align='left'>Ocircumflex</entry>
+        <entry align='left'>u004F_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#213;</entry>
+        <entry align='left'>&#213;</entry>
+        <entry align='left'>213</entry>
+        <entry align='left'>Otilde  </entry>
+        <entry align='left'>u004F_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#214;</entry>
+        <entry align='left'>&#214;</entry>
+        <entry align='left'>214</entry>
+        <entry align='left'>Odieresis</entry>
+        <entry align='left'>u004F_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#215;</entry>
+        <entry align='left'>&#215;</entry>
+        <entry align='left'>215</entry>
+        <entry align='left'>multiply</entry>
+        <entry align='left'>u00D7</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#216;</entry>
+        <entry align='left'>&#216;</entry>
+        <entry align='left'>216</entry>
+        <entry align='left'>Oslash  </entry>
+        <entry align='left'>u00D8</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#217;</entry>
+        <entry align='left'>&#217;</entry>
+        <entry align='left'>217</entry>
+        <entry align='left'>Ugrave  </entry>
+        <entry align='left'>u0055_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#218;</entry>
+        <entry align='left'>&#218;</entry>
+        <entry align='left'>218</entry>
+        <entry align='left'>Uacute  </entry>
+        <entry align='left'>u0055_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#219;</entry>
+        <entry align='left'>&#219;</entry>
+        <entry align='left'>219</entry>
+        <entry align='left'>Ucircumflex</entry>
+        <entry align='left'>u0055_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#220;</entry>
+        <entry align='left'>&#220;</entry>
+        <entry align='left'>220</entry>
+        <entry align='left'>Udieresis</entry>
+        <entry align='left'>u0055_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#221;</entry>
+        <entry align='left'>&#221;</entry>
+        <entry align='left'>221</entry>
+        <entry align='left'>Yacute  </entry>
+        <entry align='left'>u0059_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#222;</entry>
+        <entry align='left'>&#222;</entry>
+        <entry align='left'>222</entry>
+        <entry align='left'>Thorn   </entry>
+        <entry align='left'>u00DE</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#223;</entry>
+        <entry align='left'>&#223;</entry>
+        <entry align='left'>223</entry>
+        <entry align='left'>germandbls</entry>
+        <entry align='left'>u00DF</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#224;</entry>
+        <entry align='left'>&#224;</entry>
+        <entry align='left'>224</entry>
+        <entry align='left'>agrave  </entry>
+        <entry align='left'>u0061_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#225;</entry>
+        <entry align='left'>&#225;</entry>
+        <entry align='left'>225</entry>
+        <entry align='left'>aacute  </entry>
+        <entry align='left'>u0061_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#226;</entry>
+        <entry align='left'>&#226;</entry>
+        <entry align='left'>226</entry>
+        <entry align='left'>acircumflex</entry>
+        <entry align='left'>u0061_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#227;</entry>
+        <entry align='left'>&#227;</entry>
+        <entry align='left'>227</entry>
+        <entry align='left'>atilde  </entry>
+        <entry align='left'>u0061_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#228;</entry>
+        <entry align='left'>&#228;</entry>
+        <entry align='left'>228</entry>
+        <entry align='left'>adieresis</entry>
+        <entry align='left'>u0061_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#229;</entry>
+        <entry align='left'>&#229;</entry>
+        <entry align='left'>229</entry>
+        <entry align='left'>aring   </entry>
+        <entry align='left'>u0061_030A</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#230;</entry>
+        <entry align='left'>&#230;</entry>
+        <entry align='left'>230</entry>
+        <entry align='left'>ae      </entry>
+        <entry align='left'>u00E6</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#231;</entry>
+        <entry align='left'>&#231;</entry>
+        <entry align='left'>231</entry>
+        <entry align='left'>ccedilla</entry>
+        <entry align='left'>u0063_0327</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#232;</entry>
+        <entry align='left'>&#232;</entry>
+        <entry align='left'>232</entry>
+        <entry align='left'>egrave  </entry>
+        <entry align='left'>u0065_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#233;</entry>
+        <entry align='left'>&#233;</entry>
+        <entry align='left'>233</entry>
+        <entry align='left'>eacute  </entry>
+        <entry align='left'>u0065_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#234;</entry>
+        <entry align='left'>&#234;</entry>
+        <entry align='left'>234</entry>
+        <entry align='left'>ecircumflex</entry>
+        <entry align='left'>u0065_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#235;</entry>
+        <entry align='left'>&#235;</entry>
+        <entry align='left'>235</entry>
+        <entry align='left'>edieresis</entry>
+        <entry align='left'>u0065_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#236;</entry>
+        <entry align='left'>&#236;</entry>
+        <entry align='left'>236</entry>
+        <entry align='left'>igrave  </entry>
+        <entry align='left'>u0069_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#237;</entry>
+        <entry align='left'>&#237;</entry>
+        <entry align='left'>237</entry>
+        <entry align='left'>iacute  </entry>
+        <entry align='left'>u0069_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#238;</entry>
+        <entry align='left'>&#238;</entry>
+        <entry align='left'>238</entry>
+        <entry align='left'>icircumflex</entry>
+        <entry align='left'>u0069_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#239;</entry>
+        <entry align='left'>&#239;</entry>
+        <entry align='left'>239</entry>
+        <entry align='left'>idieresis</entry>
+        <entry align='left'>u0069_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#240;</entry>
+        <entry align='left'>&#240;</entry>
+        <entry align='left'>240</entry>
+        <entry align='left'>eth     </entry>
+        <entry align='left'>u00F0</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#241;</entry>
+        <entry align='left'>&#241;</entry>
+        <entry align='left'>241</entry>
+        <entry align='left'>ntilde  </entry>
+        <entry align='left'>u006E_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#242;</entry>
+        <entry align='left'>&#242;</entry>
+        <entry align='left'>242</entry>
+        <entry align='left'>ograve  </entry>
+        <entry align='left'>u006F_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#243;</entry>
+        <entry align='left'>&#243;</entry>
+        <entry align='left'>243</entry>
+        <entry align='left'>oacute  </entry>
+        <entry align='left'>u006F_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#244;</entry>
+        <entry align='left'>&#244;</entry>
+        <entry align='left'>244</entry>
+        <entry align='left'>ocircumflex</entry>
+        <entry align='left'>u006F_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#245;</entry>
+        <entry align='left'>&#245;</entry>
+        <entry align='left'>245</entry>
+        <entry align='left'>otilde  </entry>
+        <entry align='left'>u006F_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#246;</entry>
+        <entry align='left'>&#246;</entry>
+        <entry align='left'>246</entry>
+        <entry align='left'>odieresis</entry>
+        <entry align='left'>u006F_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#247;</entry>
+        <entry align='left'>&#247;</entry>
+        <entry align='left'>247</entry>
+        <entry align='left'>divide  </entry>
+        <entry align='left'>u00F7</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#248;</entry>
+        <entry align='left'>&#248;</entry>
+        <entry align='left'>248</entry>
+        <entry align='left'>oslash  </entry>
+        <entry align='left'>u00F8</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#249;</entry>
+        <entry align='left'>&#249;</entry>
+        <entry align='left'>249</entry>
+        <entry align='left'>ugrave  </entry>
+        <entry align='left'>u0075_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#250;</entry>
+        <entry align='left'>&#250;</entry>
+        <entry align='left'>250</entry>
+        <entry align='left'>uacute  </entry>
+        <entry align='left'>u0075_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#251;</entry>
+        <entry align='left'>&#251;</entry>
+        <entry align='left'>251</entry>
+        <entry align='left'>ucircumflex</entry>
+        <entry align='left'>u0075_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#252;</entry>
+        <entry align='left'>&#252;</entry>
+        <entry align='left'>252</entry>
+        <entry align='left'>udieresis</entry>
+        <entry align='left'>u0075_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#253;</entry>
+        <entry align='left'>&#253;</entry>
+        <entry align='left'>253</entry>
+        <entry align='left'>yacute  </entry>
+        <entry align='left'>u0079_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#254;</entry>
+        <entry align='left'>&#254;</entry>
+        <entry align='left'>254</entry>
+        <entry align='left'>thorn   </entry>
+        <entry align='left'>u00FE</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&#255;</entry>
+        <entry align='left'>&#255;</entry>
+        <entry align='left'>255</entry>
+        <entry align='left'>ydieresis</entry>
+        <entry align='left'>u0079_0308</entry>
+        <entry align='left'></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='named_glyphs'><title>Named Glyphs</title>
+
+
+<para>Glyph names can be embedded into the document text by using escape
+sequences.
+
+<citerefentry><refentrytitle>groff</refentrytitle><manvolnum>7</manvolnum></citerefentry>
+describes how these escape sequences look.
+
+Glyph names can consist of quite arbitrary characters from the
+ASCII or &shy;latin1 code set, not only alphanumeric characters.
+
+Here some examples:</para>
+
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='CW'>&bsol;(</emphasis><emphasis remap='I'>ch</emphasis></term>
+  <listitem>
+<para>A glyph having the 2-character name
+<emphasis remap='I'>ch</emphasis>.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='CW'>&bsol;[</emphasis><emphasis remap='I'>char_name</emphasis><emphasis remap='CW'>]</emphasis></term>
+  <listitem>
+<para>A glyph having the name
+<emphasis remap='I'>char_name</emphasis>
+(having length 1, 2, 3, .&thinsp;.&thinsp;.).
+
+Note that `<emphasis remap='I'>c</emphasis>' is not the same as
+`<emphasis remap='CW'>&bsol;[</emphasis><emphasis remap='I'>c</emphasis><emphasis remap='CW'>]</emphasis>' (<emphasis remap='I'>c</emphasis>&nbsp;a single character):
+The latter is internally mapped to glyph name `&bsol;<emphasis remap='I'>c</emphasis>'.
+
+By default, groff defines a single glyph name starting with a backslash,
+namely &shy;`&bsol;-', which can be either accessed as `<emphasis remap='CW'>&bsol;-</emphasis>' or
+`<emphasis remap='CW'>&bsol;[-]</emphasis>'.</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='CW'>&bsol;[</emphasis><emphasis remap='I'>base_glyph composite_1 composite_2 .&thinsp;.&thinsp;.</emphasis><emphasis remap='CW'>]</emphasis></term>
+  <listitem>
+<para>A composite glyph; see below for a more detailed description.</para>
+
+
+
+<para>In groff, each &shy;8-bit input character can also referred to by the construct
+`<emphasis remap='CW'>&bsol;[char</emphasis><emphasis remap='I'>n</emphasis><emphasis remap='CW'>]</emphasis>' where
+<emphasis remap='I'>n</emphasis>
+is the decimal code of the character, a number between 0 and&nbsp;255
+without leading zeros (those entities are
+<emphasis remap='I'>not</emphasis>
+glyph names).
+
+They are normally mapped onto glyphs using the <emphasis remap='CW'>.trin</emphasis> request.
+
+Another special convention is the handling of glyphs with names directly
+derived from a Unicode code point; this is discussed below.
+
+Moreover, new glyph names can be created by the <emphasis remap='CW'>.char</emphasis> request; see
+<citerefentry><refentrytitle>groff</refentrytitle><manvolnum>7</manvolnum></citerefentry>.</para>
+
+
+<para>In the following, a plus sign in the `Notes' column indicates that this
+particular glyph name appears in the PS version of the original troff
+documentation, CSTR&nbsp;54.</para>
+
+
+<para>Entries marked with `***' denote glyphs for mathematical purposes (mainly
+used for DVI output).  Normally, such glyphs have metrics which make them
+unusable in normal text.</para>
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode </entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&ETH;</entry>
+        <entry align='left'>&bsol;[-D]</entry>
+        <entry align='left'>Eth     </entry>
+        <entry align='left'>u00D0   </entry>
+        <entry align='left'>uppercase eth</entry>
+      </row>
+      <row>
+        <entry align='left'>&eth;</entry>
+        <entry align='left'>&bsol;[Sd]</entry>
+        <entry align='left'>eth     </entry>
+        <entry align='left'>u00F0   </entry>
+        <entry align='left'>lowercase eth</entry>
+      </row>
+      <row>
+        <entry align='left'>&THORN;</entry>
+        <entry align='left'>&bsol;[TP]</entry>
+        <entry align='left'>Thorn   </entry>
+        <entry align='left'>u00DE   </entry>
+        <entry align='left'>uppercase thorn</entry>
+      </row>
+      <row>
+        <entry align='left'>&thorn;</entry>
+        <entry align='left'>&bsol;[Tp]</entry>
+        <entry align='left'>thorn   </entry>
+        <entry align='left'>u00FE   </entry>
+        <entry align='left'>lowercase thorn</entry>
+      </row>
+      <row>
+        <entry align='left'>&szlig;</entry>
+        <entry align='left'>&bsol;[ss]</entry>
+        <entry align='left'>germandbls</entry>
+        <entry align='left'>u00DF   </entry>
+        <entry align='left'>German sharp s</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Ligatures and Other Latin Glyphs</emphasis></para>
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode </entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&fflig;</entry>
+        <entry align='left'>&bsol;[ff]</entry>
+        <entry align='left'>ff      </entry>
+        <entry align='left'>u0066_0066</entry>
+        <entry align='left'>ff ligature +</entry>
+      </row>
+      <row>
+        <entry align='left'>&filig;</entry>
+        <entry align='left'>&bsol;[fi]</entry>
+        <entry align='left'>fi      </entry>
+        <entry align='left'>u0066_0069</entry>
+        <entry align='left'>fi ligature +</entry>
+      </row>
+      <row>
+        <entry align='left'>&fllig;</entry>
+        <entry align='left'>&bsol;[fl]</entry>
+        <entry align='left'>fl      </entry>
+        <entry align='left'>u0066_006C</entry>
+        <entry align='left'>fl ligature +</entry>
+      </row>
+      <row>
+        <entry align='left'>&ffilig;</entry>
+        <entry align='left'>&bsol;[Fi]</entry>
+        <entry align='left'>ffi     </entry>
+        <entry align='left'>u0066_0066_0069</entry>
+        <entry align='left'>ffi ligature +</entry>
+      </row>
+      <row>
+        <entry align='left'>&ffllig;</entry>
+        <entry align='left'>&bsol;[Fl]</entry>
+        <entry align='left'>ffl     </entry>
+        <entry align='left'>u0066_0066_006C</entry>
+        <entry align='left'>ffl ligature +</entry>
+      </row>
+      <row>
+        <entry align='left'>&Lstrok;</entry>
+        <entry align='left'>&bsol;[/L]</entry>
+        <entry align='left'>Lslash  </entry>
+        <entry align='left'>u0141   </entry>
+        <entry align='left'>(Polish)</entry>
+      </row>
+      <row>
+        <entry align='left'>&lstrok;</entry>
+        <entry align='left'>&bsol;[/l]</entry>
+        <entry align='left'>lslash  </entry>
+        <entry align='left'>u0142   </entry>
+        <entry align='left'>(Polish)</entry>
+      </row>
+      <row>
+        <entry align='left'>&Oslash;</entry>
+        <entry align='left'>&bsol;[/O]</entry>
+        <entry align='left'>Oslash  </entry>
+        <entry align='left'>u00D8   </entry>
+        <entry align='left'>(Scandinavian)</entry>
+      </row>
+      <row>
+        <entry align='left'>&oslash;</entry>
+        <entry align='left'>&bsol;[/o]</entry>
+        <entry align='left'>oslash  </entry>
+        <entry align='left'>u00F8   </entry>
+        <entry align='left'>(Scandinavian)</entry>
+      </row>
+      <row>
+        <entry align='left'>&AElig;</entry>
+        <entry align='left'>&bsol;[AE]</entry>
+        <entry align='left'>AE      </entry>
+        <entry align='left'>u00C6</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&aelig;</entry>
+        <entry align='left'>&bsol;[ae]</entry>
+        <entry align='left'>ae      </entry>
+        <entry align='left'>u00E6</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&OElig;</entry>
+        <entry align='left'>&bsol;[OE]</entry>
+        <entry align='left'>OE      </entry>
+        <entry align='left'>u0152</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&oelig;</entry>
+        <entry align='left'>&bsol;[oe]</entry>
+        <entry align='left'>oe      </entry>
+        <entry align='left'>u0153</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ijlig;</entry>
+        <entry align='left'>&bsol;[IJ]</entry>
+        <entry align='left'>IJ      </entry>
+        <entry align='left'>u0132   </entry>
+        <entry align='left'>(Dutch)</entry>
+      </row>
+      <row>
+        <entry align='left'>&IJlig;</entry>
+        <entry align='left'>&bsol;[ij]</entry>
+        <entry align='left'>ij      </entry>
+        <entry align='left'>u0133   </entry>
+        <entry align='left'>(Dutch)</entry>
+      </row>
+      <row>
+        <entry align='left'>&inodot;</entry>
+        <entry align='left'>&bsol;[.i]</entry>
+        <entry align='left'>dotlessi</entry>
+        <entry align='left'>u0131   </entry>
+        <entry align='left'>(Turkish)</entry>
+      </row>
+      <row>
+        <entry align='left'>&jnodot;</entry>
+        <entry align='left'>&bsol;[.j]</entry>
+        <entry align='left'>dotlessj</entry>
+        <entry align='left'>---     </entry>
+        <entry align='left'>j without a dot</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Accented Characters</emphasis></para>
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode </entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&Aacute;</entry>
+        <entry align='left'>&bsol;['A]</entry>
+        <entry align='left'>Aacute  </entry>
+        <entry align='left'>u0041_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Cacute;</entry>
+        <entry align='left'>&bsol;['C]</entry>
+        <entry align='left'>Cacute  </entry>
+        <entry align='left'>u0043_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Eacute;</entry>
+        <entry align='left'>&bsol;['E]</entry>
+        <entry align='left'>Eacute  </entry>
+        <entry align='left'>u0045_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Iacute;</entry>
+        <entry align='left'>&bsol;['I]</entry>
+        <entry align='left'>Iacute  </entry>
+        <entry align='left'>u0049_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Oacute;</entry>
+        <entry align='left'>&bsol;['O]</entry>
+        <entry align='left'>Oacute  </entry>
+        <entry align='left'>u004F_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Uacute;</entry>
+        <entry align='left'>&bsol;['U]</entry>
+        <entry align='left'>Uacute  </entry>
+        <entry align='left'>u0055_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Yacute;</entry>
+        <entry align='left'>&bsol;['Y]</entry>
+        <entry align='left'>Yacute  </entry>
+        <entry align='left'>u0059_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&aacute;</entry>
+        <entry align='left'>&bsol;['a]</entry>
+        <entry align='left'>aacute  </entry>
+        <entry align='left'>u0061_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&cacute;</entry>
+        <entry align='left'>&bsol;['c]</entry>
+        <entry align='left'>cacute  </entry>
+        <entry align='left'>u0063_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&eacute;</entry>
+        <entry align='left'>&bsol;['e]</entry>
+        <entry align='left'>eacute  </entry>
+        <entry align='left'>u0065_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&iacute;</entry>
+        <entry align='left'>&bsol;['i]</entry>
+        <entry align='left'>iacute  </entry>
+        <entry align='left'>u0069_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&oacute;</entry>
+        <entry align='left'>&bsol;['o]</entry>
+        <entry align='left'>oacute  </entry>
+        <entry align='left'>u006F_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&uacute;</entry>
+        <entry align='left'>&bsol;['u]</entry>
+        <entry align='left'>uacute  </entry>
+        <entry align='left'>u0075_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&yacute;</entry>
+        <entry align='left'>&bsol;['y]</entry>
+        <entry align='left'>yacute  </entry>
+        <entry align='left'>u0079_0301</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Auml;</entry>
+        <entry align='left'>&bsol;[:A]</entry>
+        <entry align='left'>Adieresis</entry>
+        <entry align='left'>u0041_0308</entry>
+        <entry align='left'>A with umlaut</entry>
+      </row>
+      <row>
+        <entry align='left'>&Euml;</entry>
+        <entry align='left'>&bsol;[:E]</entry>
+        <entry align='left'>Edieresis</entry>
+        <entry align='left'>u0045_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Iuml;</entry>
+        <entry align='left'>&bsol;[:I]</entry>
+        <entry align='left'>Idieresis</entry>
+        <entry align='left'>u0049_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Ouml;</entry>
+        <entry align='left'>&bsol;[:O]</entry>
+        <entry align='left'>Odieresis</entry>
+        <entry align='left'>u004F_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Uuml;</entry>
+        <entry align='left'>&bsol;[:U]</entry>
+        <entry align='left'>Udieresis</entry>
+        <entry align='left'>u0055_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Yuml;</entry>
+        <entry align='left'>&bsol;[:Y]</entry>
+        <entry align='left'>Ydieresis</entry>
+        <entry align='left'>u0059_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&auml;</entry>
+        <entry align='left'>&bsol;[:a]</entry>
+        <entry align='left'>adieresis</entry>
+        <entry align='left'>u0061_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&euml;</entry>
+        <entry align='left'>&bsol;[:e]</entry>
+        <entry align='left'>edieresis</entry>
+        <entry align='left'>u0065_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&iuml;</entry>
+        <entry align='left'>&bsol;[:i]</entry>
+        <entry align='left'>idieresis</entry>
+        <entry align='left'>u0069_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ouml;</entry>
+        <entry align='left'>&bsol;[:o]</entry>
+        <entry align='left'>odieresis</entry>
+        <entry align='left'>u006F_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&uuml;</entry>
+        <entry align='left'>&bsol;[:u]</entry>
+        <entry align='left'>udieresis</entry>
+        <entry align='left'>u0075_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&yuml;</entry>
+        <entry align='left'>&bsol;[:y]</entry>
+        <entry align='left'>ydieresis</entry>
+        <entry align='left'>u0079_0308</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Acirc;</entry>
+        <entry align='left'>&bsol;[^A]</entry>
+        <entry align='left'>Acircumflex</entry>
+        <entry align='left'>u0041_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Ecirc;</entry>
+        <entry align='left'>&bsol;[^E]</entry>
+        <entry align='left'>Ecircumflex</entry>
+        <entry align='left'>u0045_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Icirc;</entry>
+        <entry align='left'>&bsol;[^I]</entry>
+        <entry align='left'>Icircumflex</entry>
+        <entry align='left'>u0049_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Ocirc;</entry>
+        <entry align='left'>&bsol;[^O]</entry>
+        <entry align='left'>Ocircumflex</entry>
+        <entry align='left'>u004F_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Ucirc;</entry>
+        <entry align='left'>&bsol;[^U]</entry>
+        <entry align='left'>Ucircumflex</entry>
+        <entry align='left'>u0055_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&acirc;</entry>
+        <entry align='left'>&bsol;[^a]</entry>
+        <entry align='left'>acircumflex</entry>
+        <entry align='left'>u0061_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ecirc;</entry>
+        <entry align='left'>&bsol;[^e]</entry>
+        <entry align='left'>ecircumflex</entry>
+        <entry align='left'>u0065_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&icirc;</entry>
+        <entry align='left'>&bsol;[^i]</entry>
+        <entry align='left'>icircumflex</entry>
+        <entry align='left'>u0069_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ocirc;</entry>
+        <entry align='left'>&bsol;[^o]</entry>
+        <entry align='left'>ocircumflex</entry>
+        <entry align='left'>u006F_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ucirc;</entry>
+        <entry align='left'>&bsol;[^u]</entry>
+        <entry align='left'>ucircumflex</entry>
+        <entry align='left'>u0075_0302</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Agrave;</entry>
+        <entry align='left'>&bsol;[`A]</entry>
+        <entry align='left'>Agrave  </entry>
+        <entry align='left'>u0041_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Egrave;</entry>
+        <entry align='left'>&bsol;[`E]</entry>
+        <entry align='left'>Egrave  </entry>
+        <entry align='left'>u0045_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Igrave;</entry>
+        <entry align='left'>&bsol;[`I]</entry>
+        <entry align='left'>Igrave  </entry>
+        <entry align='left'>u0049_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Ograve;</entry>
+        <entry align='left'>&bsol;[`O]</entry>
+        <entry align='left'>Ograve  </entry>
+        <entry align='left'>u004F_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Ugrave;</entry>
+        <entry align='left'>&bsol;[`U]</entry>
+        <entry align='left'>Ugrave  </entry>
+        <entry align='left'>u0055_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&agrave;</entry>
+        <entry align='left'>&bsol;[`a]</entry>
+        <entry align='left'>agrave  </entry>
+        <entry align='left'>u0061_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&egrave;</entry>
+        <entry align='left'>&bsol;[`e]</entry>
+        <entry align='left'>egrave  </entry>
+        <entry align='left'>u0065_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&igrave;</entry>
+        <entry align='left'>&bsol;[`i]</entry>
+        <entry align='left'>igrave  </entry>
+        <entry align='left'>u0069_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ograve;</entry>
+        <entry align='left'>&bsol;[`o]</entry>
+        <entry align='left'>ograve  </entry>
+        <entry align='left'>u006F_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ugrave;</entry>
+        <entry align='left'>&bsol;[`u]</entry>
+        <entry align='left'>ugrave  </entry>
+        <entry align='left'>u0075_0300</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Atilde;</entry>
+        <entry align='left'>&bsol;[~A]</entry>
+        <entry align='left'>Atilde  </entry>
+        <entry align='left'>u0041_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Ntilde;</entry>
+        <entry align='left'>&bsol;[~N]</entry>
+        <entry align='left'>Ntilde  </entry>
+        <entry align='left'>u004E_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Otilde;</entry>
+        <entry align='left'>&bsol;[~O]</entry>
+        <entry align='left'>Otilde  </entry>
+        <entry align='left'>u004F_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&atilde;</entry>
+        <entry align='left'>&bsol;[~a]</entry>
+        <entry align='left'>atilde  </entry>
+        <entry align='left'>u0061_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ntilde;</entry>
+        <entry align='left'>&bsol;[~n]</entry>
+        <entry align='left'>ntilde  </entry>
+        <entry align='left'>u006E_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&otilde;</entry>
+        <entry align='left'>&bsol;[~o]</entry>
+        <entry align='left'>otilde  </entry>
+        <entry align='left'>u006F_0303</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Scaron;</entry>
+        <entry align='left'>&bsol;[vS]</entry>
+        <entry align='left'>Scaron  </entry>
+        <entry align='left'>u0053_030C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&scaron;</entry>
+        <entry align='left'>&bsol;[vs]</entry>
+        <entry align='left'>scaron  </entry>
+        <entry align='left'>u0073_030C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Zcaron;</entry>
+        <entry align='left'>&bsol;[vZ]</entry>
+        <entry align='left'>Zcaron  </entry>
+        <entry align='left'>u005A_030C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&zcaron;</entry>
+        <entry align='left'>&bsol;[vz]</entry>
+        <entry align='left'>zcaron  </entry>
+        <entry align='left'>u007A_030C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Ccedil;</entry>
+        <entry align='left'>&bsol;[,C]</entry>
+        <entry align='left'>Ccedilla</entry>
+        <entry align='left'>u0043_0327</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ccedil;</entry>
+        <entry align='left'>&bsol;[,c]</entry>
+        <entry align='left'>ccedilla</entry>
+        <entry align='left'>u0063_0327</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Aring;</entry>
+        <entry align='left'>&bsol;[oA]</entry>
+        <entry align='left'>Aring   </entry>
+        <entry align='left'>u0041_030A</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&aring;</entry>
+        <entry align='left'>&bsol;[oa]</entry>
+        <entry align='left'>aring   </entry>
+        <entry align='left'>u0061_030A</entry>
+        <entry align='left'></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Accents</emphasis></para>
+
+<para>The
+<emphasis remap='B'>composite</emphasis>
+request is used to map most of the accents to non-spacing glyph names;
+the values given in parentheses are the original (spacing) ones.</para>
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode </entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&dblac;</entry>
+        <entry align='left'>&bsol;[a"]</entry>
+        <entry align='left'>hungarumlaut   </entry>
+        <entry align='left'>u030B (u02DD)</entry>
+        <entry align='left'>(Hungarian)</entry>
+      </row>
+      <row>
+        <entry align='left'>&macr;</entry>
+        <entry align='left'>&bsol;[a-]</entry>
+        <entry align='left'>macron         </entry>
+        <entry align='left'>u0304 (u00AF)</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&dot;</entry>
+        <entry align='left'>&bsol;[a.]</entry>
+        <entry align='left'>dotaccent      </entry>
+        <entry align='left'>u0307 (u02D9)</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&circ;</entry>
+        <entry align='left'>&bsol;[a^]</entry>
+        <entry align='left'>circumfle      </entry>
+        <entry align='left'>u0302 (u005E)</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&acute;</entry>
+        <entry align='left'>&bsol;[aa]</entry>
+        <entry align='left'>acute          </entry>
+        <entry align='left'>u0301 (u00B4)</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&grave;</entry>
+        <entry align='left'>&bsol;[ga]</entry>
+        <entry align='left'>grave          </entry>
+        <entry align='left'>u0300 (u0060)</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&breve;</entry>
+        <entry align='left'>&bsol;[ab]</entry>
+        <entry align='left'>breve          </entry>
+        <entry align='left'>u0306 (u02D8)</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&cedil;</entry>
+        <entry align='left'>&bsol;[ac]</entry>
+        <entry align='left'>cedilla        </entry>
+        <entry align='left'>u0327 (u00B8)</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&uml;</entry>
+        <entry align='left'>&bsol;[ad]</entry>
+        <entry align='left'>dieresis       </entry>
+        <entry align='left'>u0308 (u00A8)</entry>
+        <entry align='left'>umlaut</entry>
+      </row>
+      <row>
+        <entry align='left'>&caron;</entry>
+        <entry align='left'>&bsol;[ah]</entry>
+        <entry align='left'>caron          </entry>
+        <entry align='left'>u030C (u02C7)</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ring;</entry>
+        <entry align='left'>&bsol;[ao]</entry>
+        <entry align='left'>ring           </entry>
+        <entry align='left'>u030A (u02DA)</entry>
+        <entry align='left'>circle</entry>
+      </row>
+      <row>
+        <entry align='left'>&tilde;</entry>
+        <entry align='left'>&bsol;[a~]</entry>
+        <entry align='left'>tilde          </entry>
+        <entry align='left'>u0303 (u007E)</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ogon;</entry>
+        <entry align='left'>&bsol;[ho]</entry>
+        <entry align='left'>ogonek        </entry>
+        <entry align='left'>u0328 (u02DB)</entry>
+        <entry align='left'>hook</entry>
+      </row>
+      <row>
+        <entry align='left'>^</entry>
+        <entry align='left'>&bsol;[ha]</entry>
+        <entry align='left'>asciicircum</entry>
+        <entry align='left'>u005E   </entry>
+        <entry align='left'>(spacing)</entry>
+      </row>
+      <row>
+        <entry align='left'>~</entry>
+        <entry align='left'>&bsol;[ti]</entry>
+        <entry align='left'>asciitilde</entry>
+        <entry align='left'>u007E   </entry>
+        <entry align='left'>(spacing)</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Quotes</emphasis></para>
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&lsquor;</entry>
+        <entry align='left'>&bsol;[Bq]</entry>
+        <entry align='left'>quotedblbase</entry>
+        <entry align='left'>u201E</entry>
+        <entry align='left'>low double comma quote</entry>
+      </row>
+      <row>
+        <entry align='left'>&ldquor;</entry>
+        <entry align='left'>&bsol;[bq]</entry>
+        <entry align='left'>quotesinglbase</entry>
+        <entry align='left'>u201A</entry>
+        <entry align='left'>low single comma quote</entry>
+      </row>
+      <row>
+        <entry align='left'>&ldquo;</entry>
+        <entry align='left'>&bsol;[lq]</entry>
+        <entry align='left'>quotedblleft</entry>
+        <entry align='left'>u201C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&rdquo;</entry>
+        <entry align='left'>&bsol;[rq]</entry>
+        <entry align='left'>quotedblright</entry>
+        <entry align='left'>u201D</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&lsquo;</entry>
+        <entry align='left'>&bsol;[oq]</entry>
+        <entry align='left'>quoteleft</entry>
+        <entry align='left'>u2018</entry>
+        <entry align='left'>single open quote</entry>
+      </row>
+      <row>
+        <entry align='left'>&rsquo;</entry>
+        <entry align='left'>&bsol;[cq]</entry>
+        <entry align='left'>quoteright</entry>
+        <entry align='left'>u2019</entry>
+        <entry align='left'>single closing quote</entry>
+      </row>
+      <row>
+        <entry align='left'>'</entry>
+        <entry align='left'>&bsol;[aq]</entry>
+        <entry align='left'>quotesingle</entry>
+        <entry align='left'>u0027</entry>
+        <entry align='left'>apostrophe quote (ASCII 39)</entry>
+      </row>
+      <row>
+        <entry align='left'>"</entry>
+        <entry align='left'>&bsol;[dq]</entry>
+        <entry align='left'>quotedbl</entry>
+        <entry align='left'>u0022</entry>
+        <entry align='left'>double quote (ASCII 34)</entry>
+      </row>
+      <row>
+        <entry align='left'>&laquo;</entry>
+        <entry align='left'>&bsol;[Fo]</entry>
+        <entry align='left'>guillemotleft</entry>
+        <entry align='left'>u00AB</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&raquo;</entry>
+        <entry align='left'>&bsol;[Fc]</entry>
+        <entry align='left'>guillemotright</entry>
+        <entry align='left'>u00BB</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&fo;</entry>
+        <entry align='left'>&bsol;[fo]</entry>
+        <entry align='left'>guilsinglleft</entry>
+        <entry align='left'>u2039</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&fc;</entry>
+        <entry align='left'>&bsol;[fc]</entry>
+        <entry align='left'>guilsinglright</entry>
+        <entry align='left'>u203A</entry>
+        <entry align='left'></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Punctuation</emphasis></para>
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode Notes</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&iexcl;</entry>
+        <entry align='left'>&bsol;[r!]</entry>
+        <entry align='left'>exclamdown</entry>
+        <entry align='left'>u00A1</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&iquest;</entry>
+        <entry align='left'>&bsol;[r?]</entry>
+        <entry align='left'>questiondown</entry>
+        <entry align='left'>u00BF</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&mdash;</entry>
+        <entry align='left'>&bsol;[em]</entry>
+        <entry align='left'>emdash  </entry>
+        <entry align='left'>u2014</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&ndash;</entry>
+        <entry align='left'>&bsol;[en]</entry>
+        <entry align='left'>endash  </entry>
+        <entry align='left'>u2013</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&hyphen;</entry>
+        <entry align='left'>&bsol;[hy]</entry>
+        <entry align='left'>hyphen  </entry>
+        <entry align='left'>u2010</entry>
+        <entry align='left'>+</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Brackets</emphasis></para>
+
+<para>The extensible bracket pieces are font-invariant glyphs.
+
+In classical troff only one glyph was available to vertically extend
+brackets, braces, and parentheses: `bv'.
+
+We map it rather arbitrarily to u23AA.</para>
+
+
+<para>Note that not all devices contain extensible bracket pieces which can
+be piled up with `<emphasis remap='CW'>&bsol;b</emphasis>' due to the restrictions of the escape's
+piling algorithm.
+
+A general solution to build brackets out of pieces is the following
+macro:</para>
+
+
+<literallayout remap='.nf'>
+<emphasis remap='C'>
+.&bsol;" Make a pile centered vertically 0.5em
+.&bsol;" above the baseline.
+.&bsol;" The first argument is placed at the top.
+.&bsol;" The pile is returned in string `pile'
+.eo
+.de pile-make
+.  nr pile-wd 0
+.  nr pile-ht 0
+.  ds pile-args
+.
+.  nr pile-# &bsol;n[.$]
+.  while &bsol;n[pile-#] &bsol;{&bsol;
+.    nr pile-wd (&bsol;n[pile-wd] &gt;? &bsol;w'&bsol;$[&bsol;n[pile-#]]')
+.    nr pile-ht +(&bsol;n[rst] - &bsol;n[rsb])
+.    as pile-args &bsol;v'&bsol;n[rsb]u'&bsol;"
+.    as pile-args &bsol;Z'&bsol;$[&bsol;n[pile-#]]'&bsol;"
+.    as pile-args &bsol;v'-&bsol;n[rst]u'&bsol;"
+.    nr pile-# -1
+.  &bsol;}
+.
+.  ds pile &bsol;v'(-0.5m + (&bsol;n[pile-ht]u / 2u))'&bsol;"
+.  as pile &bsol;*[pile-args]&bsol;"
+.  as pile &bsol;v'((&bsol;n[pile-ht]u / 2u) + 0.5m)'&bsol;"
+.  as pile &bsol;h'&bsol;n[pile-wd]u'&bsol;"
+..
+.ec
+</emphasis>
+</literallayout> <!-- .fi -->
+
+
+<para>Another complication is the fact that some glyphs which represent bracket
+pieces in original troff can be used for other mathematical symbols also,
+for example `lf' and `rf' which provide the `floor' operator.
+
+Other devices (most notably for DVI output) don't unify such glyphs.
+
+For this reason, the four glyphs `lf', `rf', `lc', and `rc' are not
+unified with similarly looking bracket pieces.
+
+In
+<emphasis remap='B'>groff</emphasis>,
+only glyphs with long names are guaranteed to pile up correctly for all
+devices (provided those glyphs exist).</para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input           </entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&lsqb;</entry>
+        <entry align='left'>&bsol;[lB]          </entry>
+        <entry align='left'>bracketleft</entry>
+        <entry align='left'>u005B</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&rsqb;</entry>
+        <entry align='left'>&bsol;[rB]          </entry>
+        <entry align='left'>bracketright</entry>
+        <entry align='left'>u005D</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&lcub;</entry>
+        <entry align='left'>&bsol;[lC]          </entry>
+        <entry align='left'>braceleft</entry>
+        <entry align='left'>u007B</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&rcub;</entry>
+        <entry align='left'>&bsol;[rC]          </entry>
+        <entry align='left'>braceright</entry>
+        <entry align='left'>u007D</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&lang;</entry>
+        <entry align='left'>&bsol;[la]          </entry>
+        <entry align='left'>angleleft</entry>
+        <entry align='left'>u27E8</entry>
+        <entry align='left'>left angle bracket</entry>
+      </row>
+      <row>
+        <entry align='left'>&rang;</entry>
+        <entry align='left'>&bsol;[ra]          </entry>
+        <entry align='left'>angleright</entry>
+        <entry align='left'>u27E9</entry>
+        <entry align='left'>right angle bracket</entry>
+      </row>
+      <row>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&verbar;</entry>
+        <entry align='left'>&bsol;[bv]          </entry>
+        <entry align='left'>braceex </entry>
+        <entry align='left'>u23AA</entry>
+        <entry align='left'>vertical extension *** +</entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[braceex]     </entry>
+        <entry align='left'>braceex </entry>
+        <entry align='left'>u23AA</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[bracketlefttp]</entry>
+        <entry align='left'>bracketlefttp</entry>
+        <entry align='left'>u23A1</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[bracketleftbt]</entry>
+        <entry align='left'>bracketleftbt</entry>
+        <entry align='left'>u23A3</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[bracketleftex]</entry>
+        <entry align='left'>bracketleftex</entry>
+        <entry align='left'>u23A2</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[bracketrighttp]</entry>
+        <entry align='left'>bracketrighttp</entry>
+        <entry align='left'>u23A4</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[bracketrightbt]</entry>
+        <entry align='left'>bracketrightbt</entry>
+        <entry align='left'>u23A6</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[bracketrightex]</entry>
+        <entry align='left'>bracketrightex</entry>
+        <entry align='left'>u23A5</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&tlt;</entry>
+        <entry align='left'>&bsol;[lt]          </entry>
+        <entry align='left'>bracelefttp</entry>
+        <entry align='left'>u23A7</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[bracelefttp]  </entry>
+        <entry align='left'>bracelefttp</entry>
+        <entry align='left'>u23A7</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&lk;</entry>
+        <entry align='left'>&bsol;[lk]          </entry>
+        <entry align='left'>braceleftmid</entry>
+        <entry align='left'>u23A8</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[braceleftmid]</entry>
+        <entry align='left'>braceleftmid</entry>
+        <entry align='left'>u23A8</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&lb;</entry>
+        <entry align='left'>&bsol;[lb]          </entry>
+        <entry align='left'>braceleftbt</entry>
+        <entry align='left'>u23A9</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[braceleftbt] </entry>
+        <entry align='left'>braceleftbt</entry>
+        <entry align='left'>u23A9</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[braceleftex] </entry>
+        <entry align='left'>braceleftex</entry>
+        <entry align='left'>u23AA</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&rt;</entry>
+        <entry align='left'>&bsol;[rt]          </entry>
+        <entry align='left'>bracerighttp</entry>
+        <entry align='left'>u23AB</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[bracerighttp]</entry>
+        <entry align='left'>bracerighttp</entry>
+        <entry align='left'>u23AB</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&rk;</entry>
+        <entry align='left'>&bsol;[rk]          </entry>
+        <entry align='left'>bracerightmid</entry>
+        <entry align='left'>u23AC</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&bracerightmid;</entry>
+        <entry align='left'>&bsol;[bracerightmid]</entry>
+        <entry align='left'>bracerightmid</entry>
+        <entry align='left'>u23AC</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&rb;</entry>
+        <entry align='left'>&bsol;[rb]          </entry>
+        <entry align='left'>bracerightbt</entry>
+        <entry align='left'>u23AD</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&rb;  </entry>
+        <entry align='left'>&bsol;[bracerightbt]</entry>
+        <entry align='left'>bracerightbt</entry>
+        <entry align='left'>u23AD</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&bracerightex; </entry>
+        <entry align='left'>&bsol;[bracerightex]</entry>
+        <entry align='left'>bracerightex</entry>
+        <entry align='left'>u23AA</entry>
+        <entry align='left'></entry>
+      </row>
+<!--  -->
+      <row>
+        <entry align='left'>&parenlefttp;</entry>
+        <entry align='left'>&bsol;[parenlefttp] </entry>
+        <entry align='left'>parenlefttp</entry>
+        <entry align='left'>u239B</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&parenleftbt;</entry>
+        <entry align='left'>&bsol;[parenleftbt] </entry>
+        <entry align='left'>parenleftbt</entry>
+        <entry align='left'>u239D</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&parenleftex;</entry>
+        <entry align='left'>&bsol;[parenleftex] </entry>
+        <entry align='left'>parenleftex</entry>
+        <entry align='left'>u239C</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&parenrighttp;</entry>
+        <entry align='left'>&bsol;[parenrighttp]</entry>
+        <entry align='left'>parenrighttp</entry>
+        <entry align='left'>u239E</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&parenrightbt;</entry>
+        <entry align='left'>&bsol;[parenrightbt]</entry>
+        <entry align='left'>parenrightbt</entry>
+        <entry align='left'>u23A0</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&parenrightex;</entry>
+        <entry align='left'>&bsol;[parenrightex]</entry>
+        <entry align='left'>parenrightex</entry>
+        <entry align='left'>u239F</entry>
+        <entry align='left'></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Arrows</emphasis></para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output</entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&larr;</entry>
+        <entry align='left'>&bsol;[&lt;-]</entry>
+        <entry align='left'>arrowleft</entry>
+        <entry align='left'>u2190</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&rarr;</entry>
+        <entry align='left'>&bsol;[-&gt;]</entry>
+        <entry align='left'>arrowright</entry>
+        <entry align='left'>u2192</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&harr;</entry>
+        <entry align='left'>&bsol;[&lt;&gt;]</entry>
+        <entry align='left'>arrowboth</entry>
+        <entry align='left'>u2194</entry>
+        <entry align='left'>(horizontal)</entry>
+      </row>
+      <row>
+        <entry align='left'>&darr;</entry>
+        <entry align='left'>&bsol;[da]</entry>
+        <entry align='left'>arrowdown</entry>
+        <entry align='left'>u2193</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&uarr;</entry>
+        <entry align='left'>&bsol;[ua]</entry>
+        <entry align='left'>arrowup </entry>
+        <entry align='left'>u2191</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&varr;</entry>
+        <entry align='left'>&bsol;[va]</entry>
+        <entry align='left'>arrowupdn</entry>
+        <entry align='left'>u2195</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&lArr;</entry>
+        <entry align='left'>&bsol;[lA]</entry>
+        <entry align='left'>arrowdblleft</entry>
+        <entry align='left'>u21D0</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&rArr;</entry>
+        <entry align='left'>&bsol;[rA]</entry>
+        <entry align='left'>arrowdblright</entry>
+        <entry align='left'>u21D2</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&iff;</entry>
+        <entry align='left'>&bsol;[hA]</entry>
+        <entry align='left'>arrowdblboth</entry>
+        <entry align='left'>u21D4</entry>
+        <entry align='left'>(horizontal)</entry>
+      </row>
+      <row>
+        <entry align='left'>&dArr;</entry>
+        <entry align='left'>&bsol;[dA]</entry>
+        <entry align='left'>arrowdbldown</entry>
+        <entry align='left'>u21D3</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&uArr;</entry>
+        <entry align='left'>&bsol;[uA]</entry>
+        <entry align='left'>arrowdblup</entry>
+        <entry align='left'>u21D1</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&vArr;</entry>
+        <entry align='left'>&bsol;[vA]</entry>
+        <entry align='left'>uni21D5 </entry>
+        <entry align='left'>u21D5</entry>
+        <entry align='left'>vertical double-headed double arrow</entry>
+      </row>
+      <row>
+        <entry align='left'>&an;</entry>
+        <entry align='left'>&bsol;[an]</entry>
+        <entry align='left'>arrowhorizex</entry>
+        <entry align='left'>u23AF</entry>
+        <entry align='left'>horizontal arrow extension</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Lines</emphasis></para>
+
+<para>The font-invariant glyphs `br', `ul', and `rn' form corners;
+they can be used to build boxes.
+
+Note that both the PostScript and the Unicode-derived names of
+these three glyphs are just rough approximations.</para>
+
+
+<para>`rn' also serves in classical troff as the horizontal extension of the
+square root sign.</para>
+
+
+<para>`ru' is a font-invariant glyph, namely a rule of length 0.5m.</para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output</entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&verbar;</entry>
+        <entry align='left'>&bsol;[ba]</entry>
+        <entry align='left'>bar      </entry>
+        <entry align='left'>u007C </entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&boxv;</entry>
+        <entry align='left'>&bsol;[br]</entry>
+        <entry align='left'>SF110000</entry>
+        <entry align='left'>u2502</entry>
+        <entry align='left'>box rule +</entry>
+      </row>
+      <row>
+        <entry align='left'>_</entry>
+        <entry align='left'>&bsol;[ul]</entry>
+        <entry align='left'>underscore</entry>
+        <entry align='left'>u005F</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&macr;</entry>
+        <entry align='left'>&bsol;[rn]</entry>
+        <entry align='left'>overline</entry>
+        <entry align='left'>u203E</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&lowbar;</entry>
+        <entry align='left'>&bsol;[ru]</entry>
+        <entry align='left'>---     </entry>
+        <entry align='left'>---</entry>
+        <entry align='left'>baseline rule +</entry>
+      </row>
+      <row>
+        <entry align='left'>&brvbar;</entry>
+        <entry align='left'>&bsol;[bb]</entry>
+        <entry align='left'>brokenbar</entry>
+        <entry align='left'>u00A6</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>/</entry>
+        <entry align='left'>&bsol;[sl]</entry>
+        <entry align='left'>slash   </entry>
+        <entry align='left'>u002F</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&bsol;</entry>
+        <entry align='left'>&bsol;[rs]</entry>
+        <entry align='left'>backslash</entry>
+        <entry align='left'>u005C</entry>
+        <entry align='left'>reverse solidus</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+<para>Use `<emphasis remap='CW'>&bsol;[radicalex]</emphasis>', not `<emphasis remap='CW'>&bsol;[overline]</emphasis>', for
+continuation of square root</para>
+
+
+<para><emphasis remap='I'>Text markers</emphasis></para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output</entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&cir;</entry>
+        <entry align='left'>&bsol;[ci]</entry>
+        <entry align='left'>circle  </entry>
+        <entry align='left'>u25CB</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&bull;</entry>
+        <entry align='left'>&bsol;[bu]</entry>
+        <entry align='left'>bullet  </entry>
+        <entry align='left'>u2022</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Dagger;</entry>
+        <entry align='left'>&bsol;[dd]</entry>
+        <entry align='left'>daggerdbl</entry>
+        <entry align='left'>u2021</entry>
+        <entry align='left'>double dagger sign +</entry>
+      </row>
+      <row>
+        <entry align='left'>&dagger;</entry>
+        <entry align='left'>&bsol;[dg]</entry>
+        <entry align='left'>dagger  </entry>
+        <entry align='left'>u2020</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&loz;</entry>
+        <entry align='left'>&bsol;[lz]</entry>
+        <entry align='left'>lozenge </entry>
+        <entry align='left'>u25CA</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&squf;</entry>
+        <entry align='left'>&bsol;[sq]</entry>
+        <entry align='left'>uni25A1 </entry>
+        <entry align='left'>u25A1</entry>
+        <entry align='left'>white square +</entry>
+      </row>
+      <row>
+        <entry align='left'>&para;</entry>
+        <entry align='left'>&bsol;[ps]</entry>
+        <entry align='left'>paragraph</entry>
+        <entry align='left'>u00B6</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sect;</entry>
+        <entry align='left'>&bsol;[sc]</entry>
+        <entry align='left'>section </entry>
+        <entry align='left'>u00A7</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&lh;</entry>
+        <entry align='left'>&bsol;[lh]</entry>
+        <entry align='left'>uni261C </entry>
+        <entry align='left'>u261C</entry>
+        <entry align='left'>hand pointing left +</entry>
+      </row>
+      <row>
+        <entry align='left'>&rh;</entry>
+        <entry align='left'>&bsol;[rh]</entry>
+        <entry align='left'>a14     </entry>
+        <entry align='left'>u261E</entry>
+        <entry align='left'>hand pointing right +</entry>
+      </row>
+      <row>
+        <entry align='left'>&commat;</entry>
+        <entry align='left'>&bsol;[at]</entry>
+        <entry align='left'>at      </entry>
+        <entry align='left'>u0040</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&num;</entry>
+        <entry align='left'>&bsol;[sh]</entry>
+        <entry align='left'>numbersign</entry>
+        <entry align='left'>u0023</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&CR;</entry>
+        <entry align='left'>&bsol;[CR]</entry>
+        <entry align='left'>carriagereturn</entry>
+        <entry align='left'>u21B5</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&check;</entry>
+        <entry align='left'>&bsol;[OK]</entry>
+        <entry align='left'>a19     </entry>
+        <entry align='left'>u2713</entry>
+        <entry align='left'>check mark, tick</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Legal Symbols</emphasis></para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output</entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&copy;</entry>
+        <entry align='left'>&bsol;[co]</entry>
+        <entry align='left'>copyright</entry>
+        <entry align='left'>u00A9</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&trade;</entry>
+        <entry align='left'>&bsol;[rg]</entry>
+        <entry align='left'>registered</entry>
+        <entry align='left'>u00AE</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&trade;</entry>
+        <entry align='left'>&bsol;[tm]</entry>
+        <entry align='left'>trademark</entry>
+        <entry align='left'>u2122</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&phone;</entry>
+        <entry align='left'>&bsol;[bs]</entry>
+        <entry align='left'>---     </entry>
+        <entry align='left'>---</entry>
+        <entry align='left'>AT&amp;T Bell Labs logo +</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+<para>The Bell Labs logo is not supported in groff.</para>
+
+
+<para><emphasis remap='I'>Currency symbols</emphasis></para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&dollar;</entry>
+        <entry align='left'>&bsol;[Do]</entry>
+        <entry align='left'>dollar  </entry>
+        <entry align='left'>u0024</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&cent;</entry>
+        <entry align='left'>&bsol;[ct]</entry>
+        <entry align='left'>cent    </entry>
+        <entry align='left'>u00A2</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&euro;</entry>
+        <entry align='left'>&bsol;[eu]</entry>
+        <entry align='left'>---     </entry>
+        <entry align='left'>u20AC</entry>
+        <entry align='left'>official Euro symbol</entry>
+      </row>
+      <row>
+        <entry align='left'>&euro;</entry>
+        <entry align='left'>&bsol;[Eu]</entry>
+        <entry align='left'>Euro    </entry>
+        <entry align='left'>u20AC</entry>
+        <entry align='left'>font-specific Euro glyph variant</entry>
+      </row>
+      <row>
+        <entry align='left'>&yen;</entry>
+        <entry align='left'>&bsol;[Ye]</entry>
+        <entry align='left'>yen     </entry>
+        <entry align='left'>u00A5</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&pound;</entry>
+        <entry align='left'>&bsol;[Po]</entry>
+        <entry align='left'>sterling</entry>
+        <entry align='left'>u00A3</entry>
+        <entry align='left'>British currency sign</entry>
+      </row>
+      <row>
+        <entry align='left'>&curren;</entry>
+        <entry align='left'>&bsol;[Cs]</entry>
+        <entry align='left'>currency</entry>
+        <entry align='left'>u00A4</entry>
+        <entry align='left'>Scandinavian currency sign</entry>
+      </row>
+      <row>
+        <entry align='left'>&fnof;</entry>
+        <entry align='left'>&bsol;[Fn]</entry>
+        <entry align='left'>florin  </entry>
+        <entry align='left'>u0192</entry>
+        <entry align='left'>Dutch currency sign</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Units</emphasis></para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&deg;</entry>
+        <entry align='left'>&bsol;[de]</entry>
+        <entry align='left'>degree  </entry>
+        <entry align='left'>u00B0</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&permil;</entry>
+        <entry align='left'>&bsol;[%0]</entry>
+        <entry align='left'>perthousand</entry>
+        <entry align='left'>u2030</entry>
+        <entry align='left'>per thousand, per mille sign</entry>
+      </row>
+      <row>
+        <entry align='left'>&prime;</entry>
+        <entry align='left'>&bsol;[fm]</entry>
+        <entry align='left'>minute  </entry>
+        <entry align='left'>u2032</entry>
+        <entry align='left'>footmark, prime +</entry>
+      </row>
+      <row>
+        <entry align='left'>&Prime;</entry>
+        <entry align='left'>&bsol;[sd]</entry>
+        <entry align='left'>second  </entry>
+        <entry align='left'>u2033</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&micro;</entry>
+        <entry align='left'>&bsol;[mc]</entry>
+        <entry align='left'>mu      </entry>
+        <entry align='left'>u00B5</entry>
+        <entry align='left'>micro sign</entry>
+      </row>
+      <row>
+        <entry align='left'>&ordf;</entry>
+        <entry align='left'>&bsol;[Of]</entry>
+        <entry align='left'>ordfeminine</entry>
+        <entry align='left'>u00AA</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ordm;</entry>
+        <entry align='left'>&bsol;[Om]</entry>
+        <entry align='left'>ordmasculine</entry>
+        <entry align='left'>u00BA</entry>
+        <entry align='left'></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Logical Symbols</emphasis></para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&and;</entry>
+        <entry align='left'>&bsol;[AN]</entry>
+        <entry align='left'>logicaland</entry>
+        <entry align='left'>u2227</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&or;</entry>
+        <entry align='left'>&bsol;[OR]</entry>
+        <entry align='left'>logicalor</entry>
+        <entry align='left'>u2228</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&not;</entry>
+        <entry align='left'>&bsol;[no]</entry>
+        <entry align='left'>logicalnot</entry>
+        <entry align='left'>u00AC</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&not;</entry>
+        <entry align='left'>&bsol;[tno]</entry>
+        <entry align='left'>logicalnot</entry>
+        <entry align='left'>u00AC</entry>
+        <entry align='left'>text variant of `no'</entry>
+      </row>
+      <row>
+        <entry align='left'>&exist;</entry>
+        <entry align='left'>&bsol;[te]</entry>
+        <entry align='left'>existential</entry>
+        <entry align='left'>u2203</entry>
+        <entry align='left'>there exists</entry>
+      </row>
+      <row>
+        <entry align='left'>&forall;</entry>
+        <entry align='left'>&bsol;[fa]</entry>
+        <entry align='left'>universal</entry>
+        <entry align='left'>u2200</entry>
+        <entry align='left'>for all</entry>
+      </row>
+      <row>
+        <entry align='left'>&bepsi;</entry>
+        <entry align='left'>&bsol;[st]</entry>
+        <entry align='left'>suchthat</entry>
+        <entry align='left'>u220B</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&there4;</entry>
+        <entry align='left'>&bsol;[3d]</entry>
+        <entry align='left'>therefore</entry>
+        <entry align='left'>u2234</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&there4;</entry>
+        <entry align='left'>&bsol;[tf]</entry>
+        <entry align='left'>therefore</entry>
+        <entry align='left'>u2234</entry>
+        <entry align='left'></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Mathematical Symbols</emphasis></para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&frac12;</entry>
+        <entry align='left'>&bsol;[12]</entry>
+        <entry align='left'>onehalf </entry>
+        <entry align='left'>u00BD "+"</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&frac14;</entry>
+        <entry align='left'>&bsol;[14]</entry>
+        <entry align='left'>onequarter</entry>
+        <entry align='left'>u00BC "+"</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&frac34;</entry>
+        <entry align='left'>&bsol;[34]</entry>
+        <entry align='left'>threequarters</entry>
+        <entry align='left'>u00BE "+"</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&frac18;</entry>
+        <entry align='left'>&bsol;[18]</entry>
+        <entry align='left'>oneeighth</entry>
+        <entry align='left'>u215B</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&frac38;</entry>
+        <entry align='left'>&bsol;[38]</entry>
+        <entry align='left'>threeeighths</entry>
+        <entry align='left'>u215C</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&frac58;</entry>
+        <entry align='left'>&bsol;[58]</entry>
+        <entry align='left'>fiveeighths</entry>
+        <entry align='left'>u215D</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&frac78;</entry>
+        <entry align='left'>&bsol;[78]</entry>
+        <entry align='left'>seveneighths</entry>
+        <entry align='left'>u215E</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sup1;</entry>
+        <entry align='left'>&bsol;[S1]</entry>
+        <entry align='left'>onesuperior</entry>
+        <entry align='left'>u00B9</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sup2;</entry>
+        <entry align='left'>&bsol;[S2]</entry>
+        <entry align='left'>twosuperior</entry>
+        <entry align='left'>u00B2</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sup3;</entry>
+        <entry align='left'>&bsol;[S3]</entry>
+        <entry align='left'>threesuperior</entry>
+        <entry align='left'>u00B3</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&plus;</entry>
+        <entry align='left'>&bsol;[pl]</entry>
+        <entry align='left'>plus    </entry>
+        <entry align='left'>u002B</entry>
+        <entry align='left'>plus in special font +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&minus;</entry>
+        <entry align='left'>&bsol;[mi]</entry>
+        <entry align='left'>minus   </entry>
+        <entry align='left'>u2212</entry>
+        <entry align='left'>minus in special font +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&mnplus;</entry>
+        <entry align='left'>&bsol;[-+]</entry>
+        <entry align='left'>uni2213 </entry>
+        <entry align='left'>u2213</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&plusmn;</entry>
+        <entry align='left'>&bsol;[+-]</entry>
+        <entry align='left'>plusminus</entry>
+        <entry align='left'>u00B1</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&plusmn;</entry>
+        <entry align='left'>&bsol;[t+-]</entry>
+        <entry align='left'>plusminus</entry>
+        <entry align='left'>u00B1</entry>
+        <entry align='left'>text variant of `+-'</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&middot;</entry>
+        <entry align='left'>&bsol;[pc]</entry>
+        <entry align='left'>periodcentered</entry>
+        <entry align='left'>u00B7</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&middot;</entry>
+        <entry align='left'>&bsol;[md]</entry>
+        <entry align='left'>dotmath </entry>
+        <entry align='left'>u22C5</entry>
+        <entry align='left'>multiplication dot</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&times;</entry>
+        <entry align='left'>&bsol;[mu]</entry>
+        <entry align='left'>multiply</entry>
+        <entry align='left'>u00D7</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&trade;</entry>
+        <entry align='left'>&bsol;[tmu]</entry>
+        <entry align='left'>multiply</entry>
+        <entry align='left'>u00D7</entry>
+        <entry align='left'>text variant of `mu'</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&otimes;</entry>
+        <entry align='left'>&bsol;[c*]</entry>
+        <entry align='left'>circlemultiply</entry>
+        <entry align='left'>u2297</entry>
+        <entry align='left'>multiply sign in a circle</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&oplus;</entry>
+        <entry align='left'>&bsol;[c+]</entry>
+        <entry align='left'>circleplus</entry>
+        <entry align='left'>u2295</entry>
+        <entry align='left'>plus in a circle</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&divide;</entry>
+        <entry align='left'>&bsol;[di]</entry>
+        <entry align='left'>divide  </entry>
+        <entry align='left'>u00F7</entry>
+        <entry align='left'>division +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&divide;</entry>
+        <entry align='left'>&bsol;[tdi]</entry>
+        <entry align='left'>divide  </entry>
+        <entry align='left'>u00F7</entry>
+        <entry align='left'>text variant of `di'</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&horbar;</entry>
+        <entry align='left'>&bsol;[f/]</entry>
+        <entry align='left'>fraction</entry>
+        <entry align='left'>u2044</entry>
+        <entry align='left'>bar for fractions</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&lowast;</entry>
+        <entry align='left'>&bsol;[**]</entry>
+        <entry align='left'>asteriskmath</entry>
+        <entry align='left'>u2217</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&le;</entry>
+        <entry align='left'>&bsol;[&lt;=]</entry>
+        <entry align='left'>lessequal</entry>
+        <entry align='left'>u2264</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ge;</entry>
+        <entry align='left'>&bsol;[&gt;=]</entry>
+        <entry align='left'>greaterequal</entry>
+        <entry align='left'>u2265</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Lt;</entry>
+        <entry align='left'>&bsol;[&lt;&lt;]</entry>
+        <entry align='left'>uni226A </entry>
+        <entry align='left'>u226A</entry>
+        <entry align='left'>much less</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&Gt;</entry>
+        <entry align='left'>&bsol;[&gt;&gt;]</entry>
+        <entry align='left'>uni226B </entry>
+        <entry align='left'>u226B</entry>
+        <entry align='left'>much greater</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&equals;</entry>
+        <entry align='left'>&bsol;[eq]</entry>
+        <entry align='left'>equal   </entry>
+        <entry align='left'>u003D</entry>
+        <entry align='left'>equals in special font +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ne;</entry>
+        <entry align='left'>&bsol;[!=]</entry>
+        <entry align='left'>notequal</entry>
+        <entry align='left'>u003D_0338</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&equiv;</entry>
+        <entry align='left'>&bsol;[==]</entry>
+        <entry align='left'>equivalence</entry>
+        <entry align='left'>u2261</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&nequiv;</entry>
+        <entry align='left'>&bsol;[ne]</entry>
+        <entry align='left'>uni2262 </entry>
+        <entry align='left'>u2261_0338</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&cong;</entry>
+        <entry align='left'>&bsol;[=~]</entry>
+        <entry align='left'>congruent</entry>
+        <entry align='left'>u2245</entry>
+        <entry align='left'>approx. equal</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&asymp;</entry>
+        <entry align='left'>&bsol;[|=]</entry>
+        <entry align='left'>uni2243 </entry>
+        <entry align='left'>u2243</entry>
+        <entry align='left'>asymptot. equal to +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sim;</entry>
+        <entry align='left'>&bsol;[ap]</entry>
+        <entry align='left'>similar </entry>
+        <entry align='left'>u223C</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ap;</entry>
+        <entry align='left'>&bsol;[~~]</entry>
+        <entry align='left'>approxequal</entry>
+        <entry align='left'>u2248</entry>
+        <entry align='left'>almost equal to</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&cong;</entry>
+        <entry align='left'>&bsol;[~=]</entry>
+        <entry align='left'>approxequal</entry>
+        <entry align='left'>u2248</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&prop;</entry>
+        <entry align='left'>&bsol;[pt]</entry>
+        <entry align='left'>proportional</entry>
+        <entry align='left'>u221D</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&empty;</entry>
+        <entry align='left'>&bsol;[es]</entry>
+        <entry align='left'>emptyset</entry>
+        <entry align='left'>u2205</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&isin;</entry>
+        <entry align='left'>&bsol;[mo]</entry>
+        <entry align='left'>element </entry>
+        <entry align='left'>u2208</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&notin;</entry>
+        <entry align='left'>&bsol;[nm]</entry>
+        <entry align='left'>notelement</entry>
+        <entry align='left'>u2208_0338</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sub;</entry>
+        <entry align='left'>&bsol;[sb]</entry>
+        <entry align='left'>propersubset</entry>
+        <entry align='left'>u2282</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&nsub;</entry>
+        <entry align='left'>&bsol;[nb]</entry>
+        <entry align='left'>notsubset</entry>
+        <entry align='left'>u2282_0338</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sup;</entry>
+        <entry align='left'>&bsol;[sp]</entry>
+        <entry align='left'>propersuperset</entry>
+        <entry align='left'>u2283</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&nsup;</entry>
+        <entry align='left'>&bsol;[nc]</entry>
+        <entry align='left'>uni2285 </entry>
+        <entry align='left'>u2283_0338</entry>
+        <entry align='left'>not superset</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sube;</entry>
+        <entry align='left'>&bsol;[ib]</entry>
+        <entry align='left'>reflexsubset</entry>
+        <entry align='left'>u2286</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&supe;</entry>
+        <entry align='left'>&bsol;[ip]</entry>
+        <entry align='left'>reflexsuperset</entry>
+        <entry align='left'>u2287</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&cap;</entry>
+        <entry align='left'>&bsol;[ca]</entry>
+        <entry align='left'>intersection</entry>
+        <entry align='left'>u2229</entry>
+        <entry align='left'>intersection, cap +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&cup;</entry>
+        <entry align='left'>&bsol;[cu]</entry>
+        <entry align='left'>union   </entry>
+        <entry align='left'>u222A</entry>
+        <entry align='left'>union, cup +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&ang;</entry>
+        <entry align='left'>&bsol;[/_]  </entry>
+        <entry align='left'>angle   </entry>
+        <entry align='left'>u2220</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&perp;</entry>
+        <entry align='left'>&bsol;[pp]  </entry>
+        <entry align='left'>perpendicular</entry>
+        <entry align='left'>u22A5</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&int;</entry>
+        <entry align='left'>&bsol;[is]  </entry>
+        <entry align='left'>integral</entry>
+        <entry align='left'>u222B</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&int;</entry>
+        <entry align='left'>&bsol;[integral]</entry>
+        <entry align='left'>integral</entry>
+        <entry align='left'>u222B</entry>
+        <entry align='left'>***</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sum;</entry>
+        <entry align='left'>&bsol;[sum]</entry>
+        <entry align='left'></entry>
+        <entry align='left'>summation</entry>
+        <entry align='left'>u2211</entry>
+        <entry align='left'>***</entry>
+      </row>
+      <row>
+        <entry align='left'>&prod;</entry>
+        <entry align='left'>&bsol;[product]</entry>
+        <entry align='left'>product </entry>
+        <entry align='left'>u220F</entry>
+        <entry align='left'>***</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&coprod;</entry>
+        <entry align='left'>&bsol;[coproduct]</entry>
+        <entry align='left'>uni2210 </entry>
+        <entry align='left'>u2210</entry>
+        <entry align='left'>***</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&nabla;</entry>
+        <entry align='left'>&bsol;[gr]  </entry>
+        <entry align='left'>gradient</entry>
+        <entry align='left'>u2207</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&radic;</entry>
+        <entry align='left'>&bsol;[sr]  </entry>
+        <entry align='left'>radical </entry>
+        <entry align='left'>u221A</entry>
+        <entry align='left'>square root +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&squf;</entry>
+        <entry align='left'>&bsol;[sqrt]</entry>
+        <entry align='left'>radical </entry>
+        <entry align='left'>u221A</entry>
+        <entry align='left'>***</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&radicalex;</entry>
+        <entry align='left'>&bsol;[radicalex]</entry>
+        <entry align='left'>radicalex</entry>
+        <entry align='left'>---</entry>
+        <entry align='left'>square root continuation</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&sqrtex;</entry>
+        <entry align='left'>&bsol;[sqrtex]</entry>
+        <entry align='left'>radicalex</entry>
+        <entry align='left'>---</entry>
+        <entry align='left'>***</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&lc;</entry>
+        <entry align='left'>&bsol;[lc]  </entry>
+        <entry align='left'>uni2308 </entry>
+        <entry align='left'>u2308</entry>
+        <entry align='left'>left ceiling +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&rc;</entry>
+        <entry align='left'>&bsol;[rc]  </entry>
+        <entry align='left'>uni2309 </entry>
+        <entry align='left'>u2309</entry>
+        <entry align='left'>right ceiling +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&lf;</entry>
+        <entry align='left'>&bsol;[lf]  </entry>
+        <entry align='left'>uni230A </entry>
+        <entry align='left'>u230A</entry>
+        <entry align='left'>left floor +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&rf;</entry>
+        <entry align='left'>&bsol;[rf]  </entry>
+        <entry align='left'>uni230B </entry>
+        <entry align='left'>u230B</entry>
+        <entry align='left'>right floor +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&infin;</entry>
+        <entry align='left'>&bsol;[if]  </entry>
+        <entry align='left'>infinity</entry>
+        <entry align='left'>u221E</entry>
+        <entry align='left'>+</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&aleph;</entry>
+        <entry align='left'>&bsol;[Ah]  </entry>
+        <entry align='left'>aleph   </entry>
+        <entry align='left'>u2135</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&image;</entry>
+        <entry align='left'>&bsol;[Im]  </entry>
+        <entry align='left'>Ifraktur</entry>
+        <entry align='left'>u2111</entry>
+        <entry align='left'>Gothic I, imaginary</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&real;</entry>
+        <entry align='left'>&bsol;[Re]  </entry>
+        <entry align='left'>Rfraktur</entry>
+        <entry align='left'>u211C</entry>
+        <entry align='left'>Gothic R, real</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&weierp;</entry>
+        <entry align='left'>&bsol;[wp]  </entry>
+        <entry align='left'>weierstrass</entry>
+        <entry align='left'>u2118</entry>
+        <entry align='left'>Weierstrass p</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&part;</entry>
+        <entry align='left'>&bsol;[pd]  </entry>
+        <entry align='left'>partialdiff</entry>
+        <entry align='left'>u2202</entry>
+        <entry align='left'>partial differentiation +</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&planck;</entry>
+        <entry align='left'>&bsol;[-h]  </entry>
+        <entry align='left'>uni210F </entry>
+        <entry align='left'>u210F</entry>
+        <entry align='left'>Planck constant / 2pi</entry>
+        <entry align='left'></entry>
+      </row>
+      <row>
+        <entry align='left'>&planck;</entry>
+        <entry align='left'>&bsol;[hbar]</entry>
+        <entry align='left'>uni210F </entry>
+        <entry align='left'>u210F</entry>
+        <entry align='left'></entry>
+        <entry align='left'></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Greek glyphs</emphasis></para>
+
+<para>These glyphs are intended for technical use, not for real Greek; normally,
+the uppercase letters have upright shape, and the lowercase ones are
+slanted.
+
+There is a problem with the mapping of letter phi to Unicode.
+
+Prior to Unicode version&nbsp;3.0, the difference between U+03C6, GREEK
+SMALL LETTER PHI, and U+03D5, GREEK PHI SYMBOL, was not clearly described;
+only the glyph shapes in the Unicode book could be used as a reference.
+
+Starting with Unicode&nbsp;3.0, the reference glyphs have been exchanged and
+described verbally also: In mathematical context, U+03D5 is the stroked
+variant and U+03C6 the curly glyph.
+
+Unfortunately, most font vendors didn't update their fonts to
+this (incompatible) change in Unicode.
+
+At the time of this writing (January 2006), it is not clear yet whether
+the Adobe Glyph Names `phi' and `phi1' also change its meaning if used for
+mathematics, thus compatibility problems are likely to happen &ndash; being
+conservative, groff currently assumes that `phi' in a PostScript symbol
+font is the stroked version.</para>
+
+<para>In groff, symbol `<emphasis remap='CW'>&bsol;[*f]</emphasis>' always denotes the stroked version of
+phi, and `<emphasis remap='CW'>&bsol;[+f]</emphasis>' the curly variant.</para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output </entry>
+        <entry align='left'>Input</entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&Agr;</entry>
+        <entry align='left'>&bsol;[*A]</entry>
+        <entry align='left'>Alpha</entry>
+        <entry align='left'>u0391</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Bgr;</entry>
+        <entry align='left'>&bsol;[*B]</entry>
+        <entry align='left'>Beta</entry>
+        <entry align='left'>u0392</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Ggr;</entry>
+        <entry align='left'>&bsol;[*G]</entry>
+        <entry align='left'>Gamma</entry>
+        <entry align='left'>u0393</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Dgr;</entry>
+        <entry align='left'>&bsol;[*D]</entry>
+        <entry align='left'>Delta</entry>
+        <entry align='left'>u0394</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Egr;</entry>
+        <entry align='left'>&bsol;[*E]</entry>
+        <entry align='left'>Epsilon</entry>
+        <entry align='left'>u0395</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Zgr;</entry>
+        <entry align='left'>&bsol;[*Z]</entry>
+        <entry align='left'>Zeta</entry>
+        <entry align='left'>u0396</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&EEgr;</entry>
+        <entry align='left'>&bsol;[*Y]</entry>
+        <entry align='left'>Eta</entry>
+        <entry align='left'>u0397</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&THgr;</entry>
+        <entry align='left'>&bsol;[*H]</entry>
+        <entry align='left'>Theta</entry>
+        <entry align='left'>u0398</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Igr;</entry>
+        <entry align='left'>&bsol;[*I]</entry>
+        <entry align='left'>Iota</entry>
+        <entry align='left'>u0399</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Kgr;</entry>
+        <entry align='left'>&bsol;[*K]</entry>
+        <entry align='left'>Kappa</entry>
+        <entry align='left'>u039A</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Lgr;</entry>
+        <entry align='left'>&bsol;[*L]</entry>
+        <entry align='left'>Lambda</entry>
+        <entry align='left'>u039B</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Mgr;</entry>
+        <entry align='left'>&bsol;[*M]</entry>
+        <entry align='left'>Mu</entry>
+        <entry align='left'>u039C</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Ngr;</entry>
+        <entry align='left'>&bsol;[*N]</entry>
+        <entry align='left'>Nu</entry>
+        <entry align='left'>u039D</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Xi;</entry>
+        <entry align='left'>&bsol;[*C]</entry>
+        <entry align='left'>Xi</entry>
+        <entry align='left'>u039E</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Ogr;</entry>
+        <entry align='left'>&bsol;[*O]</entry>
+        <entry align='left'>Omicron</entry>
+        <entry align='left'>u039F</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Pgr;</entry>
+        <entry align='left'>&bsol;[*P]</entry>
+        <entry align='left'>Pi</entry>
+        <entry align='left'>u03A0</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Rgr;</entry>
+        <entry align='left'>&bsol;[*R]</entry>
+        <entry align='left'>Rho</entry>
+        <entry align='left'>u03A1</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Sgr;</entry>
+        <entry align='left'>&bsol;[*S]</entry>
+        <entry align='left'>Sigma</entry>
+        <entry align='left'>u03A3</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Tgr;</entry>
+        <entry align='left'>&bsol;[*T]</entry>
+        <entry align='left'>Tau</entry>
+        <entry align='left'>u03A4</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&Ugr;</entry>
+        <entry align='left'>&bsol;[*U]</entry>
+        <entry align='left'>Upsilon</entry>
+        <entry align='left'>u03A5</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&PHgr;</entry>
+        <entry align='left'>&bsol;[*F]</entry>
+        <entry align='left'>Phi</entry>
+        <entry align='left'>u03A6</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&KHgr;</entry>
+        <entry align='left'>&bsol;[*X]</entry>
+        <entry align='left'>Chi</entry>
+        <entry align='left'>u03A7</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&PSgr;</entry>
+        <entry align='left'>&bsol;[*Q]</entry>
+        <entry align='left'>Psi</entry>
+        <entry align='left'>u03A8</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&OHgr;</entry>
+        <entry align='left'>&bsol;[*W]</entry>
+        <entry align='left'>Omega</entry>
+        <entry align='left'>u03A9</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&agr;</entry>
+        <entry align='left'>&bsol;[*a]</entry>
+        <entry align='left'>alpha</entry>
+        <entry align='left'>u03B1</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&bgr;</entry>
+        <entry align='left'>&bsol;[*b]</entry>
+        <entry align='left'>beta</entry>
+        <entry align='left'>u03B2</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&ggr;</entry>
+        <entry align='left'>&bsol;[*g]</entry>
+        <entry align='left'>gamma</entry>
+        <entry align='left'>u03B3</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&dgr;</entry>
+        <entry align='left'>&bsol;[*d]</entry>
+        <entry align='left'>delta</entry>
+        <entry align='left'>u03B4</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&egr;</entry>
+        <entry align='left'>&bsol;[*e]</entry>
+        <entry align='left'>epsilon</entry>
+        <entry align='left'>u03B5</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&zgr;</entry>
+        <entry align='left'>&bsol;[*z]</entry>
+        <entry align='left'>zeta</entry>
+        <entry align='left'>u03B6</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&eegr;</entry>
+        <entry align='left'>&bsol;[*y]</entry>
+        <entry align='left'>eta</entry>
+        <entry align='left'>u03B7</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&thgr;</entry>
+        <entry align='left'>&bsol;[*h]</entry>
+        <entry align='left'>theta</entry>
+        <entry align='left'>u03B8</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&igr;</entry>
+        <entry align='left'>&bsol;[*i]</entry>
+        <entry align='left'>iota</entry>
+        <entry align='left'>u03B9</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&kgr;</entry>
+        <entry align='left'>&bsol;[*k]</entry>
+        <entry align='left'>kappa</entry>
+        <entry align='left'>u03BA</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&lgr;</entry>
+        <entry align='left'>&bsol;[*l]</entry>
+        <entry align='left'>lambda</entry>
+        <entry align='left'>u03BB</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&mgr;</entry>
+        <entry align='left'>&bsol;[*m]</entry>
+        <entry align='left'>mu</entry>
+        <entry align='left'>u03BC</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&ngr;</entry>
+        <entry align='left'>&bsol;[*n]</entry>
+        <entry align='left'>nu</entry>
+        <entry align='left'>u03BD</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&xi;</entry>
+        <entry align='left'>&bsol;[*c]</entry>
+        <entry align='left'>xi</entry>
+        <entry align='left'>u03BE</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&ogr;</entry>
+        <entry align='left'>&bsol;[*o]</entry>
+        <entry align='left'>omicron</entry>
+        <entry align='left'>u03BF</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&pgr;</entry>
+        <entry align='left'>&bsol;[*p]</entry>
+        <entry align='left'>pi</entry>
+        <entry align='left'>u03C0</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&rgr;</entry>
+        <entry align='left'>&bsol;[*r]</entry>
+        <entry align='left'>rho</entry>
+        <entry align='left'>u03C1</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&sfgr;</entry>
+        <entry align='left'>&bsol;[ts]</entry>
+        <entry align='left'>sigma1</entry>
+        <entry align='left'>u03C2</entry>
+        <entry align='left'>terminal sigma +</entry>
+      </row>
+      <row>
+        <entry align='left'>&sgr;</entry>
+        <entry align='left'>&bsol;[*s]</entry>
+        <entry align='left'>sigma</entry>
+        <entry align='left'>u03C3</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&tgr;</entry>
+        <entry align='left'>&bsol;[*t]</entry>
+        <entry align='left'>tau</entry>
+        <entry align='left'>u03C4</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&ugr;</entry>
+        <entry align='left'>&bsol;[*u]</entry>
+        <entry align='left'>upsilon</entry>
+        <entry align='left'>u03C5</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&phgr;</entry>
+        <entry align='left'>&bsol;[*f]</entry>
+        <entry align='left'>phi</entry>
+        <entry align='left'>u03D5</entry>
+        <entry align='left'>(stroked glyph) +</entry>
+      </row>
+      <row>
+        <entry align='left'>&khgr;</entry>
+        <entry align='left'>&bsol;[*x]</entry>
+        <entry align='left'>chi</entry>
+        <entry align='left'>u03C7</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&psgr;</entry>
+        <entry align='left'>&bsol;[*q]</entry>
+        <entry align='left'>psi</entry>
+        <entry align='left'>u03C8</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&ohgr;</entry>
+        <entry align='left'>&bsol;[*w]</entry>
+        <entry align='left'>omega</entry>
+        <entry align='left'>u03C9</entry>
+        <entry align='left'>+</entry>
+      </row>
+      <row>
+        <entry align='left'>&b.thetas;</entry>
+        <entry align='left'>&bsol;[+h]</entry>
+        <entry align='left'>theta1</entry>
+        <entry align='left'>u03D1</entry>
+        <entry align='left'>variant theta</entry>
+      </row>
+      <row>
+        <entry align='left'>&b.phiv;</entry>
+        <entry align='left'>&bsol;[+f]</entry>
+        <entry align='left'>phi1</entry>
+        <entry align='left'>u03C6</entry>
+        <entry align='left'>variant phi (curly shape)</entry>
+      </row>
+      <row>
+        <entry align='left'>&b.omega;</entry>
+        <entry align='left'>&bsol;[+p]</entry>
+        <entry align='left'>omega1</entry>
+        <entry align='left'>u03D6</entry>
+        <entry align='left'>variant pi, looking like omega</entry>
+      </row>
+      <row>
+        <entry align='left'>&b.epsiv;</entry>
+        <entry align='left'>&bsol;[+e]</entry>
+        <entry align='left'>uni03F5</entry>
+        <entry align='left'>u03F5</entry>
+        <entry align='left'>variant epsilon</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+<para><emphasis remap='I'>Card symbols</emphasis></para>
+
+<informaltable pgwide='1' frame='none'>
+  <tgroup cols='5' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <colspec colname='c3'/>
+    <colspec colname='c4'/>
+    <colspec colname='c5'/>
+    <tbody>
+      <row rowsep='1'>
+        <entry align='left'>Output  </entry>
+        <entry align='left'>Input   </entry>
+        <entry align='left'>PostScript</entry>
+        <entry align='left'>Unicode</entry>
+        <entry align='left'>Notes</entry>
+      </row>
+      <row>
+        <entry align='left'>&clubs;   </entry>
+        <entry align='left'>&bsol;[CL]  </entry>
+        <entry align='left'>club    </entry>
+        <entry align='left'>u2663</entry>
+        <entry align='left'>black club suit</entry>
+      </row>
+      <row>
+        <entry align='left'>&spades;   </entry>
+        <entry align='left'>&bsol;[SP]  </entry>
+        <entry align='left'>spade   </entry>
+        <entry align='left'>u2660</entry>
+        <entry align='left'>black spade suit</entry>
+      </row>
+      <row>
+        <entry align='left'>&hearts;   </entry>
+        <entry align='left'>&bsol;[HE]  </entry>
+        <entry align='left'>heart   </entry>
+        <entry align='left'>u2665</entry>
+        <entry align='left'>black heart suit</entry>
+      </row>
+      <row>
+        <entry align='left'>&#2661;</entry>
+        <entry align='left'>&bsol;[u2661]</entry>
+        <entry align='left'>uni2661 </entry>
+        <entry align='left'>u2661</entry>
+        <entry align='left'>white heart suit</entry>
+      </row>
+      <row>
+        <entry align='left'>&diams;   </entry>
+        <entry align='left'>&bsol;[DI]  </entry>
+        <entry align='left'>diamond </entry>
+        <entry align='left'>u2666</entry>
+        <entry align='left'>black diamond suit</entry>
+      </row>
+      <row>
+        <entry align='left'>&#2662;</entry>
+        <entry align='left'>&bsol;[u2662]</entry>
+        <entry align='left'>uni2662 </entry>
+        <entry align='left'>u2662</entry>
+        <entry align='left'>white diamond suit</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+
+
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+
+<refsect1 id='author'><title>AUTHOR</title>
+
+<para>Copyright &copy; 1989-2000, 2001, 2002, 2003,
+2004, 2006, 2008, 2009 Free Software Foundation, Inc.</para>
+
+
+<para>This document is distributed under the terms of the FDL (GNU Free
+Documentation License) version 1.3 or later.
+
+You should have received a copy of the FDL on your system, it is also
+available on-line at the
+<ulink url='http://www.gnu.org/copyleft/fdl.html'>
+GNU copyleft site
+</ulink></para>
+
+
+<para>This document is part of
+<emphasis remap='I'>groff</emphasis>,
+the GNU roff distribution.
+
+It was written by
+<ulink url='mailto:jjc@jclark.com'>
+James Clark
+</ulink>
+with additions by 
+<ulink url='mailto:wl@gnu.org'>
+Werner Lemberg
+</ulink>
+and
+<ulink url='mailto:bwarken@mayn.de'>
+Bernd Warken
+</ulink></para>
+
+
+
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><citerefentry><refentrytitle>groff</refentrytitle><manvolnum>1</manvolnum></citerefentry></term>
+  <listitem>
+<para>the GNU roff formatter</para>
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><citerefentry><refentrytitle>groff</refentrytitle><manvolnum>7</manvolnum></citerefentry></term>
+  <listitem>
+<para>a short reference of the groff formatting language</para>
+
+
+
+<para><emphasis remap='I'>An extension to the troff character set for Europe</emphasis>,
+E.G. Keizer, K.J. Simonsen, J. Akkerhuis; EUUG Newsletter, Volume 9,
+No. 2, Summer 1989</para>
+
+
+
+<para><ulink url='http://www.unicode.org'>
+The Unicode Standard
+</ulink></para>
+
+<!-- cp 0 -->
+
+
+<!-- Emacs settings -->
+
+<!-- Local Variables:
+mode: nroff
+End: -->
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+</refentry>
+

@@ -1,0 +1,71 @@
+.\" Test for various troff features
+.\" Test translation
+.tr $\(bu
+We should see a bullet literal $ here. 
+.ds XX frozzle
+This is a \*(XX string expansion example.
+.\" Simple macro definition, no macro calls inside it
+.de YY
+Macro expansion text with argument \$1
+..
+.\" Here's the test invocation
+.YY foo
+.\" Let's be sure we keep getting lines after macroexpansion
+.de AA
+Before subcall
+.YY bar
+After subcall: \$1
+..
+.\" next line tests .so
+.so testinclude
+.\" OK, here's the two-level macroexpansion
+.AA baz
+.\" Test conditionals
+.de CO1
+.if n
+1: You should see this
+.\}
+..
+.CO1
+.de CO2
+.ie n \{
+2: You should see this
+.\}
+.el\{
+2: You should not see this
+.\}
+..
+.CO2
+.pm
+.ie n 3: You should see this
+.el 3: You should not see this
+.\" Something is funky with the else handling
+.if n TRUE
+.el FALSE
+\" Test HTMLization
+.br <foo>
+Hi there
+.de Sh
+dummy
+..
+.\" Do we blow our stack?
+.if n .Sh """Considerations"""
+.el .Sh "``Considerations''"
+.\" Example test
+.ft CW
+.in +4
+.nf
+This is an example
+.ft
+.in -4
+.fi
+foo\ bar
+.br
+This line tests recognition of \v'-.4m'\fIsuperscripting\*(ic\fR\v'.4m')
+This line tests recognition of the \uother\d superscript idiom.
+Before ignore
+.ig 
+This line is ignored
+..
+After ignore
+# End.

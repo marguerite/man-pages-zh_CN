@@ -1,0 +1,242 @@
+.\" Test load for doclifter
+.TH docliftertest1 1
+.SH NAME
+docliftertest1 \- section 1 test load for doclifter 
+.SH SYNOPSIS
+\fBdocliftertest1\fR [-a | -b] [\fIoptional...\fR]
+
+\fBdocliftertest1\fR -c \fI<required>\fP
+ 
+\fBdocliftertest1\fR -d
+[
+.B optional
+]
+ 
+\fBdocliftertest1\fR [ -e | -f foo ] ...
+.SH DESCRIPTION
+This file is a test load for doclifter, intended to exercise as much as possible
+of its translation capability.  You are now reading the last sentence
+of an ordinary paragraph; by inspecting the output, you can check that 
+your formatter is generating a correct beginning-of-body even after
+the section title, and an end-of-body event at the end of the
+paragraph.
+.PP
+This is an ordinary paragraph started by a \fB.PP\fR macro.
+A second line illustrates the effect of filling.
+.PP
+This
+.B word 
+should be bold. This 
+.SM word
+should be small.  The word
+.SM ASCII
+is actually an acronym.  This is a reference to section:
+.SM SEE ALSO
+it should be a link now.  Visiting the
+.SM SYNOPSIS
+is important.  While the
+.SM SYNOPYOSIS
+is not important and doesn't exist.
+.IR This sentence should alternate italic and bold.
+The words in the last sentence should have been run together.
+.LP
+This is an ordinary paragraph started by a \fB.LP\fR macro.
+A second line illustrates the effect of filling.
+.HP 5
+This is a paragraph started by an \fB.HP\fR macro.
+We translate it to DocBook as an ordinary paragraph break.
+.IP & 5
+This paragraph was led with \fB.IP & 5\fP.
+A sample line to see how it formats -- it should turn into list markup.
+.PP
+There should be an index entry generated right after this sentence.
+.IX Item <sample>
+And right before this one.
+.IP 5
+This paragraph was led with \fB.IP 5\fP.
+This should turn into an ordinary paragraph.
+.PP
+This paragraph contains a URL, http://www.google.com, that doesn't have
+explicit \fB.UR\fP/\fB.UN\fR tags around it.  It should not be marked
+up, because \fB.UR\fP/\fB.UN\fR tags exist in this document.
+.IP \(bu
+This is the first item in a bulleted list.
+.IP \(bu
+This is the second item in a bulleted list.
+.IP \(bu
+This is the third item in a bulleted list.
+.PP
+This is another ordinary paragraph.  It's going to be immediately
+followed (without an intervening paragraph tag) by a table example
+lifted straight from Mike Lesk's original tbl paper:
+.TS
+center, box;
+c  s  s  s
+c  s  s  s
+c |c |c |c
+c |c |c |c
+l |n |n |n.
+1970 Federal Budget Transfers
+\s-2(in billions of dollars)\s0
+=
+State	Taxes	Money	Net
+\^	collected	spent	\^
+_
+New York	22.91	21.35	\-1.56
+New Jersey	8.33	6.96	\-1.37
+Connecticut	4.12	3.10	\-1.02
+Maine	0.74	0.67	\-0.07
+California	22.29	22.42	+0.13
+New Mexico	0.70	1.49	+0.79
+Georgia	3.30	4.28	+0.98
+Mississippi	1.15	2.32	+1.17
+Texas	9.33	11.13	+1.80
+.TE
+In the above table, the presence or absence of cell borders may not be
+exactly as
+.BR tbl (1)
+specified them (the DocBook DSSL toolchain sets BORDER=1 if there is
+any frame attribute, which is wrong; according to the DocBook
+specification, the frame attribute should only control box drawing
+around the exterior of the table).  But the horizontal spanning and
+centering should be displayed properly.
+.SS MORE TABLES
+We just started a subsection.
+.P
+Here's another table.  The first line of the table contains a heading
+centered across all three columns; each remaining line contains a
+left-adjusted item in the first column followed by two columns of
+numerical data.  (The numerical alignment won't translate into DocBook.)
+.TS
+c s s
+l n n.
+Overall title
+Item-a	34.22	9.1
+Item-b	12.65	.02
+Items: c,d,e	23	5.8
+Total	69.87	14.92
+.TE
+This table illustrates the effect of the \fBexpand\fR option:
+.TS
+expand;
+c s s s
+c c c c
+l l n n.
+Bell Labs Locations
+Name	Address	Area Code	Phone
+Holmdel	Holmdel, N. J. 07733	201	949-3000
+Murray Hill	Murray Hill, N. J. 07974	201	582-6377
+Whippany	Whippany, N. J. 07981	201	386-3000
+Indian Hill	Naperville, Illinois 60540	312	690-2000
+.TE
+Here's a really gnarly table with a lot of vertically spanned 
+content and several multiline items per line.  However this 
+is not done with a vertically-spanned format; for that, see the
+next example.
+.TS
+box;
+cb   s   s   s
+c | c | c   s
+ltiw(1i) | ltw(2i) | lp8| lw(1.6i)p8.
+Some Interesting Places
+_
+Name	Description	Practical Information
+_
+T{
+American Museum of Natural History
+T}	T{
+The collections fill 11.5 acres (Michelin) or 25 acres (MTA)
+of exhibition halls on four floors.
+There is a full-sized replica
+of a blue whale and the world's largest star sapphire (stolen in 1964).
+T}	Hours	10-5, ex. Sun 11-5, Wed. to 9
+\^	\^	Location	T{
+Central Park West & 79th St.
+T}
+\^	\^	Admission	Donation: $1.00 asked
+\^	\^	Subway	AA to 81st St.
+\^	\^	Telephone	212-873-4225
+_
+Bronx Zoo	T{
+About a mile long and .6 mile wide, this is the largest zoo in America.
+A lion eats 18 pounds
+of meat a day while a sea lion eats 15 pounds of fish.
+T}	Hours	T{
+10-4:30 winter, to 5:00 summer
+T}
+\^	\^	Location	T{
+185th St. & Southern Blvd, the Bronx.
+T}
+\^	\^	Admission	$1.00, but Tu,We,Th free
+\^	\^	Subway	2, 5 to East Tremont Ave.
+\^	\^	Telephone	212-933-1759
+_
+Brooklyn Museum	T{
+Five floors of galleries contain American and ancient art.
+There are American period rooms and architectural ornaments saved
+from wreckers, such as a classical figure from Pennsylvania Station.
+T}	Hours	Wed-Sat, 10-5, Sun 12-5
+\^	\^	Location	T{
+Eastern Parkway & Washington Ave., Brooklyn.
+T}
+\^	\^	Admission	Free
+\^	\^	Subway	2,3 to Eastern Parkway.
+\^	\^	Telephone	212-638-5000
+_
+T{
+New-York Historical Society
+T}	T{
+All the original paintings for Audubon's
+.I Birds of America
+are here, as are exhibits of American decorative arts, New York history,
+Hudson River school paintings, carriages, and glass paperweights.
+T}	Hours	T{
+Tues-Fri & Sun, 1-5; Sat 10-5
+T}
+\^	\^	Location	T{
+Central Park West & 77th St.
+T}
+\^	\^	Admission	Free
+\^	\^	Subway	AA to 81st St.
+\^	\^	Telephone	212-873-3400
+.TE
+OK, here is a table example with spanned vertical format.  It
+illustrates the vertical-spanning bug noted on the 
+.BR doclifter (1)
+manual page (but
+.BR troff2docbook (1)
+translates this table correctly).  If the translation were completely
+correct, the "E" entry would span one row further downward.
+.TS
+allbox;
+l l l
+l l l
+l ^ l.
+A	B	C
+_
+D	E	F
+G		H
+I		J
+.TE
+.P
+Now we'll test PIC translation to SVG.
+.PS
+box "box"
+.PE
+This line tests recognition of \v'-.4m'\fIsuperscripting\fR\v'.4m')
+,br
+This line tests recognition of the \uother\d superscript idiom.
+
+.SH FILES
+The following items illustrate \fB.TP\fR markup:
+.TP 5
+${HOME}/.profile
+read at startup by 
+.BR sh (1).
+.TP
+/etc/hosts
+list of static host addresses used by the \fIbind\fR(8) library.
+.SH SEE ALSO
+ls(1),
+.IR mkdir (1).
+.\" End

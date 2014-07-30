@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='grep1'>
+<!-- grep man page -->
+
+
+
+<!-- Id listing suppressed (not used) -->
+<refmeta>
+<refentrytitle>GREP</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>GNU Project</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>grep</refname>
+<refname>egrep</refname>
+<refname>fgrep</refname>
+<refpurpose>打印匹配给定模式的行</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>grep</command>    
+    <arg choice='opt'><replaceable>options</replaceable></arg>
+    <arg choice='plain'><replaceable>PATTERN</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>FILE</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>grep</command>    
+    <arg choice='opt'><replaceable>options</replaceable></arg>
+    <arg choice='opt'><arg choice='plain'>-e </arg><group choice='plain'><arg choice='plain'><replaceable>PATTERN</replaceable></arg><arg choice='plain'>-f </arg><arg choice='plain'><replaceable>FILE</replaceable></arg></group></arg>
+    <arg choice='opt' rep='repeat'><replaceable>FILE</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>描述 DESCRIPTION</title>
+<para><emphasis remap='B'>Grep</emphasis>
+搜索以
+<emphasis remap='I'>FILE</emphasis>
+命名的文件输入 (或者是�&nbsp;�准输入，如果没有指定文件名，或者给出的文件名是
+<emphasis remap='B'>-</emphasis>
+的话)，寻找含有与给定的模式
+<emphasis remap='I'>PATTERN</emphasis>
+相匹配的内容的行。
+默认情况下，
+<command>grep</command>
+将把含有匹配内容的行打印出来。</para>
+
+<para>另外，也可以使用两个变种程序
+<emphasis remap='B'>egrep</emphasis>
+和
+<emphasis remap='B'>fgrep</emphasis>
+。
+<emphasis remap='B'>Egrep</emphasis>
+与
+<userinput>grep&nbsp;-E</userinput>
+相同。
+<emphasis remap='B'>Fgrep</emphasis>
+与
+<userinput>grep&nbsp;-F</userinput>
+相同。</para>
+</refsect1>
+
+<refsect1 id='options'><title>选项 OPTIONS</title>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><option>-A</option><replaceable> NUM</replaceable>,<emphasis remap='P->B'> --after-context=</emphasis><emphasis remap='I'>NUM</emphasis></term>
+  <listitem>
+<para>打印出紧随匹配的行之后的下文
+<emphasis remap='I'>NUM</emphasis>
+行。在相邻的匹配组之间将会打印内容是
+<option>--</option>
+的一行。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-a</option>, <option>--text</option></term>
+  <listitem>
+<para>将一个二进制文件视为一个文本文件来处理；它与
+<option>--binary-files=text</option>
+选项等价。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-B</option><replaceable> NUM</replaceable>,<emphasis remap='P->B'> --before-context=</emphasis><emphasis remap='I'>NUM</emphasis></term>
+  <listitem>
+<para>打印出匹配的行之前的上文
+<emphasis remap='I'>NUM</emphasis>
+行。在相邻的匹配组之间将会打印内容是
+<option>--</option>
+的一行。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-C</option><replaceable> NUM</replaceable>,<emphasis remap='P->B'> --context=</emphasis><emphasis remap='I'>NUM</emphasis></term>
+  <listitem>
+<para>打印出匹配的行的上下文前后各
+<emphasis remap='I'>NUM</emphasis>
+行。在相邻的匹配组之间将会打印内容是
+<option>--</option>
+的一行。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-b</option>, <option>--byte-offset</option></term>
+  <listitem>
+<para>在输出的每行前面同时打印出当前行在输入文件中的字节偏移量。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>--binary-files=</option><replaceable>TYPE</replaceable></term>
+  <listitem>
+<para>如果一个文件的起始�&nbsp;个字节表明文件包含二进制数据，那么假定文件是
+<emphasis remap='I'>TYPE</emphasis>
+类型的。默认情况下，
+<emphasis remap='I'>TYPE</emphasis>
+是
+<emphasis remap='B'>binary</emphasis>
+，并且
+<command>grep</command>
+一般会输出一个一行的消息说一个二进制文件匹配，或者如果没有匹配的话就没有消息输出。如果类型
+<emphasis remap='I'>TYPE</emphasis>
+是
+<emphasis remap='B'>without-match</emphasis>
+，那么
+<command>grep</command>
+假定二进制文件不会匹配；这�&nbsp;�做与
+<option>-I</option>
+选项等价。如果类型
+<emphasis remap='I'>TYPE</emphasis>
+是
+<emphasis remap='B'>text</emphasis>
+，那么
+<command>grep</command>
+将一个二进制文件视为文本文件来处理；它与
+<option>-a</option>
+选项等价。
+<emphasis remap='I'>警告：</emphasis>
+<userinput>grep --binary-files=text</userinput>
+可能会输出二进制的�&nbsp;用内容。如果输出设备是一个终端，并且终端的驱动将这些输出中的一些当作命令，可能会带来恶劣的副作用。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>--colour[=</option><replaceable>WHEN</replaceable>]<emphasis remap='I'>, </emphasis><option>--color[=</option><replaceable>WHEN</replaceable>]</term>
+  <listitem>
+<para>在匹配的行周围以
+<emphasis remap='B'>GREP_COLOR</emphasis>
+环境变量中指定的记号来�&nbsp;�记。WHEN 可以是 `never', `always', 或是 `auto'。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-c</option>, <option>--count</option></term>
+  <listitem>
+<para>禁止通常的输出；作为替代，为每一个输入文件打印一个匹配的行的总数。如果使用
+<option>-v</option>, <option>--invert-match</option>
+选项 (参见下面)，将是不匹配的行的总数。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-D</option><replaceable> ACTION</replaceable>,<emphasis remap='P->B'> --devices=</emphasis><emphasis remap='I'>ACTION</emphasis></term>
+  <listitem>
+<para>如果输入文件是一个设备，FIFO 或是套接字 (socket) ，使用动作
+<emphasis remap='I'>ACTION</emphasis>
+来处理它。默认情况下，动作
+<emphasis remap='I'>ACTION</emphasis>
+是
+<emphasis remap='B'>read</emphasis>
+，意味着设备将视为普通文件那�&nbsp;�来读。如果动作
+<emphasis remap='I'>ACTION</emphasis>
+是
+<emphasis remap='B'>skip</emphasis>
+，将不处理而直接跳过设备。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-d</option><replaceable> ACTION</replaceable>,<emphasis remap='P->B'> --directories=</emphasis><emphasis remap='I'>ACTION</emphasis></term>
+  <listitem>
+<para>如果输入文件是一个目录，使用动作
+<emphasis remap='I'>ACTION</emphasis>
+来处理它。默认情况下，动作
+<emphasis remap='I'>ACTION</emphasis>
+是
+<emphasis remap='B'>read</emphasis>
+，意味着目录将视为普通文件那�&nbsp;�来读。如果动作
+<emphasis remap='I'>ACTION</emphasis>
+是
+<emphasis remap='B'>skip</emphasis>
+，将不处理而直接跳过目录。如果动作
+<emphasis remap='I'>ACTION</emphasis>
+是
+<emphasis remap='B'>recurse</emphasis>
+，
+<command>grep</command>
+将递归地读每一目录下的所有文件。这�&nbsp;�做和
+<option>-r</option>
+选项等价。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-E</option>, <option>--extended-regexp</option></term>
+  <listitem>
+<para>将模式
+<emphasis remap='I'>PATTERN</emphasis>
+作为一个扩展的正则表达式来解释 (参见下面)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-e</option><replaceable> PATTERN</replaceable>,<emphasis remap='P->B'> --regexp=</emphasis><emphasis remap='I'>PATTERN</emphasis></term>
+  <listitem>
+<para>使用模式
+<emphasis remap='I'>PATTERN</emphasis>
+作为模式；在保护以
+<emphasis remap='B'>-</emphasis>
+为起始的模式时有用。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-F</option>, <option>--fixed-strings</option></term>
+  <listitem>
+<para>将模式
+<emphasis remap='I'>PATTERN</emphasis>
+视为一个固定的字符串的列表，用新行 (newlines) 分隔，只要匹配其中之一即可。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-P</option>, <option>--perl-regexp</option></term>
+  <listitem>
+<para>将模式
+<emphasis remap='I'>PATTERN</emphasis>
+作为一个 Perl 正则表达式来解释。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-f</option><replaceable> FILE</replaceable>,<emphasis remap='P->B'> --file=</emphasis><emphasis remap='I'>FILE</emphasis></term>
+  <listitem>
+<para>从文件
+<emphasis remap='I'>FILE</emphasis>
+中获取模式，每行一个。空文件含有0个模式，�&nbsp;此不匹配任何东西。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-G</option>, <option>--basic-regexp</option></term>
+  <listitem>
+<para>将模式
+<emphasis remap='I'>PATTERN</emphasis>
+作为一个基本的正则表达式 (参见下面) 来解释。这是默认值。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-H</option>, <option>--with-filename</option></term>
+  <listitem>
+<para>为每个匹配打印文件名。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-h</option>, <option>--no-filename</option></term>
+  <listitem>
+<para>当搜索多个文件时，禁止在输出的前面�&nbsp;上文件名前缀。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>--help</option></term>
+  <listitem>
+<para>输出一个简短的帮助信息。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-I</option></term>
+  <listitem>
+<para>处理一个二进制文件，但是认为它不包含匹配的内容。这和
+<option>--binary-files=without-match</option>
+选项等价。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-i</option>, <option>--ignore-case</option></term>
+  <listitem>
+<para>忽略模式
+<emphasis remap='I'>PATTERN</emphasis>
+和输入文件中的大小写的分别。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-L</option>, <option>--files-without-match</option></term>
+  <listitem>
+<para>禁止通常的输出；作为替代，打印出每个在通常情况下不会产生输出的输入文件的名字。对每个文件的扫描在遇到第一个匹配的时候就会停止。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-l</option>, <option>--files-with-matches</option></term>
+  <listitem>
+<para>禁止通常的输出；作为替代，打印出每个在通常情况下会产生输出的输入文件的名字。对每个文件的扫描在遇到第一个匹配的时候就会停止。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-m</option><replaceable> NUM</replaceable>,<emphasis remap='P->B'> --max-count=</emphasis><emphasis remap='I'>NUM</emphasis></term>
+  <listitem>
+<para>在找到
+<emphasis remap='I'>NUM</emphasis>
+个匹配的行之后，不再读这个文件。如果输入是来自一个普通文件的�&nbsp;�准输入，并且已经输出了
+<emphasis remap='I'>NUM</emphasis>
+个匹配的行，
+<command>grep</command>
+保证�&nbsp;�准输入被定位于退出时的最后一次匹配的行之后，不管是否指定了要输出紧随的下文的行。这�&nbsp;�可以使一个调用程序恢复搜索。当
+<command>grep</command>
+在
+<emphasis remap='I'>NUM</emphasis>
+个匹配的行之后停止，它会输出任何紧随的下文的行。当使用了
+<option>-c</option>
+或
+<option>--count</option>
+选项的时候，
+<command>grep</command>
+不会输出比
+<emphasis remap='I'>NUM</emphasis>
+更多的行。当指定了
+<option>-v</option>
+或
+<option>--invert-match</option>
+选项的时候，
+<command>grep</command>
+会在输出
+<emphasis remap='I'>NUM</emphasis>
+个不匹配的行之后停止。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>--mmap</option></term>
+  <listitem>
+<para>如果可能的话，使用
+<citerefentry><refentrytitle>mmap</refentrytitle><manvolnum>2</manvolnum></citerefentry>
+系统调用来读取输入，而不是默认的
+<citerefentry><refentrytitle>read</refentrytitle><manvolnum>2</manvolnum></citerefentry>
+系统调用。在一些情况下，
+<option>--mmap</option>
+提供较好的性能。但是，如果一个输入文件在
+<command>grep</command>
+正在操作时大小发生变化，或者如果发生了一个 I/O 错误，
+<option>--mmap</option>
+可能导致不可知的行为 (包括core dumps)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-n</option>, <option>--line-number</option></term>
+  <listitem>
+<para>在输出的每行前面�&nbsp;上它所在的文件中它的行号。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-o</option>, <option>--only-matching</option></term>
+  <listitem>
+<para>只显示匹配的行中与
+<emphasis remap='I'>PATTERN</emphasis>
+相匹配的部分。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>--label=</option><replaceable>LABEL</replaceable></term>
+  <listitem>
+<para>将实际上来自�&nbsp;�准输入的输入视为来自输入文件
+<emphasis remap='I'>LABEL</emphasis>
+。这对于 zgrep 这�&nbsp;�的工具非常有用，例如：
+<userinput>gzip -cd foo.gz |grep --label=foo something</userinput></para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>--line-buffering</option></term>
+  <listitem>
+<para>使用行缓冲，it can be a performance penality.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-q</option>, <option>--quiet</option>, <option>--silent</option></term>
+  <listitem>
+<para>安静。不向�&nbsp;�准输出写任何东西。如果找到任何匹配的内容就立即以状态值 0 退出，即使检测到了错误。
+参见
+<option>-s</option>
+或
+<option>--no-messages</option>
+选项。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-R</option>, <option>-r</option>, <option>--recursive</option></term>
+  <listitem>
+<para>递归地读每一目录下的所有文件。这�&nbsp;�做和
+<option>-d recurse</option>
+选项等价。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> <emphasis remap='P->B'> --include=</emphasis>PATTERN</term>
+  <listitem>
+<para>仅仅在搜索匹配
+<emphasis remap='I'>PATTERN</emphasis>
+的文件时在目录中递归搜索。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term> <emphasis remap='P->B'> --exclude=</emphasis>PATTERN</term>
+  <listitem>
+<para>在目录中递归搜索，但是跳过匹配
+<emphasis remap='I'>PATTERN</emphasis>
+的文件。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-s</option>, <option>--no-messages</option></term>
+  <listitem>
+<para>禁止输出关于文件不存在或不可读的错误信息。
+对于可移植性需要注意：与 <?troff ps -1?>GNU<?troff ps 0?>
+<command>grep</command>
+不同，�&nbsp;统的
+<command>grep</command>
+不遵守 <?troff ps -1?>POSIX.2<?troff ps 0?> 规范，�&nbsp;为�&nbsp;统的
+<command>grep</command>
+缺少一个
+<option>-q</option>
+选项，而它的
+<option>-s</option>
+选项与 <?troff ps -1?>GNU<?troff ps 0?>
+<command>grep</command>
+的
+<option>-q</option>
+选项行为相似。需要可移植到�&nbsp;统
+<command>grep</command>
+的 shell 脚本应当避免使用
+<option>-q</option>
+和
+<option>-s</option>
+选项，而应当将输出重定向到 /dev/null 。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-U</option>, <option>--binary</option></term>
+  <listitem>
+<para>将文件视为二进制。默认情况下，在 MS-DOS 和 MS-Windows 系统中，
+<command>grep</command>
+通过从文件中读取头部的 32kB 内容来判断它的文件类型。如果
+<command>grep</command>
+判断文件是一个文本文件，它将原始文件内容中的 CR 字符去除 (使得含有
+<emphasis remap='B'>^</emphasis>
+和
+<emphasis remap='B'>$</emphasis>
+的正则表达式可以正常工作)。指定
+<option>-U</option>
+将不进行这些工作，而使所有文件保持不变地读取并�&nbsp;递给匹配机制。如果文件是一个以 CR/LF 换行的文本文件，这�&nbsp;�作将导致一些正则表达式失败。这个选项在 MS-DOS 和 MS-Windows 之外的系统中�&nbsp;效。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-u</option>, <option>--unix-byte-offsets</option></term>
+  <listitem>
+<para>报告 Unix 风�&nbsp;�的字节偏移量。这个开关使得
+<command>grep</command>
+报告字节偏移量时，将文件作为 Unix 风�&nbsp;�的文本文件看待，也就是说将 CR 字符去掉。这将产生与在一台 Unix 主机上运行
+<command>grep</command>
+完全相同的结果。除非同时使用
+<option>-b</option>
+选项，否则这个选项�&nbsp;效。这个选项在 MS-DOS 和 MS-Windows 之外的系统中�&nbsp;效。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-V</option>, <option>--version</option></term>
+  <listitem>
+<para>向�&nbsp;�准错误输出打印
+<command>grep</command>
+的版本号。版本号应当包含在所有的 bug 报告中 (参见下面)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-v</option>, <option>--invert-match</option></term>
+  <listitem>
+<para>改变匹配的意义，只选择不匹配的行。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-w</option>, <option>--word-regexp</option></term>
+  <listitem>
+<para>只选择含有能组成完整的词的匹配的行。判断方法是匹配的子字符串必须是一行的开始，或者是在一个不可能是词的组成的字符之后。与此相似，它必须是一行的结束，或者是在一个不可能是词的组成的字符之前。词的组成字符是字母，数字，还有下划线。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-x</option>, <option>--line-regexp</option></term>
+  <listitem>
+<para>只选择能匹配完整一行的匹配。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-y</option></term>
+  <listitem>
+<para><option>-i</option>
+的同义词，废弃不用。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-Z</option>, <option>--null</option></term>
+  <listitem>
+<para>输出一个全零字节 (<?troff ps -1?>ASCII<?troff ps 0?> �&nbsp;�中的
+<emphasis remap='B'>NUL</emphasis>
+字符) 而不是一般情况下输出在文件名之后的字符。例如，
+<userinput>grep -lZ</userinput>
+在每个文件名之后输出一个全零字节而不是普通的新行符。这个选项使得输出清楚明白，即使文件名的表示中包含特殊字符比如新行符。这个选项可以与命令
+<userinput>find -print0</userinput>,
+<userinput>perl -0</userinput>,
+<userinput>sort -z</userinput>,
+和
+<userinput>xargs -0</userinput>
+一起使用，来处理任意的文件名，即使是那些含有新行符的文件名。</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='regular_expressions'><title>正则表达式 REGULAR EXPRESSIONS</title>
+<para>一个正则表达式是一个描述了一个字符串集合的模式。正则表达式的构�&nbsp;类似于算术表达式，使用各种各�&nbsp;�的操作符来将更小的表达式连在一起。</para>
+
+<para><emphasis remap='B'>Grep</emphasis>
+能理解两种不同版本的正则表达式语法：&ldquo;basic&rdquo; 和 &ldquo;extended&rdquo;。在
+<?troff ps -1?>GNU<?troff ps 0?>&nbsp;<command>grep</command>
+中，两种语法可以实现的功能是没有区别的。在其他实现中，基本 (basic) 正则表达式表达能力要弱一点。下面的描述适用于扩展的 (extended) 正则表达式，它与基本正则表达式的区别会在最后做一个总结。</para>
+
+<para>基本的构�&nbsp;块是匹配单个字符的正则表达式。大部分字符，包括所有字母和数字，是匹配它们自身的正则表达式。任何具有特殊含义的元字符可以通过前置一个反斜�&nbsp;来引用。(may be quoted by preceding it with a backslash.)</para>
+
+<para><emphasis remap='I'>方括号表达式 (bracket)</emphasis>
+是一个字符序列，放在
+<emphasis remap='B'>[</emphasis>
+和
+<emphasis remap='B'>]</emphasis>
+当中。它匹配序列中的任何一个字符；如果序列中的第一个字符是脱字符 (caret)
+<emphasis remap='B'>^</emphasis>
+那么它匹配
+<emphasis remap='I'>不在</emphasis>
+序列中的任何一个字符。例如，正则表达式
+<emphasis remap='B'>[0123456789]</emphasis>
+匹配任何一个数字。</para>
+
+<para>在方括号表达式之中，一个
+<emphasis remap='I'>范围表达式 (range)</emphasis>
+由两个字符组成，中间用一个连字符 (hyphen) 分隔。它匹配在这两个字符之间的任何一个字符，使用本地化的序列顺序和字符集。(that sorts between the two characters,inclusive, using the locale's collating sequence and character set.) 例如，在默认的 C locale中，
+<emphasis remap='B'>[a-d]</emphasis>
+与
+<emphasis remap='B'>[abcd]</emphasis>
+等价。典型的，许多 locale 将字符以字典顺序排序，在这些 locale 中，
+<emphasis remap='B'>[a-d]</emphasis>
+不与
+<emphasis remap='B'>[abcd]</emphasis>
+等价；例如它可能与
+<emphasis remap='B'>[aBbCcDd]</emphasis>
+等价。要获得�&nbsp;统的对方括号表达式的解释，可以设定环境变量
+<envar>LC_ALL</envar>
+值为
+<emphasis remap='B'>C</emphasis>
+来使用 locale C 。</para>
+
+<para>最后，在方括号表达式中有一些预定义的字符类，如下所示。它们的名字是自说明的，它们是
+<emphasis remap='B'>[:alnum:]</emphasis>(字母和数字),
+<emphasis remap='B'>[:alpha:]</emphasis>(字母),
+<emphasis remap='B'>[:cntrl:]</emphasis>(),
+<emphasis remap='B'>[:digit:]</emphasis>(数字),
+<emphasis remap='B'>[:graph:]</emphasis>(),
+<emphasis remap='B'>[:lower:]</emphasis>(小写字母),
+<emphasis remap='B'>[:print:]</emphasis>(可打印字符),
+<emphasis remap='B'>[:punct:]</emphasis>(),
+<emphasis remap='B'>[:space:]</emphasis>(空�&nbsp;�),
+<emphasis remap='B'>[:upper:]</emphasis>(大写字母),
+和
+<emphasis remap='B'>[:xdigit:]</emphasis>
+。例如，
+<emphasis remap='B'>[[:alnum:]]</emphasis>
+意思是
+<emphasis remap='B'>[0-9A-Za-z]</emphasis>
+，但是后一种表示方法依赖于 locale C 和<?troff ps -1?>ASCII<?troff ps 0?> 字符编�&nbsp;�，而前一种是与 locale 和字符集�&nbsp;关的。(注意这些字符类名中的方括号也是符号名称的一部分，必须包含在用来为序列定界的方括号之中。)</para>
+
+<para>大多数元字符处于序列中时会失去它们的特殊意义。为了包含一个字面意义 (literal) 的
+<emphasis remap='B'>]</emphasis>
+，需要将它放在序列的最前。与此相似，为了包含一个字面意义 (literal) 的
+<emphasis remap='B'>^</emphasis>
+，需要将它放在除了序列最前之外的其他位置。最后，为了包含一个字面意义 (literal) 的
+<emphasis remap='B'>-</emphasis>
+，需要将它放在序列最后。</para>
+
+<para>句点符 (period)
+<literal>.</literal>
+匹配任何一个字符。符号
+<emphasis remap='B'>&bsol;w</emphasis>
+是
+<emphasis remap='B'>[[:alnum:]]</emphasis>
+的同义词，
+<emphasis remap='B'>&bsol;W</emphasis>
+是
+<emphasis remap='B'>[^[:alnum]]</emphasis>
+的同义词。</para>
+
+<para>脱字符 (caret)
+<emphasis remap='B'>^</emphasis>
+和美元�&nbsp;�记 (dollar)
+<emphasis remap='B'>$</emphasis>
+分别是匹配一行的首部和尾部的空字串的元字符。符号
+<emphasis remap='B'>&bsol;&lt;</emphasis>
+和
+<emphasis remap='B'>&bsol;&gt;</emphasis>
+分别是匹配一个词的首部和尾部的空字串的元字符。符号
+<emphasis remap='B'>&bsol;b</emphasis>
+匹配一个词边缘 (edge) 的空字串，符号
+<emphasis remap='B'>&bsol;B</emphasis>
+匹配
+<emphasis remap='I'>不</emphasis>
+处于一个词的边缘的空字串。</para>
+
+<para>一个正则表达式后面可以跟随多种重复操作符之一。</para>
+<!-- PD 0 -->
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='B'>?</emphasis></term>
+  <listitem>
+<para>先前的项是可选的，最多匹配一次。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>*</emphasis></term>
+  <listitem>
+<para>先前的项可以匹配零次或多次。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>+</emphasis></term>
+  <listitem>
+<para>先前的项可以匹配一次或多次。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>{</emphasis><emphasis remap='I'>n</emphasis><emphasis remap='B'>}</emphasis></term>
+  <listitem>
+<para>先前的项将匹配恰好
+<emphasis remap='I'>n</emphasis>
+次。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>{</emphasis><emphasis remap='I'>n</emphasis><emphasis remap='B'>,}</emphasis></term>
+  <listitem>
+<para>先前的项可以匹配
+<emphasis remap='I'>n</emphasis>
+或更多次。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>{</emphasis><emphasis remap='I'>n</emphasis><emphasis remap='B'>,</emphasis><emphasis remap='I'>m</emphasis><emphasis remap='B'>}</emphasis></term>
+  <listitem>
+<para>先前的项将匹配至少
+<emphasis remap='I'>n</emphasis>
+词，但是不会超过
+<emphasis remap='I'>m</emphasis>
+次。</para>
+<!-- PD -->
+
+<para>两个正则表达式可以连接到一起；得出的正则表达式可以匹配任何由两个分别匹配连接前的子表达式的子字符串连接而成的字符串。</para>
+
+<para>两个正则表达式可以用中缀操作符
+<emphasis remap='B'>|</emphasis>
+联合到一起，得出的正则表达式可以匹配任何匹配联合前的任何一个子表达式的字符串。</para>
+
+<para>重复操作符的优先级比连接高，接下来又比选择的优先级高。一个完整的子表达式可以用圆括号 (parentheses) 括住来超越这些优先级规则。(to override these precedence rules.)</para>
+
+<para>反向引用
+<emphasis remap='B'>&bsol;</emphasis><emphasis remap='I'>n</emphasis> 中，
+<emphasis remap='I'>n</emphasis>
+是一个数字，匹配正则表达式中，以第
+<emphasis remap='I'>n</emphasis>
+个圆括号括住的子表达式已匹配的子字符串。</para>
+
+<para>在基本正则表达式中，元字符
+<emphasis remap='B'>?</emphasis>,
+<emphasis remap='B'>+</emphasis>,
+<emphasis remap='B'>{</emphasis>,
+<emphasis remap='B'>|</emphasis>,
+<emphasis remap='B'>(</emphasis>,
+和
+<emphasis remap='B'>)</emphasis>
+丧失了它们的特殊意义；作为替代，使用�&nbsp;反斜�&nbsp;的 (backslash) 版本
+<emphasis remap='B'>&bsol;?</emphasis>,
+<emphasis remap='B'>&bsol;+</emphasis>,
+<emphasis remap='B'>&bsol;{</emphasis>,
+<emphasis remap='B'>&bsol;|</emphasis>,
+<emphasis remap='B'>&bsol;(</emphasis>,
+和
+<emphasis remap='B'>&bsol;)</emphasis>
+。</para>
+
+<para>�&nbsp;统的
+<emphasis remap='B'>egrep</emphasis>
+不支持元字符
+<emphasis remap='B'>{</emphasis>
+，并且一些
+<emphasis remap='B'>egrep</emphasis>
+的实现通过支持
+<emphasis remap='B'>&bsol;{</emphasis>
+来代替它，�&nbsp;此可移植的脚本应当避免
+在
+<emphasis remap='B'>egrep</emphasis>
+中使用
+<emphasis remap='B'>{</emphasis>
+模式，应当使用
+<emphasis remap='B'>[{]</emphasis>
+来匹配一个字面意义 (literal) 的
+<emphasis remap='B'>{</emphasis>
+。</para>
+
+<para><?troff ps -1?>GNU<?troff ps 0?>
+<emphasis remap='B'>egrep</emphasis>
+通过假设如果
+<emphasis remap='B'>{</emphasis>
+处于 an invalid interval specification 的起始，就不是一个特殊字符，来支持�&nbsp;统的用法。例如，shell 命令
+<emphasis remap='B'>egrep '{1'</emphasis>
+将会搜索这个两字符的字符串
+<emphasis remap='B'>{1</emphasis>
+而不是报告在正则表达式中发生了语法错误。<?troff ps -1?>POSIX.2<?troff ps 0?> 允许这个行为，将其视为一个扩展，但是可移植的脚本应当避免使用它。</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='environment_variables'><title>环境变量 ENVIRONMENT VARIABLES</title>
+<para><emphasis remap='B'>Grep</emphasis>
+的行为受下列环境变量影响。</para>
+
+<para>一个 locale
+<emphasis remap='B'>LC_</emphasis><emphasis remap='I'>foo</emphasis>
+是通过按下面的顺序，
+<envar>LC_ALL</envar>,
+<emphasis remap='B'>LC_</emphasis><emphasis remap='I'>foo</emphasis>,
+<envar>LANG</envar>,
+检查这三个环境变量的取值而确定的。设置了的第一个变量指定了 locale。例如，如果
+<envar>LC_ALL</envar>
+没有设置，但是
+<envar>LC_MESSAGES</envar>
+设置为
+<emphasis remap='B'>pt_BR</emphasis>
+，那么巴西的葡萄牙语 (Brazilian Portuguese) 将用作
+<envar>LC_MESSAGES</envar>
+locale 的值。如果没有设置这其中任何一个环境变量，或者没有安装所设置的 locale 目录，或者如果
+<command>grep</command>
+没有将国家和语言支持 (national language support (<?troff ps -1?>NLS<?troff ps 0?>)) 编译在内，将默认使用 locale C。</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='B'>GREP_OPTIONS</emphasis></term>
+  <listitem>
+<para>这个变量指定了将放在所有显式指定的选项之前的默认选项。例如，如果
+<emphasis remap='B'>GREP_OPTIONS</emphasis>
+是
+<emphasis remap='B'>'--binary-files=without-match --directories=skip'</emphasis>
+的话，
+<command>grep</command>
+将像已经在任何显式指定的选项之前指定了
+<option>--binary-files=without-match</option>
+和
+<option>--directories=skip</option>
+选项那�&nbsp;�来运作。选项以空白 (whitespace) 分隔。一个反斜�&nbsp; (backslash) 使得下一个字符转义 (escape)，�&nbsp;此可以用来指定一个含有空白或者反斜�&nbsp;的选项。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>GREP_COLOR</emphasis></term>
+  <listitem>
+<para>指定用来高亮显示的�&nbsp;�记。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><envar>LC_ALL</envar>, <emphasis remap='B'>LC_COLLATE</emphasis>, <envar>LANG</envar></term>
+  <listitem>
+<para>这些变量指定了 locale
+<emphasis remap='B'>LC_COLLATE</emphasis>
+，决定了解释类似
+<emphasis remap='B'>[a-z]</emphasis>
+的范围表达式时的序列顺序 (collating sequence) 。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><envar>LC_ALL</envar>, <emphasis remap='B'>LC_CTYPE</emphasis>, <envar>LANG</envar></term>
+  <listitem>
+<para>这些选项指定了 locale
+<emphasis remap='B'>LC_CTYPE</emphasis>
+，决定了字符的类型，例如，哪些字符是空白 (whitespace) 。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><envar>LC_ALL</envar>, <envar>LC_MESSAGES</envar>, <envar>LANG</envar></term>
+  <listitem>
+<para>这些选项指定了 locale
+<envar>LC_MESSAGES</envar>
+，决定了
+<command>grep</command>
+的消息使用的语言。默认的 locale C 使用美国英语的消息。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><envar>POSIXLY_CORRECT</envar></term>
+  <listitem>
+<para>如果设置了的话，
+<command>grep</command>
+将像 <?troff ps -1?>POSIX.2<?troff ps 0?> 要求的那�&nbsp;�来运作；否则，
+<command>grep</command>
+将像其他 <?troff ps -1?>GNU<?troff ps 0?> 程序一�&nbsp;�来运作。<?troff ps -1?>POSIX.2<?troff ps 0?> 要求文件名之后的选项必须视为文件名；默认情况下，这些选项被交换到操作数列表的前面，被当作选项来处理。同时， <?troff ps -1?>POSIX.2<?troff ps 0?> 要求不可识别的选项在诊断消息中表示为 &ldquo;illegal&rdquo;，但是既然它们没有真正触犯法律，�&nbsp;此默认情况下它们在诊断 (diagnose) 消息中表示为 &ldquo;invalid&rdquo;。
+<envar>POSIXLY_CORRECT</envar>
+同时禁止了下面描述的 <emphasis remap='B'>_</emphasis><emphasis remap='I'>N</emphasis><emphasis remap='B'>_GNU_nonoption_argv_flags_</emphasis>。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>_</emphasis><emphasis remap='I'>N</emphasis><emphasis remap='B'>_GNU_nonoption_argv_flags_</emphasis></term>
+  <listitem>
+<para>(这里
+<emphasis remap='I'>N</emphasis>
+是
+<command>grep</command>'s
+数字形式的进程ID。) 如果这个环境变量的值的第
+<emphasis remap='I'>i</emphasis>
+个字符是
+<literal>1</literal>
+，那么不将
+<command>grep</command>
+的第
+<emphasis remap='I'>i</emphasis>
+个操作数视为一个选项，即使它看上去像。shell 可以将这个变量设置在它运行的每个命令的环境中，指定哪个操作数是文件名通配符扩展的结果，�&nbsp;此不应当被视为选项。这个行为只有在使用 <?troff ps -1?>GNU<?troff ps 0?> C 库时有效，并且只有在
+<envar>POSIXLY_CORRECT</envar>
+没有设置的时候。</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='diagnostics'><title>诊断 DIAGNOSTICS</title>
+<para>一般地，如果找到了选择的行，退出时状态值为0，否则为1。但是如果发生错误，退出时状态值是2，除非指定了
+<option>-q</option>
+或
+<option>--quiet</option>
+或
+<option>--silent</option>
+选项，并且找到了选择的行。</para>
+</refsect1>
+
+<refsect1 id='bugs'><title>BUGS</title>
+<para>bug 报告的电子邮件地址是
+<emphasis remap='B'>bug-gnu-utils@gnu.org</emphasis>。
+一定要在&ldquo;Subject:&rdquo;中带有 &ldquo;grep&rdquo; 这个词。</para>
+
+<para>在
+<emphasis remap='B'>{</emphasis><emphasis remap='I'>n</emphasis><emphasis remap='B'>,</emphasis><emphasis remap='I'>m</emphasis><emphasis remap='B'>}</emphasis>
+结构中重复次数过多会导致
+<command>grep</command>
+使用大量内存。另外，一些过分晦涩的正则表达式需要指数级的时间和空间，可能会导致
+<command>grep</command>
+耗尽所有内存。</para>
+
+<para>向后引用 (backreferences) 非常慢，可能需要指数级的时间。</para>
+</refsect1>
+
+<refsect1 id='g1367729093.519713'><title>[中文版维护人]</title>
+<para><emphasis remap='B'>袁乙钧 &lt;bbbush@163.com&gt;</emphasis></para>
+</refsect1>
+
+<refsect1 id='g1367729093.520285'><title>[中文版最新更新]</title>
+<para><literal>2003.11.03</literal></para>
+</refsect1>
+
+<refsect1 id='linuxman'><title>《中国linux论坛man手册页翻译计划》:</title>
+<para><emphasis remap='B'><ulink url='http://cmpp.linuxforum.net'>http://cmpp.linuxforum.net</ulink></emphasis></para>
+<!-- Work around problems with some troff &bsol;-man implementations.
+br -->
+</refsect1>
+</refentry>
+

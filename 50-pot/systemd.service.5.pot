@@ -1,0 +1,418 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-30 20:56+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: systemd.service.5.xml:8(refentrytitle)
+msgid "SYSTEMD.SERVICE"
+msgstr ""
+
+#: systemd.service.5.xml:9(manvolnum)
+msgid "5"
+msgstr ""
+
+#: systemd.service.5.xml:10(refmiscinfo)
+msgid "systemd 208"
+msgstr ""
+
+#: systemd.service.5.xml:13(refname)
+msgid "systemd.service"
+msgstr ""
+
+#: systemd.service.5.xml:14(refpurpose)
+msgid "Service unit configuration"
+msgstr ""
+
+#: systemd.service.5.xml:18(para)
+msgid "<emphasis remap=\"I\">service</emphasis>.service"
+msgstr ""
+
+#: systemd.service.5.xml:22(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: systemd.service.5.xml:23(para)
+msgid "A unit configuration file whose name ends in .service encodes information about a process controlled and supervised by systemd."
+msgstr ""
+
+#: systemd.service.5.xml:27(para)
+msgid "This man page lists the configuration options specific to this unit type. See <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry> for the common options of all unit configuration files. The common configuration items are configured in the generic \"[Unit]\" and \"[Install]\" sections. The service specific configuration options are configured in the \"[Service]\" section."
+msgstr ""
+
+#: systemd.service.5.xml:37(para)
+msgid "Additional options are listed in <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5</manvolnum></citerefentry>, which define the execution environment the commands are executed in, and in <citerefentry><refentrytitle>systemd.kill</refentrytitle><manvolnum>5</manvolnum></citerefentry>, which define the way the processes of the service are terminated, and in <citerefentry><refentrytitle>systemd.resource-control</refentrytitle><manvolnum>5</manvolnum></citerefentry>, which configure resource control settings for the processes of the service."
+msgstr ""
+
+#: systemd.service.5.xml:42(para)
+msgid "Unless <emphasis remap=\"I\">DefaultDependencies=</emphasis> is set to <emphasis remap=\"B\">false</emphasis>, service units will implicitly have dependencies of type <emphasis remap=\"I\">Requires=</emphasis> and <emphasis remap=\"I\">After=</emphasis> on basic.target as well as dependencies of type <emphasis remap=\"I\">Conflicts=</emphasis> and <emphasis remap=\"I\">Before=</emphasis> on shutdown.target. These ensure that normal service units pull in basic system initialization, and are terminated cleanly prior to system shutdown. Only services involved with early boot or late system shutdown should disable this option."
+msgstr ""
+
+#: systemd.service.5.xml:58(para)
+msgid "If a service is requested under a certain name but no unit configuration file is found, systemd looks for a SysV init script by the same name (with the .service suffix removed) and dynamically creates a service unit from that script. This is useful for compatibility with SysV. Note that this compatibility is quite comprehensive but not 100%. For details about the incompatibilities see the <phrase remap=\"color:blue\"><emphasis remap=\"B\">Incompatibilities with SysV</emphasis></phrase><?troff ps -2?><superscript>[1]</superscript><?troff ps +2?> document."
+msgstr ""
+
+#: systemd.service.5.xml:65(title)
+msgid "OPTIONS"
+msgstr ""
+
+#: systemd.service.5.xml:66(para)
+msgid "Service files must include a \"[Service]\" section, which carries information about the service and the process it supervises. A number of options that may be used in this section are shared with other unit types. These options are documented in <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5</manvolnum></citerefentry> and <citerefentry><refentrytitle>systemd.kill</refentrytitle><manvolnum>5</manvolnum></citerefentry>. The options specific to the \"[Service]\" section of service units are the following:"
+msgstr ""
+
+#: systemd.service.5.xml:75(emphasis)
+msgid "Type="
+msgstr ""
+
+#: systemd.service.5.xml:77(para)
+msgid "Configures the process start-up type for this service unit. One of <emphasis remap=\"B\">simple</emphasis>, <emphasis remap=\"B\">forking</emphasis>, <emphasis remap=\"B\">oneshot</emphasis>, <emphasis remap=\"B\">dbus</emphasis>, <emphasis remap=\"B\">notify</emphasis> or <emphasis remap=\"B\">idle</emphasis>."
+msgstr ""
+
+#: systemd.service.5.xml:86(para)
+msgid "If set to <emphasis remap=\"B\">simple</emphasis> (the default value if <emphasis remap=\"I\">BusName=</emphasis> is not specified), it is expected that the process configured with <emphasis remap=\"I\">ExecStart=</emphasis> is the main process of the service. In this mode, if the process offers functionality to other processes on the system, its communication channels should be installed before the daemon is started up (e.g. sockets set up by systemd, via socket activation), as systemd will immediately proceed starting follow-up units."
+msgstr ""
+
+#: systemd.service.5.xml:94(para)
+msgid "If set to <emphasis remap=\"B\">forking</emphasis>, it is expected that the process configured with <emphasis remap=\"I\">ExecStart=</emphasis> will call <function>fork()</function> as part of its start-up. The parent process is expected to exit when start-up is complete and all communication channels are set up. The child continues to run as the main daemon process. This is the behavior of traditional UNIX daemons. If this setting is used, it is recommended to also use the <emphasis remap=\"I\">PIDFile=</emphasis> option, so that systemd can identify the main process of the daemon. systemd will proceed starting follow-up units as soon as the parent process exits."
+msgstr ""
+
+#: systemd.service.5.xml:103(para)
+msgid "Behavior of <emphasis remap=\"B\">oneshot</emphasis> is similar to <emphasis remap=\"B\">simple</emphasis>, however it is expected that the process has to exit before systemd starts follow-up units. <emphasis remap=\"I\">RemainAfterExit=</emphasis> is particularly useful for this type of service."
+msgstr ""
+
+#: systemd.service.5.xml:110(para)
+msgid "Behavior of <emphasis remap=\"B\">dbus</emphasis> is similar to <emphasis remap=\"B\">simple</emphasis>, however it is expected that the daemon acquires a name on the D-Bus bus, as configured by <emphasis remap=\"I\">BusName=</emphasis>. systemd will proceed starting follow-up units after the D-Bus bus name has been acquired. Service units with this option configured implicitly gain dependencies on the dbus.socket unit. This type is the default if <emphasis remap=\"I\">BusName=</emphasis> is specified."
+msgstr ""
+
+#: systemd.service.5.xml:120(para)
+msgid "Behavior of <emphasis remap=\"B\">notify</emphasis> is similar to <emphasis remap=\"B\">simple</emphasis>, however it is expected that the daemon sends a notification message via <citerefentry><refentrytitle>sd_notify</refentrytitle><manvolnum>3</manvolnum></citerefentry> or an equivalent call when it finished starting up. systemd will proceed starting follow-up units after this notification message has been sent. If this option is used, <emphasis remap=\"I\">NotifyAccess=</emphasis> (see below) should be set to open access to the notification socket provided by systemd. If <emphasis remap=\"I\">NotifyAccess=</emphasis> is not set, it will be implicitly set to <emphasis remap=\"B\">main</emphasis>. Note that currently <emphasis remap=\"I\">Type=</emphasis><emphasis remap=\"B\">notify</emphasis> will not work if used in combination with <emphasis remap=\"I\">PrivateNetwork=</emphasis><emphasis remap=\"B\">yes</emphasis>."
+msgstr ""
+
+#: systemd.service.5.xml:135(para)
+msgid "Behavior of <emphasis remap=\"B\">idle</emphasis> is very similar to <emphasis remap=\"B\">simple</emphasis>, however actual execution of the service binary is delayed until all jobs are dispatched. This may be used to avoid interleaving of output of shell services with the status output on the console."
+msgstr ""
+
+#: systemd.service.5.xml:141(emphasis)
+msgid "RemainAfterExit="
+msgstr ""
+
+#: systemd.service.5.xml:143(para)
+msgid "Takes a boolean value that specifies whether the service shall be considered active even when all its processes exited. Defaults to <emphasis remap=\"B\">no</emphasis>."
+msgstr ""
+
+#: systemd.service.5.xml:147(emphasis)
+msgid "GuessMainPID="
+msgstr ""
+
+#: systemd.service.5.xml:149(para)
+msgid "Takes a boolean value that specifies whether systemd should try to guess the main PID of a service if it cannot be determined reliably. This option is ignored unless <emphasis remap=\"B\">Type=forking</emphasis> is set and <emphasis remap=\"B\">PIDFile=</emphasis> is unset because for the other types or with an explicitly configured PID file the main PID is always known. The guessing algorithm might come to incorrect conclusions if a daemon consists of more than one process. If the main PID cannot be determined, failure detection and automatic restarting of a service will not work reliably. Defaults to <emphasis remap=\"B\">yes</emphasis>."
+msgstr ""
+
+#: systemd.service.5.xml:157(emphasis)
+msgid "PIDFile="
+msgstr ""
+
+#: systemd.service.5.xml:159(para)
+msgid "Takes an absolute file name pointing to the PID file of this daemon. Use of this option is recommended for services where <emphasis remap=\"I\">Type=</emphasis> is set to <emphasis remap=\"B\">forking</emphasis>. systemd will read the PID of the main process of the daemon after start-up of the service. systemd will not write to the file configured here."
+msgstr ""
+
+#: systemd.service.5.xml:165(emphasis)
+msgid "BusName="
+msgstr ""
+
+#: systemd.service.5.xml:167(para)
+msgid "Takes a D-Bus bus name, that this service is reachable as. This option is mandatory for services where <emphasis remap=\"I\">Type=</emphasis> is set to <emphasis remap=\"B\">dbus</emphasis>, but its use is otherwise recommended as well if the process takes a name on the D-Bus bus."
+msgstr ""
+
+#: systemd.service.5.xml:173(emphasis)
+msgid "ExecStart="
+msgstr ""
+
+#: systemd.service.5.xml:175(para)
+msgid "Commands with their arguments that are executed when this service is started. The first argument must be an absolute path name."
+msgstr ""
+
+#: systemd.service.5.xml:177(para)
+msgid "When <emphasis remap=\"I\">Type</emphasis> is not <emphasis remap=\"B\">oneshot</emphasis>, only one command may be given. When <emphasis remap=\"I\">Type=oneshot</emphasis> is used, more than one command may be specified. Multiple command lines may be concatenated in a single directive, by separating them with semicolons (these semicolons must be passed as separate words). Alternatively, this directive may be specified more than once with the same effect. However, the latter syntax is not recommended for compatibility with parsers suitable for XDG .desktop files. Lone semicolons may be escaped as \"&bsol;;\". If the empty string is assigned to this option, the list of commands to start is reset, prior assignments of this option will have no effect."
+msgstr ""
+
+#: systemd.service.5.xml:187(para)
+msgid "If more than one command is specified, the commands are invoked one by one sequentially in the order they appear in the unit file. If one of the commands fails (and is not prefixed with \"-\"), other lines are not executed and the unit is considered failed."
+msgstr ""
+
+#: systemd.service.5.xml:190(para)
+msgid "Unless <emphasis remap=\"I\">Type=forking</emphasis> is set, the process started via this command line will be considered the main process of the daemon."
+msgstr ""
+
+#: systemd.service.5.xml:194(para)
+msgid "The command line accepts \"%\" specifiers as described in <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>. Note that the first argument of the command line (i.e. the program to execute) may not include specifiers."
+msgstr ""
+
+#: systemd.service.5.xml:199(para)
+msgid "Basic environment variable substitution is supported. Use \"${FOO}\" as part of a word, or as a word of its own on the command line, in which case it will be replaced by the value of the environment variable including all whitespace it contains, resulting in a single argument. Use \"$FOO\" as a separate word on the command line, in which case it will be replaced by the value of the environment variable split up at whitespace, resulting in zero or more arguments. To pass literal dollar sign use \"$$\". Note that the first argument (i.e. the program to execute) may not be a variable, since it must be a literal and absolute path name."
+msgstr ""
+
+#: systemd.service.5.xml:206(para)
+msgid "Optionally, if the absolute file name is prefixed with \"@\", the second token will be passed as \"argv[0]\" to the executed process, followed by the further arguments specified. If the absolute filename is prefixed with \"-\", an exit code of the command normally considered a failure (i.e. non-zero exit status or abnormal exit due to signal) is ignored and considered success. If both \"-\" and \"@\" are used, they can appear in either order."
+msgstr ""
+
+#: systemd.service.5.xml:216(para)
+msgid "Note that this setting does not directly support shell command lines. If shell command lines are to be used, they need to be passed explicitly to a shell implementation of some kind. Example:"
+msgstr ""
+
+#: systemd.service.5.xml:220(literallayout)
+#, no-wrap
+msgid "\nExecStart=/bin/sh -c 'dmesg | tac'\n                                \n"
+msgstr ""
+
+#. remap='RE'
+#: systemd.service.5.xml:227(para)
+msgid "For services run by a user instance of systemd the special environment variable <emphasis remap=\"I\">$MANAGERPID</emphasis> is set to the PID of the systemd instance."
+msgstr ""
+
+#. remap='RE'
+#: systemd.service.5.xml:232(para)
+msgid "<emphasis remap=\"I\">ExecStartPre=</emphasis>, <emphasis remap=\"I\">ExecStartPost=</emphasis>"
+msgstr ""
+
+#: systemd.service.5.xml:234(para)
+msgid "Additional commands that are executed before or after the command in <emphasis remap=\"I\">ExecStart=</emphasis>, respectively. Syntax is the same as for <emphasis remap=\"I\">ExecStart=</emphasis>, except that multiple command lines are allowed and the commands are executed one after the other, serially."
+msgstr ""
+
+#: systemd.service.5.xml:238(para)
+msgid "If any of those commands (not prefixed with \"-\") fail, the rest are not executed and the unit is considered failed."
+msgstr ""
+
+#: systemd.service.5.xml:242(emphasis)
+msgid "ExecReload="
+msgstr ""
+
+#: systemd.service.5.xml:244(para)
+msgid "Commands to execute to trigger a configuration reload in the service. This argument takes multiple command lines, following the same scheme as described for <emphasis remap=\"I\">ExecStart=</emphasis> above. Use of this setting is optional. Specifier and environment variable substitution is supported here following the same scheme as for <emphasis remap=\"I\">ExecStart=</emphasis>."
+msgstr ""
+
+#: systemd.service.5.xml:249(para)
+msgid "One additional special environment variables is set: if known <emphasis remap=\"I\">$MAINPID</emphasis> is set to the main process of the daemon, and may be used for command lines like the following:"
+msgstr ""
+
+#: systemd.service.5.xml:255(literallayout)
+#, no-wrap
+msgid "\n/bin/kill -HUP $MAINPID\n"
+msgstr ""
+
+#: systemd.service.5.xml:262(emphasis)
+msgid "ExecStop="
+msgstr ""
+
+#: systemd.service.5.xml:264(para)
+msgid "Commands to execute to stop the service started via <emphasis remap=\"I\">ExecStart=</emphasis>. This argument takes multiple command lines, following the same scheme as described for <emphasis remap=\"I\">ExecStart=</emphasis> above. Use of this setting is optional. All processes remaining for a service after the commands configured in this option are run are terminated according to the <emphasis remap=\"I\">KillMode=</emphasis> setting (see <citerefentry><refentrytitle>systemd.kill</refentrytitle><manvolnum>5</manvolnum></citerefentry>). If this option is not specified, the process is terminated right-away when service stop is requested. Specifier and environment variable substitution is supported (including <emphasis remap=\"I\">$MAINPID</emphasis>, see above)."
+msgstr ""
+
+#: systemd.service.5.xml:274(emphasis)
+msgid "ExecStopPost="
+msgstr ""
+
+#: systemd.service.5.xml:276(para)
+msgid "Additional commands that are executed after the service was stopped. This includes cases where the commands configured in <emphasis remap=\"I\">ExecStop=</emphasis> were used, where the service does not have any <emphasis remap=\"I\">ExecStop=</emphasis> defined, or where the service exited unexpectedly. This argument takes multiple command lines, following the same scheme as described for <emphasis remap=\"I\">ExecStart</emphasis>. Use of these settings is optional. Specifier and environment variable substitution is supported."
+msgstr ""
+
+#: systemd.service.5.xml:284(emphasis)
+msgid "RestartSec="
+msgstr ""
+
+#: systemd.service.5.xml:286(para)
+msgid "Configures the time to sleep before restarting a service (as configured with <emphasis remap=\"I\">Restart=</emphasis>). Takes a unit-less value in seconds, or a time span value such as \"5min 20s\". Defaults to 100ms."
+msgstr ""
+
+#: systemd.service.5.xml:290(emphasis)
+msgid "TimeoutStartSec="
+msgstr ""
+
+#: systemd.service.5.xml:292(para)
+msgid "Configures the time to wait for start-up. If a daemon service does not signal start-up completion within the configured time, the service will be considered failed and be shut down again. Takes a unit-less value in seconds, or a time span value such as \"5min 20s\". Pass 0 to disable the timeout logic. Defaults to 90s, except when <emphasis remap=\"I\">Type=oneshot</emphasis> is used in which case the timeout is disabled by default."
+msgstr ""
+
+#: systemd.service.5.xml:297(emphasis)
+msgid "TimeoutStopSec="
+msgstr ""
+
+#: systemd.service.5.xml:299(para)
+msgid "Configures the time to wait for stop. If a service is asked to stop but does not terminate in the specified time, it will be terminated forcibly via <constant>SIGTERM</constant>, and after another delay of this time with <constant>SIGKILL</constant> (See <emphasis remap=\"I\">KillMode=</emphasis> in <citerefentry><refentrytitle>systemd.kill</refentrytitle><manvolnum>5</manvolnum></citerefentry>). Takes a unit-less value in seconds, or a time span value such as \"5min 20s\". Pass 0 to disable the timeout logic. Defaults to 90s."
+msgstr ""
+
+#: systemd.service.5.xml:308(emphasis)
+msgid "TimeoutSec="
+msgstr ""
+
+#: systemd.service.5.xml:310(para)
+msgid "A shorthand for configuring both <emphasis remap=\"I\">TimeoutStartSec=</emphasis> and <emphasis remap=\"I\">TimeoutStopSec=</emphasis> to the specified value."
+msgstr ""
+
+#: systemd.service.5.xml:317(emphasis)
+msgid "WatchdogSec="
+msgstr ""
+
+#: systemd.service.5.xml:319(para)
+msgid "Configures the watchdog timeout for a service. The watchdog is activated when the start-up is completed. The service must call <citerefentry><refentrytitle>sd_notify</refentrytitle><manvolnum>3</manvolnum></citerefentry> regularly with \"WATCHDOG=1\" (i.e. the \"keep-alive ping\"). If the time between two such calls is larger than the configured time, then the service is placed in a failure state. By setting <emphasis remap=\"I\">Restart=</emphasis> to <emphasis remap=\"B\">on-failure</emphasis> or <emphasis remap=\"B\">always</emphasis>, the service will be automatically restarted. The time configured here will be passed to the executed service process in the <emphasis remap=\"I\">WATCHDOG_USEC=</emphasis> environment variable. This allows daemons to automatically enable the keep-alive pinging logic if watchdog support is enabled for the service. If this option is used, <emphasis remap=\"I\">NotifyAccess=</emphasis> (see below) should be set to open access to the notification socket provided by systemd. If <emphasis remap=\"I\">NotifyAccess=</emphasis> is not set, it will be implicitly set to <emphasis remap=\"B\">main</emphasis>. Defaults to 0, which disables this feature."
+msgstr ""
+
+#: systemd.service.5.xml:336(emphasis)
+msgid "Restart="
+msgstr ""
+
+#: systemd.service.5.xml:338(para)
+msgid "Configures whether the service shall be restarted when the service process exits, is killed, or a timeout is reached. The service process may be the main service process, but also one of the processes specified with <emphasis remap=\"I\">ExecStartPre=</emphasis>, <emphasis remap=\"I\">ExecStartPost=</emphasis>, <emphasis remap=\"I\">ExecStopPre=</emphasis>, <emphasis remap=\"I\">ExecStopPost=</emphasis>, or <emphasis remap=\"I\">ExecReload=</emphasis>. When the death of the process is a result of systemd operation (e.g. service stop or restart), the service will not be restarted. Timeouts include missing the watchdog \"keep-alive ping\" deadline and a service start, reload, and stop operation timeouts."
+msgstr ""
+
+#: systemd.service.5.xml:345(para)
+msgid "Takes one of <emphasis remap=\"B\">no</emphasis>, <emphasis remap=\"B\">on-success</emphasis>, <emphasis remap=\"B\">on-failure</emphasis>, <emphasis remap=\"B\">on-watchdog</emphasis>, <emphasis remap=\"B\">on-abort</emphasis>, or <emphasis remap=\"B\">always</emphasis>. If set to <emphasis remap=\"B\">no</emphasis> (the default), the service will not be restarted. If set to <emphasis remap=\"B\">on-success</emphasis>, it will be restarted only when the service process exits cleanly. In this context, a clean exit means an exit code of 0, or one of the signals <constant>SIGHUP</constant>, <constant>SIGINT</constant>, <constant>SIGTERM</constant>, or <constant>SIGPIPE</constant>, and additionally, exit statuses and signals specified in <emphasis remap=\"I\">SuccessExitStatus=</emphasis>. If set to <emphasis remap=\"B\">on-failure</emphasis>, the service will be restarted when the process exits with an nonzero exit code, is terminated by a signal (including on core dump), when an operation (such as service reload) times out, and when the configured watchdog timeout is triggered. If set to <emphasis remap=\"B\">on-abort</emphasis>, the service will be restarted only if the service process exits due to an uncaught signal not specified as a clean exit status. If set to <emphasis remap=\"B\">on-watchdog</emphasis>, the service will be restarted only if the watchdog timeout for the service expires. If set to <emphasis remap=\"B\">always</emphasis>, the service will be restarted regardless whether it exited cleanly or not, got terminated abnormally by a signal or hit a timeout."
+msgstr ""
+
+#: systemd.service.5.xml:365(para)
+msgid "In addition to the above settings, the service will not be restarted if the exit code or signal is specified in <emphasis remap=\"I\">RestartPreventExitStatus=</emphasis> (see below)."
+msgstr ""
+
+#: systemd.service.5.xml:370(emphasis)
+msgid "SuccessExitStatus="
+msgstr ""
+
+#: systemd.service.5.xml:372(para)
+msgid "Takes a list of exit status definitions that when returned by the main service process will be considered successful termination, in addition to the normal successful exit code 0 and the signals <constant>SIGHUP</constant>, <constant>SIGINT</constant>, <constant>SIGTERM</constant> and <constant>SIGPIPE</constant>. Exit status definitions can either be numeric exit codes or termination signal names, separated by spaces. Example: \"SuccessExitStatus=1 2 8 <constant>SIGKILL</constant>\", ensures that exit codes 1, 2, 8 and the termination signal <constant>SIGKILL</constant> are considered clean service terminations. This option may appear more than once in which case the list of successful exit statuses is merged. If the empty string is assigned to this option, the list is reset, all prior assignments of this option will have no effect."
+msgstr ""
+
+#: systemd.service.5.xml:383(emphasis)
+msgid "RestartPreventExitStatus="
+msgstr ""
+
+#: systemd.service.5.xml:385(para)
+msgid "Takes a list of exit status definitions that when returned by the main service process will prevent automatic service restarts regardless of the restart setting configured with <emphasis remap=\"I\">Restart=</emphasis>. Exit status definitions can either be numeric exit codes or termination signal names, and are separated by spaces. Defaults to the empty list, so that by default no exit status is excluded from the configured restart logic. Example: \"RestartPreventExitStatus=1 6 SIGABRT\", ensures that exit codes 1 and 6 and the termination signal SIGABRT will not result in automatic service restarting. This option may appear more than once in which case the list of restart preventing statuses is merged. If the empty string is assigned to this option, the list is reset, all prior assignments of this option will have no effect."
+msgstr ""
+
+#: systemd.service.5.xml:390(emphasis)
+msgid "PermissionsStartOnly="
+msgstr ""
+
+#: systemd.service.5.xml:392(para)
+msgid "Takes a boolean argument. If true, the permission related execution options as configured with <emphasis remap=\"I\">User=</emphasis> and similar options (see <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5</manvolnum></citerefentry> for more information) are only applied to the process started with <emphasis remap=\"I\">ExecStart=</emphasis>, and not to the various other <emphasis remap=\"I\">ExecStartPre=</emphasis>, <emphasis remap=\"I\">ExecStartPost=</emphasis>, <emphasis remap=\"I\">ExecReload=</emphasis>, <emphasis remap=\"I\">ExecStop=</emphasis>, <emphasis remap=\"I\">ExecStopPost=</emphasis> commands. If false, the setting is applied to all configured commands the same way. Defaults to false."
+msgstr ""
+
+#: systemd.service.5.xml:406(emphasis)
+msgid "RootDirectoryStartOnly="
+msgstr ""
+
+#: systemd.service.5.xml:408(para)
+msgid "Takes a boolean argument. If true, the root directory as configured with the <emphasis remap=\"I\">RootDirectory=</emphasis> option (see <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5</manvolnum></citerefentry> for more information) is only applied to the process started with <emphasis remap=\"I\">ExecStart=</emphasis>, and not to the various other <emphasis remap=\"I\">ExecStartPre=</emphasis>, <emphasis remap=\"I\">ExecStartPost=</emphasis>, <emphasis remap=\"I\">ExecReload=</emphasis>, <emphasis remap=\"I\">ExecStop=</emphasis>, <emphasis remap=\"I\">ExecStopPost=</emphasis> commands. If false, the setting is applied to all configured commands the same way. Defaults to false."
+msgstr ""
+
+#: systemd.service.5.xml:422(emphasis)
+msgid "NonBlocking="
+msgstr ""
+
+#: systemd.service.5.xml:424(para)
+msgid "Set O_NONBLOCK flag for all file descriptors passed via socket-based activation. If true, all file descriptors &gt;= 3 (i.e. all except STDIN/STDOUT/STDERR) will have the O_NONBLOCK flag set and hence are in non-blocking mode. This option is only useful in conjunction with a socket unit, as described in <citerefentry><refentrytitle>systemd.socket</refentrytitle><manvolnum>5</manvolnum></citerefentry>. Defaults to false."
+msgstr ""
+
+#: systemd.service.5.xml:428(emphasis)
+msgid "NotifyAccess="
+msgstr ""
+
+#: systemd.service.5.xml:430(para)
+msgid "Controls access to the service status notification socket, as accessible via the <citerefentry><refentrytitle>sd_notify</refentrytitle><manvolnum>3</manvolnum></citerefentry> call. Takes one of <emphasis remap=\"B\">none</emphasis> (the default), <emphasis remap=\"B\">main</emphasis> or <emphasis remap=\"B\">all</emphasis>. If <emphasis remap=\"B\">none</emphasis>, no daemon status updates are accepted from the service processes, all status update messages are ignored. If <emphasis remap=\"B\">main</emphasis>, only service updates sent from the main process of the service are accepted. If <emphasis remap=\"B\">all</emphasis>, all services updates from all members of the service's control group are accepted. This option should be set to open access to the notification socket when using <emphasis remap=\"I\">Type=notify</emphasis> or <emphasis remap=\"I\">WatchdogSec=</emphasis> (see above). If those options are used but <emphasis remap=\"I\">NotifyAccess=</emphasis> is not configured, it will be implicitly set to <emphasis remap=\"B\">main</emphasis>."
+msgstr ""
+
+#: systemd.service.5.xml:450(emphasis)
+msgid "Sockets="
+msgstr ""
+
+#: systemd.service.5.xml:452(para)
+msgid "Specifies the name of the socket units this service shall inherit the sockets from when the service is started. Normally it should not be necessary to use this setting as all sockets whose unit shares the same name as the service (ignoring the different suffix of course) are passed to the spawned process."
+msgstr ""
+
+#: systemd.service.5.xml:454(para)
+msgid "Note that the same socket may be passed to multiple processes at the same time. Also note that a different service may be activated on incoming traffic than inherits the sockets. Or in other words: the <emphasis remap=\"I\">Service=</emphasis> setting of .socket units does not have to match the inverse of the <emphasis remap=\"I\">Sockets=</emphasis> setting of the .service it refers to."
+msgstr ""
+
+#: systemd.service.5.xml:464(para)
+msgid "This option may appear more than once, in which case the list of socket units is merged. If the empty string is assigned to this option, the list of sockets is reset, all prior uses of this setting will have no effect."
+msgstr ""
+
+#. remap='RE'
+#: systemd.service.5.xml:467(para)
+msgid "<emphasis remap=\"I\">StartLimitInterval=</emphasis>, <emphasis remap=\"I\">StartLimitBurst=</emphasis>"
+msgstr ""
+
+#: systemd.service.5.xml:469(para)
+msgid "Configure service start rate limiting. By default, services which are started more often than 5 times within 10s are not permitted to start any more times until the 10s interval ends. With these two options, this rate limiting may be modified. Use <emphasis remap=\"I\">StartLimitInterval=</emphasis> to configure the checking interval (defaults to 10s, set to 0 to disable any kind of rate limiting). Use <emphasis remap=\"I\">StartLimitBurst=</emphasis> to configure how many starts per interval are allowed (defaults to 5). These configuration options are particularly useful in conjunction with <emphasis remap=\"I\">Restart=</emphasis>, however apply to all kinds of starts (including manual), not just those triggered by the <emphasis remap=\"I\">Restart=</emphasis> logic. Note that units which are configured for <emphasis remap=\"I\">Restart=</emphasis> and which reach the start limit are not attempted to be restarted anymore, however they may still be restarted manually at a later point from which point on the restart logic is again activated. Note that <emphasis remap=\"B\">systemctl reset-failed</emphasis> will cause the restart rate counter for a service to be flushed, which is useful if the administrator wants to manually start a service and the start limit interferes with that."
+msgstr ""
+
+#: systemd.service.5.xml:483(emphasis)
+msgid "StartLimitAction="
+msgstr ""
+
+#: systemd.service.5.xml:485(para)
+msgid "Configure the action to take if the rate limit configured with <emphasis remap=\"I\">StartLimitInterval=</emphasis> and <emphasis remap=\"I\">StartLimitBurst=</emphasis> is hit. Takes one of <emphasis remap=\"B\">none</emphasis>, <emphasis remap=\"B\">reboot</emphasis>, <emphasis remap=\"B\">reboot-force</emphasis> or <emphasis remap=\"B\">reboot-immediate</emphasis>. If <emphasis remap=\"B\">none</emphasis> is set, hitting the rate limit will trigger no action besides that the start will not be permitted. <emphasis remap=\"B\">reboot</emphasis> causes a reboot following the normal shutdown procedure (i.e. equivalent to <emphasis remap=\"B\">systemctl reboot</emphasis>), <emphasis remap=\"B\">reboot-force</emphasis> causes an forced reboot which will terminate all processes forcibly but should cause no dirty file systems on reboot (i.e. equivalent to <emphasis remap=\"B\">systemctl reboot -f</emphasis>) and <emphasis remap=\"B\">reboot-immediate</emphasis> causes immediate execution of the <citerefentry><refentrytitle>reboot</refentrytitle><manvolnum>2</manvolnum></citerefentry> system call, which might result in data loss. Defaults to <emphasis remap=\"B\">none</emphasis>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.service.5.xml:510(para)
+msgid "Check <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5</manvolnum></citerefentry> and <citerefentry><refentrytitle>systemd.kill</refentrytitle><manvolnum>5</manvolnum></citerefentry> for more settings."
+msgstr ""
+
+#: systemd.service.5.xml:517(title)
+msgid "COMPATIBILITY OPTIONS"
+msgstr ""
+
+#: systemd.service.5.xml:518(para)
+msgid "The following options are also available in the \"[Service]\" section, but exist purely for compatibility reasons and should not be used in newly written service files."
+msgstr ""
+
+#: systemd.service.5.xml:522(emphasis)
+msgid "SysVStartPriority="
+msgstr ""
+
+#: systemd.service.5.xml:524(para)
+msgid "Set the SysV start priority to use to order this service in relation to SysV services lacking LSB headers. This option is only necessary to fix ordering in relation to legacy SysV services, that have no ordering information encoded in the script headers. As such it should only be used as temporary compatibility option, and not be used in new unit files. Almost always it is a better choice to add explicit ordering directives via <emphasis remap=\"I\">After=</emphasis> or <emphasis remap=\"I\">Before=</emphasis>, instead. For more details see <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>. If used, pass an integer value in the range 0-99."
+msgstr ""
+
+#: systemd.service.5.xml:531(emphasis)
+msgid "FsckPassNo="
+msgstr ""
+
+#: systemd.service.5.xml:533(para)
+msgid "Set the fsck passno priority to use to order this service in relation to other file system checking services. This option is only necessary to fix ordering in relation to fsck jobs automatically created for all /etc/fstab entries with a value in the fs_passno column &gt; 0. As such it should only be used as option for fsck services. Almost always it is a better choice to add explicit ordering directives via <emphasis remap=\"I\">After=</emphasis> or <emphasis remap=\"I\">Before=</emphasis>, instead. For more details see <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>. If used, pass an integer value in the same range as /etc/fstab's fs_passno column. See <citerefentry><refentrytitle>fstab</refentrytitle><manvolnum>5</manvolnum></citerefentry> for details."
+msgstr ""
+
+#: systemd.service.5.xml:546(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: systemd.service.5.xml:547(para)
+msgid "<citerefentry><refentrytitle>systemd</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemctl</refentrytitle><manvolnum>8</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.resource-control</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.kill</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.directives</refentrytitle><manvolnum>7</manvolnum></citerefentry>"
+msgstr ""
+
+#: systemd.service.5.xml:556(title)
+msgid "NOTES"
+msgstr ""
+
+#: systemd.service.5.xml:559(term)
+msgid "1."
+msgstr ""
+
+#: systemd.service.5.xml:561(para)
+msgid "Incompatibilities with SysV"
+msgstr ""
+
+#: systemd.service.5.xml:563(ulink)
+msgid "http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: systemd.service.5.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

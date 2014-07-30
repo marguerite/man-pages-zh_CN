@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-01-31 19:30+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: systemd.target.5.xml:8(refentrytitle)
+msgid "SYSTEMD.TARGET"
+msgstr ""
+
+#: systemd.target.5.xml:9(manvolnum)
+msgid "5"
+msgstr ""
+
+#: systemd.target.5.xml:10(refmiscinfo)
+msgid "systemd 208"
+msgstr ""
+
+#: systemd.target.5.xml:13(refname)
+msgid "systemd.target"
+msgstr ""
+
+#: systemd.target.5.xml:14(refpurpose)
+msgid "Target unit configuration"
+msgstr ""
+
+#: systemd.target.5.xml:18(para)
+msgid "<emphasis remap=\"I\">target</emphasis>.target"
+msgstr ""
+
+#: systemd.target.5.xml:22(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: systemd.target.5.xml:23(para)
+msgid ""
+"A unit configuration file whose name ends in \".target\" encodes information "
+"about a target unit of systemd, which is used for grouping units and as well-"
+"known synchronization points during start-up."
+msgstr ""
+
+#: systemd.target.5.xml:27(para)
+msgid ""
+"This unit type has no specific options. See "
+"<citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</"
+"manvolnum></citerefentry> for the common options of all unit configuration "
+"files. The common configuration items are configured in the generic [Unit] "
+"and [Install] sections. A separate [Target] section does not exist, since no "
+"target-specific options may be configured."
+msgstr ""
+
+#: systemd.target.5.xml:31(para)
+msgid ""
+"Target units do not offer any additional functionality on top of the generic "
+"functionality provided by units. They exist merely to group units via "
+"dependencies (useful as boot targets), and to establish standardized names "
+"for synchronization points used in dependencies between units. Among other "
+"things, target units are a more flexible replacement for SysV runlevels in "
+"the classic SysV init system. (And for compatibility reasons special target "
+"units such as runlevel3.target exist which are used by the SysV runlevel "
+"compatibility code in systemd. See <citerefentry><refentrytitle>systemd."
+"special</refentrytitle><manvolnum>7</manvolnum></citerefentry> for details)."
+msgstr ""
+
+#: systemd.target.5.xml:37(para)
+msgid ""
+"Unless <emphasis remap=\"I\">DefaultDependencies=</emphasis> is set to "
+"<emphasis remap=\"B\">false</emphasis>, target units will implicitly "
+"complement all configured dependencies of type <emphasis remap=\"I\">Wants=</"
+"emphasis>, <emphasis remap=\"I\">Requires=</emphasis>, <emphasis remap=\"I"
+"\">RequiresOverridable=</emphasis> with dependencies of type <emphasis remap="
+"\"I\">After=</emphasis> if the units in question also have <emphasis remap="
+"\"I\">DefaultDependencies=true</emphasis>."
+msgstr ""
+
+#: systemd.target.5.xml:50(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: systemd.target.5.xml:51(para)
+msgid ""
+"<citerefentry><refentrytitle>systemd</refentrytitle><manvolnum>1</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>systemctl</"
+"refentrytitle><manvolnum>8</manvolnum></citerefentry>, "
+"<citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.special</"
+"refentrytitle><manvolnum>7</manvolnum></citerefentry>, "
+"<citerefentry><refentrytitle>systemd.directives</refentrytitle><manvolnum>7</"
+"manvolnum></citerefentry>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: systemd.target.5.xml:0(None)
+msgid "translator-credits"
+msgstr ""
