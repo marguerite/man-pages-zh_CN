@@ -1,0 +1,482 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dd.1.xml:8(refentrytitle)
+msgid "DD"
+msgstr ""
+
+#: dd.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: dd.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: dd.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: dd.1.xml:14(refname) dd.1.xml:20(command) dd.1.xml:25(command)
+msgid "dd"
+msgstr ""
+
+#: dd.1.xml:15(refpurpose)
+msgid "convert and copy a file"
+msgstr ""
+
+#: dd.1.xml:21(replaceable)
+msgid "OPERAND"
+msgstr ""
+
+#: dd.1.xml:26(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: dd.1.xml:31(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: dd.1.xml:34(para)
+msgid "Copy a file, converting and formatting according to the operands."
+msgstr ""
+
+#: dd.1.xml:37(term)
+msgid "bs=BYTES"
+msgstr ""
+
+#: dd.1.xml:39(para)
+msgid "read and write up to BYTES bytes at a time"
+msgstr ""
+
+#: dd.1.xml:43(term)
+msgid "cbs=BYTES"
+msgstr ""
+
+#: dd.1.xml:45(para)
+msgid "convert BYTES bytes at a time"
+msgstr ""
+
+#: dd.1.xml:49(term)
+msgid "conv=CONVS"
+msgstr ""
+
+#: dd.1.xml:51(para)
+msgid "convert the file as per the comma separated symbol list"
+msgstr ""
+
+#: dd.1.xml:55(term)
+msgid "count=N"
+msgstr ""
+
+#: dd.1.xml:57(para)
+msgid "copy only N input blocks"
+msgstr ""
+
+#: dd.1.xml:61(term)
+msgid "ibs=BYTES"
+msgstr ""
+
+#: dd.1.xml:63(para)
+msgid "read up to BYTES bytes at a time (default: 512)"
+msgstr ""
+
+#: dd.1.xml:67(term)
+msgid "if=FILE"
+msgstr ""
+
+#: dd.1.xml:69(para)
+msgid "read from FILE instead of stdin"
+msgstr ""
+
+#: dd.1.xml:73(term)
+msgid "iflag=FLAGS"
+msgstr ""
+
+#: dd.1.xml:75(para)
+msgid "read as per the comma separated symbol list"
+msgstr ""
+
+#: dd.1.xml:79(term)
+msgid "obs=BYTES"
+msgstr ""
+
+#: dd.1.xml:81(para)
+msgid "write BYTES bytes at a time (default: 512)"
+msgstr ""
+
+#: dd.1.xml:85(term)
+msgid "of=FILE"
+msgstr ""
+
+#: dd.1.xml:87(para)
+msgid "write to FILE instead of stdout"
+msgstr ""
+
+#: dd.1.xml:91(term)
+msgid "oflag=FLAGS"
+msgstr ""
+
+#: dd.1.xml:93(para)
+msgid "write as per the comma separated symbol list"
+msgstr ""
+
+#: dd.1.xml:97(term)
+msgid "seek=N"
+msgstr ""
+
+#: dd.1.xml:99(para)
+msgid "skip N obs-sized blocks at start of output"
+msgstr ""
+
+#: dd.1.xml:103(term)
+msgid "skip=N"
+msgstr ""
+
+#: dd.1.xml:105(para)
+msgid "skip N ibs-sized blocks at start of input"
+msgstr ""
+
+#: dd.1.xml:109(term)
+msgid "status=WHICH"
+msgstr ""
+
+#: dd.1.xml:111(para)
+msgid "WHICH info to suppress outputting to stderr; 'noxfer' suppresses transfer stats, 'none' suppresses all"
+msgstr ""
+
+#: dd.1.xml:114(para)
+msgid "N and BYTES may be followed by the following multiplicative suffixes: c =1, w =2, b =512, kB =1000, K =1024, MB =1000*1000, M =1024*1024, xM =M GB =1000*1000*1000, G =1024*1024*1024, and so on for T, P, E, Z, Y."
+msgstr ""
+
+#: dd.1.xml:118(para)
+msgid "Each CONV symbol may be:"
+msgstr ""
+
+#: dd.1.xml:122(term)
+msgid "ascii"
+msgstr ""
+
+#: dd.1.xml:124(para)
+msgid "from EBCDIC to ASCII"
+msgstr ""
+
+#: dd.1.xml:128(term)
+msgid "ebcdic"
+msgstr ""
+
+#: dd.1.xml:130(para)
+msgid "from ASCII to EBCDIC"
+msgstr ""
+
+#: dd.1.xml:134(term)
+msgid "ibm"
+msgstr ""
+
+#: dd.1.xml:136(para)
+msgid "from ASCII to alternate EBCDIC"
+msgstr ""
+
+#: dd.1.xml:140(term)
+msgid "block"
+msgstr ""
+
+#: dd.1.xml:142(para)
+msgid "pad newline-terminated records with spaces to cbs-size"
+msgstr ""
+
+#: dd.1.xml:146(term)
+msgid "unblock"
+msgstr ""
+
+#: dd.1.xml:148(para)
+msgid "replace trailing spaces in cbs-size records with newline"
+msgstr ""
+
+#: dd.1.xml:152(term)
+msgid "lcase"
+msgstr ""
+
+#: dd.1.xml:154(para)
+msgid "change upper case to lower case"
+msgstr ""
+
+#: dd.1.xml:158(term)
+msgid "ucase"
+msgstr ""
+
+#: dd.1.xml:160(para)
+msgid "change lower case to upper case"
+msgstr ""
+
+#: dd.1.xml:164(term)
+msgid "sparse"
+msgstr ""
+
+#: dd.1.xml:166(para)
+msgid "try to seek rather than write the output for NUL input blocks"
+msgstr ""
+
+#: dd.1.xml:170(term)
+msgid "swab"
+msgstr ""
+
+#: dd.1.xml:172(para)
+msgid "swap every pair of input bytes"
+msgstr ""
+
+#: dd.1.xml:176(term) dd.1.xml:245(term)
+msgid "sync"
+msgstr ""
+
+#: dd.1.xml:178(para)
+msgid "pad every input block with NULs to ibs-size; when used with block or unblock, pad with spaces rather than NULs"
+msgstr ""
+
+#: dd.1.xml:183(term)
+msgid "excl"
+msgstr ""
+
+#: dd.1.xml:185(para)
+msgid "fail if the output file already exists"
+msgstr ""
+
+#: dd.1.xml:189(term)
+msgid "nocreat"
+msgstr ""
+
+#: dd.1.xml:191(para)
+msgid "do not create the output file"
+msgstr ""
+
+#: dd.1.xml:195(term)
+msgid "notrunc"
+msgstr ""
+
+#: dd.1.xml:197(para)
+msgid "do not truncate the output file"
+msgstr ""
+
+#: dd.1.xml:201(term)
+msgid "noerror"
+msgstr ""
+
+#: dd.1.xml:203(para)
+msgid "continue after read errors"
+msgstr ""
+
+#: dd.1.xml:207(term)
+msgid "fdatasync"
+msgstr ""
+
+#: dd.1.xml:209(para)
+msgid "physically write output file data before finishing"
+msgstr ""
+
+#: dd.1.xml:213(term)
+msgid "fsync"
+msgstr ""
+
+#: dd.1.xml:215(para)
+msgid "likewise, but also write metadata"
+msgstr ""
+
+#: dd.1.xml:217(para)
+msgid "Each FLAG symbol may be:"
+msgstr ""
+
+#: dd.1.xml:221(term)
+msgid "append"
+msgstr ""
+
+#: dd.1.xml:223(para)
+msgid "append mode (makes sense only for output; conv=notrunc suggested)"
+msgstr ""
+
+#: dd.1.xml:227(term)
+msgid "direct"
+msgstr ""
+
+#: dd.1.xml:229(para)
+msgid "use direct I/O for data"
+msgstr ""
+
+#: dd.1.xml:233(term)
+msgid "directory"
+msgstr ""
+
+#: dd.1.xml:235(para)
+msgid "fail unless a directory"
+msgstr ""
+
+#: dd.1.xml:239(term)
+msgid "dsync"
+msgstr ""
+
+#: dd.1.xml:241(para)
+msgid "use synchronized I/O for data"
+msgstr ""
+
+#: dd.1.xml:247(para)
+msgid "likewise, but also for metadata"
+msgstr ""
+
+#: dd.1.xml:251(term)
+msgid "fullblock"
+msgstr ""
+
+#: dd.1.xml:253(para)
+msgid "accumulate full blocks of input (iflag only)"
+msgstr ""
+
+#: dd.1.xml:257(term)
+msgid "nonblock"
+msgstr ""
+
+#: dd.1.xml:259(para)
+msgid "use non-blocking I/O"
+msgstr ""
+
+#: dd.1.xml:263(term)
+msgid "noatime"
+msgstr ""
+
+#: dd.1.xml:265(para)
+msgid "do not update access time"
+msgstr ""
+
+#: dd.1.xml:269(term)
+msgid "nocache"
+msgstr ""
+
+#: dd.1.xml:271(para)
+msgid "discard cached data"
+msgstr ""
+
+#: dd.1.xml:275(term)
+msgid "noctty"
+msgstr ""
+
+#: dd.1.xml:277(para)
+msgid "do not assign controlling terminal from file"
+msgstr ""
+
+#: dd.1.xml:281(term)
+msgid "nofollow"
+msgstr ""
+
+#: dd.1.xml:283(para)
+msgid "do not follow symlinks"
+msgstr ""
+
+#: dd.1.xml:287(term)
+msgid "count_bytes"
+msgstr ""
+
+#: dd.1.xml:289(para)
+msgid "treat 'count=N' as a byte count (iflag only)"
+msgstr ""
+
+#: dd.1.xml:293(term)
+msgid "skip_bytes"
+msgstr ""
+
+#: dd.1.xml:295(para)
+msgid "treat 'skip=N' as a byte count (iflag only)"
+msgstr ""
+
+#: dd.1.xml:299(term)
+msgid "seek_bytes"
+msgstr ""
+
+#: dd.1.xml:301(para)
+msgid "treat 'seek=N' as a byte count (oflag only)"
+msgstr ""
+
+#: dd.1.xml:303(para)
+msgid "Sending a USR1 signal to a running 'dd' process makes it print I/O statistics to standard error and then resume copying."
+msgstr ""
+
+#: dd.1.xml:306(emphasis)
+msgid "$ dd if=/dev/zero of=/dev/null&amp; pid=$!"
+msgstr ""
+
+#. br
+#: dd.1.xml:308(emphasis)
+msgid "$ kill -USR1 $pid; sleep 1; kill $pid"
+msgstr ""
+
+#: dd.1.xml:310(para)
+msgid "18335302+0 records in 18335302+0 records out 9387674624 bytes (9.4 GB) copied, 34.6279 seconds, 271 MB/s"
+msgstr ""
+
+#: dd.1.xml:314(para)
+msgid "Options are:"
+msgstr ""
+
+#: dd.1.xml:318(option)
+msgid "--help"
+msgstr ""
+
+#: dd.1.xml:320(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: dd.1.xml:324(option)
+msgid "--version"
+msgstr ""
+
+#: dd.1.xml:326(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: dd.1.xml:328(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report dd translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: dd.1.xml:335(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: dd.1.xml:336(para)
+msgid "Written by Paul Rubin, David MacKenzie, and Stuart Kemp."
+msgstr ""
+
+#: dd.1.xml:339(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: dd.1.xml:340(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: dd.1.xml:347(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: dd.1.xml:348(para)
+msgid "The full documentation for <command>dd</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>dd</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: dd.1.xml:356(emphasis)
+msgid "info coreutils 'dd invocation'"
+msgstr ""
+
+#: dd.1.xml:358(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: dd.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,221 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: csplit.1.xml:8(refentrytitle)
+msgid "CSPLIT"
+msgstr ""
+
+#: csplit.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: csplit.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: csplit.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: csplit.1.xml:14(refname) csplit.1.xml:20(command)
+msgid "csplit"
+msgstr ""
+
+#: csplit.1.xml:15(refpurpose)
+msgid "split a file into sections determined by context lines"
+msgstr ""
+
+#: csplit.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: csplit.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: csplit.1.xml:23(replaceable)
+msgid "PATTERN"
+msgstr ""
+
+#: csplit.1.xml:29(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: csplit.1.xml:32(para)
+msgid "Output pieces of FILE separated by PATTERN(s) to files 'xx00', 'xx01', ..., and output byte counts of each piece to standard output."
+msgstr ""
+
+#: csplit.1.xml:35(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: csplit.1.xml:38(term)
+msgid "<option>-b</option>, <option>--suffix-format</option>=<emphasis remap=\"I\">FORMAT</emphasis>"
+msgstr ""
+
+#: csplit.1.xml:40(para)
+msgid "use sprintf FORMAT instead of %02d"
+msgstr ""
+
+#: csplit.1.xml:44(term)
+msgid "<option>-f</option>, <option>--prefix</option>=<emphasis remap=\"I\">PREFIX</emphasis>"
+msgstr ""
+
+#: csplit.1.xml:46(para)
+msgid "use PREFIX instead of 'xx'"
+msgstr ""
+
+#: csplit.1.xml:50(term)
+msgid "<option>-k</option>, <option>--keep-files</option>"
+msgstr ""
+
+#: csplit.1.xml:52(para)
+msgid "do not remove output files on errors"
+msgstr ""
+
+#: csplit.1.xml:56(term)
+msgid "<option>-m</option>, <option>--suppress-matched</option>"
+msgstr ""
+
+#: csplit.1.xml:58(para)
+msgid "suppress the lines matching PATTERN"
+msgstr ""
+
+#: csplit.1.xml:62(term)
+msgid "<option>-n</option>, <option>--digits</option>=<emphasis remap=\"I\">DIGITS</emphasis>"
+msgstr ""
+
+#: csplit.1.xml:64(para)
+msgid "use specified number of digits instead of 2"
+msgstr ""
+
+#: csplit.1.xml:68(term)
+msgid "<option>-s</option>, <option>--quiet</option>, <option>--silent</option>"
+msgstr ""
+
+#: csplit.1.xml:70(para)
+msgid "do not print counts of output file sizes"
+msgstr ""
+
+#: csplit.1.xml:74(term)
+msgid "<option>-z</option>, <option>--elide-empty-files</option>"
+msgstr ""
+
+#: csplit.1.xml:76(para)
+msgid "remove empty output files"
+msgstr ""
+
+#: csplit.1.xml:80(option)
+msgid "--help"
+msgstr ""
+
+#: csplit.1.xml:82(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: csplit.1.xml:86(option)
+msgid "--version"
+msgstr ""
+
+#: csplit.1.xml:88(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: csplit.1.xml:90(para)
+msgid "Read standard input if FILE is -. Each PATTERN may be:"
+msgstr ""
+
+#: csplit.1.xml:94(term)
+msgid "INTEGER"
+msgstr ""
+
+#: csplit.1.xml:96(para)
+msgid "copy up to but not including specified line number"
+msgstr ""
+
+#: csplit.1.xml:100(term)
+msgid "/REGEXP/[OFFSET]"
+msgstr ""
+
+#: csplit.1.xml:102(para)
+msgid "copy up to but not including a matching line"
+msgstr ""
+
+#: csplit.1.xml:106(term)
+msgid "%REGEXP%[OFFSET]"
+msgstr ""
+
+#: csplit.1.xml:108(para)
+msgid "skip to, but not including a matching line"
+msgstr ""
+
+#: csplit.1.xml:112(term)
+msgid "{INTEGER}"
+msgstr ""
+
+#: csplit.1.xml:114(para)
+msgid "repeat the previous pattern specified number of times"
+msgstr ""
+
+#: csplit.1.xml:118(term)
+msgid "{*}"
+msgstr ""
+
+#: csplit.1.xml:120(para)
+msgid "repeat the previous pattern as many times as possible"
+msgstr ""
+
+#: csplit.1.xml:122(para)
+msgid "A line OFFSET is a required '+' or '-' followed by a positive integer."
+msgstr ""
+
+#: csplit.1.xml:124(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report csplit translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: csplit.1.xml:131(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: csplit.1.xml:132(para)
+msgid "Written by Stuart Kemp and David MacKenzie."
+msgstr ""
+
+#: csplit.1.xml:135(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: csplit.1.xml:136(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: csplit.1.xml:143(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: csplit.1.xml:144(para)
+msgid "The full documentation for <command>csplit</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>csplit</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: csplit.1.xml:152(emphasis)
+msgid "info coreutils 'csplit invocation'"
+msgstr ""
+
+#: csplit.1.xml:154(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: csplit.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

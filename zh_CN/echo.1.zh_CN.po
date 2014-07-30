@@ -1,0 +1,237 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: echo.1.xml:8(refentrytitle)
+msgid "ECHO"
+msgstr ""
+
+#: echo.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: echo.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: echo.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: echo.1.xml:14(refname) echo.1.xml:20(command) echo.1.xml:26(command)
+msgid "echo"
+msgstr ""
+
+#: echo.1.xml:15(refpurpose)
+msgid "display a line of text"
+msgstr ""
+
+#: echo.1.xml:21(replaceable)
+msgid "SHORT-OPTION"
+msgstr ""
+
+#: echo.1.xml:22(replaceable)
+msgid "STRING"
+msgstr ""
+
+#: echo.1.xml:27(replaceable)
+msgid "LONG-OPTION"
+msgstr ""
+
+#: echo.1.xml:32(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: echo.1.xml:35(para)
+msgid "Echo the STRING(s) to standard output."
+msgstr ""
+
+#: echo.1.xml:38(option)
+msgid "-n"
+msgstr ""
+
+#: echo.1.xml:40(para)
+msgid "do not output the trailing newline"
+msgstr ""
+
+#: echo.1.xml:44(option)
+msgid "-e"
+msgstr ""
+
+#: echo.1.xml:46(para)
+msgid "enable interpretation of backslash escapes"
+msgstr ""
+
+#: echo.1.xml:50(option)
+msgid "-E"
+msgstr ""
+
+#: echo.1.xml:52(para)
+msgid "disable interpretation of backslash escapes (default)"
+msgstr ""
+
+#: echo.1.xml:56(option)
+msgid "--help"
+msgstr ""
+
+#: echo.1.xml:58(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: echo.1.xml:62(option)
+msgid "--version"
+msgstr ""
+
+#: echo.1.xml:64(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: echo.1.xml:66(para)
+msgid "If <option>-e</option> is in effect, the following sequences are recognized:"
+msgstr ""
+
+#: echo.1.xml:72(para)
+msgid "backslash"
+msgstr ""
+
+#: echo.1.xml:76(term)
+msgid "&bsol;a"
+msgstr ""
+
+#: echo.1.xml:78(para)
+msgid "alert (BEL)"
+msgstr ""
+
+#: echo.1.xml:82(term)
+msgid "&bsol;b"
+msgstr ""
+
+#: echo.1.xml:84(para)
+msgid "backspace"
+msgstr ""
+
+#: echo.1.xml:88(term)
+msgid "&bsol;c"
+msgstr ""
+
+#: echo.1.xml:90(para)
+msgid "produce no further output"
+msgstr ""
+
+#: echo.1.xml:94(term)
+msgid "&bsol;e"
+msgstr ""
+
+#: echo.1.xml:96(para)
+msgid "escape"
+msgstr ""
+
+#: echo.1.xml:100(term)
+msgid "&bsol;f"
+msgstr ""
+
+#: echo.1.xml:102(para)
+msgid "form feed"
+msgstr ""
+
+#: echo.1.xml:106(term)
+msgid "&bsol;n"
+msgstr ""
+
+#: echo.1.xml:108(para)
+msgid "new line"
+msgstr ""
+
+#: echo.1.xml:112(term)
+msgid "&bsol;r"
+msgstr ""
+
+#: echo.1.xml:114(para)
+msgid "carriage return"
+msgstr ""
+
+#: echo.1.xml:118(term)
+msgid "&bsol;t"
+msgstr ""
+
+#: echo.1.xml:120(para)
+msgid "horizontal tab"
+msgstr ""
+
+#: echo.1.xml:124(term)
+msgid "&bsol;v"
+msgstr ""
+
+#: echo.1.xml:126(para)
+msgid "vertical tab"
+msgstr ""
+
+#: echo.1.xml:130(term)
+msgid "&bsol;0NNN"
+msgstr ""
+
+#: echo.1.xml:132(para)
+msgid "byte with octal value NNN (1 to 3 digits)"
+msgstr ""
+
+#: echo.1.xml:136(term)
+msgid "&bsol;xHH"
+msgstr ""
+
+#: echo.1.xml:138(para)
+msgid "byte with hexadecimal value HH (1 to 2 digits)"
+msgstr ""
+
+#: echo.1.xml:140(para)
+msgid "NOTE: your shell may have its own version of echo, which usually supersedes the version described here. Please refer to your shell's documentation for details about the options it supports."
+msgstr ""
+
+#: echo.1.xml:144(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report echo translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: echo.1.xml:151(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: echo.1.xml:152(para)
+msgid "Written by Brian Fox and Chet Ramey."
+msgstr ""
+
+#: echo.1.xml:155(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: echo.1.xml:156(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: echo.1.xml:163(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: echo.1.xml:164(para)
+msgid "The full documentation for <command>echo</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>echo</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: echo.1.xml:172(emphasis)
+msgid "info coreutils 'echo invocation'"
+msgstr ""
+
+#: echo.1.xml:174(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: echo.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

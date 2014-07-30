@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: groups.1.xml:8(refentrytitle)
+msgid "GROUPS"
+msgstr ""
+
+#: groups.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: groups.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: groups.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: groups.1.xml:14(refname) groups.1.xml:20(command)
+msgid "groups"
+msgstr ""
+
+#: groups.1.xml:15(refpurpose)
+msgid "print the groups a user is in"
+msgstr ""
+
+#: groups.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: groups.1.xml:22(replaceable)
+msgid "USERNAME"
+msgstr ""
+
+#: groups.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: groups.1.xml:31(para)
+msgid "Print group memberships for each USERNAME or, if no USERNAME is specified, for the current process (which may differ if the groups database has changed)."
+msgstr ""
+
+#: groups.1.xml:35(option)
+msgid "--help"
+msgstr ""
+
+#: groups.1.xml:37(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: groups.1.xml:41(option)
+msgid "--version"
+msgstr ""
+
+#: groups.1.xml:43(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: groups.1.xml:45(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report groups translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: groups.1.xml:52(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: groups.1.xml:53(para)
+msgid "Written by David MacKenzie and James Youngman."
+msgstr ""
+
+#: groups.1.xml:56(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: groups.1.xml:57(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: groups.1.xml:64(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: groups.1.xml:65(para)
+msgid "The full documentation for <command>groups</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>groups</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: groups.1.xml:73(emphasis)
+msgid "info coreutils 'groups invocation'"
+msgstr ""
+
+#: groups.1.xml:75(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: groups.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

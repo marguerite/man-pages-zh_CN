@@ -1,0 +1,181 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: id.1.xml:8(refentrytitle)
+msgid "ID"
+msgstr ""
+
+#: id.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: id.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: id.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: id.1.xml:14(refname) id.1.xml:20(command)
+msgid "id"
+msgstr ""
+
+#: id.1.xml:15(refpurpose)
+msgid "print real and effective user and group IDs"
+msgstr ""
+
+#: id.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: id.1.xml:22(replaceable)
+msgid "USER"
+msgstr ""
+
+#: id.1.xml:27(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: id.1.xml:30(para)
+msgid "Print user and group information for the specified USER, or (when USER omitted) for the current user."
+msgstr ""
+
+#: id.1.xml:34(option)
+msgid "-a"
+msgstr ""
+
+#: id.1.xml:36(para)
+msgid "ignore, for compatibility with other versions"
+msgstr ""
+
+#: id.1.xml:40(term)
+msgid "<option>-Z</option>, <option>--context</option>"
+msgstr ""
+
+#: id.1.xml:42(para)
+msgid "print only the security context of the current user"
+msgstr ""
+
+#: id.1.xml:46(term)
+msgid "<option>-g</option>, <option>--group</option>"
+msgstr ""
+
+#: id.1.xml:48(para)
+msgid "print only the effective group ID"
+msgstr ""
+
+#: id.1.xml:52(term)
+msgid "<option>-G</option>, <option>--groups</option>"
+msgstr ""
+
+#: id.1.xml:54(para)
+msgid "print all group IDs"
+msgstr ""
+
+#: id.1.xml:58(term)
+msgid "<option>-n</option>, <option>--name</option>"
+msgstr ""
+
+#: id.1.xml:60(para)
+msgid "print a name instead of a number, for <option>-ugG</option>"
+msgstr ""
+
+#: id.1.xml:64(term)
+msgid "<option>-r</option>, <option>--real</option>"
+msgstr ""
+
+#: id.1.xml:66(para)
+msgid "print the real ID instead of the effective ID, with <option>-ugG</option>"
+msgstr ""
+
+#: id.1.xml:70(term)
+msgid "<option>-u</option>, <option>--user</option>"
+msgstr ""
+
+#: id.1.xml:72(para)
+msgid "print only the effective user ID"
+msgstr ""
+
+#: id.1.xml:76(term)
+msgid "<option>-z</option>, <option>--zero</option>"
+msgstr ""
+
+#: id.1.xml:78(para)
+msgid "delimit entries with NUL characters, not whitespace;"
+msgstr ""
+
+#: id.1.xml:80(para)
+msgid "not permitted in default format"
+msgstr ""
+
+#: id.1.xml:84(option)
+msgid "--help"
+msgstr ""
+
+#: id.1.xml:86(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: id.1.xml:90(option)
+msgid "--version"
+msgstr ""
+
+#: id.1.xml:92(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: id.1.xml:94(para)
+msgid "Without any OPTION, print some useful set of identified information."
+msgstr ""
+
+#: id.1.xml:96(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report id translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: id.1.xml:103(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: id.1.xml:104(para)
+msgid "Written by Arnold Robbins and David MacKenzie."
+msgstr ""
+
+#: id.1.xml:107(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: id.1.xml:108(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: id.1.xml:115(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: id.1.xml:116(para)
+msgid "The full documentation for <command>id</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>id</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: id.1.xml:124(emphasis)
+msgid "info coreutils 'id invocation'"
+msgstr ""
+
+#: id.1.xml:126(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: id.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

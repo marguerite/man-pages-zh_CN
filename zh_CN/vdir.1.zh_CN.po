@@ -1,0 +1,601 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: vdir.1.xml:8(refentrytitle)
+msgid "VDIR"
+msgstr ""
+
+#: vdir.1.xml:9(manvolnum) vdir.1.xml:436(term)
+msgid "1"
+msgstr ""
+
+#: vdir.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: vdir.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: vdir.1.xml:14(refname) vdir.1.xml:20(command)
+msgid "vdir"
+msgstr ""
+
+#: vdir.1.xml:15(refpurpose)
+msgid "list directory contents"
+msgstr ""
+
+#: vdir.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: vdir.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: vdir.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: vdir.1.xml:31(para)
+msgid "List information about the FILEs (the current directory by default). Sort entries alphabetically if none of <option>-cftuvSUX</option> nor <option>--sort</option> is specified."
+msgstr ""
+
+#: vdir.1.xml:34(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: vdir.1.xml:37(term)
+msgid "<option>-a</option>, <option>--all</option>"
+msgstr ""
+
+#: vdir.1.xml:39(para)
+msgid "do not ignore entries starting with ."
+msgstr ""
+
+#: vdir.1.xml:43(term)
+msgid "<option>-A</option>, <option>--almost-all</option>"
+msgstr ""
+
+#: vdir.1.xml:45(para)
+msgid "do not list implied . and .."
+msgstr ""
+
+#: vdir.1.xml:49(option)
+msgid "--author"
+msgstr ""
+
+#: vdir.1.xml:51(para)
+msgid "with <option>-l</option>, print the author of each file"
+msgstr ""
+
+#: vdir.1.xml:55(term)
+msgid "<option>-b</option>, <option>--escape</option>"
+msgstr ""
+
+#: vdir.1.xml:57(para)
+msgid "print C-style escapes for nongraphic characters"
+msgstr ""
+
+#: vdir.1.xml:61(term)
+msgid "<option>--block-size</option>=<emphasis remap=\"I\">SIZE</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:63(para)
+msgid "scale sizes by SIZE before printing them; e.g., '--block-size=M' prints sizes in units of 1,048,576 bytes; see SIZE format below"
+msgstr ""
+
+#: vdir.1.xml:69(term)
+msgid "<option>-B</option>, <option>--ignore-backups</option>"
+msgstr ""
+
+#: vdir.1.xml:71(para)
+msgid "do not list implied entries ending with ~"
+msgstr ""
+
+#: vdir.1.xml:75(option)
+msgid "-c"
+msgstr ""
+
+#: vdir.1.xml:77(para)
+msgid "with <option>-lt</option>: sort by, and show, ctime (time of last modification of file status information); with <option>-l</option>: show ctime and sort by name; otherwise: sort by ctime, newest first"
+msgstr ""
+
+#: vdir.1.xml:84(option)
+msgid "-C"
+msgstr ""
+
+#: vdir.1.xml:86(para)
+msgid "list entries by columns"
+msgstr ""
+
+#: vdir.1.xml:90(term)
+msgid "<option>--color</option>[=<emphasis remap=\"I\">WHEN</emphasis>]"
+msgstr ""
+
+#: vdir.1.xml:92(para)
+msgid "colorize the output; WHEN can be 'never', 'auto', or 'always' (the default); more info below"
+msgstr ""
+
+#: vdir.1.xml:97(term)
+msgid "<option>-d</option>, <option>--directory</option>"
+msgstr ""
+
+#: vdir.1.xml:99(para)
+msgid "list directories themselves, not their contents"
+msgstr ""
+
+#: vdir.1.xml:103(term)
+msgid "<option>-D</option>, <option>--dired</option>"
+msgstr ""
+
+#: vdir.1.xml:105(para)
+msgid "generate output designed for Emacs' dired mode"
+msgstr ""
+
+#: vdir.1.xml:109(option)
+msgid "-f"
+msgstr ""
+
+#: vdir.1.xml:111(para)
+msgid "do not sort, enable <option>-aU</option>, disable <option>-ls</option><option>--color</option>"
+msgstr ""
+
+#: vdir.1.xml:115(term)
+msgid "<option>-F</option>, <option>--classify</option>"
+msgstr ""
+
+#: vdir.1.xml:117(para)
+msgid "append indicator (one of */=&gt;@|) to entries"
+msgstr ""
+
+#: vdir.1.xml:121(option)
+msgid "--file-type"
+msgstr ""
+
+#: vdir.1.xml:123(para)
+msgid "likewise, except do not append '*'"
+msgstr ""
+
+#: vdir.1.xml:127(term)
+msgid "<option>--format</option>=<emphasis remap=\"I\">WORD</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:129(para)
+msgid "across <option>-x</option>, commas <option>-m</option>, horizontal <option>-x</option>, long <option>-l</option>, single-column <option>-1</option>, verbose <option>-l</option>, vertical <option>-C</option>"
+msgstr ""
+
+#: vdir.1.xml:134(option)
+msgid "--full-time"
+msgstr ""
+
+#: vdir.1.xml:136(para)
+msgid "like <option>-l</option><option>--time-style</option>=<emphasis remap=\"I\">full-iso</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:140(option)
+msgid "-g"
+msgstr ""
+
+#: vdir.1.xml:142(para)
+msgid "like <option>-l</option>, but do not list owner"
+msgstr ""
+
+#: vdir.1.xml:146(option)
+msgid "--group-directories-first"
+msgstr ""
+
+#: vdir.1.xml:148(para)
+msgid "group directories before files;"
+msgstr ""
+
+#: vdir.1.xml:150(para)
+msgid "can be augmented with a <option>--sort</option> option, but any use of <option>--sort</option>=<emphasis remap=\"I\">none</emphasis> (<option>-U</option>) disables grouping"
+msgstr ""
+
+#: vdir.1.xml:155(term)
+msgid "<option>-G</option>, <option>--no-group</option>"
+msgstr ""
+
+#: vdir.1.xml:157(para)
+msgid "in a long listing, don't print group names"
+msgstr ""
+
+#: vdir.1.xml:161(term)
+msgid "<option>-h</option>, <option>--human-readable</option>"
+msgstr ""
+
+#: vdir.1.xml:163(para)
+msgid "with <option>-l</option>, print sizes in human readable format (e.g., 1K 234M 2G)"
+msgstr ""
+
+#: vdir.1.xml:168(option)
+msgid "--si"
+msgstr ""
+
+#: vdir.1.xml:170(para)
+msgid "likewise, but use powers of 1000 not 1024"
+msgstr ""
+
+#: vdir.1.xml:174(term)
+msgid "<option>-H</option>, <option>--dereference-command-line</option>"
+msgstr ""
+
+#: vdir.1.xml:176(para)
+msgid "follow symbolic links listed on the command line"
+msgstr ""
+
+#: vdir.1.xml:180(option)
+msgid "--dereference-command-line-symlink-to-dir"
+msgstr ""
+
+#: vdir.1.xml:182(para)
+msgid "follow each command line symbolic link"
+msgstr ""
+
+#: vdir.1.xml:184(para)
+msgid "that points to a directory"
+msgstr ""
+
+#: vdir.1.xml:188(term)
+msgid "<option>--hide</option>=<emphasis remap=\"I\">PATTERN</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:190(para)
+msgid "do not list implied entries matching shell PATTERN (overridden by <option>-a</option> or <option>-A</option>)"
+msgstr ""
+
+#: vdir.1.xml:195(term)
+msgid "<option>--indicator-style</option>=<emphasis remap=\"I\">WORD</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:197(para)
+msgid "append indicator with style WORD to entry names: none (default), slash (<option>-p</option>), file-type (<option>--file-type</option>), classify (<option>-F</option>)"
+msgstr ""
+
+#: vdir.1.xml:203(term)
+msgid "<option>-i</option>, <option>--inode</option>"
+msgstr ""
+
+#: vdir.1.xml:205(para)
+msgid "print the index number of each file"
+msgstr ""
+
+#: vdir.1.xml:209(term)
+msgid "<option>-I</option>, <option>--ignore</option>=<emphasis remap=\"I\">PATTERN</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:211(para)
+msgid "do not list implied entries matching shell PATTERN"
+msgstr ""
+
+#: vdir.1.xml:215(term)
+msgid "<option>-k</option>, <option>--kibibytes</option>"
+msgstr ""
+
+#: vdir.1.xml:217(para)
+msgid "default to 1024-byte blocks for disk usage"
+msgstr ""
+
+#: vdir.1.xml:221(option)
+msgid "-l"
+msgstr ""
+
+#: vdir.1.xml:223(para)
+msgid "use a long listing format"
+msgstr ""
+
+#: vdir.1.xml:227(term)
+msgid "<option>-L</option>, <option>--dereference</option>"
+msgstr ""
+
+#: vdir.1.xml:229(para)
+msgid "when showing file information for a symbolic link, show information for the file the link references rather than for the link itself"
+msgstr ""
+
+#: vdir.1.xml:235(option)
+msgid "-m"
+msgstr ""
+
+#: vdir.1.xml:237(para)
+msgid "fill width with a comma separated list of entries"
+msgstr ""
+
+#: vdir.1.xml:241(term)
+msgid "<option>-n</option>, <option>--numeric-uid-gid</option>"
+msgstr ""
+
+#: vdir.1.xml:243(para)
+msgid "like <option>-l</option>, but list numeric user and group IDs"
+msgstr ""
+
+#: vdir.1.xml:247(term)
+msgid "<option>-N</option>, <option>--literal</option>"
+msgstr ""
+
+#: vdir.1.xml:249(para)
+msgid "print raw entry names (don't treat e.g. control characters specially)"
+msgstr ""
+
+#: vdir.1.xml:254(option)
+msgid "-o"
+msgstr ""
+
+#: vdir.1.xml:256(para)
+msgid "like <option>-l</option>, but do not list group information"
+msgstr ""
+
+#: vdir.1.xml:260(term)
+msgid "<option>-p</option>, <option>--indicator-style</option>=<emphasis remap=\"I\">slash</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:262(para)
+msgid "append / indicator to directories"
+msgstr ""
+
+#: vdir.1.xml:266(term)
+msgid "<option>-q</option>, <option>--hide-control-chars</option>"
+msgstr ""
+
+#: vdir.1.xml:268(para)
+msgid "print ? instead of nongraphic characters"
+msgstr ""
+
+#: vdir.1.xml:272(option)
+msgid "--show-control-chars"
+msgstr ""
+
+#: vdir.1.xml:274(para)
+msgid "show nongraphic characters as-is (the default, unless program is 'ls' and output is a terminal)"
+msgstr ""
+
+#: vdir.1.xml:279(term)
+msgid "<option>-Q</option>, <option>--quote-name</option>"
+msgstr ""
+
+#: vdir.1.xml:281(para)
+msgid "enclose entry names in double quotes"
+msgstr ""
+
+#: vdir.1.xml:285(term)
+msgid "<option>--quoting-style</option>=<emphasis remap=\"I\">WORD</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:287(para)
+msgid "use quoting style WORD for entry names: literal, locale, shell, shell-always, c, escape"
+msgstr ""
+
+#: vdir.1.xml:292(term)
+msgid "<option>-r</option>, <option>--reverse</option>"
+msgstr ""
+
+#: vdir.1.xml:294(para)
+msgid "reverse order while sorting"
+msgstr ""
+
+#: vdir.1.xml:298(term)
+msgid "<option>-R</option>, <option>--recursive</option>"
+msgstr ""
+
+#: vdir.1.xml:300(para)
+msgid "list subdirectories recursively"
+msgstr ""
+
+#: vdir.1.xml:304(term)
+msgid "<option>-s</option>, <option>--size</option>"
+msgstr ""
+
+#: vdir.1.xml:306(para)
+msgid "print the allocated size of each file, in blocks"
+msgstr ""
+
+#: vdir.1.xml:310(option)
+msgid "-S"
+msgstr ""
+
+#: vdir.1.xml:312(para)
+msgid "sort by file size"
+msgstr ""
+
+#: vdir.1.xml:316(term)
+msgid "<option>--sort</option>=<emphasis remap=\"I\">WORD</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:318(para)
+msgid "sort by WORD instead of name: none (<option>-U</option>), size (<option>-S</option>), time (<option>-t</option>), version (<option>-v</option>), extension (<option>-X</option>)"
+msgstr ""
+
+#: vdir.1.xml:323(term)
+msgid "<option>--time</option>=<emphasis remap=\"I\">WORD</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:325(para)
+msgid "with <option>-l</option>, show time as WORD instead of default modification time: atime or access or use (<option>-u</option>) ctime or status (<option>-c</option>); also use specified time as sort key if <option>--sort</option>=<emphasis remap=\"I\">time</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:332(term)
+msgid "<option>--time-style</option>=<emphasis remap=\"I\">STYLE</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:334(para)
+msgid "with <option>-l</option>, show times using style STYLE: full-iso, long-iso, iso, locale, or +FORMAT; FORMAT is interpreted like in 'date'; if FORMAT is FORMAT1&lt;newline&gt;FORMAT2, then FORMAT1 applies to non-recent files and FORMAT2 to recent files; if STYLE is prefixed with 'posix-', STYLE takes effect only outside the POSIX locale"
+msgstr ""
+
+#: vdir.1.xml:344(option)
+msgid "-t"
+msgstr ""
+
+#: vdir.1.xml:346(para)
+msgid "sort by modification time, newest first"
+msgstr ""
+
+#: vdir.1.xml:350(term)
+msgid "<option>-T</option>, <option>--tabsize</option>=<emphasis remap=\"I\">COLS</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:352(para)
+msgid "assume tab stops at each COLS instead of 8"
+msgstr ""
+
+#: vdir.1.xml:356(option)
+msgid "-u"
+msgstr ""
+
+#: vdir.1.xml:358(para)
+msgid "with <option>-lt</option>: sort by, and show, access time; with <option>-l</option>: show access time and sort by name; otherwise: sort by access time"
+msgstr ""
+
+#: vdir.1.xml:364(option)
+msgid "-U"
+msgstr ""
+
+#: vdir.1.xml:366(para)
+msgid "do not sort; list entries in directory order"
+msgstr ""
+
+#: vdir.1.xml:370(option)
+msgid "-v"
+msgstr ""
+
+#: vdir.1.xml:372(para)
+msgid "natural sort of (version) numbers within text"
+msgstr ""
+
+#: vdir.1.xml:376(term)
+msgid "<option>-w</option>, <option>--width</option>=<emphasis remap=\"I\">COLS</emphasis>"
+msgstr ""
+
+#: vdir.1.xml:378(para)
+msgid "assume screen width instead of current value"
+msgstr ""
+
+#: vdir.1.xml:382(option)
+msgid "-x"
+msgstr ""
+
+#: vdir.1.xml:384(para)
+msgid "list entries by lines instead of by columns"
+msgstr ""
+
+#: vdir.1.xml:388(option)
+msgid "-X"
+msgstr ""
+
+#: vdir.1.xml:390(para)
+msgid "sort alphabetically by entry extension"
+msgstr ""
+
+#: vdir.1.xml:394(term)
+msgid "<option>-Z</option>, <option>--context</option>"
+msgstr ""
+
+#: vdir.1.xml:396(para)
+msgid "print any SELinux security context of each file"
+msgstr ""
+
+#: vdir.1.xml:400(option)
+msgid "-1"
+msgstr ""
+
+#: vdir.1.xml:402(para)
+msgid "list one file per line"
+msgstr ""
+
+#: vdir.1.xml:406(option)
+msgid "--help"
+msgstr ""
+
+#: vdir.1.xml:408(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: vdir.1.xml:412(option)
+msgid "--version"
+msgstr ""
+
+#: vdir.1.xml:414(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: vdir.1.xml:416(para)
+msgid "The SIZE argument is an integer and optional unit (example: 10K is 10*1024). Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000)."
+msgstr ""
+
+#: vdir.1.xml:419(para)
+msgid "Using color to distinguish file types is disabled both by default and with <option>--color</option>=<emphasis remap=\"I\">never</emphasis>. With <option>--color</option>=<emphasis remap=\"I\">auto</emphasis>, ls emits color codes only when standard output is connected to a terminal. The LS_COLORS environment variable can change the settings. Use the dircolors command to set it."
+msgstr ""
+
+#: vdir.1.xml:427(title)
+msgid "Exit status:"
+msgstr ""
+
+#: vdir.1.xml:430(term)
+msgid "0"
+msgstr ""
+
+#: vdir.1.xml:432(para)
+msgid "if OK,"
+msgstr ""
+
+#: vdir.1.xml:438(para)
+msgid "if minor problems (e.g., cannot access subdirectory),"
+msgstr ""
+
+#: vdir.1.xml:442(term)
+msgid "2"
+msgstr ""
+
+#: vdir.1.xml:444(para)
+msgid "if serious trouble (e.g., cannot access command-line argument)."
+msgstr ""
+
+#: vdir.1.xml:446(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report vdir translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: vdir.1.xml:454(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: vdir.1.xml:455(para)
+msgid "Written by Richard M. Stallman and David MacKenzie."
+msgstr ""
+
+#: vdir.1.xml:458(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: vdir.1.xml:459(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: vdir.1.xml:466(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: vdir.1.xml:467(para)
+msgid "The full documentation for <command>vdir</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>vdir</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: vdir.1.xml:475(emphasis)
+msgid "info coreutils 'vdir invocation'"
+msgstr ""
+
+#: vdir.1.xml:477(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: vdir.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

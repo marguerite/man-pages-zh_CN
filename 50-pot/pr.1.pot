@@ -1,0 +1,309 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: pr.1.xml:8(refentrytitle)
+msgid "PR"
+msgstr ""
+
+#: pr.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: pr.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: pr.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: pr.1.xml:14(refname) pr.1.xml:20(command)
+msgid "pr"
+msgstr ""
+
+#: pr.1.xml:15(refpurpose)
+msgid "convert text files for printing"
+msgstr ""
+
+#: pr.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: pr.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: pr.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: pr.1.xml:31(para)
+msgid "Paginate or columnate FILE(s) for printing."
+msgstr ""
+
+#: pr.1.xml:33(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: pr.1.xml:36(term)
+msgid "+FIRST_PAGE[:LAST_PAGE], <option>--pages</option>=<emphasis remap=\"I\">FIRST_PAGE[</emphasis>:LAST_PAGE]"
+msgstr ""
+
+#: pr.1.xml:38(para)
+msgid "begin [stop] printing with page FIRST_[LAST_]PAGE"
+msgstr ""
+
+#: pr.1.xml:42(term)
+msgid "<option>-COLUMN</option>, <option>--columns</option>=<emphasis remap=\"I\">COLUMN</emphasis>"
+msgstr ""
+
+#: pr.1.xml:44(para)
+msgid "output COLUMN columns and print columns down, unless <option>-a</option> is used. Balance number of lines in the columns on each page"
+msgstr ""
+
+#: pr.1.xml:50(term)
+msgid "<option>-a</option>, <option>--across</option>"
+msgstr ""
+
+#: pr.1.xml:52(para)
+msgid "print columns across rather than down, used together with <option>-COLUMN</option>"
+msgstr ""
+
+#: pr.1.xml:57(term)
+msgid "<option>-c</option>, <option>--show-control-chars</option>"
+msgstr ""
+
+#: pr.1.xml:59(para)
+msgid "use hat notation (^G) and octal backslash notation"
+msgstr ""
+
+#: pr.1.xml:63(term)
+msgid "<option>-d</option>, <option>--double-space</option>"
+msgstr ""
+
+#: pr.1.xml:65(para)
+msgid "double space the output"
+msgstr ""
+
+#: pr.1.xml:69(term)
+msgid "<option>-D</option>, <option>--date-format</option>=<emphasis remap=\"I\">FORMAT</emphasis>"
+msgstr ""
+
+#: pr.1.xml:71(para)
+msgid "use FORMAT for the header date"
+msgstr ""
+
+#: pr.1.xml:75(term)
+msgid "<option>-e[CHAR[WIDTH]]</option>, <option>--expand-tabs</option>[=<emphasis remap=\"I\">CHAR[WIDTH]</emphasis>]"
+msgstr ""
+
+#: pr.1.xml:77(para)
+msgid "expand input CHARs (TABs) to tab WIDTH (8)"
+msgstr ""
+
+#: pr.1.xml:81(term)
+msgid "<option>-F</option>, <option>-f</option>, <option>--form-feed</option>"
+msgstr ""
+
+#: pr.1.xml:83(para)
+msgid "use form feeds instead of newlines to separate pages (by a 3-line page header with <option>-F</option> or a 5-line header and trailer without <option>-F</option>)"
+msgstr ""
+
+#: pr.1.xml:89(term)
+msgid "<option>-h</option>, <option>--header</option>=<emphasis remap=\"I\">HEADER</emphasis>"
+msgstr ""
+
+#: pr.1.xml:91(para)
+msgid "use a centered HEADER instead of filename in page header, <option>-h</option> \"\" prints a blank line, don't use <option>-h</option>\"\""
+msgstr ""
+
+#: pr.1.xml:96(term)
+msgid "<option>-i[CHAR[WIDTH]]</option>, <option>--output-tabs</option>[=<emphasis remap=\"I\">CHAR[WIDTH]</emphasis>]"
+msgstr ""
+
+#: pr.1.xml:98(para)
+msgid "replace spaces with CHARs (TABs) to tab WIDTH (8)"
+msgstr ""
+
+#: pr.1.xml:102(term)
+msgid "<option>-J</option>, <option>--join-lines</option>"
+msgstr ""
+
+#: pr.1.xml:104(para)
+msgid "merge full lines, turns off <option>-W</option> line truncation, no column alignment, <option>--sep-string</option>[=<emphasis remap=\"I\">STRING</emphasis>] sets separators"
+msgstr ""
+
+#: pr.1.xml:109(term)
+msgid "<option>-l</option>, <option>--length</option>=<emphasis remap=\"I\">PAGE_LENGTH</emphasis>"
+msgstr ""
+
+#: pr.1.xml:111(para)
+msgid "set the page length to PAGE_LENGTH (66) lines (default number of lines of text 56, and with <option>-F</option> 63)"
+msgstr ""
+
+#: pr.1.xml:116(term)
+msgid "<option>-m</option>, <option>--merge</option>"
+msgstr ""
+
+#: pr.1.xml:118(para)
+msgid "print all files in parallel, one in each column, truncate lines, but join lines of full length with <option>-J</option>"
+msgstr ""
+
+#: pr.1.xml:123(term)
+msgid "<option>-n[SEP[DIGITS]]</option>, <option>--number-lines</option>[=<emphasis remap=\"I\">SEP[DIGITS]</emphasis>]"
+msgstr ""
+
+#: pr.1.xml:125(para)
+msgid "number lines, use DIGITS (5) digits, then SEP (TAB), default counting starts with 1st line of input file"
+msgstr ""
+
+#: pr.1.xml:130(term)
+msgid "<option>-N</option>, <option>--first-line-number</option>=<emphasis remap=\"I\">NUMBER</emphasis>"
+msgstr ""
+
+#: pr.1.xml:132(para)
+msgid "start counting with NUMBER at 1st line of first page printed (see +FIRST_PAGE)"
+msgstr ""
+
+#: pr.1.xml:137(term)
+msgid "<option>-o</option>, <option>--indent</option>=<emphasis remap=\"I\">MARGIN</emphasis>"
+msgstr ""
+
+#: pr.1.xml:139(para)
+msgid "offset each line with MARGIN (zero) spaces, do not affect <option>-w</option> or <option>-W</option>, MARGIN will be added to PAGE_WIDTH"
+msgstr ""
+
+#: pr.1.xml:144(term)
+msgid "<option>-r</option>, <option>--no-file-warnings</option>"
+msgstr ""
+
+#: pr.1.xml:146(para)
+msgid "omit warning when a file cannot be opened"
+msgstr ""
+
+#: pr.1.xml:150(term)
+msgid "<option>-s[CHAR]</option>, <option>--separator</option>[=<emphasis remap=\"I\">CHAR</emphasis>]"
+msgstr ""
+
+#: pr.1.xml:152(para)
+msgid "separate columns by a single character, default for CHAR is the &lt;TAB&gt; character without <option>-w</option> and 'no char' with <option>-w</option><option>-s[CHAR]</option> turns off line truncation of all 3 column options (<option>-COLUMN</option>|-a <option>-COLUMN</option>|-m) except <option>-w</option> is set"
+msgstr ""
+
+#: pr.1.xml:159(term)
+msgid "<option>-S[STRING]</option>, <option>--sep-string</option>[=<emphasis remap=\"I\">STRING</emphasis>]"
+msgstr ""
+
+#: pr.1.xml:161(para)
+msgid "separate columns by STRING, without <option>-S</option>: Default separator &lt;TAB&gt; with <option>-J</option> and &lt;space&gt; otherwise (same as <option>-S</option>\" \"), no effect on column options"
+msgstr ""
+
+#: pr.1.xml:167(term)
+msgid "<option>-t</option>, <option>--omit-header</option>"
+msgstr ""
+
+#: pr.1.xml:169(para)
+msgid "omit page headers and trailers"
+msgstr ""
+
+#: pr.1.xml:173(term)
+msgid "<option>-T</option>, <option>--omit-pagination</option>"
+msgstr ""
+
+#: pr.1.xml:175(para)
+msgid "omit page headers and trailers, eliminate any pagination by form feeds set in input files"
+msgstr ""
+
+#: pr.1.xml:180(term)
+msgid "<option>-v</option>, <option>--show-nonprinting</option>"
+msgstr ""
+
+#: pr.1.xml:182(para)
+msgid "use octal backslash notation"
+msgstr ""
+
+#: pr.1.xml:186(term)
+msgid "<option>-w</option>, <option>--width</option>=<emphasis remap=\"I\">PAGE_WIDTH</emphasis>"
+msgstr ""
+
+#: pr.1.xml:188(para)
+msgid "set page width to PAGE_WIDTH (72) characters for multiple text-column output only, <option>-s[char]</option> turns off (72)"
+msgstr ""
+
+#: pr.1.xml:193(term)
+msgid "<option>-W</option>, <option>--page-width</option>=<emphasis remap=\"I\">PAGE_WIDTH</emphasis>"
+msgstr ""
+
+#: pr.1.xml:195(para)
+msgid "set page width to PAGE_WIDTH (72) characters always, truncate lines, except <option>-J</option> option is set, no interference with <option>-S</option> or <option>-s</option>"
+msgstr ""
+
+#: pr.1.xml:201(option)
+msgid "--help"
+msgstr ""
+
+#: pr.1.xml:203(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: pr.1.xml:207(option)
+msgid "--version"
+msgstr ""
+
+#: pr.1.xml:209(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: pr.1.xml:211(para)
+msgid "<option>-t</option> is implied if PAGE_LENGTH &lt;= 10. With no FILE, or when FILE is -, read standard input."
+msgstr ""
+
+#: pr.1.xml:214(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report pr translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: pr.1.xml:221(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: pr.1.xml:222(para)
+msgid "Written by Pete TerMaat and Roland Huebner."
+msgstr ""
+
+#: pr.1.xml:225(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: pr.1.xml:226(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: pr.1.xml:233(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: pr.1.xml:234(para)
+msgid "The full documentation for <command>pr</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>pr</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: pr.1.xml:242(emphasis)
+msgid "info coreutils 'pr invocation'"
+msgstr ""
+
+#: pr.1.xml:244(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: pr.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

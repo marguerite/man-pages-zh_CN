@@ -1,0 +1,264 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: df.1.xml:8(refentrytitle)
+msgid "DF"
+msgstr ""
+
+#: df.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: df.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: df.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: df.1.xml:14(refname) df.1.xml:20(command)
+msgid "df"
+msgstr ""
+
+#: df.1.xml:15(refpurpose)
+msgid "report file system disk space usage"
+msgstr ""
+
+#: df.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: df.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: df.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: df.1.xml:29(para)
+msgid "This manual page documents the GNU version of <command>df</command>. <command>df</command> displays the amount of disk space available on the file system containing each file name argument. If no file name is given, the space available on all currently mounted file systems is shown. Disk space is shown in 1K blocks by default, unless the environment variable POSIXLY_CORRECT is set, in which case 512-byte blocks are used."
+msgstr ""
+
+#: df.1.xml:40(para)
+msgid "If an argument is the absolute file name of a disk device node containing a mounted file system, <command>df</command> shows the space available on that file system rather than on the file system containing the device node. This version of <command>df</command> cannot show the space available on unmounted file systems, because on most kinds of systems doing so requires very nonportable intimate knowledge of file system structures."
+msgstr ""
+
+#: df.1.xml:51(title)
+msgid "OPTIONS"
+msgstr ""
+
+#: df.1.xml:52(para)
+msgid "Show information about the file system on which each FILE resides, or all file systems by default."
+msgstr ""
+
+#: df.1.xml:55(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: df.1.xml:58(term)
+msgid "<option>-a</option>, <option>--all</option>"
+msgstr ""
+
+#: df.1.xml:60(para)
+msgid "include dummy file systems"
+msgstr ""
+
+#: df.1.xml:64(term)
+msgid "<option>-B</option>, <option>--block-size</option>=<emphasis remap=\"I\">SIZE</emphasis>"
+msgstr ""
+
+#: df.1.xml:66(para)
+msgid "scale sizes by SIZE before printing them; e.g., '-BM' prints sizes in units of 1,048,576 bytes; see SIZE format below"
+msgstr ""
+
+#: df.1.xml:72(option)
+msgid "--total"
+msgstr ""
+
+#: df.1.xml:74(para)
+msgid "produce a grand total"
+msgstr ""
+
+#: df.1.xml:78(term)
+msgid "<option>-h</option>, <option>--human-readable</option>"
+msgstr ""
+
+#: df.1.xml:80(para)
+msgid "print sizes in powers of 1024 (e.g., 1023M)"
+msgstr ""
+
+#: df.1.xml:84(term)
+msgid "<option>-H</option>, <option>--si</option>"
+msgstr ""
+
+#: df.1.xml:86(para)
+msgid "print sizes in powers of 1000 (e.g., 1.1G)"
+msgstr ""
+
+#: df.1.xml:90(term)
+msgid "<option>-i</option>, <option>--inodes</option>"
+msgstr ""
+
+#: df.1.xml:92(para)
+msgid "list inode information instead of block usage"
+msgstr ""
+
+#: df.1.xml:96(option)
+msgid "-k"
+msgstr ""
+
+#: df.1.xml:98(para)
+msgid "like <option>--block-size</option>=<emphasis remap=\"I\">1K</emphasis>"
+msgstr ""
+
+#: df.1.xml:102(term)
+msgid "<option>-l</option>, <option>--local</option>"
+msgstr ""
+
+#: df.1.xml:104(para)
+msgid "limit listing to local file systems"
+msgstr ""
+
+#: df.1.xml:108(option)
+msgid "--no-sync"
+msgstr ""
+
+#: df.1.xml:110(para)
+msgid "do not invoke sync before getting usage info (default)"
+msgstr ""
+
+#: df.1.xml:114(term)
+msgid "<option>--output</option>[=<emphasis remap=\"I\">FIELD_LIST</emphasis>]"
+msgstr ""
+
+#: df.1.xml:116(para)
+msgid "use the output format defined by FIELD_LIST, or print all fields if FIELD_LIST is omitted."
+msgstr ""
+
+#: df.1.xml:121(term)
+msgid "<option>-P</option>, <option>--portability</option>"
+msgstr ""
+
+#: df.1.xml:123(para)
+msgid "use the POSIX output format"
+msgstr ""
+
+#: df.1.xml:127(option)
+msgid "--sync"
+msgstr ""
+
+#: df.1.xml:129(para)
+msgid "invoke sync before getting usage info"
+msgstr ""
+
+#: df.1.xml:133(term)
+msgid "<option>-t</option>, <option>--type</option>=<emphasis remap=\"I\">TYPE</emphasis>"
+msgstr ""
+
+#: df.1.xml:135(para)
+msgid "limit listing to file systems of type TYPE"
+msgstr ""
+
+#: df.1.xml:139(term)
+msgid "<option>-T</option>, <option>--print-type</option>"
+msgstr ""
+
+#: df.1.xml:141(para)
+msgid "print file system type"
+msgstr ""
+
+#: df.1.xml:145(term)
+msgid "<option>-x</option>, <option>--exclude-type</option>=<emphasis remap=\"I\">TYPE</emphasis>"
+msgstr ""
+
+#: df.1.xml:147(para)
+msgid "limit listing to file systems not of type TYPE"
+msgstr ""
+
+#: df.1.xml:151(option)
+msgid "-v"
+msgstr ""
+
+#: df.1.xml:153(para)
+msgid "(ignored)"
+msgstr ""
+
+#: df.1.xml:157(option)
+msgid "--help"
+msgstr ""
+
+#: df.1.xml:159(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: df.1.xml:163(option)
+msgid "--version"
+msgstr ""
+
+#: df.1.xml:165(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: df.1.xml:167(para)
+msgid "Display values are in units of the first available SIZE from <option>--block-size</option>, and the DF_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment variables. Otherwise, units default to 1024 bytes (or 512 if POSIXLY_CORRECT is set)."
+msgstr ""
+
+#: df.1.xml:171(para)
+msgid "The SIZE argument is an integer and optional unit (example: 10K is 10*1024). Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000)."
+msgstr ""
+
+#: df.1.xml:174(para)
+msgid "FIELD_LIST is a comma-separated list of columns to be included. Valid field names are: 'source', 'fstype', 'itotal', 'iused', 'iavail', 'ipcent', 'size', 'used', 'avail', 'pcent', 'file' and 'target' (see info page)."
+msgstr ""
+
+#: df.1.xml:178(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report df translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: df.1.xml:185(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: df.1.xml:186(para)
+msgid "Written by Torbjorn Granlund, David MacKenzie, and Paul Eggert."
+msgstr ""
+
+#: df.1.xml:189(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: df.1.xml:190(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: df.1.xml:197(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: df.1.xml:198(para)
+msgid "The full documentation for <command>df</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>df</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: df.1.xml:206(emphasis)
+msgid "info coreutils 'df invocation'"
+msgstr ""
+
+#: df.1.xml:208(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: df.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

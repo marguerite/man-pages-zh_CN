@@ -1,0 +1,415 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: od.1.xml:8(refentrytitle)
+msgid "OD"
+msgstr ""
+
+#: od.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: od.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: od.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: od.1.xml:14(refname) od.1.xml:20(command) od.1.xml:26(command) od.1.xml:32(command)
+msgid "od"
+msgstr ""
+
+#: od.1.xml:15(refpurpose)
+msgid "dump files in octal and other formats"
+msgstr ""
+
+#: od.1.xml:21(replaceable) od.1.xml:34(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: od.1.xml:22(replaceable) od.1.xml:28(replaceable) od.1.xml:35(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: od.1.xml:27(arg)
+msgid "-abcdfilosx"
+msgstr ""
+
+#: od.1.xml:29(arg) od.1.xml:36(arg)
+msgid "+"
+msgstr ""
+
+#: od.1.xml:29(replaceable) od.1.xml:36(replaceable)
+msgid "OFFSET"
+msgstr ""
+
+#: od.1.xml:29(replaceable) od.1.xml:36(replaceable) od.1.xml:36(replaceable) od.1.xml:246(term)
+msgid "b"
+msgstr ""
+
+#: od.1.xml:33(arg) od.1.xml:104(option)
+msgid "--traditional"
+msgstr ""
+
+#: od.1.xml:41(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: od.1.xml:44(para)
+msgid "Write an unambiguous representation, octal bytes by default, of FILE to standard output. With more than one FILE argument, concatenate them in the listed order to form the input. With no FILE, or when FILE is -, read standard input."
+msgstr ""
+
+#: od.1.xml:49(para)
+msgid "If first and second call formats both apply, the second format is assumed if the last operand begins with + or (if there are 2 operands) a digit. An OFFSET operand means <option>-j</option> OFFSET. LABEL is the pseudo-address at first byte printed, incremented when dump is progressing. For OFFSET and LABEL, a 0x or 0X prefix indicates hexadecimal; suffixes may be . for octal and b for multiply by 512."
+msgstr ""
+
+#: od.1.xml:56(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: od.1.xml:59(term)
+msgid "<option>-A</option>, <option>--address-radix</option>=<emphasis remap=\"I\">RADIX</emphasis>"
+msgstr ""
+
+#: od.1.xml:61(para)
+msgid "output format for file offsets; RADIX is one of [doxn], for Decimal, Octal, Hex or None"
+msgstr ""
+
+#: od.1.xml:66(term)
+msgid "<option>-j</option>, <option>--skip-bytes</option>=<emphasis remap=\"I\">BYTES</emphasis>"
+msgstr ""
+
+#: od.1.xml:68(para)
+msgid "skip BYTES input bytes first"
+msgstr ""
+
+#: od.1.xml:72(term)
+msgid "<option>-N</option>, <option>--read-bytes</option>=<emphasis remap=\"I\">BYTES</emphasis>"
+msgstr ""
+
+#: od.1.xml:74(para)
+msgid "limit dump to BYTES input bytes"
+msgstr ""
+
+#: od.1.xml:78(term)
+msgid "<option>-S</option> BYTES, <option>--strings</option>[=<emphasis remap=\"I\">BYTES</emphasis>]"
+msgstr ""
+
+#: od.1.xml:80(para)
+msgid "output strings of at least BYTES graphic chars; 3 is implied when BYTES is not specified"
+msgstr ""
+
+#: od.1.xml:85(term)
+msgid "<option>-t</option>, <option>--format</option>=<emphasis remap=\"I\">TYPE</emphasis>"
+msgstr ""
+
+#: od.1.xml:87(para)
+msgid "select output format or formats"
+msgstr ""
+
+#: od.1.xml:91(term)
+msgid "<option>-v</option>, <option>--output-duplicates</option>"
+msgstr ""
+
+#: od.1.xml:93(para)
+msgid "do not use * to mark line suppression"
+msgstr ""
+
+#: od.1.xml:97(term)
+msgid "<option>-w[BYTES]</option>, <option>--width</option>[=<emphasis remap=\"I\">BYTES</emphasis>]"
+msgstr ""
+
+#: od.1.xml:99(para)
+msgid "output BYTES bytes per output line; 32 is implied when BYTES is not specified"
+msgstr ""
+
+#: od.1.xml:106(para)
+msgid "accept arguments in third form above"
+msgstr ""
+
+#: od.1.xml:110(option)
+msgid "--help"
+msgstr ""
+
+#: od.1.xml:112(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: od.1.xml:116(option)
+msgid "--version"
+msgstr ""
+
+#: od.1.xml:118(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: od.1.xml:123(title)
+msgid "Traditional format specifications may be intermixed; they accumulate:"
+msgstr ""
+
+#: od.1.xml:126(option)
+msgid "-a"
+msgstr ""
+
+#: od.1.xml:128(para)
+msgid "same as <option>-t</option> a, select named characters, ignoring high-order bit"
+msgstr ""
+
+#: od.1.xml:132(option)
+msgid "-b"
+msgstr ""
+
+#: od.1.xml:134(para)
+msgid "same as <option>-t</option> o1, select octal bytes"
+msgstr ""
+
+#: od.1.xml:138(option)
+msgid "-c"
+msgstr ""
+
+#: od.1.xml:140(para)
+msgid "same as <option>-t</option> c, select printable characters or backslash escapes"
+msgstr ""
+
+#: od.1.xml:144(option)
+msgid "-d"
+msgstr ""
+
+#: od.1.xml:146(para)
+msgid "same as <option>-t</option> u2, select unsigned decimal 2-byte units"
+msgstr ""
+
+#: od.1.xml:150(option)
+msgid "-f"
+msgstr ""
+
+#: od.1.xml:152(para)
+msgid "same as <option>-t</option> fF, select floats"
+msgstr ""
+
+#: od.1.xml:156(option)
+msgid "-i"
+msgstr ""
+
+#: od.1.xml:158(para)
+msgid "same as <option>-t</option> dI, select decimal ints"
+msgstr ""
+
+#: od.1.xml:162(option)
+msgid "-l"
+msgstr ""
+
+#: od.1.xml:164(para)
+msgid "same as <option>-t</option> dL, select decimal longs"
+msgstr ""
+
+#: od.1.xml:168(option)
+msgid "-o"
+msgstr ""
+
+#: od.1.xml:170(para)
+msgid "same as <option>-t</option> o2, select octal 2-byte units"
+msgstr ""
+
+#: od.1.xml:174(option)
+msgid "-s"
+msgstr ""
+
+#: od.1.xml:176(para)
+msgid "same as <option>-t</option> d2, select decimal 2-byte units"
+msgstr ""
+
+#: od.1.xml:180(option)
+msgid "-x"
+msgstr ""
+
+#: od.1.xml:182(para)
+msgid "same as <option>-t</option> x2, select hexadecimal 2-byte units"
+msgstr ""
+
+#: od.1.xml:188(title)
+msgid "TYPE is made up of one or more of these specifications:"
+msgstr ""
+
+#: od.1.xml:191(term)
+msgid "a"
+msgstr ""
+
+#: od.1.xml:193(para)
+msgid "named character, ignoring high-order bit"
+msgstr ""
+
+#: od.1.xml:197(term)
+msgid "c"
+msgstr ""
+
+#: od.1.xml:199(para)
+msgid "printable character or backslash escape"
+msgstr ""
+
+#: od.1.xml:203(term)
+msgid "d[SIZE]"
+msgstr ""
+
+#: od.1.xml:205(para)
+msgid "signed decimal, SIZE bytes per integer"
+msgstr ""
+
+#: od.1.xml:209(term)
+msgid "f[SIZE]"
+msgstr ""
+
+#: od.1.xml:211(para)
+msgid "floating point, SIZE bytes per integer"
+msgstr ""
+
+#: od.1.xml:215(term)
+msgid "o[SIZE]"
+msgstr ""
+
+#: od.1.xml:217(para)
+msgid "octal, SIZE bytes per integer"
+msgstr ""
+
+#: od.1.xml:221(term)
+msgid "u[SIZE]"
+msgstr ""
+
+#: od.1.xml:223(para)
+msgid "unsigned decimal, SIZE bytes per integer"
+msgstr ""
+
+#: od.1.xml:227(term)
+msgid "x[SIZE]"
+msgstr ""
+
+#: od.1.xml:229(para)
+msgid "hexadecimal, SIZE bytes per integer"
+msgstr ""
+
+#: od.1.xml:231(para)
+msgid "SIZE is a number. For TYPE in [doux], SIZE may also be C for sizeof(char), S for sizeof(short), I for sizeof(int) or L for sizeof(long). If TYPE is f, SIZE may also be F for sizeof(float), D for sizeof(double) or L for sizeof(long double)."
+msgstr ""
+
+#: od.1.xml:236(para)
+msgid "Adding a z suffix to any type displays printable characters at the end of each output line."
+msgstr ""
+
+#: od.1.xml:243(title)
+msgid "BYTES is hex with 0x or 0X prefix, and may have a multiplier suffix:"
+msgstr ""
+
+#: od.1.xml:248(para)
+msgid "512"
+msgstr ""
+
+#: od.1.xml:252(term)
+msgid "KB"
+msgstr ""
+
+#: od.1.xml:254(para)
+msgid "1000"
+msgstr ""
+
+#: od.1.xml:258(term)
+msgid "K"
+msgstr ""
+
+#: od.1.xml:260(para)
+msgid "1024"
+msgstr ""
+
+#: od.1.xml:264(term)
+msgid "MB"
+msgstr ""
+
+#: od.1.xml:266(para)
+msgid "1000*1000"
+msgstr ""
+
+#: od.1.xml:270(term)
+msgid "M"
+msgstr ""
+
+#: od.1.xml:272(para)
+msgid "1024*1024"
+msgstr ""
+
+#: od.1.xml:274(para)
+msgid "and so on for G, T, P, E, Z, Y."
+msgstr ""
+
+#: od.1.xml:276(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report od translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: od.1.xml:284(title)
+msgid "EXAMPLES"
+msgstr ""
+
+#: od.1.xml:287(userinput)
+#, no-wrap
+msgid "od -A x -t x1z -v"
+msgstr ""
+
+#: od.1.xml:289(para)
+msgid "Display hexdump format output"
+msgstr ""
+
+#: od.1.xml:293(userinput)
+#, no-wrap
+msgid "od -A o -t oS -w16"
+msgstr ""
+
+#: od.1.xml:295(para)
+msgid "The default output format used by od"
+msgstr ""
+
+#: od.1.xml:301(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: od.1.xml:302(para)
+msgid "Written by Jim Meyering."
+msgstr ""
+
+#: od.1.xml:305(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: od.1.xml:306(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: od.1.xml:313(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: od.1.xml:314(para)
+msgid "The full documentation for <command>od</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>od</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: od.1.xml:322(emphasis)
+msgid "info coreutils 'od invocation'"
+msgstr ""
+
+#: od.1.xml:324(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: od.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

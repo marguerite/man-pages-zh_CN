@@ -1,4 +1,5 @@
 #!/bin/sh
+# generate release tarballs
 VERSION=`cat manpages-zh/VERSION | sed 's/v//'`
 echo $VERSION
 cp -r manpages-zh man-pages-zh_CN-${VERSION}

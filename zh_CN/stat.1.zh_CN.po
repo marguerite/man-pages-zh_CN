@@ -1,0 +1,465 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: stat.1.xml:8(refentrytitle)
+msgid "STAT"
+msgstr ""
+
+#: stat.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: stat.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: stat.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: stat.1.xml:14(refname) stat.1.xml:20(command) stat.1.xml:359(refentrytitle)
+msgid "stat"
+msgstr ""
+
+#: stat.1.xml:15(refpurpose)
+msgid "display file or file system status"
+msgstr ""
+
+#: stat.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: stat.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: stat.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: stat.1.xml:31(para)
+msgid "Display file or file system status."
+msgstr ""
+
+#: stat.1.xml:33(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: stat.1.xml:36(term)
+msgid "<option>-L</option>, <option>--dereference</option>"
+msgstr ""
+
+#: stat.1.xml:38(para)
+msgid "follow links"
+msgstr ""
+
+#: stat.1.xml:42(term)
+msgid "<option>-f</option>, <option>--file-system</option>"
+msgstr ""
+
+#: stat.1.xml:44(para)
+msgid "display file system status instead of file status"
+msgstr ""
+
+#: stat.1.xml:48(term)
+msgid "<option>-c</option><option>--format</option>=<emphasis remap=\"I\">FORMAT</emphasis>"
+msgstr ""
+
+#: stat.1.xml:50(para)
+msgid "use the specified FORMAT instead of the default; output a newline after each use of FORMAT"
+msgstr ""
+
+#: stat.1.xml:55(term)
+msgid "<option>--printf</option>=<emphasis remap=\"I\">FORMAT</emphasis>"
+msgstr ""
+
+#: stat.1.xml:57(para)
+msgid "like <option>--format</option>, but interpret backslash escapes, and do not output a mandatory trailing newline; if you want a newline, include &bsol;n in FORMAT"
+msgstr ""
+
+#: stat.1.xml:63(term)
+msgid "<option>-t</option>, <option>--terse</option>"
+msgstr ""
+
+#: stat.1.xml:65(para)
+msgid "print the information in terse form"
+msgstr ""
+
+#: stat.1.xml:69(option)
+msgid "--help"
+msgstr ""
+
+#: stat.1.xml:71(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: stat.1.xml:75(option)
+msgid "--version"
+msgstr ""
+
+#: stat.1.xml:77(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: stat.1.xml:79(para)
+msgid "The valid format sequences for files (without <option>--file-system</option>):"
+msgstr ""
+
+#: stat.1.xml:83(term) stat.1.xml:265(term)
+msgid "%a"
+msgstr ""
+
+#: stat.1.xml:85(para)
+msgid "access rights in octal"
+msgstr ""
+
+#: stat.1.xml:89(term)
+msgid "%A"
+msgstr ""
+
+#: stat.1.xml:91(para)
+msgid "access rights in human readable form"
+msgstr ""
+
+#: stat.1.xml:95(term) stat.1.xml:271(term)
+msgid "%b"
+msgstr ""
+
+#: stat.1.xml:97(para)
+msgid "number of blocks allocated (see %B)"
+msgstr ""
+
+#: stat.1.xml:101(term)
+msgid "%B"
+msgstr ""
+
+#: stat.1.xml:103(para)
+msgid "the size in bytes of each block reported by %b"
+msgstr ""
+
+#: stat.1.xml:107(term)
+msgid "%C"
+msgstr ""
+
+#: stat.1.xml:109(para)
+msgid "SELinux security context string"
+msgstr ""
+
+#: stat.1.xml:113(term) stat.1.xml:283(term)
+msgid "%d"
+msgstr ""
+
+#: stat.1.xml:115(para)
+msgid "device number in decimal"
+msgstr ""
+
+#: stat.1.xml:119(term)
+msgid "%D"
+msgstr ""
+
+#: stat.1.xml:121(para)
+msgid "device number in hex"
+msgstr ""
+
+#: stat.1.xml:125(term) stat.1.xml:289(term)
+msgid "%f"
+msgstr ""
+
+#: stat.1.xml:127(para)
+msgid "raw mode in hex"
+msgstr ""
+
+#: stat.1.xml:131(term)
+msgid "%F"
+msgstr ""
+
+#: stat.1.xml:133(para)
+msgid "file type"
+msgstr ""
+
+#: stat.1.xml:137(term)
+msgid "%g"
+msgstr ""
+
+#: stat.1.xml:139(para)
+msgid "group ID of owner"
+msgstr ""
+
+#: stat.1.xml:143(term)
+msgid "%G"
+msgstr ""
+
+#: stat.1.xml:145(para)
+msgid "group name of owner"
+msgstr ""
+
+#: stat.1.xml:149(term)
+msgid "%h"
+msgstr ""
+
+#: stat.1.xml:151(para)
+msgid "number of hard links"
+msgstr ""
+
+#: stat.1.xml:155(term) stat.1.xml:295(term)
+msgid "%i"
+msgstr ""
+
+#: stat.1.xml:157(para)
+msgid "inode number"
+msgstr ""
+
+#: stat.1.xml:161(term)
+msgid "%m"
+msgstr ""
+
+#: stat.1.xml:163(para)
+msgid "mount point"
+msgstr ""
+
+#: stat.1.xml:167(term) stat.1.xml:307(term)
+msgid "%n"
+msgstr ""
+
+#: stat.1.xml:169(para) stat.1.xml:309(para)
+msgid "file name"
+msgstr ""
+
+#: stat.1.xml:173(term)
+msgid "%N"
+msgstr ""
+
+#: stat.1.xml:175(para)
+msgid "quoted file name with dereference if symbolic link"
+msgstr ""
+
+#: stat.1.xml:179(term)
+msgid "%o"
+msgstr ""
+
+#: stat.1.xml:181(para)
+msgid "optimal I/O transfer size hint"
+msgstr ""
+
+#: stat.1.xml:185(term) stat.1.xml:313(term)
+msgid "%s"
+msgstr ""
+
+#: stat.1.xml:187(para)
+msgid "total size, in bytes"
+msgstr ""
+
+#: stat.1.xml:191(term) stat.1.xml:325(term)
+msgid "%t"
+msgstr ""
+
+#: stat.1.xml:193(para)
+msgid "major device type in hex, for character/block device special files"
+msgstr ""
+
+#: stat.1.xml:197(term) stat.1.xml:331(term)
+msgid "%T"
+msgstr ""
+
+#: stat.1.xml:199(para)
+msgid "minor device type in hex, for character/block device special files"
+msgstr ""
+
+#: stat.1.xml:203(term)
+msgid "%u"
+msgstr ""
+
+#: stat.1.xml:205(para)
+msgid "user ID of owner"
+msgstr ""
+
+#: stat.1.xml:209(term)
+msgid "%U"
+msgstr ""
+
+#: stat.1.xml:211(para)
+msgid "user name of owner"
+msgstr ""
+
+#: stat.1.xml:215(term)
+msgid "%w"
+msgstr ""
+
+#: stat.1.xml:217(para)
+msgid "time of file birth, human-readable; - if unknown"
+msgstr ""
+
+#: stat.1.xml:221(term)
+msgid "%W"
+msgstr ""
+
+#: stat.1.xml:223(para)
+msgid "time of file birth, seconds since Epoch; 0 if unknown"
+msgstr ""
+
+#: stat.1.xml:227(term)
+msgid "%x"
+msgstr ""
+
+#: stat.1.xml:229(para)
+msgid "time of last access, human-readable"
+msgstr ""
+
+#: stat.1.xml:233(term)
+msgid "%X"
+msgstr ""
+
+#: stat.1.xml:235(para)
+msgid "time of last access, seconds since Epoch"
+msgstr ""
+
+#: stat.1.xml:239(term)
+msgid "%y"
+msgstr ""
+
+#: stat.1.xml:241(para)
+msgid "time of last modification, human-readable"
+msgstr ""
+
+#: stat.1.xml:245(term)
+msgid "%Y"
+msgstr ""
+
+#: stat.1.xml:247(para)
+msgid "time of last modification, seconds since Epoch"
+msgstr ""
+
+#: stat.1.xml:251(term)
+msgid "%z"
+msgstr ""
+
+#: stat.1.xml:253(para)
+msgid "time of last change, human-readable"
+msgstr ""
+
+#: stat.1.xml:257(term)
+msgid "%Z"
+msgstr ""
+
+#: stat.1.xml:259(para)
+msgid "time of last change, seconds since Epoch"
+msgstr ""
+
+#: stat.1.xml:261(para)
+msgid "Valid format sequences for file systems:"
+msgstr ""
+
+#: stat.1.xml:267(para)
+msgid "free blocks available to non-superuser"
+msgstr ""
+
+#: stat.1.xml:273(para)
+msgid "total data blocks in file system"
+msgstr ""
+
+#: stat.1.xml:277(term)
+msgid "%c"
+msgstr ""
+
+#: stat.1.xml:279(para)
+msgid "total file nodes in file system"
+msgstr ""
+
+#: stat.1.xml:285(para)
+msgid "free file nodes in file system"
+msgstr ""
+
+#: stat.1.xml:291(para)
+msgid "free blocks in file system"
+msgstr ""
+
+#: stat.1.xml:297(para)
+msgid "file system ID in hex"
+msgstr ""
+
+#: stat.1.xml:301(term)
+msgid "%l"
+msgstr ""
+
+#: stat.1.xml:303(para)
+msgid "maximum length of filenames"
+msgstr ""
+
+#: stat.1.xml:315(para)
+msgid "block size (for faster transfers)"
+msgstr ""
+
+#: stat.1.xml:319(term)
+msgid "%S"
+msgstr ""
+
+#: stat.1.xml:321(para)
+msgid "fundamental block size (for block counts)"
+msgstr ""
+
+#: stat.1.xml:327(para)
+msgid "file system type in hex"
+msgstr ""
+
+#: stat.1.xml:333(para)
+msgid "file system type in human readable form"
+msgstr ""
+
+#: stat.1.xml:335(para)
+msgid "NOTE: your shell may have its own version of stat, which usually supersedes the version described here. Please refer to your shell's documentation for details about the options it supports."
+msgstr ""
+
+#: stat.1.xml:339(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report stat translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: stat.1.xml:346(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: stat.1.xml:347(para)
+msgid "Written by Michael Meskes."
+msgstr ""
+
+#: stat.1.xml:350(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: stat.1.xml:351(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: stat.1.xml:358(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: stat.1.xml:359(manvolnum)
+msgid "2"
+msgstr ""
+
+#: stat.1.xml:361(para)
+msgid "The full documentation for <command>stat</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>stat</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: stat.1.xml:369(emphasis)
+msgid "info coreutils 'stat invocation'"
+msgstr ""
+
+#: stat.1.xml:371(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: stat.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

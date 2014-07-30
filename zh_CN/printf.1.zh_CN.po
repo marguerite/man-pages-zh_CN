@@ -1,0 +1,257 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: printf.1.xml:8(refentrytitle)
+msgid "PRINTF"
+msgstr ""
+
+#: printf.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: printf.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: printf.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: printf.1.xml:14(refname) printf.1.xml:20(command) printf.1.xml:26(command) printf.1.xml:180(refentrytitle)
+msgid "printf"
+msgstr ""
+
+#: printf.1.xml:15(refpurpose)
+msgid "format and print data"
+msgstr ""
+
+#: printf.1.xml:21(replaceable)
+msgid "FORMAT"
+msgstr ""
+
+#: printf.1.xml:22(replaceable)
+msgid "ARGUMENT"
+msgstr ""
+
+#: printf.1.xml:27(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: printf.1.xml:32(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: printf.1.xml:35(para)
+msgid "Print ARGUMENT(s) according to FORMAT, or execute according to OPTION:"
+msgstr ""
+
+#: printf.1.xml:38(option)
+msgid "--help"
+msgstr ""
+
+#: printf.1.xml:40(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: printf.1.xml:44(option)
+msgid "--version"
+msgstr ""
+
+#: printf.1.xml:46(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: printf.1.xml:48(para)
+msgid "FORMAT controls the output as in C printf. Interpreted sequences are:"
+msgstr ""
+
+#: printf.1.xml:54(para)
+msgid "double quote"
+msgstr ""
+
+#: printf.1.xml:60(para)
+msgid "backslash"
+msgstr ""
+
+#: printf.1.xml:64(term)
+msgid "&bsol;a"
+msgstr ""
+
+#: printf.1.xml:66(para)
+msgid "alert (BEL)"
+msgstr ""
+
+#: printf.1.xml:70(term)
+msgid "&bsol;b"
+msgstr ""
+
+#: printf.1.xml:72(para)
+msgid "backspace"
+msgstr ""
+
+#: printf.1.xml:76(term)
+msgid "&bsol;c"
+msgstr ""
+
+#: printf.1.xml:78(para)
+msgid "produce no further output"
+msgstr ""
+
+#: printf.1.xml:82(term)
+msgid "&bsol;e"
+msgstr ""
+
+#: printf.1.xml:84(para)
+msgid "escape"
+msgstr ""
+
+#: printf.1.xml:88(term)
+msgid "&bsol;f"
+msgstr ""
+
+#: printf.1.xml:90(para)
+msgid "form feed"
+msgstr ""
+
+#: printf.1.xml:94(term)
+msgid "&bsol;n"
+msgstr ""
+
+#: printf.1.xml:96(para)
+msgid "new line"
+msgstr ""
+
+#: printf.1.xml:100(term)
+msgid "&bsol;r"
+msgstr ""
+
+#: printf.1.xml:102(para)
+msgid "carriage return"
+msgstr ""
+
+#: printf.1.xml:106(term)
+msgid "&bsol;t"
+msgstr ""
+
+#: printf.1.xml:108(para)
+msgid "horizontal tab"
+msgstr ""
+
+#: printf.1.xml:112(term)
+msgid "&bsol;v"
+msgstr ""
+
+#: printf.1.xml:114(para)
+msgid "vertical tab"
+msgstr ""
+
+#: printf.1.xml:118(term)
+msgid "&bsol;NNN"
+msgstr ""
+
+#: printf.1.xml:120(para)
+msgid "byte with octal value NNN (1 to 3 digits)"
+msgstr ""
+
+#: printf.1.xml:124(term)
+msgid "&bsol;xHH"
+msgstr ""
+
+#: printf.1.xml:126(para)
+msgid "byte with hexadecimal value HH (1 to 2 digits)"
+msgstr ""
+
+#: printf.1.xml:130(term)
+msgid "&bsol;uHHHH"
+msgstr ""
+
+#: printf.1.xml:132(para)
+msgid "Unicode (ISO/IEC 10646) character with hex value HHHH (4 digits)"
+msgstr ""
+
+#: printf.1.xml:136(term)
+msgid "&bsol;UHHHHHHHH"
+msgstr ""
+
+#: printf.1.xml:138(para)
+msgid "Unicode character with hex value HHHHHHHH (8 digits)"
+msgstr ""
+
+#: printf.1.xml:142(term)
+msgid "%%"
+msgstr ""
+
+#: printf.1.xml:144(para)
+msgid "a single %"
+msgstr ""
+
+#: printf.1.xml:148(term)
+msgid "%b"
+msgstr ""
+
+#: printf.1.xml:150(para)
+msgid "ARGUMENT as a string with '&bsol;' escapes interpreted, except that octal escapes are of the form &bsol;0 or &bsol;0NNN"
+msgstr ""
+
+#: printf.1.xml:153(para)
+msgid "and all C format specifications ending with one of diouxXfeEgGcs, with ARGUMENTs converted to proper type first. Variable widths are handled."
+msgstr ""
+
+#: printf.1.xml:156(para)
+msgid "NOTE: your shell may have its own version of printf, which usually supersedes the version described here. Please refer to your shell's documentation for details about the options it supports."
+msgstr ""
+
+#: printf.1.xml:160(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report printf translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: printf.1.xml:167(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: printf.1.xml:168(para)
+msgid "Written by David MacKenzie."
+msgstr ""
+
+#: printf.1.xml:171(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: printf.1.xml:172(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: printf.1.xml:179(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: printf.1.xml:180(manvolnum)
+msgid "3"
+msgstr ""
+
+#: printf.1.xml:182(para)
+msgid "The full documentation for <command>printf</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>printf</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: printf.1.xml:190(emphasis)
+msgid "info coreutils 'printf invocation'"
+msgstr ""
+
+#: printf.1.xml:192(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: printf.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,4 +1,5 @@
 #!/bin/sh
+# convert translated po to xml
 pushd finished_po &>/dev/null
 for i in * ; do
 	FILE=`echo ${i} | sed 's/\.po//'`;

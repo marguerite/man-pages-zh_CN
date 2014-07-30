@@ -1,0 +1,161 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: mktemp.1.xml:8(refentrytitle)
+msgid "MKTEMP"
+msgstr ""
+
+#: mktemp.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: mktemp.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: mktemp.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: mktemp.1.xml:14(refname) mktemp.1.xml:20(command)
+msgid "mktemp"
+msgstr ""
+
+#: mktemp.1.xml:15(refpurpose)
+msgid "create a temporary file or directory"
+msgstr ""
+
+#: mktemp.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: mktemp.1.xml:22(replaceable)
+msgid "TEMPLATE"
+msgstr ""
+
+#: mktemp.1.xml:27(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: mktemp.1.xml:30(para)
+msgid "Create a temporary file or directory, safely, and print its name. TEMPLATE must contain at least 3 consecutive 'X's in last component. If TEMPLATE is not specified, use tmp.XXXXXXXXXX, and <option>--tmpdir</option> is implied. Files are created u+rw, and directories u+rwx, minus umask restrictions."
+msgstr ""
+
+#: mktemp.1.xml:36(term)
+msgid "<option>-d</option>, <option>--directory</option>"
+msgstr ""
+
+#: mktemp.1.xml:38(para)
+msgid "create a directory, not a file"
+msgstr ""
+
+#: mktemp.1.xml:42(term)
+msgid "<option>-u</option>, <option>--dry-run</option>"
+msgstr ""
+
+#: mktemp.1.xml:44(para)
+msgid "do not create anything; merely print a name (unsafe)"
+msgstr ""
+
+#: mktemp.1.xml:48(term)
+msgid "<option>-q</option>, <option>--quiet</option>"
+msgstr ""
+
+#: mktemp.1.xml:50(para)
+msgid "suppress diagnostics about file/dir-creation failure"
+msgstr ""
+
+#: mktemp.1.xml:54(term)
+msgid "<option>--suffix</option>=<emphasis remap=\"I\">SUFF</emphasis>"
+msgstr ""
+
+#: mktemp.1.xml:56(para)
+msgid "append SUFF to TEMPLATE; SUFF must not contain a slash. This option is implied if TEMPLATE does not end in X"
+msgstr ""
+
+#: mktemp.1.xml:61(term)
+msgid "<option>-p</option> DIR, <option>--tmpdir</option>[=<emphasis remap=\"I\">DIR</emphasis>]"
+msgstr ""
+
+#: mktemp.1.xml:63(para)
+msgid "interpret TEMPLATE relative to DIR; if DIR is not specified, use $TMPDIR if set, else <filename>/tmp</filename>. With this option, TEMPLATE must not be an absolute name; unlike with <option>-t</option>, TEMPLATE may contain slashes, but mktemp creates only the final component"
+msgstr ""
+
+#: mktemp.1.xml:71(option)
+msgid "-t"
+msgstr ""
+
+#: mktemp.1.xml:73(para)
+msgid "interpret TEMPLATE as a single file name component, relative to a directory: $TMPDIR, if set; else the directory specified via <option>-p</option>; else <filename>/tmp</filename> [deprecated]"
+msgstr ""
+
+#: mktemp.1.xml:79(option)
+msgid "--help"
+msgstr ""
+
+#: mktemp.1.xml:81(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: mktemp.1.xml:85(option)
+msgid "--version"
+msgstr ""
+
+#: mktemp.1.xml:87(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: mktemp.1.xml:89(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report mktemp translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: mktemp.1.xml:96(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: mktemp.1.xml:97(para)
+msgid "Written by Jim Meyering and Eric Blake."
+msgstr ""
+
+#: mktemp.1.xml:100(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: mktemp.1.xml:101(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: mktemp.1.xml:108(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: mktemp.1.xml:109(para)
+msgid "<citerefentry><refentrytitle>mkstemp</refentrytitle><manvolnum>3</manvolnum></citerefentry>, <citerefentry><refentrytitle>mkdtemp</refentrytitle><manvolnum>3</manvolnum></citerefentry>, <citerefentry><refentrytitle>mktemp</refentrytitle><manvolnum>3</manvolnum></citerefentry>"
+msgstr ""
+
+#: mktemp.1.xml:111(para)
+msgid "The full documentation for <command>mktemp</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>mktemp</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: mktemp.1.xml:119(emphasis)
+msgid "info coreutils 'mktemp invocation'"
+msgstr ""
+
+#: mktemp.1.xml:121(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: mktemp.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

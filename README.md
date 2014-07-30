@@ -25,7 +25,7 @@ If not, I will do my own translations here.
 * manpages-zh the old translated manpages from CMPP project
 * 50-pot pot directory
 * docfilter a tool directory, don't touch it
-* unpacked_manpage raw directory for manpages to translate
+* raw raw directory for manpages to translate
 * xml middle file (xml) directory
 * zh_CN po file directory
 * finished_po translated po files go there
@@ -40,7 +40,7 @@ You need `xml2po` program installed, for openSUSE:
 
  sudo zypper in xml2po
 
-* Copy the manpage you want to translate to the `unpacked_manpage` directory.
+* Copy the manpage you want to translate to the `raw` directory.
 * Run the `unpack_manpage.sh` script, it will unpack the .gz manpages.
 * Run the `man2xml.sh` script, it will generate xml files in xml directory.
 * Run the `xml2pot.sh` script, it will generate pot files in 50-pot directory.

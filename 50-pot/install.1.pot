@@ -1,0 +1,317 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: install.1.xml:8(refentrytitle)
+msgid "INSTALL"
+msgstr ""
+
+#: install.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: install.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: install.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: install.1.xml:14(refname) install.1.xml:20(command) install.1.xml:27(command) install.1.xml:33(command) install.1.xml:40(command)
+msgid "install"
+msgstr ""
+
+#: install.1.xml:15(refpurpose)
+msgid "copy files and set attributes"
+msgstr ""
+
+#: install.1.xml:21(replaceable) install.1.xml:28(replaceable) install.1.xml:34(replaceable) install.1.xml:41(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: install.1.xml:22(arg)
+msgid "-T"
+msgstr ""
+
+#: install.1.xml:23(replaceable) install.1.xml:29(replaceable) install.1.xml:36(replaceable)
+msgid "SOURCE"
+msgstr ""
+
+#: install.1.xml:24(replaceable)
+msgid "DEST"
+msgstr ""
+
+#: install.1.xml:30(replaceable) install.1.xml:35(replaceable) install.1.xml:42(replaceable)
+msgid "DIRECTORY"
+msgstr ""
+
+#: install.1.xml:35(arg)
+msgid "-t <placeholder-1/>"
+msgstr ""
+
+#: install.1.xml:42(arg)
+msgid "-d <placeholder-1/>"
+msgstr ""
+
+#: install.1.xml:48(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: install.1.xml:51(para)
+msgid "This install program copies files (often just compiled) into destination locations you choose. If you want to download and install a ready-to-use package on a GNU/Linux system, you should instead be using a package manager like yum(1) or apt-get(1)."
+msgstr ""
+
+#: install.1.xml:56(para)
+msgid "In the first three forms, copy SOURCE to DEST or multiple SOURCE(s) to the existing DIRECTORY, while setting permission modes and owner/group. In the 4th form, create all components of the given DIRECTORY(ies)."
+msgstr ""
+
+#: install.1.xml:60(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: install.1.xml:63(term)
+msgid "<option>--backup</option>[=<emphasis remap=\"I\">CONTROL</emphasis>]"
+msgstr ""
+
+#: install.1.xml:65(para)
+msgid "make a backup of each existing destination file"
+msgstr ""
+
+#: install.1.xml:69(option)
+msgid "-b"
+msgstr ""
+
+#: install.1.xml:71(para)
+msgid "like <option>--backup</option> but does not accept an argument"
+msgstr ""
+
+#: install.1.xml:75(option)
+msgid "-c"
+msgstr ""
+
+#: install.1.xml:77(para)
+msgid "(ignored)"
+msgstr ""
+
+#: install.1.xml:81(term)
+msgid "<option>-C</option>, <option>--compare</option>"
+msgstr ""
+
+#: install.1.xml:83(para)
+msgid "compare each pair of source and destination files, and in some cases, do not modify the destination at all"
+msgstr ""
+
+#: install.1.xml:88(term)
+msgid "<option>-d</option>, <option>--directory</option>"
+msgstr ""
+
+#: install.1.xml:90(para)
+msgid "treat all arguments as directory names; create all components of the specified directories"
+msgstr ""
+
+#: install.1.xml:95(option)
+msgid "-D"
+msgstr ""
+
+#: install.1.xml:97(para)
+msgid "create all leading components of DEST except the last, then copy SOURCE to DEST"
+msgstr ""
+
+#: install.1.xml:102(term)
+msgid "<option>-g</option>, <option>--group</option>=<emphasis remap=\"I\">GROUP</emphasis>"
+msgstr ""
+
+#: install.1.xml:104(para)
+msgid "set group ownership, instead of process' current group"
+msgstr ""
+
+#: install.1.xml:108(term)
+msgid "<option>-m</option>, <option>--mode</option>=<emphasis remap=\"I\">MODE</emphasis>"
+msgstr ""
+
+#: install.1.xml:110(para)
+msgid "set permission mode (as in chmod), instead of rwxr-xr-x"
+msgstr ""
+
+#: install.1.xml:114(term)
+msgid "<option>-o</option>, <option>--owner</option>=<emphasis remap=\"I\">OWNER</emphasis>"
+msgstr ""
+
+#: install.1.xml:116(para)
+msgid "set ownership (super-user only)"
+msgstr ""
+
+#: install.1.xml:120(term)
+msgid "<option>-p</option>, <option>--preserve-timestamps</option>"
+msgstr ""
+
+#: install.1.xml:122(para)
+msgid "apply access/modification times of SOURCE files to corresponding destination files"
+msgstr ""
+
+#: install.1.xml:127(term)
+msgid "<option>-s</option>, <option>--strip</option>"
+msgstr ""
+
+#: install.1.xml:129(para)
+msgid "strip symbol tables"
+msgstr ""
+
+#: install.1.xml:133(term)
+msgid "<option>--strip-program</option>=<emphasis remap=\"I\">PROGRAM</emphasis>"
+msgstr ""
+
+#: install.1.xml:135(para)
+msgid "program used to strip binaries"
+msgstr ""
+
+#: install.1.xml:139(term)
+msgid "<option>-S</option>, <option>--suffix</option>=<emphasis remap=\"I\">SUFFIX</emphasis>"
+msgstr ""
+
+#: install.1.xml:141(para)
+msgid "override the usual backup suffix"
+msgstr ""
+
+#: install.1.xml:145(term)
+msgid "<option>-t</option>, <option>--target-directory</option>=<emphasis remap=\"I\">DIRECTORY</emphasis>"
+msgstr ""
+
+#: install.1.xml:147(para)
+msgid "copy all SOURCE arguments into DIRECTORY"
+msgstr ""
+
+#: install.1.xml:151(term)
+msgid "<option>-T</option>, <option>--no-target-directory</option>"
+msgstr ""
+
+#: install.1.xml:153(para)
+msgid "treat DEST as a normal file"
+msgstr ""
+
+#: install.1.xml:157(term)
+msgid "<option>-v</option>, <option>--verbose</option>"
+msgstr ""
+
+#: install.1.xml:159(para)
+msgid "print the name of each directory as it is created"
+msgstr ""
+
+#: install.1.xml:163(option)
+msgid "--preserve-context"
+msgstr ""
+
+#: install.1.xml:165(para)
+msgid "preserve SELinux security context"
+msgstr ""
+
+#: install.1.xml:169(term)
+msgid "<option>-Z</option>, <option>--context</option>[=<emphasis remap=\"I\">CTX</emphasis>]"
+msgstr ""
+
+#: install.1.xml:171(para)
+msgid "set SELinux security context of destination file to default type, or to CTX if specified"
+msgstr ""
+
+#: install.1.xml:176(option)
+msgid "--help"
+msgstr ""
+
+#: install.1.xml:178(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: install.1.xml:182(option)
+msgid "--version"
+msgstr ""
+
+#: install.1.xml:184(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: install.1.xml:186(para)
+msgid "The backup suffix is '~', unless set with <option>--suffix</option> or SIMPLE_BACKUP_SUFFIX. The version control method may be selected via the <option>--backup</option> option or through the VERSION_CONTROL environment variable. Here are the values:"
+msgstr ""
+
+#: install.1.xml:192(term)
+msgid "none, off"
+msgstr ""
+
+#: install.1.xml:194(para)
+msgid "never make backups (even if <option>--backup</option> is given)"
+msgstr ""
+
+#: install.1.xml:198(term)
+msgid "numbered, t"
+msgstr ""
+
+#: install.1.xml:200(para)
+msgid "make numbered backups"
+msgstr ""
+
+#: install.1.xml:204(term)
+msgid "existing, nil"
+msgstr ""
+
+#: install.1.xml:206(para)
+msgid "numbered if numbered backups exist, simple otherwise"
+msgstr ""
+
+#: install.1.xml:210(term)
+msgid "simple, never"
+msgstr ""
+
+#: install.1.xml:212(para)
+msgid "always make simple backups"
+msgstr ""
+
+#: install.1.xml:214(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report install translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: install.1.xml:221(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: install.1.xml:222(para)
+msgid "Written by David MacKenzie."
+msgstr ""
+
+#: install.1.xml:225(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: install.1.xml:226(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: install.1.xml:233(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: install.1.xml:234(para)
+msgid "The full documentation for <command>install</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>install</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: install.1.xml:242(emphasis)
+msgid "info coreutils 'install invocation'"
+msgstr ""
+
+#: install.1.xml:244(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: install.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

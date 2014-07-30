@@ -1,0 +1,189 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: timeout.1.xml:8(refentrytitle)
+msgid "TIMEOUT"
+msgstr ""
+
+#: timeout.1.xml:9(manvolnum) timeout.1.xml:112(manvolnum)
+msgid "1"
+msgstr ""
+
+#: timeout.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: timeout.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: timeout.1.xml:14(refname) timeout.1.xml:20(command) timeout.1.xml:28(command)
+msgid "timeout"
+msgstr ""
+
+#: timeout.1.xml:15(refpurpose)
+msgid "run a command with a time limit"
+msgstr ""
+
+#: timeout.1.xml:21(replaceable) timeout.1.xml:29(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: timeout.1.xml:22(replaceable)
+msgid "DURATION"
+msgstr ""
+
+#: timeout.1.xml:23(replaceable)
+msgid "COMMAND"
+msgstr ""
+
+#: timeout.1.xml:24(replaceable)
+msgid "ARG"
+msgstr ""
+
+#: timeout.1.xml:34(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: timeout.1.xml:37(para)
+msgid "Start COMMAND, and kill it if still running after DURATION."
+msgstr ""
+
+#: timeout.1.xml:39(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: timeout.1.xml:41(option)
+msgid "--preserve-status"
+msgstr ""
+
+#: timeout.1.xml:43(para)
+msgid "exit with the same status as COMMAND, even when the"
+msgstr ""
+
+#: timeout.1.xml:45(para)
+msgid "command times out"
+msgstr ""
+
+#: timeout.1.xml:47(option)
+msgid "--foreground"
+msgstr ""
+
+#: timeout.1.xml:49(para)
+msgid "when not running timeout directly from a shell prompt,"
+msgstr ""
+
+#: timeout.1.xml:51(para)
+msgid "allow COMMAND to read from the TTY and get TTY signals; in this mode, children of COMMAND will not be timed out"
+msgstr ""
+
+#: timeout.1.xml:54(para)
+msgid "<option>-k</option>, <option>--kill-after</option>=<emphasis remap=\"I\">DURATION</emphasis>"
+msgstr ""
+
+#: timeout.1.xml:56(para)
+msgid "also send a KILL signal if COMMAND is still running"
+msgstr ""
+
+#: timeout.1.xml:58(para)
+msgid "this long after the initial signal was sent"
+msgstr ""
+
+#: timeout.1.xml:60(para)
+msgid "<option>-s</option>, <option>--signal</option>=<constant>SIGNAL</constant>"
+msgstr ""
+
+#: timeout.1.xml:62(para)
+msgid "specify the signal to be sent on timeout;"
+msgstr ""
+
+#: timeout.1.xml:64(para)
+msgid "SIGNAL may be a name like 'HUP' or a number; see 'kill <option>-l</option>' for a list of signals"
+msgstr ""
+
+#: timeout.1.xml:68(option)
+msgid "--help"
+msgstr ""
+
+#: timeout.1.xml:70(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: timeout.1.xml:74(option)
+msgid "--version"
+msgstr ""
+
+#: timeout.1.xml:76(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: timeout.1.xml:78(para)
+msgid "DURATION is a floating point number with an optional suffix: 's' for seconds (the default), 'm' for minutes, 'h' for hours or 'd' for days."
+msgstr ""
+
+#: timeout.1.xml:81(para)
+msgid "If the command times out, and <option>--preserve-status</option> is not set, then exit with status 124. Otherwise, exit with the status of COMMAND. If no signal is specified, send the TERM signal upon timeout. The TERM signal kills any process that does not block or catch that signal. It may be necessary to use the KILL (9) signal, since this signal cannot be caught, in which case the exit status is 128+9 rather than 124."
+msgstr ""
+
+#: timeout.1.xml:88(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report timeout translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: timeout.1.xml:95(title)
+msgid "BUGS"
+msgstr ""
+
+#: timeout.1.xml:96(para)
+msgid "Some platforms don't curently support timeouts beyond 2038"
+msgstr ""
+
+#: timeout.1.xml:99(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: timeout.1.xml:100(para)
+msgid "Written by Padraig Brady."
+msgstr ""
+
+#: timeout.1.xml:103(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: timeout.1.xml:104(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: timeout.1.xml:111(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: timeout.1.xml:112(refentrytitle)
+msgid "kill"
+msgstr ""
+
+#: timeout.1.xml:114(para)
+msgid "The full documentation for <command>timeout</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>timeout</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: timeout.1.xml:122(emphasis)
+msgid "info coreutils 'timeout invocation'"
+msgstr ""
+
+#: timeout.1.xml:124(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: timeout.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

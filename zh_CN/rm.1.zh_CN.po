@@ -1,0 +1,228 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: rm.1.xml:8(refentrytitle)
+msgid "RM"
+msgstr ""
+
+#: rm.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: rm.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: rm.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: rm.1.xml:14(refname) rm.1.xml:20(command)
+msgid "rm"
+msgstr ""
+
+#: rm.1.xml:15(refpurpose)
+msgid "remove files or directories"
+msgstr ""
+
+#: rm.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: rm.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: rm.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: rm.1.xml:29(para)
+msgid "This manual page documents the GNU version of <command>rm</command>. <command>rm</command> removes each specified file. By default, it does not remove directories."
+msgstr ""
+
+#: rm.1.xml:36(para)
+msgid "If the <option>-I</option> or <option>--interactive=once</option> option is given, and there are more than three files or the <option>-r</option>, <option>-R</option>, or <option>--recursive</option> are given, then <command>rm</command> prompts the user for whether to proceed with the entire operation. If the response is not affirmative, the entire command is aborted."
+msgstr ""
+
+#: rm.1.xml:43(para)
+msgid "Otherwise, if a file is unwritable, standard input is a terminal, and the <option>-f</option> or <option>--force</option> option is not given, or the <option>-i</option> or <option>--interactive=always</option> option is given, <command>rm</command> prompts the user for whether to remove the file. If the response is not affirmative, the file is skipped."
+msgstr ""
+
+#: rm.1.xml:51(title)
+msgid "OPTIONS"
+msgstr ""
+
+#: rm.1.xml:52(para)
+msgid "Remove (unlink) the FILE(s)."
+msgstr ""
+
+#: rm.1.xml:55(term)
+msgid "<option>-f</option>, <option>--force</option>"
+msgstr ""
+
+#: rm.1.xml:57(para)
+msgid "ignore nonexistent files and arguments, never prompt"
+msgstr ""
+
+#: rm.1.xml:61(option)
+msgid "-i"
+msgstr ""
+
+#: rm.1.xml:63(para)
+msgid "prompt before every removal"
+msgstr ""
+
+#: rm.1.xml:67(option)
+msgid "-I"
+msgstr ""
+
+#: rm.1.xml:69(para)
+msgid "prompt once before removing more than three files, or when removing recursively; less intrusive than <option>-i</option>, while still giving protection against most mistakes"
+msgstr ""
+
+#: rm.1.xml:75(term)
+msgid "<option>--interactive</option>[=<emphasis remap=\"I\">WHEN</emphasis>]"
+msgstr ""
+
+#: rm.1.xml:77(para)
+msgid "prompt according to WHEN: never, once (<option>-I</option>), or always (<option>-i</option>); without WHEN, prompt always"
+msgstr ""
+
+#: rm.1.xml:82(option)
+msgid "--one-file-system"
+msgstr ""
+
+#: rm.1.xml:84(para)
+msgid "when removing a hierarchy recursively, skip any directory that is on a file system different from that of the corresponding command line argument"
+msgstr ""
+
+#: rm.1.xml:90(option)
+msgid "--no-preserve-root"
+msgstr ""
+
+#: rm.1.xml:92(para)
+msgid "do not treat '/' specially"
+msgstr ""
+
+#: rm.1.xml:96(option)
+msgid "--preserve-root"
+msgstr ""
+
+#: rm.1.xml:98(para)
+msgid "do not remove '/' (default)"
+msgstr ""
+
+#: rm.1.xml:102(term)
+msgid "<option>-r</option>, <option>-R</option>, <option>--recursive</option>"
+msgstr ""
+
+#: rm.1.xml:104(para)
+msgid "remove directories and their contents recursively"
+msgstr ""
+
+#: rm.1.xml:108(term)
+msgid "<option>-d</option>, <option>--dir</option>"
+msgstr ""
+
+#: rm.1.xml:110(para)
+msgid "remove empty directories"
+msgstr ""
+
+#: rm.1.xml:114(term)
+msgid "<option>-v</option>, <option>--verbose</option>"
+msgstr ""
+
+#: rm.1.xml:116(para)
+msgid "explain what is being done"
+msgstr ""
+
+#: rm.1.xml:120(option)
+msgid "--help"
+msgstr ""
+
+#: rm.1.xml:122(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: rm.1.xml:126(option)
+msgid "--version"
+msgstr ""
+
+#: rm.1.xml:128(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: rm.1.xml:130(para)
+msgid "By default, rm does not remove directories. Use the <option>--recursive</option> (<option>-r</option> or <option>-R</option>) option to remove each listed directory, too, along with all of its contents."
+msgstr ""
+
+#: rm.1.xml:133(para)
+msgid "To remove a file whose name starts with a '-', for example '-foo', use one of these commands:"
+msgstr ""
+
+#: rm.1.xml:136(para)
+msgid "rm <option>--</option><option>-foo</option>"
+msgstr ""
+
+#: rm.1.xml:138(para)
+msgid "rm ./-foo"
+msgstr ""
+
+#: rm.1.xml:140(para)
+msgid "Note that if you use rm to remove a file, it might be possible to recover some of its contents, given sufficient expertise and/or time. For greater assurance that the contents are truly unrecoverable, consider using shred."
+msgstr ""
+
+#: rm.1.xml:144(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report rm translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: rm.1.xml:151(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: rm.1.xml:152(para)
+msgid "Written by Paul Rubin, David MacKenzie, Richard M. Stallman, and Jim Meyering."
+msgstr ""
+
+#: rm.1.xml:156(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: rm.1.xml:157(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: rm.1.xml:164(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: rm.1.xml:165(para)
+msgid "<citerefentry><refentrytitle>unlink</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>unlink</refentrytitle><manvolnum>2</manvolnum></citerefentry>, <citerefentry><refentrytitle>chattr</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>shred</refentrytitle><manvolnum>1</manvolnum></citerefentry>"
+msgstr ""
+
+#: rm.1.xml:167(para)
+msgid "The full documentation for <command>rm</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>rm</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: rm.1.xml:175(emphasis)
+msgid "info coreutils 'rm invocation'"
+msgstr ""
+
+#: rm.1.xml:177(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: rm.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

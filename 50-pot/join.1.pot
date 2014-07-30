@@ -1,0 +1,229 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: join.1.xml:8(refentrytitle)
+msgid "JOIN"
+msgstr ""
+
+#: join.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: join.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: join.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: join.1.xml:14(refname) join.1.xml:20(command)
+msgid "join"
+msgstr ""
+
+#: join.1.xml:15(refpurpose)
+msgid "join lines of two files on a common field"
+msgstr ""
+
+#: join.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: join.1.xml:22(replaceable)
+msgid "FILE1"
+msgstr ""
+
+#: join.1.xml:23(replaceable)
+msgid "FILE2"
+msgstr ""
+
+#: join.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: join.1.xml:31(para)
+msgid "For each pair of input lines with identical join fields, write a line to standard output. The default join field is the first, delimited by whitespace. When FILE1 or FILE2 (not both) is -, read standard input."
+msgstr ""
+
+#: join.1.xml:36(term)
+msgid "<option>-a</option> FILENUM"
+msgstr ""
+
+#: join.1.xml:38(para)
+msgid "also print unpairable lines from file FILENUM, where FILENUM is 1 or 2, corresponding to FILE1 or FILE2"
+msgstr ""
+
+#: join.1.xml:43(term)
+msgid "<option>-e</option> EMPTY"
+msgstr ""
+
+#: join.1.xml:45(para)
+msgid "replace missing input fields with EMPTY"
+msgstr ""
+
+#: join.1.xml:49(term)
+msgid "<option>-i</option>, <option>--ignore-case</option>"
+msgstr ""
+
+#: join.1.xml:51(para)
+msgid "ignore differences in case when comparing fields"
+msgstr ""
+
+#: join.1.xml:55(term)
+msgid "<option>-j</option> FIELD"
+msgstr ""
+
+#: join.1.xml:57(para)
+msgid "equivalent to '-1 FIELD <option>-2</option> FIELD'"
+msgstr ""
+
+#: join.1.xml:61(term)
+msgid "<option>-o</option> FORMAT"
+msgstr ""
+
+#: join.1.xml:63(para)
+msgid "obey FORMAT while constructing output line"
+msgstr ""
+
+#: join.1.xml:67(term)
+msgid "<option>-t</option> CHAR"
+msgstr ""
+
+#: join.1.xml:69(para)
+msgid "use CHAR as input and output field separator"
+msgstr ""
+
+#: join.1.xml:73(term)
+msgid "<option>-v</option> FILENUM"
+msgstr ""
+
+#: join.1.xml:75(para)
+msgid "like <option>-a</option> FILENUM, but suppress joined output lines"
+msgstr ""
+
+#: join.1.xml:79(term)
+msgid "<option>-1</option> FIELD"
+msgstr ""
+
+#: join.1.xml:81(para)
+msgid "join on this FIELD of file 1"
+msgstr ""
+
+#: join.1.xml:85(term)
+msgid "<option>-2</option> FIELD"
+msgstr ""
+
+#: join.1.xml:87(para)
+msgid "join on this FIELD of file 2"
+msgstr ""
+
+#: join.1.xml:91(option)
+msgid "--check-order"
+msgstr ""
+
+#: join.1.xml:93(para)
+msgid "check that the input is correctly sorted, even if all input lines are pairable"
+msgstr ""
+
+#: join.1.xml:98(option)
+msgid "--nocheck-order"
+msgstr ""
+
+#: join.1.xml:100(para)
+msgid "do not check that the input is correctly sorted"
+msgstr ""
+
+#: join.1.xml:104(option)
+msgid "--header"
+msgstr ""
+
+#: join.1.xml:106(para)
+msgid "treat the first line in each file as field headers, print them without trying to pair them"
+msgstr ""
+
+#: join.1.xml:111(term)
+msgid "<option>-z</option>, <option>--zero-terminated</option>"
+msgstr ""
+
+#: join.1.xml:113(para)
+msgid "end lines with 0 byte, not newline"
+msgstr ""
+
+#: join.1.xml:117(option)
+msgid "--help"
+msgstr ""
+
+#: join.1.xml:119(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: join.1.xml:123(option)
+msgid "--version"
+msgstr ""
+
+#: join.1.xml:125(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: join.1.xml:127(para)
+msgid "Unless <option>-t</option> CHAR is given, leading blanks separate fields and are ignored, else fields are separated by CHAR. Any FIELD is a field number counted from 1. FORMAT is one or more comma or blank separated specifications, each being 'FILENUM.FIELD' or '0'. Default FORMAT outputs the join field, the remaining fields from FILE1, the remaining fields from FILE2, all separated by CHAR. If FORMAT is the keyword 'auto', then the first line of each file determines the number of fields output for each line."
+msgstr ""
+
+#: join.1.xml:135(para)
+msgid "Important: FILE1 and FILE2 must be sorted on the join fields. E.g., use \"sort <option>-k</option> 1b,1\" if 'join' has no options, or use \"join <option>-t</option> ''\" if 'sort' has no options. Note, comparisons honor the rules specified by 'LC_COLLATE'. If the input is not sorted and some lines cannot be joined, a warning message will be given."
+msgstr ""
+
+#: join.1.xml:142(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report join translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: join.1.xml:149(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: join.1.xml:150(para)
+msgid "Written by Mike Haertel."
+msgstr ""
+
+#: join.1.xml:153(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: join.1.xml:154(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: join.1.xml:161(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: join.1.xml:162(para)
+msgid "<citerefentry><refentrytitle>comm</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>uniq</refentrytitle><manvolnum>1</manvolnum></citerefentry>"
+msgstr ""
+
+#: join.1.xml:164(para)
+msgid "The full documentation for <command>join</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>join</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: join.1.xml:172(emphasis)
+msgid "info coreutils 'join invocation'"
+msgstr ""
+
+#: join.1.xml:174(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: join.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

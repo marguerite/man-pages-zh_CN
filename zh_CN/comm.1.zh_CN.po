@@ -1,0 +1,193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: comm.1.xml:8(refentrytitle)
+msgid "COMM"
+msgstr ""
+
+#: comm.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: comm.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: comm.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: comm.1.xml:14(refname) comm.1.xml:20(command)
+msgid "comm"
+msgstr ""
+
+#: comm.1.xml:15(refpurpose)
+msgid "compare two sorted files line by line"
+msgstr ""
+
+#: comm.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: comm.1.xml:22(replaceable)
+msgid "FILE1"
+msgstr ""
+
+#: comm.1.xml:23(replaceable)
+msgid "FILE2"
+msgstr ""
+
+#: comm.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: comm.1.xml:31(para)
+msgid "Compare sorted files FILE1 and FILE2 line by line."
+msgstr ""
+
+#: comm.1.xml:33(para)
+msgid "With no options, produce three-column output. Column one contains lines unique to FILE1, column two contains lines unique to FILE2, and column three contains lines common to both files."
+msgstr ""
+
+#: comm.1.xml:38(option)
+msgid "-1"
+msgstr ""
+
+#: comm.1.xml:40(para)
+msgid "suppress column 1 (lines unique to FILE1)"
+msgstr ""
+
+#: comm.1.xml:44(option)
+msgid "-2"
+msgstr ""
+
+#: comm.1.xml:46(para)
+msgid "suppress column 2 (lines unique to FILE2)"
+msgstr ""
+
+#: comm.1.xml:50(option)
+msgid "-3"
+msgstr ""
+
+#: comm.1.xml:52(para)
+msgid "suppress column 3 (lines that appear in both files)"
+msgstr ""
+
+#: comm.1.xml:56(option)
+msgid "--check-order"
+msgstr ""
+
+#: comm.1.xml:58(para)
+msgid "check that the input is correctly sorted, even if all input lines are pairable"
+msgstr ""
+
+#: comm.1.xml:63(option)
+msgid "--nocheck-order"
+msgstr ""
+
+#: comm.1.xml:65(para)
+msgid "do not check that the input is correctly sorted"
+msgstr ""
+
+#: comm.1.xml:69(term)
+msgid "<option>--output-delimiter</option>=<emphasis remap=\"I\">STR</emphasis>"
+msgstr ""
+
+#: comm.1.xml:71(para)
+msgid "separate columns with STR"
+msgstr ""
+
+#: comm.1.xml:75(option)
+msgid "--help"
+msgstr ""
+
+#: comm.1.xml:77(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: comm.1.xml:81(option)
+msgid "--version"
+msgstr ""
+
+#: comm.1.xml:83(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: comm.1.xml:85(para)
+msgid "Note, comparisons honor the rules specified by 'LC_COLLATE'."
+msgstr ""
+
+#: comm.1.xml:91(title)
+msgid "EXAMPLES"
+msgstr ""
+
+#: comm.1.xml:94(term)
+msgid "comm -12 file1 file2"
+msgstr ""
+
+#: comm.1.xml:96(para)
+msgid "Print only lines present in both file1 and file2."
+msgstr ""
+
+#: comm.1.xml:100(term)
+msgid "comm -3 file1 file2"
+msgstr ""
+
+#: comm.1.xml:102(para)
+msgid "Print lines in file1 not in file2, and vice versa."
+msgstr ""
+
+#: comm.1.xml:104(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report comm translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: comm.1.xml:111(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: comm.1.xml:112(para)
+msgid "Written by Richard M. Stallman and David MacKenzie."
+msgstr ""
+
+#: comm.1.xml:115(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: comm.1.xml:116(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: comm.1.xml:123(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: comm.1.xml:124(para)
+msgid "<citerefentry><refentrytitle>join</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>uniq</refentrytitle><manvolnum>1</manvolnum></citerefentry>"
+msgstr ""
+
+#: comm.1.xml:126(para)
+msgid "The full documentation for <command>comm</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>comm</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: comm.1.xml:134(emphasis)
+msgid "info coreutils 'comm invocation'"
+msgstr ""
+
+#: comm.1.xml:136(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: comm.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

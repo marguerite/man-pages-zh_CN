@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: mknod.1.xml:8(refentrytitle)
+msgid "MKNOD"
+msgstr ""
+
+#: mknod.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: mknod.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: mknod.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: mknod.1.xml:14(refname) mknod.1.xml:20(command) mknod.1.xml:107(refentrytitle)
+msgid "mknod"
+msgstr ""
+
+#: mknod.1.xml:15(refpurpose)
+msgid "make block or character special files"
+msgstr ""
+
+#: mknod.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: mknod.1.xml:22(replaceable)
+msgid "NAME"
+msgstr ""
+
+#: mknod.1.xml:23(replaceable)
+msgid "TYPE"
+msgstr ""
+
+#: mknod.1.xml:24(replaceable)
+msgid "MAJOR"
+msgstr ""
+
+#: mknod.1.xml:24(replaceable)
+msgid "MINOR"
+msgstr ""
+
+#: mknod.1.xml:29(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: mknod.1.xml:32(para)
+msgid "Create the special file NAME of the given TYPE."
+msgstr ""
+
+#: mknod.1.xml:34(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: mknod.1.xml:37(term)
+msgid "<option>-m</option>, <option>--mode</option>=<emphasis remap=\"I\">MODE</emphasis>"
+msgstr ""
+
+#: mknod.1.xml:39(para)
+msgid "set file permission bits to MODE, not a=rw - umask"
+msgstr ""
+
+#: mknod.1.xml:43(term)
+msgid "<option>-Z</option>, <option>--context</option>[=<emphasis remap=\"I\">CTX</emphasis>]"
+msgstr ""
+
+#: mknod.1.xml:45(para)
+msgid "set the SELinux security context of NAME to default type, or to CTX if specified"
+msgstr ""
+
+#: mknod.1.xml:50(option)
+msgid "--help"
+msgstr ""
+
+#: mknod.1.xml:52(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: mknod.1.xml:56(option)
+msgid "--version"
+msgstr ""
+
+#: mknod.1.xml:58(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: mknod.1.xml:60(para)
+msgid "Both MAJOR and MINOR must be specified when TYPE is b, c, or u, and they must be omitted when TYPE is p. If MAJOR or MINOR begins with 0x or 0X, it is interpreted as hexadecimal; otherwise, if it begins with 0, as octal; otherwise, as decimal. TYPE may be:"
+msgstr ""
+
+#: mknod.1.xml:67(term)
+msgid "b"
+msgstr ""
+
+#: mknod.1.xml:69(para)
+msgid "create a block (buffered) special file"
+msgstr ""
+
+#: mknod.1.xml:73(term)
+msgid "c, u"
+msgstr ""
+
+#: mknod.1.xml:75(para)
+msgid "create a character (unbuffered) special file"
+msgstr ""
+
+#: mknod.1.xml:79(term)
+msgid "p"
+msgstr ""
+
+#: mknod.1.xml:81(para)
+msgid "create a FIFO"
+msgstr ""
+
+#: mknod.1.xml:83(para)
+msgid "NOTE: your shell may have its own version of mknod, which usually supersedes the version described here. Please refer to your shell's documentation for details about the options it supports."
+msgstr ""
+
+#: mknod.1.xml:87(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report mknod translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: mknod.1.xml:94(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: mknod.1.xml:95(para)
+msgid "Written by David MacKenzie."
+msgstr ""
+
+#: mknod.1.xml:98(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: mknod.1.xml:99(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: mknod.1.xml:106(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: mknod.1.xml:107(manvolnum)
+msgid "2"
+msgstr ""
+
+#: mknod.1.xml:109(para)
+msgid "The full documentation for <command>mknod</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>mknod</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: mknod.1.xml:117(emphasis)
+msgid "info coreutils 'mknod invocation'"
+msgstr ""
+
+#: mknod.1.xml:119(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: mknod.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

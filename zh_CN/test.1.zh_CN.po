@@ -1,0 +1,429 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: test.1.xml:8(refentrytitle)
+msgid "TEST"
+msgstr ""
+
+#: test.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: test.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: test.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: test.1.xml:14(refname)
+msgid "test"
+msgstr ""
+
+#: test.1.xml:15(refpurpose)
+msgid "check file types and compare values"
+msgstr ""
+
+#: test.1.xml:19(para)
+msgid "<emphasis remap=\"B\">[</emphasis><emphasis remap=\"I\">EXPRESSION </emphasis>] <emphasis remap=\"B\">[</emphasis>"
+msgstr ""
+
+#: test.1.xml:23(command)
+msgid "]"
+msgstr ""
+
+#: test.1.xml:26(command)
+msgid "["
+msgstr ""
+
+#: test.1.xml:27(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: test.1.xml:32(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: test.1.xml:35(para)
+msgid "Exit with the status determined by EXPRESSION."
+msgstr ""
+
+#: test.1.xml:38(option)
+msgid "--help"
+msgstr ""
+
+#: test.1.xml:40(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: test.1.xml:44(option)
+msgid "--version"
+msgstr ""
+
+#: test.1.xml:46(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: test.1.xml:48(para)
+msgid "An omitted EXPRESSION defaults to false. Otherwise, EXPRESSION is true or false and sets exit status. It is one of:"
+msgstr ""
+
+#: test.1.xml:53(term)
+msgid "( EXPRESSION )"
+msgstr ""
+
+#: test.1.xml:55(para)
+msgid "EXPRESSION is true"
+msgstr ""
+
+#: test.1.xml:59(term)
+msgid "! EXPRESSION"
+msgstr ""
+
+#: test.1.xml:61(para)
+msgid "EXPRESSION is false"
+msgstr ""
+
+#: test.1.xml:65(term)
+msgid "EXPRESSION1 <option>-a</option> EXPRESSION2"
+msgstr ""
+
+#: test.1.xml:67(para)
+msgid "both EXPRESSION1 and EXPRESSION2 are true"
+msgstr ""
+
+#: test.1.xml:71(term)
+msgid "EXPRESSION1 <option>-o</option> EXPRESSION2"
+msgstr ""
+
+#: test.1.xml:73(para)
+msgid "either EXPRESSION1 or EXPRESSION2 is true"
+msgstr ""
+
+#: test.1.xml:77(term)
+msgid "<option>-n</option> STRING"
+msgstr ""
+
+#: test.1.xml:79(para)
+msgid "the length of STRING is nonzero"
+msgstr ""
+
+#: test.1.xml:83(term)
+msgid "STRING"
+msgstr ""
+
+#: test.1.xml:85(para)
+msgid "equivalent to <option>-n</option> STRING"
+msgstr ""
+
+#: test.1.xml:89(term)
+msgid "<option>-z</option> STRING"
+msgstr ""
+
+#: test.1.xml:91(para)
+msgid "the length of STRING is zero"
+msgstr ""
+
+#: test.1.xml:95(term)
+msgid "STRING1 = STRING2"
+msgstr ""
+
+#: test.1.xml:97(para)
+msgid "the strings are equal"
+msgstr ""
+
+#: test.1.xml:101(term)
+msgid "STRING1 != STRING2"
+msgstr ""
+
+#: test.1.xml:103(para)
+msgid "the strings are not equal"
+msgstr ""
+
+#: test.1.xml:107(term)
+msgid "INTEGER1 <option>-eq</option> INTEGER2"
+msgstr ""
+
+#: test.1.xml:109(para)
+msgid "INTEGER1 is equal to INTEGER2"
+msgstr ""
+
+#: test.1.xml:113(term)
+msgid "INTEGER1 <option>-ge</option> INTEGER2"
+msgstr ""
+
+#: test.1.xml:115(para)
+msgid "INTEGER1 is greater than or equal to INTEGER2"
+msgstr ""
+
+#: test.1.xml:119(term)
+msgid "INTEGER1 <option>-gt</option> INTEGER2"
+msgstr ""
+
+#: test.1.xml:121(para)
+msgid "INTEGER1 is greater than INTEGER2"
+msgstr ""
+
+#: test.1.xml:125(term)
+msgid "INTEGER1 <option>-le</option> INTEGER2"
+msgstr ""
+
+#: test.1.xml:127(para)
+msgid "INTEGER1 is less than or equal to INTEGER2"
+msgstr ""
+
+#: test.1.xml:131(term)
+msgid "INTEGER1 <option>-lt</option> INTEGER2"
+msgstr ""
+
+#: test.1.xml:133(para)
+msgid "INTEGER1 is less than INTEGER2"
+msgstr ""
+
+#: test.1.xml:137(term)
+msgid "INTEGER1 <option>-ne</option> INTEGER2"
+msgstr ""
+
+#: test.1.xml:139(para)
+msgid "INTEGER1 is not equal to INTEGER2"
+msgstr ""
+
+#: test.1.xml:143(term)
+msgid "FILE1 <option>-ef</option> FILE2"
+msgstr ""
+
+#: test.1.xml:145(para)
+msgid "FILE1 and FILE2 have the same device and inode numbers"
+msgstr ""
+
+#: test.1.xml:149(term)
+msgid "FILE1 <option>-nt</option> FILE2"
+msgstr ""
+
+#: test.1.xml:151(para)
+msgid "FILE1 is newer (modification date) than FILE2"
+msgstr ""
+
+#: test.1.xml:155(term)
+msgid "FILE1 <option>-ot</option> FILE2"
+msgstr ""
+
+#: test.1.xml:157(para)
+msgid "FILE1 is older than FILE2"
+msgstr ""
+
+#: test.1.xml:161(term)
+msgid "<option>-b</option> FILE"
+msgstr ""
+
+#: test.1.xml:163(para)
+msgid "FILE exists and is block special"
+msgstr ""
+
+#: test.1.xml:167(term)
+msgid "<option>-c</option> FILE"
+msgstr ""
+
+#: test.1.xml:169(para)
+msgid "FILE exists and is character special"
+msgstr ""
+
+#: test.1.xml:173(term)
+msgid "<option>-d</option> FILE"
+msgstr ""
+
+#: test.1.xml:175(para)
+msgid "FILE exists and is a directory"
+msgstr ""
+
+#: test.1.xml:179(term)
+msgid "<option>-e</option> FILE"
+msgstr ""
+
+#: test.1.xml:181(para)
+msgid "FILE exists"
+msgstr ""
+
+#: test.1.xml:185(term)
+msgid "<option>-f</option> FILE"
+msgstr ""
+
+#: test.1.xml:187(para)
+msgid "FILE exists and is a regular file"
+msgstr ""
+
+#: test.1.xml:191(term)
+msgid "<option>-g</option> FILE"
+msgstr ""
+
+#: test.1.xml:193(para)
+msgid "FILE exists and is set-group-ID"
+msgstr ""
+
+#: test.1.xml:197(term)
+msgid "<option>-G</option> FILE"
+msgstr ""
+
+#: test.1.xml:199(para)
+msgid "FILE exists and is owned by the effective group ID"
+msgstr ""
+
+#: test.1.xml:203(term)
+msgid "<option>-h</option> FILE"
+msgstr ""
+
+#: test.1.xml:205(para)
+msgid "FILE exists and is a symbolic link (same as <option>-L</option>)"
+msgstr ""
+
+#: test.1.xml:209(term)
+msgid "<option>-k</option> FILE"
+msgstr ""
+
+#: test.1.xml:211(para)
+msgid "FILE exists and has its sticky bit set"
+msgstr ""
+
+#: test.1.xml:215(term)
+msgid "<option>-L</option> FILE"
+msgstr ""
+
+#: test.1.xml:217(para)
+msgid "FILE exists and is a symbolic link (same as <option>-h</option>)"
+msgstr ""
+
+#: test.1.xml:221(term)
+msgid "<option>-O</option> FILE"
+msgstr ""
+
+#: test.1.xml:223(para)
+msgid "FILE exists and is owned by the effective user ID"
+msgstr ""
+
+#: test.1.xml:227(term)
+msgid "<option>-p</option> FILE"
+msgstr ""
+
+#: test.1.xml:229(para)
+msgid "FILE exists and is a named pipe"
+msgstr ""
+
+#: test.1.xml:233(term)
+msgid "<option>-r</option> FILE"
+msgstr ""
+
+#: test.1.xml:235(para)
+msgid "FILE exists and read permission is granted"
+msgstr ""
+
+#: test.1.xml:239(term)
+msgid "<option>-s</option> FILE"
+msgstr ""
+
+#: test.1.xml:241(para)
+msgid "FILE exists and has a size greater than zero"
+msgstr ""
+
+#: test.1.xml:245(term)
+msgid "<option>-S</option> FILE"
+msgstr ""
+
+#: test.1.xml:247(para)
+msgid "FILE exists and is a socket"
+msgstr ""
+
+#: test.1.xml:251(term)
+msgid "<option>-t</option> FD"
+msgstr ""
+
+#: test.1.xml:253(para)
+msgid "file descriptor FD is opened on a terminal"
+msgstr ""
+
+#: test.1.xml:257(term)
+msgid "<option>-u</option> FILE"
+msgstr ""
+
+#: test.1.xml:259(para)
+msgid "FILE exists and its set-user-ID bit is set"
+msgstr ""
+
+#: test.1.xml:263(term)
+msgid "<option>-w</option> FILE"
+msgstr ""
+
+#: test.1.xml:265(para)
+msgid "FILE exists and write permission is granted"
+msgstr ""
+
+#: test.1.xml:269(term)
+msgid "<option>-x</option> FILE"
+msgstr ""
+
+#: test.1.xml:271(para)
+msgid "FILE exists and execute (or search) permission is granted"
+msgstr ""
+
+#: test.1.xml:273(para)
+msgid "Except for <option>-h</option> and <option>-L</option>, all FILE-related tests dereference symbolic links. Beware that parentheses need to be escaped (e.g., by backslashes) for shells. INTEGER may also be <option>-l</option> STRING, which evaluates to the length of STRING."
+msgstr ""
+
+#: test.1.xml:277(para)
+msgid "NOTE: [ honors the <option>--help</option> and <option>--version</option> options, but test does not. test treats each of those as it treats any other nonempty STRING."
+msgstr ""
+
+#: test.1.xml:280(para)
+msgid "NOTE: your shell may have its own version of test and/or [, which usually supersedes the version described here. Please refer to your shell's documentation for details about the options it supports."
+msgstr ""
+
+#: test.1.xml:284(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report test translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: test.1.xml:291(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: test.1.xml:292(para)
+msgid "Written by Kevin Braunsdorf and Matthew Bradburn."
+msgstr ""
+
+#: test.1.xml:295(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: test.1.xml:296(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: test.1.xml:303(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: test.1.xml:304(para)
+msgid "The full documentation for <command>test</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>test</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: test.1.xml:312(emphasis)
+msgid "info coreutils 'test invocation'"
+msgstr ""
+
+#: test.1.xml:314(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: test.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

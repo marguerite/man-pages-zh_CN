@@ -1,4 +1,5 @@
 #!/bin/sh
+# merge pot into po, if no po is found then copy pot to po
 pushd 50-pot &>/dev/null
 for i in *.pot ; do
 	PO=`echo ${i} | sed 's/\.pot//'`.zh_CN.po

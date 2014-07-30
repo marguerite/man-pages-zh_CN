@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: truncate.1.xml:8(refentrytitle)
+msgid "TRUNCATE"
+msgstr ""
+
+#: truncate.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: truncate.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: truncate.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: truncate.1.xml:14(refname) truncate.1.xml:20(command)
+msgid "truncate"
+msgstr ""
+
+#: truncate.1.xml:15(refpurpose)
+msgid "shrink or extend the size of a file to the specified size"
+msgstr ""
+
+#: truncate.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: truncate.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: truncate.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: truncate.1.xml:31(para)
+msgid "Shrink or extend the size of each FILE to the specified size"
+msgstr ""
+
+#: truncate.1.xml:33(para)
+msgid "A FILE argument that does not exist is created."
+msgstr ""
+
+#: truncate.1.xml:35(para)
+msgid "If a FILE is larger than the specified size, the extra data is lost. If a FILE is shorter, it is extended and the extended part (hole) reads as zero bytes."
+msgstr ""
+
+#: truncate.1.xml:39(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: truncate.1.xml:42(term)
+msgid "<option>-c</option>, <option>--no-create</option>"
+msgstr ""
+
+#: truncate.1.xml:44(para)
+msgid "do not create any files"
+msgstr ""
+
+#: truncate.1.xml:48(term)
+msgid "<option>-o</option>, <option>--io-blocks</option>"
+msgstr ""
+
+#: truncate.1.xml:50(para)
+msgid "treat SIZE as number of IO blocks instead of bytes"
+msgstr ""
+
+#: truncate.1.xml:54(term)
+msgid "<option>-r</option>, <option>--reference</option>=<emphasis remap=\"I\">RFILE</emphasis>"
+msgstr ""
+
+#: truncate.1.xml:56(para)
+msgid "base size on RFILE"
+msgstr ""
+
+#: truncate.1.xml:60(term)
+msgid "<option>-s</option>, <option>--size</option>=<emphasis remap=\"I\">SIZE</emphasis>"
+msgstr ""
+
+#: truncate.1.xml:62(para)
+msgid "set or adjust the file size by SIZE bytes"
+msgstr ""
+
+#: truncate.1.xml:66(option)
+msgid "--help"
+msgstr ""
+
+#: truncate.1.xml:68(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: truncate.1.xml:72(option)
+msgid "--version"
+msgstr ""
+
+#: truncate.1.xml:74(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: truncate.1.xml:76(para)
+msgid "The SIZE argument is an integer and optional unit (example: 10K is 10*1024). Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000)."
+msgstr ""
+
+#: truncate.1.xml:79(para)
+msgid "SIZE may also be prefixed by one of the following modifying characters: '+' extend by, '-' reduce by, '&lt;' at most, '&gt;' at least, '/' round down to multiple of, '%' round up to multiple of."
+msgstr ""
+
+#: truncate.1.xml:83(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report truncate translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: truncate.1.xml:90(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: truncate.1.xml:91(para)
+msgid "Written by Padraig Brady."
+msgstr ""
+
+#: truncate.1.xml:94(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: truncate.1.xml:95(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: truncate.1.xml:102(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: truncate.1.xml:103(para)
+msgid "<citerefentry><refentrytitle>dd</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>truncate</refentrytitle><manvolnum>2</manvolnum></citerefentry>, <citerefentry><refentrytitle>ftruncate</refentrytitle><manvolnum>2</manvolnum></citerefentry>"
+msgstr ""
+
+#: truncate.1.xml:105(para)
+msgid "The full documentation for <command>truncate</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>truncate</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: truncate.1.xml:113(emphasis)
+msgid "info coreutils 'truncate invocation'"
+msgstr ""
+
+#: truncate.1.xml:115(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: truncate.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

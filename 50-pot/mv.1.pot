@@ -1,0 +1,273 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: mv.1.xml:8(refentrytitle)
+msgid "MV"
+msgstr ""
+
+#: mv.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: mv.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: mv.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: mv.1.xml:14(refname) mv.1.xml:20(command) mv.1.xml:27(command) mv.1.xml:33(command)
+msgid "mv"
+msgstr ""
+
+#: mv.1.xml:15(refpurpose)
+msgid "move (rename) files"
+msgstr ""
+
+#: mv.1.xml:21(replaceable) mv.1.xml:28(replaceable) mv.1.xml:34(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: mv.1.xml:22(arg)
+msgid "-T"
+msgstr ""
+
+#: mv.1.xml:23(replaceable) mv.1.xml:29(replaceable) mv.1.xml:36(replaceable)
+msgid "SOURCE"
+msgstr ""
+
+#: mv.1.xml:24(replaceable)
+msgid "DEST"
+msgstr ""
+
+#: mv.1.xml:30(replaceable) mv.1.xml:35(replaceable)
+msgid "DIRECTORY"
+msgstr ""
+
+#: mv.1.xml:35(arg)
+msgid "-t <placeholder-1/>"
+msgstr ""
+
+#: mv.1.xml:42(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: mv.1.xml:45(para)
+msgid "Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY."
+msgstr ""
+
+#: mv.1.xml:47(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: mv.1.xml:50(term)
+msgid "<option>--backup</option>[=<emphasis remap=\"I\">CONTROL</emphasis>]"
+msgstr ""
+
+#: mv.1.xml:52(para)
+msgid "make a backup of each existing destination file"
+msgstr ""
+
+#: mv.1.xml:56(option)
+msgid "-b"
+msgstr ""
+
+#: mv.1.xml:58(para)
+msgid "like <option>--backup</option> but does not accept an argument"
+msgstr ""
+
+#: mv.1.xml:62(term)
+msgid "<option>-f</option>, <option>--force</option>"
+msgstr ""
+
+#: mv.1.xml:64(para)
+msgid "do not prompt before overwriting"
+msgstr ""
+
+#: mv.1.xml:68(term)
+msgid "<option>-i</option>, <option>--interactive</option>"
+msgstr ""
+
+#: mv.1.xml:70(para)
+msgid "prompt before overwrite"
+msgstr ""
+
+#: mv.1.xml:74(term)
+msgid "<option>-n</option>, <option>--no-clobber</option>"
+msgstr ""
+
+#: mv.1.xml:76(para)
+msgid "do not overwrite an existing file"
+msgstr ""
+
+#: mv.1.xml:78(para)
+msgid "If you specify more than one of <option>-i</option>, <option>-f</option>, <option>-n</option>, only the final one takes effect."
+msgstr ""
+
+#: mv.1.xml:82(option)
+msgid "--strip-trailing-slashes"
+msgstr ""
+
+#: mv.1.xml:84(para)
+msgid "remove any trailing slashes from each SOURCE argument"
+msgstr ""
+
+#: mv.1.xml:89(term)
+msgid "<option>-S</option>, <option>--suffix</option>=<emphasis remap=\"I\">SUFFIX</emphasis>"
+msgstr ""
+
+#: mv.1.xml:91(para)
+msgid "override the usual backup suffix"
+msgstr ""
+
+#: mv.1.xml:95(term)
+msgid "<option>-t</option>, <option>--target-directory</option>=<emphasis remap=\"I\">DIRECTORY</emphasis>"
+msgstr ""
+
+#: mv.1.xml:97(para)
+msgid "move all SOURCE arguments into DIRECTORY"
+msgstr ""
+
+#: mv.1.xml:101(term)
+msgid "<option>-T</option>, <option>--no-target-directory</option>"
+msgstr ""
+
+#: mv.1.xml:103(para)
+msgid "treat DEST as a normal file"
+msgstr ""
+
+#: mv.1.xml:107(term)
+msgid "<option>-u</option>, <option>--update</option>"
+msgstr ""
+
+#: mv.1.xml:109(para)
+msgid "move only when the SOURCE file is newer than the destination file or when the destination file is missing"
+msgstr ""
+
+#: mv.1.xml:115(term)
+msgid "<option>-v</option>, <option>--verbose</option>"
+msgstr ""
+
+#: mv.1.xml:117(para)
+msgid "explain what is being done"
+msgstr ""
+
+#: mv.1.xml:121(term)
+msgid "<option>-Z</option>, <option>--context</option>"
+msgstr ""
+
+#: mv.1.xml:123(para)
+msgid "set SELinux security context of destination file to default type"
+msgstr ""
+
+#: mv.1.xml:128(option)
+msgid "--help"
+msgstr ""
+
+#: mv.1.xml:130(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: mv.1.xml:134(option)
+msgid "--version"
+msgstr ""
+
+#: mv.1.xml:136(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: mv.1.xml:138(para)
+msgid "The backup suffix is '~', unless set with <option>--suffix</option> or SIMPLE_BACKUP_SUFFIX. The version control method may be selected via the <option>--backup</option> option or through the VERSION_CONTROL environment variable. Here are the values:"
+msgstr ""
+
+#: mv.1.xml:144(term)
+msgid "none, off"
+msgstr ""
+
+#: mv.1.xml:146(para)
+msgid "never make backups (even if <option>--backup</option> is given)"
+msgstr ""
+
+#: mv.1.xml:150(term)
+msgid "numbered, t"
+msgstr ""
+
+#: mv.1.xml:152(para)
+msgid "make numbered backups"
+msgstr ""
+
+#: mv.1.xml:156(term)
+msgid "existing, nil"
+msgstr ""
+
+#: mv.1.xml:158(para)
+msgid "numbered if numbered backups exist, simple otherwise"
+msgstr ""
+
+#: mv.1.xml:162(term)
+msgid "simple, never"
+msgstr ""
+
+#: mv.1.xml:164(para)
+msgid "always make simple backups"
+msgstr ""
+
+#: mv.1.xml:166(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report mv translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: mv.1.xml:173(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: mv.1.xml:174(para)
+msgid "Written by Mike Parker, David MacKenzie, and Jim Meyering."
+msgstr ""
+
+#: mv.1.xml:177(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: mv.1.xml:178(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: mv.1.xml:185(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: mv.1.xml:186(refentrytitle)
+msgid "rename"
+msgstr ""
+
+#: mv.1.xml:186(manvolnum)
+msgid "2"
+msgstr ""
+
+#: mv.1.xml:188(para)
+msgid "The full documentation for <command>mv</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>mv</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: mv.1.xml:196(emphasis)
+msgid "info coreutils 'mv invocation'"
+msgstr ""
+
+#: mv.1.xml:198(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: mv.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

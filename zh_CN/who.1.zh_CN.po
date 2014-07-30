@@ -1,0 +1,245 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: who.1.xml:8(refentrytitle)
+msgid "WHO"
+msgstr ""
+
+#: who.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: who.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: who.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: who.1.xml:14(refname) who.1.xml:20(command)
+msgid "who"
+msgstr ""
+
+#: who.1.xml:15(refpurpose)
+msgid "show who is logged on"
+msgstr ""
+
+#: who.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: who.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: who.1.xml:22(replaceable)
+msgid "ARG1"
+msgstr ""
+
+#: who.1.xml:22(replaceable)
+msgid "ARG2"
+msgstr ""
+
+#: who.1.xml:27(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: who.1.xml:30(para)
+msgid "Print information about users who are currently logged in."
+msgstr ""
+
+#: who.1.xml:33(term)
+msgid "<option>-a</option>, <option>--all</option>"
+msgstr ""
+
+#: who.1.xml:35(para)
+msgid "same as <option>-b</option><option>-d</option><option>--login</option><option>-p</option><option>-r</option><option>-t</option><option>-T</option><option>-u</option>"
+msgstr ""
+
+#: who.1.xml:39(term)
+msgid "<option>-b</option>, <option>--boot</option>"
+msgstr ""
+
+#: who.1.xml:41(para)
+msgid "time of last system boot"
+msgstr ""
+
+#: who.1.xml:45(term)
+msgid "<option>-d</option>, <option>--dead</option>"
+msgstr ""
+
+#: who.1.xml:47(para)
+msgid "print dead processes"
+msgstr ""
+
+#: who.1.xml:51(term)
+msgid "<option>-H</option>, <option>--heading</option>"
+msgstr ""
+
+#: who.1.xml:53(para)
+msgid "print line of column headings"
+msgstr ""
+
+#: who.1.xml:57(term)
+msgid "<option>-l</option>, <option>--login</option>"
+msgstr ""
+
+#: who.1.xml:59(para)
+msgid "print system login processes"
+msgstr ""
+
+#: who.1.xml:63(option)
+msgid "--lookup"
+msgstr ""
+
+#: who.1.xml:65(para)
+msgid "attempt to canonicalize hostnames via DNS"
+msgstr ""
+
+#: who.1.xml:69(option)
+msgid "-m"
+msgstr ""
+
+#: who.1.xml:71(para)
+msgid "only hostname and user associated with stdin"
+msgstr ""
+
+#: who.1.xml:75(term)
+msgid "<option>-p</option>, <option>--process</option>"
+msgstr ""
+
+#: who.1.xml:77(para)
+msgid "print active processes spawned by init"
+msgstr ""
+
+#: who.1.xml:81(term)
+msgid "<option>-q</option>, <option>--count</option>"
+msgstr ""
+
+#: who.1.xml:83(para)
+msgid "all login names and number of users logged on"
+msgstr ""
+
+#: who.1.xml:87(term)
+msgid "<option>-r</option>, <option>--runlevel</option>"
+msgstr ""
+
+#: who.1.xml:89(para)
+msgid "print current runlevel"
+msgstr ""
+
+#: who.1.xml:93(term)
+msgid "<option>-s</option>, <option>--short</option>"
+msgstr ""
+
+#: who.1.xml:95(para)
+msgid "print only name, line, and time (default)"
+msgstr ""
+
+#: who.1.xml:99(term)
+msgid "<option>-t</option>, <option>--time</option>"
+msgstr ""
+
+#: who.1.xml:101(para)
+msgid "print last system clock change"
+msgstr ""
+
+#: who.1.xml:105(term)
+msgid "<option>-T</option>, <option>-w</option>, <option>--mesg</option>"
+msgstr ""
+
+#: who.1.xml:107(para)
+msgid "add user's message status as +, - or ?"
+msgstr ""
+
+#: who.1.xml:111(term)
+msgid "<option>-u</option>, <option>--users</option>"
+msgstr ""
+
+#: who.1.xml:113(para)
+msgid "list users logged in"
+msgstr ""
+
+#: who.1.xml:117(option)
+msgid "--message"
+msgstr ""
+
+#: who.1.xml:119(para) who.1.xml:125(para)
+msgid "same as <option>-T</option>"
+msgstr ""
+
+#: who.1.xml:123(option)
+msgid "--writable"
+msgstr ""
+
+#: who.1.xml:129(option)
+msgid "--help"
+msgstr ""
+
+#: who.1.xml:131(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: who.1.xml:135(option)
+msgid "--version"
+msgstr ""
+
+#: who.1.xml:137(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: who.1.xml:139(para)
+msgid "If FILE is not specified, use <filename>/var/run/utmp</filename>. <filename>/var/log/wtmp</filename> as FILE is common. If ARG1 ARG2 given, <option>-m</option> presumed: 'am i' or 'mom likes' are usual."
+msgstr ""
+
+#: who.1.xml:142(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report who translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: who.1.xml:149(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: who.1.xml:150(para)
+msgid "Written by Joseph Arceneaux, David MacKenzie, and Michael Stone."
+msgstr ""
+
+#: who.1.xml:153(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: who.1.xml:154(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: who.1.xml:161(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: who.1.xml:162(para)
+msgid "The full documentation for <command>who</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>who</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: who.1.xml:170(emphasis)
+msgid "info coreutils 'who invocation'"
+msgstr ""
+
+#: who.1.xml:172(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: who.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

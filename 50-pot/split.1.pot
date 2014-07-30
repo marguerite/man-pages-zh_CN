@@ -1,0 +1,213 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: split.1.xml:8(refentrytitle)
+msgid "SPLIT"
+msgstr ""
+
+#: split.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: split.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: split.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: split.1.xml:14(refname) split.1.xml:20(command)
+msgid "split"
+msgstr ""
+
+#: split.1.xml:15(refpurpose)
+msgid "split a file into pieces"
+msgstr ""
+
+#: split.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: split.1.xml:22(replaceable)
+msgid "INPUT"
+msgstr ""
+
+#: split.1.xml:22(replaceable)
+msgid "PREFIX"
+msgstr ""
+
+#: split.1.xml:27(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: split.1.xml:30(para)
+msgid "Output fixed-size pieces of INPUT to PREFIXaa, PREFIXab, ...; default size is 1000 lines, and default PREFIX is 'x'. With no INPUT, or when INPUT is -, read standard input."
+msgstr ""
+
+#: split.1.xml:34(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: split.1.xml:37(term)
+msgid "<option>-a</option>, <option>--suffix-length</option>=<emphasis remap=\"I\">N</emphasis>"
+msgstr ""
+
+#: split.1.xml:39(para)
+msgid "generate suffixes of length N (default 2)"
+msgstr ""
+
+#: split.1.xml:43(term)
+msgid "<option>--additional-suffix</option>=<emphasis remap=\"I\">SUFFIX</emphasis>"
+msgstr ""
+
+#: split.1.xml:45(para)
+msgid "append an additional SUFFIX to file names"
+msgstr ""
+
+#: split.1.xml:49(term)
+msgid "<option>-b</option>, <option>--bytes</option>=<emphasis remap=\"I\">SIZE</emphasis>"
+msgstr ""
+
+#: split.1.xml:51(para)
+msgid "put SIZE bytes per output file"
+msgstr ""
+
+#: split.1.xml:55(term)
+msgid "<option>-C</option>, <option>--line-bytes</option>=<emphasis remap=\"I\">SIZE</emphasis>"
+msgstr ""
+
+#: split.1.xml:57(para)
+msgid "put at most SIZE bytes of lines per output file"
+msgstr ""
+
+#: split.1.xml:61(term)
+msgid "<option>-d</option>, <option>--numeric-suffixes</option>[=<emphasis remap=\"I\">FROM</emphasis>]"
+msgstr ""
+
+#: split.1.xml:63(para)
+msgid "use numeric suffixes instead of alphabetic; FROM changes the start value (default 0)"
+msgstr ""
+
+#: split.1.xml:68(term)
+msgid "<option>-e</option>, <option>--elide-empty-files</option>"
+msgstr ""
+
+#: split.1.xml:70(para)
+msgid "do not generate empty output files with '-n'"
+msgstr ""
+
+#: split.1.xml:74(term)
+msgid "<option>--filter</option>=<emphasis remap=\"I\">COMMAND</emphasis>"
+msgstr ""
+
+#: split.1.xml:76(para)
+msgid "write to shell COMMAND; file name is $FILE"
+msgstr ""
+
+#: split.1.xml:80(term)
+msgid "<option>-l</option>, <option>--lines</option>=<emphasis remap=\"I\">NUMBER</emphasis>"
+msgstr ""
+
+#: split.1.xml:82(para)
+msgid "put NUMBER lines per output file"
+msgstr ""
+
+#: split.1.xml:86(term)
+msgid "<option>-n</option>, <option>--number</option>=<emphasis remap=\"I\">CHUNKS</emphasis>"
+msgstr ""
+
+#: split.1.xml:88(para)
+msgid "generate CHUNKS output files; see explanation below"
+msgstr ""
+
+#: split.1.xml:92(term)
+msgid "<option>-u</option>, <option>--unbuffered</option>"
+msgstr ""
+
+#: split.1.xml:94(para)
+msgid "immediately copy input to output with '-n r/...'"
+msgstr ""
+
+#: split.1.xml:98(option)
+msgid "--verbose"
+msgstr ""
+
+#: split.1.xml:100(para)
+msgid "print a diagnostic just before each output file is opened"
+msgstr ""
+
+#: split.1.xml:105(option)
+msgid "--help"
+msgstr ""
+
+#: split.1.xml:107(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: split.1.xml:111(option)
+msgid "--version"
+msgstr ""
+
+#: split.1.xml:113(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: split.1.xml:115(para)
+msgid "The SIZE argument is an integer and optional unit (example: 10K is 10*1024). Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000)."
+msgstr ""
+
+#: split.1.xml:118(para)
+msgid "CHUNKS may be: N split into N files based on size of input K/N output Kth of N to stdout l/N split into N files without splitting lines l/K/N output Kth of N to stdout without splitting lines r/N like 'l' but use round robin distribution r/K/N likewise but only output Kth of N to stdout"
+msgstr ""
+
+#: split.1.xml:126(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report split translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: split.1.xml:133(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: split.1.xml:134(para)
+msgid "Written by Torbjorn Granlund and Richard M. Stallman."
+msgstr ""
+
+#: split.1.xml:137(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: split.1.xml:138(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: split.1.xml:145(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: split.1.xml:146(para)
+msgid "The full documentation for <command>split</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>split</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: split.1.xml:154(emphasis)
+msgid "info coreutils 'split invocation'"
+msgstr ""
+
+#: split.1.xml:156(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: split.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

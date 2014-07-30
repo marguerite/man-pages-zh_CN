@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: unexpand.1.xml:8(refentrytitle)
+msgid "UNEXPAND"
+msgstr ""
+
+#: unexpand.1.xml:9(manvolnum) unexpand.1.xml:91(manvolnum)
+msgid "1"
+msgstr ""
+
+#: unexpand.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: unexpand.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: unexpand.1.xml:14(refname) unexpand.1.xml:20(command)
+msgid "unexpand"
+msgstr ""
+
+#: unexpand.1.xml:15(refpurpose)
+msgid "convert spaces to tabs"
+msgstr ""
+
+#: unexpand.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: unexpand.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: unexpand.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: unexpand.1.xml:31(para)
+msgid "Convert blanks in each FILE to tabs, writing to standard output. With no FILE, or when FILE is -, read standard input."
+msgstr ""
+
+#: unexpand.1.xml:34(para)
+msgid "Mandatory arguments to long options are mandatory for short options too."
+msgstr ""
+
+#: unexpand.1.xml:37(term)
+msgid "<option>-a</option>, <option>--all</option>"
+msgstr ""
+
+#: unexpand.1.xml:39(para)
+msgid "convert all blanks, instead of just initial blanks"
+msgstr ""
+
+#: unexpand.1.xml:43(option)
+msgid "--first-only"
+msgstr ""
+
+#: unexpand.1.xml:45(para)
+msgid "convert only leading sequences of blanks (overrides <option>-a</option>)"
+msgstr ""
+
+#: unexpand.1.xml:49(term)
+msgid "<option>-t</option>, <option>--tabs</option>=<emphasis remap=\"I\">N</emphasis>"
+msgstr ""
+
+#: unexpand.1.xml:51(para)
+msgid "have tabs N characters apart instead of 8 (enables <option>-a</option>)"
+msgstr ""
+
+#: unexpand.1.xml:55(term)
+msgid "<option>-t</option>, <option>--tabs</option>=<emphasis remap=\"I\">LIST</emphasis>"
+msgstr ""
+
+#: unexpand.1.xml:57(para)
+msgid "use comma separated LIST of tab positions (enables <option>-a</option>)"
+msgstr ""
+
+#: unexpand.1.xml:61(option)
+msgid "--help"
+msgstr ""
+
+#: unexpand.1.xml:63(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: unexpand.1.xml:67(option)
+msgid "--version"
+msgstr ""
+
+#: unexpand.1.xml:69(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: unexpand.1.xml:71(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report unexpand translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: unexpand.1.xml:78(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: unexpand.1.xml:79(para)
+msgid "Written by David MacKenzie."
+msgstr ""
+
+#: unexpand.1.xml:82(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: unexpand.1.xml:83(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: unexpand.1.xml:90(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: unexpand.1.xml:91(refentrytitle)
+msgid "expand"
+msgstr ""
+
+#: unexpand.1.xml:93(para)
+msgid "The full documentation for <command>unexpand</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>unexpand</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: unexpand.1.xml:101(emphasis)
+msgid "info coreutils 'unexpand invocation'"
+msgstr ""
+
+#: unexpand.1.xml:103(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: unexpand.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

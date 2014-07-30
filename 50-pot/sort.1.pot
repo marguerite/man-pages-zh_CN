@@ -1,0 +1,377 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: sort.1.xml:8(refentrytitle)
+msgid "SORT"
+msgstr ""
+
+#: sort.1.xml:9(manvolnum) sort.1.xml:275(manvolnum)
+msgid "1"
+msgstr ""
+
+#: sort.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr ""
+
+#: sort.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr ""
+
+#: sort.1.xml:14(refname) sort.1.xml:20(command) sort.1.xml:26(command)
+msgid "sort"
+msgstr ""
+
+#: sort.1.xml:15(refpurpose)
+msgid "sort lines of text files"
+msgstr ""
+
+#: sort.1.xml:21(replaceable) sort.1.xml:27(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: sort.1.xml:22(replaceable)
+msgid "FILE"
+msgstr ""
+
+#: sort.1.xml:28(replaceable)
+msgid "F"
+msgstr ""
+
+#: sort.1.xml:28(arg)
+msgid "--files0-from=<placeholder-1/>"
+msgstr ""
+
+#: sort.1.xml:33(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#. Add any additional description here
+#: sort.1.xml:36(para)
+msgid "Write sorted concatenation of all FILE(s) to standard output."
+msgstr ""
+
+#: sort.1.xml:38(para)
+msgid "Mandatory arguments to long options are mandatory for short options too. Ordering options:"
+msgstr ""
+
+#: sort.1.xml:42(term)
+msgid "<option>-b</option>, <option>--ignore-leading-blanks</option>"
+msgstr ""
+
+#: sort.1.xml:44(para)
+msgid "ignore leading blanks"
+msgstr ""
+
+#: sort.1.xml:48(term)
+msgid "<option>-d</option>, <option>--dictionary-order</option>"
+msgstr ""
+
+#: sort.1.xml:50(para)
+msgid "consider only blanks and alphanumeric characters"
+msgstr ""
+
+#: sort.1.xml:54(term)
+msgid "<option>-f</option>, <option>--ignore-case</option>"
+msgstr ""
+
+#: sort.1.xml:56(para)
+msgid "fold lower case to upper case characters"
+msgstr ""
+
+#: sort.1.xml:60(term)
+msgid "<option>-g</option>, <option>--general-numeric-sort</option>"
+msgstr ""
+
+#: sort.1.xml:62(para)
+msgid "compare according to general numerical value"
+msgstr ""
+
+#: sort.1.xml:66(term)
+msgid "<option>-i</option>, <option>--ignore-nonprinting</option>"
+msgstr ""
+
+#: sort.1.xml:68(para)
+msgid "consider only printable characters"
+msgstr ""
+
+#: sort.1.xml:72(term)
+msgid "<option>-M</option>, <option>--month-sort</option>"
+msgstr ""
+
+#: sort.1.xml:74(para)
+msgid "compare (unknown) &lt; 'JAN' &lt; ... &lt; 'DEC'"
+msgstr ""
+
+#: sort.1.xml:78(term)
+msgid "<option>-h</option>, <option>--human-numeric-sort</option>"
+msgstr ""
+
+#: sort.1.xml:80(para)
+msgid "compare human readable numbers (e.g., 2K 1G)"
+msgstr ""
+
+#: sort.1.xml:84(term)
+msgid "<option>-n</option>, <option>--numeric-sort</option>"
+msgstr ""
+
+#: sort.1.xml:86(para)
+msgid "compare according to string numerical value"
+msgstr ""
+
+#: sort.1.xml:90(term)
+msgid "<option>-R</option>, <option>--random-sort</option>"
+msgstr ""
+
+#: sort.1.xml:92(para)
+msgid "sort by random hash of keys"
+msgstr ""
+
+#: sort.1.xml:96(term)
+msgid "<option>--random-source</option>=<emphasis remap=\"I\">FILE</emphasis>"
+msgstr ""
+
+#: sort.1.xml:98(para)
+msgid "get random bytes from FILE"
+msgstr ""
+
+#: sort.1.xml:102(term)
+msgid "<option>-r</option>, <option>--reverse</option>"
+msgstr ""
+
+#: sort.1.xml:104(para)
+msgid "reverse the result of comparisons"
+msgstr ""
+
+#: sort.1.xml:108(term)
+msgid "<option>--sort</option>=<emphasis remap=\"I\">WORD</emphasis>"
+msgstr ""
+
+#: sort.1.xml:110(para)
+msgid "sort according to WORD: general-numeric <option>-g</option>, human-numeric <option>-h</option>, month <option>-M</option>, numeric <option>-n</option>, random <option>-R</option>, version <option>-V</option>"
+msgstr ""
+
+#: sort.1.xml:116(term)
+msgid "<option>-V</option>, <option>--version-sort</option>"
+msgstr ""
+
+#: sort.1.xml:118(para)
+msgid "natural sort of (version) numbers within text"
+msgstr ""
+
+#: sort.1.xml:120(para)
+msgid "Other options:"
+msgstr ""
+
+#: sort.1.xml:124(term)
+msgid "<option>--batch-size</option>=<emphasis remap=\"I\">NMERGE</emphasis>"
+msgstr ""
+
+#: sort.1.xml:126(para)
+msgid "merge at most NMERGE inputs at once; for more use temp files"
+msgstr ""
+
+#: sort.1.xml:131(term)
+msgid "<option>-c</option>, <option>--check</option>, <option>--check</option>=<emphasis remap=\"I\">diagnose-first</emphasis>"
+msgstr ""
+
+#: sort.1.xml:133(para)
+msgid "check for sorted input; do not sort"
+msgstr ""
+
+#: sort.1.xml:137(term)
+msgid "<option>-C</option>, <option>--check</option>=<emphasis remap=\"I\">quiet</emphasis>, <option>--check</option>=<emphasis remap=\"I\">silent</emphasis>"
+msgstr ""
+
+#: sort.1.xml:139(para)
+msgid "like <option>-c</option>, but do not report first bad line"
+msgstr ""
+
+#: sort.1.xml:143(term)
+msgid "<option>--compress-program</option>=<emphasis remap=\"I\">PROG</emphasis>"
+msgstr ""
+
+#: sort.1.xml:145(para)
+msgid "compress temporaries with PROG; decompress them with PROG <option>-d</option>"
+msgstr ""
+
+#: sort.1.xml:150(option)
+msgid "--debug"
+msgstr ""
+
+#: sort.1.xml:152(para)
+msgid "annotate the part of the line used to sort, and warn about questionable usage to stderr"
+msgstr ""
+
+#: sort.1.xml:157(term)
+msgid "<option>--files0-from</option>=<emphasis remap=\"I\">F</emphasis>"
+msgstr ""
+
+#: sort.1.xml:159(para)
+msgid "read input from the files specified by NUL-terminated names in file F; If F is - then read names from standard input"
+msgstr ""
+
+#: sort.1.xml:165(term)
+msgid "<option>-k</option>, <option>--key</option>=<emphasis remap=\"I\">KEYDEF</emphasis>"
+msgstr ""
+
+#: sort.1.xml:167(para)
+msgid "sort via a key; KEYDEF gives location and type"
+msgstr ""
+
+#: sort.1.xml:171(term)
+msgid "<option>-m</option>, <option>--merge</option>"
+msgstr ""
+
+#: sort.1.xml:173(para)
+msgid "merge already sorted files; do not sort"
+msgstr ""
+
+#: sort.1.xml:177(term)
+msgid "<option>-o</option>, <option>--output</option>=<emphasis remap=\"I\">FILE</emphasis>"
+msgstr ""
+
+#: sort.1.xml:179(para)
+msgid "write result to FILE instead of standard output"
+msgstr ""
+
+#: sort.1.xml:183(term)
+msgid "<option>-s</option>, <option>--stable</option>"
+msgstr ""
+
+#: sort.1.xml:185(para)
+msgid "stabilize sort by disabling last-resort comparison"
+msgstr ""
+
+#: sort.1.xml:189(term)
+msgid "<option>-S</option>, <option>--buffer-size</option>=<emphasis remap=\"I\">SIZE</emphasis>"
+msgstr ""
+
+#: sort.1.xml:191(para)
+msgid "use SIZE for main memory buffer"
+msgstr ""
+
+#: sort.1.xml:195(term)
+msgid "<option>-t</option>, <option>--field-separator</option>=<emphasis remap=\"I\">SEP</emphasis>"
+msgstr ""
+
+#: sort.1.xml:197(para)
+msgid "use SEP instead of non-blank to blank transition"
+msgstr ""
+
+#: sort.1.xml:201(term)
+msgid "<option>-T</option>, <option>--temporary-directory</option>=<emphasis remap=\"I\">DIR</emphasis>"
+msgstr ""
+
+#: sort.1.xml:203(para)
+msgid "use DIR for temporaries, not $TMPDIR or <filename>/tmp</filename>; multiple options specify multiple directories"
+msgstr ""
+
+#: sort.1.xml:208(term)
+msgid "<option>--parallel</option>=<emphasis remap=\"I\">N</emphasis>"
+msgstr ""
+
+#: sort.1.xml:210(para)
+msgid "change the number of sorts run concurrently to N"
+msgstr ""
+
+#: sort.1.xml:214(term)
+msgid "<option>-u</option>, <option>--unique</option>"
+msgstr ""
+
+#: sort.1.xml:216(para)
+msgid "with <option>-c</option>, check for strict ordering; without <option>-c</option>, output only the first of an equal run"
+msgstr ""
+
+#: sort.1.xml:221(term)
+msgid "<option>-z</option>, <option>--zero-terminated</option>"
+msgstr ""
+
+#: sort.1.xml:223(para)
+msgid "end lines with 0 byte, not newline"
+msgstr ""
+
+#: sort.1.xml:227(option)
+msgid "--help"
+msgstr ""
+
+#: sort.1.xml:229(para)
+msgid "display this help and exit"
+msgstr ""
+
+#: sort.1.xml:233(option)
+msgid "--version"
+msgstr ""
+
+#: sort.1.xml:235(para)
+msgid "output version information and exit"
+msgstr ""
+
+#: sort.1.xml:237(para)
+msgid "KEYDEF is F[.C][OPTS][,F[.C][OPTS]] for start and stop position, where F is a field number and C a character position in the field; both are origin 1, and the stop position defaults to the line's end. If neither <option>-t</option> nor <option>-b</option> is in effect, characters in a field are counted from the beginning of the preceding whitespace. OPTS is one or more single-letter ordering options [bdfgiMhnRrV], which override global ordering options for that key. If no key is given, use the entire line as the key."
+msgstr ""
+
+#: sort.1.xml:245(para)
+msgid "SIZE may be followed by the following multiplicative suffixes: % 1% of memory, b 1, K 1024 (default), and so on for M, G, T, P, E, Z, Y."
+msgstr ""
+
+#: sort.1.xml:248(para)
+msgid "With no FILE, or when FILE is -, read standard input."
+msgstr ""
+
+#: sort.1.xml:250(para)
+msgid "*** WARNING *** The locale specified by the environment affects sort order. Set LC_ALL=C to get the traditional sort order that uses native byte values."
+msgstr ""
+
+#: sort.1.xml:255(para)
+msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report sort translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+
+#: sort.1.xml:262(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: sort.1.xml:263(para)
+msgid "Written by Mike Haertel and Paul Eggert."
+msgstr ""
+
+#: sort.1.xml:266(title)
+msgid "COPYRIGHT"
+msgstr ""
+
+#: sort.1.xml:267(para)
+msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+#: sort.1.xml:274(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: sort.1.xml:275(refentrytitle)
+msgid "uniq"
+msgstr ""
+
+#: sort.1.xml:277(para)
+msgid "The full documentation for <command>sort</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>sort</command> programs are properly installed at your site, the command"
+msgstr ""
+
+#: sort.1.xml:285(emphasis)
+msgid "info coreutils 'sort invocation'"
+msgstr ""
+
+#: sort.1.xml:287(para)
+msgid "should give you access to the complete manual."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: sort.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

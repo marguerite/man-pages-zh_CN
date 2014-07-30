@@ -1,4 +1,5 @@
 #!/bin/sh
+# convert generated translated xml to man pages
 mv output output_old
 mv compressed compressed_old
 mkdir output
