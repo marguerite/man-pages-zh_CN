@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='fcitxremote1'>
+<refentryinfo><date>2010-12-16</date></refentryinfo>
+<refmeta>
+<refentrytitle>FCITX</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='date'>2010-12-16</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>fcitx-remote</refname>
+<refpurpose>Tool for control fcitx state via console</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>fcitx-remote</command>    
+    <arg choice='opt'><replaceable>OPTION</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='options'><title>OPTIONS</title>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><option>-c</option></term>
+  <listitem>
+<para>inactivate input method</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-o</option></term>
+  <listitem>
+<para>activate input method</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-r</option></term>
+  <listitem>
+<para>reload fcitx config</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-t</option></term>
+  <listitem>
+<para>switch between active/inactive</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-s</option><replaceable> imname</replaceable></term>
+  <listitem>
+<para>switch to the input method uniquely identified by <emphasis remap='I'>imname</emphasis></para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>[<emphasis remap='I'>no option</emphasis>]</term>
+  <listitem>
+<para>display fcitx state, 0 for close, 1 for inactive, 2 for active</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-h</option></term>
+  <listitem>
+<para>display help and exit</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='files'><title>FILES</title>
+<para>fcitx will create socket at <filename>/tmp/fcitx-socket-&lt;displayname&gt;</filename>, so user must have permission to access <filename>/tmp</filename> folder.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<para>Please see the homepage at
+<emphasis remap='B'><ulink url='http://www.fcitx.org/'>http://www.fcitx.org/</ulink></emphasis>
+and
+<emphasis remap='B'><ulink url='http://fcitx.googlecode.com/'>http://fcitx.googlecode.com/</ulink></emphasis></para>
+</refsect1>
+</refentry>
+

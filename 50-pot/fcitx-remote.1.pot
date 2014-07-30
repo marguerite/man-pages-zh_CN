@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-30 22:01+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: fcitx-remote.1.xml:6(date) fcitx-remote.1.xml:10(refmiscinfo)
+msgid "2010-12-16"
+msgstr ""
+
+#: fcitx-remote.1.xml:8(refentrytitle)
+msgid "FCITX"
+msgstr ""
+
+#: fcitx-remote.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: fcitx-remote.1.xml:13(refname) fcitx-remote.1.xml:19(command)
+msgid "fcitx-remote"
+msgstr ""
+
+#: fcitx-remote.1.xml:14(refpurpose)
+msgid "Tool for control fcitx state via console"
+msgstr ""
+
+#: fcitx-remote.1.xml:20(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: fcitx-remote.1.xml:25(title)
+msgid "OPTIONS"
+msgstr ""
+
+#: fcitx-remote.1.xml:28(option)
+msgid "-c"
+msgstr ""
+
+#: fcitx-remote.1.xml:30(para)
+msgid "inactivate input method"
+msgstr ""
+
+#: fcitx-remote.1.xml:34(option)
+msgid "-o"
+msgstr ""
+
+#: fcitx-remote.1.xml:36(para)
+msgid "activate input method"
+msgstr ""
+
+#: fcitx-remote.1.xml:40(option)
+msgid "-r"
+msgstr ""
+
+#: fcitx-remote.1.xml:42(para)
+msgid "reload fcitx config"
+msgstr ""
+
+#: fcitx-remote.1.xml:46(option)
+msgid "-t"
+msgstr ""
+
+#: fcitx-remote.1.xml:48(para)
+msgid "switch between active/inactive"
+msgstr ""
+
+#: fcitx-remote.1.xml:52(option)
+msgid "-s"
+msgstr ""
+
+#: fcitx-remote.1.xml:52(replaceable)
+msgid "imname"
+msgstr ""
+
+#: fcitx-remote.1.xml:54(para)
+msgid "switch to the input method uniquely identified by <emphasis remap=\"I\">imname</emphasis>"
+msgstr ""
+
+#: fcitx-remote.1.xml:58(term)
+msgid "[<emphasis remap=\"I\">no option</emphasis>]"
+msgstr ""
+
+#: fcitx-remote.1.xml:60(para)
+msgid "display fcitx state, 0 for close, 1 for inactive, 2 for active"
+msgstr ""
+
+#: fcitx-remote.1.xml:64(option)
+msgid "-h"
+msgstr ""
+
+#: fcitx-remote.1.xml:66(para)
+msgid "display help and exit"
+msgstr ""
+
+#: fcitx-remote.1.xml:72(title)
+msgid "FILES"
+msgstr ""
+
+#: fcitx-remote.1.xml:73(para)
+msgid "fcitx will create socket at <filename>/tmp/fcitx-socket-&lt;displayname&gt;</filename>, so user must have permission to access <filename>/tmp</filename> folder."
+msgstr ""
+
+#: fcitx-remote.1.xml:76(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: fcitx-remote.1.xml:77(para)
+msgid "Please see the homepage at <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <emphasis remap=\"B\"><ulink url=\"http://fcitx.googlecode.com/\">http://fcitx.googlecode.com/</ulink></emphasis>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: fcitx-remote.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

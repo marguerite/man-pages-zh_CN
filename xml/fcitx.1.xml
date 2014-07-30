@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='fcitx1'>
+<refentryinfo><date>2010-12-16</date></refentryinfo>
+<refmeta>
+<refentrytitle>FCITX</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='date'>2010-12-16</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>fcitx</refname>
+<refpurpose>A Flexible Input Method Framework</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>fcitx</command>    
+    <arg choice='opt'><replaceable>OPTION</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This manual page documents briefly the
+<command>fcitx</command>
+command.</para>
+
+<para><command>fcitx</command> is a Chinese IME for XIM intentionally designed not to depend on any Desktop Environment. It includes Pinyin and Table for input by default, but it can also support other Input Method.</para>
+</refsect1>
+
+<refsect1 id='options'><title>OPTIONS</title>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><option>-r</option></term>
+  <listitem>
+<para>replace existing fcitx</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-d</option></term>
+  <listitem>
+<para>run as daemon(default)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-D</option></term>
+  <listitem>
+<para>don't run as daemon</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-s</option><replaceable>sleep time</replaceable></term>
+  <listitem>
+<para>override delay start time in config file, 0 for immediate start</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-u, --ui</option>[<emphasis remap='I'>ui name</emphasis>]</term>
+  <listitem>
+<para>force to use specified user interface</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>--enable</option><replaceable>addon A,addon B</replaceable></term>
+  <listitem>
+<para>specify a comma separated list for addon that will override the enable option</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>--disable</option><replaceable>addon A,addon B</replaceable></term>
+  <listitem>
+<para>specify a comma separated list for addon that will explicitly disabled, priority is higher than --enable</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-v</option></term>
+  <listitem>
+<para>display the version information and exit</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-h</option></term>
+  <listitem>
+<para>display help and exit</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='environment'><title>ENVIRONMENT</title>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='B'>XMODIFIERS</emphasis></term>
+  <listitem>
+<para>If
+$<emphasis remap='B'>XMODIFIERS</emphasis>
+is set, fcitx will run with the name that specified in
+$<emphasis remap='B'>XMODIFIERS</emphasis>
+, otherwise it will run with im name fcitx.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<para>Please see the homepage at
+<emphasis remap='B'><ulink url='http://www.fcitx.org/'>http://www.fcitx.org/</ulink></emphasis>
+and
+<emphasis remap='B'><ulink url='http://fcitx.googlecode.com/'>http://fcitx.googlecode.com/</ulink></emphasis></para>
+</refsect1>
+</refentry>
+

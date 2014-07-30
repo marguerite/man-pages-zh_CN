@@ -1,0 +1,156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-30 22:01+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: fcitx.1.xml:6(date) fcitx.1.xml:10(refmiscinfo)
+msgid "2010-12-16"
+msgstr ""
+
+#: fcitx.1.xml:8(refentrytitle)
+msgid "FCITX"
+msgstr ""
+
+#: fcitx.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: fcitx.1.xml:13(refname) fcitx.1.xml:19(command)
+msgid "fcitx"
+msgstr ""
+
+#: fcitx.1.xml:14(refpurpose)
+msgid "A Flexible Input Method Framework"
+msgstr ""
+
+#: fcitx.1.xml:20(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: fcitx.1.xml:25(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: fcitx.1.xml:26(para)
+msgid "This manual page documents briefly the <command>fcitx</command> command."
+msgstr ""
+
+#: fcitx.1.xml:30(para)
+msgid "<command>fcitx</command> is a Chinese IME for XIM intentionally designed not to depend on any Desktop Environment. It includes Pinyin and Table for input by default, but it can also support other Input Method."
+msgstr ""
+
+#: fcitx.1.xml:33(title)
+msgid "OPTIONS"
+msgstr ""
+
+#: fcitx.1.xml:36(option)
+msgid "-r"
+msgstr ""
+
+#: fcitx.1.xml:38(para)
+msgid "replace existing fcitx"
+msgstr ""
+
+#: fcitx.1.xml:42(option)
+msgid "-d"
+msgstr ""
+
+#: fcitx.1.xml:44(para)
+msgid "run as daemon(default)"
+msgstr ""
+
+#: fcitx.1.xml:48(option)
+msgid "-D"
+msgstr ""
+
+#: fcitx.1.xml:50(para)
+msgid "don't run as daemon"
+msgstr ""
+
+#: fcitx.1.xml:54(option)
+msgid "-s"
+msgstr ""
+
+#: fcitx.1.xml:54(replaceable)
+msgid "sleep time"
+msgstr ""
+
+#: fcitx.1.xml:56(para)
+msgid "override delay start time in config file, 0 for immediate start"
+msgstr ""
+
+#: fcitx.1.xml:60(term)
+msgid "<option>-u, --ui</option>[<emphasis remap=\"I\">ui name</emphasis>]"
+msgstr ""
+
+#: fcitx.1.xml:62(para)
+msgid "force to use specified user interface"
+msgstr ""
+
+#: fcitx.1.xml:66(option)
+msgid "--enable"
+msgstr ""
+
+#: fcitx.1.xml:66(replaceable) fcitx.1.xml:72(replaceable)
+msgid "addon A,addon B"
+msgstr ""
+
+#: fcitx.1.xml:68(para)
+msgid "specify a comma separated list for addon that will override the enable option"
+msgstr ""
+
+#: fcitx.1.xml:72(option)
+msgid "--disable"
+msgstr ""
+
+#: fcitx.1.xml:74(para)
+msgid "specify a comma separated list for addon that will explicitly disabled, priority is higher than --enable"
+msgstr ""
+
+#: fcitx.1.xml:78(option)
+msgid "-v"
+msgstr ""
+
+#: fcitx.1.xml:80(para)
+msgid "display the version information and exit"
+msgstr ""
+
+#: fcitx.1.xml:84(option)
+msgid "-h"
+msgstr ""
+
+#: fcitx.1.xml:86(para)
+msgid "display help and exit"
+msgstr ""
+
+#: fcitx.1.xml:92(title)
+msgid "ENVIRONMENT"
+msgstr ""
+
+#: fcitx.1.xml:95(emphasis)
+msgid "XMODIFIERS"
+msgstr ""
+
+#: fcitx.1.xml:97(para)
+msgid "If $<emphasis remap=\"B\">XMODIFIERS</emphasis> is set, fcitx will run with the name that specified in $<emphasis remap=\"B\">XMODIFIERS</emphasis> , otherwise it will run with im name fcitx."
+msgstr ""
+
+#: fcitx.1.xml:107(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: fcitx.1.xml:108(para)
+msgid "Please see the homepage at <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <emphasis remap=\"B\"><ulink url=\"http://fcitx.googlecode.com/\">http://fcitx.googlecode.com/</ulink></emphasis>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: fcitx.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

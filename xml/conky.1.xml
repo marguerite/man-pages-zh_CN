@@ -1,0 +1,3826 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from mwww+man+troff by doclifter -->
+<refentry id='conky1'>
+<!-- t
+&bsol;-*&bsol;- coding: UTF&bsol;-8 &bsol;-*&bsol;-
+URL listing suppressed (immutable) -->
+<refentryinfo><date>2012-05-03</date></refentryinfo>
+<refmeta>
+<refentrytitle>conky</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='date'>2012-05-03</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>conky</refname>
+<refpurpose>一个用于 X 的系统监视器，基于 torsmo 的代�&nbsp;�，但是更碉�&nbsp;�。它只专注于有借有还的人。耶。</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<para><command>conky</command> \kx
+<command>kx</command> [<emphasis remap='I'>选项</emphasis>]</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='g1406728879.69262'><title>描述</title>
+<para>Conky 是一个最初基于 torsmo 的用于 X 的系统监视器。自开天辟地以来，Conky 比起它的前身已经有了很大改动，同时也保存了简单和可配置的特征。Cony �&nbsp;乎可以显示任何东西，不管是在您的�&nbsp;�桌面还是在它自己的窗口里。Conky 不但有许多内置对象，它也可以用脚本或其它外界程序显示任何信息片段。</para>
+
+<para>Conky 有大于 250 个内置对象，包括超多的操作系统统计支持 (uname, uptime, CPU 用量，内存用量，磁盘用量，像 "top" 一�&nbsp;�的进程统计和网络监控，随便点名�&nbsp;个)，内置的 IMAP 和 POP3 支持，内置的许多流行音乐播放器支持 (MPD, XMMS2, BMPx, Audacious)，等等等等。Conky 可以文字、或带有不同字体和颜色的简单进度条和图形挂件来显示这些信息。</para>
+
+<para>我们总是在寻找援手，不论是汇报故障、制作补丁还是撰写文档。请使用 SourceForge 上的设施来汇报故障、提交新功能请求和补丁，或在您有疑问或想要参与贡献时来 irc.freenode.net 的 #conky 频道转转。</para>
+
+<para>感谢关注 Conky。</para>
+</refsect1>
+
+<refsect1 id='g1406728879.693335'><title>编译</title>
+<para>那些在使用二进制预编译软件包的发行版如伟大的 openSUSE 上从源代�&nbsp;�编译的用户，请确保您安装了 X 开发用函数库软件包 (除非您附�&nbsp; "--disable-x11" 运行 configure)。X 开发用函数库软件包应该是一个沿袭 "libX11-devel" 或 "xorg-x11-devel" 命名�&nbsp;惯的软件包，同�&nbsp;�其它库也需要类似的 "-devel" �&nbsp;�式的软件包 (取决于您的配置选项启用没启用对这个库提供的功能的整合)。通过阅读您运行'./configure' 得出的错误，您应该能够看到您需要安装那些额外软件包。您可以通过对 configure �&nbsp;递选项来启用/禁用东西，但禁用时请留心。例如：使用 --disable-math 您不会看到错误，但是对数曲线图就会变成正常的直线图，并且�&nbsp;�尺也会丢失其刻度。</para>
+
+<para>Conky 已经 (有一段时间了) 可以从多数流行发行版的软件源中撷取了。这里是一些发行版的安装指南：</para>
+
+<para>openSUSE 用户 -- Conky 在官方源中有提供，开发版本在 server:monitoring 源中，Packman:Multimedia 源也提供了启用了 audacious/xmms2 播放器支持和从 NVIDIA 私有显卡驱动获取设备信息支持的完整版本 (但大多数人不会需要)...只需要使用 "sudo zypper in conky" 即可安装。</para>
+
+<para>安装开发版本：'sudo zypper ar -f http://download.opensuse.org/repositories/server:/monitoring/openSUSE_12.3/ server:monitoring sudo zypper ref sudo zypper in conky' sudo zypper ref sudo zypper in conky'</para>
+
+<para>启用全部可选部件地编译和运行 Conky 的范例 (注意有些配置选项在您的系统上可能有所不同)：</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='I'>sh autogen.sh</emphasis> <emphasis remap='I'># 只在编译从 git 仓库中撷取的版本时才需要</emphasis>, <emphasis remap='I'>./configure</emphasis> <option>--prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --datadir=/usr/share --sysconfdir=/etc --localstatedir=/var/lib --disable-own-window --enable-audacious[=yes|no|legacy] --enable-bmpx --disable-hddtemp --disable-mpd --enable-xmms2 --disable-portmon --disable-network --enable-debug --disable-x11 --disable-double-buffer --disable-xdamage --disable-xft</option>, <emphasis remap='I'>make</emphasis> , <emphasis remap='I'>make install</emphasis> <emphasis remap='I'># 可选</emphasis>, <emphasis remap='I'>src/conky</emphasis></term>
+  <listitem>
+<para>Conky 经测试与 C99 C �&nbsp;�准兼容，然而它没有测试过除 gcc 以外的编译器，并且不承诺能够用其它的编译器来编译。</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='g1406728879.696152'><title>您应知应会的</title>
+<para>Conky 不是永动机。也就是说，您试图让它做的事情越多，它消耗的资源就越多。</para>
+
+<para>一个简单的强制 Conky 重载您的 ～/.conkyrc 的方法："killall -SIGUSR1 conky"。省去了您 kill 然后重启它的麻烦。您对 SIGHUP 也可以做同�&nbsp;�的事。</para>
+</refsect1>
+
+<refsect1 id='g1406728879.696586'><title>选项</title>
+<para>命令行选项将覆盖定义在配置文件中的配置选项。</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><option>-v | -V | --version</option></term>
+  <listitem>
+<para>打印版本号后退出</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-q | --quiet</option></term>
+  <listitem>
+<para>以 '静音模式' 运行 Conky (即：没有输出)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-D | --debug</option></term>
+  <listitem>
+<para>增�&nbsp;调试输出，另：-DD 可以继续增�&nbsp;调试输出</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-a | --alignment=</option> <emphasis remap='I'>对齐</emphasis></term>
+  <listitem>
+<para>屏幕上文字对齐方式，{top,bottom,middle}_{left,right,middle} 或 none。也可以使用位置首字符缩写，例如 tr 就代表 top_right。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-b | --double-buffer</option></term>
+  <listitem>
+<para>使用双重缓冲 (消除闪烁，不然每次 conky 更新时屏幕会闪一下)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-c | --config=</option> <emphasis remap='I'>文件</emphasis></term>
+  <listitem>
+<para>要�&nbsp;载的配置文件，而不去�&nbsp;载 $HOME/.conkyrc</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-C | --print-config</option></term>
+  <listitem>
+<para>打印内置默认配置到 stdout。也请参考范例�&nbsp;节获取更多信息。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-d | --daemonize</option></term>
+  <listitem>
+<para>守护进程方式运行 Conky，也即 fork 到后台</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-f | --font=</option> <emphasis remap='I'>字体</emphasis></term>
+  <listitem>
+<para>要使用的字体</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-h | --help</option></term>
+  <listitem>
+<para>打印命令行帮助后退出</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-o | --own-window</option></term>
+  <listitem>
+<para>创建自己的窗口并在上面作画</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-t | --text=</option> <emphasis remap='I'>TEXT</emphasis></term>
+  <listitem>
+<para>要渲染的文字，请记住用单引号，例如 -t '$uptime'</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-p | --pause=</option> <emphasis remap='I'>秒</emphasis></term>
+  <listitem>
+<para>在真正启动 Conky 前暂停的时间</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-u | --interval=</option> <emphasis remap='I'>秒</emphasis></term>
+  <listitem>
+<para>更新周期</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-w | --window-id=</option> <emphasis remap='I'>窗口 ID</emphasis></term>
+  <listitem>
+<para>要在其上作画的窗口 ID</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-X | --display=</option> <emphasis remap='I'>DISPLAY</emphasis></term>
+  <listitem>
+<para>要使用的 X11 display</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-x</option> <replaceable>X 坐�&nbsp;�</replaceable></term>
+  <listitem>
+<para>X 位置</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-y</option> <replaceable>Y 坐�&nbsp;�</replaceable></term>
+  <listitem>
+<para>Y 位置</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-i</option> <replaceable>计数</replaceable></term>
+  <listitem>
+<para>Conky 更新了的次数 (后退出)</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='g1406728879.705564'><title>配置设置</title>
+<para>默认配置文件位置是 $HOME/.conkyrc 或 ${sysconfdir}/conky/conky.conf。在多数系统上面，sysconfdir 就是 /etc，并且您可以在那里找到�&nbsp;�本配置文件 (/etc/conky/conky.conf)。</para>
+
+<para>您可能想要把它复制到 $HOME/.conkyrc 然后开始修改它。其它的配置可以在 〈http://conky.sf.net/〉 找到</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='I'>TEXT</emphasis></term>
+  <listitem>
+<para>在此之后开始要在屏幕上排版显示的文字。反斜�&nbsp; (&bsol;) 在文本部分里可逃逸新行。这在当 conky 通过管道 pipe 使用 dzen2 的输入时清理配置文件非常有用。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>alignment</emphasis></term>
+  <listitem>
+<para>屏幕上的对齐位置，可以是 top_left, top_right, top_middle, bottom_left, bottom_right, bottom_middle, middle_left, middle_middle, middle_right, 或 none (也可以缩写为 tl, tr, tm, bl, br, bm, ml, mm, mr)。也请参考 gap_x 和 gap_y。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>append_file</emphasis></term>
+  <listitem>
+<para>追�&nbsp;以参数形式给出的文件。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>background</emphasis></term>
+  <listitem>
+<para>布尔值，若真，Conky 将在启动时被 fork 到后台。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>border_inner_margin</emphasis></term>
+  <listitem>
+<para>以像�&nbsp;计的内边框 margin (边框和文字间的 margin)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>border_outer_margin</emphasis></term>
+  <listitem>
+<para>以像�&nbsp;计的外边框 margin (边框和窗口边缘的 margin)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>border_width</emphasis></term>
+  <listitem>
+<para>以像�&nbsp;计的边框宽度。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>colorN</emphasis></term>
+  <listitem>
+<para>预定义一个用在 TEXT 段中的颜色。请将 N 替换为数字 0 到 9。当用十六进制�&nbsp;�式指定颜色值时请略去开头的 # 号。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cpu_avg_samples</emphasis></term>
+  <listitem>
+<para>CPU 监控用于取均值的�&nbsp;�本数。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>default_bar_size</emphasis></term>
+  <listitem>
+<para>为柱形指定默认宽高。范例：'default_bar_size 0 6'。这对 execbar 和 execibar 尤其有用�&nbsp;为它们不接受 size 参数。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>default_color</emphasis></term>
+  <listitem>
+<para>默认颜色和边框颜色</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>default_gauge_size</emphasis></term>
+  <listitem>
+<para>为�&nbsp;�尺指定默认宽高。范例：'default_gauge_size 25 25'。这对 execbar 和 execibar 尤其有用�&nbsp;为它们不接受 size 参数</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>default_graph_size</emphasis></term>
+  <listitem>
+<para>为图形指定默认宽高。范例：'default_graph_size 0 25'。这对 execgraph 和 execigraph 尤其有用�&nbsp;为它们不接受 size 参数</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>default_outline_color</emphasis></term>
+  <listitem>
+<para>默认轮廓颜色</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>default_shade_color</emphasis></term>
+  <listitem>
+<para>默认阴影颜色和边框的阴影颜色</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>disable_auto_reload</emphasis></term>
+  <listitem>
+<para>启用或禁用基于 inotify 的自动配置重载功能。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>diskio_avg_samples</emphasis></term>
+  <listitem>
+<para>磁盘 I/O 监控用于取均值的�&nbsp;�本数。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>display</emphasis></term>
+  <listitem>
+<para>指定要连接到的 X display。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>double_buffer</emphasis></term>
+  <listitem>
+<para>使用 Xdbe 扩展吗？(消除闪烁) 高度推荐与自有窗口一起使用该选项，这�&nbsp;�双重缓冲不会太大。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>draw_borders</emphasis></term>
+  <listitem>
+<para>环绕文字画边框吗？</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>draw_graph_borders</emphasis></term>
+  <listitem>
+<para>环绕图形画边框吗？</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>draw_outline</emphasis></term>
+  <listitem>
+<para>画轮廓吗？</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>draw_shades</emphasis></term>
+  <listitem>
+<para>画阴影吗？</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>extra_newline</emphasis></term>
+  <listitem>
+<para>写入到 stdout 时在结尾额外放一个新行，写 awesome 的 wibox 的时候很有用。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>font</emphasis></term>
+  <listitem>
+<para>X 中的字体名称，可用 xfontsel 获取一个漂亮的字体</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>format_human_readable</emphasis></term>
+  <listitem>
+<para>若启用，字节�&nbsp;�式的值将被以人类可读的�&nbsp;�式打印 (即：KiB, MiB, 等)。若禁用则打印字节数。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>gap_x</emphasis></term>
+  <listitem>
+<para>以像�&nbsp;计的屏幕左右边间的间隙，与在命令行�&nbsp;递 -x 是相同的，例如 gap_x 10。更多位置相关的东西，请参考 'alignment'。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>gap_y</emphasis></term>
+  <listitem>
+<para>以像�&nbsp;计的屏幕上下边间的间隙，与在命令行�&nbsp;递 -y 是相同的，例如 gap_y 10。更多位置相关的东西，请参考 'alignment'。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>hddtemp_host</emphasis></term>
+  <listitem>
+<para>hddtemp 对象连接到的主机名。默认为 "127.0.0.1"。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>hddtemp_port</emphasis></term>
+  <listitem>
+<para>hddtemp 连接所用的端口。默认为 7634。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_up_strictness</emphasis></term>
+  <listitem>
+<para>if_up 测试接口是否连线时应该多严�&nbsp;�？值是 up，link 或 address 中的一个，可检测接口是仅连线，已连线并有链接，还是已连线并有链接和分配到的 IP 地址。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>imap</emphasis></term>
+  <listitem>
+<para>默认全局 IMAP 服务器。参数为：" host user pass [-i interval (以秒计)] [-f '文件夹'] [-p port] [-e '命令'] [-r 重试次数]"。默认端口是 143，默认文件夹是 'INBOX'，默认周期是 5 分钟，默认放弃前重试次数是 5。若密�&nbsp;�提供为 '*'，您将会在 Conky 启动时被提示输入密�&nbsp;�。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>imlib_cache_flush_interval</emphasis></term>
+  <listitem>
+<para>刷新 Imlib2 缓存的周期 (以秒计)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>imlib_cache_size</emphasis></term>
+  <listitem>
+<para>Imlib2 图像缓存大小，以字节计。默认为 4MiB。若您使用了很多 $image 时可增�&nbsp;此值。设为 0 可禁用图像缓存。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua_draw_hook_post</emphasis> <emphasis remap='I'>函数名 [函数参数]</emphasis></term>
+  <listitem>
+<para>若定义了此函数，其将会被 Conky 在画到窗口后的每次迭代中调用。需要 X 支持。可接受任意数量的额外参数。可使用此钩子来在 Conky 绘制的东西上层继续画东西。Conky 将在函数名前放上 'conky_' 以免�&nbsp;意中调用了错误的函数，除非您自己已经在�&nbsp;的函数前面�&nbsp;上了 'conky_'。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua_draw_hook_pre</emphasis> <emphasis remap='I'>函数名 [函数参数]</emphasis></term>
+  <listitem>
+<para>若定义了此函数，其将会被 Conky 在画到窗口前的每次迭代中调用。需要 X 支持。可接受任意数量的额外参数。可使用此钩子来在 Conky 绘制的东西上层继续画东西。Conky 将在函数名前放上 'conky_' 以免�&nbsp;意中调用了错误的函数，除非您自己已经在�&nbsp;的函数前面�&nbsp;上了 'conky_'。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua_load</emphasis></term>
+  <listitem>
+<para>�&nbsp;载由空�&nbsp;�分开的 Lua 脚本。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua_shutdown_hook</emphasis> <emphasis remap='I'>函数名 [函数参数]</emphasis></term>
+  <listitem>
+<para>若定义了此函数，其将会被 Conky 在关闭时或重载配置时调用。可使用此钩子在您完成了您想做的事情后进行清理，诸如释放通过 Lua 的外部库分配的内存。Conky 将在函数名前放上 'conky_' 以免�&nbsp;意中调用了错误的函数，除非您自己已经在�&nbsp;的函数前面�&nbsp;上了 'conky_'。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua_startup_hook</emphasis> <emphasis remap='I'>函数名 [函数参数]</emphasis></term>
+  <listitem>
+<para>若定义了此函数，其将会被 Conky 在启动时或重载配置时调用。可使用此钩子来初始化值，或用于任何只运行一次的应用程序。Conky 将在函数名前放上 'conky_' 以免�&nbsp;意中调用了错误的函数，除非您自己已经在�&nbsp;的函数前面�&nbsp;上了 'conky_'。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mail_spool</emphasis></term>
+  <listitem>
+<para>用于邮件检查的脱机卷</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>max_port_monitor_connections</emphasis></term>
+  <listitem>
+<para>允许每个端口监视器追踪最多这些连接 (若设为 0 或未设置，就是默认的 256 个)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>max_specials</emphasis></term>
+  <listitem>
+<para>特殊物件的最大数量，例如，字体，偏移，对齐，等等。(默认为 512)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>max_text_width</emphasis> <emphasis remap='I'>宽度</emphasis></term>
+  <listitem>
+<para>当输出中的某行包含了 'width' 字符并且尚未到结尾时，下一个字符将另起一行。若您想要确保行不会被�&nbsp;�坏，请将 'width' 设为 0。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>max_user_text</emphasis> <emphasis remap='I'>字节</emphasis></term>
+  <listitem>
+<para>用户文本缓冲的最大大小，即，在配置文件中的 TEXT 行下能显示多少字节的�&nbsp;�局 (默认为 16384 字节)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>maximum_width</emphasis> <emphasis remap='I'>像�&nbsp;</emphasis></term>
+  <listitem>
+<para>窗口最大宽度</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>minimum_size</emphasis> <emphasis remap='I'>宽度 (高度)</emphasis></term>
+  <listitem>
+<para>窗口最小大小</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_host</emphasis></term>
+  <listitem>
+<para>MPD 服务器主机</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_password</emphasis></term>
+  <listitem>
+<para>MPD 服务器密�&nbsp;�</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_port</emphasis></term>
+  <listitem>
+<para>MPD 服务器端口</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>music_player_interval</emphasis></term>
+  <listitem>
+<para>音乐播放器线程更新周期 (默认为 Conky 的更新周期)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>net_avg_samples</emphasis></term>
+  <listitem>
+<para>网络数据用于取均值的�&nbsp;�本数。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>no_buffers</emphasis></term>
+  <listitem>
+<para>从已用内存中减去 (文件系统) 缓冲如 swap 的使用量吗？</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>nvidia_display</emphasis></term>
+  <listitem>
+<para>nvidia 变量将使用的 display (默认为 display 变量的值)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>out_to_console</emphasis></term>
+  <listitem>
+<para>打印文本到 stdout。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>out_to_ncurses</emphasis></term>
+  <listitem>
+<para>在控制台中打印文本，但使用 ncurses，这�&nbsp;� conky 可以在旧文本上打印新更新来的文本。(未来这将提供更多有用的东西)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>out_to_stderr</emphasis></term>
+  <listitem>
+<para>打印文本到 stderr。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>out_to_x</emphasis></term>
+  <listitem>
+<para>当设为 no 时，X 中将不会有输出 (当您也使用了像 out_to_console 这�&nbsp;�的东西时挺有用)。若您设置了它为 no，请确保它放在全部其它 X 相关设置前 (不确定的话就放到您配置的第一行吧)。默认值为 yes</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>override_utf8_locale</emphasis></term>
+  <listitem>
+<para>强制 UTF8 吗？需要 XFT</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>overwrite_file</emphasis></term>
+  <listitem>
+<para>覆盖作为参数给定的文件。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>own_window</emphasis></term>
+  <listitem>
+<para>布尔值，是否在 Conky 自己的窗口上绘图？</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>own_window_class</emphasis></term>
+  <listitem>
+<para>手动设置 WM_CLASS 名称。默认为 "Conky"。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>own_window_colour</emphasis> <emphasis remap='I'>颜色值</emphasis></term>
+  <listitem>
+<para>若 own_window_transparent 设为 no，则设定指定的背景颜色 (默认为黑色)。可接受一个十六进制值 (如 ffffff，注意不要有 '#') 或一个有效的 RGB 名称比如 white (请参考 /usr/lib/X11/rgb.txt)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>own_window_hints</emphasis> <emphasis remap='I'>undecorated,below,above,sticky,skip_taskbar,skip_pager</emphasis></term>
+  <listitem>
+<para>若 own_window 为 yes，您可以使用这些窗口管理器示意符来影响 Conky 显示的方式。注意：使用 own_window_type desktop 是另一种含蓄地实现这些示意符的方法。若您使用了 own_window_type override，窗口管理器示意符就完全没意义了，所以就会忽略它们。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>own_window_title</emphasis></term>
+  <listitem>
+<para>手动设置窗口名称。默认为 "&lt;hostname&gt; - conky"。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>own_window_argb_visual</emphasis></term>
+  <listitem>
+<para>布尔值，是否使用 ARGB 视效？ARGB 可用于真透明，请注意使用真透明需要一个混成管理器。此选项 (大多数情况下) 若与 'own_window_type override' 混合使用则不会产生预期的结果。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>own_window_argb_value</emphasis></term>
+  <listitem>
+<para>当启用了 ARGB 视效时，这用于修改所用的 alpha 值。有效范围是 0-255，0 是 0% 不透明，255 是 100% 不透明。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>own_window_transparent</emphasis></term>
+  <listitem>
+<para>布尔值，设置透明吗？若启用了 ARGB 视效，则会将背景不透明度设为 0% 即完全透明。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>own_window_type</emphasis></term>
+  <listitem>
+<para>若 own_window 为 yes，您可以指定类型 normal, desktop, dock, panel 或 override (默认：normal)。桌面窗口是没有窗口装饰的特殊窗口; 总是在您的桌面上可见; 不出现在您的分页器或任务�&nbsp;�中; 并固定在您的全部工作空间上。面板窗口预留了某个桌面边缘的空间，就像面板和任务�&nbsp;�那�&nbsp;�，可防止最大化的窗口覆盖其上。边缘是基于 alignment 选项选择的。Override 窗口则不在窗口管理器控制之下。示意符将被忽略。这种类型的窗口在特定环境下可能有用。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pad_percents</emphasis></term>
+  <listitem>
+<para>内衬 (padding) 百分比将设为这些百分数 (0 = �&nbsp;内衬)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pop3</emphasis></term>
+  <listitem>
+<para>默认全局 POP3 服务器。参数为："host user pass [-i interval (以秒计)][-p port] [-e '命令'] [-r 重试次数]"。默认端口为 110，默认间隔为 5 分钟，放弃前默认重试次数为 5。若密�&nbsp;�被提供为 '*'，在 Conky 启动时将提示您输入密�&nbsp;�。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>short_units</emphasis></term>
+  <listitem>
+<para>将单位缩短为一个字符 (kiB-&gt;k, GiB-&gt;G, 等)。默认为关。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>show_graph_range</emphasis></term>
+  <listitem>
+<para>显示某�&nbsp;图形涵盖的时间范围。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>show_graph_scale</emphasis></term>
+  <listitem>
+<para>显示缩放图形中的最大值。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>stippled_borders</emphasis></term>
+  <listitem>
+<para>边框虚线的短横线像�&nbsp;</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>temperature_unit</emphasis></term>
+  <listitem>
+<para>显示温度的全部对象的期望输出单位。参数可为 "fahrenheit" (华氏) 或 "celsius" (摄氏)。默认单位是摄氏度。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>templateN</emphasis></term>
+  <listitem>
+<para>定义一个稍后在 TEXT 段中使用的模板。请将 N 替换为一个介于 0 到 9 (含) 的数字。变量值将被插入到 TEXT 旗�&nbsp;�下的东西的相关位置，但是会先应用一些替换：</para>
+
+<para>'&bsol;n' -&gt; 新行 '&bsol;&bsol;' -&gt; 反斜�&nbsp; '&bsol; ' -&gt; 空�&nbsp;�'&bsol;N' -&gt; 模板参数 N</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>text_buffer_size</emphasis> <emphasis remap='I'>字节</emphasis></term>
+  <listitem>
+<para>�&nbsp;�准文本缓冲的大小 (默认为 256 字节)。这个缓冲用于中转文本，诸如单行，$exec 变量的输出，和许多其它变量。增�&nbsp;此缓冲的大小可以显著地降低Conky 的性能，但将允许在每个变量中显示更多的文本。此缓冲的大小不能小于默认的 256 字节。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>times_in_seconds</emphasis></term>
+  <listitem>
+<para>若为真，输出时间的变量会输出一个代表秒的数字。这不会影响 $time, $tztime 和 $utime</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>top_cpu_separate</emphasis></term>
+  <listitem>
+<para>若为真，top 命令中的 cpu 将显示单�&nbsp;�心运算能力的用量。若为假，top 命令中的 cpu 将把全部�&nbsp;�心的运算能力用量混合显示。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>top_name_width</emphasis></term>
+  <listitem>
+<para>$top 名称值的宽度 (默认为 15 个字符)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>total_run_times</emphasis></term>
+  <listitem>
+<para>Conky 更新了这个总次数后就会退出。零表示 Conky 将永远运行，除非被手动打断。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>update_interval</emphasis> <emphasis remap='I'>以秒计的 Conky 重新绘图的周期。否则一直是静态的。</emphasis></term>
+  <listitem>
+<para>更新周期</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>update_interval_on_battery</emphasis> <emphasis remap='I'>以秒计的 Conky 重新绘图的周期。否则一直是静态的。</emphasis></term>
+  <listitem>
+<para>运行在电�&nbsp;供电情景下的更新周期</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>uppercase</emphasis></term>
+  <listitem>
+<para>布尔值，若真，将以渲染全部文本为大写�&nbsp;�式</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>use_spacer</emphasis></term>
+  <listitem>
+<para>在特定对象周围添�&nbsp;空白以防止它们把其它东西移来移去。参数有 left, right 和 none (默认)。过去的 true/false 值被淘汰了，相应默认等于 right/none。注意这只在您使用等宽字体时，如 Bitstream Vera Sans Mono，才有帮助。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>use_xft</emphasis></term>
+  <listitem>
+<para>使用 Xft (反锯齿字体这些东西)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xftalpha</emphasis></term>
+  <listitem>
+<para>Xft 字体的不透明度 (Alpha)。必须是一个介于 0 到 1 的值。注：这只会应用于在 xftfont 中指定的默认字体。${font} 改过的字体�&nbsp;效。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xftfont</emphasis></term>
+  <listitem>
+<para>要使用的 Xft 字体。用法：字体名称:size=字号</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='g1406728879.74377'><title>对象/变量</title>
+<para>将使用 XParsecolor() 解析颜色，这里可能有一个支持的颜色列表：/usr/share/X11/rgb.txt。颜色也可以使用 #rrggbb �&nbsp;�式 (十六进制)。</para>
+
+<para>有些对象可以创建线程，有时候这些线程在 Conky 终止前不会被摧毁。在 Conky 运行时没有办法摧毁或清理这些线程。例如，若您使用了一个MPD 变量，MPD 线程将持续运行到 Conky 退出。有些线程对象将使用一个参数作为一个 '键'，�&nbsp;此您只能有一个相关的线程在运行 (例如，$curl，$rss 和 $weather 对象只会对每个 URI 启动一个线程)。</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='I'>acpiacadapter</emphasis> <emphasis remap='I'>(适配器)</emphasis></term>
+  <listitem>
+<para>ACPI 电源适配器状态。在 Linux 上，适配器选项指定了包含状态信息的 /sys/class/power_supply 子文件夹(若没有给定参数可试试 "AC" 和 "ADP1")。非 Linux 系统可以忽略之。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>acpifan</emphasis></term>
+  <listitem>
+<para>ACPI 风扇状态</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>acpitemp</emphasis></term>
+  <listitem>
+<para>以摄氏度输出的 ACPI 温度。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>addr</emphasis> <emphasis remap='I'>(接口)</emphasis></term>
+  <listitem>
+<para>某接口的 IP 地址，或者若没有指派地址则显示 "No Address"。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>addrs</emphasis> <emphasis remap='I'>(接口)</emphasis></term>
+  <listitem>
+<para>某接口的 IP 地址 (若有 - 跟通讯地址差不多)。仅适用于 Linux。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>adt746xcpu</emphasis></term>
+  <listitem>
+<para>来自 therm_adt746x 的 CPU 温度</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>adt746xfan</emphasis></term>
+  <listitem>
+<para>来自 therm_adt746x 的风扇速度</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>alignc</emphasis> <emphasis remap='I'>(数字)</emphasis></term>
+  <listitem>
+<para>居中文本</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>alignr</emphasis> <emphasis remap='I'>(数字)</emphasis></term>
+  <listitem>
+<para>又对齐文本，预留 N 个空�&nbsp;�</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd</emphasis> <emphasis remap='I'>host</emphasis> <emphasis remap='I'>port</emphasis></term>
+  <listitem>
+<para>设置到 apcupsd 守护进程的连接。什么都不打印，默认为 localhost:3551</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_cable</emphasis></term>
+  <listitem>
+<para>打印不间断电源 (UPS) 连接类型。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_charge</emphasis></term>
+  <listitem>
+<para>当前以百分比计的电�&nbsp;容量。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_lastxfer</emphasis></term>
+  <listitem>
+<para>上次从线缆切换到电�&nbsp;的原�&nbsp;。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_linev</emphasis></term>
+  <listitem>
+<para>名义输入电压</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_load</emphasis></term>
+  <listitem>
+<para>以百分比计的当前负载。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_loadbar</emphasis></term>
+  <listitem>
+<para>显示当前负载的条。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_loadgauge</emphasis> <emphasis remap='I'>(高度),(宽度)</emphasis></term>
+  <listitem>
+<para>显示当前负载的范围。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_loadgraph</emphasis> <emphasis remap='I'>(高度),(宽度) (渐变色 1) (渐变色 2) (比例) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>当前负载的历史图表。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_model</emphasis></term>
+  <listitem>
+<para>打印不间断电源的型号。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_name</emphasis></term>
+  <listitem>
+<para>打印不间断电源的用户定义名称。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_status</emphasis></term>
+  <listitem>
+<para>打印当前状态 (使用线缆，使用电�&nbsp;)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_temp</emphasis></term>
+  <listitem>
+<para>当前内部温度。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_timeleft</emphasis></term>
+  <listitem>
+<para>电�&nbsp;可用时间。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apcupsd_upsmode</emphasis></term>
+  <listitem>
+<para>打印不间断电源模式 (例如独立)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apm_adapter</emphasis></term>
+  <listitem>
+<para>显示 APM 电源适配器状态 (仅适用于 FreeBSD)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apm_battery_life</emphasis></term>
+  <listitem>
+<para>显示以百分比计的 APM 电�&nbsp;寿命 (仅适用于 FreeBSD)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>apm_battery_time</emphasis></term>
+  <listitem>
+<para>Display remaining APM battery life in hh:mm:ss or
+"unknown" if AC adapterstatus is on-line or charging
+(FreeBSD only)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_bar</emphasis> <emphasis remap='I'>(高度),(宽度)</emphasis></term>
+  <listitem>
+<para>Progress bar</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_bitrate</emphasis></term>
+  <listitem>
+<para>Bitrate of current tune</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_channels</emphasis></term>
+  <listitem>
+<para>Number of audio channels of current tune</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_filename</emphasis></term>
+  <listitem>
+<para>Full path and filename of current tune</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_frequency</emphasis></term>
+  <listitem>
+<para>Sampling frequency of current tune</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_length</emphasis></term>
+  <listitem>
+<para>Total length of current tune as MM:SS</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_length_seconds</emphasis></term>
+  <listitem>
+<para>Total length of current tune in seconds</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_main_volume</emphasis></term>
+  <listitem>
+<para>The current volume fetched from Audacious</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_playlist_length</emphasis></term>
+  <listitem>
+<para>Number of tunes in playlist</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_playlist_position</emphasis></term>
+  <listitem>
+<para>Playlist position of current tune</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_position</emphasis></term>
+  <listitem>
+<para>Position of current tune (MM:SS)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_position_seconds</emphasis></term>
+  <listitem>
+<para>Position of current tune in seconds</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_status</emphasis></term>
+  <listitem>
+<para>Player status (Playing/Paused/Stopped/Not
+running)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>audacious_title</emphasis> <emphasis remap='I'>(最大长度)</emphasis></term>
+  <listitem>
+<para>Title of current tune with optional maximum
+length specifier</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>battery</emphasis> <emphasis remap='I'>(数字)</emphasis></term>
+  <listitem>
+<para>Battery status and remaining percentage capacity
+of ACPI or APM battery. ACPI battery number can be given as
+argument (default is BAT0).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>battery_bar</emphasis> <emphasis remap='I'>(height),(width) (num)</emphasis></term>
+  <listitem>
+<para>Battery percentage remaining of ACPI battery in a
+bar. ACPI battery number can be given as argument (default
+is BAT0).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>battery_percent</emphasis> <emphasis remap='I'>(数字)</emphasis></term>
+  <listitem>
+<para>Battery percentage remaining for ACPI battery.
+ACPI battery number can be given as argument (default is
+BAT0).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>battery_short</emphasis> <emphasis remap='I'>(数字)</emphasis></term>
+  <listitem>
+<para>Battery status and remaining percentage capacity
+of ACPI or APM battery. ACPI battery number can be given as
+argument (default is BAT0). This mode display a short
+status, which means that C is displayed instead of
+charging, D for discharging, F for full, N for not present,
+E for empty and U for unknown.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>battery_time</emphasis> <emphasis remap='I'>(数字)</emphasis></term>
+  <listitem>
+<para>Battery charge/discharge time remaining of ACPI
+battery. ACPI battery number can be given as argument
+(default is BAT0).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>blink</emphasis> <emphasis remap='I'>text_and_other_conky_vars</emphasis></term>
+  <listitem>
+<para>Let 'text_and_other_conky_vars' blink on and off.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>bmpx_album</emphasis></term>
+  <listitem>
+<para>Album in current BMPx track</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>bmpx_artist</emphasis></term>
+  <listitem>
+<para>Artist in current BMPx track</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>bmpx_bitrate</emphasis></term>
+  <listitem>
+<para>Bitrate of the current BMPx track</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>bmpx_title</emphasis></term>
+  <listitem>
+<para>Title of the current BMPx track</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>bmpx_track</emphasis></term>
+  <listitem>
+<para>Track number of the current BMPx track</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>bmpx_uri</emphasis></term>
+  <listitem>
+<para>URI of the current BMPx track</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>buffers</emphasis></term>
+  <listitem>
+<para>Amount of memory buffered</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cached</emphasis></term>
+  <listitem>
+<para>Amount of memory cached</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cmdline_to_pid</emphasis> <emphasis remap='I'>string</emphasis></term>
+  <listitem>
+<para>PID of the first process that has string in it's
+commandline</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>color</emphasis> <emphasis remap='I'>(color)</emphasis></term>
+  <listitem>
+<para>Change drawing color to 'color' which is a name of
+a color or a hexcode preceded with # (for example #0A1B2C ).
+If you use ncurses only the following colors are supported:
+red,green,yellow,blue,magenta,cyan,black,white.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>colorN</emphasis></term>
+  <listitem>
+<para>Change drawing color to colorN configuration
+option, where N is a digit between 0 and 9, inclusively.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>combine</emphasis> <emphasis remap='I'>var1 var2</emphasis></term>
+  <listitem>
+<para>Places the lines of var2 to the right of the
+lines of var1 separated by the chars that are put between
+var1 and var2. For example: ${combine ${head /proc/cpuinfo
+2} - ${head /proc/meminfo 1}} gives as output
+"cpuinfo_line1 - meminfo_line1" on line 1 and
+"cpuinfo_line2 -" on line 2. $combine vars can also be
+nested to place more vars next to each other.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_build_arch</emphasis></term>
+  <listitem>
+<para>CPU architecture Conky was built for</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_build_date</emphasis></term>
+  <listitem>
+<para>Date Conky was built</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_version</emphasis></term>
+  <listitem>
+<para>Conky version</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cpu</emphasis> <emphasis remap='I'>(cpuN)</emphasis></term>
+  <listitem>
+<para>CPU usage in percents. For SMP machines, the CPU
+number can be provided as an argument. ${cpu cpu0} is the
+total usage, and ${cpu cpuX} (X &gt;= 1) are individual
+CPUs.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cpubar</emphasis> <emphasis remap='I'>(cpuN) (height),(width)</emphasis></term>
+  <listitem>
+<para>Bar that shows CPU usage, height is bar's height
+in pixels. See $cpu for more info on SMP.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cpugauge</emphasis> <emphasis remap='I'>(cpuN) (height),(width)</emphasis></term>
+  <listitem>
+<para>Elliptical gauge that shows CPU usage, height and
+width are gauge's vertical and horizontal axis
+respectively. See $cpu for more info on SMP.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cpugraph</emphasis> <emphasis remap='I'>(cpuN) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>CPU usage graph, with optional colours in hex,
+minus the #. See $cpu for more info on SMP. Uses a
+logarithmic scale (to see small numbers) when you use the
+-l switch. Takes the switch '-t' to use a temperature
+gradient, which makes the gradient values change depending
+on the amplitude of a particular graph value (try it and
+see).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>curl</emphasis> <emphasis remap='I'>url (interval_in_minutes)</emphasis></term>
+  <listitem>
+<para>Download data from URI using Curl at the
+specified interval. The interval may be a floating
+point value greater than 0, otherwise defaults to 15
+minutes. Most useful when used in conjunction with Lua
+and the Lua API. This object is threaded, and once a
+thread is created it can't be explicitly destroyed.
+One thread will run for each URI specified. You can use
+any protocol that Curl supports.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>desktop</emphasis></term>
+  <listitem>
+<para>Number of the desktop on which conky is running
+or the message "Not running in X" if this is the case.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>desktop_name</emphasis></term>
+  <listitem>
+<para>Name of the desktop on which conky is running or
+the message "Not running in X" if this is the case.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>desktop_number</emphasis></term>
+  <listitem>
+<para>Number of desktops or the message "Not running in
+X" if this is the case.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>disk_protect</emphasis> <emphasis remap='I'>device</emphasis></term>
+  <listitem>
+<para>磁盘保护状态，若支持的话 (需要内�&nbsp;�补丁)。将打印 "冻结" 或 "自由 " (注意自由后面的空�&nbsp;�)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>diskio</emphasis> <emphasis remap='I'>(device)</emphasis></term>
+  <listitem>
+<para>Displays current disk IO. Device is optional, and
+takes the form of sda for /dev/sda. Individual partitions
+are allowed.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>diskio_read</emphasis> <emphasis remap='I'>(device)</emphasis></term>
+  <listitem>
+<para>Displays current disk IO for reads. Device as in
+diskio.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>diskio_write</emphasis> <emphasis remap='I'>(device)</emphasis></term>
+  <listitem>
+<para>Displays current disk IO for writes. Device as in
+diskio.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>diskiograph</emphasis> <emphasis remap='I'>(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>Disk IO graph, colours defined in hex, minus the
+#. If scale is non-zero, it becomes the scale for the
+graph. Uses a logarithmic scale (to see small numbers) when
+you use -l switch. Takes the switch '-t' to use a
+temperature gradient, which makes the gradient values
+change depending on the amplitude of a particular graph
+value (try it and see).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>diskiograph_read</emphasis> <emphasis remap='I'>(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>Disk IO graph for reads, colours defined in hex,
+minus the #. If scale is non-zero, it becomes the scale for
+the graph. Device as in diskio. Uses a logarithmic scale
+(to see small numbers) when you use -l switch. Takes the
+switch '-t' to use a temperature gradient, which makes the
+gradient values change depending on the amplitude of a
+particular graph value (try it and see).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>diskiograph_write</emphasis> <emphasis remap='I'>(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>Disk IO graph for writes, colours defined in hex,
+minus the #. If scale is non-zero, it becomes the scale for
+the graph. Device as in diskio. Uses a logarithmic scale
+(to see small numbers) when you use -l switch. Takes the
+switch '-t' to use a temperature gradient, which makes the
+gradient values change depending on the amplitude of a
+particular graph value (try it and see).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>downspeed</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Download speed in suitable IEC units</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>downspeedf</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Download speed in KiB with one decimal</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>downspeedgraph</emphasis> <emphasis remap='I'>(netdev) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>Download speed graph, colours defined in hex,
+minus the #. If scale is non-zero, it becomes the scale for
+the graph. Uses a logarithmic scale (to see small numbers)
+when you use -l switch. Takes the switch '-t' to use a
+temperature gradient, which makes the gradient values
+change depending on the amplitude of a particular graph
+value (try it and see).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>draft_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of mails marked as draft in the specified
+mailbox or mail spool if not. Only maildir type mailboxes
+are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>else</emphasis></term>
+  <listitem>
+<para>Text to show if any of the above are not true</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>endif</emphasis></term>
+  <listitem>
+<para>Ends an $if block.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>entropy_avail</emphasis></term>
+  <listitem>
+<para>Current entropy available for crypto freaks</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>entropy_bar</emphasis> <emphasis remap='I'>(高度),(宽度)</emphasis></term>
+  <listitem>
+<para>Normalized bar of available entropy for crypto
+freaks</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>entropy_perc</emphasis></term>
+  <listitem>
+<para>Percentage of entropy available in comparison to
+the poolsize</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>entropy_poolsize</emphasis></term>
+  <listitem>
+<para>Total size of system entropy pool for crypto
+freaks</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>eval</emphasis> <emphasis remap='I'>string</emphasis></term>
+  <listitem>
+<para>Evaluates given string according to the rules of
+TEXT interpretation, i.e. parsing any contained text object
+specifications into their output, any occuring '$$' into a
+single '$' and so on. The output is then being parsed
+again.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>eve</emphasis> <emphasis remap='I'>api_userid api_key character_id</emphasis></term>
+  <listitem>
+<para>Fetches your currently training skill from the
+Eve Online API servers (〈http://www.eve-online.com/〉) and
+displays the skill along with the remaining training time.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>exec</emphasis> <emphasis remap='I'>command</emphasis></term>
+  <listitem>
+<para>Executes a shell command and displays the output
+in conky. warning: this takes a lot more resources than
+other variables. I'd recommend coding wanted behaviour in C
+and posting a patch.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>execbar</emphasis> <emphasis remap='I'>command</emphasis></term>
+  <listitem>
+<para>Same as exec, except if the first value return is
+a value between 0-100, it will use that number for a bar.
+The size for bars can be controlled via the
+default_bar_size config setting.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>execgauge</emphasis> <emphasis remap='I'>command</emphasis></term>
+  <listitem>
+<para>Same as exec, except if the first value returned
+is a value between 0-100, it will use that number for a
+gauge. The size for gauges can be controlled via the
+default_gauge_size config setting.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>execgraph</emphasis> <emphasis remap='I'>(-t) (-l) command</emphasis></term>
+  <listitem>
+<para>Same as execbar, but graphs values. Uses a
+logaritmic scale when the log option (-l switch) is given
+(to see small numbers). Values still have to be between 0
+and 100. The size for graphs can be controlled via the
+default_graph_size config setting. Takes the switch '-t' to
+use a temperature gradient, which makes the gradient values
+change depending on the amplitude of a particular graph
+value (try it and see). If -t or -l is your first argument,
+you may need to preceed it by a space (' ').</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>execi</emphasis> <emphasis remap='I'>interval command</emphasis></term>
+  <listitem>
+<para>与 exec 一�&nbsp;�，但是在指定的周期执行。周期不能小于配置中 update_interval 定义的秒数。也请看 $texeci</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>execibar</emphasis> <emphasis remap='I'>interval command</emphasis></term>
+  <listitem>
+<para>Same as execbar, except with an interval</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>execigauge</emphasis> <emphasis remap='I'>interval command</emphasis></term>
+  <listitem>
+<para>Same as execgauge, but takes an interval arg and
+gauges values.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>execigraph</emphasis> <emphasis remap='I'>interval (-t) (-l) command</emphasis></term>
+  <listitem>
+<para>Same as execgraph, but takes an interval arg and
+graphs values. If -t or -l is your first argument, you may
+need to preceed it by a space (' ').</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>execp</emphasis> <emphasis remap='I'>command</emphasis></term>
+  <listitem>
+<para>Executes a shell command and displays the output
+in conky. warning: this takes a lot more resources than
+other variables. I'd recommend coding wanted behaviour in C
+and posting a patch. This differs from $exec in that it
+parses the output of the command, so you can insert things
+like ${color red}hi!${color} in your script and have it
+correctly parsed by Conky. Caveats: Conky parses and
+evaluates the output of $execp every time Conky loops, and
+then destroys all the objects. If you try to use anything
+like $execi within an $execp statement, it will
+functionally run at the same interval that the $execp
+statement runs, as it is created and destroyed at every
+interval.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>execpi</emphasis> <emphasis remap='I'>interval command</emphasis></term>
+  <listitem>
+<para>与 execp 一�&nbsp;�，但是在指定的周期执行。周期不能小于配置中 update_interval 定义的秒数。注意 $execpi 命令的输出仍将在每个周期解析并评估。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>flagged_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of mails marked as flagged in the
+specified mailbox or mail spool if not. Only maildir type
+mailboxes are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>font</emphasis> <emphasis remap='I'>(font)</emphasis></term>
+  <listitem>
+<para>Specify a different font. This new font will
+apply to the current line and everything following. You can
+use a $font with no arguments to change back to the default
+font (much like with $color)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>format_time</emphasis> <emphasis remap='I'>seconds format</emphasis></term>
+  <listitem>
+<para>Format time given in seconds. This var only works when
+the times_in_seconds configuration setting is on. Format is a string
+that should start and end with a "-char. The "-chars are not
+part of the output, &bsol;w,&bsol;d,&bsol;h,&bsol;m,&bsol;s,&bsol;(,&bsol;) and &bsol;&bsol; are replaced by
+weeks,days,hours,minutes,seconds,(,) and &bsol;. If you leave out a unit,
+it's value will be expressed in the highest unite lower then the
+one left out. Text between ()-chars will not be visible if a
+replaced unit in this text is 0. If seconds is a decimal number
+then you can see the numbers behind the point by using &bsol;S
+followed by a number that specifies the amount of
+digits behind the point that you want to see (maximum 9).
+You can also place a 'x' behind &bsol;S so you have all digits behind
+the point and no trailing zero's. (also maximum 9)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>forwarded_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of mails marked as forwarded in the
+specified mailbox or mail spool if not. Only maildir type
+mailboxes are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>freq</emphasis> <emphasis remap='I'>(n)</emphasis></term>
+  <listitem>
+<para>Returns CPU #n's frequency in MHz. CPUs are
+counted from 1. If omitted, the parameter defaults to 1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>freq_g</emphasis> <emphasis remap='I'>(n)</emphasis></term>
+  <listitem>
+<para>Returns CPU #n's frequency in GHz. CPUs are
+counted from 1. If omitted, the parameter defaults to 1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>fs_bar</emphasis> <emphasis remap='I'>(height),(width) fs</emphasis></term>
+  <listitem>
+<para>Bar that shows how much space is used on a file
+system. height is the height in pixels. fs is any file on
+that file system.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>fs_bar_free</emphasis> <emphasis remap='I'>(height),(width) fs</emphasis></term>
+  <listitem>
+<para>Bar that shows how much space is free on a file
+system. height is the height in pixels. fs is any file on
+that file system.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>fs_free</emphasis> <emphasis remap='I'>(fs)</emphasis></term>
+  <listitem>
+<para>Free space on a file system available for users.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>fs_free_perc</emphasis> <emphasis remap='I'>(fs)</emphasis></term>
+  <listitem>
+<para>Free percentage of space on a file system
+available for users.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>fs_size</emphasis> <emphasis remap='I'>(fs)</emphasis></term>
+  <listitem>
+<para>File system size.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>fs_type</emphasis> <emphasis remap='I'>(fs)</emphasis></term>
+  <listitem>
+<para>File system type.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>fs_used</emphasis> <emphasis remap='I'>(fs)</emphasis></term>
+  <listitem>
+<para>File system used space.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>fs_used_perc</emphasis> <emphasis remap='I'>(fs)</emphasis></term>
+  <listitem>
+<para>Percent of file system used space.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>goto</emphasis> <emphasis remap='I'>x</emphasis></term>
+  <listitem>
+<para>The next element will be printed at position 'x'.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>gw_iface</emphasis></term>
+  <listitem>
+<para>Displays the default route's interface or
+"multiple"/"none" accordingly.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>gw_ip</emphasis></term>
+  <listitem>
+<para>Displays the default gateway's IP or
+"multiple"/"none" accordingly.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>hddtemp</emphasis> <emphasis remap='I'>(dev)</emphasis></term>
+  <listitem>
+<para>Displays temperature of a selected hard disk
+drive as reported by the hddtemp daemon. Use hddtemp_host
+and hddtemp_port to specify a host and port for all hddtemp
+objects. If no dev parameter is given, the first disk returned
+by the hddtemp daemon is used.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>head</emphasis> <emphasis remap='I'>logfile lines (next_check)</emphasis></term>
+  <listitem>
+<para>Displays first N lines of supplied text file. The
+file is checked every 'next_check' update. If next_check is
+not supplied, Conky defaults to 2. Max of 30 lines can be
+displayed, or until the text buffer is filled.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>hr</emphasis> <emphasis remap='I'>(height)</emphasis></term>
+  <listitem>
+<para>Horizontal line, height is the height in pixels</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>hwmon</emphasis> <emphasis remap='I'>(dev) type n (factor offset)</emphasis></term>
+  <listitem>
+<para>Hwmon sensor from sysfs (Linux 2.6). Parameter
+dev may be omitted if you have only one hwmon device.
+Parameter type is either 'in' or 'vol' meaning voltage;
+'fan' meaning fan; 'temp' meaning temperature. Parameter n
+is number of the sensor. See /sys/class/hwmon/ on your
+local computer. The optional arguments 'factor' and
+'offset' allow precalculation of the raw input, which is
+being modified as follows: 'input = input * factor +
+offset'. Note that they have to be given as decimal values
+(i.e. contain at least one decimal place).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i2c</emphasis> <emphasis remap='I'>(dev) type n (factor offset)</emphasis></term>
+  <listitem>
+<para>I2C sensor from sysfs (Linux 2.6). Parameter dev
+may be omitted if you have only one I2C device. Parameter
+type is either 'in' or 'vol' meaning voltage; 'fan' meaning
+fan; 'temp' meaning temperature. Parameter n is number of
+the sensor. See /sys/bus/i2c/devices/ on your local
+computer. The optional arguments 'factor' and 'offset'
+allow precalculation of the raw input, which is being
+modified as follows: 'input = input * factor + offset'.
+Note that they have to be given as decimal values (i.e.
+contain at least one decimal place).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_ac_status</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays whether ac power is on, as listed in
+/proc/i8k (translated to human-readable). Beware that this
+is by default not enabled by i8k itself.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_bios</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays the bios version as listed in /proc/i8k.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_buttons_status</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays the volume buttons status as listed in
+/proc/i8k.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_cpu_temp</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays the cpu temperature in Celsius, as
+reported by /proc/i8k.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_left_fan_rpm</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays the left fan's rate of rotation, in
+revolutions per minute as listed in /proc/i8k. Beware, some
+laptops i8k reports these fans in reverse order.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_left_fan_status</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays the left fan status as listed in
+/proc/i8k (translated to human-readable). Beware, some
+laptops i8k reports these fans in reverse order.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_right_fan_rpm</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays the right fan's rate of rotation, in
+revolutions per minute as listed in /proc/i8k. Beware, some
+laptops i8k reports these fans in reverse order.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_right_fan_status</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays the right fan status as listed in
+/proc/i8k (translated to human-readable). Beware, some
+laptops i8k reports these fans in reverse order.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_serial</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays your laptop serial number as listed in
+/proc/i8k.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>i8k_version</emphasis></term>
+  <listitem>
+<para>If running the i8k kernel driver for Inspiron
+laptops, displays the version formatting of /proc/i8k.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>ibm_brightness</emphasis></term>
+  <listitem>
+<para>If running the IBM ACPI, displays the brigtness
+of the laptops's LCD (0-7).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>ibm_fan</emphasis></term>
+  <listitem>
+<para>If running the IBM ACPI, displays the fan speed.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>ibm_temps</emphasis> <emphasis remap='I'>N</emphasis></term>
+  <listitem>
+<para>If running the IBM ACPI, displays the
+temperatures from the IBM temperature sensors (N=0..7)
+Sensor 0 is on the CPU, 3 is on the GPU.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>ibm_volume</emphasis></term>
+  <listitem>
+<para>If running the IBM ACPI, displays the "master"
+volume, controlled by the volume keys (0-14).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>iconv_start</emphasis> <emphasis remap='I'>codeset_from codeset_to</emphasis></term>
+  <listitem>
+<para>Convert text from one codeset to another using
+GNU iconv. Needs to be stopped with iconv_stop.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>iconv_stop</emphasis></term>
+  <listitem>
+<para>Stop iconv codeset conversion.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_empty</emphasis> <emphasis remap='I'>(var)</emphasis></term>
+  <listitem>
+<para>if conky variable VAR is empty, display
+everything between $if_empty and the matching $endif</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_existing</emphasis> <emphasis remap='I'>file (string)</emphasis></term>
+  <listitem>
+<para>if FILE exists, display everything between
+if_existing and the matching $endif. The optional second
+parameter checks for FILE containing the specified string
+and prints everything between $if_existing and the matching
+$endif.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_gw</emphasis></term>
+  <listitem>
+<para>if there is at least one default gateway, display
+everything between $if_gw and the matching $endif</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_match</emphasis> <emphasis remap='I'>expression</emphasis></term>
+  <listitem>
+<para>Evaluates the given boolean expression, printing
+everything between $if_match and the matching $endif
+depending on whether the evaluation returns true or not.
+Valid expressions consist of a left side, an operator and a
+right side. Left and right sides are being parsed for
+contained text objects before evaluation. Recognised left
+and right side types are:</para>
+
+<para><emphasis remap='I'>double</emphasis>Argument consists of only
+digits and a single dot.
+<emphasis remap='I'>long</emphasis>Argument consists of only
+digits.
+<emphasis remap='I'>string</emphasis>Argument is enclosed in
+quotation marks (")</para>
+
+<para>Valid operands are: '&gt;', '&lt;', '&gt;=',
+'&lt;=', '==', '!='.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_mixer_mute</emphasis> <emphasis remap='I'>(mixer)</emphasis></term>
+  <listitem>
+<para>If mixer exists, display everything between
+$if_mixer_mute and the matching $endif. If no mixer is
+specified, "Vol" is used.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_mounted</emphasis> <emphasis remap='I'>(mountpoint)</emphasis></term>
+  <listitem>
+<para>if MOUNTPOINT is mounted, display everything
+between $if_mounted and the matching $endif</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_mpd_playing</emphasis></term>
+  <listitem>
+<para>若 mpd 正在播放或暂定了，则显示 $if_mpd_playing 和相匹配的 $endif 间的全部文字。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_running</emphasis> <emphasis remap='I'>(process)</emphasis></term>
+  <listitem>
+<para>if PROCESS is running, display everything
+$if_running and the matching $endif. This uses the
+“pidof” command, so the -x switch is also supported.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_smapi_bat_installed</emphasis> <emphasis remap='I'>(INDEX)</emphasis></term>
+  <listitem>
+<para>when using smapi, if the battery with index INDEX
+is installed, display everything between
+$if_smapi_bat_installed and the matching $endif</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_up</emphasis> <emphasis remap='I'>(接口)</emphasis></term>
+  <listitem>
+<para>if INTERFACE exists and is up, display everything
+between $if_up and the matching $endif</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_updatenr</emphasis> <emphasis remap='I'>(updatenr)</emphasis></term>
+  <listitem>
+<para>If it's the UPDATENR-th time that conky updates,
+display everything between $if_updatenr and the matching
+$endif. The counter resets when the highest UPDATENR is
+reached. Example : "{$if_updatenr 1}foo$endif{$if_updatenr
+2}bar$endif{$if_updatenr 4}$endif" shows foo 25% of the
+time followed by bar 25% of the time followed by nothing
+the other half of the time.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>if_xmms2_connected</emphasis></term>
+  <listitem>
+<para>Display everything between $if_xmms2_connected
+and the matching $endif if xmms2 is running.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>image</emphasis> <emphasis remap='I'>&lt;path to image&gt; (-p x,y) (-s WxH) (-n) (-f interval)</emphasis></term>
+  <listitem>
+<para>Renders an image from the path specified using
+Imlib2. Takes 4 optional arguments: a position, a size, a
+no-cache switch, and a cache flush interval. Changing the
+x,y position will move the position of the image, and
+changing the WxH will scale the image. If you specify the
+no-cache flag (-n), the image will not be cached.
+Alternately, you can specify the -f int switch to specify a
+cache flust interval for a particular image. Example:
+${image /home/brenden/cheeseburger.jpg -p 20,20 -s 200x200}
+will render 'cheeseburger.jpg' at (20,20) scaled to 200x200
+pixels. Conky does not make any attempt to adjust the
+position (or any other formatting) of images, they are just
+rendered as per the arguments passed. The only reason
+$image is part of the TEXT section, is to allow for runtime
+modifications, through $execp $lua_parse, or some other
+method.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>imap_messages</emphasis> <emphasis remap='I'>(args)</emphasis></term>
+  <listitem>
+<para>Displays the number of messages in your global
+IMAP inbox by default. You can define individual IMAP
+inboxes separately by passing arguments to this object.
+Arguments are: "host user pass [-i interval (in seconds)]
+[-f 'folder'] [-p port] [-e 'command'] [-r retries]". Default
+port is 143, default folder is 'INBOX', default interval is
+5 minutes, and default number of retries before giving up
+is 5. If the password is supplied as '*', you will be
+prompted to enter the password when Conky starts.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>imap_unseen</emphasis> <emphasis remap='I'>(args)</emphasis></term>
+  <listitem>
+<para>Displays the number of unseen messages in your
+global IMAP inbox by default. You can define individual
+IMAP inboxes separately by passing arguments to this
+object. Arguments are: "host user pass [-i interval (in
+seconds)] [-f 'folder'] [-p port] [-e 'command'] [-r retries]".
+Default port is 143, default folder is 'INBOX', default
+interval is 5 minutes, and default number of retries before
+giving up is 5. If the password is supplied as '*', you
+will be prompted to enter the password when Conky starts.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>include</emphasis> <emphasis remap='I'>path</emphasis></term>
+  <listitem>
+<para>Loads the configfile at path, places the
+configsettings behind the configsettings in the orginal
+config and places the vars where the includevar
+stood.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>ioscheduler</emphasis> <emphasis remap='I'>disk</emphasis></term>
+  <listitem>
+<para>Prints the current ioscheduler used for the given
+disk name (i.e. e.g. "hda" or "sdb")</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>kernel</emphasis></term>
+  <listitem>
+<para>Kernel version</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>laptop_mode</emphasis></term>
+  <listitem>
+<para>The value of /proc/sys/vm/laptop_mode</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lines</emphasis> <emphasis remap='I'>textfile</emphasis></term>
+  <listitem>
+<para>Displays the number of lines in the given file</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>loadavg</emphasis> <emphasis remap='I'>(1|2|3)</emphasis></term>
+  <listitem>
+<para>System load average, 1 is for past 1 minute, 2
+for past 5 minutes and 3 for past 15 minutes. Without argument, prints
+all three values separated by whitespace.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>loadgraph</emphasis> <emphasis remap='I'>(高度),(宽度) (渐变色 1) (渐变色 2) (比例) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>Load1 average graph, similar to xload, with
+optional colours in hex, minus the #. Uses a logarithmic
+scale (to see small numbers) when you use the -l switch.
+Takes the switch '-t' to use a temperature gradient, which
+makes the gradient values change depending on the amplitude
+of a particular graph value (try it and see).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua</emphasis> <emphasis remap='I'>function_name (function parameters)</emphasis></term>
+  <listitem>
+<para>Executes a Lua function with given parameters,
+then prints the returned string. See also 'lua_load' on how
+to load scripts. Conky puts 'conky_' in front of
+function_name to prevent accidental calls to the wrong
+function unless you put you place 'conky_' in front of it
+yourself.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua_bar</emphasis> <emphasis remap='I'>(height, width) function_name (function parameters)</emphasis></term>
+  <listitem>
+<para>Executes a Lua function with given parameters and
+draws a bar. Expects result value to be an integer between
+0 and 100. See also 'lua_load' on how to load scripts.
+Conky puts 'conky_' in front of function_name to prevent
+accidental calls to the wrong function unless you put you
+place 'conky_' in front of it yourself.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua_gauge</emphasis> <emphasis remap='I'>(height, width) function_name (function parameters)</emphasis></term>
+  <listitem>
+<para>Executes a Lua function with given parameters and
+draws a gauge. Expects result value to be an integer
+between 0 and 100. See also 'lua_load' on how to load
+scripts. Conky puts 'conky_' in front of function_name to
+prevent accidental calls to the wrong function unless you
+put you place 'conky_' in front of it yourself.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua_graph</emphasis> <emphasis remap='I'>function_name (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>Executes a Lua function with and draws a graph.
+Expects result value to be any number, and by default will
+scale to show the full range. See also 'lua_load' on how to
+load scripts. Takes the switch '-t' to use a temperature
+gradient, which makes the gradient values change depending
+on the amplitude of a particular graph value (try it and
+see). Conky puts 'conky_' in front of function_name to
+prevent accidental calls to the wrong function unless you
+put you place 'conky_' in front of it yourself.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>lua_parse</emphasis> <emphasis remap='I'>function_name (function parameters)</emphasis></term>
+  <listitem>
+<para>Executes a Lua function with given parameters as
+per $lua, then parses and prints the result value as per
+the syntax for Conky's TEXT section. See also 'lua_load' on
+how to load scripts. Conky puts 'conky_' in front of
+function_name to prevent accidental calls to the wrong
+function unless you put you place 'conky_' in front of it
+yourself.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>machine</emphasis></term>
+  <listitem>
+<para>Machine, i686 for example</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mails</emphasis> <emphasis remap='I'>(mailbox)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Mail count in the specified mailbox or your mail
+spool if not. Both mbox and maildir type mailboxes are
+supported. You can use a program like fetchmail to get
+mails from some server using your favourite protocol. See
+also new_mails.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mboxscan</emphasis> <emphasis remap='I'>(-n number of messages to print) (-fw from width) (-sw subject width) mbox</emphasis></term>
+  <listitem>
+<para>Print a summary of recent messages in an mbox
+format mailbox. mbox parameter is the filename of the
+mailbox (can be encapsulated using '"', ie. ${mboxscan -n
+10 "/home/brenden/some box"}</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mem</emphasis></term>
+  <listitem>
+<para>Amount of memory in use</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>membar</emphasis> <emphasis remap='I'>(高度),(宽度)</emphasis></term>
+  <listitem>
+<para>Bar that shows amount of memory in use</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>memeasyfree</emphasis></term>
+  <listitem>
+<para>Amount of free memory including the memory that
+is very easily freed (buffers/cache)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>memfree</emphasis></term>
+  <listitem>
+<para>Amount of free memory</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>memgauge</emphasis> <emphasis remap='I'>(高度),(宽度)</emphasis></term>
+  <listitem>
+<para>Gauge that shows amount of memory in use (see
+cpugauge)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>memgraph</emphasis> <emphasis remap='I'>(高度),(宽度) (渐变色 1) (渐变色 2) (比例) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>Memory usage graph. Uses a logarithmic scale (to
+see small numbers) when you use the -l switch. Takes the
+switch '-t' to use a temperature gradient, which makes the
+gradient values change depending on the amplitude of a
+particular graph value (try it and see).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>memmax</emphasis></term>
+  <listitem>
+<para>Total amount of memory</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>memperc</emphasis></term>
+  <listitem>
+<para>Percentage of memory in use</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mixer</emphasis> <emphasis remap='I'>(device)</emphasis></term>
+  <listitem>
+<para>Prints the mixer value as reported by the OS.
+On Linux, this variable uses the OSS emulation, so you
+need the proper kernel module loaded.
+Default mixer is "Vol", but you can specify one of the
+available OSS controls: "Vol", "Bass", "Trebl", "Synth",
+"Pcm", "Spkr", "Line", "Mic", "CD", "Mix", "Pcm2 ", "Rec",
+"IGain", "OGain", "Line1", "Line2", "Line3", "Digital1",
+"Digital2", "Digital3", "PhoneIn", "PhoneOut", "Video",
+"Radio" and "Monitor".</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mixerbar</emphasis> <emphasis remap='I'>(device)</emphasis></term>
+  <listitem>
+<para>Displays mixer value in a bar as reported by the
+OS. See docs for $mixer for details on arguments.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mixerl</emphasis> <emphasis remap='I'>(device)</emphasis></term>
+  <listitem>
+<para>Prints the left channel mixer value as reported
+by the OS. See docs for $mixer for details on arguments.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mixerlbar</emphasis> <emphasis remap='I'>(device)</emphasis></term>
+  <listitem>
+<para>Displays the left channel mixer value in a bar as
+reported by the OS. See docs for $mixer for details on
+arguments.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mixerr</emphasis> <emphasis remap='I'>(device)</emphasis></term>
+  <listitem>
+<para>Prints the right channel mixer value as reported
+by the OS. See docs for $mixer for details on arguments.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mixerrbar</emphasis> <emphasis remap='I'>(device)</emphasis></term>
+  <listitem>
+<para>Displays the right channel mixer value in a bar
+as reported by the OS. See docs for $mixer for details on
+arguments.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_album</emphasis></term>
+  <listitem>
+<para>Album of the current MOC song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_artist</emphasis></term>
+  <listitem>
+<para>Artist of the current MOC song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_bitrate</emphasis></term>
+  <listitem>
+<para>Bitrate in the current MOC song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_curtime</emphasis></term>
+  <listitem>
+<para>Current time of the current MOC song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_file</emphasis></term>
+  <listitem>
+<para>File name of the current MOC song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_rate</emphasis></term>
+  <listitem>
+<para>Rate of the current MOC song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_song</emphasis></term>
+  <listitem>
+<para>The current song name being played in MOC.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_state</emphasis></term>
+  <listitem>
+<para>Current state of MOC; playing, stopped etc.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_timeleft</emphasis></term>
+  <listitem>
+<para>Time left in the current MOC song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_title</emphasis></term>
+  <listitem>
+<para>Title of the current MOC song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>moc_totaltime</emphasis></term>
+  <listitem>
+<para>Total length of the current MOC song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>monitor</emphasis></term>
+  <listitem>
+<para>Number of the monitor on which conky is running
+or the message "Not running in X" if this is the case.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>monitor_number</emphasis></term>
+  <listitem>
+<para>Number of monitors or the message "Not running in
+X" if this is the case.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_album</emphasis></term>
+  <listitem>
+<para>当前 MPD 歌曲所在的专辑</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_artist</emphasis></term>
+  <listitem>
+<para>必须在编译时启用显示当前 MPD 歌曲的演唱者</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_bar</emphasis> <emphasis remap='I'>(高度),(宽度)</emphasis></term>
+  <listitem>
+<para>MPD 进度条</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_bitrate</emphasis></term>
+  <listitem>
+<para>Bitrate of current song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_date</emphasis></term>
+  <listitem>
+<para>Date of current song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_elapsed</emphasis></term>
+  <listitem>
+<para>Song's elapsed time</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_file</emphasis></term>
+  <listitem>
+<para>打印当前 MPD 歌曲的文件名。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_length</emphasis></term>
+  <listitem>
+<para>Song's length</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_name</emphasis></term>
+  <listitem>
+<para>打印 MPD 名称字段</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_percent</emphasis></term>
+  <listitem>
+<para>Percent of song's progress</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_random</emphasis></term>
+  <listitem>
+<para>Random status (On/Off)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_repeat</emphasis></term>
+  <listitem>
+<para>Repeat status (On/Off)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_smart</emphasis> <emphasis remap='I'>(最大长度)</emphasis></term>
+  <listitem>
+<para>Prints the song name in either the form "artist -
+title" or file name, depending on whats available</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_status</emphasis></term>
+  <listitem>
+<para>Playing, stopped, et cetera.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_title</emphasis> <emphasis remap='I'>(最大长度)</emphasis></term>
+  <listitem>
+<para>当前 MPD 歌曲�&nbsp;�题</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_track</emphasis></term>
+  <listitem>
+<para>打印 MPD 音轨字段</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>mpd_vol</emphasis></term>
+  <listitem>
+<para>MPD 的音量</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>nameserver</emphasis> <emphasis remap='I'>(index)</emphasis></term>
+  <listitem>
+<para>Print a nameserver from /etc/resolv.conf. Index
+starts at and defaults to 0.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>new_mails</emphasis> <emphasis remap='I'>(mailbox)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Unread mail count in the specified mailbox or
+mail spool if not. Both mbox and maildir type mailboxes are
+supported.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>nodename</emphasis></term>
+  <listitem>
+<para>Hostname</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>nodename_short</emphasis></term>
+  <listitem>
+<para>Short hostname (same as 'hostname -s' shell command).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>nvidia</emphasis> <emphasis remap='I'>threshold</emphasis> <emphasis remap='I'>temp</emphasis> <emphasis remap='I'>ambient</emphasis> <emphasis remap='I'>gpufreq</emphasis> <emphasis remap='I'>memfreq</emphasis> <emphasis remap='I'>imagequality</emphasis></term>
+  <listitem>
+<para>XNVCtrl 库的 Nvidia 图形卡支持。每个选项都可以缩写为最不显著的部分。温度打印为浮点数，全部其它值都打印为整型数。</para>
+
+<para><emphasis remap='I'>threshold</emphasis>
+<emphasis remap='I'>The thresholdtemperature at
+which the gpu slows down</emphasis>
+<emphasis remap='I'>temp</emphasis>
+<emphasis remap='I'>Gives the gpu current
+temperature</emphasis>
+<emphasis remap='I'>ambient</emphasis>
+<emphasis remap='I'>Gives current air temperature near GPU
+case</emphasis>
+<emphasis remap='I'>gpufreq</emphasis>
+<emphasis remap='I'>Gives the current gpu frequency</emphasis>
+<emphasis remap='I'>memfreq</emphasis>
+<emphasis remap='I'>Gives the current mem frequency</emphasis>
+<emphasis remap='I'>imagequality</emphasis>
+<emphasis remap='I'>Which imagequality should be chosen by
+OpenGL applications</emphasis></para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>offset</emphasis> <emphasis remap='I'>(像�&nbsp;)</emphasis></term>
+  <listitem>
+<para>Move text over by N pixels. See also $voffset.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>outlinecolor</emphasis> <emphasis remap='I'>(color)</emphasis></term>
+  <listitem>
+<para>Change outline color</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pb_battery</emphasis> <emphasis remap='I'>item</emphasis></term>
+  <listitem>
+<para>If running on Apple powerbook/ibook, display
+information on battery status. The item parameter
+specifies, what information to display. Exactly one item
+must be specified. Valid items are:</para>
+
+<para><emphasis remap='I'>status</emphasis>
+<emphasis remap='I'>Display if battery is fully charged,
+charging, discharging or absent (running on
+AC)</emphasis>
+<emphasis remap='I'>percent</emphasis>
+<emphasis remap='I'>Display charge of battery in percent, if
+charging or discharging. Nothing will be displayed,
+if battery is fully charged or absent.</emphasis>
+<emphasis remap='I'>time</emphasis>
+<emphasis remap='I'>Display the time remaining until the
+battery will be fully charged or discharged at
+current rate. Nothing is displayed, if battery is
+absent or if it's present but fully charged and not
+discharging.</emphasis></para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_chroot</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Directory used as rootdirectory by the process
+(this will be "/" unless the process did a chroot syscall)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_cmdline</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Command line this process was invoked with</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_cwd</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Current working directory of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_environ</emphasis> <emphasis remap='I'>pid varname</emphasis></term>
+  <listitem>
+<para>Contents of a environment-var of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_environ_list</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>List of environment-vars that the process can see</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_exe</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Path to executed command that started the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_nice</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The nice value of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_openfiles</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>List of files that the process has open</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_parent</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The pid of the parent of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_priority</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The priority of the process (see 'priority' in "man 5 proc")</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_read</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Total number of bytes read by the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_state</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>State of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_state_short</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>One of the chars in "RSDZTW" representing the state
+of the process where R is running, S is sleeping in an
+interruptible wait, D is waiting in uninterruptible disk sleep,
+Z is zombie, T is traced or stopped (on a signal), and W is paging</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_stderr</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Filedescriptor binded to the STDERR of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_stdin</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Filedescriptor binded to the STDIN of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_stdout</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Filedescriptor binded to the STDOUT of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_threads</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Number of threads in process containing this thread</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_thread_list</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>List with pid's from threads from this process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_time_kernelmode</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Amount of time that the process has been scheduled in kernel mode in seconds</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_time_usermode</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Amount of time that the process has been scheduled in user mode in seconds</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_time</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Sum of $pid_time_kernelmode and $pid_time_usermode</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_uid</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The real uid of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_euid</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The effective uid of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_suid</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The saved set uid of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_fsuid</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The file system uid of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_gid</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The real gid of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_egid</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The effective gid of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_sgid</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The saved set gid of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_fsgid</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>The file system gid of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmpeak</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Peak virtual memory size of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmsize</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Virtual memory size of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmlck</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Locked memory size of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmhwm</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Peak resident set size ("high water mark") of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmrss</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Resident set size of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmdata</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Data segment size of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmstk</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Stack segment size of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmexe</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Text segment size of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmlib</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Shared library code size of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_vmpte</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Page table entries size of the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pid_write</emphasis> <emphasis remap='I'>pid</emphasis></term>
+  <listitem>
+<para>Total number of bytes written by the process</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>platform</emphasis> <emphasis remap='I'>(dev) type n (factor offset)</emphasis></term>
+  <listitem>
+<para>Platform sensor from sysfs (Linux 2.6). Parameter
+dev may be omitted if you have only one platform device.
+Platform type is either 'in' or 'vol' meaning voltage;
+'fan' meaning fan; 'temp' meaning temperature. Parameter n
+is number of the sensor. See /sys/bus/platform/devices/ on
+your local computer. The optional arguments 'factor' and
+'offset' allow precalculation of the raw input, which is
+being modified as follows: 'input = input * factor +
+offset'. Note that they have to be given as decimal values
+(i.e. contain at least one decimal place).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pop3_unseen</emphasis> <emphasis remap='I'>(args)</emphasis></term>
+  <listitem>
+<para>Displays the number of unseen messages in your
+global POP3 inbox by default. You can define individual
+POP3 inboxes separately by passing arguments to this
+object. Arguments are: "host user pass [-i interval (in
+seconds)] [-p port] [-e 'command'] [-r retries]". Default
+port is 110, default interval is 5 minutes, and default
+number of retries before giving up is 5. If the password is
+supplied as '*', you will be prompted to enter the password
+when Conky starts.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pop3_used</emphasis> <emphasis remap='I'>(args)</emphasis></term>
+  <listitem>
+<para>Displays the amount of space (in MiB, 2^20) used
+in your global POP3 inbox by default. You can define
+individual POP3 inboxes separately by passing arguments to
+this object. Arguments are: "host user pass [-i interval
+(in seconds)] [-p port] [-e 'command'] [-r retries]". Default
+port is 110, default interval is 5 minutes, and default
+number of retries before giving up is 5. If the password is
+supplied as '*', you will be prompted to enter the password
+when Conky starts.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>pre_exec</emphasis> <emphasis remap='I'>shell command</emphasis></term>
+  <listitem>
+<para>Executes a shell command one time before conky
+displays anything and puts output as text.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>processes</emphasis></term>
+  <listitem>
+<para>Total processes (sleeping and running)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>read_tcp</emphasis> <emphasis remap='I'>(host) port</emphasis></term>
+  <listitem>
+<para>Connects to a tcp port on a host (default is
+localhost), reads every char available at the moment and
+shows them.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>replied_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of mails marked as replied in the
+specified mailbox or mail spool if not. Only maildir type
+mailboxes are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>rss</emphasis> <emphasis remap='I'>uri interval_in_minutes action (num_par (spaces_in_front))</emphasis></term>
+  <listitem>
+<para>Download and parse RSS feeds. The interval may be
+a floating point value greater than 0, otherwise
+defaults to 15 minutes. Action may be one of the
+following: feed_title, item_title (with num par),
+item_desc (with num par) and item_titles (when using
+this action and spaces_in_front is given conky places
+that many spaces in front of each item). This object is
+threaded, and once a thread is created it can't be
+explicitly destroyed. One thread will run for each URI
+specified. You can use any protocol that Curl
+supports.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>running_processes</emphasis></term>
+  <listitem>
+<para>Running processes (not sleeping), requires Linux
+2.6</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>running_threads</emphasis></term>
+  <listitem>
+<para>Number of running (runnable) threads. Linux only.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>scroll</emphasis> <emphasis remap='I'>length (step) text</emphasis></term>
+  <listitem>
+<para>Scroll 'text' by 'step' characters showing
+'length' number of characters at the same time. The text
+may also contain variables. 'step' is optional and defaults
+to 1 if not set. If a var creates output on multiple lines
+then the lines are placed behind each other separated with
+a '|'-sign. If you change the textcolor inside $scroll it
+will automatically have it's old value back at the end of
+$scroll. The end and the start of text will be separated by
+'length' number of spaces.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>seen_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of mails marked as seen in the specified
+mailbox or mail spool if not. Only maildir type mailboxes
+are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>shadecolor</emphasis> <emphasis remap='I'>(color)</emphasis></term>
+  <listitem>
+<para>Change shading color</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>smapi</emphasis> <emphasis remap='I'>(ARGS)</emphasis></term>
+  <listitem>
+<para>when using smapi, display contents of the
+/sys/devices/platform/smapi directory. ARGS are either
+'(FILENAME)' or 'bat (INDEX) (FILENAME)' to display the
+corresponding files' content. This is a very raw method of
+accessing the smapi values. When available, better use one
+of the smapi_* variables instead.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>smapi_bat_bar</emphasis> <emphasis remap='I'>(INDEX),(height),(width)</emphasis></term>
+  <listitem>
+<para>when using smapi, display the remaining capacity
+of the battery with index INDEX as a bar.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>smapi_bat_perc</emphasis> <emphasis remap='I'>(INDEX)</emphasis></term>
+  <listitem>
+<para>when using smapi, display the remaining capacity
+in percent of the battery with index INDEX. This is a
+separate variable because it supports the 'use_spacer'
+configuration option.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>smapi_bat_power</emphasis> <emphasis remap='I'>INDEX</emphasis></term>
+  <listitem>
+<para>when using smapi, display the current power of
+the battery with index INDEX in watt. This is a separate
+variable because the original read out value is being
+converted from mW. The sign of the output reflects charging
+(positive) or discharging (negative) state.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>smapi_bat_temp</emphasis> <emphasis remap='I'>INDEX</emphasis></term>
+  <listitem>
+<para>when using smapi, display the current temperature
+of the battery with index INDEX in degree Celsius. This is
+a separate variable because the original read out value is
+being converted from milli degree Celsius.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>sony_fanspeed</emphasis></term>
+  <listitem>
+<para>Displays the Sony VAIO fanspeed information if
+sony-laptop kernel support is enabled. Linux only.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>stippled_hr</emphasis> <emphasis remap='I'>(space)</emphasis></term>
+  <listitem>
+<para>Stippled (dashed) horizontal line</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>swap</emphasis></term>
+  <listitem>
+<para>Amount of swap in use</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>swapbar</emphasis> <emphasis remap='I'>(高度),(宽度)</emphasis></term>
+  <listitem>
+<para>Bar that shows amount of swap in use</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>swapfree</emphasis></term>
+  <listitem>
+<para>Amount of free swap</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>swapmax</emphasis></term>
+  <listitem>
+<para>Total amount of swap</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>swapperc</emphasis></term>
+  <listitem>
+<para>Percentage of swap in use</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>sysname</emphasis></term>
+  <listitem>
+<para>System name, Linux for example</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>tab</emphasis> <emphasis remap='I'>(width, (start))</emphasis></term>
+  <listitem>
+<para>Puts a tab of the specified width, starting from
+column 'start'. The unit is pixels for both arguments.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>tail</emphasis> <emphasis remap='I'>logfile lines (next_check)</emphasis></term>
+  <listitem>
+<para>Displays last N lines of supplied text file. The
+file is checked every 'next_check' update. If next_check is
+not supplied, Conky defaults to 2. Max of 30 lines can be
+displayed, or until the text buffer is filled.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>tcp_portmon</emphasis> <emphasis remap='I'>port_begin port_end item (index)</emphasis></term>
+  <listitem>
+<para>TCP port (both IPv6 and IPv4) monitor for
+specified local ports. Port numbers must be in
+the range 1 to 65535. Valid items are:</para>
+
+<para><emphasis remap='I'>count</emphasis>
+<emphasis remap='I'>Total number of connections in the
+range</emphasis>
+<emphasis remap='I'>rip</emphasis>
+<emphasis remap='I'>Remote ip address</emphasis>
+<emphasis remap='I'>rhost</emphasis>
+<emphasis remap='I'>Remote host name</emphasis>
+<emphasis remap='I'>rport</emphasis>
+<emphasis remap='I'>Remote port number</emphasis>
+<emphasis remap='I'>rservice</emphasis>
+<emphasis remap='I'>Remote service name from
+/etc/services</emphasis>
+<emphasis remap='I'>lip</emphasis>
+<emphasis remap='I'>Local ip address</emphasis>
+<emphasis remap='I'>lhost</emphasis>
+<emphasis remap='I'>Local host name</emphasis>
+<emphasis remap='I'>lport</emphasis>
+<emphasis remap='I'>Local port number</emphasis>
+<emphasis remap='I'>lservice</emphasis>
+<emphasis remap='I'>Local service name from
+/etc/services</emphasis></para>
+
+<para>The connection index provides you with access to
+each connection in the port monitor. The monitor will
+return information for index values from 0 to n-1
+connections. Values higher than n-1 are simply ignored.
+For the "count" item, the connection index must be
+omitted. It is required for all other items.</para>
+
+<para>Examples:</para>
+
+<para><emphasis remap='I'>${tcp_portmon 6881 6999
+count}</emphasis>
+<emphasis remap='I'>Displays the number of connections in
+the bittorrent port range</emphasis>
+<emphasis remap='I'>${tcp_portmon 22 22 rip 0}</emphasis>
+<emphasis remap='I'>Displays the remote host ip of the
+first sshd connection</emphasis>
+<emphasis remap='I'>${tcp_portmon 22 22 rip 9}</emphasis>
+<emphasis remap='I'>Displays the remote host ip of the
+tenth sshd connection</emphasis>
+<emphasis remap='I'>${tcp_portmon 1 1024 rhost
+0}</emphasis>
+<emphasis remap='I'>Displays the remote host name of the
+first connection on a privileged port</emphasis>
+<emphasis remap='I'>${tcp_portmon 1 1024 rport
+4}</emphasis>
+<emphasis remap='I'>Displays the remote host port of the
+fifth connection on a privileged port</emphasis>
+<emphasis remap='I'>${tcp_portmon 1 65535 lservice
+14}</emphasis>
+<emphasis remap='I'>Displays the local service name of the
+fifteenth connection in the range of all
+ports</emphasis></para>
+
+<para>Note that port monitor variables which share the
+same port range actually refer to the same monitor, so
+many references to a single port range for different
+items and different indexes all use the same monitor
+internally. In other words, the program avoids creating
+redundant monitors.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>templateN</emphasis> <emphasis remap='I'>(arg1)</emphasis> <emphasis remap='I'>(arg2)</emphasis> <emphasis remap='I'>(arg3 ...)</emphasis></term>
+  <listitem>
+<para>Evaluate the content of the templateN
+configuration variable (where N is a value between 0
+and 9, inclusively), applying substitutions as
+described in the documentation of the corresponding
+configuration variable. The number of arguments is
+optional, but must match the highest referred index in
+the template. You can use the same special sequences in
+each argument as the ones valid for a template
+definition, e.g. to allow an argument to contain a
+whitespace. Also simple nesting of templates is
+possible this way.</para>
+
+<para>Here are some examples of template
+definitions:</para>
+
+<para>template0 $&bsol;1&bsol;2
+template1 &bsol;1: ${fs_used &bsol;2} / ${fs_size
+&bsol;2}
+template2 &bsol;1 &bsol;2</para>
+
+<para>The following list shows sample usage of the
+templates defined above, with the equivalent syntax
+when not using any template at all:</para>
+
+<informaltable pgwide='0' frame='none'>
+  <tgroup cols='2' align='center'>
+    <colspec colname='c1'/>
+    <colspec colname='c2'/>
+    <tbody>
+      <row>
+        <entry align='left'>using template</entry>
+        <entry align='left'>same without template</entry>
+      </row>
+      <row>
+        <entry align='left'>.T&amp;</entry>
+        <entry align='left'>T}</entry>
+      </row>
+      <row>
+        <entry align='left'>_ _</entry>
+        <entry align='left'>T}</entry>
+      </row>
+      <row>
+        <entry align='left'>l l</entry>
+        <entry align='left'>T}</entry>
+      </row>
+      <row>
+        <entry align='left'>l l</entry>
+        <entry align='left'>T}</entry>
+      </row>
+      <row>
+        <entry align='left'>l l.</entry>
+        <entry align='left'>T}</entry>
+      </row>
+      <row>
+        <entry align='left'>${template0 node name}</entry>
+        <entry align='left'>$nodename</entry>
+      </row>
+      <row>
+        <entry align='left'>${template1 root /}</entry>
+        <entry align='left'><para>root: ${fs_free /} / ${fs_size
+/}</para></entry>
+      </row>
+      <row>
+        <entry align='left'>${template1
+${template2&bsol; disk&bsol; root}
+/}</entry>
+        <entry align='left'>disk root:
+${fs_free /} / ${fs_size
+/}</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>texeci</emphasis> <emphasis remap='I'>interval command</emphasis></term>
+  <listitem>
+<para>Runs a command at an interval inside a thread and
+displays the output. Same as $execi, except the command is
+run inside a thread. Use this if you have a slow script to
+keep Conky updating. You should make the interval slightly
+longer then the time it takes your script to execute. For
+example, if you have a script that take 5 seconds to
+execute, you should make the interval at least 6 seconds.
+See also $execi. This object will clean up the thread when
+it is destroyed, so it can safely be used in a nested
+fashion, though it may not produce the desired behaviour if
+used this way.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>threads</emphasis></term>
+  <listitem>
+<para>Total threads</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>time</emphasis> <emphasis remap='I'>(format)</emphasis></term>
+  <listitem>
+<para>Local time, see man strftime to get more
+information about format</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>to_bytes</emphasis> <emphasis remap='I'>size</emphasis></term>
+  <listitem>
+<para>If 'size' is a number followed by a size-unit
+(kilobyte,mb,GiB,...) then it converts the size to bytes
+and shows it without unit, otherwise it just shows 'size'.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>top</emphasis> <emphasis remap='I'>type num</emphasis></term>
+  <listitem>
+<para>This takes arguments in the form:top (name)
+(number) Basically, processes are ranked from highest to
+lowest in terms of cpu usage, which is what (num)
+represents. The types are: "name", "pid", "cpu", "mem",
+"mem_res", "mem_vsize", "time", "uid", "user", "io_perc", "io_read" and
+"io_write". There can be a max of 10 processes listed.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>top_io</emphasis> <emphasis remap='I'>type num</emphasis></term>
+  <listitem>
+<para>Same as top, except sorted by the amount of I/O
+the process has done during the update interval</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>top_mem</emphasis> <emphasis remap='I'>type num</emphasis></term>
+  <listitem>
+<para>Same as top, except sorted by mem usage instead
+of cpu</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>top_time</emphasis> <emphasis remap='I'>type num</emphasis></term>
+  <listitem>
+<para>Same as top, except sorted by total CPU time
+instead of current CPU usage</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>totaldown</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Total download, overflows at 4 GB on Linux with
+32-bit arch and there doesn't seem to be a way to know how
+many times it has already done that before conky has
+started.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>totalup</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Total upload, this one too, may overflow</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>trashed_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of mails marked as trashed in the
+specified mailbox or mail spool if not. Only maildir type
+mailboxes are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>tztime</emphasis> <emphasis remap='I'>(timezone (format))</emphasis></term>
+  <listitem>
+<para>Local time for specified timezone, see man
+strftime to get more information about format. The timezone
+argument is specified in similar fashion as TZ environment
+variable. For hints, look in /usr/share/zoneinfo. e.g.
+US/Pacific, Europe/Zurich, etc.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>gid_name</emphasis> <emphasis remap='I'>gid</emphasis></term>
+  <listitem>
+<para>Name of group with this gid</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>uid_name</emphasis> <emphasis remap='I'>uid</emphasis></term>
+  <listitem>
+<para>Username of user with this uid</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>unflagged_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of mails not marked as flagged in the
+specified mailbox or mail spool if not. Only maildir type
+mailboxes are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>unforwarded_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of mails not marked as forwarded in the
+specified mailbox or mail spool if not. Only maildir type
+mailboxes are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>unreplied_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of mails not marked as replied in the
+specified mailbox or mail spool if not. Only maildir type
+mailboxes are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>unseen_mails</emphasis> <emphasis remap='I'>(maildir)</emphasis> <emphasis remap='I'>(interval)</emphasis></term>
+  <listitem>
+<para>Number of new or unseen mails in the specified
+mailbox or mail spool if not. Only maildir type mailboxes
+are supported, mbox type will return -1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>updates</emphasis> <emphasis remap='I'>Number of updates</emphasis></term>
+  <listitem>
+<para>for debugging</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>upspeed</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Upload speed in suitable IEC units</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>upspeedf</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Upload speed in KiB with one decimal</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>upspeedgraph</emphasis> <emphasis remap='I'>(netdev) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)</emphasis></term>
+  <listitem>
+<para>Upload speed graph, colours defined in hex, minus
+the #. If scale is non-zero, it becomes the scale for the
+graph. Uses a logarithmic scale (to see small numbers) when
+you use the -l switch. Takes the switch '-t' to use a
+temperature gradient, which makes the gradient values
+change depending on the amplitude of a particular graph
+value (try it and see).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>uptime</emphasis></term>
+  <listitem>
+<para>Uptime</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>uptime_short</emphasis></term>
+  <listitem>
+<para>Uptime in a shorter format</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>user_names</emphasis></term>
+  <listitem>
+<para>Lists the names of the users logged in</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>user_number</emphasis></term>
+  <listitem>
+<para>Number of users logged in</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>user_terms</emphasis></term>
+  <listitem>
+<para>Lists the consoles in use</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>user_times</emphasis></term>
+  <listitem>
+<para>Lists how long users have been logged in for</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>user_time</emphasis> <emphasis remap='I'>console</emphasis></term>
+  <listitem>
+<para>Lists how long the user for the given console has been
+logged in for</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>utime</emphasis> <emphasis remap='I'>(format)</emphasis></term>
+  <listitem>
+<para>Display time in UTC (universal coordinate time).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>voffset</emphasis> <emphasis remap='I'>(像�&nbsp;)</emphasis></term>
+  <listitem>
+<para>修改垂直偏移 N 像�&nbsp;。负值将�&nbsp;成文本重�&nbsp;。也请看 $offset。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>voltage_mv</emphasis> <emphasis remap='I'>(n)</emphasis></term>
+  <listitem>
+<para>Returns CPU #n's voltage in mV. CPUs are counted
+from 1. If omitted, the parameter defaults to 1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>voltage_v</emphasis> <emphasis remap='I'>(n)</emphasis></term>
+  <listitem>
+<para>Returns CPU #n's voltage in V. CPUs are counted
+from 1. If omitted, the parameter defaults to 1.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>weather</emphasis> <emphasis remap='I'>URI locID data_type (interval_in_minutes)</emphasis></term>
+  <listitem>
+<para>Download, parse and display METAR data.</para>
+
+<para>For the 'URI', there are two
+possibilities:</para>
+
+<para>〈http://weather.noaa.gov/pub/data/observations/metar/stations/〉
+〈http://xoap.weather.com/weather/local/〉</para>
+
+<para>The first one is free to use but the second
+requires you to register and obtain your partner ID and
+license key. These two must be written, separated by a
+space, into a file called .xoaprc which needs to be
+placed into your home directory.</para>
+
+<para>'locID' must be a valid location identifier for
+the required uri. For the NOAA site this must be a
+valid ICAO (see for instance
+https://pilotweb.nas.faa.gov/qryhtml/icao/). For the
+weather.com site this must be a valid location ID (see
+for instance
+〈http://aspnetresources.com/tools/locid.aspx〉).</para>
+
+<para>'data_type' must be one of the following:</para>
+
+<para><emphasis remap='I'>last_update</emphasis>
+The date and time stamp of the data.
+The result depends on the URI used. For the
+NOAA site it is date (yyyy/mm/dd) and UTC time.
+For the weather.com one it is date
+([m]m/[d]d/yy) and Local Time of the
+station.
+<emphasis remap='I'>temperature</emphasis></para>
+
+<para>Air temperature (you can use the
+'temperature_unit' config setting to change
+units)
+<emphasis remap='I'>cloud_cover</emphasis></para>
+
+<para>The highest cloud cover status
+<emphasis remap='I'>pressure</emphasis></para>
+
+<para>Air pressure in millibar
+<emphasis remap='I'>wind_speed</emphasis></para>
+
+<para>Wind speed in km/h
+<emphasis remap='I'>wind_dir</emphasis></para>
+
+<para>Wind direction
+<emphasis remap='I'>wind_dir_DEG</emphasis></para>
+
+<para>Compass wind direction
+<emphasis remap='I'>humidity</emphasis></para>
+
+<para>Relative humidity in %
+<emphasis remap='I'>weather</emphasis></para>
+
+<para>Any relevant weather event (rain, snow,
+etc.). This is not used if you are querying the
+weather.com site since this data is aggregated
+into the cloud_cover one
+<emphasis remap='I'>icon</emphasis></para>
+
+<para>Weather icon (only for
+www.weather.com). Can be used together with the
+icon kit provided upon registering to their
+service.</para>
+
+<para>'delay_in_minutes' (optional, default 30) cannot
+be less than 30 minutes.</para>
+
+<para>This object is threaded, and once a thread is
+created it can't be explicitly destroyed. One thread
+will run for each URI specified.</para>
+
+<para>Note that these variables are still EXPERIMENTAL
+and can be subject to many future changes.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>weather_forecast</emphasis> <emphasis remap='I'>URI locID day data_type (interval_in_minutes)</emphasis></term>
+  <listitem>
+<para>Download, parse and display weather forecast data
+for a given day (daytime only).</para>
+
+<para>For the 'URI', for the time being only
+〈http://xoap.weather.com/weather/local/〉 is
+supported. See 'weather' above for details of usage</para>
+
+<para>'locID', see 'weather' above.</para>
+
+<para>'day' is a number from 0 (today) to 4 (3 days
+after tomorrow).</para>
+
+<para>'data_type' must be one of the following:</para>
+
+<para><emphasis remap='I'>day</emphasis>
+<emphasis remap='I'>Day of the week</emphasis>
+<emphasis remap='I'>date</emphasis>
+<emphasis remap='I'>Date, in the form MMM DD (ie. Jul 14)</emphasis>
+<emphasis remap='I'>low</emphasis>
+<emphasis remap='I'>最小温度。(您可以使用 'temperature_unit' 配置设置来修改温度单位)</emphasis>
+<emphasis remap='I'>hi</emphasis>
+<emphasis remap='I'>最大温度。(您可使用 'temperature_unit' 配置设置来修改温度单位)</emphasis>
+<emphasis remap='I'>icon</emphasis>
+<emphasis remap='I'>Weather icon. Can be used together with the
+icon kit provided upon registering to the weather.com
+service</emphasis>
+<emphasis remap='I'>forecast</emphasis>
+<emphasis remap='I'>Weather forecast (sunny, rainy, etc.)</emphasis>
+<emphasis remap='I'>wind_speed</emphasis>
+<emphasis remap='I'>Wind speed in km/h</emphasis>
+<emphasis remap='I'>wind_dir</emphasis>
+<emphasis remap='I'>Wind direction</emphasis>
+<emphasis remap='I'>wind_dir_DEG</emphasis>
+<emphasis remap='I'>Compass wind direction</emphasis>
+<emphasis remap='I'>humidity</emphasis>
+<emphasis remap='I'>Relative humidity in %</emphasis>
+<emphasis remap='I'>precipitation</emphasis>
+<emphasis remap='I'>Probability of having a
+precipitation (in %)</emphasis></para>
+
+<para>'delay_in_minutes' (optional, default 210) cannot
+be lower than 210 min.</para>
+
+<para>This object is threaded, and once a thread is
+created it can't be explicitly destroyed. One thread
+will run for each URI specified. You can use any
+protocol that Curl supports.</para>
+
+<para>Note that these variables are still EXPERIMENTAL
+and can be subject to many future changes.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>wireless_ap</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Wireless access point MAC address (Linux only)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>wireless_bitrate</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Wireless bitrate (ie 11 Mb/s) (Linux only)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>wireless_essid</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Wireless access point ESSID (Linux only)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>wireless_link_bar</emphasis> <emphasis remap='I'>(height),(width) (net)</emphasis></term>
+  <listitem>
+<para>Wireless link quality bar (Linux only)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>wireless_link_qual</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Wireless link quality (Linux only)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>wireless_link_qual_max</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Wireless link quality maximum value (Linux only)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>wireless_link_qual_perc</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Wireless link quality in percents (Linux only)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>wireless_mode</emphasis> <emphasis remap='I'>(net)</emphasis></term>
+  <listitem>
+<para>Wireless mode (Managed/Ad-Hoc/Master) (Linux
+only)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>words</emphasis> <emphasis remap='I'>textfile</emphasis></term>
+  <listitem>
+<para>Displays the number of words in the given file</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_album</emphasis></term>
+  <listitem>
+<para>Album in current XMMS2 song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_artist</emphasis></term>
+  <listitem>
+<para>Artist in current XMMS2 song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_bar</emphasis> <emphasis remap='I'>(高度),(宽度)</emphasis></term>
+  <listitem>
+<para>Bar of XMMS2's progress</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_bitrate</emphasis></term>
+  <listitem>
+<para>Bitrate of current song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_comment</emphasis></term>
+  <listitem>
+<para>Comment in current XMMS2 song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_date</emphasis></term>
+  <listitem>
+<para>Returns song's date.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_duration</emphasis></term>
+  <listitem>
+<para>Duration of current song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_elapsed</emphasis></term>
+  <listitem>
+<para>Song's elapsed time</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_genre</emphasis></term>
+  <listitem>
+<para>Genre in current XMMS2 song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_id</emphasis></term>
+  <listitem>
+<para>XMMS2 id of current song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_percent</emphasis></term>
+  <listitem>
+<para>Percent of song's progress</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_playlist</emphasis></term>
+  <listitem>
+<para>Returns the XMMS2 playlist.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_size</emphasis></term>
+  <listitem>
+<para>Size of current song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_smart</emphasis></term>
+  <listitem>
+<para>Prints the song name in either the form "artist -
+title" or file name, depending on whats available</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_status</emphasis></term>
+  <listitem>
+<para>XMMS2 status (Playing, Paused, Stopped, or
+Disconnected)</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_timesplayed</emphasis></term>
+  <listitem>
+<para>Number of times a song was played (presumably).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_title</emphasis></term>
+  <listitem>
+<para>Title in current XMMS2 song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_tracknr</emphasis></term>
+  <listitem>
+<para>Track number in current XMMS2 song</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>xmms2_url</emphasis></term>
+  <listitem>
+<para>Full path to current song</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='lua_api'><title>LUA API</title>
+<para>Conky features a Lua Programming API, and also ships with Lua
+bindings for some useful libraries. Conky defines certain global
+functions and variables which can be accessed from Lua code running
+in Conky.</para>
+
+<para>To use Lua Conky, you first need to make sure you have a version of Conky
+with Lua support enabled (“conky -v” will report this). Scripts
+must first be loaded using the lua_load configuration option. You
+then call functions in Lua via Conky's $lua, $lua_read, and Lua
+hooks.</para>
+
+<para>Be careful when creating threaded objects through the Lua API. You
+could wind up with a whole bunch of threads running if a thread is
+created with each iteration.</para>
+
+<para>At this time, the Lua API should not be considered stable and may
+change drastically from one release to another as it matures.</para>
+
+<para>NOTE: In order to accommodate certain features in the cairo
+library's API, Conky will export a few additional functions for the
+creation of certain structures. These are documented below.</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_parse(string)</emphasis> <emphasis remap='I'>function</emphasis></term>
+  <listitem>
+<para>This function takes a string that is evaluated as
+per Conky's TEXT section, and then returns a string
+with the result.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_set_update_interval(数字)</emphasis> <emphasis remap='I'>function</emphasis></term>
+  <listitem>
+<para>Sets Conky's update interval (in seconds) to
+'number'.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_window</emphasis> <emphasis remap='I'>table</emphasis></term>
+  <listitem>
+<para>This table contains some information about
+Conky's window. The following table describes the
+values contained:</para>
+
+<para><emphasis remap='I'>drawable</emphasis>
+<emphasis remap='I'>Window's drawable (Xlib Drawable),
+requires Lua extras enabled at compile
+time.</emphasis>
+<emphasis remap='I'>visual</emphasis>
+<emphasis remap='I'>Window's visual (Xlib Visual), requires
+Lua extras enabled at compile time.</emphasis>
+<emphasis remap='I'>display</emphasis>
+<emphasis remap='I'>Window's display (Xlib Display),
+requires Lua extras enabled at compile
+time.</emphasis>
+<emphasis remap='I'>宽度</emphasis>
+<emphasis remap='I'>以像�&nbsp;计的窗口宽度。</emphasis>
+<emphasis remap='I'>height</emphasis>
+<emphasis remap='I'>以像�&nbsp;计的窗口高度。</emphasis>
+<emphasis remap='I'>border_inner_margin</emphasis>
+<emphasis remap='I'>以像�&nbsp;计的窗口内边框 margin。</emphasis>
+<emphasis remap='I'>border_outer_margin</emphasis>
+<emphasis remap='I'>以像计的窗口外边框 margin。</emphasis>
+<emphasis remap='I'>border_width</emphasis>
+<emphasis remap='I'>以像�&nbsp;计的窗口边框宽度。</emphasis>
+<emphasis remap='I'>text_start_x</emphasis>
+<emphasis remap='I'>The x component of the starting
+coordinate of text drawing.</emphasis>
+<emphasis remap='I'>text_start_y</emphasis>
+<emphasis remap='I'>The y component of the starting
+coordinate of text drawing.</emphasis>
+<emphasis remap='I'>text_width</emphasis>
+<emphasis remap='I'>The width of the text drawing
+region.</emphasis>
+<emphasis remap='I'>text_height</emphasis>
+<emphasis remap='I'>The height of the text drawing
+region.</emphasis></para>
+
+<para>NOTE: This table is only defined when X support
+is enabled.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_info</emphasis> <emphasis remap='I'>table</emphasis></term>
+  <listitem>
+<para>This table contains some information about
+Conky's internal data. The following table describes
+the values contained:</para>
+
+<para><emphasis remap='I'>update_interval</emphasis>
+<emphasis remap='I'>Conky's update interval (in
+seconds).</emphasis>
+<emphasis remap='I'>uptime</emphasis>
+<emphasis remap='I'>System uptime, in seconds.</emphasis></para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_build_info</emphasis> <emphasis remap='I'>string</emphasis></term>
+  <listitem>
+<para>A string containing the build info for this
+particular instance of Conky, including the version,
+build date, and architecture.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_build_date</emphasis> <emphasis remap='I'>string</emphasis></term>
+  <listitem>
+<para>A string containing the build date for this
+particular instance of Conky.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_build_arch</emphasis> <emphasis remap='I'>string</emphasis></term>
+  <listitem>
+<para>A string containing the build architecture for
+this particular instance of Conky.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_version</emphasis> <emphasis remap='I'>string</emphasis></term>
+  <listitem>
+<para>A string containing the version of the current
+instance of Conky.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>conky_config</emphasis> <emphasis remap='I'>string</emphasis></term>
+  <listitem>
+<para>A string containing the path of the current Conky
+configuration file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cairo_text_extents_t:create()</emphasis> <emphasis remap='I'>function</emphasis></term>
+  <listitem>
+<para>Call this function to return a new cairo_text_extents_t structure. A creation function for this structure is not provided by the cairo API. After calling this, you should use tolua.takeownership() on the return value to ensure ownership is passed properly.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cairo_font_extents_t:create()</emphasis> <emphasis remap='I'>function</emphasis></term>
+  <listitem>
+<para>Call this function to return a new cairo_font_extents_t structure. A creation function for this structure is not provided by the cairo API. After calling this, you should use tolua.takeownership() on the return value to ensure ownership is passed properly.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>cairo_matrix_t:create()</emphasis> <emphasis remap='I'>function</emphasis></term>
+  <listitem>
+<para>Call this function to return a new cairo_matrix_t structure. A creation function for this structure is not provided by the cairo API. After calling this, you should use tolua.takeownership() on the return value to ensure ownership is passed properly.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='g1406728879.90582'><title>范例</title>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term>conky <option>-t '${time %D %H:%M}' -o -u 30</option></term>
+  <listitem>
+<para>在它自己的窗口中启动 Conky，并带有文本�&nbsp;�式的日期和时钟，以 30 秒为更新周期。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>conky <option>-a top_left -x 5 -y 500 -d</option></term>
+  <listitem>
+<para>在位置 (5,500) 启动 Conky 并放其到后台。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>conky <option>-C &gt; ~/.conkyrc</option></term>
+  <listitem>
+<para>不启动 Conky，而是让它把内置默认配置文件输出到 ~/.conkyrc 以供后续自定义用。</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='g1406728879.907458'><title>文件</title>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='I'>${sysconfdir}/conky/conky.conf</emphasis></term>
+  <listitem>
+<para>默认系统级别配置文件。${sysconfdir} 的值取决于编译时的选项 (多数是 /etc)。</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><filename>~/.conkyrc</filename></term>
+  <listitem>
+<para>默认个人配置文件。</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='g1406728879.908577'><title>故障</title>
+<para>直接画到桌面环境�&nbsp;�窗口或其它桌面窗口上不是对全部窗口管理器都有效。尤其是 GNOME 不行，也有报告说 KDE 也不行。可使用 gconf-editor 程序禁用 Nautilus 往桌面上画图。在 /apps/nautilus/preferences/ 里取消勾选 show_desktop 即可。Conky 中有一个 -w 切换可以设置一些指定窗口 ID。您在查找要画到的窗口时可能会觉得 xwininfo -tree 挺有用的。您也可以是用 -o 参数来让 Conky 创建它自己的窗口。若您尝试了在其自身窗口中运行 Conky，请确保读完了 own_window_type 设置并做了点实验。</para>
+</refsect1>
+
+<refsect1 id='g1406728879.908987'><title>参考</title>
+<para>〈〉
+<ulink url="http://conky.sourceforge.net/">http://conky.sourceforge.net/〉</ulink></para>
+
+<para>〈〉
+<ulink url="http://www.sourceforge.net/projects/conky">http://www.sourceforge.net/projects/conky〉</ulink></para>
+
+<para>〈〉
+<ulink url="http://wiki.conky.be">http://wiki.conky.be〉</ulink></para>
+
+<para>irc.freenode.net 上的 #conky 频道</para>
+</refsect1>
+
+<refsect1 id='g1406728879.909781'><title>版权</title>
+<para>Copyright (c) 2005-2010 Brenden Matthews, Philip Kovacs 等人。任何原始的torsmo 代�&nbsp;�均以 BSD 许可证授权 (副本见 LICENSE.BSD)。全部自派生 torsmo 后所写代�&nbsp;�均以 GPL 授权 (副本见 LICENSE.GPL)，除了特别�&nbsp;�明之处 (诸如 portmon 代�&nbsp;�、时控线程代�&nbsp;�、和 audacious 代�&nbsp;�以 LGPL 授权，prss 以 MIT 风�&nbsp;�的许可证授权)。</para>
+</refsect1>
+
+<refsect1 id='g1406728879.910188'><title>作者</title>
+<para>Conky 开发团队 (完整贡献者列表请见 AUTHORS)。</para>
+</refsect1>
+</refentry>
+

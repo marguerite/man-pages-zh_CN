@@ -1,0 +1,183 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-30 22:01+0800\n"
+"PO-Revision-Date: 2014-07-30 22:14+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: fcitx.1.xml:6(date) fcitx.1.xml:10(refmiscinfo)
+msgid "2010-12-16"
+msgstr "2010-12-16"
+
+#: fcitx.1.xml:8(refentrytitle)
+msgid "FCITX"
+msgstr "FCITX"
+
+#: fcitx.1.xml:9(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: fcitx.1.xml:13(refname) fcitx.1.xml:19(command)
+msgid "fcitx"
+msgstr "fcitx"
+
+#: fcitx.1.xml:14(refpurpose)
+msgid "A Flexible Input Method Framework"
+msgstr "一个灵活的输入法框架"
+
+#: fcitx.1.xml:20(replaceable)
+msgid "OPTION"
+msgstr "选项"
+
+#: fcitx.1.xml:25(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: fcitx.1.xml:26(para)
+msgid ""
+"This manual page documents briefly the <command>fcitx</command> command."
+msgstr "本手册页简明地记录了 <command>fcitx</command> 命令的用法。"
+
+#: fcitx.1.xml:30(para)
+msgid ""
+"<command>fcitx</command> is a Chinese IME for XIM intentionally designed not "
+"to depend on any Desktop Environment. It includes Pinyin and Table for input "
+"by default, but it can also support other Input Method."
+msgstr ""
+"<command>fcitx</command> 是一个用于 XIM 的中文输入法框架，有意地设计为不依赖任何桌面环境。它默认包含了拼音和码表输入法，但也支"
+"持其它输入法。"
+
+#: fcitx.1.xml:33(title)
+msgid "OPTIONS"
+msgstr "选项"
+
+#: fcitx.1.xml:36(option)
+msgid "-r"
+msgstr "-r"
+
+#: fcitx.1.xml:38(para)
+msgid "replace existing fcitx"
+msgstr "替换已在运行中的 fcitx"
+
+#: fcitx.1.xml:42(option)
+msgid "-d"
+msgstr "-d"
+
+#: fcitx.1.xml:44(para)
+msgid "run as daemon(default)"
+msgstr "作为守护进程运行 (默认)"
+
+#: fcitx.1.xml:48(option)
+msgid "-D"
+msgstr "-D"
+
+#: fcitx.1.xml:50(para)
+msgid "don't run as daemon"
+msgstr "不作为守护进程运行"
+
+#: fcitx.1.xml:54(option)
+msgid "-s"
+msgstr "-s"
+
+#: fcitx.1.xml:54(replaceable)
+msgid "sleep time"
+msgstr "睡眠时间"
+
+#: fcitx.1.xml:56(para)
+msgid "override delay start time in config file, 0 for immediate start"
+msgstr "覆盖配置文件中的延迟启动时间，0 表示立即启动。"
+
+#: fcitx.1.xml:60(term)
+msgid "<option>-u, --ui</option>[<emphasis remap=\"I\">ui name</emphasis>]"
+msgstr "<option>-u, --ui</option>[<emphasis remap=\"I\">ui 名称</emphasis>]"
+
+#: fcitx.1.xml:62(para)
+msgid "force to use specified user interface"
+msgstr "强制使用指定用户界面"
+
+#: fcitx.1.xml:66(option)
+msgid "--enable"
+msgstr "--enable"
+
+#: fcitx.1.xml:66(replaceable) fcitx.1.xml:72(replaceable)
+msgid "addon A,addon B"
+msgstr "附加组件 A，附加组件 B"
+
+#: fcitx.1.xml:68(para)
+msgid ""
+"specify a comma separated list for addon that will override the enable option"
+msgstr "指定一个将覆盖 enable 选项的附加组件的逗号分隔列表"
+
+#: fcitx.1.xml:72(option)
+msgid "--disable"
+msgstr "--disable"
+
+#: fcitx.1.xml:74(para)
+msgid ""
+"specify a comma separated list for addon that will explicitly disabled, "
+"priority is higher than --enable"
+msgstr "指定一个将显式禁用的附加组件的逗号分隔列表，优先级高于 --enable"
+
+#: fcitx.1.xml:78(option)
+msgid "-v"
+msgstr "-v"
+
+#: fcitx.1.xml:80(para)
+msgid "display the version information and exit"
+msgstr "显示版本信息并退出"
+
+#: fcitx.1.xml:84(option)
+msgid "-h"
+msgstr "-h"
+
+#: fcitx.1.xml:86(para)
+msgid "display help and exit"
+msgstr "显示帮助并退出"
+
+#: fcitx.1.xml:92(title)
+msgid "ENVIRONMENT"
+msgstr "环境"
+
+#: fcitx.1.xml:95(emphasis)
+msgid "XMODIFIERS"
+msgstr "XMODIFIERS"
+
+#: fcitx.1.xml:97(para)
+msgid ""
+"If $<emphasis remap=\"B\">XMODIFIERS</emphasis> is set, fcitx will run with "
+"the name that specified in $<emphasis remap=\"B\">XMODIFIERS</emphasis> , "
+"otherwise it will run with im name fcitx."
+msgstr ""
+"若设置了 $<emphasis remap=\"B\">XMODIFIERS</emphasis>，fcitx 将以 $<emphasis "
+"remap=\"B\">XMODIFIERS</emphasis> 中指定的名称运行，否则将以 fcitx 这个输入法名称运行。"
+
+#: fcitx.1.xml:107(title)
+msgid "SEE ALSO"
+msgstr "继续阅读"
+
+#: fcitx.1.xml:108(para)
+msgid ""
+"Please see the homepage at <emphasis remap=\"B\"><ulink "
+"url=\"http://www.fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <"
+"emphasis remap=\"B\"><ulink url=\"http://fcitx.googlecode.com/\">"
+"http://fcitx.googlecode.com/</ulink></emphasis>"
+msgstr ""
+"请访问我们位于 <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/\">"
+"http://www.fcitx-im.org/</ulink></emphasis> 和 <emphasis remap=\"B\"><ulink "
+"url=\"http://fcitx.googlecode.com/\">https://github.com/fcitx/</ulink><"
+"/emphasis> 的主页。"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: fcitx.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+
+

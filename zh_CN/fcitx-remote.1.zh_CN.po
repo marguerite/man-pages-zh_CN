@@ -1,0 +1,140 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-30 22:01+0800\n"
+"PO-Revision-Date: 2014-07-30 22:18+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: fcitx-remote.1.xml:6(date) fcitx-remote.1.xml:10(refmiscinfo)
+msgid "2010-12-16"
+msgstr "2010-12-16"
+
+#: fcitx-remote.1.xml:8(refentrytitle)
+msgid "FCITX"
+msgstr "FCITX"
+
+#: fcitx-remote.1.xml:9(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: fcitx-remote.1.xml:13(refname) fcitx-remote.1.xml:19(command)
+msgid "fcitx-remote"
+msgstr "fcitx-remote"
+
+#: fcitx-remote.1.xml:14(refpurpose)
+msgid "Tool for control fcitx state via console"
+msgstr "通过终端控制 fcitx 状态的工具"
+
+#: fcitx-remote.1.xml:20(replaceable)
+msgid "OPTION"
+msgstr "选项"
+
+#: fcitx-remote.1.xml:25(title)
+msgid "OPTIONS"
+msgstr "选项"
+
+#: fcitx-remote.1.xml:28(option)
+msgid "-c"
+msgstr "-c"
+
+#: fcitx-remote.1.xml:30(para)
+msgid "inactivate input method"
+msgstr "取消激活输入法"
+
+#: fcitx-remote.1.xml:34(option)
+msgid "-o"
+msgstr "-o"
+
+#: fcitx-remote.1.xml:36(para)
+msgid "activate input method"
+msgstr "激活输入法"
+
+#: fcitx-remote.1.xml:40(option)
+msgid "-r"
+msgstr "-r"
+
+#: fcitx-remote.1.xml:42(para)
+msgid "reload fcitx config"
+msgstr "重新加载 fcitx 配置"
+
+#: fcitx-remote.1.xml:46(option)
+msgid "-t"
+msgstr "-t"
+
+#: fcitx-remote.1.xml:48(para)
+msgid "switch between active/inactive"
+msgstr "在激活/非激活状态间切换"
+
+#: fcitx-remote.1.xml:52(option)
+msgid "-s"
+msgstr "-s"
+
+#: fcitx-remote.1.xml:52(replaceable)
+msgid "imname"
+msgstr "输入法名称"
+
+#: fcitx-remote.1.xml:54(para)
+msgid ""
+"switch to the input method uniquely identified by <emphasis remap=\"I\">"
+"imname</emphasis>"
+msgstr "切换到通过<emphasis remap=\"I\">输入法名称</emphasis>唯一标识的输入法。"
+
+#: fcitx-remote.1.xml:58(term)
+msgid "[<emphasis remap=\"I\">no option</emphasis>]"
+msgstr "[<emphasis remap=\"I\">无选项</emphasis>]"
+
+#: fcitx-remote.1.xml:60(para)
+msgid "display fcitx state, 0 for close, 1 for inactive, 2 for active"
+msgstr "显示 fcitx 状态，0 表示关闭，1 表示非激活，2 表示激活"
+
+#: fcitx-remote.1.xml:64(option)
+msgid "-h"
+msgstr "-h"
+
+#: fcitx-remote.1.xml:66(para)
+msgid "display help and exit"
+msgstr "显示帮助并退出"
+
+#: fcitx-remote.1.xml:72(title)
+msgid "FILES"
+msgstr "文件"
+
+#: fcitx-remote.1.xml:73(para)
+msgid ""
+"fcitx will create socket at <filename>/tmp/fcitx-socket-&lt;displayname&gt;</f"
+"ilename>, so user must have permission to access <filename>/tmp</filename> "
+"folder."
+msgstr ""
+"fcitx 将在 <filename>/tmp/fcitx-socket-&lt;displayname&gt;</filename> "
+"创建套接字，因此用户必须有 <filename>/tmp</filename> 文件夹的访问权限。"
+
+#: fcitx-remote.1.xml:76(title)
+msgid "SEE ALSO"
+msgstr "继续阅读"
+
+#: fcitx-remote.1.xml:77(para)
+msgid ""
+"Please see the homepage at <emphasis remap=\"B\"><ulink "
+"url=\"http://www.fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <"
+"emphasis remap=\"B\"><ulink url=\"http://fcitx.googlecode.com/\">"
+"http://fcitx.googlecode.com/</ulink></emphasis>"
+msgstr ""
+"请访问我们位于 <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/\">"
+"http://www.fcitx-im.org/</ulink></emphasis> 和 <emphasis remap=\"B\"><ulink "
+"url=\"http://fcitx.googlecode.com/\">https://github.com/fcitx/</ulink><"
+"/emphasis> 的主页。"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: fcitx-remote.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+
+
