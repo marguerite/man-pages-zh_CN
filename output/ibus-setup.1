@@ -1,0 +1,39 @@
+.\" -*- coding: UTF-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH ibus-setup 1 "31 July 2014" "2008 年 11 月" 1.5.8
+.SH NAME
+\- ibus 配置程序
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBibus-setup\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+.br
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH 描述
+IBus 是一个智能输入总线。它是 Linux 操作系统的新输入法框架。它提供了全功能的、用户友好的输入法用户界面。它也可能帮助开发者轻松开发输入法。
+.PP
+\fBibus-setup\fR 是 IBus 的配置程序。
+.PP
+主页：〈http://code.google.com/p/ibus/〉
+.SH 故障
+若您发现了一个故障，请至 
+.URL http://codegoogle.com/p/ibus/issues/list http://code.google.com/p/ibus/issues/list
+汇报。
+.SH 继续阅读
+\fBibus\fR(1)
+.SH 中文版维护者
+.B 玛格丽特 · 苏 <marguerite@opensuse.org>
+.SH 中文版修订日期
+.BR 2014.07.31
+.SH openSUSE 社区中文手册页翻译计划
+.BI https://github.com/marguerite/man-pages-zh_CN

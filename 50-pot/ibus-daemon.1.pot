@@ -1,0 +1,192 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-30 23:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ibus-daemon.1.xml:12(refentrytitle)
+msgid "IBUS-DAEMON"
+msgstr ""
+
+#: ibus-daemon.1.xml:13(manvolnum) ibus-daemon.1.xml:147(manvolnum)
+msgid "1"
+msgstr ""
+
+#: ibus-daemon.1.xml:14(refmiscinfo)
+msgid "April 2010"
+msgstr ""
+
+#: ibus-daemon.1.xml:15(refmiscinfo)
+msgid "1.5.8"
+msgstr ""
+
+#: ibus-daemon.1.xml:19(refpurpose)
+msgid "daemon program for ibus"
+msgstr ""
+
+#: ibus-daemon.1.xml:24(command)
+msgid "ibus-daemon"
+msgstr ""
+
+#: ibus-daemon.1.xml:25(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: ibus-daemon.1.xml:32(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ibus-daemon.1.xml:33(para)
+msgid "IBus is an Intelligent Input Bus. It is a new input framework for Linux OS. It provides full featured and user friendly input method user interface. It also may help developers to develop input method easily."
+msgstr ""
+
+#: ibus-daemon.1.xml:38(para)
+msgid "<command>ibus-daemon</command> is a daemon program for ibus and it is also a start up program for users to activate ibus daemon, engines and panel."
+msgstr ""
+
+#: ibus-daemon.1.xml:43(title)
+msgid "Help Options:"
+msgstr ""
+
+#: ibus-daemon.1.xml:46(term)
+msgid "<option>-h</option>, <option>--help</option>"
+msgstr ""
+
+#: ibus-daemon.1.xml:48(para)
+msgid "Show help options"
+msgstr ""
+
+#: ibus-daemon.1.xml:55(title)
+msgid "Application Options:"
+msgstr ""
+
+#: ibus-daemon.1.xml:58(term)
+msgid "<option>-d</option>, <option>--daemonize</option>"
+msgstr ""
+
+#: ibus-daemon.1.xml:60(para)
+msgid "run ibus as background process."
+msgstr ""
+
+#: ibus-daemon.1.xml:64(term)
+msgid "<option>-s</option>, <option>--single</option>"
+msgstr ""
+
+#: ibus-daemon.1.xml:66(para)
+msgid "do not execute panel and config module."
+msgstr ""
+
+#: ibus-daemon.1.xml:70(term)
+msgid "<option>-x</option>, <option>--xim</option>"
+msgstr ""
+
+#: ibus-daemon.1.xml:72(para)
+msgid "execute ibus XIM server."
+msgstr ""
+
+#: ibus-daemon.1.xml:76(term)
+msgid "<option>-n</option>, <option>--desktop</option>=<emphasis remap=\"I\">name</emphasis>"
+msgstr ""
+
+#: ibus-daemon.1.xml:78(para)
+msgid "specify the name of desktop session. [default=gnome]"
+msgstr ""
+
+#: ibus-daemon.1.xml:82(term)
+msgid "<option>-p</option>, <option>--panel</option>=<emphasis remap=\"I\">cmdline</emphasis>"
+msgstr ""
+
+#: ibus-daemon.1.xml:84(para)
+msgid "specify the cmdline of panel program."
+msgstr ""
+
+#: ibus-daemon.1.xml:88(term)
+msgid "<option>-c</option>, <option>--config</option>=<emphasis remap=\"I\">cmdline</emphasis>"
+msgstr ""
+
+#: ibus-daemon.1.xml:90(para)
+msgid "specify the cmdline of config program."
+msgstr ""
+
+#: ibus-daemon.1.xml:94(term)
+msgid "<option>-a</option>, <option>--address</option>=<emphasis remap=\"I\">address</emphasis>"
+msgstr ""
+
+#: ibus-daemon.1.xml:96(para)
+msgid "specify the address of ibus daemon."
+msgstr ""
+
+#: ibus-daemon.1.xml:100(term)
+msgid "<option>-r</option>, <option>--replace</option>"
+msgstr ""
+
+#: ibus-daemon.1.xml:102(para)
+msgid "if there is an old ibus-daemon is running, it will be replaced."
+msgstr ""
+
+#: ibus-daemon.1.xml:106(term)
+msgid "<option>-t</option>, <option>--cache</option>=<emphasis remap=\"I\">mode</emphasis> [default is auto]"
+msgstr ""
+
+#: ibus-daemon.1.xml:108(para)
+msgid "force to re-scan components, and re-create registry cache. auto, refresh, none is available."
+msgstr ""
+
+#: ibus-daemon.1.xml:113(term)
+msgid "<option>-o</option>, <option>--timeout</option>=<emphasis remap=\"I\">timeout</emphasis> [default is 2000]"
+msgstr ""
+
+#: ibus-daemon.1.xml:115(para)
+msgid "dbus reply timeout in milliseconds."
+msgstr ""
+
+#: ibus-daemon.1.xml:119(term)
+msgid "<option>-j</option>, <option>--monitor-timeout</option>=<emphasis remap=\"I\">timeout</emphasis> [default is 0]"
+msgstr ""
+
+#: ibus-daemon.1.xml:121(para)
+msgid "timeout of poll changes of engines in seconds. 0 to disable it."
+msgstr ""
+
+#: ibus-daemon.1.xml:125(term)
+msgid "<option>-m</option>, <option>--mem-profile</option>"
+msgstr ""
+
+#: ibus-daemon.1.xml:127(para)
+msgid "enable memory profile, send SIGUSR2 to print out the memory profile."
+msgstr ""
+
+#: ibus-daemon.1.xml:131(term)
+msgid "<option>-v</option>, <option>--verbose</option>"
+msgstr ""
+
+#: ibus-daemon.1.xml:133(para)
+msgid "verbose."
+msgstr ""
+
+#: ibus-daemon.1.xml:141(title)
+msgid "BUGS"
+msgstr ""
+
+#: ibus-daemon.1.xml:142(para)
+msgid "If you find a bug, please report it at <ulink url=\"http://code.google.com/p/ibus/issues/list\">http://code.google.com/p/ibus/issues/list</ulink>"
+msgstr ""
+
+#: ibus-daemon.1.xml:146(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: ibus-daemon.1.xml:147(refentrytitle)
+msgid "ibus"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: ibus-daemon.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

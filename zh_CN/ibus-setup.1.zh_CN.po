@@ -1,0 +1,90 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-30 23:42+0800\n"
+"PO-Revision-Date: 2014-07-30 23:56+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ibus-setup.1.xml:13(refentrytitle)
+msgid "IBUS-SETUP"
+msgstr "ibus-setup"
+
+#: ibus-setup.1.xml:14(manvolnum) ibus-setup.1.xml:51(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: ibus-setup.1.xml:15(refmiscinfo)
+msgid "November 2008"
+msgstr "2008 年 11 月"
+
+#: ibus-setup.1.xml:16(refmiscinfo)
+msgid "1.5.8"
+msgstr "1.5.8"
+
+#: ibus-setup.1.xml:20(refpurpose)
+msgid "configuration program for ibus"
+msgstr "ibus 配置程序"
+
+#: ibus-setup.1.xml:25(command)
+msgid "ibus-setup"
+msgstr "ibus-setup"
+
+#: ibus-setup.1.xml:31(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: ibus-setup.1.xml:32(para)
+msgid ""
+"IBus is an Intelligent Input Bus. It is a new input framework for Linux OS. "
+"It provides full featured and user friendly input method user interface. It "
+"also may help developers to develop input method easily."
+msgstr ""
+"IBus 是一个智能输入总线。它是 Linux 操作系统的新输入法框架。它提供了全功能的、用户友好的输入法用户界面。它也可能帮助开发者轻松开发输入法。"
+
+#: ibus-setup.1.xml:37(para)
+msgid "<command>ibus-setup</command> is the configuration program for IBus."
+msgstr "<command>ibus-setup</command> 是 IBus 的配置程序。"
+
+#: ibus-setup.1.xml:41(para)
+msgid ""
+"Homepage: <ulink url=\"http://code.google.com/p/ibus/\">"
+"http://code.google.com/p/ibus/</ulink>"
+msgstr ""
+"主页：<ulink url=\"http://code.google.com/p/ibus/\">"
+"http://code.google.com/p/ibus/</ulink>"
+
+#: ibus-setup.1.xml:45(title)
+msgid "BUGS"
+msgstr "故障"
+
+#: ibus-setup.1.xml:46(para)
+msgid ""
+"If you find a bug, please report it at <ulink "
+"url=\"http://code.google.com/p/ibus/issues/list\">"
+"http://code.google.com/p/ibus/issues/list</ulink>"
+msgstr ""
+"若您发现了一个故障，请至 <ulink url=\"http://codegoogle.com/p/ibus/issues/list\">"
+"http://code.google.com/p/ibus/issues/list</ulink> 汇报。"
+
+#: ibus-setup.1.xml:50(title)
+msgid "SEE ALSO"
+msgstr "继续阅读"
+
+#: ibus-setup.1.xml:51(refentrytitle)
+msgid "ibus"
+msgstr "ibus"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: ibus-setup.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+
+

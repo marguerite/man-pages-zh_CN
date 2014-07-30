@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='ibusdaemon1'>
+<!-- This file is distributed under the same license as the ibus
+package.
+Copyright (C) Takao Fujiwara &lt;takao.fujiwara1@gmail.com&gt;, 2013.
+Copyright (c) Peng Huang &lt;shawn.p.huang@gmail.com&gt;, 2013. -->
+
+<refmeta>
+<refentrytitle>IBUS-DAEMON</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>April 2010</refmiscinfo>
+<refmiscinfo class='manual'>1.5.8</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname></refname>
+<refpurpose>daemon program for ibus</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>ibus-daemon</command>    
+    <arg choice='opt' rep='repeat'><replaceable>OPTION</replaceable></arg>
+    
+    <sbr/>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>IBus is an Intelligent Input Bus. It is a new input framework for Linux
+OS. It provides full featured and user friendly input method user
+interface.  It also may help developers to develop input method easily.</para>
+
+
+<para><command>ibus-daemon</command>
+is a daemon program for ibus and it is also a start up program for users
+to activate ibus daemon, engines and panel.</para>
+
+
+<refsect2 id='help_options'><title>Help Options:</title>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><option>-h</option>, <option>--help</option></term>
+  <listitem>
+<para>Show help options</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2 id='application_options'><title>Application Options:</title>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><option>-d</option>, <option>--daemonize</option></term>
+  <listitem>
+<para>run ibus as background process.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-s</option>, <option>--single</option></term>
+  <listitem>
+<para>do not execute panel and config module.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-x</option>, <option>--xim</option></term>
+  <listitem>
+<para>execute ibus XIM server.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-n</option>, <option>--desktop</option>=<emphasis remap='I'>name</emphasis></term>
+  <listitem>
+<para>specify the name of desktop session. [default=gnome]</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-p</option>, <option>--panel</option>=<emphasis remap='I'>cmdline</emphasis></term>
+  <listitem>
+<para>specify the cmdline of panel program.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-c</option>, <option>--config</option>=<emphasis remap='I'>cmdline</emphasis></term>
+  <listitem>
+<para>specify the cmdline of config program.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-a</option>, <option>--address</option>=<emphasis remap='I'>address</emphasis></term>
+  <listitem>
+<para>specify the address of ibus daemon.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-r</option>, <option>--replace</option></term>
+  <listitem>
+<para>if there is an old ibus-daemon is running, it will be replaced.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-t</option>, <option>--cache</option>=<emphasis remap='I'>mode</emphasis> [default is auto]</term>
+  <listitem>
+<para>force to re-scan components, and re-create registry cache.
+auto, refresh, none is available.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-o</option>, <option>--timeout</option>=<emphasis remap='I'>timeout</emphasis> [default is 2000]</term>
+  <listitem>
+<para>dbus reply timeout in milliseconds.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-j</option>, <option>--monitor-timeout</option>=<emphasis remap='I'>timeout</emphasis> [default is 0]</term>
+  <listitem>
+<para>timeout of poll changes of engines in seconds. 0 to disable it.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-m</option>, <option>--mem-profile</option></term>
+  <listitem>
+<para>enable memory profile, send SIGUSR2 to print out the memory profile.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><option>-v</option>, <option>--verbose</option></term>
+  <listitem>
+<para>verbose.</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+
+<refsect1 id='bugs'><title>BUGS</title>
+<para>If you find a bug, please report it at <ulink url='http://code.google.com/p/ibus/issues/list'>http://code.google.com/p/ibus/issues/list</ulink></para>
+
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<para><citerefentry><refentrytitle>ibus</refentrytitle><manvolnum>1</manvolnum></citerefentry></para>
+</refsect1>
+</refentry>
+

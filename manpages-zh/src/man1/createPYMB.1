@@ -1,0 +1,72 @@
+.\" -*- coding: UTF-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH createPYMB 1 2010-12-16 "" ""
+.SH NAME
+createPYMB, readPYBase, readPYMB, mb2org, scel2org \- fcitx 拼音相关工具
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBcreatePYMB\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+\fI<拼音文件>\fR \fI<词组文件>\fR 
+'in \n(.iu-\nxu
+.ad b
+'hy
+'nh
+.fi
+.ad l
+\fBreadPYBase\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[-b \fI<拼音码表文件>\fR] [-h]
+'in \n(.iu-\nxu
+.ad b
+'hy
+'nh
+.fi
+.ad l
+\fBreadPYMB\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[-f \fI<词组码表文件>\fR] [-s] [-h]
+'in \n(.iu-\nxu
+.ad b
+'hy
+'nh
+.fi
+.ad l
+\fBmb2org\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[-b \fI<拼音码表文件>\fR] [-f \fI<词组码表文件>\fR] [-s] [-h]
+'in \n(.iu-\nxu
+.ad b
+'hy
+'nh
+.fi
+.ad l
+\fBscel2org\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[ -o \fI<词组\fR \fI文件>\fR ] [-h]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH 描述
+.TP 0.2i
+•
+\*(T<\fB\-b <拼音码表文件>\fR\*(T>
+.PP
+若未指定，其将读取系统默认的 pybase.mb。
+
+-f PhraseMBFile
+If not specified, it will read user default PhraseMBFile, which is ~/.config/fcitx/pyusrphrase.mb.
+-s
+If specified, it will read PhraseMBFile as system format, otherwise will read it as user format.

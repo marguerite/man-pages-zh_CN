@@ -1,0 +1,233 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-30 23:42+0800\n"
+"PO-Revision-Date: 2014-07-30 23:55+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ibus.1.xml:12(refentrytitle)
+msgid "IBUS"
+msgstr "ibus"
+
+#: ibus.1.xml:13(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: ibus.1.xml:14(refmiscinfo)
+msgid "May 2013"
+msgstr "2013 年 5 月"
+
+#: ibus.1.xml:15(refmiscinfo)
+msgid "1.5.8"
+msgstr "1.5.8"
+
+#: ibus.1.xml:19(refpurpose)
+msgid "command line utility for ibus"
+msgstr "ibus 的命令行工具"
+
+#: ibus.1.xml:24(command)
+msgid "ibus"
+msgstr "ibus"
+
+#: ibus.1.xml:25(replaceable) ibus.1.xml:48(title)
+msgid "COMMAND"
+msgstr "命令"
+
+#: ibus.1.xml:26(replaceable)
+msgid "OPTION"
+msgstr "选项"
+
+#: ibus.1.xml:33(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: ibus.1.xml:34(para)
+msgid ""
+"IBus is an Intelligent Input Bus. It is a new input framework for Linux OS. "
+"It provides full featured and user friendly input method user interface. It "
+"also may help developers to develop input method easily."
+msgstr ""
+"IBus 是一个智能输入总线。它是 Linux 操作系统的新输入法框架。它提供了全功能的、用户友好的输入法用户界面。它也可能帮助开发者轻松开发输入法。"
+
+#: ibus.1.xml:39(para)
+msgid ""
+"<command>ibus</command> is a command line utility which can restart or exit "
+"ibus-daemon, get or set the current ibus engine or list the ibus engines."
+msgstr ""
+"<command>ibus</command> 是一个可以重启或退出 ibus-daemon、获得或设置当前 ibus 引擎或列出 ibus "
+"引擎的命令行工具。"
+
+#: ibus.1.xml:44(para)
+msgid ""
+"Homepage: <ulink url=\"http://code.google.com/p/ibus/\">"
+"http://code.google.com/p/ibus/</ulink>"
+msgstr ""
+"主页：<ulink url=\"http://code.google.com/p/ibus/\">"
+"http://code.google.com/p/ibus/</ulink>"
+
+#: ibus.1.xml:51(emphasis)
+msgid "help"
+msgstr "帮助"
+
+#: ibus.1.xml:53(para)
+msgid "Show the commands list."
+msgstr "显示命令列表。"
+
+#: ibus.1.xml:57(term)
+msgid ""
+"<emphasis remap=\"B\">engine</emphasis> [<emphasis remap=\"B\">ENGINE_NAME<"
+"/emphasis>]"
+msgstr ""
+"<emphasis remap=\"B\">engine</emphasis> [<emphasis remap=\"B\">引擎名</emphasis>]"
+
+#: ibus.1.xml:59(para)
+msgid ""
+"Show the curent ibus engine when <emphasis remap=\"B\">ENGINE_NAME</emphasis> "
+"is not given. Set <emphasis remap=\"B\">ENGINE_NAME</emphasis> to the current "
+"ibus engine."
+msgstr ""
+"当未给定<emphasis remap=\"B\">引擎名</emphasis>时显示当前 ibus 引擎。 该命令可将<emphasis "
+"remap=\"B\">引擎名</emphasis>设为当前 ibus 的引擎。"
+
+#: ibus.1.xml:67(emphasis)
+msgid "exit"
+msgstr "exit"
+
+#: ibus.1.xml:69(para)
+msgid "Exit ibus-daemon."
+msgstr "退出 ibus-daemon。"
+
+#: ibus.1.xml:73(emphasis)
+msgid "list-engine"
+msgstr "list-engine"
+
+#: ibus.1.xml:75(para)
+msgid "Show ibus engines list."
+msgstr "显示 ibus 引擎列表。"
+
+#: ibus.1.xml:79(emphasis)
+msgid "restart"
+msgstr "restart"
+
+#: ibus.1.xml:81(para)
+msgid "Restart ibus-daemon."
+msgstr "重启 ibus-daemon。"
+
+#: ibus.1.xml:85(emphasis)
+msgid "version"
+msgstr "version"
+
+#: ibus.1.xml:87(para)
+msgid "Show the ibus version."
+msgstr "显示 ibus 版本。"
+
+#: ibus.1.xml:91(term)
+msgid ""
+"<emphasis remap=\"B\">read-cache</emphasis> [<option>--system|--file=FILE<"
+"/option>]"
+msgstr ""
+"<emphasis remap=\"B\">read-cache</emphasis> [<option>--system|--file=文件<"
+"/option>]"
+
+#: ibus.1.xml:93(para)
+msgid ""
+"Show the content of the user registry cache if <option>--system</option> is "
+"not given. Show the content of the system registry cache if <option>--system<"
+"/option> is given. Show the content of the custom registry cache <emphasis "
+"remap=\"B\">FILE</emphasis> if <option>--file=FILE</option> is given."
+msgstr ""
+"若未给定 <option>--system</option> 则显示用户注册表缓存内容。 若给定 <option>--system</option> "
+"则显示系统注册表缓存内容。若给定 <option>--file=文件</option> 则显示自定义注册表缓存<emphasis remap=\"B\">"
+"文件</emphasis> 内容。"
+
+#: ibus.1.xml:107(term)
+msgid ""
+"<emphasis remap=\"B\">write-cache</emphasis> [<option>--system|--file=FILE<"
+"/option>]"
+msgstr ""
+"<emphasis remap=\"B\">write-cache</emphasis> [<option>--system|--file=文件<"
+"/option>]"
+
+#: ibus.1.xml:109(para)
+msgid ""
+"Save the user registry cache if <option>--system</option> is not given. Save "
+"the system registry cache if <option>--system</option> is given. Save the "
+"custom registry cache <emphasis remap=\"B\">FILE</emphasis> if <option>"
+"--file=FILE</option> is given."
+msgstr ""
+"若未给定 <option>--system</option> 则保存用户注册表缓存。 若给定 <option>--system</option> "
+"则保存系统注册表缓存。若给定 <option>--file=文件</option> 则保存自定义注册表缓存<emphasis remap=\"B\">"
+"文件</emphasis>。"
+
+#: ibus.1.xml:121(para)
+msgid ""
+"By default, it reads the component XML files from the standard component "
+"directory (<filename>/usr/share/ibus/component</filename>), you can set <"
+"emphasis remap=\"I\">IBUS_COMPONENT_PATH</emphasis> environment variable for "
+"custom component directories, separated by ':'."
+msgstr ""
+"默认情况下，它会从标准部件文件夹 (<filename>/usr/share/ibus/component</filename>) 读取部件 XML "
+"文件，您也可以设置 <emphasis remap=\"I\">IBUS_COMPONENT_PATH</emphasis> "
+"环境变量来自定义部件文件夹，由 ':' 分隔。"
+
+#: ibus.1.xml:128(emphasis)
+msgid "address"
+msgstr "address"
+
+#: ibus.1.xml:130(para)
+msgid "Show the D-Bus address of ibus-daemon."
+msgstr "显示 ibus-daemon 的 D-Bus 地址。"
+
+#: ibus.1.xml:134(emphasis)
+msgid "read-config"
+msgstr "read-config"
+
+#: ibus.1.xml:136(para)
+msgid "Print the setting values in a gsettings configuration file."
+msgstr "打印 gsettings 配置文件中的设置值。"
+
+#: ibus.1.xml:140(emphasis)
+msgid "reset-config"
+msgstr "reset-config"
+
+#: ibus.1.xml:142(para)
+msgid ""
+"Reset the user setting values to the default ones in a gsettings "
+"configuration file."
+msgstr "将用户设置值重置为 gsettings 配置文件中的默认值。"
+
+#: ibus.1.xml:147(emphasis)
+msgid "watch"
+msgstr "watch"
+
+#: ibus.1.xml:149(para)
+msgid "Under construction."
+msgstr "打造中。"
+
+#: ibus.1.xml:156(title)
+msgid "BUGS"
+msgstr "故障"
+
+#: ibus.1.xml:157(para)
+msgid ""
+"If you find a bug, please report it at <ulink "
+"url=\"http://code.google.com/p/ibus/issues/list\">"
+"http://code.google.com/p/ibus/issues/list</ulink>."
+msgstr ""
+"若您发现了一个故障，请至 <ulink url=\"http://code.google.com/p/ibus/issues/list\">"
+"http://code.google.com/p/ibus/issues/list</ulink> 汇报。"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: ibus.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+
+

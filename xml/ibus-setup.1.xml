@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='ibussetup1'>
+<!-- This file is distributed under the same license as the ibus
+package.
+Copyright (C) LI Daobing &lt;lidaobing@gmail.com&gt;, 2008.
+Copyright (C) Takao Fujiwara &lt;takao.fujiwara1@gmail.com&gt;, 2013.
+Copyright (c) Peng Huang &lt;shawn.p.huang@gmail.com&gt;, 2013. -->
+
+<refmeta>
+<refentrytitle>IBUS-SETUP</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2008</refmiscinfo>
+<refmiscinfo class='manual'>1.5.8</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname></refname>
+<refpurpose>configuration program for ibus</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>ibus-setup</command>    
+    <sbr/>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>IBus is an Intelligent Input Bus. It is a new input framework for Linux
+OS. It provides full featured and user friendly input method user
+interface.  It also may help developers to develop input method easily.</para>  
+
+
+<para><command>ibus-setup</command>
+is the configuration program for IBus.</para>
+
+
+<para>Homepage: <ulink url='http://code.google.com/p/ibus/'>http://code.google.com/p/ibus/</ulink></para>
+
+</refsect1>
+
+<refsect1 id='bugs'><title>BUGS</title>
+<para>If you find a bug, please report it at <ulink url='http://code.google.com/p/ibus/issues/list'>http://code.google.com/p/ibus/issues/list</ulink></para>
+
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<para><citerefentry><refentrytitle>ibus</refentrytitle><manvolnum>1</manvolnum></citerefentry></para>
+</refsect1>
+</refentry>
+

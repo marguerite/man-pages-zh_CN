@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='mb2txt1'>
+<refentryinfo><date>2010-12-16</date></refentryinfo>
+<refmeta>
+<refentrytitle>mb2txt</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='date'>2010-12-16</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>mb2txt</refname>
+<refname>txt2mb</refname>
+<refpurpose>fcitx table related tools</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>mb2txt</command>    <arg choice='plain'><replaceable>&lt;mbfile&gt;</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>txt2mb</command>    <arg choice='plain'><replaceable>&lt;txtfile&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para><command>mb2txt</command>
+and
+<command>txt2mb</command>
+are tools for transform table file between binary format and text format. fcitx can only use binary format.
+All output of
+<command>mb2txt</command>
+and
+<command>txt2mb</command>
+will be stdout.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<para>Please see the homepage at
+<emphasis remap='B'><ulink url='http://www.fcitx.org/'>http://www.fcitx.org/</ulink></emphasis>
+and
+<emphasis remap='B'><ulink url='http://fcitx.googlecode.com/'>http://fcitx.googlecode.com/</ulink></emphasis></para>
+</refsect1>
+</refentry>
+

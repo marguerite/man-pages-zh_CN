@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-30 23:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: mb2txt.1.xml:6(date) mb2txt.1.xml:10(refmiscinfo)
+msgid "2010-12-16"
+msgstr ""
+
+#: mb2txt.1.xml:8(refentrytitle) mb2txt.1.xml:13(refname) mb2txt.1.xml:20(command)
+msgid "mb2txt"
+msgstr ""
+
+#: mb2txt.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: mb2txt.1.xml:14(refname) mb2txt.1.xml:23(command)
+msgid "txt2mb"
+msgstr ""
+
+#: mb2txt.1.xml:15(refpurpose)
+msgid "fcitx table related tools"
+msgstr ""
+
+#: mb2txt.1.xml:20(replaceable)
+msgid "&lt;mbfile&gt;"
+msgstr ""
+
+#: mb2txt.1.xml:23(replaceable)
+msgid "&lt;txtfile&gt;"
+msgstr ""
+
+#: mb2txt.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: mb2txt.1.xml:29(para)
+msgid "<command>mb2txt</command> and <command>txt2mb</command> are tools for transform table file between binary format and text format. fcitx can only use binary format. All output of <command>mb2txt</command> and <command>txt2mb</command> will be stdout."
+msgstr ""
+
+#: mb2txt.1.xml:40(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: mb2txt.1.xml:41(para)
+msgid "Please see the homepage at <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <emphasis remap=\"B\"><ulink url=\"http://fcitx.googlecode.com/\">http://fcitx.googlecode.com/</ulink></emphasis>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: mb2txt.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

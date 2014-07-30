@@ -1,0 +1,172 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-07-30 23:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ibus.1.xml:12(refentrytitle)
+msgid "IBUS"
+msgstr ""
+
+#: ibus.1.xml:13(manvolnum)
+msgid "1"
+msgstr ""
+
+#: ibus.1.xml:14(refmiscinfo)
+msgid "May 2013"
+msgstr ""
+
+#: ibus.1.xml:15(refmiscinfo)
+msgid "1.5.8"
+msgstr ""
+
+#: ibus.1.xml:19(refpurpose)
+msgid "command line utility for ibus"
+msgstr ""
+
+#: ibus.1.xml:24(command)
+msgid "ibus"
+msgstr ""
+
+#: ibus.1.xml:25(replaceable) ibus.1.xml:48(title)
+msgid "COMMAND"
+msgstr ""
+
+#: ibus.1.xml:26(replaceable)
+msgid "OPTION"
+msgstr ""
+
+#: ibus.1.xml:33(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ibus.1.xml:34(para)
+msgid "IBus is an Intelligent Input Bus. It is a new input framework for Linux OS. It provides full featured and user friendly input method user interface. It also may help developers to develop input method easily."
+msgstr ""
+
+#: ibus.1.xml:39(para)
+msgid "<command>ibus</command> is a command line utility which can restart or exit ibus-daemon, get or set the current ibus engine or list the ibus engines."
+msgstr ""
+
+#: ibus.1.xml:44(para)
+msgid "Homepage: <ulink url=\"http://code.google.com/p/ibus/\">http://code.google.com/p/ibus/</ulink>"
+msgstr ""
+
+#: ibus.1.xml:51(emphasis)
+msgid "help"
+msgstr ""
+
+#: ibus.1.xml:53(para)
+msgid "Show the commands list."
+msgstr ""
+
+#: ibus.1.xml:57(term)
+msgid "<emphasis remap=\"B\">engine</emphasis> [<emphasis remap=\"B\">ENGINE_NAME</emphasis>]"
+msgstr ""
+
+#: ibus.1.xml:59(para)
+msgid "Show the curent ibus engine when <emphasis remap=\"B\">ENGINE_NAME</emphasis> is not given. Set <emphasis remap=\"B\">ENGINE_NAME</emphasis> to the current ibus engine."
+msgstr ""
+
+#: ibus.1.xml:67(emphasis)
+msgid "exit"
+msgstr ""
+
+#: ibus.1.xml:69(para)
+msgid "Exit ibus-daemon."
+msgstr ""
+
+#: ibus.1.xml:73(emphasis)
+msgid "list-engine"
+msgstr ""
+
+#: ibus.1.xml:75(para)
+msgid "Show ibus engines list."
+msgstr ""
+
+#: ibus.1.xml:79(emphasis)
+msgid "restart"
+msgstr ""
+
+#: ibus.1.xml:81(para)
+msgid "Restart ibus-daemon."
+msgstr ""
+
+#: ibus.1.xml:85(emphasis)
+msgid "version"
+msgstr ""
+
+#: ibus.1.xml:87(para)
+msgid "Show the ibus version."
+msgstr ""
+
+#: ibus.1.xml:91(term)
+msgid "<emphasis remap=\"B\">read-cache</emphasis> [<option>--system|--file=FILE</option>]"
+msgstr ""
+
+#: ibus.1.xml:93(para)
+msgid "Show the content of the user registry cache if <option>--system</option> is not given. Show the content of the system registry cache if <option>--system</option> is given. Show the content of the custom registry cache <emphasis remap=\"B\">FILE</emphasis> if <option>--file=FILE</option> is given."
+msgstr ""
+
+#: ibus.1.xml:107(term)
+msgid "<emphasis remap=\"B\">write-cache</emphasis> [<option>--system|--file=FILE</option>]"
+msgstr ""
+
+#: ibus.1.xml:109(para)
+msgid "Save the user registry cache if <option>--system</option> is not given. Save the system registry cache if <option>--system</option> is given. Save the custom registry cache <emphasis remap=\"B\">FILE</emphasis> if <option>--file=FILE</option> is given."
+msgstr ""
+
+#: ibus.1.xml:121(para)
+msgid "By default, it reads the component XML files from the standard component directory (<filename>/usr/share/ibus/component</filename>), you can set <emphasis remap=\"I\">IBUS_COMPONENT_PATH</emphasis> environment variable for custom component directories, separated by ':'."
+msgstr ""
+
+#: ibus.1.xml:128(emphasis)
+msgid "address"
+msgstr ""
+
+#: ibus.1.xml:130(para)
+msgid "Show the D-Bus address of ibus-daemon."
+msgstr ""
+
+#: ibus.1.xml:134(emphasis)
+msgid "read-config"
+msgstr ""
+
+#: ibus.1.xml:136(para)
+msgid "Print the setting values in a gsettings configuration file."
+msgstr ""
+
+#: ibus.1.xml:140(emphasis)
+msgid "reset-config"
+msgstr ""
+
+#: ibus.1.xml:142(para)
+msgid "Reset the user setting values to the default ones in a gsettings configuration file."
+msgstr ""
+
+#: ibus.1.xml:147(emphasis)
+msgid "watch"
+msgstr ""
+
+#: ibus.1.xml:149(para)
+msgid "Under construction."
+msgstr ""
+
+#: ibus.1.xml:156(title)
+msgid "BUGS"
+msgstr ""
+
+#: ibus.1.xml:157(para)
+msgid "If you find a bug, please report it at <ulink url=\"http://code.google.com/p/ibus/issues/list\">http://code.google.com/p/ibus/issues/list</ulink>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: ibus.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

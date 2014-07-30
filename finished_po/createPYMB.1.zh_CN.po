@@ -1,0 +1,112 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-30 23:42+0800\n"
+"PO-Revision-Date: 2014-07-30 23:32+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: createPYMB.1.xml:6(date) createPYMB.1.xml:10(refmiscinfo)
+msgid "2010-12-16"
+msgstr "2010-12-16"
+
+#: createPYMB.1.xml:8(refentrytitle)
+msgid "CREATEPYMB"
+msgstr "createPYMB"
+
+#: createPYMB.1.xml:9(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: createPYMB.1.xml:13(refname) createPYMB.1.xml:23(command)
+msgid "createPYMB"
+msgstr "createPYMB"
+
+#: createPYMB.1.xml:14(refname) createPYMB.1.xml:28(command)
+msgid "readPYBase"
+msgstr "readPYBase"
+
+#: createPYMB.1.xml:15(refname) createPYMB.1.xml:32(command)
+msgid "readPYMB"
+msgstr "readPYMB"
+
+#: createPYMB.1.xml:16(refname) createPYMB.1.xml:37(command)
+msgid "mb2org"
+msgstr "mb2org"
+
+#: createPYMB.1.xml:17(refname) createPYMB.1.xml:43(command)
+msgid "scel2org"
+msgstr "scel2org"
+
+#: createPYMB.1.xml:18(refpurpose)
+msgid "fcitx Pinyin related tools"
+msgstr "fcitx 拼音相关工具"
+
+#: createPYMB.1.xml:24(replaceable)
+msgid "&lt;PinyinFile&gt;"
+msgstr "&lt;拼音文件&gt;"
+
+#: createPYMB.1.xml:25(replaceable)
+msgid "&lt;PhraseFile&gt;"
+msgstr "&lt;词组文件&gt;"
+
+#: createPYMB.1.xml:28(replaceable) createPYMB.1.xml:37(replaceable)
+msgid "&lt;PinyinMBFile&gt;"
+msgstr "&lt;拼音码表文件&gt;"
+
+#: createPYMB.1.xml:28(arg) createPYMB.1.xml:37(arg)
+msgid "-b <placeholder-1/>"
+msgstr "-b <placeholder-1/>"
+
+#: createPYMB.1.xml:29(arg) createPYMB.1.xml:34(arg) createPYMB.1.xml:40(arg)
+#: createPYMB.1.xml:44(arg)
+msgid "-h"
+msgstr "-h"
+
+#: createPYMB.1.xml:32(replaceable) createPYMB.1.xml:38(replaceable)
+msgid "&lt;PhraseMBFile&gt;"
+msgstr "&lt;词组码表文件&gt;"
+
+#: createPYMB.1.xml:32(arg) createPYMB.1.xml:38(arg)
+msgid "-f <placeholder-1/>"
+msgstr "-f <placeholder-1/>"
+
+#: createPYMB.1.xml:33(arg) createPYMB.1.xml:39(arg)
+msgid "-s"
+msgstr "-s"
+
+#: createPYMB.1.xml:43(replaceable)
+msgid "&lt;Phrase"
+msgstr "&lt;词组"
+
+#: createPYMB.1.xml:43(arg)
+msgid "-o <placeholder-1/>"
+msgstr "-o <placeholder-1/>"
+
+#: createPYMB.1.xml:43(replaceable)
+msgid "File&gt;"
+msgstr "文件&gt;"
+
+#: createPYMB.1.xml:49(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: createPYMB.1.xml:52(option)
+msgid "-b &lt;PinyinMBFile&gt;"
+msgstr "-b &lt;拼音码表文件&gt;"
+
+#: createPYMB.1.xml:54(para)
+msgid "If not specified, it will read system default pybase.mb."
+msgstr "若未指定，其将读取系统默认的 pybase.mb。"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: createPYMB.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏  <marguerite@opensuse.org>, 2014"

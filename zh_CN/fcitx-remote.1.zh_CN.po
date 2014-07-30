@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2014-07-30 22:01+0800\n"
+"POT-Creation-Date: 2014-07-30 23:26+0800\n"
 "PO-Revision-Date: 2014-07-30 22:18+0800\n"
 "Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
 "Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 1.5\n"
 
@@ -83,9 +83,10 @@ msgstr "输入法名称"
 
 #: fcitx-remote.1.xml:54(para)
 msgid ""
-"switch to the input method uniquely identified by <emphasis remap=\"I\">"
-"imname</emphasis>"
-msgstr "切换到通过<emphasis remap=\"I\">输入法名称</emphasis>唯一标识的输入法。"
+"switch to the input method uniquely identified by <emphasis remap=\"I"
+"\">imname</emphasis>"
+msgstr ""
+"切换到通过<emphasis remap=\"I\">输入法名称</emphasis>唯一标识的输入法。"
 
 #: fcitx-remote.1.xml:58(term)
 msgid "[<emphasis remap=\"I\">no option</emphasis>]"
@@ -109,12 +110,12 @@ msgstr "文件"
 
 #: fcitx-remote.1.xml:73(para)
 msgid ""
-"fcitx will create socket at <filename>/tmp/fcitx-socket-&lt;displayname&gt;</f"
-"ilename>, so user must have permission to access <filename>/tmp</filename> "
+"fcitx will create socket at <filename>/tmp/fcitx-socket-&lt;displayname&gt;</"
+"filename>, so user must have permission to access <filename>/tmp</filename> "
 "folder."
 msgstr ""
-"fcitx 将在 <filename>/tmp/fcitx-socket-&lt;displayname&gt;</filename> "
-"创建套接字，因此用户必须有 <filename>/tmp</filename> 文件夹的访问权限。"
+"fcitx 将在 <filename>/tmp/fcitx-socket-&lt;displayname&gt;</filename> 创建套"
+"接字，因此用户必须有 <filename>/tmp</filename> 文件夹的访问权限。"
 
 #: fcitx-remote.1.xml:76(title)
 msgid "SEE ALSO"
@@ -122,19 +123,17 @@ msgstr "继续阅读"
 
 #: fcitx-remote.1.xml:77(para)
 msgid ""
-"Please see the homepage at <emphasis remap=\"B\"><ulink "
-"url=\"http://www.fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <"
-"emphasis remap=\"B\"><ulink url=\"http://fcitx.googlecode.com/\">"
-"http://fcitx.googlecode.com/</ulink></emphasis>"
+"Please see the homepage at <emphasis remap=\"B\"><ulink url=\"http://www."
+"fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <emphasis remap=\"B"
+"\"><ulink url=\"http://fcitx.googlecode.com/\">http://fcitx.googlecode.com/</"
+"ulink></emphasis>"
 msgstr ""
-"请访问我们位于 <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/\">"
-"http://www.fcitx-im.org/</ulink></emphasis> 和 <emphasis remap=\"B\"><ulink "
-"url=\"http://fcitx.googlecode.com/\">https://github.com/fcitx/</ulink><"
-"/emphasis> 的主页。"
+"请访问我们位于 <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/"
+"\">http://www.fcitx-im.org/</ulink></emphasis> 和 <emphasis remap=\"B"
+"\"><ulink url=\"http://fcitx.googlecode.com/\">https://github.com/fcitx/</"
+"ulink></emphasis> 的主页。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: fcitx-remote.1.xml:0(None)
 msgid "translator-credits"
 msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
-
-

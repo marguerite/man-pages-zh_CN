@@ -1,3 +1,7 @@
+2014-07-31  Marguerite Su <marguerite@opensuse.org> 1.5.2.1
+	
+	* add fcitx and ibus
+
 2011-07-09  LI Daobing <lidaobing@gmail.com>
 
 	* remove git.1.
@@ -7,5 +11,3 @@
 The old changelog for CMPP is in DOCS/ChangeLog.
 
 Thanks.
-
-# vim:ft=changelog:

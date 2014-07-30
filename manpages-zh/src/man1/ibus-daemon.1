@@ -1,0 +1,82 @@
+.\" -*- coding: UTF-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH ibus-daemon 1 "31 July 2014" "2010 年 4 月" 1.5.8
+.SH NAME
+\- ibus 的守护进程程序
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBibus-daemon\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[\fI选项\fR]…
+.br
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH 描述
+IBus 是一个智能输入总线。它是 Linux 操作系统的新输入法框架。它提供了全功能的、用户友好的输入法用户界面。它也可能帮助开发者轻松开发输入法。
+.PP
+\fBibus-daemon\fR 是一个 ibus 的守护进程程序，它也是一个用户激活 ibus 守护进程、引擎和面板的启动程序。
+.SS 帮助选项：
+.TP 
+\*(T<\fB\-h\fR\*(T>, \*(T<\fB\-\-help\fR\*(T>
+显示帮助选项
+.SS 应用程序选项：
+.TP 
+\*(T<\fB\-d\fR\*(T>, \*(T<\fB\-\-daemonize\fR\*(T>
+作为后台进程运行 ibus。
+.TP 
+\*(T<\fB\-s\fR\*(T>, \*(T<\fB\-\-single\fR\*(T>
+不执行面板和配置模块。
+.TP 
+\*(T<\fB\-x\fR\*(T>, \*(T<\fB\-\-xim\fR\*(T>
+执行 ibus XIM 服务器。
+.TP 
+\*(T<\fB\-n\fR\*(T>, \*(T<\fB\-\-desktop\fR\*(T>=\fI名称\fR
+指定桌面会话名称。[default=gnome]
+.TP 
+\*(T<\fB\-p\fR\*(T>, \*(T<\fB\-\-panel\fR\*(T>=\fIcmdline\fR
+指定面板程序的命令行。
+.TP 
+\*(T<\fB\-c\fR\*(T>, \*(T<\fB\-\-config\fR\*(T>=\fIcmdline\fR
+指定配置程序的命令行。
+.TP 
+\*(T<\fB\-a\fR\*(T>, \*(T<\fB\-\-address\fR\*(T>=\fI地址\fR
+指定 ibus 守护进程的地址。
+.TP 
+\*(T<\fB\-r\fR\*(T>, \*(T<\fB\-\-replace\fR\*(T>
+若有旧的 ibus-daemon 正在运行则替换之。
+.TP 
+\*(T<\fB\-t\fR\*(T>, \*(T<\fB\-\-cache\fR\*(T>=\fI模式\fR [默认为 auto]
+强制重新扫描部件，并重新创建注册表缓存。auto、refresh 和 none 可用。
+.TP 
+\*(T<\fB\-o\fR\*(T>, \*(T<\fB\-\-timeout\fR\*(T>=\fI超时\fR [默认为 2000]
+以毫秒计的 dbus 响应超时。
+.TP 
+\*(T<\fB\-j\fR\*(T>, \*(T<\fB\-\-monitor\-timeout\fR\*(T>=\fI超时\fR [默认为 0]
+以秒计的引擎轮询变化 (poll change) 超时。0 为禁用。
+.TP 
+\*(T<\fB\-m\fR\*(T>, \*(T<\fB\-\-mem\-profile\fR\*(T>
+启用内存方案，发送 SIGUSR2 来打印内存方案。
+.TP 
+\*(T<\fB\-v\fR\*(T>, \*(T<\fB\-\-verbose\fR\*(T>
+详细输出。
+.SH 故障
+若您发现了一个故障，请至 
+.URL http://codegoogle.com/p/ibus/issues/list http://code.google.com/p/ibus/issues/list
+汇报。
+.SH 继续阅读
+\fBibus\fR(1)
+.SH 中文版维护者
+.B 玛格丽特 · 苏 <marguerite@opensuse.org>
+.SH 中文版修订日期
+.BR 2014.07.31
+.SH openSUSE 社区中文手册页翻译计划
+.BI https://github.com/marguerite/man-pages-zh_CN

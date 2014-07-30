@@ -1,0 +1,75 @@
+.\" -*- coding: UTF-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH ibus 1 "31 July 2014" "2013 年 5 月" 1.5.8
+.SH NAME
+\- ibus 的命令行工具
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBibus\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+\fI命令\fR [\fI选项\fR]…
+.br
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH 描述
+IBus 是一个智能输入总线。它是 Linux 操作系统的新输入法框架。它提供了全功能的、用户友好的输入法用户界面。它也可能帮助开发者轻松开发输入法。
+.PP
+\fBibus\fR 是一个可以重启或退出 ibus-daemon、获得或设置当前 ibus 引擎或列出 ibus 引擎的命令行工具。
+.PP
+主页：〈http://code.google.com/p/ibus/〉
+.SH 命令
+.TP 
+\fI帮助\fR
+显示命令列表。
+.TP 
+\fIengine\fR [\fI引擎名\fR]
+当未给定\fI引擎名\fR时显示当前 ibus 引擎。 该命令可将\fI引擎名\fR设为当前 ibus 的引擎。
+.TP 
+\fIexit\fR
+退出 ibus-daemon。
+.TP 
+\fIlist-engine\fR
+显示 ibus 引擎列表。
+.TP 
+\fIrestart\fR
+重启 ibus-daemon。
+.TP 
+\fIversion\fR
+显示 ibus 版本。
+.TP 
+\fIread-cache\fR [\*(T<\fB\-\-system|\-\-file=文件\fR\*(T>]
+若未给定 \*(T<\fB\-\-system\fR\*(T> 则显示用户注册表缓存内容。 若给定 \*(T<\fB\-\-system\fR\*(T> 则显示系统注册表缓存内容。若给定 \*(T<\fB\-\-file=文件\fR\*(T> 则显示自定义注册表缓存\fI文件\fR 内容。
+.TP 
+\fIwrite-cache\fR [\*(T<\fB\-\-system|\-\-file=文件\fR\*(T>]
+若未给定 \*(T<\fB\-\-system\fR\*(T> 则保存用户注册表缓存。 若给定 \*(T<\fB\-\-system\fR\*(T> 则保存系统注册表缓存。若给定 \*(T<\fB\-\-file=文件\fR\*(T> 则保存自定义注册表缓存\fI文件\fR。
+
+默认情况下，它会从标准部件文件夹 (\*(T<\fI/usr/share/ibus/component\fR\*(T>) 读取部件 XML 文件，您也可以设置 \fIIBUS_COMPONENT_PATH\fR 环境变量来自定义部件文件夹，由 ':' 分隔。
+.TP 
+\fIaddress\fR
+显示 ibus-daemon 的 D-Bus 地址。
+.TP 
+\fIread-config\fR
+打印 gsettings 配置文件中的设置值。
+.TP 
+\fIreset-config\fR
+将用户设置值重置为 gsettings 配置文件中的默认值。
+.TP 
+\fIwatch\fR
+打造中。
+.SH 故障
+若您发现了一个故障，请至 〈http://code.google.com/p/ibus/issues/list〉 汇报。
+.SH 中文版维护者
+.B 玛格丽特 · 苏 <marguerite@opensuse.org>
+.SH 中文版修订日期
+.BR 2014.07.31
+.SH openSUSE 社区中文手册页翻译计划
+.BI https://github.com/marguerite/man-pages-zh_CN

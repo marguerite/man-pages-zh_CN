@@ -1,0 +1,45 @@
+.\" -*- coding: UTF-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH mb2txt 1 2010-12-16 "" ""
+.SH NAME
+mb2txt, txt2mb \- fcitx 码表相关工具
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBmb2txt\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+\fI<码表文件>\fR 
+'in \n(.iu-\nxu
+.ad b
+'hy
+'nh
+.fi
+.ad l
+\fBtxt2mb\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+\fI<纯文本文件>\fR 
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH 描述
+\fBmb2txt\fR 和 \fBtxt2mb\fR 是将码表文件在二进制格式和文本格式间转换的工具。fcitx 仅可使用二进制文件。 \fBmb2txt\fR 和 \fBtxt2mb\fR 将全部输出至 stdout。
+.SH 继续阅读
+请访问我们位于 \fI
+.URL http://www.fcitx.org/ http://www.fcitx-im.org/
+\fR和 \fI
+.URL http://fcitx.googlecode.com/ https://github.com/fcitx/
+\fR的主页。
+.SH 中文版维护者
+.B 玛格丽特 · 苏 <marguerite@opensuse.org>
+.SH 中文版修订日期
+.BR 2014.07.31
+.SH openSUSE 社区中文手册页翻译计划
+.BI https://github.com/marguerite/man-pages-zh_CN

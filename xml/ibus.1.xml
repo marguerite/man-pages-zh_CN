@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='ibus1'>
+<!-- This file is distributed under the same license as the ibus
+package.
+Copyright (C) Takao Fujiwara &lt;takao.fujiwara1@gmail.com&gt;, 2013.
+Copyright (c) Peng Huang &lt;shawn.p.huang@gmail.com&gt;, 2013. -->
+
+<refmeta>
+<refentrytitle>IBUS</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>May 2013</refmiscinfo>
+<refmiscinfo class='manual'>1.5.8</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname></refname>
+<refpurpose>command line utility for ibus</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>ibus</command>    
+    <arg choice='plain'><replaceable>COMMAND</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>OPTION</replaceable></arg>
+    
+    <sbr/>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>IBus is an Intelligent Input Bus. It is a new input framework for Linux
+OS. It provides full featured and user friendly input method user
+interface.  It also may help developers to develop input method easily.</para>  
+
+
+<para><command>ibus</command>
+is a command line utility which can restart or exit ibus-daemon,
+get or set the current ibus engine or list the ibus engines.</para>
+
+
+<para>Homepage: <ulink url='http://code.google.com/p/ibus/'>http://code.google.com/p/ibus/</ulink></para>
+
+</refsect1>
+
+<refsect1 id='command'><title>COMMAND</title>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='B'>help</emphasis></term>
+  <listitem>
+<para>Show the commands list.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>engine</emphasis> [<emphasis remap='B'>ENGINE_NAME</emphasis>]</term>
+  <listitem>
+<para>Show the curent ibus engine when
+<emphasis remap='B'>ENGINE_NAME</emphasis>
+is not given. Set 
+<emphasis remap='B'>ENGINE_NAME</emphasis>
+to the current ibus engine.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>exit</emphasis></term>
+  <listitem>
+<para>Exit ibus-daemon.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>list-engine</emphasis></term>
+  <listitem>
+<para>Show ibus engines list.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>restart</emphasis></term>
+  <listitem>
+<para>Restart ibus-daemon.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>version</emphasis></term>
+  <listitem>
+<para>Show the ibus version.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>read-cache</emphasis> [<option>--system|--file=FILE</option>]</term>
+  <listitem>
+<para>Show the content of the user registry cache if
+<option>--system</option>
+is not given.
+Show the content of the system registry cache if
+<option>--system</option>
+is given.
+Show the content of the custom registry cache 
+<emphasis remap='B'>FILE</emphasis>
+if
+<option>--file=FILE</option>
+is given.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>write-cache</emphasis> [<option>--system|--file=FILE</option>]</term>
+  <listitem>
+<para>Save the user registry cache if
+<option>--system</option>
+is not given.
+Save the system registry cache if
+<option>--system</option>
+is given.
+Save the custom registry cache
+<emphasis remap='B'>FILE</emphasis>
+if
+<option>--file=FILE</option>
+is given.</para>
+
+<para>By default, it reads the component XML files from the standard
+component directory (<filename>/usr/share/ibus/component</filename>), you can set
+<emphasis remap='I'>IBUS_COMPONENT_PATH</emphasis> environment variable for custom component
+directories, separated by ':'.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>address</emphasis></term>
+  <listitem>
+<para>Show the D-Bus address of ibus-daemon.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>read-config</emphasis></term>
+  <listitem>
+<para>Print the setting values in a gsettings configuration file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>reset-config</emphasis></term>
+  <listitem>
+<para>Reset the user setting values to the default ones in a gsettings
+configuration file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='B'>watch</emphasis></term>
+  <listitem>
+<para>Under construction.</para>
+
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='bugs'><title>BUGS</title>
+<para>If you find a bug, please report it at <ulink url='http://code.google.com/p/ibus/issues/list'>http://code.google.com/p/ibus/issues/list</ulink>.</para>
+</refsect1>
+</refentry>
+

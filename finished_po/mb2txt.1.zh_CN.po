@@ -1,0 +1,79 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-30 23:42+0800\n"
+"PO-Revision-Date: 2014-07-30 23:35+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: mb2txt.1.xml:6(date) mb2txt.1.xml:10(refmiscinfo)
+msgid "2010-12-16"
+msgstr "2010-12-16"
+
+#: mb2txt.1.xml:8(refentrytitle) mb2txt.1.xml:13(refname)
+#: mb2txt.1.xml:20(command)
+msgid "mb2txt"
+msgstr "mb2txt"
+
+#: mb2txt.1.xml:9(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: mb2txt.1.xml:14(refname) mb2txt.1.xml:23(command)
+msgid "txt2mb"
+msgstr "txt2mb"
+
+#: mb2txt.1.xml:15(refpurpose)
+msgid "fcitx table related tools"
+msgstr "fcitx 码表相关工具"
+
+#: mb2txt.1.xml:20(replaceable)
+msgid "&lt;mbfile&gt;"
+msgstr "&lt;码表文件&gt;"
+
+#: mb2txt.1.xml:23(replaceable)
+msgid "&lt;txtfile&gt;"
+msgstr "&lt;纯文本文件&gt;"
+
+#: mb2txt.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: mb2txt.1.xml:29(para)
+msgid ""
+"<command>mb2txt</command> and <command>txt2mb</command> are tools for "
+"transform table file between binary format and text format. fcitx can only "
+"use binary format. All output of <command>mb2txt</command> and "
+"<command>txt2mb</command> will be stdout."
+msgstr ""
+"<command>mb2txt</command> 和 <command>txt2mb</command> 是将码表文件在二进制格"
+"式和文本格式间转换的工具。fcitx 仅可使用二进制文件。 <command>mb2txt</"
+"command> 和 <command>txt2mb</command> 将全部输出至 stdout。"
+
+#: mb2txt.1.xml:40(title)
+msgid "SEE ALSO"
+msgstr "继续阅读"
+
+#: mb2txt.1.xml:41(para)
+msgid ""
+"Please see the homepage at <emphasis remap=\"B\"><ulink url=\"http://www."
+"fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <emphasis remap=\"B"
+"\"><ulink url=\"http://fcitx.googlecode.com/\">http://fcitx.googlecode.com/</"
+"ulink></emphasis>"
+msgstr ""
+"请访问我们位于 <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/"
+"\">http://www.fcitx-im.org/</ulink></emphasis> 和 <emphasis remap=\"B"
+"\"><ulink url=\"http://fcitx.googlecode.com/\">https://github.com/fcitx/</"
+"ulink></emphasis> 的主页。"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: mb2txt.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 ·苏 <marguerite@opensuse.org>, 2014"

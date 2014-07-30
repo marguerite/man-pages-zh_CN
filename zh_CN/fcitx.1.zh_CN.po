@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2014-07-30 22:01+0800\n"
+"POT-Creation-Date: 2014-07-30 23:26+0800\n"
 "PO-Revision-Date: 2014-07-30 22:14+0800\n"
 "Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
 "Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 1.5\n"
 
@@ -52,8 +52,8 @@ msgid ""
 "to depend on any Desktop Environment. It includes Pinyin and Table for input "
 "by default, but it can also support other Input Method."
 msgstr ""
-"<command>fcitx</command> 是一个用于 XIM 的中文输入法框架，有意地设计为不依赖任何桌面环境。它默认包含了拼音和码表输入法，但也支"
-"持其它输入法。"
+"<command>fcitx</command> 是一个用于 XIM 的中文输入法框架，有意地设计为不依赖"
+"任何桌面环境。它默认包含了拼音和码表输入法，但也支持其它输入法。"
 
 #: fcitx.1.xml:33(title)
 msgid "OPTIONS"
@@ -157,7 +157,8 @@ msgid ""
 "otherwise it will run with im name fcitx."
 msgstr ""
 "若设置了 $<emphasis remap=\"B\">XMODIFIERS</emphasis>，fcitx 将以 $<emphasis "
-"remap=\"B\">XMODIFIERS</emphasis> 中指定的名称运行，否则将以 fcitx 这个输入法名称运行。"
+"remap=\"B\">XMODIFIERS</emphasis> 中指定的名称运行，否则将以 fcitx 这个输入法"
+"名称运行。"
 
 #: fcitx.1.xml:107(title)
 msgid "SEE ALSO"
@@ -165,19 +166,17 @@ msgstr "继续阅读"
 
 #: fcitx.1.xml:108(para)
 msgid ""
-"Please see the homepage at <emphasis remap=\"B\"><ulink "
-"url=\"http://www.fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <"
-"emphasis remap=\"B\"><ulink url=\"http://fcitx.googlecode.com/\">"
-"http://fcitx.googlecode.com/</ulink></emphasis>"
+"Please see the homepage at <emphasis remap=\"B\"><ulink url=\"http://www."
+"fcitx.org/\">http://www.fcitx.org/</ulink></emphasis> and <emphasis remap=\"B"
+"\"><ulink url=\"http://fcitx.googlecode.com/\">http://fcitx.googlecode.com/</"
+"ulink></emphasis>"
 msgstr ""
-"请访问我们位于 <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/\">"
-"http://www.fcitx-im.org/</ulink></emphasis> 和 <emphasis remap=\"B\"><ulink "
-"url=\"http://fcitx.googlecode.com/\">https://github.com/fcitx/</ulink><"
-"/emphasis> 的主页。"
+"请访问我们位于 <emphasis remap=\"B\"><ulink url=\"http://www.fcitx.org/"
+"\">http://www.fcitx-im.org/</ulink></emphasis> 和 <emphasis remap=\"B"
+"\"><ulink url=\"http://fcitx.googlecode.com/\">https://github.com/fcitx/</"
+"ulink></emphasis> 的主页。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: fcitx.1.xml:0(None)
 msgid "translator-credits"
 msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
-
-

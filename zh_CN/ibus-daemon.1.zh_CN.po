@@ -1,0 +1,240 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-30 23:42+0800\n"
+"PO-Revision-Date: 2014-07-31 00:05+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ibus-daemon.1.xml:12(refentrytitle)
+msgid "IBUS-DAEMON"
+msgstr "ibus-daemon"
+
+#: ibus-daemon.1.xml:13(manvolnum) ibus-daemon.1.xml:147(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: ibus-daemon.1.xml:14(refmiscinfo)
+msgid "April 2010"
+msgstr "2010 年 4 月"
+
+#: ibus-daemon.1.xml:15(refmiscinfo)
+msgid "1.5.8"
+msgstr "1.5.8"
+
+#: ibus-daemon.1.xml:19(refpurpose)
+msgid "daemon program for ibus"
+msgstr "ibus 的守护进程程序"
+
+#: ibus-daemon.1.xml:24(command)
+msgid "ibus-daemon"
+msgstr "ibus-daemon"
+
+#: ibus-daemon.1.xml:25(replaceable)
+msgid "OPTION"
+msgstr "选项"
+
+#: ibus-daemon.1.xml:32(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: ibus-daemon.1.xml:33(para)
+msgid ""
+"IBus is an Intelligent Input Bus. It is a new input framework for Linux OS. "
+"It provides full featured and user friendly input method user interface. It "
+"also may help developers to develop input method easily."
+msgstr ""
+"IBus 是一个智能输入总线。它是 Linux 操作系统的新输入法框架。它提供了全功能的、用户友好的输入法用户界面。它也可能帮助开发者轻松开发输入法。"
+
+#: ibus-daemon.1.xml:38(para)
+msgid ""
+"<command>ibus-daemon</command> is a daemon program for ibus and it is also a "
+"start up program for users to activate ibus daemon, engines and panel."
+msgstr ""
+"<command>ibus-daemon</command> 是一个 ibus 的守护进程程序，它也是一个用户激活 ibus "
+"守护进程、引擎和面板的启动程序。"
+
+#: ibus-daemon.1.xml:43(title)
+msgid "Help Options:"
+msgstr "帮助选项："
+
+#: ibus-daemon.1.xml:46(term)
+msgid "<option>-h</option>, <option>--help</option>"
+msgstr "<option>-h</option>, <option>--help</option>"
+
+#: ibus-daemon.1.xml:48(para)
+msgid "Show help options"
+msgstr "显示帮助选项"
+
+#: ibus-daemon.1.xml:55(title)
+msgid "Application Options:"
+msgstr "应用程序选项："
+
+#: ibus-daemon.1.xml:58(term)
+msgid "<option>-d</option>, <option>--daemonize</option>"
+msgstr "<option>-d</option>, <option>--daemonize</option>"
+
+#: ibus-daemon.1.xml:60(para)
+msgid "run ibus as background process."
+msgstr "作为后台进程运行 ibus。"
+
+#: ibus-daemon.1.xml:64(term)
+msgid "<option>-s</option>, <option>--single</option>"
+msgstr "<option>-s</option>, <option>--single</option>"
+
+#: ibus-daemon.1.xml:66(para)
+msgid "do not execute panel and config module."
+msgstr "不执行面板和配置模块。"
+
+#: ibus-daemon.1.xml:70(term)
+msgid "<option>-x</option>, <option>--xim</option>"
+msgstr "<option>-x</option>, <option>--xim</option>"
+
+#: ibus-daemon.1.xml:72(para)
+msgid "execute ibus XIM server."
+msgstr "执行 ibus XIM 服务器。"
+
+#: ibus-daemon.1.xml:76(term)
+msgid ""
+"<option>-n</option>, <option>--desktop</option>=<emphasis remap=\"I\">name<"
+"/emphasis>"
+msgstr ""
+"<option>-n</option>, <option>--desktop</option>=<emphasis remap=\"I\">名称<"
+"/emphasis>"
+
+#: ibus-daemon.1.xml:78(para)
+msgid "specify the name of desktop session. [default=gnome]"
+msgstr "指定桌面会话名称。[default=gnome]"
+
+#: ibus-daemon.1.xml:82(term)
+msgid ""
+"<option>-p</option>, <option>--panel</option>=<emphasis remap=\"I\">cmdline<"
+"/emphasis>"
+msgstr ""
+"<option>-p</option>, <option>--panel</option>=<emphasis remap=\"I\">cmdline<"
+"/emphasis>"
+
+#: ibus-daemon.1.xml:84(para)
+msgid "specify the cmdline of panel program."
+msgstr "指定面板程序的命令行。"
+
+#: ibus-daemon.1.xml:88(term)
+msgid ""
+"<option>-c</option>, <option>--config</option>=<emphasis remap=\"I\">cmdline<"
+"/emphasis>"
+msgstr ""
+"<option>-c</option>, <option>--config</option>=<emphasis remap=\"I\">cmdline<"
+"/emphasis>"
+
+#: ibus-daemon.1.xml:90(para)
+msgid "specify the cmdline of config program."
+msgstr "指定配置程序的命令行。"
+
+#: ibus-daemon.1.xml:94(term)
+msgid ""
+"<option>-a</option>, <option>--address</option>=<emphasis remap=\"I\">"
+"address</emphasis>"
+msgstr ""
+"<option>-a</option>, <option>--address</option>=<emphasis remap=\"I\">地址<"
+"/emphasis>"
+
+#: ibus-daemon.1.xml:96(para)
+msgid "specify the address of ibus daemon."
+msgstr "指定 ibus 守护进程的地址。"
+
+#: ibus-daemon.1.xml:100(term)
+msgid "<option>-r</option>, <option>--replace</option>"
+msgstr "<option>-r</option>, <option>--replace</option>"
+
+#: ibus-daemon.1.xml:102(para)
+msgid "if there is an old ibus-daemon is running, it will be replaced."
+msgstr "若有旧的 ibus-daemon 正在运行则替换之。"
+
+#: ibus-daemon.1.xml:106(term)
+msgid ""
+"<option>-t</option>, <option>--cache</option>=<emphasis remap=\"I\">mode<"
+"/emphasis> [default is auto]"
+msgstr ""
+"<option>-t</option>, <option>--cache</option>=<emphasis remap=\"I\">模式<"
+"/emphasis> [默认为 auto]"
+
+#: ibus-daemon.1.xml:108(para)
+msgid ""
+"force to re-scan components, and re-create registry cache. auto, refresh, "
+"none is available."
+msgstr "强制重新扫描部件，并重新创建注册表缓存。auto、refresh 和 none 可用。"
+
+#: ibus-daemon.1.xml:113(term)
+msgid ""
+"<option>-o</option>, <option>--timeout</option>=<emphasis remap=\"I\">"
+"timeout</emphasis> [default is 2000]"
+msgstr ""
+"<option>-o</option>, <option>--timeout</option>=<emphasis remap=\"I\">超时<"
+"/emphasis> [默认为 2000]"
+
+#: ibus-daemon.1.xml:115(para)
+msgid "dbus reply timeout in milliseconds."
+msgstr "以毫秒计的 dbus 响应超时。"
+
+#: ibus-daemon.1.xml:119(term)
+msgid ""
+"<option>-j</option>, <option>--monitor-timeout</option>=<emphasis remap=\"I\">"
+"timeout</emphasis> [default is 0]"
+msgstr ""
+"<option>-j</option>, <option>--monitor-timeout</option>=<emphasis remap=\"I\">"
+"超时</emphasis> [默认为 0]"
+
+#: ibus-daemon.1.xml:121(para)
+msgid "timeout of poll changes of engines in seconds. 0 to disable it."
+msgstr "以秒计的引擎轮询变化 (poll change) 超时。0 为禁用。"
+
+#: ibus-daemon.1.xml:125(term)
+msgid "<option>-m</option>, <option>--mem-profile</option>"
+msgstr "<option>-m</option>, <option>--mem-profile</option>"
+
+#: ibus-daemon.1.xml:127(para)
+msgid "enable memory profile, send SIGUSR2 to print out the memory profile."
+msgstr "启用内存方案，发送 SIGUSR2 来打印内存方案。"
+
+#: ibus-daemon.1.xml:131(term)
+msgid "<option>-v</option>, <option>--verbose</option>"
+msgstr "<option>-v</option>, <option>--verbose</option>"
+
+#: ibus-daemon.1.xml:133(para)
+msgid "verbose."
+msgstr "详细输出。"
+
+#: ibus-daemon.1.xml:141(title)
+msgid "BUGS"
+msgstr "故障"
+
+#: ibus-daemon.1.xml:142(para)
+msgid ""
+"If you find a bug, please report it at <ulink "
+"url=\"http://code.google.com/p/ibus/issues/list\">"
+"http://code.google.com/p/ibus/issues/list</ulink>"
+msgstr ""
+"若您发现了一个故障，请至 <ulink url=\"http://codegoogle.com/p/ibus/issues/list\">"
+"http://code.google.com/p/ibus/issues/list</ulink> 汇报。"
+
+#: ibus-daemon.1.xml:146(title)
+msgid "SEE ALSO"
+msgstr "继续阅读"
+
+#: ibus-daemon.1.xml:147(refentrytitle)
+msgid "ibus"
+msgstr "ibus"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: ibus-daemon.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+
+

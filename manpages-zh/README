@@ -1,3 +1,15 @@
+This project now has been forked by openSUSE Chinese Team now called:
+
+man-pages-zh_CN.
+
+it will regularly add new manpages and maintain existing ones.
+
+Now we just added something without touching its layout.
+
+A few cleanups may be coming in the future.
+
+-----------------------------------------------------------------------
+
 本项目的主页为: http://code.google.com/p/manpages-zh/
 
 本项目(manpages-zh)为 i18n-zh 项目[1]的子项，从 CMPP (中文 Man Pages 计
