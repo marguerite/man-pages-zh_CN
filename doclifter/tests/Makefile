@@ -1,4 +1,6 @@
 # Regression tests for doclifter
+TESTDIRPARENT=/tmp
+UTILBINDIR=..
 
 TESTLOADS := $(shell ls *.man | sed '/.man/s///')
 
@@ -8,13 +10,13 @@ test: regress
 rebuild:
 	@for file in $(TESTLOADS); do \
 	    echo "Remaking $${file}.chk"; \
-	    ../doclifter <$${file}.man >$${file}.chk 2>&1; \
+	    $(UTILBINDIR)/doclifter <$${file}.man >$${file}.chk 2>&1; \
 	done
 regress:
 	@for file in $(TESTLOADS); do \
 	    echo $${file}; \
-	    if ../doclifter <$${file}.man >/tmp/regress$$; \
-	    then diff -u /tmp/regress$$ $${file}.chk; \
+	    if $(UTILBINDIR)/doclifter <$${file}.man >$(TESTDIRPARENT)/regress$$; \
+	    then diff -u $${file}.chk $(TESTDIRPARENT)/regress$$; \
 	    else echo "*** Nonzero return status on $${file}!"; exit 1; fi \
 	done
-	@rm -f /tmp/regress
+	@rm -f $(TESTDIRPARENT)/regress

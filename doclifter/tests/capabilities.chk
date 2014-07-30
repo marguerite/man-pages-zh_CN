@@ -2,7 +2,7 @@
 <!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
                    "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <!-- lifted from man+troff by doclifter -->
-<refentry>
+<refentry id='stdin'>
 <!-- Copyright (c) 2002 by Michael Kerrisk &lt;mtk.manpages@gmail.com&gt; -->
 
 <!-- Permission is granted to make and distribute verbatim copies of this

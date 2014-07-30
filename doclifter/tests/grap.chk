@@ -2,7 +2,7 @@
 <!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
                    "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <!-- lifted from mdoc+troff by doclifter -->
-<refentry>
+<refentry id='stdin'>
 <!-- &bsol;-*&bsol;-nroff&bsol;-*&bsol;-
 This file is (c) 1998&bsol;-2006 Ted Faber (faber@lunabase.org) see
 COPYRIGHT for the full copyright and limitations of liabilities. -->
@@ -1117,9 +1117,13 @@ inserts a separator (;) after the last character in
 <replaceable>block</replaceable>,
 so constructs like</para> 
 <programlisting remap='Bd'>
+<funcsynopsis>
+<funcsynopsisinfo>
 if (x == 3) { y = y + 1 }
 x = x + 1
 
+</funcsynopsisinfo>
+</funcsynopsis>
 </programlisting> <!-- remap='Ed (block)' -->
 <para>behave as expected.  A separator is also appended to the end of a
 <command remap='Ic'>for</command>

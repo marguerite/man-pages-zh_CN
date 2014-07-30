@@ -1,0 +1,29 @@
+# This is not a real Debian control file
+# It's project metadata for the shipper tool
+
+Package: doclifter
+
+Description: lift documents in nroff markups to XML-DocBook
+ Lifting documents from presentation level to semantic level is hard,
+ and a really good job requires human polishing.  This tool aims to do
+ everything that can be mechanized, and to preserve any troff-level
+ information that might have structural implications in XML comments.
+ This tool does the hard parts.  TBL tables are translated into DocBook
+ table markup, PIC into SVG, and EQN into MathML (relying on pic2svg
+ and GNU eqn for the last two).
+
+XBS-Destinations: freecode
+
+Homepage: http://www.catb.org/~esr/doclifter
+
+XBS-HTML-Target: index.html
+
+Gitorious-URL: https://gitorious.org/doclifter
+
+XBS-Logo: doclifter-logo.png
+
+XBS-Freecode-Tags: nroff, troff, man, mm, pic, eqn, DocBook, SVG
+
+XBS-VC-Tag-Template: %(version)s
+
+XBS-Validate: make check

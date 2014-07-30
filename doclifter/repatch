@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+# Redo a patch that applied successfully but with an offset
+# Give this a page and section as argument, e.g. "as.1".
+import os, sys
+
+page = sys.argv[1]
+patch = page + ".patch"
+fields = page.split(".")
+stem = ".".join(fields[:-1])
+section = fields[-1]
+os.system("manlifter -s %s %s" % (section, stem))
+os.rename("foobar.man", page + "-patched")	# Save the patched version
+os.rename("prepatch/" + patch, patch + "-old") 
+os.system("manlifter -s %s %s" % (section, stem))
+os.rename("foobar.man", page + "-unpatched")	# Save the unpatched version
+os.rename(page + "-patched", page)
+os.system("diff -u %s-unpatched %s >prepatch/%s" % (page, page, patch))
+os.remove(page + "-unpatched")
+os.remove(page)

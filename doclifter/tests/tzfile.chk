@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='stdin'>
+<!-- @(#)tzfile.5	7.11
+This file is in the public domain, so clarified as of
+1996&bsol;-06&bsol;-05 by Arthur David Olson &lt;arthur_david_olson@nih.gov&gt;. -->
+<refentryinfo><date>2012-05-04</date></refentryinfo>
+<refmeta>
+<refentrytitle>TZFILE</refentrytitle>
+<manvolnum>5</manvolnum>
+<refmiscinfo class='date'>2012-05-04</refmiscinfo>
+<refmiscinfo class='manual'>Linux Programmer's Manual</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>tzfile</refname>
+<refpurpose>timezone information</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This page describes the structure of the timezone files used by
+<citerefentry><refentrytitle>tzset</refentrytitle><manvolnum>3</manvolnum></citerefentry>.
+These files are typically found under one of the directories
+<filename>/usr/lib/zoneinfo</filename>
+or
+<filename>/usr/share/zoneinfo</filename>.</para>
+
+<para>Timezone information files
+begin with the magic characters "TZif" to identify them as
+timezone information files,
+followed by a character identifying the version of the file's format
+(as of 2005, either an ASCII NUL (&apos;'&bsol;0&apos;') or a &apos;'2&apos;')
+followed by fifteen bytes containing zeros reserved for future use,
+followed by six four-byte values of type
+<emphasis remap='I'>long</emphasis>,
+written in a "standard" byte order
+(the high-order byte of the value is written first).
+These values are,
+in order:</para>
+<variablelist remap='TP'>
+  <varlistentry>
+  <term><emphasis remap='I'>tzh_ttisgmtcnt</emphasis></term>
+  <listitem>
+<para>The number of UTC/local indicators stored in the file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>tzh_ttisstdcnt</emphasis></term>
+  <listitem>
+<para>The number of standard/wall indicators stored in the file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>tzh_leapcnt</emphasis></term>
+  <listitem>
+<para>The number of leap seconds for which data is stored in the file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>tzh_timecnt</emphasis></term>
+  <listitem>
+<para>The number of "transition times" for which data is stored
+in the file.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>tzh_typecnt</emphasis></term>
+  <listitem>
+<para>The number of "local time types" for which data is stored
+in the file (must not be zero).</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term><emphasis remap='I'>tzh_charcnt</emphasis></term>
+  <listitem>
+<para>The number of characters of "timezone abbreviation strings"
+stored in the file.</para>
+
+<para>The above header is followed by
+<emphasis remap='I'>tzh_timecnt</emphasis>
+four-byte values of type
+<emphasis remap='I'>long</emphasis>,
+sorted in ascending order.
+These values are written in "standard" byte order.
+Each is used as a transition time (as returned by
+<citerefentry><refentrytitle>time</refentrytitle><manvolnum>2</manvolnum></citerefentry>)
+at which the rules for computing local time change.
+Next come
+<emphasis remap='I'>tzh_timecnt</emphasis>
+one-byte values of type
+<emphasis remap='I'>unsigned char</emphasis>;
+each one tells which of the different types of "local time" types
+described in the file is associated with the same-indexed transition time.
+These values serve as indices into an array of
+<emphasis remap='I'>ttinfo</emphasis>
+structures (with
+<emphasis remap='I'>tzh_typecnt</emphasis>
+entries) that appear next in the file;
+these structures are defined as follows:</para>
+<!-- in +4n
+in +4n -->
+<programlisting remap='.nf'>
+struct ttinfo {
+    long         tt_gmtoff;
+    int          tt_isdst;
+    unsigned int tt_abbrind;
+};
+</programlisting> <!-- .fi -->
+
+<para>Each structure is written as a four-byte value for
+<emphasis remap='I'>tt_gmtoff</emphasis>
+of type
+<emphasis remap='I'>long</emphasis>,
+in a standard byte order, followed by a one-byte value for
+<emphasis remap='I'>tt_isdst</emphasis>
+and a one-byte value for
+<emphasis remap='I'>tt_abbrind</emphasis>.
+In each structure,
+<emphasis remap='I'>tt_gmtoff</emphasis>
+gives the number of seconds to be added to UTC,
+<emphasis remap='I'>tt_isdst</emphasis>
+tells whether
+<emphasis remap='I'>tm_isdst</emphasis>
+should be set by
+<citerefentry><refentrytitle>localtime</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+and
+<emphasis remap='I'>tt_abbrind</emphasis>
+serves as an index into the array of timezone abbreviation characters
+that follow the
+<emphasis remap='I'>ttinfo</emphasis>
+structure(s) in the file.</para>
+
+<para>Then there are
+<emphasis remap='I'>tzh_leapcnt</emphasis>
+pairs of four-byte values, written in standard byte order;
+the first value of each pair gives the time
+(as returned by
+<citerefentry><refentrytitle>time</refentrytitle><manvolnum>2</manvolnum></citerefentry>)
+at which a leap second occurs;
+the second gives the
+<emphasis remap='I'>total</emphasis>
+number of leap seconds to be applied after the given time.
+The pairs of values are sorted in ascending order by time.</para>
+
+<para>Then there are
+<emphasis remap='I'>tzh_ttisstdcnt</emphasis>
+standard/wall indicators, each stored as a one-byte value;
+they tell whether the transition times associated with local time types
+were specified as standard time or wall clock time,
+and are used when a timezone file is used in handling POSIX-style
+timezone environment variables.</para>
+
+<para>Finally, there are
+<emphasis remap='I'>tzh_ttisgmtcnt</emphasis>
+UTC/local indicators, each stored as a one-byte value;
+they tell whether the transition times associated with local time types
+were specified as UTC or local time,
+and are used when a timezone file is used in handling POSIX-style
+timezone environment variables.</para>
+
+<para><citerefentry><refentrytitle>localtime</refentrytitle><manvolnum>3</manvolnum></citerefentry>
+uses the first standard-time
+<emphasis remap='I'>ttinfo</emphasis>
+structure in the file
+(or simply the first
+<emphasis remap='I'>ttinfo</emphasis>
+structure in the absence of a standard-time structure)
+if either
+<emphasis remap='I'>tzh_timecnt</emphasis>
+is zero or the time argument is less than the first transition time recorded
+in the file.</para>
+<!-- <ulink url='http://bugs.debian.org/cgi&bsol;-bin/bugreport.cgi'>http://bugs.debian.org/cgi&bsol;-bin/bugreport.cgi</ulink>?bug=122906#47
+Reviewed by upstream and rejected, May 2012 -->
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id='notes'><title>NOTES</title>
+<para>This manual page documents
+<emphasis remap='I'>&lt;tzfile.h&gt;</emphasis>
+in the glibc source archive, see
+<emphasis remap='I'>timezone/tzfile.h</emphasis>.</para>
+
+<para>It seems that timezone uses
+<emphasis remap='B'>tzfile</emphasis>
+internally, but glibc refuses to expose it to userspace.  This is most
+likely because the standardised functions are more useful and
+portable, and actually documented by glibc.  It may only be in glibc
+just to support the non-glibc-maintained timezone data (which is
+maintained by some other entity).</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<para><citerefentry><refentrytitle>time</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>gettimeofday</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>tzset</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>ctime</refentrytitle><manvolnum>3</manvolnum></citerefentry></para>
+<!-- .BR newctime (3)
+End of patch -->
+
+<para>For version-2-format timezone files,
+the above header and data is followed by a second header and data,
+identical in format except that
+eight bytes are used for each transition time or leap-second time.
+After the second header and data comes a newline-enclosed,
+POSIX-TZ-environment-variable-style string for use in handling instants
+after the last transition time stored in the file
+(with nothing between the newlines if there is no POSIX representation for
+such instants).</para>
+</refsect1>
+
+<refsect1 id='see_also2'><title>SEE ALSO</title>
+<para><citerefentry><refentrytitle>ctime</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>tzset</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+<citerefentry><refentrytitle>tzselect</refentrytitle><manvolnum>8</manvolnum></citerefentry>,</para>
+
+<para><emphasis remap='I'>timezone/tzfile.h</emphasis>
+in the glibc source tree</para>
+</refsect1>
+
+<refsect1 id='colophon'><title>COLOPHON</title>
+<para>This page is part of release 3.44 of the Linux
+<emphasis remap='I'>man-pages</emphasis>
+project.
+A description of the project,
+and information about reporting bugs,
+can be found at
+<ulink url='http://www.kernel.org/doc/man-pages/'>http://www.kernel.org/doc/man-pages/</ulink>.</para>
+</refsect1>
+</refentry>
+

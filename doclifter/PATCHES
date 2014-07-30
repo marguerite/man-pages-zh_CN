@@ -1,0 +1,397 @@
+# All known problems with the manual pages in a desktop Ubuntu installation
+#
+# Send 1 was on 09 Dec 2003
+# Send 2 was on 17 Feb 2004
+# Send 3 was on 11 Jul 2004
+# Send 4 was on 20 Nov 2004
+# Send 5 was on 14 Jan 2005
+# Send 6 was on 01 Jan 2007
+# Send 7 was on 18 Jun 2013
+#
+A	Dot or single-quote at start of line turns it into a garbage command.
+	This is a serious error; some lines of your page get silently lost 
+	when it is formatted.
+B	( ) notation for mandatory parts of command syntax should be { }.
+C	Broken command synopsis syntax.  This may mean you're using a 
+	construction in the command synopsis other than the standard 
+	[ ] | { }, or it may mean you have running text in the command synopsis
+ 	section (the latter is not technically an error, but most cases of it
+	are impossible to translate into DocBook markup), or it may mean the 
+	command syntax fails to match the description.
+D	Non-break space prevents doclifter from incorrectly interpreting
+	"Feature Test" as end of function synopsis.
+E	My translator trips over a useless command in list markup. 
+F	This looks like a build intermediate that was included in the
+	shipped manual pages by mistake
+G	Spurious trailing .CE
+H	Renaming SYNOPSIS because either (a) third-party viewers and 
+	translators will try to interpret it as a command synopsis and become 
+	confused, or (b) it actually needs to be named "SYNOPSIS" with no 
+	modifier for function protoypes to be properly recognized.
+I	Use of low-level troff hackery to set special indents or breaks can't 
+	be translated. The page will have rendering faults in HTML, and 
+	probably also under third-party man page browsers such as Xman, 
+	Rosetta, and the KDE help browser.  This patch eliminates .br, .ta, .ti,
+	.ce, .in, and \h in favor of requests like .RS/.RE that have
+	structural translations.
+J	Ambiguous or invalid backslash.  This doesn't cause groff a problem.
+	but it confuses doclifter and may confuse older troff implementations.
+K	Renaming stock man macros throws warnings in doclifter and is likely 
+	to cause failures on third-party manual browsers.  Please redo this 
+	page so it uses distinct names for the custom macros.
+L	List syntax error. This means .IP, .TP or .RS/.RE markup is garbled.
+	Common causes include .TP just before a section header, .TP entries
+	with tags but no bodies, and mandoc lists with no trailing .El.
+	These confuse doclifter, and may also mess up stricter man-page 
+	browsers like Xman and Rosetta.
+M	Synopsis section name changed to avoid triggering command-synopsis
+	parsing.
+N	Extraneous . at start of line.
+O	Wrong order of arguments in .Dd macro.
+Q	Spelling error or typo.
+R	.ce markup can't be structurally translated, and is likely
+	to cause rendering flaws in generated HTML.
+S	DEPRECATED: in function syntax cannot be translated.  Also, the
+	code and examples need to be marked up better.
+T	Junk at the beginning of the manual page.
+U	Unbalanced group in command synopis. You probably forgot 
+	to open or close a [ ] or { } group properly.	
+V	Missing body content in list trips up doclifter and is likely to
+	cause rendering problems in other viewers.  I have been able to fill
+	in what was missing except for what should be under TAR_LONGLINK_100.
+W	Missing or garbled name section.  The most common form of garbling
+	is a missing - or extra -. Or your manual page may have been generated
+	by a tool that doesn't emit a NAME section as it should.  Or your page
+	may add running text such as a version or authorship banner.  These 
+	problems make it impossible to lift the page to DocBook.  They
+	can also confuse third-party manpage browsers and some implementations 
+	of man -k.
+X	Unknown or invalid macro.  That is, one that does not fit in the
+	macro set that the man page seems to be using.  This is a serious
+	error; it often means part of your text is being lost or rendered
+	incorrectly.
+Y	I have been unable to identify an upstream maintainer for this
+	Ubuntu/Debian package, and am notifying the generic "Maintainer"
+	address in the package.  Please forward appropriately.  Also
+	fix the package metadata so it identifies the upstream maintainers.
+Z	Your Synopsis is exceptionally creative.  Unfortunately, that means 
+	it cannot be translated to structural markup even when things like
+	running-text inclusions have been moved elswhere.
+b	Attempt to interpolate unknown string.
+d	.eo/.ec and complex tab-stop hackery can't be translated to XML/HTML
+	and are almost certain to confuse third-party readers such as
+	Rosetta and Xman.
+e	Macro definitions in the NAME section confuse doclifter and are
+	likely to screw up third-party man viewers with their own parsers.
+g	Use of a double quote for inch measurements often confuses people
+	who aren't from the Anglosphere.
+h	.in arguments were swapped.
+i	Non-ASCII character in document synopsis can't be parsed.
+j	Parenthesized comments in command synopsis.  This is impossible
+	to translate to DocBook.
+m	Contains a request or escape that is outside the portable subset that 
+        can be rendered by non-groff viewers such as the KDE and GNOME help 
+	browsers.
+o	TBL markup not used where it should be.  Tables stitched together
+	with .ta or list requests can't be lifted to DocBook and will often
+	choke third-party viewers such as TKMan, XMan, Rosetta, etc.
+p	Synopsis was incomplete and somewhat garbled.
+q	Unused macro causes parsing problems.
+r	I supplied a missing mail address. Without it, the .TP at the end of the
+	authors list was ill-formed.
+s	Changed page to use the .URL macro now preferred on man(7).
+t	Synopsis has to be immediately after NAME section for DocBook 
+	translation to work.
+u	Use local definitions of .EX/.EE or .DS/.DE to avoid low-level troff
+	requests in the page body.  There are plans to add these to groff man;
+	in the interim, this patch adds a compatible definition to your page.
+w	.SS markup in name section seriously confuses parsing, and sections
+	don't follow standard naming conventions.
+x	Syntax had to be rearranged because of an options callout.
+	This is still excessively complicated; third-party man-page
+	viewers are likely to choke on it.
+y	This page was generated from some sort of non-man markup.  Please
+        fix the upstream markup so that it generates a well-formed
+        manual page with the indicated corrections.
+z	Garbled or missing text near .SS tags. It's not clear to me what's
+	going on here, but .SS tags on adjacent lines defeat any attempt
+	to parse the markup.  I have inserted text lines indicating that
+	something needs to be written here.
+1	.MT was not properly closed by .ME.
+2	Removed unnecessary \c that confused the doclifter parser.
+3       Use of .RS/RE or man/mandoc list markup to produce indentation in
+	examples and screenshots makes structural translation
+	impossible.  This bug is also likely to confuse third-party
+	man-page browsers.
+4	\c is an obscure feature; third-party viewers sometimes don't 
+	intepret it. Plain \ is safer. 
+5	Two-digit year in .Dd macro.
+6	Presentation-level use of SS could not be structurally 
+	translated. I changed lower-level instances to .TP.
+7	This page wins an award for exceptionally creative and perverse
+	abuse of list syntax.
+8	C function syntax has extra paren.
+9	I replaced '-->' with a troff right arrow, which doclifter will 
+	translate properly to an XML/HTML arrow glyph.
+0	Function declarations had to be modified in order to fit into
+	the DocBook DTD. This is not an error in troff usage, but it 
+	reduces the quality of the HTML that can be generated from this page
+	through the DocBook toolchain.
+%%
+n|_build_buildd_libcaca-0.99.beta18_ruby_.3caca|IFWM	|Sam Hocevar <sam@hocevar.net>
+n|_build_buildd_libcaca-0.99.beta18_caca_.3caca|IFWM	|Sam Hocevar <sam@hocevar.net>
+n|_build_buildd_libcaca-0.99.beta18_caca_codec_.3caca|IFWM   |Sam Hocevar <sam@hocevar.net>
+n|_build_buildd_libcaca-0.99.beta18_caca_driver_.3caca|IFWM   |Sam Hocevar <sam@hocevar.net>
+b|acl.5			|I	|https://savannah.nongnu.org/bugs/index.php?39096
+1n|admin.1posix		|C	|Francesco Paolo Lovergine <frankie@debian.org>
+p|american.5,english.5	|I9	|geoff@cs.hmc.edu
+1n|analog.1		|CZ	|analog-author@lists.meer.net
+n|AnyEvent::FAQ.3pm	|W	|Marc Lehmann <schmorp@schmorp.de>
+7n|arp.7		|p	|Bernd Eckenfels <net-tools@lina.inka.de>
+1n|as.1			|Zy	|bug-binutils@gnu.org
+n|bash.1		|L	|chet.ramey@case.edu, bug-bash@gnu.org
+1n|bc.1			|J	|bug-bc@gnu.org
+n|bitmap.1,atobm.1,bmtoa.1|I	|xorg@lists.freedesktop.org
+b|bootparam.7		|Iu7	|mtk-manpages@gmx.net
+1n|btcflash.8		|J	|Daniel Baumann <daniel@debian.org>
+b|bzfs.6		|o	|bzflag-dev@lists.sourceforge.net
+1n|bzr.1		|JX	|bazaar@lists.canonical.com
+1n|cdparanoia.1		|L	|monty@xiph.org
+p|chat.8		|J	|paulus@samba.org
+bA|chmoddic.1		|BC	|Canna@nec.co.jp
+1n|chroot.2		|EL	|bug-coreutils@gnu.org
+2n|co.1,ident.1		|o	|rcs-bugs@gnu.org
+bA|codepage.1		|C	|mckinstry@computer.org
+1n|compose.1,edit.1	|*y	|mime-support@plessy.org
+p|corosync.conf.5	|LI	|https://bugzilla.redhat.com/show_bug.cgi?id=970165
+p|curl_formadd.3	|J	|https://sourceforge.net/p/curl/bugs/1233
+p|libcurl-tutorial.3	|J	|https://sourceforge.net/p/curl/bugs/1234
+3n|cvs.1		|L	|cvs-dev@nongnu.org
+p|cxpm.1		|W	|lehors@sophia.inria.fr
+1n|dash.1,sh.1		|J	|herbert@gondor.apana.org.au
+1n|dcut.1		|R	|Thomas Viehmann <tv@beamnet.de>
+1n|Parse::DebControl::Error.3pm|Wy	|Jay Bonci <jaybonci@cpan.org>
+1n|devnag.1		|J	|tldoc@tug.org
+1n|dh_install.1		|iy	|joeyh@debian.org
+s|dhcp-eval.5		|J	|dhcp-bugs@isc.org
+1n|directomatic.1	|oG	|till.kamppeter@gmail.com
+1n|dkms.8		|XJ	|dkms-devel@dell.com
+n|dmcs.1,mcs.1,gmcs.1	|LA	|mono-docs-list@lists.ximian.com
+1n|dosbox.1		|L	|dosbox-crew@gmail.com
+1n|dump-acct.8		|U	|Daniel Baumann <daniel@debian.org>, Mathieu Trudel <mathieu.tl@gmail.com>
+1n|dv2dt.1		|C	|G.Tobin@ee.latrobe.edu.au
+2n|dvipdf.1,font2c.1	|R	|epm@easysw.com
+1n|dvitodvi.1		|R	|tldoc@tug.org
+p|editres.1		|I	|xorg@lists.freedesktop.org
+2n|e2fsck.8		|o	|tytso@thunk.org
+1n|e2image.8		|J	|tytso@thunk.org
+2n|efax.1		|Jug	|edc@cce.com
+1n|ethtool.8		|2	|Ben Hutchings <bhutchings@solarflare.com>
+1n|exiv2.1		|L	|Andreas Huggel <ahuggel@gmx.net>, KELEMEN Peter <fuji@debian.org>
+2n|extractres.1		|R	|angus@harlequin.co.uk
+1n|f2py.1,f2py2.7.1	|C	|f2py-users@cens.ioc.ee
+1n|faked-sysv.1,faked-tcp.1,faked.1,fakeroot-sysv.1,fakeroot-tcp.1,fakeroot.1|r	|schizo@debian.org
+1n|fence_drac.8		|J	|cluster-devel@redhat.com
+1n|fence_na.8		|Wy	|cluster-devel@redhat.com
+1n|fence_drac5.8	|J	|cluster-devel@redhat.com
+2n|fig2ps2tex.1	|R	|bvsmith@lbl.gov
+2n|foomatic-rip.1,lpdomatic.8|oG	|till.kamppeter@gmail.com
+1n|formail.1,lockfile.1,procmail.1,procmailex.5,procmailrc.5,procmailsc.5|K	|srb@cuci.nl, guenther@sendmail.com
+p|fsck.8,fsck.ext2.8,fsck.ext3.8,fsck.ext4.8,fsck.ext4dev.8|o	|http://userweb.kernel.org/~kzak/util-linux/
+1n|ftm.7		|D	|mtk-manpages@gmx.net
+1n|fuser.1		|J	|Werner Almesberger <werner@almesberger.net>, Craig Small <csmall@enc.com.au>
+1n|fuzzyflakes.6x	|C	|Barry Dmytro <badcherry@mailc.net>
+1n|gacutil.1,cli-gacutil.1|N	|mono-docs-list@lists.ximian.com
+1n|genhomedircon.8	|H	|Dan Wash <dwalsh@redhat.com>
+1n|genisoimage.1	|o	|debburn-devel@lists.alioth.debian.org
+n|getafm.1		|R	|angus@harlequin.co.uk
+p|getty.8		|I	|http://userweb.kernel.org/~kzak/util-linux/
+bA|gftodvi.1		|I	|
+1n|gpm-types.7		|JC	|gpm@lists.linux.it
+p|grap.1		|Q	|faber@lunabase.org
+n|groff_out.5		|1	|bug-groff@gnu.org
+p|groff_mom.7		|s	|bug-groff@gnu.org
+p|grodvi.1		|C7	|bug-groff@gnu.org
+bA|gs.1,ghostscript.1	|C	|gs-devel@ghostscript.com
+1n|gthumb.1		|L	|paolo.bacch@tin.it
+1n|gvcolor.1		|C	|Stephen C. North <north@research.att.com>, Emden R. Gansner <erg@research.att.com>
+n|gvpack.1		|C*	|Emden R. Gansner <erg@research.att.com>
+7n|hfsutils.1		|HJ	|Robert Leslie <rob@mars.org>
+1n|hosts_access.5,hosts.allow.5,hosts.deny.5,hosts_options.5|I	|Wietse Venema <wietse@wzv.win.tue.nl>
+1n|html2text.1		|C	|Martin Bayer <mail@mbayer.de>, Eugene  V.  Lyubimkin <jackyf.devel@gmail.com>
+1n|html2textrc.5	|X	|Martin Bayer <mbayer@zedat.fu-berlin.de>
+1n|hypertorus.6x	|C	|Jamie Zawinski <jwz@jwz.org>
+2n|icclink.1		|E	|malex@debian.org
+1n|icctrans.1		|L	|malex@debian.org
+2n|tifficc.1		|E	|malex@debian.org
+1n|icedax.1		|AI	|Heiko Eissfeldt <heiko@colossus.escape.de>, debburn-devel@lists.alioth.debian.org
+1n|ilbmtoppm.1		|L	|bryanh@giraffe-data.com
+2n|includeres.1		|R	|giles@artifex.com
+p|imake.1		|I	|xorg@lists.freedesktop.org
+1n|intel_panel_fitter.1	|E	|intel-gfx@lists.freedesktop.org
+1n|IO::WrapTie.3pm	|WC	|David F. Skoll <dfs@roaringpenguin.com>
+p|ipcrm.1		|C	|http://userweb.kernel.org/~kzak/util-linux/
+2n|ipppd.8		|L	|keil@isdn4linux.de
+n|iptables-save.8	|U	|netfilter-devel@lists.netfilter.org
+bA|ip6tables-save.8	|U	|netfilter-devel@lists.netfilter.org
+2n|ipv6calc.8		|Lo	|pb@bieringer.de
+1n|irda.7		|0	|Jean Tourrilhes <jt@hpl.hp.com>
+1n|ispell.1,buildhash.1,munchlist.1,findaffix.1,tryaffix.1,icombine.1,ijoin.1|C	|ispell-bugs@itcorp.com
+1n|ispell-wrapper.1	|C	|ispell-bugs@itcorp.com
+1n|lamd.1		|	|lam-devel@lam-mpi.org
+1n|lam.7,LAM.7		|L	|lam-devel@lam-mpi.org
+1n|lam-helpfile.5	|I	|lam-devel@lam-mpi.org
+b|lastcomm.1		|I	|https://savannah.gnu.org/bugs/index.php?39134
+7n|less.1,pager.1	|J	|bug-less@gnu.org
+1n|lftp.1		|I	|lav@yars.free.net,
+1n|libcaca-authors.3caca|W	|Sam Hocevar <sam@hocevar.net>
+1n|libcaca-canvas.3caca	|WJ	|Sam Hocevar <sam@hocevar.net>
+1n|libcaca-env.3caca	|WL	|Sam Hocevar <sam@hocevar.net>
+1n|libcaca-font.3caca	|WJ	|Sam Hocevar <sam@hocevar.net>
+1n|libcaca-ruby.3caca	|W	|Sam Hocevar <sam@hocevar.net>
+1n|libcaca-tutorial.3caca|W	|Sam Hocevar <sam@hocevar.net>
+p|libpng.3		|SJ	|png-mng-implement@lists.sourceforge.net 
+1n|libtiff.3tiff	|I	|tiff@lists.maptools.org
+1n|list_audio_tracks.1	|W	|Heiko Eissfeldt <heiko@colossus.escape.de>, debburn-devel@lists.alioth.debian.org
+2n|ln.1		|j	|bug-coreutils@gnu.org
+1n|locate.findutils.1	|U	|bug-findutils@gnu.org
+s|logger.1		|O	|util-linux@vger.kernel.org
+p|lkbib.1		|C	|bug-groff@gnu.org
+7n|lpr.1		|U	|papowell@lprng.com
+1n|makeindex.1		|J	|beebe@math.utah.edu
+n|mathspic.1		|JWt	|Dick Nickalls <dick@nickalls.org>
+1n|mawk.1		|R	|http://code.google.com/p/original-mawk/issues/detail?id=21&thanks=21&ts=1369758804
+n|mdoc.7		|X	|mtk-manpages@gmx.net
+n|mke2fs.8,mkfs.ext2.8,mkfs.ext3.8,mkfs.ext4.8,mkfs.ext4dev.8|C	|Theodore  Ts'o <tytso@mit.edu>.
+1n|mkjobtexmf.1		|Ly	|heiko.oberdiek@gmail.com
+p|mlocate.db.5		|J	|Miloslav Trmac <mitr@redhat.com>
+n|mmcli.8		|X	|Martyn Russell <martyn@lanedo.com>
+1n|mono.1,cli.1		|JX	|mono-docs-list@lists.ximian.com
+1n|mono-config.5	|X	|mono-docs-list@lists.ximian.com
+p|more.1		|O	|http://userweb.kernel.org/~kzak/util-linux/
+n|mp3-decoder.1,mpg123-alsa.1,mpg123-jack.1,mpg123-nas.1,mpg123-openal.1,mpg123-oss.1,mpg123-portaudio.1,mpg123.1,mpg123.bin.1|CJL	|Thomas Orgis <maintainer@mpg123.org>
+1n|mpirun.1,mpirun.lam.1|L	|lam-devel@lam-mpi.org
+1n|mtools.5,mtools.conf.5|X	|mtools@mtools.linux.lu
+b|mtr.8			|J	|https://bugs.launchpad.net/mtr/+bug/1188596
+1p|mutt.1		|JQ	|mutt-dev@mutt.org
+1p|muttrc.5		|JXu	|mutt-dev@mutt.org
+n|nautilus.1		|L	|Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
+1n|nautilus-connect-server.1|L|nautilus-list@gnome.org
+1n|netpbm.1		|J	|bryanh@giraffe-data.com
+1n|netstat.8		|Cz	|ecki@linux.de
+1n|nfsmount.conf.5	|CY	|ubuntu-devel-discuss@lists.ubuntu.com
+n|nmcli.1       	|J	|networkmanager-list@gnome.org
+1n|nsgmls.1		|CI	|James Clark <jjc@jclark.com>
+1n|ntfs-3g.secaudit.8	|C	|ntfs-3g-devel@lists.sf.net
+1n|ntfs-3g.usermap.8	|C	|ntfs-3g-devel@lists.sf.net
+1n|nvidia-settings.1	|IxY	|ubuntu-devel-discuss@lists.ubuntu.com
+1n|nvidia-smi.1		|I6Y	|ubuntu-devel-discuss@lists.ubuntu.com
+1n|ode.1		|e	|bug-gnu-utils@gnu.org
+b|oldfind.1,find.1	|J	|https://savannah.gnu.org/bugs/index.php?39197
+1n|omfonts.1		|W	|Norbert Preining <preining@logic.at>
+2n|openvt.1,open.1	|L	|aeb@cwi.nl
+1n|orbd.1		|WyY	|ubuntu-devel-discuss@lists.ubuntu.com
+1n|orca.1		|s	|orca-list@gnome.org
+n|pam_systemd.8,systemd-logind.8,systemd-logind.service.8	|I	|pam-discuss@lists.sourceforge.net
+1n|pax.1posix		|WJL	|Francesco Paolo Lovergine <frankie@debian.org>
+1n|pbmclean.1,pnmcomp.1,pnmnorm.1,pnmpad.1,pnmquant.1,pnmremap.1,pnmtotiff.1,pgmnorm.1,ppmcolors.1,ppmnorm.1,ppmntsc.1,ppmquant.1,ppmrainbow.1,ppmtogif.1,ppmtoxpm.1,tifftopnm.1|C	|bryanh@giraffe-data.com
+1n|pbget.1,pbput.1,pbputs.1	|W	|Dustin  Kirkland  <kirkland@ubuntu.com>
+1n|pbmtextps.1		|C	|Bryan Henderson <bryanh@giraffe-data.com>
+1n|pcap-filter.7	|I	|tcpdump-workers@lists.tcpdump.org
+pA|pcreapi.3		|I	|http://bugs.exim.org/show_bug.cgi?id=1359
+pA|pcreposix.3		|H	|http://bugs.exim.org/show_bug.cgi?id=1360
+1n|pidgin.1		|T	|Sean Egan <seanegan@gmail.com>, Ben Tegarden <tegarden@uclink.berkeley.edu>, John Bailey <rekkanoryo@pidgin.im>
+1n|pkg-config.1		|q	|pkg-config@lists.freedesktop.org
+1n|plot.1,plotfont.1	|W	|bug-gnu-utils@gnu.org
+1n|pnmhisteq.1,ppmcie.1,ppmlabel.1,sbigtopgm.1|R	|Bryan Henderson <bryanh@giraffe-data.com>
+1n|pnmpaste.1		|X	|Bryan Henderson <bryanh@giraffe-data.com>
+1n|pnmtotiffcmyk.1	|C	|Bryan Henderson <bryanh@giraffe-data.com>
+1n|pnmtofiasco.1	|e	|Bryan Henderson <bryanh@giraffe-data.com>
+1n|policytool.1		|Wy	|openjdk@lists.launchpad.net
+1n|proc.5		|oh	|mtk-manpages@gmx.net
+1n|pstree.1,pstree.x11.1	|C	|Craig Small <csmall@small.dropbear.id.au> 
+bA|pstops.1		|R	|
+7n|ps2epsi.1		|j	|giles@artifex.com
+1n|ps2pdfwr.1		|R	|giles@artifex.com
+2n|psnup.1		|J	|giles@artifex.com
+7n|ptx.1		|j	|bug-coreutils@gnu.org
+1n|pytest.1		|C	|doc-sig@python.org
+1n|qsub.1posix		|I	|Francesco Paolo Lovergine <frankie@debian.org>
+1n|rcsfile.5		|d	|rcs-bugs@gnu.org
+1n|regulatory.bin.5	|w	|linux-wireless@vger.kernel.org
+s|renice.1		|O	|http://userweb.kernel.org/~kzak/util-linux/
+s|rev.1			|OL	|http://userweb.kernel.org/~kzak/util-linux/
+1n|rhythmbox-client.1	|L	|Sven Arvidsson <sa@whiz.se>, gnome-doc-list@gnome.org
+1n|rlog.1		|L	|rcs-bugs@gnu.org
+1n|rlwrap.1,readline-editor.1|J	|Chet Ramey <chet.ramey@case.edu>
+1n|rmid.1		|Wy	|openjdk@lists.launchpad.net
+1n|rmiregistry.1	|Wy	|openjdk@lists.launchpad.net
+b|ruby.1,ruby1.9.1.1	|L	|ruby-doc@ruby-lang.org
+p|s3.4			|I	|xorg@lists.freedesktop.org
+p|sane-apple.5		|L	|https://alioth.debian.org/tracker/index.php?func=detail&aid=314280&group_id=30186&atid=410366
+p|sane-lexmark.5	|Lo	|https://alioth.debian.org/tracker/index.php?func=detail&aid=314281&group_id=30186&atid=410366
+p|sane-mustek_pp.5	|Lo	|https://alioth.debian.org/tracker/index.php?func=detail&aid=314282&group_id=30186&atid=410366
+p|sane-pixma.5		|W	|https://alioth.debian.org/tracker/index.php?func=detail&aid=314283&group_id=30186&atid=410366
+1n|scons-time.1		|LZ	|scons-dev@scons.org
+s|script.1		|O	|http://userweb.kernel.org/~kzak/util-linux/
+2n|SDL_Init.3		|L	|sdl@lists.libsdl.org
+1n|SDL_CDPlayTracks.3	|8	|docs@lists.libsdl.org
+1n|see.1,run-mailcap.1,print.1	|C	|mime-support@plessy.org
+n|semanage-user.8,semanage-boolean.8,semanage-module.8,semanage-permissive.8|B	|Daniel Walsh <dwalsh@redhat.com>
+n|semanage-fcontext.8	|BU	|Daniel Walsh <dwalsh@redhat.com>
+1n|setcap.8		|C	|Andrew G. Morgan <morgan@kernel.org>
+1n|sg_sat_phy_event.8	|C	|dgilbert@interlog.com
+1n|sgmlspl.1		|L	|Ardo van Rangelrooij <ardo@debian.org>
+bA|slapd.conf.5		|LI	|OpenLDAP-devel@OpenLDAP.org
+bA|slapd-config.5	|LI	|OpenLDAP-devel@OpenLDAP.org
+bA|slapo-constraint.5	|L	|OpenLDAP-devel@OpenLDAP.org
+bA|software-properties-gtk.1	|W	|
+1n|spam.1		|C	|
+1n|sudo.8,sudoedit.8	|C	|Todd C. Miller <Todd.Miller@courtesan.com>
+1n|synctex.1		|5	|tldoc@tug.org
+7n|rb.1,rx.1,rz.1,sb.1,sx.1,sz.1|e	|Uwe Ohse <uwe@ohse.de>
+p|tar.1			|CV	|https://bugs.launchpad.net/ubuntu/+source/tar-doc/+bug/1189310
+1n|tc-prio.8,tc-htb.8,tc-cbq.8,tc-cbq-details.8	|C	|net@vger.kernel.org
+2n|tcpd.8		|I	|wietse@porcupine.org
+1n|tcpdmatch.8		|I	|wietse@porcupine.org
+1n|tek2plot.1		|W	|bug-gnu-utils@gnu.org
+1n|telnet.1,telnet.netkit.1|X	|bug-inetutils@gnu.org 
+1n|test.1,[.1		|	|bug-coreutils@gnu.org
+1n|TIFFGetField.3tiff	|I	|tiff@lists.maptools.org
+1n|TIFFmemory.3tiff	|4	|tiff@lists.maptools.org
+1n|tnameserv.1		|Wy	|openjdk@lists.launchpad.net
+1n|tgatoppm.1		|A	|bryanh@giraffe-data.com
+1bA|tidy.1		|Wm	|tidy-develop@lists.sourceforge.net,html-tidy@w3.org
+1n|tree.1		|b	|Steve Baker <ice@mama.indstate.edu>
+1n|ttf2tfm.1		|Io	|tldoc@tug.org
+7n|tune2fs.8		|C	|tytso@thunk.org
+n|unrar.1,unrar-nonfree.1|C	|Petr Cech <cech@debian.org>
+1p|upstart-events.7	|I	|James Hunt <james.hunt@ubuntu.com>
+1n|usb-creator-gtk.8	|W	|Evan Dandrea  <evand@ubuntu.com>, Roderick B. Greening <roderick.greening@gmail.com>
+1n|xz.1,xzcat.1,unxz.1,unlzma.1,lzcat.1,lzma.1|C	|lasse.collin@tukaani.org
+p|unshare.1		|L	|http://userweb.kernel.org/~kzak/util-linux/
+p|updatedb.conf.5	|J	|Miloslav Trmac <mitr@redhat.com>
+1n|uuencode.1posix	|I	|Francesco Paolo Lovergine <frankie@debian.org>
+s|wall.1		|LO	|http://userweb.kernel.org/~kzak/util-linux/
+2n|whereis.1		|L	|http://userweb.kernel.org/~kzak/util-linux/
+n|winedbg.1,msiexec.1	|J	|wine-devel@winehq.org
+n|winemaker.1		|U	|wine-devel@winehq.org
+p|X.7			|ILo	|xorg@lists.freedesktop.org
+p|XF86VM.3,XF86VidModeDeleteModeLine.3,XF86VidModeGetAllModeLines.3,XF86VidModeGetDotClocks.3,XF86VidModeGetGamma.3,XF86VidModeGetGammaRamp.3,XF86VidModeGetGammaRampSize.3,XF86VidModeGetModeLine.3,XF86VidModeGetMonitor.3,XF86VidModeGetPermissions.3,XF86VidModeGetViewPort.3,XF86VidModeLockModeSwitch.3,XF86VidModeQueryExtension.3,XF86VidModeModModeLine.3,XF86VidModeQueryVersion.3,XF86VidModeSetClientVersion.3,XF86VidModeSetGamma.3,XF86VidModeSetGammaRamp.3,XF86VidModeSetViewPort.3,XF86VidModeSwitchMode.3,XF86VidModeSwitchToMode.3,XF86VidModeValidateModeLine.3		|I	|xorg@lists.freedesktop.org
+p|xkbevd.1		|J	|xorg@lists.freedesktop.org
+p|xlogo.1		|I	|xorg@lists.freedesktop.org
+n|XML::LibXML::Pattern.3pm|W	|perl-xml@listserv.ActiveState.com
+n|XML::LibXML::Reader.3pm|W	|perl-xml@listserv.ActiveState.com
+n|XML::LibXML::RegExp.3pm|W	|perl-xml@listserv.ActiveState.com
+n|XML::LibXML::XPathExpression.3pm|W	|perl-xml@listserv.ActiveState.com
+gA|xmlto.1		|I	|tim@cyberelk.net
+2p|xorg.conf.5,xorg.conf.d.5|Lu	|xorg@lists.freedesktop.org
+p|Xsecurity.7		|W	|xorg@lists.freedesktop.org
+1n|Xserver.1		|I	|xorg@lists.freedesktop.org
+p|XStandards.7		|H	|xorg@lists.freedesktop.org
+2n|xterm.1		|LI	|xorg@lists.freedesktop.org
+1n|zic.8		|I	|mtk-manpages@gmx.net
+p|zip.1			|J	|Info-ZIP-Dev@goatley.com
+1n|zipinfo.1		|*	|newt@pobox.com
+p|zipcloak.1,zipnote.1,zipsplit.1|I	|Info-ZIP-Dev@goatley.com
+1n|zlib.3		|C	|zlib@gzip.org

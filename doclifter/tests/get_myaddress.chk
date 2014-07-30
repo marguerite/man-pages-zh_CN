@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='stdin'>
+<!-- This page was taken from the 4.4BSD&bsol;-Lite CDROM (BSD license) -->
+
+<!-- @(#)rpc.3n	2.4 88/08/08 4.0 RPCSRC; from 1.19 88/06/24 SMI -->
+
+<!-- 2007&bsol;-12&bsol;-30, mtk, Convert function prototypes to modern C syntax -->
+
+<refentryinfo><date>2008-07-17</date></refentryinfo>
+<refmeta>
+<refentrytitle>RPC</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo class='date'>2008-07-17</refmiscinfo>
+<refmiscinfo class='manual'>Linux Programmer's Manual</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>rpc</refname>
+<refpurpose>library routines for remote procedure calls</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='synopsis_and_description'><title>SYNOPSIS AND DESCRIPTION</title>
+<para>These routines allow C programs to make procedure
+calls on other machines across the network.
+First, the client calls a procedure to send a data packet to the server.
+Upon receipt of the packet, the server calls a dispatch routine
+to perform the requested service, and then sends back a reply.
+Finally, the procedure call returns to the client.</para>
+<!-- .LP
+We don't have an rpc_secure.3 page at the moment &bsol;-&bsol;- MTK, 19 Sep 05
+Routines that are used for Secure RPC (DES authentication) are described in
+.BR rpc_secure (3).
+Secure RPC can be used only if DES encryption is available. -->
+
+<para>To take use of these routines, include the header file
+<emphasis remap='I'>&lt;rpc/rpc.h&gt;</emphasis>.</para>
+
+<para>The prototypes below make use of the following types:</para>
+<!-- in +4n -->
+<literallayout remap='.nf'>
+
+typedef int <type>bool_t</type>;
+
+typedef bool_t (*<type>xdrproc_t</type>) (XDR *, void *,...);
+
+typedef bool_t (*<type>resultproc_t</type>) (caddr_t resp,
+                                struct sockaddr_in *raddr);
+</literallayout> <!-- .fi -->
+
+<para>See the header files for the declarations of the
+<emphasis remap='I'>AUTH</emphasis>,
+<emphasis remap='I'>CLIENT</emphasis>,
+<emphasis remap='I'>SVCXPRT</emphasis>,
+and
+<emphasis remap='I'>XDR</emphasis>
+types.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void auth_destroy(AUTH *</emphasis><emphasis remap='I'>auth</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A macro that destroys the authentication information associated with
+<emphasis remap='I'>auth</emphasis>.
+Destruction usually involves deallocation of private data structures.
+The use of
+<emphasis remap='I'>auth</emphasis>
+is undefined after calling
+<emphasis remap='B'>auth_destroy</emphasis>().</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>AUTH *authnone_create(void);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Create and return an RPC
+authentication handle that passes nonusable authentication
+information with each remote procedure call.
+This is the default authentication used by RPC.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>AUTH *authunix_create(char *</emphasis><emphasis remap='I'>host</emphasis><emphasis remap='B'>, int </emphasis><emphasis remap='I'>uid</emphasis><emphasis remap='B'>, int </emphasis><emphasis remap='I'>gid</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                      int </emphasis><emphasis remap='I'>len</emphasis><emphasis remap='B'>, int *</emphasis><emphasis remap='I'>aup_gids</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Create and return an RPC authentication handle that contains
+authentication information.
+The parameter
+<emphasis remap='I'>host</emphasis>
+is the name of the machine on which the information was created;
+<emphasis remap='I'>uid</emphasis>
+is the user's user ID;
+<emphasis remap='I'>gid</emphasis>
+is the user's current group ID;
+<emphasis remap='I'>len</emphasis>
+and
+<emphasis remap='I'>aup_gids</emphasis>
+refer to a counted array of groups to which the user belongs.
+It is easy to impersonate a user.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>AUTH *authunix_create_default(void);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Calls
+<emphasis remap='B'>authunix_create</emphasis>()
+with the appropriate parameters.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>int callrpc(char *</emphasis><emphasis remap='I'>host</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>            unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>procnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>            xdrproc_t </emphasis><emphasis remap='I'>inproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>in</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>            xdrproc_t </emphasis><emphasis remap='I'>outproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>out</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Call the remote procedure associated with
+<emphasis remap='I'>prognum</emphasis>,
+<emphasis remap='I'>versnum</emphasis>,
+and
+<emphasis remap='I'>procnum</emphasis>
+on the machine,
+<emphasis remap='I'>host</emphasis>.
+The parameter
+<emphasis remap='I'>in</emphasis>
+is the address of the procedure's argument(s), and
+<emphasis remap='I'>out</emphasis>
+is the address of where to place the result(s);
+<emphasis remap='I'>inproc</emphasis>
+is used to encode the procedure's parameters, and
+<emphasis remap='I'>outproc</emphasis>
+is used to decode the procedure's results.
+This routine returns zero if it succeeds, or the value of
+<emphasis remap='B'>enum clnt_stat</emphasis>
+cast to an integer if it fails.
+The routine
+<emphasis remap='B'>clnt_perrno</emphasis>()
+is handy for translating failure statuses into messages.</para>
+
+<para>Warning: calling remote procedures with this routine
+uses UDP/IP as a transport; see
+<emphasis remap='B'>clntudp_create</emphasis>()
+for restrictions.
+You do not have control of timeouts or authentication using this routine.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>enum clnt_stat clnt_broadcast(unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                     unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>procnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                     xdrproc_t </emphasis><emphasis remap='I'>inproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>in</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                     xdrproc_t </emphasis><emphasis remap='I'>outproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>out</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                     resultproc_t </emphasis><emphasis remap='I'>eachresult</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Like
+<emphasis remap='B'>callrpc</emphasis>(),
+except the call message is broadcast to all locally
+connected broadcast nets.
+Each time it receives a response, this routine calls
+<emphasis remap='B'>eachresult</emphasis>(),
+whose form is:</para>
+
+<!-- in +4n -->
+<literallayout remap='.nf'>
+<emphasis remap='B'>eachresult(char *</emphasis><emphasis remap='I'>out</emphasis><emphasis remap='B'>, struct sockaddr_in *</emphasis><emphasis remap='I'>addr</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>where
+<emphasis remap='I'>out</emphasis>
+is the same as
+<emphasis remap='I'>out</emphasis>
+passed to
+<emphasis remap='B'>clnt_broadcast</emphasis>(),
+except that the remote procedure's output is decoded there;
+<emphasis remap='I'>addr</emphasis>
+points to the address of the machine that sent the results.
+If
+<emphasis remap='B'>eachresult</emphasis>()
+returns zero,
+<emphasis remap='B'>clnt_broadcast</emphasis>()
+waits for more replies; otherwise it returns with appropriate status.</para>
+
+<para>Warning: broadcast sockets are limited in size to the
+maximum transfer unit of the data link.
+For ethernet, this value is 1500 bytes.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>enum clnt_stat clnt_call(CLIENT *</emphasis><emphasis remap='I'>clnt</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>procnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    xdrproc_t </emphasis><emphasis remap='I'>inproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>in</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    xdrproc_t </emphasis><emphasis remap='I'>outproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>out</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    struct timeval </emphasis><emphasis remap='I'>tout</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A macro that calls the remote procedure
+<emphasis remap='I'>procnum</emphasis>
+associated with the client handle,
+<emphasis remap='I'>clnt</emphasis>,
+which is obtained with an RPC client creation routine such as
+<emphasis remap='B'>clnt_create</emphasis>().
+The parameter
+<emphasis remap='I'>in</emphasis>
+is the address of the procedure's argument(s), and
+<emphasis remap='I'>out</emphasis>
+is the address of where to place the result(s);
+<emphasis remap='I'>inproc</emphasis>
+is used to encode the procedure's parameters, and
+<emphasis remap='I'>outproc</emphasis>
+is used to decode the procedure's results;
+<emphasis remap='I'>tout</emphasis>
+is the time allowed for results to come back.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>clnt_destroy(CLIENT *</emphasis><emphasis remap='I'>clnt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A macro that destroys the client's RPC handle.
+Destruction usually involves deallocation
+of private data structures, including
+<emphasis remap='I'>clnt</emphasis>
+itself.
+Use of
+<emphasis remap='I'>clnt</emphasis>
+is undefined after calling
+<emphasis remap='B'>clnt_destroy</emphasis>().
+If the RPC library opened the associated socket, it will close it also.
+Otherwise, the socket remains open.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>CLIENT *clnt_create(char *</emphasis><emphasis remap='I'>host</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>prog</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    unsigned long </emphasis><emphasis remap='I'>vers</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>proto</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Generic client creation routine.
+<emphasis remap='I'>host</emphasis>
+identifies the name of the remote host where the server is located.
+<emphasis remap='I'>proto</emphasis>
+indicates which kind of transport protocol to use.
+The currently supported values for this field are &ldquo;udp&rdquo;
+and &ldquo;tcp&rdquo;.
+Default timeouts are set, but can be modified using
+<emphasis remap='B'>clnt_control</emphasis>().</para>
+
+<para>Warning: Using UDP has its shortcomings.
+Since UDP-based RPC messages can only hold up to 8 Kbytes of encoded data,
+this transport cannot be used for procedures that take
+large arguments or return huge results.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t clnt_control(CLIENT *</emphasis><emphasis remap='I'>cl</emphasis><emphasis remap='B'>, int </emphasis><emphasis remap='I'>req</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>info</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A macro used to change or retrieve various information
+about a client object.
+<emphasis remap='I'>req</emphasis>
+indicates the type of operation, and
+<emphasis remap='I'>info</emphasis>
+is a pointer to the information.
+For both UDP and TCP, the supported values of
+<emphasis remap='I'>req</emphasis>
+and their argument types and what they do are:</para>
+
+<!-- in +4n -->
+<literallayout remap='.nf'>
+<emphasis remap='B'>CLSET_TIMEOUT</emphasis>  <emphasis remap='I'>struct timeval</emphasis> // set total timeout
+<emphasis remap='B'>CLGET_TIMEOUT</emphasis>  <emphasis remap='I'>struct timeval</emphasis> // get total timeout
+</literallayout> <!-- .fi -->
+
+<para>Note: if you set the timeout using
+<emphasis remap='B'>clnt_control</emphasis>(),
+the timeout parameter passed to
+<emphasis remap='B'>clnt_call</emphasis>()
+will be ignored in all future calls.</para>
+
+<!-- in +4n -->
+<literallayout remap='.nf'>
+<emphasis remap='B'>CLGET_SERVER_ADDR</emphasis>  <emphasis remap='I'>struct sockaddr_in </emphasis> // get server's address
+</literallayout> <!-- .fi -->
+
+<para>The following operations are valid for UDP only:</para>
+
+<!-- in +4n -->
+<literallayout remap='.nf'>
+<emphasis remap='B'>CLSET_RETRY_TIMEOUT</emphasis>  <emphasis remap='I'>struct timeval</emphasis> // set the retry timeout
+<emphasis remap='B'>CLGET_RETRY_TIMEOUT</emphasis>  <emphasis remap='I'>struct timeval</emphasis> // get the retry timeout
+</literallayout> <!-- .fi -->
+
+<para>The retry timeout is the time that "UDP RPC"
+waits for the server to reply before
+retransmitting the request.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>clnt_freeres(CLIENT * </emphasis><emphasis remap='I'>clnt</emphasis><emphasis remap='B'>, xdrproc_t </emphasis><emphasis remap='I'>outproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>out</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A macro that frees any data allocated by the RPC/XDR
+system when it decoded the results of an RPC call.
+The parameter
+<emphasis remap='I'>out</emphasis>
+is the address of the results, and
+<emphasis remap='I'>outproc</emphasis>
+is the XDR routine describing the results.
+This routine returns one if the results were successfully freed,
+and zero otherwise.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void clnt_geterr(CLIENT *</emphasis><emphasis remap='I'>clnt</emphasis><emphasis remap='B'>, struct rpc_err *</emphasis><emphasis remap='I'>errp</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A macro that copies the error structure out of the client
+handle to the structure at address
+<emphasis remap='I'>errp</emphasis>.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void clnt_pcreateerror(char *</emphasis><emphasis remap='I'>s</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Print a message to standard error indicating why a client RPC
+handle could not be created.
+The message is prepended with string
+<emphasis remap='I'>s</emphasis>
+and a colon.
+Used when a
+<emphasis remap='B'>clnt_create</emphasis>(),
+<emphasis remap='B'>clntraw_create</emphasis>(),
+<emphasis remap='B'>clnttcp_create</emphasis>(),
+or
+<emphasis remap='B'>clntudp_create</emphasis>()
+call fails.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void clnt_perrno(enum clnt_stat </emphasis><emphasis remap='I'>stat</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Print a message to standard error corresponding
+to the condition indicated by
+<emphasis remap='I'>stat</emphasis>.
+Used after
+<emphasis remap='B'>callrpc</emphasis>().</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>clnt_perror(CLIENT *</emphasis><emphasis remap='I'>clnt</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>s</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Print a message to standard error indicating why an RPC call failed;
+<emphasis remap='I'>clnt</emphasis>
+is the handle used to do the call.
+The message is prepended with string
+<emphasis remap='I'>s</emphasis>
+and a colon.
+Used after
+<emphasis remap='B'>clnt_call</emphasis>().</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>char *clnt_spcreateerror(char *</emphasis><emphasis remap='I'>s</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Like
+<emphasis remap='B'>clnt_pcreateerror</emphasis>(),
+except that it returns a string instead of printing to the standard error.</para>
+
+<para>Bugs: returns pointer to static data that is overwritten on each call.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>char *clnt_sperrno(enum clnt_stat </emphasis><emphasis remap='I'>stat</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Take the same arguments as
+<emphasis remap='B'>clnt_perrno</emphasis>(),
+but instead of sending a message to the standard error indicating why an RPC
+call failed, return a pointer to a string which contains the message.
+The string ends with a NEWLINE.</para>
+
+<para><emphasis remap='B'>clnt_sperrno</emphasis>()
+is used instead of
+<emphasis remap='B'>clnt_perrno</emphasis>()
+if the program does not have a standard error (as a program
+running as a server quite likely does not), or if the programmer
+does not want the message to be output with
+<citerefentry><refentrytitle>printf</refentrytitle><manvolnum>3</manvolnum></citerefentry>,
+or if a message format different than that supported by
+<emphasis remap='B'>clnt_perrno</emphasis>()
+is to be used.
+Note: unlike
+<emphasis remap='B'>clnt_sperror</emphasis>()
+and
+<emphasis remap='B'>clnt_spcreaterror</emphasis>(),
+<emphasis remap='B'>clnt_sperrno</emphasis>()
+returns pointer to static data, but the
+result will not get overwritten on each call.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>char *clnt_sperror(CLIENT *</emphasis><emphasis remap='I'>rpch</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>s</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Like
+<emphasis remap='B'>clnt_perror</emphasis>(),
+except that (like
+<emphasis remap='B'>clnt_sperrno</emphasis>())
+it returns a string instead of printing to standard error.</para>
+
+<para>Bugs: returns pointer to static data that is overwritten on each call.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>CLIENT *clntraw_create(unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This routine creates a toy RPC client for the remote program
+<emphasis remap='I'>prognum</emphasis>,
+version
+<emphasis remap='I'>versnum</emphasis>.
+The transport used to pass messages to the service is
+actually a buffer within the process's address space, so the
+corresponding RPC server should live in the same address space; see
+<emphasis remap='B'>svcraw_create</emphasis>().
+This allows simulation of RPC and acquisition of RPC
+overheads, such as round trip times, without any kernel interference.
+This routine returns NULL if it fails.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>CLIENT *clnttcp_create(struct sockaddr_in *</emphasis><emphasis remap='I'>addr</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                int *</emphasis><emphasis remap='I'>sockp</emphasis><emphasis remap='B'>, unsigned int </emphasis><emphasis remap='I'>sendsz</emphasis><emphasis remap='B'>, unsigned int </emphasis><emphasis remap='I'>recvsz</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This routine creates an RPC client for the remote program
+<emphasis remap='I'>prognum</emphasis>,
+version
+<emphasis remap='I'>versnum</emphasis>;
+the client uses TCP/IP as a transport.
+The remote program is located at Internet address
+<emphasis remap='I'>*addr</emphasis>.
+If
+<!-- The following inline font conversion is necessary for the hyphen indicator -->
+<emphasis remap='I'>addr-&gt;sin_port</emphasis>
+is zero, then it is set to the actual port that the remote
+program is listening on (the remote
+<emphasis remap='B'>portmap</emphasis>
+service is consulted for this information).
+The parameter
+<emphasis remap='I'>sockp</emphasis>
+is a socket; if it is
+<emphasis remap='B'>RPC_ANYSOCK</emphasis>,
+then this routine opens a new one and sets
+<emphasis remap='I'>sockp</emphasis>.
+Since TCP-based RPC uses buffered I/O,
+the user may specify the size of the send and receive buffers
+with the parameters
+<emphasis remap='I'>sendsz</emphasis>
+and
+<emphasis remap='I'>recvsz</emphasis>;
+values of zero choose suitable defaults.
+This routine returns NULL if it fails.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>CLIENT *clntudp_create(struct sockaddr_in *</emphasis><emphasis remap='I'>addr</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                struct timeval </emphasis><emphasis remap='I'>wait</emphasis><emphasis remap='B'>, int *</emphasis><emphasis remap='I'>sockp</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This routine creates an RPC client for the remote program
+<emphasis remap='I'>prognum</emphasis>,
+version
+<emphasis remap='I'>versnum</emphasis>;
+the client uses use UDP/IP as a transport.
+The remote program is located at Internet address
+<emphasis remap='I'>addr</emphasis>.
+If
+<emphasis remap='I'>addr-&gt;sin_port</emphasis>
+is zero, then it is set to actual port that the remote
+program is listening on (the remote
+<emphasis remap='B'>portmap</emphasis>
+service is consulted for this information).
+The parameter
+<emphasis remap='I'>sockp</emphasis>
+is a socket; if it is
+<emphasis remap='B'>RPC_ANYSOCK</emphasis>,
+then this routine opens a new one and sets
+<emphasis remap='I'>sockp</emphasis>.
+The UDP transport resends the call message in intervals of
+<emphasis remap='I'>wait</emphasis>
+time until a response is received or until the call times out.
+The total time for the call to time out is specified by
+<emphasis remap='B'>clnt_call</emphasis>().</para>
+
+<para>Warning: since UDP-based RPC messages can only hold up to 8 Kbytes
+of encoded data, this transport cannot be used for procedures
+that take large arguments or return huge results.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>CLIENT *clntudp_bufcreate(struct sockaddr_in *</emphasis><emphasis remap='I'>addr</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>            unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>            struct timeval </emphasis><emphasis remap='I'>wait</emphasis><emphasis remap='B'>, int *</emphasis><emphasis remap='I'>sockp</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>            unsigned int </emphasis><emphasis remap='I'>sendsize</emphasis><emphasis remap='B'>, unsigned int </emphasis><emphasis remap='I'>recosize</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This routine creates an RPC client for the remote program
+<emphasis remap='I'>prognum</emphasis>,
+on
+<emphasis remap='I'>versnum</emphasis>;
+the client uses use UDP/IP as a transport.
+The remote program is located at Internet address
+<emphasis remap='I'>addr</emphasis>.
+If
+<emphasis remap='I'>addr-&gt;sin_port</emphasis>
+is zero, then it is set to actual port that the remote
+program is listening on (the remote
+<emphasis remap='B'>portmap</emphasis>
+service is consulted for this information).
+The parameter
+<emphasis remap='I'>sockp</emphasis>
+is a socket; if it is
+<emphasis remap='B'>RPC_ANYSOCK</emphasis>,
+then this routine opens a new one and sets
+<emphasis remap='I'>sockp</emphasis>.
+The UDP transport resends the call message in intervals of
+<emphasis remap='I'>wait</emphasis>
+time until a response is received or until the call times out.
+The total time for the call to time out is specified by
+<emphasis remap='B'>clnt_call</emphasis>().</para>
+
+<para>This allows the user to specify the maximum packet
+size for sending and receiving UDP-based RPC messages.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void get_myaddress(struct sockaddr_in *</emphasis><emphasis remap='I'>addr</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Stuff the machine's IP address into
+<emphasis remap='I'>*addr</emphasis>,
+without consulting the library routines that deal with
+<filename>/etc/hosts</filename>.
+The port number is always set to
+<emphasis remap='B'>htons(PMAPPORT)</emphasis>.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>struct pmaplist *pmap_getmaps(struct sockaddr_in *</emphasis><emphasis remap='I'>addr</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A user interface to the
+<emphasis remap='B'>portmap</emphasis>
+service, which returns a list of the current RPC
+program-to-port mappings on the host located at IP address
+<emphasis remap='I'>*addr</emphasis>.
+This routine can return NULL.
+The command
+<userinput>rpcinfo&nbsp;-p</userinput>
+uses this routine.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>unsigned short pmap_getport(struct sockaddr_in *</emphasis><emphasis remap='I'>addr</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    unsigned int </emphasis><emphasis remap='I'>protocol</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A user interface to the
+<emphasis remap='B'>portmap</emphasis>
+service, which returns the port number
+on which waits a service that supports program number
+<emphasis remap='I'>prognum</emphasis>,
+version
+<emphasis remap='I'>versnum</emphasis>,
+and speaks the transport protocol associated with
+<emphasis remap='I'>protocol</emphasis>.
+The value of
+<emphasis remap='I'>protocol</emphasis>
+is most likely
+<emphasis remap='B'>IPPROTO_UDP</emphasis>
+or
+<emphasis remap='B'>IPPROTO_TCP</emphasis>.
+A return value of zero means that the mapping does not exist
+or that the RPC system failed to contact the remote
+<emphasis remap='B'>portmap</emphasis>
+service.
+In the latter case, the global variable
+<emphasis remap='I'>rpc_createerr</emphasis>
+contains the RPC status.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>enum clnt_stat pmap_rmtcall(struct sockaddr_in *</emphasis><emphasis remap='I'>addr</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    unsigned long </emphasis><emphasis remap='I'>procnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    xdrproc_t </emphasis><emphasis remap='I'>inproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>in</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    xdrproc_t </emphasis><emphasis remap='I'>outproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>out</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    struct timeval </emphasis><emphasis remap='I'>tout</emphasis><emphasis remap='B'>, unsigned long *</emphasis><emphasis remap='I'>portp</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A user interface to the
+<emphasis remap='B'>portmap</emphasis>
+service, which instructs
+<emphasis remap='B'>portmap</emphasis>
+on the host at IP address
+<emphasis remap='I'>*addr</emphasis>
+to make an RPC call on your behalf to a procedure on that host.
+The parameter
+<emphasis remap='I'>*portp</emphasis>
+will be modified to the program's port number if the procedure succeeds.
+The definitions of other parameters are discussed
+in
+<emphasis remap='B'>callrpc</emphasis>()
+and
+<emphasis remap='B'>clnt_call</emphasis>().
+This procedure should be used for a &ldquo;ping&rdquo; and nothing else.
+See also
+<emphasis remap='B'>clnt_broadcast</emphasis>().</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t pmap_set(unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                unsigned int </emphasis><emphasis remap='I'>protocol</emphasis><emphasis remap='B'>, unsigned short </emphasis><emphasis remap='I'>port</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A user interface to the
+<emphasis remap='B'>portmap</emphasis>
+service, which establishes a mapping between the triple
+[<emphasis remap='I'>prognum</emphasis>,<emphasis remap='I'>versnum</emphasis>,<emphasis remap='I'>protocol</emphasis>]
+and
+<emphasis remap='I'>port</emphasis>
+on the machine's
+<emphasis remap='B'>portmap</emphasis>
+service.
+The value of
+<emphasis remap='I'>protocol</emphasis>
+is most likely
+<emphasis remap='B'>IPPROTO_UDP</emphasis>
+or
+<emphasis remap='B'>IPPROTO_TCP</emphasis>.
+This routine returns one if it succeeds, zero otherwise.
+Automatically done by
+<emphasis remap='B'>svc_register</emphasis>().</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t pmap_unset(unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A user interface to the
+<emphasis remap='B'>portmap</emphasis>
+service, which destroys all mapping between the triple
+[<emphasis remap='I'>prognum</emphasis>,<emphasis remap='I'>versnum</emphasis>,<emphasis remap='I'>*</emphasis>]
+and
+<emphasis remap='B'>ports</emphasis>
+on the machine's
+<emphasis remap='B'>portmap</emphasis>
+service.
+This routine returns one if it succeeds, zero otherwise.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>int registerrpc(unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                unsigned long </emphasis><emphasis remap='I'>procnum</emphasis><emphasis remap='B'>, char *(*</emphasis><emphasis remap='I'>procname</emphasis><emphasis remap='B'>)(char *),</emphasis>
+<emphasis remap='B'>                xdrproc_t </emphasis><emphasis remap='I'>inproc</emphasis><emphasis remap='B'>, xdrproc_t </emphasis><emphasis remap='I'>outproc</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Register procedure
+<emphasis remap='I'>procname</emphasis>
+with the RPC service package.
+If a request arrives for program
+<emphasis remap='I'>prognum</emphasis>,
+version
+<emphasis remap='I'>versnum</emphasis>,
+and procedure
+<emphasis remap='I'>procnum</emphasis>,
+<emphasis remap='I'>procname</emphasis>
+is called with a pointer to its parameter(s);
+<emphasis remap='I'>progname</emphasis>
+should return a pointer to its static result(s);
+<emphasis remap='I'>inproc</emphasis>
+is used to decode the parameters while
+<emphasis remap='I'>outproc</emphasis>
+is used to encode the results.
+This routine returns zero if the registration succeeded, -1 otherwise.</para>
+
+<para>Warning: remote procedures registered in this form
+are accessed using the UDP/IP transport; see
+<emphasis remap='B'>svcudp_create</emphasis>()
+for restrictions.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>struct rpc_createerr </emphasis><emphasis remap='I'>rpc_createerr</emphasis><emphasis remap='B'>;</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A global variable whose value is set by any RPC client creation routine
+that does not succeed.
+Use the routine
+<emphasis remap='B'>clnt_pcreateerror</emphasis>()
+to print the reason why.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svc_destroy(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A macro that destroys the RPC service transport handle,
+<emphasis remap='I'>xprt</emphasis>.
+Destruction usually involves deallocation
+of private data structures, including
+<emphasis remap='I'>xprt</emphasis>
+itself.
+Use of
+<emphasis remap='I'>xprt</emphasis>
+is undefined after calling this routine.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>fd_set </emphasis><emphasis remap='I'>svc_fdset</emphasis><emphasis remap='B'>;</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A global variable reflecting the RPC service side's
+read file descriptor bit mask; it is suitable as a parameter to the
+<citerefentry><refentrytitle>select</refentrytitle><manvolnum>2</manvolnum></citerefentry>
+system call.
+This is only of interest if a service implementor does not call
+<emphasis remap='B'>svc_run</emphasis>(),
+but rather does his own asynchronous event processing.
+This variable is read-only (do not pass its address to
+<citerefentry><refentrytitle>select</refentrytitle><manvolnum>2</manvolnum></citerefentry>!),
+yet it may change after calls to
+<emphasis remap='B'>svc_getreqset</emphasis>()
+or any creation routines.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>int </emphasis><emphasis remap='I'>svc_fds</emphasis><emphasis remap='B'>;</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Similar to
+<emphasis remap='B'>svc_fdset</emphasis>,
+but limited to 32 descriptors.
+This interface is obsoleted by
+<emphasis remap='B'>svc_fdset</emphasis>.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>svc_freeargs(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>, xdrproc_t </emphasis><emphasis remap='I'>inproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>in</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A macro that frees any data allocated by the RPC/XDR
+system when it decoded the arguments to a service procedure using
+<emphasis remap='B'>svc_getargs</emphasis>().
+This routine returns 1 if the results were successfully freed,
+and zero otherwise.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>svc_getargs(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>, xdrproc_t </emphasis><emphasis remap='I'>inproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>in</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>A macro that decodes the arguments of an RPC request
+associated with the RPC service transport handle,
+<emphasis remap='I'>xprt</emphasis>.
+The parameter
+<emphasis remap='I'>in</emphasis>
+is the address where the arguments will be placed;
+<emphasis remap='I'>inproc</emphasis>
+is the XDR routine used to decode the arguments.
+This routine returns one if decoding succeeds, and zero otherwise.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>struct sockaddr_in *svc_getcaller(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>The approved way of getting the network address of the caller
+of a procedure associated with the RPC service transport handle,
+<emphasis remap='I'>xprt</emphasis>.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svc_getreqset(fd_set *</emphasis><emphasis remap='I'>rdfds</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This routine is only of interest if a service implementor does not call
+<emphasis remap='B'>svc_run</emphasis>(),
+but instead implements custom asynchronous event processing.
+It is called when the
+<citerefentry><refentrytitle>select</refentrytitle><manvolnum>2</manvolnum></citerefentry>
+system call has determined that an RPC request has arrived on some
+RPC socket(s);
+<emphasis remap='I'>rdfds</emphasis>
+is the resultant read file descriptor bit mask.
+The routine returns when all sockets associated with the value of
+<emphasis remap='I'>rdfds</emphasis>
+have been serviced.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svc_getreq(int </emphasis><emphasis remap='I'>rdfds</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Similar to
+<emphasis remap='B'>svc_getreqset</emphasis>(),
+but limited to 32 descriptors.
+This interface is obsoleted by
+<emphasis remap='B'>svc_getreqset</emphasis>().</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t svc_register(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                    void (*</emphasis><emphasis remap='I'>dispatch</emphasis><emphasis remap='B'>)(svc_req *, SVCXPRT *),</emphasis>
+<emphasis remap='B'>                    unsigned long </emphasis><emphasis remap='I'>protocol</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Associates
+<emphasis remap='I'>prognum</emphasis>
+and
+<emphasis remap='I'>versnum</emphasis>
+with the service dispatch procedure,
+<emphasis remap='I'>dispatch</emphasis>.
+If
+<emphasis remap='I'>protocol</emphasis>
+is zero, the service is not registered with the
+<emphasis remap='B'>portmap</emphasis>
+service.
+If
+<emphasis remap='I'>protocol</emphasis>
+is nonzero, then a mapping of the triple
+[<emphasis remap='I'>prognum</emphasis>,<emphasis remap='I'>versnum</emphasis>,<emphasis remap='I'>protocol</emphasis>]
+to
+<emphasis remap='I'>xprt-&gt;xp_port</emphasis>
+is established with the local
+<emphasis remap='B'>portmap</emphasis>
+service (generally
+<emphasis remap='I'>protocol</emphasis>
+is zero,
+<emphasis remap='B'>IPPROTO_UDP</emphasis>
+or
+<emphasis remap='B'>IPPROTO_TCP</emphasis>).
+The procedure
+<emphasis remap='I'>dispatch</emphasis>
+has the following form:</para>
+<!-- in +4n -->
+<programlisting remap='.nf'>
+
+dispatch(struct svc_req *request, SVCXPRT *xprt);
+</programlisting> <!-- .fi -->
+
+<para>The
+<emphasis remap='B'>svc_register</emphasis>()
+routine returns one if it succeeds, and zero otherwise.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svc_run(void);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This routine never returns.
+It waits for RPC requests to arrive, and calls the appropriate service
+procedure using
+<emphasis remap='B'>svc_getreq</emphasis>()
+when one arrives.
+This procedure is usually waiting for a
+<citerefentry><refentrytitle>select</refentrytitle><manvolnum>2</manvolnum></citerefentry>
+system call to return.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t svc_sendreply(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>, xdrproc_t </emphasis><emphasis remap='I'>outproc</emphasis><emphasis remap='B'>, char *</emphasis><emphasis remap='I'>out</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Called by an RPC service's dispatch routine to send the results of a
+remote procedure call.
+The parameter
+<emphasis remap='I'>xprt</emphasis>
+is the request's associated transport handle;
+<emphasis remap='I'>outproc</emphasis>
+is the XDR routine which is used to encode the results; and
+<emphasis remap='I'>out</emphasis>
+is the address of the results.
+This routine returns one if it succeeds, zero otherwise.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svc_unregister(unsigned long </emphasis><emphasis remap='I'>prognum</emphasis><emphasis remap='B'>, unsigned long </emphasis><emphasis remap='I'>versnum</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Remove all mapping of the double
+[<emphasis remap='I'>prognum</emphasis>,<emphasis remap='I'>versnum</emphasis>]
+to dispatch routines, and of the triple
+[<emphasis remap='I'>prognum</emphasis>,<emphasis remap='I'>versnum</emphasis>,<emphasis remap='I'>*</emphasis>]
+to port number.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svcerr_auth(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>, enum auth_stat </emphasis><emphasis remap='I'>why</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Called by a service dispatch routine that refuses to perform
+a remote procedure call due to an authentication error.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svcerr_decode(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Called by a service dispatch routine that cannot successfully
+decode its parameters.
+See also
+<emphasis remap='B'>svc_getargs</emphasis>().</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svcerr_noproc(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Called by a service dispatch routine that does not implement
+the procedure number that the caller requests.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svcerr_noprog(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Called when the desired program is not registered with the RPC package.
+Service implementors usually do not need this routine.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svcerr_progvers(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Called when the desired version of a program is not registered
+with the RPC package.
+Service implementors usually do not need this routine.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svcerr_systemerr(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Called by a service dispatch routine when it detects a system
+error not covered by any particular protocol.
+For example, if a service can no longer allocate storage,
+it may call this routine.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void svcerr_weakauth(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Called by a service dispatch routine that refuses to perform
+a remote procedure call due to insufficient authentication parameters.
+The routine calls
+<emphasis remap='B'>svcerr_auth(xprt, AUTH_TOOWEAK)</emphasis>.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>SVCXPRT *svcfd_create(int </emphasis><emphasis remap='I'>fd</emphasis><emphasis remap='B'>, unsigned int </emphasis><emphasis remap='I'>sendsize</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                      unsigned int </emphasis><emphasis remap='I'>recvsize</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Create a service on top of any open descriptor.
+Typically, this descriptor is a connected socket for a stream protocol such
+as TCP.
+<emphasis remap='I'>sendsize</emphasis>
+and
+<emphasis remap='I'>recvsize</emphasis>
+indicate sizes for the send and receive buffers.
+If they are zero, a reasonable default is chosen.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>SVCXPRT *svcraw_create(void);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This routine creates a toy RPC
+service transport, to which it returns a pointer.
+The transport is really a buffer within the process's address space,
+so the corresponding RPC client should live in the same address space; see
+<emphasis remap='B'>clntraw_create</emphasis>().
+This routine allows simulation of RPC and acquisition of RPC
+overheads (such as round trip times), without any kernel interference.
+This routine returns NULL if it fails.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>SVCXPRT *svctcp_create(int </emphasis><emphasis remap='I'>sock</emphasis><emphasis remap='B'>, unsigned int </emphasis><emphasis remap='I'>send_buf_size</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                       unsigned int </emphasis><emphasis remap='I'>recv_buf_size</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This routine creates a TCP/IP-based RPC
+service transport, to which it returns a pointer.
+The transport is associated with the socket
+<emphasis remap='I'>sock</emphasis>,
+which may be
+<emphasis remap='B'>RPC_ANYSOCK</emphasis>,
+in which case a new socket is created.
+If the socket is not bound to a local TCP
+port, then this routine binds it to an arbitrary port.
+Upon completion,
+<emphasis remap='I'>xprt-&gt;xp_sock</emphasis>
+is the transport's socket descriptor, and
+<emphasis remap='I'>xprt-&gt;xp_port</emphasis>
+is the transport's port number.
+This routine returns NULL if it fails.
+Since TCP-based RPC uses buffered I/O,
+users may specify the size of buffers; values of zero
+choose suitable defaults.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>SVCXPRT *svcudp_bufcreate(int </emphasis><emphasis remap='I'>sock</emphasis><emphasis remap='B'>, unsigned int </emphasis><emphasis remap='I'>sendsize</emphasis><emphasis remap='B'>,</emphasis>
+<emphasis remap='B'>                          unsigned int </emphasis><emphasis remap='I'>recosize</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This routine creates a UDP/IP-based RPC
+service transport, to which it returns a pointer.
+The transport is associated with the socket
+<emphasis remap='I'>sock</emphasis>,
+which may be
+<emphasis remap='B'>RPC_ANYSOCK</emphasis>,
+in which case a new socket is created.
+If the socket is not bound to a local UDP
+port, then this routine binds it to an arbitrary port.
+Upon completion,
+<emphasis remap='I'>xprt-&gt;xp_sock</emphasis>
+is the transport's socket descriptor, and
+<emphasis remap='I'>xprt-&gt;xp_port</emphasis>
+is the transport's port number.
+This routine returns NULL if it fails.</para>
+
+<para>This allows the user to specify the maximum packet size for sending and
+receiving UDP-based RPC messages.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>SVCXPRT *svcudp_create(int </emphasis><emphasis remap='I'>sock</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>This call is equivalent to
+<emphasis remap='I'>svcudp_bufcreate(sock,SZ,SZ)</emphasis>
+for some default size <emphasis remap='I'>SZ</emphasis>.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t xdr_accepted_reply(XDR *</emphasis><emphasis remap='I'>xdrs</emphasis><emphasis remap='B'>, struct accepted_reply *</emphasis><emphasis remap='I'>ar</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Used for encoding RPC reply messages.
+This routine is useful for users who wish to generate
+RPC-style messages without using the RPC package.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t xdr_authunix_parms(XDR *</emphasis><emphasis remap='I'>xdrs</emphasis><emphasis remap='B'>, struct authunix_parms *</emphasis><emphasis remap='I'>aupp</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Used for describing UNIX credentials.
+This routine is useful for users
+who wish to generate these credentials without using the RPC
+authentication package.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void xdr_callhdr(XDR *</emphasis><emphasis remap='I'>xdrs</emphasis><emphasis remap='B'>, struct rpc_msg *</emphasis><emphasis remap='I'>chdr</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Used for describing RPC call header messages.
+This routine is useful for users who wish to generate
+RPC-style messages without using the RPC package.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t xdr_callmsg(XDR *</emphasis><emphasis remap='I'>xdrs</emphasis><emphasis remap='B'>, struct rpc_msg *</emphasis><emphasis remap='I'>cmsg</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Used for describing RPC call messages.
+This routine is useful for users who wish to generate RPC-style
+messages without using the RPC package.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t xdr_opaque_auth(XDR *</emphasis><emphasis remap='I'>xdrs</emphasis><emphasis remap='B'>, struct opaque_auth *</emphasis><emphasis remap='I'>ap</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Used for describing RPC authentication information messages.
+This routine is useful for users who wish to generate
+RPC-style messages without using the RPC package.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t xdr_pmap(XDR *</emphasis><emphasis remap='I'>xdrs</emphasis><emphasis remap='B'>, struct pmap *</emphasis><emphasis remap='I'>regs</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Used for describing parameters to various
+<emphasis remap='B'>portmap</emphasis>
+procedures, externally.
+This routine is useful for users who wish to generate
+these parameters without using the
+<emphasis remap='B'>pmap</emphasis>
+interface.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t xdr_pmaplist(XDR *</emphasis><emphasis remap='I'>xdrs</emphasis><emphasis remap='B'>, struct pmaplist **</emphasis><emphasis remap='I'>rp</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Used for describing a list of port mappings, externally.
+This routine is useful for users who wish to generate
+these parameters without using the
+<emphasis remap='B'>pmap</emphasis>
+interface.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t xdr_rejected_reply(XDR *</emphasis><emphasis remap='I'>xdrs</emphasis><emphasis remap='B'>, struct rejected_reply *</emphasis><emphasis remap='I'>rr</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Used for describing RPC reply messages.
+This routine is useful for users who wish to generate
+RPC-style messages without using the RPC package.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>bool_t xdr_replymsg(XDR *</emphasis><emphasis remap='I'>xdrs</emphasis><emphasis remap='B'>, struct rpc_msg *</emphasis><emphasis remap='I'>rmsg</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Used for describing RPC reply messages.
+This routine is useful for users who wish to generate
+RPC style messages without using the RPC package.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void xprt_register(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>After RPC service transport handles are created,
+they should register themselves with the RPC service package.
+This routine modifies the global variable
+<emphasis remap='I'>svc_fds</emphasis>.
+Service implementors usually do not need this routine.</para>
+
+<literallayout remap='.nf'>
+<emphasis remap='B'>void xprt_unregister(SVCXPRT *</emphasis><emphasis remap='I'>xprt</emphasis><emphasis remap='B'>);</emphasis>
+</literallayout> <!-- .fi -->
+
+<para>Before an RPC service transport handle is destroyed,
+it should unregister itself with the RPC service package.
+This routine modifies the global variable
+<emphasis remap='I'>svc_fds</emphasis>.
+Service implementors usually do not need this routine.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+<!-- We don't have an rpc_secure.3 page in the set at the moment &bsol;-&bsol;- MTK, 19 Sep 05
+.BR rpc_secure (3), -->
+<para><citerefentry><refentrytitle>xdr</refentrytitle><manvolnum>3</manvolnum></citerefentry></para>
+
+<para>The following manuals:</para>
+  <blockquote remap='RS'>
+<para>Remote Procedure Calls: Protocol Specification</para>
+
+<para>Remote Procedure Call Programming Guide</para>
+
+<para>rpcgen Programming Guide
+
+  </para></blockquote> <!-- remap='RE' -->
+
+<para><emphasis remap='I'>RPC: Remote Procedure Call Protocol Specification</emphasis>,
+RFC&nbsp;1050, Sun Microsystems, Inc.,
+USC-ISI.</para>
+</refsect1>
+
+<refsect1 id='colophon'><title>COLOPHON</title>
+<para>This page is part of release 3.44 of the Linux
+<emphasis remap='I'>man-pages</emphasis>
+project.
+A description of the project,
+and information about reporting bugs,
+can be found at
+<ulink url='http://www.kernel.org/doc/man-pages/'>http://www.kernel.org/doc/man-pages/</ulink>.</para>
+</refsect1>
+</refentry>
+

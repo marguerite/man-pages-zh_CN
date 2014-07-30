@@ -56,7 +56,7 @@ the output directory, regardless of what source directory it came
 from.
 </para>
 
-<para>A maniual page is considered ineligibile for batch conversion if
+<para>A manual page is considered ineligible for batch conversion if
 it contains text indicating it has been generated from DocBook masters
 of from Doxygen.</para>
 

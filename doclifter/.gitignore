@@ -1,0 +1,8 @@
+manlifter.html
+doclifter.html
+*.1
+*.tar.gz
+xmlman
+prepatch
+SHIPPER.*
+

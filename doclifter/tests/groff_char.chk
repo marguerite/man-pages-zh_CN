@@ -30,7 +30,7 @@
 <!ENTITY jnodot '&#0237;'>
 ]>
 <!-- lifted from man+troff by doclifter -->
-<refentry>
+<refentry id='stdin'>
 <refentryinfo><date>01 April 2012</date></refentryinfo>
 <refmeta>
 <refentrytitle>GROFF_CHAR</refentrytitle>
@@ -296,7 +296,7 @@ quotation mark; the original character can be obtained with `<emphasis remap='CW
   </listitem>
   </varlistentry>
   <varlistentry>
-  <term><emphasis remap='B'>'</emphasis></term>
+  <term><emphasis remap='B'>&apos;'</emphasis></term>
   <listitem>
 <para>the ISO &shy;latin1 `Apostrophe' (code&nbsp;39) prints as ', a right single
 quotation mark; the original character can be obtained with `<emphasis remap='CW'>&bsol;(aq</emphasis>'.</para>
@@ -2351,7 +2351,7 @@ the values given in parentheses are the original (spacing) ones.</para>
         <entry align='left'>single closing quote</entry>
       </row>
       <row>
-        <entry align='left'>'</entry>
+        <entry align='left'>&apos;'</entry>
         <entry align='left'>&bsol;[aq]</entry>
         <entry align='left'>quotesingle</entry>
         <entry align='left'>u0027</entry>

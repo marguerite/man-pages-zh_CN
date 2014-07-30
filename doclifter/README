@@ -11,6 +11,10 @@ This tool does the hard parts.  TBL tables are translated into DocBook
 table markup, PIC into SVG, and EQN into MathML (relying on pic2svg
 and GNU eqn for the last two).
 
+Install by doing, "make install". To install to a prefix other than
+the default (/usr), set a PREFIX environment variable
+e.g. "PREFIX=/usr/local make -e install"
+
 Test loads are included in the distribution; do "make check" to run
 the regression tests.  The code has been live tested in about the most
 brutal possible way; it has been run against every single man page in

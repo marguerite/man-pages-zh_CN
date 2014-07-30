@@ -3,7 +3,7 @@
                    "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <!-- lifted from man+troff by doclifter -->
 
-<refentry>
+<refentry id='stdin'>
 &lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
 &lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "<ulink url='http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd</ulink>"&gt;
 &lt;svg version="1.1" baseProfile="full" id="body" width="8in" height="8in" viewBox="0 0 1 1" preserveAspectRatio="none" xmlns="<ulink url='http://www.w3.org/2000/svg'>http://www.w3.org/2000/svg</ulink>" xmlns:xlink="<ulink url='http://www.w3.org/1999/xlink'>http://www.w3.org/1999/xlink</ulink>" xmlns:ev="<ulink url='http://www.w3.org/2001/xml-events'>http://www.w3.org/2001/xml-events</ulink>"&gt;

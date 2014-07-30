@@ -1,0 +1,26 @@
+.\" Seriously reduced subsection of sudoers.5 to test .Bl -literal
+.Dd July 16, 2012
+.Dt SUDOERS 5
+.Os Sudo 1.8.6p3
+.Sh NAME
+.Nm sudoers
+.Nd default sudo security policy module
+.Sh DESCRIPTION
+.Pp
+Would match any file name beginning with a letter.
+.Pp
+Note that a forward slash
+.Pq Ql /
+will
+.Sy not
+be matched by
+wildcards used in the path name.
+This is to make a path like:
+.Bd -literal -offset 4n
+/usr/bin/*
+.Ed
+.Pp
+match
+.Pa /usr/bin/who
+but not
+.Pa /usr/bin/X11/xterm .

@@ -1,0 +1,9 @@
+#!/bin/sh
+# Clone a patch (specified by NAME.SECTION) to any number of new copies
+# specified likewise.  Useful for cases like XF86VM.3 and its clones.
+base=$1
+shift
+for copy in $*;
+do
+    sed <prepatch/${base}.patch >prepatch/${copy}.patch 1,2s/${base}/${copy}/
+done

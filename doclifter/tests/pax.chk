@@ -2,7 +2,7 @@
 <!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
                    "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <!-- lifted from man+troff by doclifter -->
-<refentry>
+<refentry id='stdin'>
 <!-- Copyright (c) 2001&bsol;-2003 The Open Group, All Rights Reserved -->
 <refentryinfo><date>2003</date></refentryinfo>
 <refmeta>
@@ -1194,7 +1194,7 @@ default, if no
 </variablelist>
 </refsect1>
 
-<refsect1 id='stdin'><title>STDIN</title>
+<refsect1 id='stdin2'><title>STDIN</title>
 <para>In <emphasis remap='B'>write</emphasis> mode, the standard input shall be used only if no <emphasis remap='I'>file</emphasis>
 operands are specified. It shall be a text file
 containing a list of pathnames, one per line, without leading or trailing

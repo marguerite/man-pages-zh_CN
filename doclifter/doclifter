@@ -1,12 +1,12 @@
-#!/usr/bin/env python
-"""
+#!/usr/bin/env python2
+r"""
 doclifter: translate man/mdoc/ms/me/mm sources to DocBook.
 
 By Eric S. Raymond, copyright 2002, 2006, 2007.
 Released as open source under the BSD license.
 
 This comment is addressed to you if you want to add support for another
-macro package to doclifter.  Or if you have encountered a bug in doclifter 
+macro package to doclifter.  Or if you have encountered a bug in doclifter
 and need to understand the code in doclifter in order to fix it.  Or if
 you just want to understand how it works.
 
@@ -22,9 +22,9 @@ TroffInterpreter a string consisting of the entire text of the file to
 be translated and accepts a translated string back.
 
 TroffInterpreter provides I/O and other basic services for a stack of request
-interpreters.  Interpreters get added to the stack when TroffInterpreter 
+interpreters.  Interpreters get added to the stack when TroffInterpreter
 recognizes certain patterns in the input; see the table interpreter_dispatch
-for details.  If a string pattern added to this table is length 2, 
+for details.  If a string pattern added to this table is length 2,
 TroffInterpreter will assume it is a request name and check to make sure
 that it's not a macro.
 
@@ -64,7 +64,7 @@ ignore set is handled by any other interpreter.
 complain_set
    Tags to complain about.  Put here things that can't be translated out
 of presentation level but that might have structural meaning (such as
-indentation changes).  The user will be warned on stderr when these 
+indentation changes).  The user will be warned on stderr when these
 come up.  Otherwise they're ignored.
 
 parabreak_set
@@ -73,8 +73,8 @@ document section.  Used to recognize the end of lists.
 
 sectionbreak_set
    The set of tags that forces a new document section.  Things that
-are going to translate to a DocBook sect, refsect, or section tag 
-should go here.  
+are going to translate to a DocBook sect, refsect, or section tag
+should go here.
 
 listbreak_set
    The set of tags that forces an end to a list section.  Normally
@@ -90,11 +90,11 @@ requests).  This infornation is used to restrict the scope of
 character translations.
 
 interpret
-   The request interpreter.  Called on every input line that begins 
+   The request interpreter.  Called on every input line that begins
 with a command character, that is . or ' not followed by another ' on the
 same line.
    This method needs to be careful about troff continuation (\c)
-characters.  If you add trailing markup to a line, or entirely replace the 
+characters.  If you add trailing markup to a line, or entirely replace the
 line, be sure to check for trailing \c first, remove it if present, and
 paste it back on the end.
 
@@ -107,7 +107,7 @@ reductions:
 replaced by the second if this macro set is active and the definition of
 the first contains the second.  This member is useful for replacing
 stereotyped wrapper macros with standard constructs that the translator
-knows how to handle.  
+knows how to handle.
    Most frequent case: lots of man page authors define a .Pp macro that
 does various funky things in troff but just expands to .PP in nroff.
 If we replace this with .PP various nasty parsing situations suddenly
@@ -118,12 +118,14 @@ take an existing one and mutate it.  If the macro package you are
 trying to support merely adds a few tags to an existing one, consider
 writing an interpreter for just those tags and adding it to the stack
 (this is the way the Pod2ManInterpreter code relates to
-ManInterpreter).  
+ManInterpreter).
 
 Warning: much of this code is grubby.  Alas, the grubbiness is
 intrinsic, because the troff request language is grubby.
 """
 import sys, os, glob, re, string, exceptions, tempfile, time, pprint, commands
+
+version = "2.15"
 
 # This is a speed hack recommended by Armin Rigo.  It cuts runtime by about 33%
 # and makes it possible for psyco 1.2 to reduce runtime another 33%.
@@ -141,7 +143,8 @@ name_synonyms = re.compile("^(naam|name|nom|nome|navn|nazwa|nombre|namn)$", re.I
 
 # How to detect synopses
 synopsis_label = re.compile("SYNOPSIS$", re.I)
-synopsis_header = re.compile(r'\.S[Hh]\s*"?(?:SYNOPSIS)', re.I)
+synopsis_header = re.compile(r'\.S[Hh]\s*"?(?:SYNOPSIS)"?$', re.I)
+description_label = re.compile("DESCRIPTION$", re.I)
 
 # Qt part descriptions.  It's OK to see these in function synopses, we just
 # turn them into an info section.
@@ -165,6 +168,7 @@ c_declarators = ("void", "char", "short", "int",
               "union", "enum", "const", "volatile",
               "inline", "restricted",	# C9X
               "virtual",)		# C++
+c_source_re = re.compile("|".join(c_declarators))
 
 # Used to strip headers off generated HTML documents.
 xmlheader = re.compile(r"<\?.*\?>\n")
@@ -175,7 +179,7 @@ doctype = re.compile(r"<\!DOCTYPE[^>]*\>\n")
 # Match an RFC822 email address, possibly with surrounding <>.
 # This is the right thing because the XSL stylesheets surround
 # <email> content with <> on output.
-email_re = re.compile("\b(?:&lt;)?(?P<email>[-\w_.]+@[-\w_.]+)(?:&gt;)?\b")
+email_re = re.compile(r"\b(?:&lt;)?(?P<email>[-\w_.]+@[-\w_.]+)(?:&gt;)?\b")
 
 # Match an URL. This pattern is carefully constructed not to eat
 # a following period if (as is often the case) it occurs at the
@@ -183,7 +187,7 @@ email_re = re.compile("\b(?:&lt;)?(?P<email>[-\w_.]+@[-\w_.]+)(?:&gt;)?\b")
 url_re=re.compile(r"(?P<url>\b(http|ftp|telnet|mailto)://[-_%\w/&;.~]+[-_%\w/&;])")
 
 # Match a xmlns URL in the top level tag, so that the url_re does not try to ulink-ize it.
-xmlns_re=re.compile("\w xmlns='http://docbook.org/ns/docbook'")
+xmlns_re=re.compile(r"\w xmlns='http://docbook.org/ns/docbook'")
 
 # Match a troff highlight
 troff_highlight = re.compile(r"(\\[fF]\([A-Z][A-Z])|(\\f\[[A-Z]*\])|(\\[fF][A-Z0-9])|(\\F\[\])")
@@ -206,8 +210,8 @@ id_re = re.compile("^[_a-zA-Z][_a-zA-Z0-9]*$")
 # with the -dash/-bullet distinction in mdoc, where -dash can only
 # reasonably be mapped to box rather than disc.
 ip_tag_mapping = {
-    "\(bu":"bullet",
-    "\(sq":"box",
+    r"\(bu":"bullet",
+    r"\(sq":"box",
     "*" : "bullet",
     "-" : "box",
     }
@@ -216,10 +220,10 @@ ip_tag_mapping = {
 mathml_entities = '''<!ENTITY % MATHML.prefixed "INCLUDE">
 <!ENTITY % MATHML.prefix "mml">
 <!ENTITY % equation.content "(alt?, (graphic+|mediaobject+|mml:math))">
-<!ENTITY % inlineequation.content 
+<!ENTITY % inlineequation.content
                 "(alt?, (graphic+|inlinemediaobject+|mml:math))">
 <!ENTITY % mathml PUBLIC "-//W3C//DTD MathML 2.0//EN"
-        "http://www.w3.org/TR/MathML2/dtd/mathml2.dtd">
+        "http://www.w3.org/Math/DTD/mathml2/mathml2.dtd">
 %mathml;
 '''
 
@@ -240,7 +244,7 @@ empty = """\
 </refentry>
 """
 
-# Verbosity thresholds
+# Verbosity thresholds for debugging
 general_verbosity	= "g"	# More details on warnings
 section_verbosity	= "s"	# Show section pushes and pops
 classify_verbosity	= "c"	# Show section classification details
@@ -338,7 +342,7 @@ def lineparse(line):
                 state = 'ws'
             elif c == '\\':
                 tokens[-1] += '\\'
-                state = 'tokencont'                
+                state = 'tokencont'
             else:
                 tokens[-1] += c
         elif state == 'tokencont':		# accumulating a token
@@ -421,7 +425,7 @@ class SemanticHintsRegistry:
         "Apply all known hints to lift tokens in a text string."
         # stderr.write("Marked tokens:" + `self.dictionary` + "\n")
         for (token, tag) in self.dictionary.items():
-            with_hi = "<emphasis\s+remap='[A-Z]+'>(%s)</emphasis>" % token
+            with_hi = r"<emphasis\s+remap='[A-Z]+'>(%s)</emphasis>" % token
             #stdout.write("marking %s as %s via %s\n" % (token, tag, with_hi))
             try:
                 ender = tag.split()[0]	# discard attributes
@@ -471,7 +475,7 @@ class DocLifter:
     # The second element is a regexp to match to the tag content.
     # If the regexp matches, the bracketing emphasis tags are replaced
     # with the semantic tag in the third column.
-    lift_highlights = map(lambda x: (re_compile("<emphasis\s+remap='%s'>(%s)</emphasis>" % (x[0], x[1])), x[2]), (
+    lift_highlights = map(lambda x: (re_compile(r"<emphasis\s+remap='%s'>(%s)</emphasis>" % (x[0], x[1])), x[2]), (
         ("SM",	r"[A-Z.]*",	"acronym"),	# Historical -- SM is rare
         ("SM",	r"[A-Z]+_[A-Z_]+",	"envar"),	# In bison.1, cvs.1
         ("[BI]",r"-[^<]+",	"option"),	# likely command option man(7)
@@ -580,7 +584,7 @@ class DocLifter:
 	# Find a replaceable in square brackets after an  option
         (re.compile(r"(<option>[^ ]+</option>\s*)\[<emphasis remap='[BI]'>([^<]+)</emphasis>\]"),
          r"\1<replaceable>\2</replaceable>"),
-       ) 
+       )
 
     tabset       = re.compile(r"tab *\(?(.)\)?")
 
@@ -591,6 +595,8 @@ class DocLifter:
      (r"T\h'-.1667m'\v'.224m'E\v'-.224m'\h'-.125m'X", r"TeX"),	# geqn.1
      (r"\h'-\w' 'u' ", r""),		# procmail.1
      (r"\l'\n(.lu'", ".DOCLIFTER-HR"),	# spax.1
+     (r"L\h'-0.36'\v'-0.15'\s-2A\s+2\v'0.15'\h'-0.15'T\h'-0.1667'\v'0.2'E\v'-0.2'\h'-0.125'X", "LATEX"),		# ctanify.1
+     (r"T\h'-0.1667'\v'0.2'E\v'-0.2'\h'-0.125'X", "TeX"),	# ctanify.1
      # Ugh.  These string definitions from inifile.1 and
      # elsewhere aren't used in the nroff mode we're emulating.
      # They have to be removed early because of the way they
@@ -642,6 +648,9 @@ class DocLifter:
         ("bracketlefttp", "&#x23a1;"),
         ("bracketleftbt", "&#x32a3;"),
         ("bracketleftex", "&#x23a2;"),
+        ("bracketrighttp", "&#x23a4;"),
+        ("bracketrightbt", "&#x32a6;"),
+        ("bracketrightex", "&#x23a5;"),
         ("braceleftex", "&#x23aa;"),
         ("bracerightmid", "&#x23ac;"),
         ("bracerightex", "&#x23aa;"),
@@ -659,25 +668,18 @@ class DocLifter:
         # jnodot exists in Unicode, but the DocBook stylesheets don't know it.
         # Someday we should be able to remove this.
         ("jnodot", "&#0237;"),
+        # Bug: &numsp; should be included by the v4 DocBook DTD,
+        # but apparently it isn't.
+        ("numsp", "&#x2007;"),
         )
 
-    def __init__(self, verbose="",
-                 quiet=0,
-                 portability=0,
-                 includepath="",
-                 encoding='ISO-8859-1',
-                 docbook5=True):
+    def __reinit__(self):
+        "Null out the parser state."
         self.toptag = None
-        self.verbose = verbose
-        self.quiet = quiet
-        self.portability = portability
-        self.includepath = includepath
-        self.encoding = encoding
-        self.docbook5 = docbook5
         self.ignore_set = set([])
         self.listbreak_set = set([])
         self.complain_set = set([])
-        self.outsubst = [] 
+        self.outsubst = []
         self.sectname = None
         self.nonblanks = 0
         self.idlist = {}
@@ -718,9 +720,24 @@ class DocLifter:
         self.interpreters = []
         self.diversion = None
         self.name = None
+        self.tabstops = None
         self.localhints = None
         self.basetime = None
         self.starttime = None
+
+    def __init__(self, verbose="",
+                 quiet=0,
+                 portability=0,
+                 includepath="",
+                 encoding='ISO-8859-1',
+                 docbook5=True):
+        self.verbose = verbose
+        self.quiet = quiet
+        self.portability = portability
+        self.includepath = includepath
+        self.encoding = encoding
+        self.docbook5 = docbook5
+        self.__reinit__()
 
     def body_section(self):
         "Are we in a section that corresponds to a real refentry section?"
@@ -758,7 +775,7 @@ class DocLifter:
             if io_verbosity in self.verbose:
                 self.notify("popped: " + line)
             self.lineno += self.physlines
-            return self.troff.expand_strings(line)    
+            return self.troff.expand_strings(line)
         return None
     def pushline(self, line):
         "Push a line back on to the input source"
@@ -872,9 +889,28 @@ class DocLifter:
                         translated += line[i]
                         i += 1
             line = translated
+        # Last thing to do is tab expansion
+        if '\t' in line and self.tabstops:
+            expanded = ""
+            for c in line:
+                if c != '\t':
+                    expanded += c
+                else:
+                    for stop in self.tabstops:
+                        if stop > len(expanded):
+                            break
+                    if stop > len(expanded):
+                        expanded += " " * (stop - len(expanded))
+                    else:
+                        expanded += '\t'
+            line = expanded
+        # And now we actually append it to the current diversion
         self.diversion.append(line)
         if line and not line.startswith("<!--"):
             self.nonblanks += 1
+    def endswith(self, trailer):
+        "Check for a match with the end of what we've emitted."
+        return self.diversion and self.diversion[-1].strip().endswith(trailer)
 
     # Synopsis handling
     def flush_transplant(self):
@@ -902,7 +938,7 @@ class DocLifter:
         if section_verbosity in self.verbose:
             self.notify("end_paragraph(%s)" % label)
         self.troff.nf = False
-        self.need_para = False 
+        self.need_para = False
     def need_paragraph(self):
         "Cause <para> to be prepended to next text line."
         if section_verbosity in self.verbose:
@@ -1023,7 +1059,10 @@ class DocLifter:
             self.troff.nf = True
             if io_verbosity in self.verbose:
                 self.warning("begin display collection")
-            self.displaystack.append((markup, remap, DisplayParser(self,True,{})))
+            self.displaystack.append((markup, remap, DisplayParser(self,
+                                                                   True,
+                                                                   True,
+                                                                   {})))
         else:
             self.emit(self.indent() + "<" + markup + remap + ">")
             if markup != "inlineequation":
@@ -1031,9 +1070,9 @@ class DocLifter:
 
     def end_block(self, markup, remap=""):
         "End a block-context markup section."
-        # FIXME: use ends to ignore stray things that look like terminators 
+        # FIXME: use ends to ignore stray things that look like terminators
         if io_verbosity in self.verbose:
-            self.notify("end_block(%s)" % markup)
+            self.notify("end_block(markup='%s', remap='%s')" % (markup, remap))
         if remap and not self.quiet:
             remap = " <!-- remap='" + remap + "' -->"
         self.troff.nf = False
@@ -1247,7 +1286,7 @@ class DocLifter:
         else:
             line = " ".join(args)
         if not trailer and line[-2:] == "\\c":
-            trailer = "\\c" 
+            trailer = "\\c"
             line = line[:-2]
         if len(highlight) > 1:
             highlight = "(" + highlight
@@ -1276,7 +1315,7 @@ class DocLifter:
             else:
                 words = nextl.split()
         if not trailer and words[-1][-2:] == "\\c":
-            trailer = "\\c" 
+            trailer = "\\c"
             words[-1] = words[-1][:-2]
         count = 0
         line = ""
@@ -1686,7 +1725,7 @@ class DocLifter:
             self.trap_prefix = self.trap_suffix = ""
         if interpreter_verbosity in self.verbose:
             self.notify("after ignore check, interpreter sees: " + `tokens`)
-        # Maybe this command closes a list?  
+        # Maybe this command closes a list?
         if self.stash_indents and listbreaker:
             if io_verbosity in self.verbose:
                 self.notify("list closer %s: %s"%(command,self.stash_indents))
@@ -1769,7 +1808,7 @@ class DocLifter:
                 # who forget that the closing bracket of a conditional is
                 # a command.  It's probably going to bite us someday.
                 if line == r"\}":
-                    self.pushline(TroffInterpreter.ctrl + "\}")
+                    self.pushline(TroffInterpreter.ctrl + r"\}")
                     if macro_verbosity in self.verbose:
                         self.warning(r"adventitious \} should probably be .\}")
                     continue
@@ -1822,7 +1861,7 @@ class DocLifter:
             raise exc_type, exc_value, exc_traceback
         self.lines = self.pushdown.pop()
         if divert is not None:
-            self.diversion = self.output 
+            self.diversion = self.output
 
     def find(self, st, backwards=False):
         "Does the string occur in text we haven't seen yet?"
@@ -1857,12 +1896,12 @@ class DocLifter:
             if start == -1:
                 break
             elif line[start:].startswith("\\[char"):
-                m = re.match("[0-9]+(?=\135)", line[start+6:])
+                m = re.match(r"[0-9]+(?=\135)", line[start+6:])
                 if m:
                     line = line[:start] + "&#" + m.group(0) + ";" + line[start + 6 + len(m.group(0)) + 1:]
                 oldstart = start + 2
             elif line[start:].startswith("\\[u"):
-                m = re.match("[0-9]+(?=\135)", line[start+3:])
+                m = re.match(r"[0-9]+(?=\135)", line[start+3:])
                 if m:
                     line = line[:start] + "&#" + m.group(0) + ";" + line[start + 3 + len(m.group(0)) + 1:]
                 oldstart = start + 2
@@ -1899,7 +1938,7 @@ class DocLifter:
         if not re_compile("<emphasis").match(line):
             return line
         for (link_highlight, re_content) in self.lift_links:
-            lift = re_compile("<emphasis\s+remap='%s'>(%s)</emphasis>" % (link_highlight, re_content))
+            lift = re_compile(r"<emphasis\s+remap='%s'>(%s)</emphasis>" % (link_highlight, re_content))
             if lift.match(line):
                 content = lift.sub(r"\1", line)
                 trailer = ""
@@ -2078,6 +2117,7 @@ class DocLifter:
         self.name = name
         self.file = cfile
         self.multiarg = multiarg
+        self.__reinit__()
         self.diversion = self.output
         self.starttime = self.basetime = time.time()
         # Set up the base troff interpreter
@@ -2285,7 +2325,7 @@ class DocLifter:
         # OK, now do pattern-based markup lifting on the DocBook markup
         head = "\n".join(self.output[:self.body_start]) + "\n"
         body = "\n".join(self.output[self.body_start:]) + "\n"
-        del self.output
+        self.output = []
         for (pattern, substitute) in DocLifter.post_translation_patterns:
             body = pattern.sub(substitute, body)
         for (r, s) in DocLifter.lift_highlights:
@@ -2468,7 +2508,8 @@ class TroffInterpreter:
         (r"&amp;", "&zerosp;"),
         (r"&lt;",  "&lt;"),	# Prevent spurious messages about \&
         (r"&gt;",  "&gt;"),	# Prevent spurious messages about \&
-        (r"&semi;","&semi;"),
+        (r"&apos;", "&apos;"),	# Prevent spurious messages about \&
+        (r"&semi;","&semi;"),	# Prevent spurious messages about \&
         (r")",     "&zerosp;"),	# groff extension
         (r"~",     "&nbsp;"),	# This isn't quite right, alas.
         (r" ",     "&nbsp;"),
@@ -2598,7 +2639,7 @@ class TroffInterpreter:
         (r"rq",	"&rdquo;"),	# ISOpub
         (r"oq",	"&lsquo;"),	# ISOnum: single open quote
         (r"cq",	"&rsquo;"),	# ISOnum: single closing quote (ASCII 39)
-        (r"aq",	"&zerosp;'"),	# apostrophe quote
+        (r"aq",	"&apos;'"),	# apostrophe quote
         (r"dq",	"\""),		# double quote (ASCII 34)
         (r"Fo",	"&laquo;"),	# ISOnum
         (r"Fc",	"&raquo;"),	# ISOnum
@@ -2622,9 +2663,12 @@ class TroffInterpreter:
         # internal pseudo-entities that we map to Unicode literals
         # rather than ISO entities.
         (r"braceex", "&braceex;"),
-        (r"bracketlefttp", "&bracketlefttp"),
+        (r"bracketlefttp", "&bracketlefttp;"),
         (r"bracketleftbt", "&bracketleftbt;"),
-        (r"bracketleftex", "&bracketleftex"),
+        (r"bracketleftex", "&bracketleftex;"),
+        (r"bracketrighttp", "&bracketrighttp;"),
+        (r"bracketrightbt", "&bracketrightbt;"),
+        (r"bracketrightex", "&bracketrightex;"),
         (r"lt", "&tlt;"),
         (r"bracelefttp", "&tlt;"),
         (r"lk", "&lk;"),
@@ -2999,8 +3043,8 @@ class TroffInterpreter:
         if self.macroargs:
             for argnum in range(1, 9):
                 line = line.replace(r"\$%d" % argnum, self.macroargs[-1][argnum-1])
-            line = line.replace("\$*", " ".join(self.macroargs[-1]))
-            line = line.replace("\$@", " ".join(map(lambda s: '"%s"' % s, self.macroargs[-1])))
+            line = line.replace(r"\$*", " ".join(self.macroargs[-1]))
+            line = line.replace(r"\$@", " ".join(map(lambda s: '"%s"' % s, self.macroargs[-1])))
         return line
 
     def eval_register(self, key):
@@ -3117,7 +3161,7 @@ class TroffInterpreter:
                 return (self.eval_register(register), exp[end:])
             else:
                 if increment is not None:
-                    self.registers[register] = str(increment)                
+                    self.registers[register] = str(increment)
             return ("0", exp[end:])
         # Half-assed job of evaluating \w, without the side effects.
         # Our 'basic units' are the width of a monospace character
@@ -3188,7 +3232,17 @@ class TroffInterpreter:
             return (`int(expparts[0]==expparts[1])`, remainder)
         # Maybe it's a parenthesized expression
         elif exp[0] == '(':
-            end = exp.find(')')
+            depth = 0
+            for end in range(len(exp)):
+                if exp[i] == '(':
+                    depth += 1
+                if exp[i] == ')':
+                    depth -= 1
+                    if depth == 0:
+                        end += 1
+                        break
+            else:
+                end = -1
             if end == -1:
                 self.source.error("unterminated parenthetical %s" % exp)
             return (self.eval_expr(exp[1:end]), exp[end+1:])
@@ -3204,7 +3258,9 @@ class TroffInterpreter:
         # Accept ! prefix
         if exp and exp[0] == "!":
             v = self.eval_expr(exp[1:])
-            v = str(len(v)==0 or v == '0')
+            v = str(int(len(v)==0 or v == '0'))
+        elif exp and exp[0] == "(":
+            v = self.eval_expr(exp[1:-1])
         else:
             # Expression can consist of a single term only
             (head, tail) = self.eval_term(exp)
@@ -3303,6 +3359,27 @@ class TroffInterpreter:
         elif command == "in":
             if self.source.in_synopsis():
                 pass
+            # Hacky way of dealing with
+            # .in +4n
+            # .sp
+            # .nf
+            # We can just ignore.sp in this context and fall through
+            # to the next case..
+            if self.source.peekline().startswith(".sp"):
+                self.source.passthrough([command] + args)
+                self.source.popline()
+            # Also ignore a blank line here, as in cpuset.7
+            if not self.source.peekline():
+                self.source.popline()
+            # Hacky way of dealing with
+            # .in +4n
+            # .nf
+            # That is, we tell it to expect a closing .in and ignore
+            # it as though the .nf had come first.  This way we avoid
+            # emitting a warning about an unstructured .in call.
+            if self.source.peekline().startswith(".nf") and args and args[0].startswith("+"):
+                self.ignore_outdent = args[0]
+                self.source.passthrough([command] + args)
             # Some .in pairs associated with displays can be ignored
             elif self.source.troff.nf and args and self.ignore_outdent is None:
                 self.ignore_outdent = args[0]
@@ -3315,15 +3392,41 @@ class TroffInterpreter:
                     self.source.warning("closing .in doesn't match opener")
                     self.source.passthrough([command] + args)
                 self.ignore_outdent = None
-            else:
+            elif not self.source.in_synopsis():
                 self.source.warning(".in seen in body section")
                 self.source.passthrough([command] + args)
         elif command == "ta":
-            # We're going to try to decompile ad-hoc tables here
+            # We only try to interpret a very restricted subset of tab
+            # stop settings here, for three reasons: (1) the only
+            # thing we can do with tabs is space-expand them when a
+            # fixed-width font is set, (2) man pages do not in general
+            # use sophisticated tab stopping, (3) the full semantics
+            # is hairy enough that we'd probably get it wrong.
+            parseable = True
+            if not args:
+                self.source.tabstops = None
+            else:
+                try:
+                    tabstops = []
+                    for arg in args:
+                        if arg.endswith("m") or arg.endswith("n"):
+                            arg = arg[:-1]
+                        if arg[0] == '+':
+                            arg = arg[1:]
+                            offset = -sum(tabstops)
+                        else:
+                            offset = 0
+                        tabstops.append(offset + int(arg))
+                    self.source.tabstops = tabstops
+                except ValueError:
+                    parseable = False
             while self.source.ignorable(self.source.peekline()):
                 # Ignore following .ne and similar crap
                 self.source.passthrough(self.source.popline().split())
-            if '\t' in self.source.peekline():
+            # Decompile ad-hoc tables.  But don't be fooled by C source listings
+            # that happen to have embedded tabs.
+            if not c_source_re.search(self.source.peekline()) \
+                   and '\t' in self.source.peekline():
                 # Aha, it's a table line
                 table = []
                 maxtabs = 0
@@ -3332,20 +3435,25 @@ class TroffInterpreter:
                     if match_command(bodyline, "br"):
                         self.source.popline()
                     elif '\t' in bodyline and not is_command(bodyline):
+                        if len(args) == 1:
+                            # Wacky special case. Some pages, like
+                            # enscript.1, have an ad-hoc table intended
+                            # to be two-column.  Only one tab stop is
+                            # set, but the gutter may consist of more
+                            # than one tab. Cope with this.
+                            bodyline = re.sub("\t+", "\t", bodyline)
                         maxtabs = max(maxtabs, bodyline.count("\t"))
-                        table.append(self.source.popline())
+                        table.append(bodyline)
+                        self.source.popline()
                     else:
+                        self.source.pushline(bodyline)
                         break
-                # Pass through trailing .ta,
-                # it will just be restoring old tabs 
-                if match_command(bodyline, "ta"):
-                    self.source.pushline('.\\"' + self.source.popline())
                 table = [".TS"," ".join(["l"]*(maxtabs+1))+"."]+table+[".TE"]
                 # Queue up the generated table to be turned into DocBook.
                 self.source.lines = table + self.source.lines
             else:
-                if not self.source.in_synopsis() and filter(lambda s: '\t' in s, self.source.lines):
-                    self.source.warning(".ta seen in body section")
+                if not self.source.in_synopsis() and not parseable and filter(lambda s: '\t' in s, self.source.lines):
+                    self.source.warning("uninterpretable .ta seen in body section")
                 self.source.passthrough([command] + args)
         elif command == "sp":
             # Treat this as a paragraph break in body text.
@@ -3565,7 +3673,8 @@ class TroffInterpreter:
                 if len(line) > i and line[i] == '"':
                     i += 1
             value = line[i:]
-            value = value.replace("'", "&#x27;")
+            value = value.replace(r"\'", "&apos;")
+            value = value.replace("'", "&apos;")
             if self.source.in_preamble and self.entities_from_strings:
                 self.source.localentities.append((stringname, value))
                 self.strings[stringname] = "&" + stringname + ";"
@@ -3630,7 +3739,7 @@ class TroffInterpreter:
             listing = isused and self.source.body_section() and not suppressed and not self.source.quiet
             if listing:
                 self.source.emit("<!-- Macro definition:")
-                self.source.emit("%s %s" % (command, name))  
+                self.source.emit("%s %s" % (command, name))
             while self.source.lines:
                 line = self.source.popline()
                 if line.replace(" ", "") == endon:
@@ -3704,11 +3813,6 @@ class TroffInterpreter:
                 self.source.error("'.if' without arguments is probably a typo for '.fi.'")
                 self.source.pushline(".fi")
                 return True
-            # If somebody tried to parenthesize a guard, throw the whole mess
-            # out.  This happens on INIFILE.1 where you get crap like this:
-            # .if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
-            if tokens and tokens[1][0] == '(':
-                return True
             if len(tokens) == 1:
                 # Cope with a transposition typo...see vmstat(8) for example.
                 if command == "if" and self.nf:
@@ -3735,7 +3839,7 @@ class TroffInterpreter:
             #
             # Evidently this is somebody's way of getting "and" into
             # conditionals.  Ugh...
-            if guardval:                
+            if guardval:
                 if len(tokens) > 2 and not tokens[2].startswith(r"\{") and tokens[2] != TroffInterpreter.ctrl + "if":
                     if macro_verbosity in self.verbose:
                         self.source.notify("if or ie does one-line pushback")
@@ -3809,7 +3913,7 @@ class TroffInterpreter:
                     self.source.emit(".%s -->" % args[0], trans=0)
                     break
                 line = line.replace(r"\^", "&ndash;&ndash;")
-                line = line.replace("\-", "&mdash;")
+                line = line.replace(r"\-", "&mdash;")
                 line = line.replace("-", "&mdash;")
                 self.source.emit(line)
             if self.source.body_section():
@@ -3912,7 +4016,7 @@ class TroffInterpreter:
             if status == 0 and "<math" in mathml and not "<merror" in mathml:
                 self.source.eqn_processed = True
                 # Reduce trivial equations
-                mathml = re_compile("<math><m[ion]>(\w*)</m[ion]></math>").sub(r'\\fI\1\\fP', mathml)
+                mathml = re_compile(r"<math><m[ion]>(\w*)</m[ion]></math>").sub(r'\\fI\1\\fP', mathml)
                 # Now make sure there is a newline before trailing .ENs
                 mathml = mathml.replace("</math>.EN", "</math>\n.EN")
                 # FIXME: this optimization should be done in eqn, really
@@ -4053,7 +4157,7 @@ class TroffInterpreter:
         text = text.replace(r"@\\@", r"\\")
         # These get generated when ad-hoc tables are wrapped with .nf/.fi;
         # the table-compilation code tried to close the display begun by
-        # the .nf. 
+        # the .nf.
         text = re.sub("<literallayout remap='.nf'>[ \t\n]*</literallayout>", "", text)
         # Our highlight tracking logic sometimes generates enphasis pairs with
         # nothing in scope.  Remove these.
@@ -4066,27 +4170,27 @@ class TroffInterpreter:
         # This transforms literallayouts with program text inside them
         # into programlistings.
         keyword_lifter = \
-            "(<(?:literallayout|screen)(?: remap='([^']*)')?>(?:\n*<emphasis remap='[A-Z]*'>)?)" \
-            "([^<]*(%s)[^<]*)" \
-            "((</emphasis>\n?)?</(?:literallayout|screen)>)"
+            r"(<(?:literallayout|screen)(?: remap='([^']*)')?>(?:\n*<emphasis remap='[A-Z]*'>)?)" \
+            r"([^<]*(%s)[^<]*)" \
+            r"((</emphasis>\n?)?</(?:literallayout|screen)>)"
         # Continue by recognizing source-code listings and screenshots
         # of command examples.
         literal_lifts = (
-            (r"struct|typedef|#define|#undef",	"programlisting"),	# C
-            ("@_",			"programlisting"),	# Perl
-            ("\ndef|elif|try|except",	"programlisting"),	# Python
-            ("mov|jmp",			"programlisting"),	# Assembler
-            ("\nbash$|\n$",		"screen")
+            (r"char|bool|int|float|struct|union|typedef|#define|#undef",	"programlisting"),	# C
+            (r"@_",			"programlisting"),	# Perl
+            (r"\ndef|elif|try|except",	"programlisting"),	# Python
+            (r"mov|jmp",			"programlisting"),	# Assembler
+            (r"\nbash\$|\n\$",		"screen")
             )
         for (keywords, ltype) in literal_lifts:
             listing = re_compile(keyword_lifter % keywords)
             ender = ltype.split()[0]
             text = listing.sub(r"<%s remap='\2'>\3</%s>" % (ltype,ender), text)
         # Here is another hack to lift filenames and similar things.
-        # Also, handle groff color extension.  Alas, no tag-balance checking.  
+        # Also, handle groff color extension.  Alas, no tag-balance checking.
         color_lifts = map(lambda x: (re_compile(x[0]), x[1]), (
-            ("\\\\m\[\]",		"</phrase>"),
-            ("\\\\m\[([a-z]+)\]",	"<phrase remap='color:\\1'>"),
+            ("\\\\m\[\]",		r"</phrase>"),
+            ("\\\\m\[([a-z]+)\]",	r"<phrase remap='color:\1'>"),
             ))
         for (regexp, inline) in TroffInterpreter.prefix_lifts + color_lifts:
             text = regexp.sub(inline, text)
@@ -4236,8 +4340,9 @@ def parse_name_section(nameline):
     nameline = nameline.replace("\t", r' ')
     nameline = nameline.replace(r" \-\- ", r' \- ')
     nameline = nameline.replace(" - ", r' \- ')
+    nameline = nameline.replace(r" \(hy ", r' \- ')
     # Apparent pod2man breakage...
-    nameline = nameline.replace(r"&zerosp;-", "\-")
+    nameline = nameline.replace(r"&zerosp;-", r"\-")
     if nameline.find(r" \- ") == -1:
         nameline = nameline.replace(r" \(em ", r' \- ')
         nameline = nameline.replace(r" &mdash; ", r' \- ')
@@ -4443,11 +4548,15 @@ class FunctionSynopsisParser:
     "Consume a function synopsis and return markup."
     # Candidate lines for FuncSynopsisInfo
     language_lines = (
-        (re_compile(r"^\s*#\s*(define|undef|include|if\s|ifn?def|endif|extern)"), "C"),
+        (re_compile(r"^\s*#\s*(define|undef|include|if\s|ifn?def|endif)"), "C"),
+        (re_compile(r"^\s*extern.*;$"),		"C"),
         (re_compile(r"^\s*typedef.*;$"),	"C"),
         (re_compile(r"^\s*import\s"),		"Python"),
         (re_compile(r"^\s*use\s.*;"),		"Perl"),
         (re_compile(r"#\s*perl"),		"Perl"),
+        # Allow lines that resemble variable settings
+        # This isn't actually limited to C...
+        (re_compile(r"[a-z_]+ = "),		"C"),
         )
     # This patterns identify lines that are probably code
     language_fragments = (
@@ -4755,7 +4864,7 @@ class FunctionSynopsisParser:
                     # K&R-style declaration.  Danger lurks here.
                     # Are we looking at an old-style declaration with *nothing*
                     # but formals? If so, head off any attempt to parse them,
-                    # it will only come to grief. 
+                    # it will only come to grief.
                     no_declarations = False
                     maybe_semi = self.io.token_pop()
                     if maybe_semi == "&semi;":
@@ -5141,7 +5250,7 @@ class CommandSynopsisSequenceParser:
             self.confirmed = True
             return True
         else:
-            return False 
+            return False
     def __is_next_command(self):
         return self.io.token_peek() in self.refnames or globalhints.get(self.io.token_peek()) == "command"
     def __is_next_option(self):
@@ -5357,10 +5466,11 @@ class DisplayParser:
     "Parse a block into function synopsis, command synopsis or display text."
     old_style_option_glue = re_compile(r"([^A-Za-z]-[A-Za-z]*)(?:\f.)([A-Za-z])")
     unparseable = re_compile(r"\$|=&gt;|[^:]//")	# Perl and other nightmares
-    def __init__(self, source, try_synopsis, refnames=None):
+    def __init__(self, source, try_synopsis, literal, refnames=None):
         "Arrange the interpreter to accumulate synopsis lines in this object."
         self.source = source
         self.try_synopsis = try_synopsis
+        self.literal = literal
         self.refnames = refnames
         if self.refnames is None:
             self.refnames = {}
@@ -5374,7 +5484,7 @@ class DisplayParser:
         # .ta conveys no information in a Synopsis section,
         # but outside one it may be our only clue that the man page
         # author kluged up a table inline. So don't disable
-        # processing it in that case.  
+        # processing it in that case.
         if source.in_synopsis():
             source.ignore("ta")
         source.ignore("ce")
@@ -5551,7 +5661,11 @@ class DisplayParser:
                 line = self.io.peekline()
                 if line and re.match(r"/[\S]*$", line):
                     out += self.__emit_text(stash)
-                    out += "<para><filename>" + line.strip() + "</filename></para>\n"
+                    fnpart = "<filename>" + line.strip() + "</filename>"
+                    if self.literal:
+                        out += fnpart + "\n"
+                    else:
+                        out += "<para>" + fnpart + "</para>\n"
                     self.io.popline()
                     classified = True
                     continue
@@ -5572,8 +5686,8 @@ class DisplayParser:
         # Postprocess the output to remove glue and clean up empty tags
         out = hotglue.sub("", out)
         out = cleantag.sub("", out)
-        out = re.sub("<funcsynopsisinfo>\s*</funcsynopsisinfo>", "", out)
-        out = re.sub("<funcsynopsis>\s*</funcsynopsis>", "", out)
+        out = re.sub(r"<funcsynopsisinfo>\s*</funcsynopsisinfo>", "", out)
+        out = re.sub(r"<funcsynopsis>\s*</funcsynopsis>", "", out)
         return (out, parsepass > 1 and errors == 0 and not classified)
 
 #
@@ -5715,7 +5829,14 @@ class ManInterpreter:
                      "SB"):
             return self.source.alternating_highlight(cmd, args)
         else:
-            return None    
+            return None
+    @staticmethod
+    def start_synopsis(args):
+        "Are we looking at a start odf synopsis?"
+        # Must accept "SYNOPSIS" but reject "SYNOPSIS AND DESCRIPTION",
+        # otherwise xdr(3) abd related pages will be misparsed.
+        return filter(synopsis_label.search, args) \
+               and not filter(description_label.search, args)
     def end_synopsis(self):
         self.source.sectionhooks.remove(self.end_synopsis)
         self.source.flush_transplant()
@@ -5816,6 +5937,9 @@ class ManInterpreter:
                     if line.startswith(".br") or self.source.paragraph_break(line):
                         namesects.append("")
                         continue
+                    # Some selinux pages requite this:
+                    if re.match("\.[BI] ", line):
+                        line = line[2:]
                     # All other commands have to be ignored;
                     # this is necessary to throw out Pod2Man generated crud
                     if is_command(line):
@@ -5846,7 +5970,7 @@ class ManInterpreter:
                         self.source.emit("<refname>%s</refname>" % nid)
                     self.source.emit("<refpurpose>%s</refpurpose>"%description)
                     self.source.emit("</refnamediv>")
-            elif filter(synopsis_label.search, args) and not self.source.synopsis:
+            elif ManInterpreter.start_synopsis(args) and not self.source.synopsis:
                 self.source.end_paragraph()
                 self.source.sectname = "SYNOPSIS"
                 self.source.ignore("RS")
@@ -5857,7 +5981,10 @@ class ManInterpreter:
                 self.source.ignore("Ip")	# For Perl generated man pages
                 self.source.sectionhooks.append(self.end_synopsis)
                 try_synopsis = self.volnum != "3pm" and self.manual.find("Perl") == -1 or self.msrc.find("perl ") == -1
-                self.source.synopsis = DisplayParser(self.source, try_synopsis, self.refnames)
+                self.source.synopsis = DisplayParser(self.source,
+                                                     try_synopsis,
+                                                     False,
+                                                     self.refnames)
             elif not self.source.synopsis and self.source.find(synopsis_header):
                 if section_verbosity in self.source.verbose:
                     self.source.notify("transplanting section...")
@@ -5998,7 +6125,7 @@ class ManInterpreter:
         elif cmd == "RE":
             self.source.poplist("RS", remap="RE")
             self.source.need_paragraph()
-        # FSF extension macros 
+        # FSF extension macros
         elif cmd == "UE":	# End of link text
             if self.source.body_section():
                 self.source.pushline(self.stash_linkender)
@@ -6049,13 +6176,17 @@ class ManInterpreter:
         elif cmd == "CT":
             self.source.pushline("&lt;CTRL/%s&lt;" % args[0])
         elif cmd == "Ds":
-            self.source.begin_block("literallayout", remap="Ds")
+            if not self.source.in_synopsis():
+                self.source.begin_block("literallayout", remap="Ds")
         elif cmd == "De":
-            self.source.end_block("literallayout", remap="De")
+            if not self.source.in_synopsis():
+                self.source.end_block("literallayout", remap="De")
         elif cmd == "EX" and "EX" not in self.source.troff.macros:
-            self.source.begin_block("literallayout", remap="EX")
+            if not self.source.in_synopsis():
+                self.source.begin_block("literallayout", remap="EX")
         elif cmd == "EE" and "EE" not in self.source.troff.macros:
-            self.source.end_block("literallayout", remap="EE")
+            if not self.source.in_synopsis():
+                self.source.end_block("literallayout", remap="EE")
         elif cmd == "NT" and "NT" not in self.source.troff.macros:
             self.source.begin_block("note", remap="NT")
         elif cmd == "NE" and "NE" not in self.source.troff.macros:
@@ -6157,7 +6288,7 @@ class ManInterpreter:
         # Reverse a transformation that db2man does when translating <note>.
         # FIXME: turn the following paragraph into a <note>.
         text = text.replace(".it 1 an-trap\n.nr an-no-space-flag 1\n.nr an-break-flag 1\n.br\n", "")
-        # Brain-damage emitted often by Pod2Man, occasionally by humans 
+        # Brain-damage emitted often by Pod2Man, occasionally by humans
         text = re_compile("\\.PD.*\n+(.S[hHsS])").sub("\n\n\\1", text)
         text = re_compile("\\.RS.*\n+(.S[hHsS])").sub("\n\n\\1", text)
         # Cheating way to avoid some annoying warnings on function pages
@@ -6175,14 +6306,6 @@ class ManInterpreter:
         # If there was no explicit URL markup, process implicit ones
         if self.hack_urls and not self.source.is_active("mwww") and not xmlns_re.search(text):
             text = url_re.sub(r"<ulink url='\g<url>'>\g<url></ulink>", text)
-        # Pattern-based lifting in the final sections
-        if not self.source.is_active("mwww"):
-            foundit = text.rfind("AUTHOR")
-            if foundit > -1:
-                before = text[:foundit]
-                after = text[foundit:]
-                after = email_re.sub(r'<email>\1</email>', after)
-                text = before + after
         foundit = text.rfind("SEE ALSO")
         if foundit > -1:
             before = text[:foundit]
@@ -6315,7 +6438,7 @@ class reStructuredTextInterpreter:
     def preprocess(self, text):
         # Detect and strip out what reStructuredText wedges into the
         # NAME section. All it does is define INDENT and UNINDENT; we
-        # can emulate those easily enough.        
+        # can emulate those easily enough.
         lines = text.split("\n")
         savelines = []
         cookie = re_compile(r"nr rst2man-indent-level 0")
@@ -6439,7 +6562,7 @@ class XManInterpreter:
     def __init__(self, source, verbose=0):
         self.source = source
         self.verbose = verbose
-        self.source.troff.entities_from_strings = True 
+        self.source.troff.entities_from_strings = True
     def interpret(self, dummy, tokens, dummy_caller):
         cmd = tokens[0][1:]
         args = tokens[1:]
@@ -6562,7 +6685,7 @@ class ASTInterpreter:
             # 6. The third argument is ignored and serves only as
             # documentation of the option type.
             if len(args) < 3:
-                self.error("expected at least three arguments for .OP")
+                self.source.error("expected at least three arguments for .OP")
             elif len(args) < 4:
                 args.append("-")
             options = ['-' + args[0]]
@@ -6842,6 +6965,7 @@ class MdocInterpreter:
             "-isoC":		"ISO/IEC 9899:1990 (ISO C 89)",
             "-isoC-90":		"ISO/IEC 9899:1999 (ISO C 90)",
             "-isoC-99":		"ISO/IEC 9899:1999 (ISO C 99)",
+            "-isoC-2011":       "ISO/IEC 9899:2011 (\"ISO C11\")",
             # POSIX Part 1: System API
             "-p1003.1":		"IEEE Std 1003.1 (POSIX.1)",
             "-p1003.1-88":	"IEEE Std 1003.1-1988 (POSIX.1)",
@@ -6883,36 +7007,74 @@ class MdocInterpreter:
             }
 
     lb_dict = {
+        "libarchive":   "Reading and Writing Streaming Archives Library (libarchive, -larchive)",
         "libarm":	"ARM Architecture Library (libarm, -larm)",
         "libarm32":	"ARM32 Architecture Library (libarm32, -larm32)",
+        "libbluetooth": "Bluetooth Library (libbluetooth, -lbluetooth)",
+        "libbsm":       "Basic Security Module Library (libbsm, -lbsm)",
         "libc":		"Standard C Library (libc, -lc)",
+        "libc_r":       "Reentrant C Library (libc_r, -lc_r)",
+        "libcalendar":  "Calendar Arithmetic Library (libcalendar, -lcalendar)",
+        "libcam":       "Common Access Method User Library (libcam, -lcam)",
         "libcdk":       "Curses Development Kit Library (libcdk, -lcdk)",
+        "libcipher":    "FreeSec Crypt Library (libcipher, -lcipher)",
         "libcompat":	"Compatibility Library (libcompat, -lcompat)",
         "libcrypt":	"Crypt Library (libcrypt, -lcrypt)",
         "libcurses":	"Curses Library (libcurses, -lcurses)",
+        "libdevinfo":   "Device and Resource Information Utility Library (libdevinfo, -ldevinfo)",
+        "libdevstat":   "Device Statistics Library (libdevstat, -ldevstat)",
+        "libdisk":      "Interface to Slice and Partition Labels Library (libdisk, -ldisk)",
+        "libdwarf":     "DWARF Access Library (libdwarf, -ldwarf)",
         "libedit":	"Command Line Editor Library (libedit, -ledit)",
+        "libelf":       "ELF Access Library (libelf, -lelf)",
         "libevent":     "Event Notification Library (libevent, -levent)",
+        "libfetch":     "File Transfer Library for URLs (libfetch, -lfetch)",
         "libform":      "Curses Form Library (libform, -lform)",
+        "libgeom":      "Userland API Library for kernel GEOM subsystem (libgeom, -lgeom)",
+        "libgpib":      "General-Purpose Instrument Bus (GPIB) library (libgpib, -lgpib)",
         "libi386":	"i386 Architecture Library (libi386, -li386)",
         "libintl":      "Internationalized Message Handling Library (libintl, -lintl)",
         "libipsec":	"IPsec Policy Control Library (libipsec, -lipsec)",
-        "libkvm":	"Kernel Data Access Library (libkvm, -lkvm)",
+        "libipx":       "IPX Address Conversion Support Library (libipx, -lipx)",
+        "libiscsi":     "iSCSI protocol library (libiscsi, -liscsi)",
+        "libjail":      "Jail Library (libjail, -ljail)",
+        "libkiconv":    "Kernel side iconv library (libkiconv, -lkiconv)",
+        "libkse":       "N:M Threading Library (libkse, -lkse)",
+        "libkvm":       "Kernel Data Access Library (libkvm, -lkvm)",
         "libm":		"Math Library (libm, -lm)",
+        "libmd":        "Message Digest (MD4, MD5, etc.) Support Library (libmd, -lmd)",
         "libm68k":      "m68k Architecture Library (libm68k, -lm68k)",
         "libmagic":     "Magic Number Recognition Library (libmagic, -lmagic)",
+        "libmemstat":   "Kernel Memory Allocator Statistics Library (libmemstat, -lmemstat)",
         "libmenu":	"Curses Menu Library (libmenu, -lmenu)",
-        "libossaudio":	"OSS Audio Emulation Library (libossaudio, -lossaudio)",
+        "libnetgraph":  "Netgraph User Library (libnetgraph, -lnetgraph)",
+        "libnetpgp":    "Netpgp signing, verification, encryption and decryption (libnetpgp, -lnetpgp)",
+        "libossaudio":  "OSS Audio Emulation Library (libossaudio, -lossaudio)",
         "libpam":       "Pluggable Authentication Module Library (libpam, -lpam)",
         "libpcap":      "Packet Capture Library (libpcap, -lpcap)",
         "libpci":       "PCI Bus Access Library (libpci, -lpci)",
         "libpmc":       "Performance Counters Library (libpmc, -lpmc)",
         "libposix":	"POSIX Compatibility Library (libposix, -lposix)",
+        "libprop":      "Property Container Object Library (libprop, -lprop)",
         "libpthread":   "POSIX Threads Library (libpthread, -lpthread)",
+        "libpuffs":     "puffs Convenience Library (libpuffs, -lpuffs)",
+        "librefuse":    "File System in Userspace Convenience Library (librefuse, -lrefuse)",
         "libresolv":    "DNS Resolver Library (libresolv, -lresolv)",
+        "librpcsec_gss":"RPC GSS-API Authentication Library (librpcsec_gss, -lrpcsec_gss)",
+        "librpcsvc":    "RPC Service Library (librpcsvc, -lrpcsvc)",
         "librt":        "POSIX Real-time Library (librt, -lrt)",
+        "libsdp":       "Bluetooth Service Discovery Protocol User Library (libsdp, -lsdp)",
+        "libssp":       "Buffer Overflow Protection Library (libssp, -lssp)",
+        "libSystem":    "System Library (libSystem, -lSystem)",
         "libtermcap":	"Termcap Access Library (libtermcap, -ltermcap)",
+        "libterminfo":  "Terminal Information Library (libterminfo, -lterminfo)",
+        "libthr":       "1:1 Threading Library (libthr, -lthr)",
+        "libufs":       "UFS File System Access Library (libufs, -lufs)",
+        "libugidfw":    "File System Firewall Interface Library (libugidfw, -lugidfw)",
+        "libulog":      "User Login Record Library (libulog, -lulog)",
         "libusbhid":    "USB Human Interface Devices Library (libusbhid, -lusbhid)",
         "libutil":	"System Utilities Library (libutil, -lutil)",
+        "libvgl":       "Video Graphics Library (libvgl, -lvgl)",
         "libx86_64":    "x86_64 Architecture Library (libx86_64, -lx86_64)",
         "libz":		"Compression Library (libz, -lz)",
         }
@@ -6999,10 +7161,10 @@ class MdocInterpreter:
             self.source.pushline("<productname>AT&amp;T Unix</productname>")
         elif command == "Bsx":
             if args:
-                version = " " + args[0]
+                bversion = " " + args[0]
             else:
-                version = ""
-            self.source.pushline("<productname>BSD/OS%s</productname>" % version)
+                bversion = ""
+            self.source.pushline("<productname>BSD/OS%s</productname>" % bversion)
         elif command == "Bt":
             self.source.emit("is currently in beta test.")
         elif command == "Cd":
@@ -7015,28 +7177,28 @@ class MdocInterpreter:
                 self.source.pushline(r"\fB" + " ".join(args) + r"\fP")
         elif command == "Fx":
             if args:
-                version = " " + args[0]
+                fversion = " " + args[0]
             else:
-                version = ""
-            self.source.pushline("<productname>FreeBSD%s</productname>" % version)
+                fversion = ""
+            self.source.pushline("<productname>FreeBSD%s</productname>" % fversion)
         elif command == "Nx":
             if args:
-                version = " " + args[0]
+                nversion = " " + args[0]
             else:
-                version = ""
-            self.source.pushline("<productname>NetBSD%s</productname>" % version)
+                nversion = ""
+            self.source.pushline("<productname>NetBSD%s</productname>" % nversion)
         elif command == "Ox":
             if args:
-                version = " " + args[0]
+                oversion = " " + args[0]
             else:
-                version = ""
-            self.source.pushline("<productname>OpenBSD%s</productname>" % version)
+                oversion = ""
+            self.source.pushline("<productname>OpenBSD%s</productname>" % oversion)
         elif command == "Dx":
             if args:
-                version = " " + args[0]
+                dversion = " " + args[0]
             else:
-                version = ""
-            self.source.pushline("<productname>DragonFly%s</productname>" % version)
+                dversion = ""
+            self.source.pushline("<productname>DragonFly%s</productname>" % dversion)
         elif command in ("Dl", "D1"):
             if self.hasargs(command, args):
                 self.source.pushline("<phrase role='%s'>%s</phrase>" % (command, self.macroeval(["No"] + args)))
@@ -7092,7 +7254,7 @@ class MdocInterpreter:
             # acpi_fakekey.1 has an ISO date that doesn't conform to mdoc.
             if re.compile("[0-9]+-[0-9]+-[0-9]+").search(args[0]):
                 (self.year, self.month, self.day) = args[0].split("-")
-            # synctex.1 does this - might happen elsewhere 
+            # synctex.1 does this - might happen elsewhere
             elif re.compile("[0-9]+/[0-9]+/[0-9]+").search(args[0]):
                 (self.day, self.month, self.year) = args[0].split("/")
             else:
@@ -7132,7 +7294,10 @@ class MdocInterpreter:
                 if synopsis_label.search(args[0]):
                     self.source.end_paragraph()
                     self.source.sectname = "Synopsis"
-                    self.source.synopsis = DisplayParser(self.source, True, self.refnames)
+                    self.source.synopsis = DisplayParser(self.source,
+                                                         True,
+                                                         False,
+                                                         self.refnames)
                     self.source.sectionhooks.append(self.source.flush_transplant)
                     return True	# Declaration macros will do the work
                 elif not self.source.synopsis and self.source.find(synopsis_header):
@@ -7210,7 +7375,7 @@ class MdocInterpreter:
                     if depth == 0:
                         break
                 elif match_command(future, "Bl"):
-                    depth +=1
+                    depth += 1
                 nextl = future.strip()
                 if is_comment(nextl):
                     continue
@@ -7228,7 +7393,7 @@ class MdocInterpreter:
                 self.liststack.append("</table>")
                 self.rowcount = 0
             elif not hasbodies:
-                self.source.emit("<itemizedlist remap='%s'>" % header)
+                self.source.emit("<itemizedlist remap='%s'> <!-- no bodies -->" % header)
                 self.liststack.append("</itemizedlist>")
             elif "-bullet" in tokens[1:]:
                 self.source.emit("<itemizedlist remap='%s' mark='bullet'>" % header)
@@ -7308,7 +7473,13 @@ class MdocInterpreter:
                     self.source.emit("<term>%s</term>" % fontclose("</term>\n<term>\n".join(termlines)))
                     self.source.emit("<listitem>")
                 elif self.liststack[-1] == "</itemizedlist>":
-                    self.source.emit("<listitem><para>%s</para></listitem>" % "\n".join(termlines))
+                    body = "\n".join(termlines)
+                    if body:
+                        self.source.emit("<listitem><para>%s</para></listitem>" % body)
+                    else:
+                        self.source.emit("<listitem>")
+                elif self.liststack[-1] == "</orderedlist>":
+                    self.source.emit("<listitem>")
                 self.source.need_paragraph()
         elif command == "El":
             if self.liststack[-1] == "</table>":
@@ -7318,6 +7489,11 @@ class MdocInterpreter:
                 if self.liststack[-1] == "</variablelist>":
                     self.source.emit("</listitem>")
                     self.source.emit("</varlistentry>")
+                elif self.liststack[-1] == "</orderedlist>":
+                    self.source.emit("</listitem>")
+                elif self.liststack[-1] == "</itemizedlist>":
+                    if not self.source.endswith("</listitem>"):
+                        self.source.emit("</listitem>")
             self.source.emit(self.liststack.pop())
             self.itemcount.pop()
             self.source.need_paragraph()
@@ -7485,7 +7661,7 @@ class MdocInterpreter:
                     savesect.append(line)
             lines = []
             self.source.interpret_block(savesect, lines)
-            self.desc = " ".join(lines) 
+            self.desc = " ".join(lines)
             if not self.source.body_section():
                 return []
             else:
@@ -7551,7 +7727,7 @@ class MdocInterpreter:
         elif cmd == "So":
             return self.replacemacro(args, "\'@GLUE@")
         elif cmd == "Sq":
-            return self.encloseargs(args, '\`@GLUE@', '@GLUE@\'')
+            return self.encloseargs(args, "`@GLUE@", "@GLUE@\'")
         elif cmd == "St":
             return self.process_punct(args, self.sthook, True)
         elif cmd == "Sx":
@@ -7586,7 +7762,7 @@ class MdocInterpreter:
             else:
                 return lst
         # Sm is not officially parseable, but we have to treat it that way
-        # in order for it to work inside Oo/Oc pairs (as in slogin.1). 
+        # in order for it to work inside Oo/Oc pairs (as in slogin.1).
         elif cmd == "Sm":
             enable = self.extractargs(args)
             if "on" in enable:
@@ -7649,7 +7825,7 @@ class MdocInterpreter:
         while args and args[0] in MdocInterpreter.openers:
             prepunct.append(args.pop(0))
         while args and args[-1] in MdocInterpreter.closers:
-            postpunct = [args.pop()] + postpunct 
+            postpunct = [args.pop()] + postpunct
         operands = []
         while args:
             if stop_on_callable and args[0] in MdocInterpreter.callable:
@@ -7756,7 +7932,7 @@ class MsInterpreter:
     immutable_set = set([])
     ignore_set = set([
         # Ignore presentation-level-only requests from Bell Labs.
-        "RP", "ND", "DA", "1C", "2C", "MC", 
+        "RP", "ND", "DA", "1C", "2C", "MC",
         "BX", "KS", "KE", "KF",
         # Also ignore the Berkeley thesis-mode extension
         "TM", "CT", "XS", "XE", "XA", "PX", "AM",
@@ -8167,7 +8343,7 @@ class MmInterpreter:
         elif cmd in ("BI", "BR", "IB", "IR", "RB", "RI"):
             return self.source.alternating_highlight(cmd, args)
         else:
-            return None    
+            return None
     def interpret(self, dummy, tokens, caller):
         cmd = tokens[0][1:]
         args = tokens[1:]
@@ -8489,7 +8665,7 @@ required_extensions = {
     }
 
 #
-# Invocation machinery starts here 
+# Invocation machinery starts here
 #
 
 def transfile(name, arguments, translate_data, trans_filename=None):
@@ -8538,7 +8714,7 @@ globalhints = SemanticHintsRegistry()
 def main(args, dummy_mainout=stdout, mainerr=stderr):
     #global globalhints, pretty
     import getopt
-    (options, arguments) = getopt.getopt(args, "d:e:D:I:h:qsxvw")
+    (options, arguments) = getopt.getopt(args, "d:e:D:I:h:qsxvwV")
     includepath = ["."]
     hintfile = None
     quiet = False
@@ -8566,6 +8742,9 @@ def main(args, dummy_mainout=stdout, mainerr=stderr):
             verbosity_level += 1
         elif switch == '-w':
             portability += 1
+        elif switch == '-V':
+            sys.stdout.write("doclifter version %s\n" % version)
+            sys.exit(0)
     if not verbosity:
         verbosity = "gpscmibz"[:verbosity_level]
     try:

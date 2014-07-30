@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from mdoc+troff by doclifter -->
+<refentry id='stdin'>
+<!-- Seriously reduced subsection of sudoers.5 to test .Bl &bsol;-literal -->
+
+
+<refmeta>
+<refentrytitle>SUDOERS</refentrytitle>
+<manvolnum>5</manvolnum>
+</refmeta>
+
+<refnamediv id='purpose'>
+<refname> sudoers </refname>
+<refpurpose> default sudo security policy module </refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+
+<para>Would match any file name beginning with a letter.</para>
+
+<para>Note that a forward slash
+(Ql /)
+will
+<emphasis remap="Sy">not</emphasis>
+be matched by
+wildcards used in the path name.
+This is to make a path like:</para>
+<programlisting remap='Bd'>
+<filename>/usr/bin/*</filename>
+</programlisting> <!-- remap='Ed (block)' -->
+
+<para>match
+<filename>/usr/bin/who</filename>
+but not
+<filename>/usr/bin/X11/xterm</filename>.</para>
+</refsect1>
+</refentry>
+

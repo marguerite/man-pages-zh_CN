@@ -24,7 +24,9 @@
   <arg choice='opt'>-x</arg>
   <arg choice='opt'>-v</arg>
   <arg choice='opt'>-w</arg>
+  <arg choice='opt'>-V</arg>
   <arg choice='opt'>-D <replaceable>token=type</replaceable></arg>
+  <arg choice='opt'>-I <replaceable>path</replaceable></arg>
   <arg choice='opt'>-I <replaceable>path</replaceable></arg>
   <arg choice='plain' rep='repeat'><replaceable>file</replaceable></arg>
 </cmdsynopsis>
@@ -168,6 +170,12 @@ noisier about what it's doing.  This is mainly useful for debugging.</para>
 <listitem>
 <para>Enable strict portability checking.  Multiple instances of
 -w increase the strictness.  See <xref linkend='portability'/>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>-V</term>
+<listitem>
+<para>With this option, the program emits a version message and exits.</para>
 </listitem>
 </varlistentry>
 </variablelist>

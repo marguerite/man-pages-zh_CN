@@ -2,7 +2,7 @@
 <!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
                    "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <!-- lifted from man+troff by doclifter -->
-<refentry>
+<refentry id='stdin'>
 <!-- Copyright (c) 1995 Jim Van Zandt &lt;jrv@vanzandt.mv.com&gt; and aeb
 Sun Feb 26 11:46:23 MET 1995 -->
 

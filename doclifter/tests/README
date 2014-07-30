@@ -30,3 +30,12 @@ stringwidth.man
 
 xoxc.man
 	Tests translation of .Xo/.Xc construct in BSD macros.
+
+sudoers.man:
+	Tests the filename case in .Bl -literal.
+
+get_myaddress.man:
+	Tests handling of .in +N just before .nf.
+
+tzfile.man:
+	Tests .in +4 .sp .nf sequence.
