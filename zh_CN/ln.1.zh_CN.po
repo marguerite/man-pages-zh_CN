@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:04+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +26,8 @@ msgstr ""
 msgid "GNU coreutils 8.21"
 msgstr ""
 
-#: ln.1.xml:14(refname) ln.1.xml:20(command) ln.1.xml:29(command) ln.1.xml:36(command) ln.1.xml:44(command)
+#: ln.1.xml:14(refname) ln.1.xml:20(command) ln.1.xml:29(command)
+#: ln.1.xml:36(command) ln.1.xml:44(command)
 msgid "ln"
 msgstr ""
 
@@ -33,7 +35,8 @@ msgstr ""
 msgid "make links between files"
 msgstr ""
 
-#: ln.1.xml:21(replaceable) ln.1.xml:30(replaceable) ln.1.xml:37(replaceable) ln.1.xml:45(replaceable)
+#: ln.1.xml:21(replaceable) ln.1.xml:30(replaceable) ln.1.xml:37(replaceable)
+#: ln.1.xml:45(replaceable)
 msgid "OPTION"
 msgstr ""
 
@@ -41,7 +44,8 @@ msgstr ""
 msgid "-T"
 msgstr ""
 
-#: ln.1.xml:23(replaceable) ln.1.xml:31(replaceable) ln.1.xml:38(replaceable) ln.1.xml:47(replaceable)
+#: ln.1.xml:23(replaceable) ln.1.xml:31(replaceable) ln.1.xml:38(replaceable)
+#: ln.1.xml:47(replaceable)
 msgid "TARGET"
 msgstr ""
 
@@ -57,7 +61,8 @@ msgstr ""
 msgid "- <placeholder-1/>"
 msgstr ""
 
-#: ln.1.xml:26(replaceable) ln.1.xml:33(replaceable) ln.1.xml:41(replaceable) ln.1.xml:49(replaceable)
+#: ln.1.xml:26(replaceable) ln.1.xml:33(replaceable) ln.1.xml:41(replaceable)
+#: ln.1.xml:49(replaceable)
 msgid "form"
 msgstr ""
 
@@ -87,11 +92,20 @@ msgstr ""
 
 #. Add any additional description here
 #: ln.1.xml:57(para)
-msgid "In the 1st form, create a link to TARGET with the name LINK_NAME. In the 2nd form, create a link to TARGET in the current directory. In the 3rd and 4th forms, create links to each TARGET in DIRECTORY. Create hard links by default, symbolic links with <option>--symbolic</option>. By default, each destination (name of new link) should not already exist. When creating hard links, each TARGET must exist. Symbolic links can hold arbitrary text; if later resolved, a relative link is interpreted in relation to its parent directory."
+msgid ""
+"In the 1st form, create a link to TARGET with the name LINK_NAME. In the 2nd "
+"form, create a link to TARGET in the current directory. In the 3rd and 4th "
+"forms, create links to each TARGET in DIRECTORY. Create hard links by "
+"default, symbolic links with <option>--symbolic</option>. By default, each "
+"destination (name of new link) should not already exist. When creating hard "
+"links, each TARGET must exist. Symbolic links can hold arbitrary text; if "
+"later resolved, a relative link is interpreted in relation to its parent "
+"directory."
 msgstr ""
 
 #: ln.1.xml:66(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: ln.1.xml:69(term)
@@ -115,7 +129,9 @@ msgid "<option>-d</option>, <option>-F</option>, <option>--directory</option>"
 msgstr ""
 
 #: ln.1.xml:83(para)
-msgid "allow the superuser to attempt to hard link directories (note: will probably fail due to system restrictions, even for the superuser)"
+msgid ""
+"allow the superuser to attempt to hard link directories (note: will probably "
+"fail due to system restrictions, even for the superuser)"
 msgstr ""
 
 #: ln.1.xml:89(term)
@@ -147,7 +163,8 @@ msgid "<option>-n</option>, <option>--no-dereference</option>"
 msgstr ""
 
 #: ln.1.xml:109(para)
-msgid "treat LINK_NAME as a normal file if it is a symbolic link to a directory"
+msgid ""
+"treat LINK_NAME as a normal file if it is a symbolic link to a directory"
 msgstr ""
 
 #: ln.1.xml:114(term)
@@ -175,7 +192,9 @@ msgid "make symbolic links instead of hard links"
 msgstr ""
 
 #: ln.1.xml:132(term)
-msgid "<option>-S</option>, <option>--suffix</option>=<emphasis remap=\"I\">SUFFIX</emphasis>"
+msgid ""
+"<option>-S</option>, <option>--suffix</option>=<emphasis remap=\"I\">SUFFIX</"
+"emphasis>"
 msgstr ""
 
 #: ln.1.xml:134(para)
@@ -183,7 +202,9 @@ msgid "override the usual backup suffix"
 msgstr ""
 
 #: ln.1.xml:138(term)
-msgid "<option>-t</option>, <option>--target-directory</option>=<emphasis remap=\"I\">DIRECTORY</emphasis>"
+msgid ""
+"<option>-t</option>, <option>--target-directory</option>=<emphasis remap=\"I"
+"\">DIRECTORY</emphasis>"
 msgstr ""
 
 #: ln.1.xml:140(para)
@@ -223,7 +244,11 @@ msgid "output version information and exit"
 msgstr ""
 
 #: ln.1.xml:167(para)
-msgid "The backup suffix is '~', unless set with <option>--suffix</option> or SIMPLE_BACKUP_SUFFIX. The version control method may be selected via the <option>--backup</option> option or through the VERSION_CONTROL environment variable. Here are the values:"
+msgid ""
+"The backup suffix is '~', unless set with <option>--suffix</option> or "
+"SIMPLE_BACKUP_SUFFIX. The version control method may be selected via the "
+"<option>--backup</option> option or through the VERSION_CONTROL environment "
+"variable. Here are the values:"
 msgstr ""
 
 #: ln.1.xml:173(term)
@@ -259,7 +284,10 @@ msgid "always make simple backups"
 msgstr ""
 
 #: ln.1.xml:195(para)
-msgid "Using <option>-s</option> ignores <option>-L</option> and <option>-P</option>. Otherwise, the last option specified controls behavior when a TARGET is a symbolic link, defaulting to <option>-P</option>."
+msgid ""
+"Using <option>-s</option> ignores <option>-L</option> and <option>-P</"
+"option>. Otherwise, the last option specified controls behavior when a "
+"TARGET is a symbolic link, defaulting to <option>-P</option>."
 msgstr ""
 
 #: ln.1.xml:202(title)
@@ -275,7 +303,14 @@ msgid "REPORTING BUGS"
 msgstr ""
 
 #: ln.1.xml:207(para)
-msgid "Report ln bugs to bug-coreutils@gnu.org GNU coreutils home page: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> General help using GNU software: &lt;<ulink url=\"http://www.gnu.org/gethelp/&gt;\">http://www.gnu.org/gethelp/&gt;</ulink> Report ln translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"Report ln bugs to bug-coreutils@gnu.org GNU coreutils home page: &lt;<ulink "
+"url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/"
+"software/coreutils/&gt;</ulink> General help using GNU software: &lt;<ulink "
+"url=\"http://www.gnu.org/gethelp/&gt;\">http://www.gnu.org/gethelp/&gt;</"
+"ulink> Report ln translation bugs to &lt;<ulink url=\"http://"
+"translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</"
+"ulink>"
 msgstr ""
 
 #: ln.1.xml:216(title)
@@ -283,7 +318,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: ln.1.xml:217(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: ln.1.xml:224(title)
@@ -291,11 +331,17 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: ln.1.xml:225(para)
-msgid "<citerefentry><refentrytitle>link</refentrytitle><manvolnum>2</manvolnum></citerefentry>, <citerefentry><refentrytitle>symlink</refentrytitle><manvolnum>2</manvolnum></citerefentry>"
+msgid ""
+"<citerefentry><refentrytitle>link</refentrytitle><manvolnum>2</manvolnum></"
+"citerefentry>, <citerefentry><refentrytitle>symlink</"
+"refentrytitle><manvolnum>2</manvolnum></citerefentry>"
 msgstr ""
 
 #: ln.1.xml:227(para)
-msgid "The full documentation for <command>ln</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>ln</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>ln</command> is maintained as a Texinfo "
+"manual. If the <emphasis remap=\"B\">info</emphasis> and <command>ln</"
+"command> programs are properly installed at your site, the command"
 msgstr ""
 
 #: ln.1.xml:235(emphasis)
@@ -310,4 +356,3 @@ msgstr ""
 #: ln.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

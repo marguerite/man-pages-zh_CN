@@ -1,42 +1,45 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-31 19:30+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-08-01 01:42+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: systemd.target.5.xml:8(refentrytitle)
 msgid "SYSTEMD.TARGET"
-msgstr ""
+msgstr "systemd.target"
 
 #: systemd.target.5.xml:9(manvolnum)
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: systemd.target.5.xml:10(refmiscinfo)
 msgid "systemd 208"
-msgstr ""
+msgstr "systemd 208"
 
 #: systemd.target.5.xml:13(refname)
 msgid "systemd.target"
-msgstr ""
+msgstr "systemd.target"
 
 #: systemd.target.5.xml:14(refpurpose)
 msgid "Target unit configuration"
-msgstr ""
+msgstr "对象单元配置"
 
 #: systemd.target.5.xml:18(para)
 msgid "<emphasis remap=\"I\">target</emphasis>.target"
-msgstr ""
+msgstr "<emphasis remap=\"I\">对象</emphasis>.target"
 
 #: systemd.target.5.xml:22(title)
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #: systemd.target.5.xml:23(para)
 msgid ""
@@ -44,6 +47,7 @@ msgid ""
 "about a target unit of systemd, which is used for grouping units and as well-"
 "known synchronization points during start-up."
 msgstr ""
+"一个名称以 \".target\" 结尾的单元配置文件汇编了关于一个 systemd 对象单元的信息，其用于分组单元和在启动时作为周知的同步点。"
 
 #: systemd.target.5.xml:27(para)
 msgid ""
@@ -54,6 +58,9 @@ msgid ""
 "and [Install] sections. A separate [Target] section does not exist, since no "
 "target-specific options may be configured."
 msgstr ""
+"此单元类型没有特殊选项。全部单元配置文件的通用选项请参考 <citerefentry><refentrytitle>systemd.unit<"
+"/refentrytitle><manvolnum>5</manvolnum></citerefentry>。通用配置条目在常规的 [Unit] 和 "
+"[Install] 部分配置。不存在一个单独的 [Target] 部分，因为没有需要配置的特定于对象的选项。"
 
 #: systemd.target.5.xml:31(para)
 msgid ""
@@ -67,6 +74,11 @@ msgid ""
 "compatibility code in systemd. See <citerefentry><refentrytitle>systemd."
 "special</refentrytitle><manvolnum>7</manvolnum></citerefentry> for details)."
 msgstr ""
+"在单元提供的常规功能之外对象单元并不提供任何额外的功能。它们的存在只是为了通过依赖关系分组单元 "
+"(作为引导对象很有用)，以及来建立单元间依赖关系中使用的同步点的标准名称。与其它能力一起，对象单元成为了对经典 SysV 初始化系统中的 SysV "
+"runlevel 的一种更加灵活的替换。(并且出于兼容需要的原因，也存在特殊对象单元诸如 runlevel3.target，其可为 systemd 中的 "
+"SysV runlevel 兼容代码所用。细节请参考 <citerefentry><refentrytitle>systemd.special<"
+"/refentrytitle><manvolnum>7</manvolnum></citerefentry>)。"
 
 #: systemd.target.5.xml:37(para)
 msgid ""
@@ -78,10 +90,16 @@ msgid ""
 "\"I\">After=</emphasis> if the units in question also have <emphasis remap="
 "\"I\">DefaultDependencies=true</emphasis>."
 msgstr ""
+"除非 <emphasis remap=\"I\">DefaultDependencies=</emphasis> 设为 <emphasis "
+"remap=\"B\">false</emphasis>，否则若问题单元有 <emphasis remap=\"I\">"
+"DefaultDependencies=true</emphasis>，对象单元将显式地在全部已配置的类型为 <emphasis remap=\"I\">"
+"Wants=</emphasis>、<emphasis remap=\"I\">Requires=</emphasis>、<emphasis "
+"remap=\"I\">RequiresOverridable=</emphasis> 的依赖关系之外， 补充类型为 <emphasis "
+"remap=\"I\">After=</emphasis> 的依赖关系。"
 
 #: systemd.target.5.xml:50(title)
 msgid "SEE ALSO"
-msgstr ""
+msgstr "继续阅读"
 
 #: systemd.target.5.xml:51(para)
 msgid ""
@@ -94,8 +112,16 @@ msgid ""
 "<citerefentry><refentrytitle>systemd.directives</refentrytitle><manvolnum>7</"
 "manvolnum></citerefentry>"
 msgstr ""
+"<citerefentry><refentrytitle>systemd</refentrytitle><manvolnum>1</manvolnum><"
+"/citerefentry>, <citerefentry><refentrytitle>systemctl</refentrytitle><"
+"manvolnum>8</manvolnum></citerefentry>, <citerefentry><refentrytitle>"
+"systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <"
+"citerefentry><refentrytitle>systemd.special</refentrytitle><manvolnum>7<"
+"/manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.directives<"
+"/refentrytitle><manvolnum>7</manvolnum></citerefentry>"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: systemd.target.5.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2014-07-31 01:30+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: 2014-07-30 23:56+0800\n"
 "Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
 "Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
@@ -29,13 +29,13 @@ msgstr "2008 年 11 月"
 msgid "1.5.8"
 msgstr "1.5.8"
 
+#: ibus-setup.1.xml:19(refname) ibus-setup.1.xml:25(command)
+msgid "ibus-setup"
+msgstr "ibus-setup"
+
 #: ibus-setup.1.xml:20(refpurpose)
 msgid "configuration program for ibus"
 msgstr "ibus 配置程序"
-
-#: ibus-setup.1.xml:25(command)
-msgid "ibus-setup"
-msgstr "ibus-setup"
 
 #: ibus-setup.1.xml:31(title)
 msgid "DESCRIPTION"

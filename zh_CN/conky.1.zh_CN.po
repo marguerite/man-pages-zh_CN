@@ -1,9 +1,9 @@
-# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2013.
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: 2013-12-04 15:16+0800\n"
+"PO-Revision-Date: 2014-07-31 18:11+0800\n"
 "Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
 "Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
 "Language: zh_CN\n"
@@ -216,8 +216,7 @@ msgstr "您应知应会的"
 msgid ""
 "Conky is generally very good on resources. That said, the more you try to "
 "make Conky do, the more resources it is going to consume."
-msgstr ""
-"Conky 不是永动机。也就是说，您试图让它做的事情越多，它消耗的资源就越多。"
+msgstr "Conky 不是永动机。也就是说，您试图让它做的事情越多，它消耗的资源就越多。"
 
 #: conky.1.xml:111(para)
 msgid ""
@@ -691,8 +690,7 @@ msgstr "extra_newline"
 msgid ""
 "Put an extra newline at the end when writing to stdout, useful for writing "
 "to awesome's wiboxes."
-msgstr ""
-"写入到 stdout 时在结尾额外放一个新行，写 awesome 的 wibox 的时候很有用。"
+msgstr "写入到 stdout 时在结尾额外放一个新行，写 awesome 的 wibox 的时候很有用。"
 
 #: conky.1.xml:469(emphasis) conky.1.xml:1896(emphasis)
 msgid "font"
@@ -905,8 +903,7 @@ msgstr "max_port_monitor_connections"
 msgid ""
 "Allow each port monitor to track at most this many connections (if 0 or not "
 "set, default is 256)"
-msgstr ""
-"允许每个端口监视器追踪最多这些连接 (若设为 0 或未设置，就是默认的 256 个)"
+msgstr "允许每个端口监视器追踪最多这些连接 (若设为 0 或未设置，就是默认的 256 个)"
 
 #: conky.1.xml:637(emphasis)
 msgid "max_specials"
@@ -1368,8 +1365,7 @@ msgstr "total_run_times"
 msgid ""
 "Total number of times for Conky to update before quitting. Zero makes Conky "
 "run forever"
-msgstr ""
-"Conky 更新了这个总次数后就会退出。零表示 Conky 将永远运行，除非被手动打断。"
+msgstr "Conky 更新了这个总次数后就会退出。零表示 Conky 将永远运行，除非被手动打断。"
 
 #: conky.1.xml:987(emphasis) conky.1.xml:4458(emphasis)
 msgid "update_interval"
@@ -2530,7 +2526,7 @@ msgstr ""
 
 #: conky.1.xml:1877(emphasis)
 msgid "execpi"
-msgstr ""
+msgstr "execpi"
 
 #: conky.1.xml:1879(para)
 msgid ""
@@ -2539,21 +2535,23 @@ msgid ""
 "command is still parsed and evaluated at every interval."
 msgstr ""
 "与 execp 一样，但是在指定的周期执行。周期不能小于配置中 update_interval 定义"
-"的秒数。注意 $execpi 命令的输出仍将在每个周期解析并评估。"
+"的秒数。注意 $execpi 命令的输出仍将逐周期解析并评估。"
 
 #: conky.1.xml:1887(emphasis)
 msgid "flagged_mails"
-msgstr ""
+msgstr "flagged_mails"
 
 #: conky.1.xml:1889(para)
 msgid ""
 "Number of mails marked as flagged in the specified mailbox or mail spool if "
 "not. Only maildir type mailboxes are supported, mbox type will return -1."
 msgstr ""
+"指定文件夹中标记了旗标的邮件数，若未指定文件夹则使用 mail spool。"
+"仅支持 maildir 类型的 mailbox，mbox 类型将返回 -1。"
 
 #: conky.1.xml:1896(emphasis)
 msgid "(font)"
-msgstr ""
+msgstr "(font)"
 
 #: conky.1.xml:1898(para)
 msgid ""
@@ -2561,14 +2559,16 @@ msgid ""
 "everything following. You can use a $font with no arguments to change back "
 "to the default font (much like with $color)"
 msgstr ""
+"指定一个不同的字体。该新字体将应用到当前行和后续全部行。"
+"您可使用不带参数的 $font 来改回默认字体 (与 $color 很像)"
 
 #: conky.1.xml:1906(emphasis)
 msgid "format_time"
-msgstr ""
+msgstr "format_time"
 
 #: conky.1.xml:1906(emphasis)
 msgid "seconds format"
-msgstr ""
+msgstr "秒的格式"
 
 #: conky.1.xml:1908(para)
 msgid ""
@@ -2588,153 +2588,155 @@ msgstr ""
 
 #: conky.1.xml:1925(emphasis)
 msgid "forwarded_mails"
-msgstr ""
+msgstr "forwarded_mails"
 
 #: conky.1.xml:1927(para)
 msgid ""
 "Number of mails marked as forwarded in the specified mailbox or mail spool "
 "if not. Only maildir type mailboxes are supported, mbox type will return -1."
 msgstr ""
+"指定文件夹中标记为转发的邮件数，若未指定文件夹则使用 mail spool。"
+"仅支持 maildir 类型的 mailbox，mbox 类型将返回 -1。"
 
 #: conky.1.xml:1934(emphasis)
 msgid "freq"
-msgstr ""
+msgstr "freq"
 
 #: conky.1.xml:1934(emphasis) conky.1.xml:1942(emphasis)
 #: conky.1.xml:3977(emphasis) conky.1.xml:3985(emphasis)
 msgid "(n)"
-msgstr ""
+msgstr "(n)"
 
 #: conky.1.xml:1936(para)
 msgid ""
 "Returns CPU #n's frequency in MHz. CPUs are counted from 1. If omitted, the "
 "parameter defaults to 1."
-msgstr ""
+msgstr "以 MHz 返回 CPU #n 的频率。CPU 从 1 开始计算。若省略则该参数默认为 1。"
 
 #: conky.1.xml:1942(emphasis)
 msgid "freq_g"
-msgstr ""
+msgstr "freq_g"
 
 #: conky.1.xml:1944(para)
 msgid ""
 "Returns CPU #n's frequency in GHz. CPUs are counted from 1. If omitted, the "
 "parameter defaults to 1."
-msgstr ""
+msgstr "以 GHz 返回 CPU #n 的频率。CPU 从 1 开始计算。若省略则该参数默认为 1。"
 
 #: conky.1.xml:1950(emphasis)
 msgid "fs_bar"
-msgstr ""
+msgstr "fs_bar"
 
 #: conky.1.xml:1950(emphasis) conky.1.xml:1959(emphasis)
 msgid "(height),(width) fs"
-msgstr ""
+msgstr "(高度),(宽度) fs"
 
 #: conky.1.xml:1952(para)
 msgid ""
 "Bar that shows how much space is used on a file system. height is the height "
 "in pixels. fs is any file on that file system."
-msgstr ""
+msgstr "显示某文件系统所用空间的条块。高度是以像素计的高度。fs 是该文件系统上的任何文件。"
 
 #: conky.1.xml:1959(emphasis)
 msgid "fs_bar_free"
-msgstr ""
+msgstr "fs_bar_free"
 
 #: conky.1.xml:1961(para)
 msgid ""
 "Bar that shows how much space is free on a file system. height is the height "
 "in pixels. fs is any file on that file system."
-msgstr ""
+msgstr "显示某文件系统剩余空间的条块。高度是以像素计的高度。fs 是该文件系统上的任何文件。"
 
 #: conky.1.xml:1968(emphasis)
 msgid "fs_free"
-msgstr ""
+msgstr "fs_free"
 
 #: conky.1.xml:1968(emphasis) conky.1.xml:1975(emphasis)
 #: conky.1.xml:1983(emphasis) conky.1.xml:1990(emphasis)
 #: conky.1.xml:1997(emphasis) conky.1.xml:2004(emphasis)
 msgid "(fs)"
-msgstr ""
+msgstr "(fs)"
 
 #: conky.1.xml:1970(para)
 msgid "Free space on a file system available for users."
-msgstr ""
+msgstr "某文件系统上用户可用的剩余空间。"
 
 #: conky.1.xml:1975(emphasis)
 msgid "fs_free_perc"
-msgstr ""
+msgstr "fs_free_perc"
 
 #: conky.1.xml:1977(para)
 msgid "Free percentage of space on a file system available for users."
-msgstr ""
+msgstr "某文件系统上用户可用的剩余空间百分比。"
 
 #: conky.1.xml:1983(emphasis)
 msgid "fs_size"
-msgstr ""
+msgstr "fs_size"
 
 #: conky.1.xml:1985(para)
 msgid "File system size."
-msgstr ""
+msgstr "文件系统大小。"
 
 #: conky.1.xml:1990(emphasis)
 msgid "fs_type"
-msgstr ""
+msgstr "fs_type"
 
 #: conky.1.xml:1992(para)
 msgid "File system type."
-msgstr ""
+msgstr "文件系统类型。"
 
 #: conky.1.xml:1997(emphasis)
 msgid "fs_used"
-msgstr ""
+msgstr "fs_used"
 
 #: conky.1.xml:1999(para)
 msgid "File system used space."
-msgstr ""
+msgstr "文件系统已用空间。"
 
 #: conky.1.xml:2004(emphasis)
 msgid "fs_used_perc"
-msgstr ""
+msgstr "fs_used_perc"
 
 #: conky.1.xml:2006(para)
 msgid "Percent of file system used space."
-msgstr ""
+msgstr "文件系统已用空间百分比。"
 
 #: conky.1.xml:2011(emphasis)
 msgid "goto"
-msgstr ""
+msgstr "goto"
 
 #: conky.1.xml:2011(emphasis)
 msgid "x"
-msgstr ""
+msgstr "x"
 
 #: conky.1.xml:2013(para)
 msgid "The next element will be printed at position 'x'."
-msgstr ""
+msgstr "下一个元素将在 'x' 位置输出。"
 
 #: conky.1.xml:2018(emphasis)
 msgid "gw_iface"
-msgstr ""
+msgstr "gw_iface"
 
 #: conky.1.xml:2020(para)
 msgid ""
 "Displays the default route's interface or \"multiple\"/\"none\" accordingly."
-msgstr ""
+msgstr "显示默认路由接口或相应显示 \"multiple\"/\"none\"。"
 
 #: conky.1.xml:2026(emphasis)
 msgid "gw_ip"
-msgstr ""
+msgstr "gw_ip"
 
 #: conky.1.xml:2028(para)
 msgid "Displays the default gateway's IP or \"multiple\"/\"none\" accordingly."
-msgstr ""
+msgstr "显示默认网关 IP 或相应显示 \"multiple\"/\"none\"。"
 
 #: conky.1.xml:2034(emphasis)
 msgid "hddtemp"
-msgstr ""
+msgstr "hddtemp"
 
 #: conky.1.xml:2034(emphasis)
 msgid "(dev)"
-msgstr ""
+msgstr "(dev)"
 
 #: conky.1.xml:2036(para)
 msgid ""
@@ -2743,14 +2745,17 @@ msgid ""
 "for all hddtemp objects. If no dev parameter is given, the first disk "
 "returned by the hddtemp daemon is used."
 msgstr ""
+"显示 hddtemp 守护进程汇报的所选硬盘驱动器的温度。"
+"请使用 hddtemp_host 和 hddtemp_port 来为全部 hddtemp 对象指定主机和端口。"
+"若未给出 dev 参数，将返回 hddtemp 守护进程使用的第一块硬盘。"
 
 #: conky.1.xml:2045(emphasis)
 msgid "head"
-msgstr ""
+msgstr "head"
 
 #: conky.1.xml:2045(emphasis) conky.1.xml:3539(emphasis)
 msgid "logfile lines (next_check)"
-msgstr ""
+msgstr "日志文件行数 (next_check)"
 
 #: conky.1.xml:2047(para)
 msgid ""
@@ -2758,27 +2763,30 @@ msgid ""
 "'next_check' update. If next_check is not supplied, Conky defaults to 2. Max "
 "of 30 lines can be displayed, or until the text buffer is filled."
 msgstr ""
+"显示所提供文本文件的前 N 行。每 'next_check' 周期检查一次该文件。"
+"若未提供 next_check， Conky 默认为 2。最多可显示 30 行，或直到文本"
+"缓冲填满为止。"
 
 #: conky.1.xml:2055(emphasis)
 msgid "hr"
-msgstr ""
+msgstr "hr"
 
 #: conky.1.xml:2055(emphasis)
 msgid "(height)"
-msgstr ""
+msgstr "(高度)"
 
 #: conky.1.xml:2057(para)
 msgid "Horizontal line, height is the height in pixels"
-msgstr ""
+msgstr "水平线，高度是像素计的高度。"
 
 #: conky.1.xml:2062(emphasis)
 msgid "hwmon"
-msgstr ""
+msgstr "hwmon"
 
 #: conky.1.xml:2062(emphasis) conky.1.xml:2078(emphasis)
 #: conky.1.xml:3282(emphasis)
 msgid "(dev) type n (factor offset)"
-msgstr ""
+msgstr "(dev) type n (factor offset)"
 
 #: conky.1.xml:2064(para)
 msgid ""
@@ -2794,7 +2802,7 @@ msgstr ""
 
 #: conky.1.xml:2078(emphasis)
 msgid "i2c"
-msgstr ""
+msgstr "i2c"
 
 #: conky.1.xml:2080(para)
 msgid ""
@@ -2810,7 +2818,7 @@ msgstr ""
 
 #: conky.1.xml:2094(emphasis)
 msgid "i8k_ac_status"
-msgstr ""
+msgstr "i8k_ac_status"
 
 #: conky.1.xml:2096(para)
 msgid ""
@@ -2821,7 +2829,7 @@ msgstr ""
 
 #: conky.1.xml:2104(emphasis)
 msgid "i8k_bios"
-msgstr ""
+msgstr "i8k_bios"
 
 #: conky.1.xml:2106(para)
 msgid ""
@@ -5993,8 +6001,7 @@ msgstr "conky <option>-t '${time %D %H:%M}' -o -u 30</option>"
 msgid ""
 "Start Conky in its own window with date and clock as text and 30 sec update "
 "interval."
-msgstr ""
-"在它自己的窗口中启动 Conky，并带有文本格式的日期和时钟，以 30 秒为更新周期。"
+msgstr "在它自己的窗口中启动 Conky，并带有文本格式的日期和时钟，以 30 秒为更新周期。"
 
 #: conky.1.xml:4534(term)
 msgid "conky <option>-a top_left -x 5 -y 500 -d</option>"
@@ -6012,8 +6019,7 @@ msgstr "conky <option>-C &gt; ~/.conkyrc</option>"
 msgid ""
 "Do not start Conky, but have it output the builtin default config file to ~/."
 "conkyrc for later customising."
-msgstr ""
-"不启动 Conky，而是让它把内置默认配置文件输出到 ~/.conkyrc 以供后续自定义用。"
+msgstr "不启动 Conky，而是让它把内置默认配置文件输出到 ~/.conkyrc 以供后续自定义用。"
 
 #: conky.1.xml:4551(title)
 msgid "FILES"
@@ -6027,8 +6033,7 @@ msgstr "${sysconfdir}/conky/conky.conf"
 msgid ""
 "Default system-wide configuration file. The value of ${sysconfdir} depends "
 "on the compile-time options (most likely /etc)."
-msgstr ""
-"默认系统级别配置文件。${sysconfdir} 的值取决于编译时的选项 (多数是 /etc)。"
+msgstr "默认系统级别配置文件。${sysconfdir} 的值取决于编译时的选项 (多数是 /etc)。"
 
 #: conky.1.xml:4562(filename)
 msgid "~/.conkyrc"
@@ -6112,3 +6117,4 @@ msgstr "Conky 开发团队 (完整贡献者列表请见 AUTHORS)。"
 #: conky.1.xml:0(None)
 msgid "translator-credits"
 msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2013"
+

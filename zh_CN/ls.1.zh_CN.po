@@ -2,10 +2,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2014-07-31 17:04+0800\n"
-"PO-Revision-Date: 2014-07-31 03:07+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
+"PO-Revision-Date: 2014-08-01 01:32+0800\n"
 "Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
-"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -565,37 +565,39 @@ msgstr ""
 
 #: ls.1.xml:396(para)
 msgid "print any SELinux security context of each file"
-msgstr ""
+msgstr "输出每个文件的 SELinux 安全环境"
 
 #: ls.1.xml:400(option)
 msgid "-1"
-msgstr ""
+msgstr "-1"
 
 #: ls.1.xml:402(para)
 msgid "list one file per line"
-msgstr ""
+msgstr "每行列出一个文件"
 
 #: ls.1.xml:406(option)
 msgid "--help"
-msgstr ""
+msgstr "--help"
 
 #: ls.1.xml:408(para)
 msgid "display this help and exit"
-msgstr ""
+msgstr "显示此帮助并退出"
 
 #: ls.1.xml:412(option)
 msgid "--version"
-msgstr ""
+msgstr "--version"
 
 #: ls.1.xml:414(para)
 msgid "output version information and exit"
-msgstr ""
+msgstr "输出版本信息并退出"
 
 #: ls.1.xml:416(para)
 msgid ""
 "The SIZE argument is an integer and optional unit (example: 10K is 10*1024). "
 "Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000)."
 msgstr ""
+"SIZE 参数是一个整数，也可以加上单位 (例如：10K 是 10*1024)。"
+"单位为 K,M,G,T,P,E,Z,Y (乘数为 1024) 或 KB,MB,... (乘数为 1000)。"
 
 #: ls.1.xml:419(para)
 msgid ""
@@ -609,27 +611,27 @@ msgstr ""
 
 #: ls.1.xml:427(title)
 msgid "Exit status:"
-msgstr ""
+msgstr "退出状态："
 
 #: ls.1.xml:430(term)
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ls.1.xml:432(para)
 msgid "if OK,"
-msgstr ""
+msgstr "若 OK，"
 
 #: ls.1.xml:438(para)
 msgid "if minor problems (e.g., cannot access subdirectory),"
-msgstr ""
+msgstr "若有小问题 (例如，无法访问子文件夹)，"
 
 #: ls.1.xml:442(term)
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ls.1.xml:444(para)
 msgid "if serious trouble (e.g., cannot access command-line argument)."
-msgstr ""
+msgstr "若有严重问题 (例如，无法获取命令行参数)。"
 
 #: ls.1.xml:446(para)
 msgid ""
@@ -638,18 +640,22 @@ msgid ""
 "ls translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
 "&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
+"GNU coreutils 在线帮助：&lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> 汇报 "
+"ls 翻译故障 &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 
 #: ls.1.xml:454(title)
 msgid "AUTHOR"
-msgstr ""
+msgstr "作者"
 
 #: ls.1.xml:455(para)
 msgid "Written by Richard M. Stallman and David MacKenzie."
-msgstr ""
+msgstr "由 Richard M. Stallman 和 David MacKenzie 编纂。"
 
 #: ls.1.xml:458(title)
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "版权"
 
 #: ls.1.xml:459(para)
 msgid ""
@@ -659,10 +665,14 @@ msgid ""
 "are free to change and redistribute it. There is NO WARRANTY, to the extent "
 "permitted by law."
 msgstr ""
+"版权所有 &copy; 2013 自由软件基金会。许可证 GPLv3+：GNU 通用公共许可证 "
+"第三版及后续版本 &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>。这是一个自由软件：您可以自由"
+"修订并分发它。在法律允许范围内不作任何保证。"
 
 #: ls.1.xml:466(title)
 msgid "SEE ALSO"
-msgstr ""
+msgstr "继续阅读"
 
 #: ls.1.xml:467(para)
 msgid ""
@@ -670,16 +680,20 @@ msgid ""
 "manual. If the <emphasis remap=\"B\">info</emphasis> and <command>ls</"
 "command> programs are properly installed at your site, the command"
 msgstr ""
+"<command>ls</command> 的完整文档以一本 Texinfo 手册的形式维护。"
+"若您的计算机上妥善安装了  <emphasis remap=\"B\">info</emphasis> 和 "
+"<command>ls</command> 程序，这个命令"
 
 #: ls.1.xml:475(emphasis)
-msgid "info coreutils 'ls invocation'"
-msgstr ""
+msgid "info coreutils ''ls invocation''"
+msgstr "info coreutils \"ls invocation\""
 
 #: ls.1.xml:477(para)
 msgid "should give you access to the complete manual."
-msgstr ""
+msgstr "应可让您调阅完整手册。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ls.1.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+

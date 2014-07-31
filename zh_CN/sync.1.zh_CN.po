@@ -1,67 +1,70 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:05+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
+"PO-Revision-Date: 2014-07-31 22:05+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: sync.1.xml:8(refentrytitle)
 msgid "SYNC"
-msgstr ""
+msgstr "sync"
 
 #: sync.1.xml:9(manvolnum)
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: sync.1.xml:10(refmiscinfo)
 msgid "July 2014"
-msgstr ""
+msgstr "2014 年 7 月"
 
 #: sync.1.xml:11(refmiscinfo)
 msgid "GNU coreutils 8.22"
-msgstr ""
+msgstr "GNU coreutils 8.22"
 
 #: sync.1.xml:14(refname) sync.1.xml:20(command) sync.1.xml:62(refentrytitle)
 msgid "sync"
-msgstr ""
+msgstr "sync"
 
 #: sync.1.xml:15(refpurpose)
 msgid "flush file system buffers"
-msgstr ""
+msgstr "刷新文件系统缓冲区"
 
 #: sync.1.xml:21(replaceable)
 msgid "OPTION"
-msgstr ""
+msgstr "选项"
 
 #: sync.1.xml:26(title)
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #. Add any additional description here
 #: sync.1.xml:29(para)
 msgid "Force changed blocks to disk, update the super block."
-msgstr ""
+msgstr "强制将修改过的块写入到磁盘，更新超级块。"
 
 #: sync.1.xml:32(option)
 msgid "--help"
-msgstr ""
+msgstr "--help"
 
 #: sync.1.xml:34(para)
 msgid "display this help and exit"
-msgstr ""
+msgstr "显示此帮助并退出"
 
 #: sync.1.xml:38(option)
 msgid "--version"
-msgstr ""
+msgstr "--version"
 
 #: sync.1.xml:40(para)
 msgid "output version information and exit"
-msgstr ""
+msgstr "输出版本信息并退出"
 
 #: sync.1.xml:42(para)
 msgid ""
@@ -70,18 +73,22 @@ msgid ""
 "sync translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
 "&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
+"GNU coreutils 在线帮助：&lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> 汇报 "
+"sync 翻译故障 &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 
 #: sync.1.xml:49(title)
 msgid "AUTHOR"
-msgstr ""
+msgstr "作者"
 
 #: sync.1.xml:50(para)
 msgid "Written by Jim Meyering."
-msgstr ""
+msgstr "由 Jim Meyering 编纂。"
 
 #: sync.1.xml:53(title)
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "版权"
 
 #: sync.1.xml:54(para)
 msgid ""
@@ -91,14 +98,18 @@ msgid ""
 "are free to change and redistribute it. There is NO WARRANTY, to the extent "
 "permitted by law."
 msgstr ""
+"版权所有 &copy; 2013 自由软件基金会。许可证 GPLv3+：GNU 通用公共许可证 "
+"第三版及后续版本 &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>。这是一个自由软件：您可以自由"
+"修订并分发它。在法律允许范围内不作任何保证。"
 
 #: sync.1.xml:61(title)
 msgid "SEE ALSO"
-msgstr ""
+msgstr "继续阅读"
 
 #: sync.1.xml:62(manvolnum)
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: sync.1.xml:64(para)
 msgid ""
@@ -107,16 +118,20 @@ msgid ""
 "<command>sync</command> programs are properly installed at your site, the "
 "command"
 msgstr ""
+"<command>sync</command> 的完整文档以一本 Texinfo 手册的形式维护。"
+"若您的计算机上妥善安装了  <emphasis remap=\"B\">info</emphasis> 和 "
+"<command>sync</command> 程序，这个命令"
 
 #: sync.1.xml:72(emphasis)
-msgid "info coreutils 'sync invocation'"
-msgstr ""
+msgid "info coreutils ''sync invocation''"
+msgstr "info coreutils \"sync invocation\""
 
 #: sync.1.xml:74(para)
 msgid "should give you access to the complete manual."
-msgstr ""
+msgstr "应可让您调阅完整手册。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: sync.1.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+

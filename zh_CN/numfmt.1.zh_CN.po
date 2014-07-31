@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:05+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -379,7 +379,7 @@ msgid ""
 msgstr ""
 
 #: numfmt.1.xml:264(emphasis)
-msgid "info coreutils 'numfmt invocation'"
+msgid "info coreutils ''numfmt invocation''"
 msgstr ""
 
 #: numfmt.1.xml:266(para)

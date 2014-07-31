@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:04+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -212,7 +212,7 @@ msgid ""
 msgstr ""
 
 #: cat.1.xml:153(emphasis)
-msgid "info coreutils 'cat invocation'"
+msgid "info coreutils ''cat invocation''"
 msgstr ""
 
 #: cat.1.xml:155(para)

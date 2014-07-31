@@ -1,81 +1,84 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:05+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
+"PO-Revision-Date: 2014-07-31 22:57+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: printenv.1.xml:8(refentrytitle)
 msgid "PRINTENV"
-msgstr ""
+msgstr "printenv"
 
 #: printenv.1.xml:9(manvolnum)
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: printenv.1.xml:10(refmiscinfo)
 msgid "July 2014"
-msgstr ""
+msgstr "2014 年 7 月"
 
 #: printenv.1.xml:11(refmiscinfo)
 msgid "GNU coreutils 8.22"
-msgstr ""
+msgstr "GNU coreutils 8.22"
 
 #: printenv.1.xml:14(refname) printenv.1.xml:20(command)
 msgid "printenv"
-msgstr ""
+msgstr "printenv"
 
 #: printenv.1.xml:15(refpurpose)
 msgid "print all or part of environment"
-msgstr ""
+msgstr "输出全部或部分环境变量"
 
 #: printenv.1.xml:21(replaceable)
 msgid "OPTION"
-msgstr ""
+msgstr "选项"
 
 #: printenv.1.xml:22(replaceable)
 msgid "VARIABLE"
-msgstr ""
+msgstr "变量"
 
 #: printenv.1.xml:28(title)
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #. Add any additional description here
 #: printenv.1.xml:31(para)
 msgid ""
 "Print the values of the specified environment VARIABLE(s). If no VARIABLE is "
 "specified, print name and value pairs for them all."
-msgstr ""
+msgstr "输出指定环境变量值。若未指定变量则输出全部变量的名称和值配对。"
 
 #: printenv.1.xml:35(term)
 msgid "<option>-0</option>, <option>--null</option>"
-msgstr ""
+msgstr "<option>-0</option>, <option>--null</option>"
 
 #: printenv.1.xml:37(para)
 msgid "end each output line with 0 byte rather than newline"
-msgstr ""
+msgstr "每个输出的行以 0 字节而不是换行符结尾"
 
 #: printenv.1.xml:41(option)
 msgid "--help"
-msgstr ""
+msgstr "--help"
 
 #: printenv.1.xml:43(para)
 msgid "display this help and exit"
-msgstr ""
+msgstr "显示此帮助并退出"
 
 #: printenv.1.xml:47(option)
 msgid "--version"
-msgstr ""
+msgstr "--version"
 
 #: printenv.1.xml:49(para)
 msgid "output version information and exit"
-msgstr ""
+msgstr "输出版本信息并退出"
 
 #: printenv.1.xml:51(para)
 msgid ""
@@ -83,6 +86,8 @@ msgid ""
 "supersedes the version described here. Please refer to your shell's "
 "documentation for details about the options it supports."
 msgstr ""
+"注意：您的壳层可能有其自有版本的 printenv，其通常会覆盖这里的版本。"
+"关于您壳层支持的选项的细节请参考其文档。"
 
 #: printenv.1.xml:55(para)
 msgid ""
@@ -91,18 +96,22 @@ msgid ""
 "printenv translation bugs to &lt;<ulink url=\"http://translationproject.org/"
 "team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
+"GNU coreutils 在线帮助：&lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> 汇报 "
+"printenv 翻译故障 &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 
 #: printenv.1.xml:62(title)
 msgid "AUTHOR"
-msgstr ""
+msgstr "作者"
 
 #: printenv.1.xml:63(para)
 msgid "Written by David MacKenzie and Richard Mlynarik."
-msgstr ""
+msgstr "由 David MacKenzie 和 Richard Mlynarik 编纂。"
 
 #: printenv.1.xml:66(title)
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "版权"
 
 #: printenv.1.xml:67(para)
 msgid ""
@@ -112,10 +121,14 @@ msgid ""
 "are free to change and redistribute it. There is NO WARRANTY, to the extent "
 "permitted by law."
 msgstr ""
+"版权所有 &copy; 2013 自由软件基金会。许可证 GPLv3+：GNU 通用公共许可证 "
+"第三版及后续版本 &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>。这是一个自由软件：您可以自由"
+"修订并分发它。在法律允许范围内不作任何保证。"
 
 #: printenv.1.xml:74(title)
 msgid "SEE ALSO"
-msgstr ""
+msgstr "继续阅读"
 
 #: printenv.1.xml:75(para)
 msgid ""
@@ -124,16 +137,20 @@ msgid ""
 "<command>printenv</command> programs are properly installed at your site, "
 "the command"
 msgstr ""
+"<command>printenv</command> 的完整文档以一本 Texinfo 手册的形式维护。"
+"若您的计算机上妥善安装了  <emphasis remap=\"B\">info</emphasis> 和 "
+"<command>printenv</command> 程序，这个命令"
 
 #: printenv.1.xml:83(emphasis)
-msgid "info coreutils 'printenv invocation'"
-msgstr ""
+msgid "info coreutils ''printenv invocation''"
+msgstr "info coreutils \"printenv invocation\""
 
 #: printenv.1.xml:85(para)
 msgid "should give you access to the complete manual."
-msgstr ""
+msgstr "应可让您调阅完整手册。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: printenv.1.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+
