@@ -1,5 +1,4 @@
-.\" t
-.\" -*- coding: UTF-8 -*-
+'\" t -*- coding: us-ascii -*-
 .if \n(.g .ds T< \\FC
 .if \n(.g .ds T> \\F[\n[.fam]]
 .de URL
@@ -8,7 +7,7 @@
 .if \n(.g .mso www.tmac
 .TH conky 1 2012-05-03 "" ""
 .SH NAME
-conky \- 一个用于 X 的系统监视器，基于 torsmo 的代码，但是更碉堡。它只专注于有借有还的人。耶。
+conky \- A system monitor for X originally based on the torsmo code, but more kickass. It just keeps on given'er. Yeah.
 .SH SYNOPSIS
 'nh
 .fi
@@ -16,608 +15,1020 @@ conky \- 一个用于 X 的系统监视器，基于 torsmo 的代码，但是更
 \fBconky\fR \kx
 .if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
 'in \n(.iu+\nxu
-\fIkx\fR [\fI选项\fR]
+[
+\fIoptions\fR
+]
 'in \n(.iu-\nxu
 .ad b
 'hy
-.SH 描述
-Conky 是一个最初基于 torsmo 的用于 X 的系统监视器。自开天辟地以来，Conky 比起它的前身已经有了很大改动，同时也保存了简单和可配置的特征。Cony 几乎可以显示任何东西，不管是在您的根桌面还是在它自己的窗口里。Conky 不但有许多内置对象，它也可以用脚本或其它外界程序显示任何信息片段。
+.SH DESCRIPTION
+Conky is a system monitor for X originally based on
+torsmo. Since its inception, Conky has changed
+significantly from its predecessor, while maintaining
+simplicity and configurability. Conky can display just
+about anything, either on your root desktop or in its own
+window. Not only does Conky have many built-in objects, it
+can also display just about any piece of information by
+using scripts and other external programs.
 .PP
-Conky 有大于 250 个内置对象，包括超多的操作系统统计支持 (uname, uptime, CPU 用量，内存用量，磁盘用量，像 "top" 一样的进程统计和网络监控，随便点名几个)，内置的 IMAP 和 POP3 支持，内置的许多流行音乐播放器支持 (MPD, XMMS2, BMPx, Audacious)，等等等等。Conky 可以文字、或带有不同字体和颜色的简单进度条和图形挂件来显示这些信息。
+Conky has more than 250 built in objects, including
+support for a plethora of OS stats (uname, uptime, CPU
+usage, mem usage, disk usage, "top" like process stats, and
+network monitoring, just to name a few), built in IMAP and
+POP3 support, built in support for many popular music
+players (MPD, XMMS2, BMPx, Audacious), and much much more.
+Conky can display this info either as text, or using simple
+progress bars and graph widgets, with different fonts and
+colours.
 .PP
-我们总是在寻找援手，不论是汇报故障、制作补丁还是撰写文档。请使用 SourceForge 上的设施来汇报故障、提交新功能请求和补丁，或在您有疑问或想要参与贡献时来 irc.freenode.net 的 #conky 频道转转。
+We are always looking for help, whether its reporting
+bugs, writing patches, or writing docs. Please use the
+facilities at SourceForge to make bug reports, feature
+requests, and submit patches, or stop by #conky on
+irc.freenode.net if you have questions or want to
+contribute.
 .PP
-感谢关注 Conky。
-.SH 编译
-那些在使用二进制预编译软件包的发行版如伟大的 openSUSE 上从源代码编译的用户，请确保您安装了 X 开发用函数库软件包 (除非您附加 "--disable-x11" 运行 configure)。X 开发用函数库软件包应该是一个沿袭 "libX11-devel" 或 "xorg-x11-devel" 命名习惯的软件包，同样其它库也需要类似的 "-devel" 格式的软件包 (取决于您的配置选项启用没启用对这个库提供的功能的整合)。通过阅读您运行'./configure' 得出的错误，您应该能够看到您需要安装那些额外软件包。您可以通过对 configure 传递选项来启用/禁用东西，但禁用时请留心。例如：使用 --disable-math 您不会看到错误，但是对数曲线图就会变成正常的直线图，并且标尺也会丢失其刻度。
+Thanks for your interest in Conky.
+.SH COMPILING
+For users compiling from source on a binary distro,
+make sure you have the X development libraries installed
+(Unless you provide configure with "--disable-x11"). This
+should be a package along the lines of "libx11-dev" or
+"xorg-x11-dev" for X11 libs, and similar "-dev" format for
+the other libs required (depending on your configure
+options). You should be able to see which extra packages
+you need to install by reading errors that you get from
+\&'./configure'. You can enable/disable stuff by giving
+options to configure, but be careful with disabling. For
+example: with --disable-math you won't get errors but
+logarithmic graphs will be normal graphs and gauges
+will miss their line. 
 .PP
-Conky 已经 (有一段时间了) 可以从多数流行发行版的软件源中撷取了。这里是一些发行版的安装指南：
+Conky has (for some time) been available in the
+repositories of most popular distributions. Here are some
+installation instructions for a few:
 .PP
-openSUSE 用户 -- Conky 在官方源中有提供，开发版本在 server:monitoring 源中，Packman:Multimedia 源也提供了启用了 audacious/xmms2 播放器支持和从 NVIDIA 私有显卡驱动获取设备信息支持的完整版本 (但大多数人不会需要)...只需要使用 "sudo zypper in conky" 即可安装。
+Gentoo users -- Conky is in Gentoo's Portage...
+simply use "emerge app-admin/conky" for
+installation.
 .PP
-安装开发版本：'sudo zypper ar -f http://download.opensuse.org/repositories/server:/monitoring/openSUSE_12.3/ server:monitoring sudo zypper ref sudo zypper in conky' sudo zypper ref sudo zypper in conky'
+Debian, etc. users -- Conky should be in your
+repositories, and can be installed by doing "aptitude
+install conky".
 .PP
-启用全部可选部件地编译和运行 Conky 的范例 (注意有些配置选项在您的系统上可能有所不同)：
+Example to compile and run Conky with all optional
+components (note that some configure options may differ for
+your system):
 .TP 
-\fIsh autogen.sh\fR \fI# 只在编译从 git 仓库中撷取的版本时才需要\fR, \fI./configure\fR \*(T<\fB\-\-prefix=/usr \-\-mandir=/usr/share/man \-\-infodir=/usr/share/info \-\-datadir=/usr/share \-\-sysconfdir=/etc \-\-localstatedir=/var/lib \-\-disable\-own\-window \-\-enable\-audacious[=yes|no|legacy] \-\-enable\-bmpx \-\-disable\-hddtemp \-\-disable\-mpd \-\-enable\-xmms2 \-\-disable\-portmon \-\-disable\-network \-\-enable\-debug \-\-disable\-x11 \-\-disable\-double\-buffer \-\-disable\-xdamage \-\-disable\-xft\fR\*(T>, \fImake\fR , \fImake install\fR \fI# 可选\fR, \fIsrc/conky\fR 
-Conky 经测试与 C99 C 标准兼容，然而它没有测试过除 gcc 以外的编译器，并且不承诺能够用其它的编译器来编译。
-.SH 您应知应会的
-Conky 不是永动机。也就是说，您试图让它做的事情越多，它消耗的资源就越多。
+\fB\*(T<\fBsh autogen.sh\fR\*(T> \fR\*(T<\fB# Only required if building from the git repo\fR\*(T> 
+.TP 
+\fB\*(T<\fB\&./configure\fR\*(T> \fR\*(T<\fB\-\-prefix=/usr \-\-mandir=/usr/share/man \-\-infodir=/usr/share/info \-\-datadir=/usr/share \-\-sysconfdir=/etc \-\-localstatedir=/var/lib \-\-disable\-own\-window \-\-enable\-audacious[=yes|no|legacy] \-\-enable\-bmpx \-\-disable\-hddtemp \-\-disable\-mpd \-\-enable\-xmms2 \-\-disable\-portmon \-\-disable\-network \-\-enable\-debug \-\-disable\-x11 \-\-disable\-double\-buffer \-\-disable\-xdamage \-\-disable\-xft\fR\*(T> 
+.TP 
+\fB\*(T<\fBmake\fR\*(T> \fR
+.TP 
+\fB\*(T<\fBmake install\fR\*(T> \fR\*(T<\fB# Optional\fR\*(T> 
+.TP 
+\fB\*(T<\fBsrc/conky\fR\*(T> \fR
 .PP
-一个简单的强制 Conky 重载您的 ～/.conkyrc 的方法："killall -SIGUSR1 conky"。省去了您 kill 然后重启它的麻烦。您对 SIGHUP 也可以做同样的事。
-.SH 选项
-命令行选项将覆盖定义在配置文件中的配置选项。
-.TP 
-\*(T<\fB\-v | \-V | \-\-version\fR\*(T> 
-打印版本号后退出
-.TP 
-\*(T<\fB\-q | \-\-quiet\fR\*(T> 
-以 '静音模式' 运行 Conky (即：没有输出)
-.TP 
-\*(T<\fB\-D | \-\-debug\fR\*(T> 
-增加调试输出，另：-DD 可以继续增加调试输出
-.TP 
-\*(T<\fB\-a | \-\-alignment=\fR\*(T> \fI对齐\fR
-屏幕上文字对齐方式，{top,bottom,middle}_{left,right,middle} 或 none。也可以使用位置首字符缩写，例如 tr 就代表 top_right。
-.TP 
-\*(T<\fB\-b | \-\-double\-buffer\fR\*(T> 
-使用双重缓冲 (消除闪烁，不然每次 conky 更新时屏幕会闪一下)
-.TP 
-\*(T<\fB\-c | \-\-config=\fR\*(T> \fI文件\fR
-要加载的配置文件，而不去加载 $HOME/.conkyrc
-.TP 
-\*(T<\fB\-C | \-\-print\-config\fR\*(T> 
-打印内置默认配置到 stdout。也请参考范例章节获取更多信息。
-.TP 
-\*(T<\fB\-d | \-\-daemonize\fR\*(T> 
-守护进程方式运行 Conky，也即 fork 到后台
-.TP 
-\*(T<\fB\-f | \-\-font=\fR\*(T> \fI字体\fR
-要使用的字体
-.TP 
-\*(T<\fB\-h | \-\-help\fR\*(T> 
-打印命令行帮助后退出
-.TP 
-\*(T<\fB\-o | \-\-own\-window\fR\*(T> 
-创建自己的窗口并在上面作画
-.TP 
-\*(T<\fB\-t | \-\-text=\fR\*(T> \fITEXT\fR
-要渲染的文字，请记住用单引号，例如 -t '$uptime'
-.TP 
-\*(T<\fB\-p | \-\-pause=\fR\*(T> \fI秒\fR
-在真正启动 Conky 前暂停的时间
-.TP 
-\*(T<\fB\-u | \-\-interval=\fR\*(T> \fI秒\fR
-更新周期
-.TP 
-\*(T<\fB\-w | \-\-window\-id=\fR\*(T> \fI窗口 ID\fR
-要在其上作画的窗口 ID
-.TP 
-\*(T<\fB\-X | \-\-display=\fR\*(T> \fIDISPLAY\fR
-要使用的 X11 display
-.TP 
-\*(T<\fB\-x\fR\*(T> \fIX 坐标\fR
-X 位置
-.TP 
-\*(T<\fB\-y\fR\*(T> \fIY 坐标\fR
-Y 位置
-.TP 
-\*(T<\fB\-i\fR\*(T> \fI计数\fR
-Conky 更新了的次数 (后退出)
-.SH 配置设置
-默认配置文件位置是 $HOME/.conkyrc 或 ${sysconfdir}/conky/conky.conf。在多数系统上面，sysconfdir 就是 /etc，并且您可以在那里找到样本配置文件 (/etc/conky/conky.conf)。
+Conky has been tested to be compatible with C99 C,
+however it has not been tested with anything other than
+gcc, and is not guaranteed to work with other
+compilers.
 .PP
-您可能想要把它复制到 $HOME/.conkyrc 然后开始修改它。其它的配置可以在 〈http://conky.sf.net/〉 找到
-.TP 
-\fITEXT\fR 
-在此之后开始要在屏幕上排版显示的文字。反斜杠 (\e) 在文本部分里可逃逸新行。这在当 conky 通过管道 pipe 使用 dzen2 的输入时清理配置文件非常有用。
-.TP 
-\fIalignment\fR 
-屏幕上的对齐位置，可以是 top_left, top_right, top_middle, bottom_left, bottom_right, bottom_middle, middle_left, middle_middle, middle_right, 或 none (也可以缩写为 tl, tr, tm, bl, br, bm, ml, mm, mr)。也请参考 gap_x 和 gap_y。
-.TP 
-\fIappend_file\fR 
-追加以参数形式给出的文件。
-.TP 
-\fIbackground\fR 
-布尔值，若真，Conky 将在启动时被 fork 到后台。
-.TP 
-\fIborder_inner_margin\fR 
-以像素计的内边框 margin (边框和文字间的 margin)。
-.TP 
-\fIborder_outer_margin\fR 
-以像素计的外边框 margin (边框和窗口边缘的 margin)。
-.TP 
-\fIborder_width\fR 
-以像素计的边框宽度。
-.TP 
-\fIcolorN\fR 
-预定义一个用在 TEXT 段中的颜色。请将 N 替换为数字 0 到 9。当用十六进制格式指定颜色值时请略去开头的 # 号。
-.TP 
-\fIcpu_avg_samples\fR 
-CPU 监控用于取均值的样本数。
-.TP 
-\fIdefault_bar_size\fR 
-为柱形指定默认宽高。范例：'default_bar_size 0 6'。这对 execbar 和 execibar 尤其有用因为它们不接受 size 参数。
-.TP 
-\fIdefault_color\fR 
-默认颜色和边框颜色
-.TP 
-\fIdefault_gauge_size\fR 
-为标尺指定默认宽高。范例：'default_gauge_size 25 25'。这对 execbar 和 execibar 尤其有用因为它们不接受 size 参数
-.TP 
-\fIdefault_graph_size\fR 
-为图形指定默认宽高。范例：'default_graph_size 0 25'。这对 execgraph 和 execigraph 尤其有用因为它们不接受 size 参数
-.TP 
-\fIdefault_outline_color\fR 
-默认轮廓颜色
-.TP 
-\fIdefault_shade_color\fR 
-默认阴影颜色和边框的阴影颜色
-.TP 
-\fIdisable_auto_reload\fR 
-启用或禁用基于 inotify 的自动配置重载功能。
-.TP 
-\fIdiskio_avg_samples\fR 
-磁盘 I/O 监控用于取均值的样本数。
-.TP 
-\fIdisplay\fR 
-指定要连接到的 X display。
-.TP 
-\fIdouble_buffer\fR 
-使用 Xdbe 扩展吗？(消除闪烁) 高度推荐与自有窗口一起使用该选项，这样双重缓冲不会太大。
-.TP 
-\fIdraw_borders\fR 
-环绕文字画边框吗？
-.TP 
-\fIdraw_graph_borders\fR 
-环绕图形画边框吗？
-.TP 
-\fIdraw_outline\fR 
-画轮廓吗？
-.TP 
-\fIdraw_shades\fR 
-画阴影吗？
-.TP 
-\fIextra_newline\fR 
-写入到 stdout 时在结尾额外放一个新行，写 awesome 的 wibox 的时候很有用。
-.TP 
-\fIfont\fR 
-X 中的字体名称，可用 xfontsel 获取一个漂亮的字体
-.TP 
-\fIformat_human_readable\fR 
-若启用，字节格式的值将被以人类可读的格式打印 (即：KiB, MiB, 等)。若禁用则打印字节数。
-.TP 
-\fIgap_x\fR 
-以像素计的屏幕左右边间的间隙，与在命令行传递 -x 是相同的，例如 gap_x 10。更多位置相关的东西，请参考 'alignment'。
-.TP 
-\fIgap_y\fR 
-以像素计的屏幕上下边间的间隙，与在命令行传递 -y 是相同的，例如 gap_y 10。更多位置相关的东西，请参考 'alignment'。
-.TP 
-\fIhddtemp_host\fR 
-hddtemp 对象连接到的主机名。默认为 "127.0.0.1"。
-.TP 
-\fIhddtemp_port\fR 
-hddtemp 连接所用的端口。默认为 7634。
-.TP 
-\fIif_up_strictness\fR 
-if_up 测试接口是否连线时应该多严格？值是 up，link 或 address 中的一个，可检测接口是仅连线，已连线并有链接，还是已连线并有链接和分配到的 IP 地址。
-.TP 
-\fIimap\fR 
-默认全局 IMAP 服务器。参数为：" host user pass [-i interval (以秒计)] [-f '文件夹'] [-p port] [-e '命令'] [-r 重试次数]"。默认端口是 143，默认文件夹是 'INBOX'，默认周期是 5 分钟，默认放弃前重试次数是 5。若密码提供为 '*'，您将会在 Conky 启动时被提示输入密码。
-.TP 
-\fIimlib_cache_flush_interval\fR 
-刷新 Imlib2 缓存的周期 (以秒计)。
-.TP 
-\fIimlib_cache_size\fR 
-Imlib2 图像缓存大小，以字节计。默认为 4MiB。若您使用了很多 $image 时可增加此值。设为 0 可禁用图像缓存。
-.TP 
-\fIlua_draw_hook_post\fR \fI函数名 [函数参数]\fR
-若定义了此函数，其将会被 Conky 在画到窗口后的每次迭代中调用。需要 X 支持。可接受任意数量的额外参数。可使用此钩子来在 Conky 绘制的东西上层继续画东西。Conky 将在函数名前放上 'conky_' 以免无意中调用了错误的函数，除非您自己已经在你的函数前面加上了 'conky_'。
-.TP 
-\fIlua_draw_hook_pre\fR \fI函数名 [函数参数]\fR
-若定义了此函数，其将会被 Conky 在画到窗口前的每次迭代中调用。需要 X 支持。可接受任意数量的额外参数。可使用此钩子来在 Conky 绘制的东西上层继续画东西。Conky 将在函数名前放上 'conky_' 以免无意中调用了错误的函数，除非您自己已经在你的函数前面加上了 'conky_'。
-.TP 
-\fIlua_load\fR 
-加载由空格分开的 Lua 脚本。
-.TP 
-\fIlua_shutdown_hook\fR \fI函数名 [函数参数]\fR
-若定义了此函数，其将会被 Conky 在关闭时或重载配置时调用。可使用此钩子在您完成了您想做的事情后进行清理，诸如释放通过 Lua 的外部库分配的内存。Conky 将在函数名前放上 'conky_' 以免无意中调用了错误的函数，除非您自己已经在你的函数前面加上了 'conky_'。
-.TP 
-\fIlua_startup_hook\fR \fI函数名 [函数参数]\fR
-若定义了此函数，其将会被 Conky 在启动时或重载配置时调用。可使用此钩子来初始化值，或用于任何只运行一次的应用程序。Conky 将在函数名前放上 'conky_' 以免无意中调用了错误的函数，除非您自己已经在你的函数前面加上了 'conky_'。
-.TP 
-\fImail_spool\fR 
-用于邮件检查的脱机卷
-.TP 
-\fImax_port_monitor_connections\fR 
-允许每个端口监视器追踪最多这些连接 (若设为 0 或未设置，就是默认的 256 个)
-.TP 
-\fImax_specials\fR 
-特殊物件的最大数量，例如，字体，偏移，对齐，等等。(默认为 512)
-.TP 
-\fImax_text_width\fR \fI宽度\fR
-当输出中的某行包含了 'width' 字符并且尚未到结尾时，下一个字符将另起一行。若您想要确保行不会被破坏，请将 'width' 设为 0。
-.TP 
-\fImax_user_text\fR \fI字节\fR
-用户文本缓冲的最大大小，即，在配置文件中的 TEXT 行下能显示多少字节的格局 (默认为 16384 字节)
-.TP 
-\fImaximum_width\fR \fI像素\fR
-窗口最大宽度
-.TP 
-\fIminimum_size\fR \fI宽度 (高度)\fR
-窗口最小大小
-.TP 
-\fImpd_host\fR 
-MPD 服务器主机
-.TP 
-\fImpd_password\fR 
-MPD 服务器密码
-.TP 
-\fImpd_port\fR 
-MPD 服务器端口
-.TP 
-\fImusic_player_interval\fR 
-音乐播放器线程更新周期 (默认为 Conky 的更新周期)
-.TP 
-\fInet_avg_samples\fR 
-网络数据用于取均值的样本数。
-.TP 
-\fIno_buffers\fR 
-从已用内存中减去 (文件系统) 缓冲如 swap 的使用量吗？
-.TP 
-\fInvidia_display\fR 
-nvidia 变量将使用的 display (默认为 display 变量的值)
-.TP 
-\fIout_to_console\fR 
-打印文本到 stdout。
-.TP 
-\fIout_to_ncurses\fR 
-在控制台中打印文本，但使用 ncurses，这样 conky 可以在旧文本上打印新更新来的文本。(未来这将提供更多有用的东西)
-.TP 
-\fIout_to_stderr\fR 
-打印文本到 stderr。
-.TP 
-\fIout_to_x\fR 
-当设为 no 时，X 中将不会有输出 (当您也使用了像 out_to_console 这样的东西时挺有用)。若您设置了它为 no，请确保它放在全部其它 X 相关设置前 (不确定的话就放到您配置的第一行吧)。默认值为 yes
-.TP 
-\fIoverride_utf8_locale\fR 
-强制 UTF8 吗？需要 XFT
-.TP 
-\fIoverwrite_file\fR 
-覆盖作为参数给定的文件。
-.TP 
-\fIown_window\fR 
-布尔值，是否在 Conky 自己的窗口上绘图？
-.TP 
-\fIown_window_class\fR 
-手动设置 WM_CLASS 名称。默认为 "Conky"。
-.TP 
-\fIown_window_colour\fR \fI颜色值\fR
-若 own_window_transparent 设为 no，则设定指定的背景颜色 (默认为黑色)。可接受一个十六进制值 (如 ffffff，注意不要有 '#') 或一个有效的 RGB 名称比如 white (请参考 /usr/lib/X11/rgb.txt)
-.TP 
-\fIown_window_hints\fR \fIundecorated,below,above,sticky,skip_taskbar,skip_pager\fR
-若 own_window 为 yes，您可以使用这些窗口管理器示意符来影响 Conky 显示的方式。注意：使用 own_window_type desktop 是另一种含蓄地实现这些示意符的方法。若您使用了 own_window_type override，窗口管理器示意符就完全没意义了，所以就会忽略它们。
-.TP 
-\fIown_window_title\fR 
-手动设置窗口名称。默认为 "<hostname> - conky"。
-.TP 
-\fIown_window_argb_visual\fR 
-布尔值，是否使用 ARGB 视效？ARGB 可用于真透明，请注意使用真透明需要一个混成管理器。此选项 (大多数情况下) 若与 'own_window_type override' 混合使用则不会产生预期的结果。
-.TP 
-\fIown_window_argb_value\fR 
-当启用了 ARGB 视效时，这用于修改所用的 alpha 值。有效范围是 0-255，0 是 0% 不透明，255 是 100% 不透明。
-.TP 
-\fIown_window_transparent\fR 
-布尔值，设置透明吗？若启用了 ARGB 视效，则会将背景不透明度设为 0% 即完全透明。
-.TP 
-\fIown_window_type\fR 
-若 own_window 为 yes，您可以指定类型 normal, desktop, dock, panel 或 override (默认：normal)。桌面窗口是没有窗口装饰的特殊窗口; 总是在您的桌面上可见; 不出现在您的分页器或任务栏中; 并固定在您的全部工作空间上。面板窗口预留了某个桌面边缘的空间，就像面板和任务栏那样，可防止最大化的窗口覆盖其上。边缘是基于 alignment 选项选择的。Override 窗口则不在窗口管理器控制之下。示意符将被忽略。这种类型的窗口在特定环境下可能有用。
-.TP 
-\fIpad_percents\fR 
-内衬 (padding) 百分比将设为这些百分数 (0 = 无内衬)
-.TP 
-\fIpop3\fR 
-默认全局 POP3 服务器。参数为："host user pass [-i interval (以秒计)][-p port] [-e '命令'] [-r 重试次数]"。默认端口为 110，默认间隔为 5 分钟，放弃前默认重试次数为 5。若密码被提供为 '*'，在 Conky 启动时将提示您输入密码。
-.TP 
-\fIshort_units\fR 
-将单位缩短为一个字符 (kiB->k, GiB->G, 等)。默认为关。
-.TP 
-\fIshow_graph_range\fR 
-显示某张图形涵盖的时间范围。
-.TP 
-\fIshow_graph_scale\fR 
-显示缩放图形中的最大值。
-.TP 
-\fIstippled_borders\fR 
-边框虚线的短横线像素
-.TP 
-\fItemperature_unit\fR 
-显示温度的全部对象的期望输出单位。参数可为 "fahrenheit" (华氏) 或 "celsius" (摄氏)。默认单位是摄氏度。
-.TP 
-\fItemplateN\fR 
-定义一个稍后在 TEXT 段中使用的模板。请将 N 替换为一个介于 0 到 9 (含) 的数字。变量值将被插入到 TEXT 旗标下的东西的相关位置，但是会先应用一些替换：
+.SH "YOU SHOULD KNOW"
+Conky is generally very good on resources. That said,
+the more you try to make Conky do, the more resources it is
+going to consume.
+.PP
+An easy way to force Conky to reload your ~/.conkyrc:
+"killall -SIGUSR1 conky". Saves you the trouble of having
+to kill and then restart. You can now also do the same with
+SIGHUP.
+.SH OPTIONS
+Command line options override configurations defined in
+configuration file.
+.TP 
+\fB\*(T<\fB\-v | \-V | \-\-version\fR\*(T> \fR
+Prints version and exits 
 
-\&'\en' -> 新行 '\e\e' -> 反斜杠 '\e ' -> 空格'\eN' -> 模板参数 N
 .TP 
-\fItext_buffer_size\fR \fI字节\fR
-标准文本缓冲的大小 (默认为 256 字节)。这个缓冲用于中转文本，诸如单行，$exec 变量的输出，和许多其它变量。增加此缓冲的大小可以显著地降低Conky 的性能，但将允许在每个变量中显示更多的文本。此缓冲的大小不能小于默认的 256 字节。
+\fB\*(T<\fB\-q | \-\-quiet\fR\*(T> \fR
+Run Conky in 'quiet mode' (ie. no output) 
+
 .TP 
-\fItimes_in_seconds\fR 
-若为真，输出时间的变量会输出一个代表秒的数字。这不会影响 $time, $tztime 和 $utime
+\fB\*(T<\fB\-D | \-\-debug\fR\*(T> \fR
+Increase debugging output, ie. -DD for more
+debugging 
+
 .TP 
-\fItop_cpu_separate\fR 
-若为真，top 命令中的 cpu 将显示单核心运算能力的用量。若为假，top 命令中的 cpu 将把全部核心的运算能力用量混合显示。
+\fB\*(T<\fB\-a | \-\-alignment=\fR\*(T> \fR\*(T<\fBALIGNMENT\fR\*(T> 
+Text alignment on screen,
+{top,bottom,middle}_{left,right,middle} or none. Can also
+be abbreviated with first chars of position, ie. tr for
+top_right. 
+
 .TP 
-\fItop_name_width\fR 
-$top 名称值的宽度 (默认为 15 个字符)。
+\fB\*(T<\fB\-b | \-\-double\-buffer\fR\*(T> \fR
+Use double buffering (eliminates "flicker") 
+
 .TP 
-\fItotal_run_times\fR 
-Conky 更新了这个总次数后就会退出。零表示 Conky 将永远运行，除非被手动打断。
+\fB\*(T<\fB\-c | \-\-config=\fR\*(T> \fR\*(T<\fBFILE\fR\*(T> 
+Config file to load instead of $HOME/.conkyrc 
+
 .TP 
-\fIupdate_interval\fR \fI以秒计的 Conky 重新绘图的周期。否则一直是静态的。\fR
-更新周期
+\fB\*(T<\fB\-C | \-\-print\-config\fR\*(T> \fR
+Print builtin default config to stdout. See also
+the section EXAMPLES for more information. 
+
 .TP 
-\fIupdate_interval_on_battery\fR \fI以秒计的 Conky 重新绘图的周期。否则一直是静态的。\fR
-运行在电池供电情景下的更新周期
+\fB\*(T<\fB\-d | \-\-daemonize\fR\*(T> \fR
+Daemonize Conky, aka fork to background 
+
 .TP 
-\fIuppercase\fR 
-布尔值，若真，将以渲染全部文本为大写格式
+\fB\*(T<\fB\-f | \-\-font=\fR\*(T> \fR\*(T<\fBFONT\fR\*(T> 
+Font to use 
+
 .TP 
-\fIuse_spacer\fR 
-在特定对象周围添加空白以防止它们把其它东西移来移去。参数有 left, right 和 none (默认)。过去的 true/false 值被淘汰了，相应默认等于 right/none。注意这只在您使用等宽字体时，如 Bitstream Vera Sans Mono，才有帮助。
+\fB\*(T<\fB\-h | \-\-help\fR\*(T> \fR
+Prints command line help and exits 
+
 .TP 
-\fIuse_xft\fR 
-使用 Xft (反锯齿字体这些东西)
+\fB\*(T<\fB\-o | \-\-own\-window\fR\*(T> \fR
+Create own window to draw 
+
 .TP 
-\fIxftalpha\fR 
-Xft 字体的不透明度 (Alpha)。必须是一个介于 0 到 1 的值。注：这只会应用于在 xftfont 中指定的默认字体。${font} 改过的字体无效。
+\fB\*(T<\fB\-t | \-\-text=\fR\*(T> \fR\*(T<\fBTEXT\fR\*(T> 
+Text to render, remember single quotes, like -t '
+$uptime ' 
+
 .TP 
-\fIxftfont\fR 
-要使用的 Xft 字体。用法：字体名称:size=字号
-.SH 对象/变量
-将使用 XParsecolor() 解析颜色，这里可能有一个支持的颜色列表：/usr/share/X11/rgb.txt。颜色也可以使用 #rrggbb 格式 (十六进制)。
+\fB\*(T<\fB\-p | \-\-pause=\fR\*(T> \fR\*(T<\fBSECONDS\fR\*(T> 
+Time to pause before actually starting Conky
+
+.TP 
+\fB\*(T<\fB\-u | \-\-interval=\fR\*(T> \fR\*(T<\fBSECONDS\fR\*(T> 
+Update interval 
+
+.TP 
+\fB\*(T<\fB\-w | \-\-window\-id=\fR\*(T> \fR\*(T<\fBWIN_ID\fR\*(T> 
+Window id to draw 
+
+.TP 
+\fB\*(T<\fB\-X | \-\-display=\fR\*(T> \fR\*(T<\fBDISPLAY\fR\*(T> 
+X11 display to use 
+
+.TP 
+\fB\*(T<\fB\-x\fR\*(T> \fR\*(T<\fBX_COORDINATE\fR\*(T> 
+X position 
+
+.TP 
+\fB\*(T<\fB\-y\fR\*(T> \fR\*(T<\fBY_COORDINATE\fR\*(T> 
+Y position 
+
+.TP 
+\fB\*(T<\fB\-i\fR\*(T> \fR\*(T<\fBCOUNT\fR\*(T> 
+Number of times to update Conky (and quit) 
+
+.SH "CONFIGURATION SETTINGS"
+Default configuration file location is $HOME/.conkyrc or
+${sysconfdir}/conky/conky.conf. On most systems, sysconfdir is
+/etc, and you can find the sample config file there
+(/etc/conky/conky.conf).
 .PP
-有些对象可以创建线程，有时候这些线程在 Conky 终止前不会被摧毁。在 Conky 运行时没有办法摧毁或清理这些线程。例如，若您使用了一个MPD 变量，MPD 线程将持续运行到 Conky 退出。有些线程对象将使用一个参数作为一个 '键'，因此您只能有一个相关的线程在运行 (例如，$curl，$rss 和 $weather 对象只会对每个 URI 启动一个线程)。
+You might want to copy it to $HOME/.conkyrc and then
+start modifying it. Other configs can be found at
+http://conky.sf.net/
 .TP 
-\fIacpiacadapter\fR \fI(适配器)\fR
-ACPI 电源适配器状态。在 Linux 上，适配器选项指定了包含状态信息的 /sys/class/power_supply 子文件夹(若没有给定参数可试试 "AC" 和 "ADP1")。非 Linux 系统可以忽略之。
+\fB\*(T<\fBTEXT\fR\*(T> \fR
+After this begins text to be formatted on screen.
+Backslash (\e) escapes newlines in the text section. This
+can be useful for cleaning up config files where conky is
+used to pipe input to dzen2. 
+
 .TP 
-\fIacpifan\fR 
-ACPI 风扇状态
+\fB\*(T<\fBalignment\fR\*(T> \fR
+Aligned position on screen, may be top_left,
+top_right, top_middle, bottom_left, bottom_right,
+bottom_middle, middle_left, middle_middle, middle_right, or
+none (also can be abreviated as tl, tr, tm, bl, br, bm, ml,
+mm, mr). See also gap_x and gap_y.
+
 .TP 
-\fIacpitemp\fR 
-以摄氏度输出的 ACPI 温度。
+\fB\*(T<\fBappend_file\fR\*(T> \fR
+Append the file given as argument. 
+
 .TP 
-\fIaddr\fR \fI(接口)\fR
-某接口的 IP 地址，或者若没有指派地址则显示 "No Address"。
+\fB\*(T<\fBbackground\fR\*(T> \fR
+Boolean value, if true, Conky will be forked to
+background when started. 
+
 .TP 
-\fIaddrs\fR \fI(接口)\fR
-某接口的 IP 地址 (若有 - 跟通讯地址差不多)。仅适用于 Linux。
+\fB\*(T<\fBborder_inner_margin\fR\*(T> \fR
+Inner border margin in pixels (the margin between
+the border and text). 
+
 .TP 
-\fIadt746xcpu\fR 
-来自 therm_adt746x 的 CPU 温度
+\fB\*(T<\fBborder_outer_margin\fR\*(T> \fR
+Outer border margin in pixels (the margin between
+the border and the edge of the window). 
+
 .TP 
-\fIadt746xfan\fR 
-来自 therm_adt746x 的风扇速度
+\fB\*(T<\fBborder_width\fR\*(T> \fR
+Border width in pixels. 
+
 .TP 
-\fIalignc\fR \fI(数字)\fR
-居中文本
+\fB\*(T<\fBcolorN\fR\*(T> \fR
+Predefine a color for use inside TEXT segments.
+Substitute N by a digit between 0 and 9, inclusively. When
+specifying the color value in hex, omit the leading hash
+(#). 
+
 .TP 
-\fIalignr\fR \fI(数字)\fR
-又对齐文本，预留 N 个空格
+\fB\*(T<\fBcpu_avg_samples\fR\*(T> \fR
+The number of samples to average for CPU
+monitoring. 
+
 .TP 
-\fIapcupsd\fR \fIhost\fR \fIport\fR
-设置到 apcupsd 守护进程的连接。什么都不打印，默认为 localhost:3551
+\fB\*(T<\fBdefault_bar_size\fR\*(T> \fR
+Specify a default width and height for bars.
+Example: 'default_bar_size 0 6'. This is particularly
+useful for execbar and execibar as they do not take size
+arguments. 
+
 .TP 
-\fIapcupsd_cable\fR 
-打印不间断电源 (UPS) 连接类型。
+\fB\*(T<\fBdefault_color\fR\*(T> \fR
+Default color and border color 
+
 .TP 
-\fIapcupsd_charge\fR 
-当前以百分比计的电池容量。
+\fB\*(T<\fBdefault_gauge_size\fR\*(T> \fR
+Specify a default width and height for gauges.
+Example: 'default_gauge_size 25 25'. This is particularly
+useful for execgauge and execigauge as they do not take
+size arguments 
+
 .TP 
-\fIapcupsd_lastxfer\fR 
-上次从线缆切换到电池的原因。
+\fB\*(T<\fBdefault_graph_size\fR\*(T> \fR
+Specify a default width and height for graphs.
+Example: 'default_graph_size 0 25'. This is particularly
+useful for execgraph and execigraph as they do not take
+size arguments 
+
 .TP 
-\fIapcupsd_linev\fR 
-名义输入电压
+\fB\*(T<\fBdefault_outline_color\fR\*(T> \fR
+Default outline color 
+
 .TP 
-\fIapcupsd_load\fR 
-以百分比计的当前负载。
+\fB\*(T<\fBdefault_shade_color\fR\*(T> \fR
+Default shading color and border's shading color 
+
 .TP 
-\fIapcupsd_loadbar\fR 
-显示当前负载的条。
+\fB\*(T<\fBdisable_auto_reload\fR\*(T> \fR
+Enable to disable the inotify-based auto config reload feature.
+
 .TP 
-\fIapcupsd_loadgauge\fR \fI(高度),(宽度)\fR
-显示当前负载的范围。
+\fB\*(T<\fBdiskio_avg_samples\fR\*(T> \fR
+The number of samples to average for disk I/O
+monitoring. 
+
 .TP 
-\fIapcupsd_loadgraph\fR \fI(高度),(宽度) (渐变色 1) (渐变色 2) (比例) (-t) (-l)\fR
-当前负载的历史图表。
+\fB\*(T<\fBdisplay\fR\*(T> \fR
+Specify an X display to connect to. 
+
 .TP 
-\fIapcupsd_model\fR 
-打印不间断电源的型号。
+\fB\*(T<\fBdouble_buffer\fR\*(T> \fR
+Use the Xdbe extension? (eliminates flicker) It
+is highly recommended to use own window with this one so
+double buffer won't be so big. 
+
 .TP 
-\fIapcupsd_name\fR 
-打印不间断电源的用户定义名称。
+\fB\*(T<\fBdraw_borders\fR\*(T> \fR
+Draw borders around text? 
+
 .TP 
-\fIapcupsd_status\fR 
-打印当前状态 (使用线缆，使用电池)。
+\fB\*(T<\fBdraw_graph_borders\fR\*(T> \fR
+Draw borders around graphs? 
+
 .TP 
-\fIapcupsd_temp\fR 
-当前内部温度。
+\fB\*(T<\fBdraw_outline\fR\*(T> \fR
+Draw outlines? 
+
 .TP 
-\fIapcupsd_timeleft\fR 
-电池可用时间。
+\fB\*(T<\fBdraw_shades\fR\*(T> \fR
+Draw shades? 
+
 .TP 
-\fIapcupsd_upsmode\fR 
-打印不间断电源模式 (例如独立)。
+\fB\*(T<\fBextra_newline\fR\*(T> \fR
+Put an extra newline at the end when writing to
+stdout, useful for writing to awesome's wiboxes. 
+
 .TP 
-\fIapm_adapter\fR 
-显示 APM 电源适配器状态 (仅适用于 FreeBSD)
+\fB\*(T<\fBfont\fR\*(T> \fR
+Font name in X, xfontsel can be used to get a
+nice font 
+
 .TP 
-\fIapm_battery_life\fR 
-显示以百分比计的 APM 电池寿命 (仅适用于 FreeBSD)
+\fB\*(T<\fBformat_human_readable\fR\*(T> \fR
+If enabled, values which are in bytes will be
+printed in human readable format (i.e., KiB, MiB, etc). If
+disabled, the number of bytes is printed instead. 
+
 .TP 
-\fIapm_battery_time\fR 
+\fB\*(T<\fBgap_x\fR\*(T> \fR
+Gap, in pixels, between right or left border of
+screen, same as passing -x at command line, e.g. gap_x 10.
+For other position related stuff, see 'alignment'. 
+
+.TP 
+\fB\*(T<\fBgap_y\fR\*(T> \fR
+Gap, in pixels, between top or bottom border of
+screen, same as passing -y at command line, e.g. gap_y 10.
+For other position related stuff, see 'alignment'. 
+
+.TP 
+\fB\*(T<\fBhddtemp_host\fR\*(T> \fR
+Hostname to connect to for hddtemp objects. Defaults
+to "127.0.0.1".
+
+.TP 
+\fB\*(T<\fBhddtemp_port\fR\*(T> \fR
+Port to use for hddtemp connections. Defaults to
+7634.
+
+.TP 
+\fB\*(T<\fBif_up_strictness\fR\*(T> \fR
+How strict should if_up be when testing an
+interface for being up? The value is one of up, link or
+address, to check for the interface being solely up, being
+up and having link or being up, having link and an assigned
+IP address. 
+
+.TP 
+\fB\*(T<\fBimap\fR\*(T> \fR
+Default global IMAP server. Arguments are: "host
+user pass [-i interval (in seconds)] [-f 'folder'] [-p port]
+[-e 'command'] [-r retries]". Default port is 143, default
+folder is 'INBOX', default interval is 5 minutes, and
+default number of retries before giving up is 5. If the
+password is supplied as '*', you will be prompted to enter
+the password when Conky starts. 
+
+.TP 
+\fB\*(T<\fBimlib_cache_flush_interval\fR\*(T> \fR
+Interval (in seconds) to flush Imlib2 cache. 
+
+.TP 
+\fB\*(T<\fBimlib_cache_size\fR\*(T> \fR
+Imlib2 image cache size, in bytes. Defaults to
+4MiB. Increase this value if you use $image lots. Set
+to 0 to disable the image cache.
+
+.TP 
+\fB\*(T<\fBlua_draw_hook_post\fR\*(T> \fR\*(T<\fBfunction_name [function arguments]\fR\*(T> 
+This function, if defined, will be called by
+Conky through each iteration after drawing to the
+window. Requires X support. Takes any number of
+optional arguments. Use this hook for drawing things on
+top of what Conky draws. Conky puts 'conky_' in front
+of function_name to prevent accidental calls to the
+wrong function unless you place 'conky_' in front of it
+yourself.
+
+.TP 
+\fB\*(T<\fBlua_draw_hook_pre\fR\*(T> \fR\*(T<\fBfunction_name [function arguments]\fR\*(T> 
+This function, if defined, will be called by
+Conky through each iteration before drawing to the
+window. Requires X support. Takes any number of
+optional arguments. Use this hook for drawing things on
+top of what Conky draws. Conky puts 'conky_' in front
+of function_name to prevent accidental calls to the
+wrong function unless you place 'conky_' in front of it
+yourself.
+
+.TP 
+\fB\*(T<\fBlua_load\fR\*(T> \fR
+Loads the Lua scripts separated by spaces. 
+
+.TP 
+\fB\*(T<\fBlua_shutdown_hook\fR\*(T> \fR\*(T<\fBfunction_name [function arguments]\fR\*(T> 
+This function, if defined, will be called by
+Conky at shutdown or when the configuration is
+reloaded. Use this hook to clean up after yourself,
+such as freeing memory which has been allocated by
+external libraries via Lua. Conky puts 'conky_' in
+front of function_name to prevent accidental calls to
+the wrong function unless you place 'conky_' in
+front of it yourself.
+
+.TP 
+\fB\*(T<\fBlua_startup_hook\fR\*(T> \fR\*(T<\fBfunction_name [function arguments]\fR\*(T> 
+This function, if defined, will be called by
+Conky at startup or when the configuration is reloaded.
+Use this hook to initialize values, or for any run-once
+applications. Conky puts 'conky_' in front of
+function_name to prevent accidental calls to the wrong
+function unless you place 'conky_' in front of
+it yourself.
+
+.TP 
+\fB\*(T<\fBmail_spool\fR\*(T> \fR
+Mail spool for mail checking 
+
+.TP 
+\fB\*(T<\fBmax_port_monitor_connections\fR\*(T> \fR
+Allow each port monitor to track at most this
+many connections (if 0 or not set, default is 256) 
+
+.TP 
+\fB\*(T<\fBmax_specials\fR\*(T> \fR
+Maximum number of special things, e.g. fonts,
+offsets, aligns, etc. (default is 512) 
+
+.TP 
+\fB\*(T<\fBmax_text_width\fR\*(T> \fR\*(T<\fBwidth\fR\*(T> 
+When a line in the output contains 'width'
+chars and the end isn't reached, the next char will start
+on a new line. If you want to make sure that lines don't
+get broken, set 'width' to 0
+
+.TP 
+\fB\*(T<\fBmax_user_text\fR\*(T> \fR\*(T<\fBbytes\fR\*(T> 
+Maximum size of user text buffer, i.e. layout
+below TEXT line in config file (default is 16384 bytes) 
+
+.TP 
+\fB\*(T<\fBmaximum_width\fR\*(T> \fR\*(T<\fBpixels\fR\*(T> 
+Maximum width of window 
+
+.TP 
+\fB\*(T<\fBminimum_size\fR\*(T> \fR\*(T<\fBwidth (height)\fR\*(T> 
+Minimum size of window 
+
+.TP 
+\fB\*(T<\fBmpd_host\fR\*(T> \fR
+Host of MPD server 
+
+.TP 
+\fB\*(T<\fBmpd_password\fR\*(T> \fR
+MPD server password 
+
+.TP 
+\fB\*(T<\fBmpd_port\fR\*(T> \fR
+Port of MPD server 
+
+.TP 
+\fB\*(T<\fBmusic_player_interval\fR\*(T> \fR
+Music player thread update interval (defaults to
+Conky's update interval) 
+
+.TP 
+\fB\*(T<\fBnet_avg_samples\fR\*(T> \fR
+The number of samples to average for net data 
+
+.TP 
+\fB\*(T<\fBno_buffers\fR\*(T> \fR
+Subtract (file system) buffers from used memory?
+
+.TP 
+\fB\*(T<\fBnvidia_display\fR\*(T> \fR
+The display that the nvidia variable will use (defaults to the value of the
+display variable)
+
+.TP 
+\fB\*(T<\fBout_to_console\fR\*(T> \fR
+Print text to stdout. 
+
+.TP 
+\fB\*(T<\fBout_to_ncurses\fR\*(T> \fR
+Print text in the console, but use ncurses so
+that conky can print the text of a new update over the old
+text. (In the future this will provide more useful things) 
+
+.TP 
+\fB\*(T<\fBout_to_stderr\fR\*(T> \fR
+Print text to stderr. 
+
+.TP 
+\fB\*(T<\fBout_to_x\fR\*(T> \fR
+When set to no, there will be no output in X
+(useful when you also use things like out_to_console). If
+you set it to no, make sure that it's placed before all
+other X-related setting (take the first line of your
+configfile to be sure). Default value is yes 
+
+.TP 
+\fB\*(T<\fBoverride_utf8_locale\fR\*(T> \fR
+Force UTF8? requires XFT 
+
+.TP 
+\fB\*(T<\fBoverwrite_file\fR\*(T> \fR
+Overwrite the file given as argument. 
+
+.TP 
+\fB\*(T<\fBown_window\fR\*(T> \fR
+Boolean, create own window to draw? 
+
+.TP 
+\fB\*(T<\fBown_window_class\fR\*(T> \fR
+Manually set the WM_CLASS name. Defaults to
+"Conky". 
+
+.TP 
+\fB\*(T<\fBown_window_colour\fR\*(T> \fR\*(T<\fBcolour\fR\*(T> 
+If own_window_transparent no, set a specified
+background colour (defaults to black). Takes either a hex
+value (e.g. ffffff, note the lack of '#') or a valid RGB
+name (see /usr/lib/X11/rgb.txt)
+
+.TP 
+\fB\*(T<\fBown_window_hints\fR\*(T> \fR\*(T<\fBundecorated,below,above,sticky,skip_taskbar,skip_pager\fR\*(T> 
+If own_window is yes, you may use these window
+manager hints to affect the way Conky displays. Notes: Use
+own_window_type desktop as another way to implement many of
+these hints implicitly. If you use own_window_type
+override, window manager hints have no meaning and are
+ignored. 
+
+.TP 
+\fB\*(T<\fBown_window_title\fR\*(T> \fR
+Manually set the window name. Defaults to
+"<hostname> - conky". 
+
+.TP 
+\fB\*(T<\fBown_window_argb_visual\fR\*(T> \fR
+Boolean, use ARGB visual? ARGB can be used for real
+transparency, note that a composite manager is required for real
+transparency. This option will not work as desired (in most cases)
+in conjunction with 'own_window_type override'.
+
+.TP 
+\fB\*(T<\fBown_window_argb_value\fR\*(T> \fR
+When ARGB visuals are enabled, this use this to modify the alpha value used. Valid range is 0-255, where 0 is 0% opacity, and 255 is 100% opacity.
+
+.TP 
+\fB\*(T<\fBown_window_transparent\fR\*(T> \fR
+Boolean, set transparency? If ARGB visual is enabled, sets
+background opacity to 0%.
+
+.TP 
+\fB\*(T<\fBown_window_type\fR\*(T> \fR
+if own_window is yes, you may specify type
+normal, desktop, dock, panel or override (default: normal).
+Desktop windows are special windows that have no window
+decorations; are always visible on your desktop; do not
+appear in your pager or taskbar; and are sticky across all
+workspaces. Panel windows reserve space along a desktop
+edge, just like panels and taskbars, preventing maximized
+windows from overlapping them. The edge is chosen based on
+the alignment option. Override windows are not under the
+control of the window manager. Hints are ignored. This type
+of window can be useful for certain situations. 
+
+.TP 
+\fB\*(T<\fBpad_percents\fR\*(T> \fR
+Pad percentages to this many decimals (0 = no
+padding) 
+
+.TP 
+\fB\*(T<\fBpop3\fR\*(T> \fR
+Default global POP3 server. Arguments are: "host
+user pass [-i interval (in seconds)] [-p port] [-e 'command']
+[-r retries]". Default port is 110, default interval is 5
+minutes, and default number of retries before giving up is
+5. If the password is supplied as '*', you will be prompted
+to enter the password when Conky starts. 
+
+.TP 
+\fB\*(T<\fBshort_units\fR\*(T> \fR
+Shortens units to a single character (kiB->k,
+GiB->G, etc.). Default is off. 
+
+.TP 
+\fB\*(T<\fBshow_graph_range\fR\*(T> \fR
+Shows the time range covered by a graph. 
+
+.TP 
+\fB\*(T<\fBshow_graph_scale\fR\*(T> \fR
+Shows the maximum value in scaled graphs. 
+
+.TP 
+\fB\*(T<\fBstippled_borders\fR\*(T> \fR
+Border stippling (dashing) in pixels 
+
+.TP 
+\fB\*(T<\fBtemperature_unit\fR\*(T> \fR
+Desired output unit of all objects displaying a
+temperature. Parameters are either "fahrenheit" or
+"celsius". The default unit is degree Celsius. 
+
+.TP 
+\fB\*(T<\fBtemplateN\fR\*(T> \fR
+Define a template for later use inside TEXT
+segments. Substitute N by a digit between 0 and 9,
+inclusively. The value of the variable is being inserted
+into the stuff below TEXT at the corresponding position,
+but before some substitutions are applied: 
+
+\&'\en' -> newline
+.br
+\&'\e\e' -> backslash
+.br
+\&'\e ' -> space
+.br
+\&'\eN' -> template argument N
+
+.TP 
+\fB\*(T<\fBtext_buffer_size\fR\*(T> \fR\*(T<\fBbytes\fR\*(T> 
+Size of the standard text buffer (default is 256
+bytes). This buffer is used for intermediary text, such as
+individual lines, output from $exec vars, and various other
+variables. Increasing the size of this buffer can
+drastically reduce Conky's performance, but will allow for
+more text display per variable. The size of this buffer
+cannot be smaller than the default value of 256 bytes. 
+
+.TP 
+\fB\*(T<\fBtimes_in_seconds\fR\*(T> \fR
+If true, variables that output times output a number
+that represents seconds. This doesn't affect $time, $tztime and
+$utime
+
+.TP 
+\fB\*(T<\fBtop_cpu_separate\fR\*(T> \fR
+If true, cpu in top will show usage of one
+processor's power. If false, cpu in top will show the usage
+of all processors' power combined. 
+
+.TP 
+\fB\*(T<\fBtop_name_width\fR\*(T> \fR
+Width for $top name value (defaults to 15
+characters). 
+
+.TP 
+\fB\*(T<\fBtotal_run_times\fR\*(T> \fR
+Total number of times for Conky to update before
+quitting. Zero makes Conky run forever 
+
+.TP 
+\fB\*(T<\fBupdate_interval\fR\*(T> \fR\*(T<\fBseconds\fR\*(T> 
+Update interval 
+
+.TP 
+\fB\*(T<\fBupdate_interval_on_battery\fR\*(T> \fR\*(T<\fBseconds\fR\*(T> 
+Update interval when running on batterypower 
+
+.TP 
+\fB\*(T<\fBuppercase\fR\*(T> \fR
+Boolean value, if true, text is rendered in upper
+case 
+
+.TP 
+\fB\*(T<\fBuse_spacer\fR\*(T> \fR
+Adds spaces around certain objects to stop them
+from moving other things around. Arguments are left, right,
+and none (default). The old true/false values are
+deprecated and default to right/none respectively. Note
+that this only helps if you are using a mono font, such as
+Bitstream Vera Sans Mono. 
+
+.TP 
+\fB\*(T<\fBuse_xft\fR\*(T> \fR
+Use Xft (anti-aliased font and stuff) 
+
+.TP 
+\fB\*(T<\fBxftalpha\fR\*(T> \fR
+Alpha of Xft font. Must be a value at or between
+1 and 0. 
+
+.TP 
+\fB\*(T<\fBxftfont\fR\*(T> \fR
+Xft font to use. 
+
+.SH OBJECTS/VARIABLES
+Colours are parsed using XParsecolor(), there might be a
+list of them: /usr/share/X11/rgb.txt. 
+Colour can be also in
+#rrggbb format (hex).
+.PP
+Some objects may create threads, and sometimes these threads will
+not be destroyed until Conky terminates. There is no way to
+destroy or clean up threads while Conky is running. For example,
+if you use an MPD variable, the MPD thread will keep running until
+Conky dies. Some threaded objects will use one of the parameters
+as a 'key', so that you only have 1 relevant thread running (for
+example, the $curl, $rss and $weather objects launch one thread per
+URI).
+.TP 
+\fB\*(T<\fBacpiacadapter\fR\*(T> \fR\*(T<\fB(adapter)\fR\*(T> 
+ACPI ac adapter state. On linux, the adapter option specifies the
+subfolder of /sys/class/power_supply containing the state information (tries "AC"
+and "ADP1" if there is no argument given). Non-linux systems ignore it.
+
+.TP 
+\fB\*(T<\fBacpifan\fR\*(T> \fR
+ACPI fan state 
+
+.TP 
+\fB\*(T<\fBacpitemp\fR\*(T> \fR
+ACPI temperature in C. 
+
+.TP 
+\fB\*(T<\fBaddr\fR\*(T> \fR\*(T<\fB(interface)\fR\*(T> 
+IP address for an interface, or "No Address" if
+no address is assigned. 
+
+.TP 
+\fB\*(T<\fBaddrs\fR\*(T> \fR\*(T<\fB(interface)\fR\*(T> 
+IP addresses for an interface (if one - works
+like addr). Linux only. 
+
+.TP 
+\fB\*(T<\fBadt746xcpu\fR\*(T> \fR
+CPU temperature from therm_adt746x 
+
+.TP 
+\fB\*(T<\fBadt746xfan\fR\*(T> \fR
+Fan speed from therm_adt746x 
+
+.TP 
+\fB\*(T<\fBalignc\fR\*(T> \fR\*(T<\fB(num)\fR\*(T> 
+Align text to centre 
+
+.TP 
+\fB\*(T<\fBalignr\fR\*(T> \fR\*(T<\fB(num)\fR\*(T> 
+Right-justify text, with space of N 
+
+.TP 
+\fB\*(T<\fBapcupsd\fR\*(T> \fR\*(T<\fBhost\fR\*(T> \*(T<\fBport\fR\*(T> 
+Sets up the connection to apcupsd daemon. Prints
+nothing, defaults to localhost:3551 
+
+.TP 
+\fB\*(T<\fBapcupsd_cable\fR\*(T> \fR
+Prints the UPS connection type. 
+
+.TP 
+\fB\*(T<\fBapcupsd_charge\fR\*(T> \fR
+Current battery capacity in percent. 
+
+.TP 
+\fB\*(T<\fBapcupsd_lastxfer\fR\*(T> \fR
+Reason for last transfer from line to battery. 
+
+.TP 
+\fB\*(T<\fBapcupsd_linev\fR\*(T> \fR
+Nominal input voltage. 
+
+.TP 
+\fB\*(T<\fBapcupsd_load\fR\*(T> \fR
+Current load in percent. 
+
+.TP 
+\fB\*(T<\fBapcupsd_loadbar\fR\*(T> \fR
+Bar showing current load. 
+
+.TP 
+\fB\*(T<\fBapcupsd_loadgauge\fR\*(T> \fR\*(T<\fB(height),(width)\fR\*(T> 
+Gauge that shows current load. 
+
+.TP 
+\fB\*(T<\fBapcupsd_loadgraph\fR\*(T> \fR\*(T<\fB(height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
+History graph of current load. 
+
+.TP 
+\fB\*(T<\fBapcupsd_model\fR\*(T> \fR
+Prints the model of the UPS. 
+
+.TP 
+\fB\*(T<\fBapcupsd_name\fR\*(T> \fR
+Prints the UPS user-defined name. 
+
+.TP 
+\fB\*(T<\fBapcupsd_status\fR\*(T> \fR
+Prints current status (on-line, on-battery). 
+
+.TP 
+\fB\*(T<\fBapcupsd_temp\fR\*(T> \fR
+Current internal temperature. 
+
+.TP 
+\fB\*(T<\fBapcupsd_timeleft\fR\*(T> \fR
+Time left to run on battery. 
+
+.TP 
+\fB\*(T<\fBapcupsd_upsmode\fR\*(T> \fR
+Prints the UPS mode (e.g. standalone). 
+
+.TP 
+\fB\*(T<\fBapm_adapter\fR\*(T> \fR
+Display APM AC adapter status (FreeBSD only) 
+
+.TP 
+\fB\*(T<\fBapm_battery_life\fR\*(T> \fR
+Display APM battery life in percent (FreeBSD
+only) 
+
+.TP 
+\fB\*(T<\fBapm_battery_time\fR\*(T> \fR
 Display remaining APM battery life in hh:mm:ss or
 "unknown" if AC adapterstatus is on-line or charging
-(FreeBSD only)
+(FreeBSD only) 
+
 .TP 
-\fIaudacious_bar\fR \fI(高度),(宽度)\fR
-Progress bar
+\fB\*(T<\fBaudacious_bar\fR\*(T> \fR\*(T<\fB(height),(width)\fR\*(T> 
+Progress bar 
+
 .TP 
-\fIaudacious_bitrate\fR 
-Bitrate of current tune
+\fB\*(T<\fBaudacious_bitrate\fR\*(T> \fR
+Bitrate of current tune 
+
 .TP 
-\fIaudacious_channels\fR 
-Number of audio channels of current tune
+\fB\*(T<\fBaudacious_channels\fR\*(T> \fR
+Number of audio channels of current tune 
+
 .TP 
-\fIaudacious_filename\fR 
-Full path and filename of current tune
+\fB\*(T<\fBaudacious_filename\fR\*(T> \fR
+Full path and filename of current tune 
+
 .TP 
-\fIaudacious_frequency\fR 
-Sampling frequency of current tune
+\fB\*(T<\fBaudacious_frequency\fR\*(T> \fR
+Sampling frequency of current tune 
+
 .TP 
-\fIaudacious_length\fR 
-Total length of current tune as MM:SS
+\fB\*(T<\fBaudacious_length\fR\*(T> \fR
+Total length of current tune as MM:SS 
+
 .TP 
-\fIaudacious_length_seconds\fR 
-Total length of current tune in seconds
+\fB\*(T<\fBaudacious_length_seconds\fR\*(T> \fR
+Total length of current tune in seconds 
+
 .TP 
-\fIaudacious_main_volume\fR 
-The current volume fetched from Audacious
+\fB\*(T<\fBaudacious_main_volume\fR\*(T> \fR
+The current volume fetched from Audacious 
+
 .TP 
-\fIaudacious_playlist_length\fR 
-Number of tunes in playlist
+\fB\*(T<\fBaudacious_playlist_length\fR\*(T> \fR
+Number of tunes in playlist 
+
 .TP 
-\fIaudacious_playlist_position\fR 
-Playlist position of current tune
+\fB\*(T<\fBaudacious_playlist_position\fR\*(T> \fR
+Playlist position of current tune 
+
 .TP 
-\fIaudacious_position\fR 
-Position of current tune (MM:SS)
+\fB\*(T<\fBaudacious_position\fR\*(T> \fR
+Position of current tune (MM:SS) 
+
 .TP 
-\fIaudacious_position_seconds\fR 
-Position of current tune in seconds
+\fB\*(T<\fBaudacious_position_seconds\fR\*(T> \fR
+Position of current tune in seconds 
+
 .TP 
-\fIaudacious_status\fR 
+\fB\*(T<\fBaudacious_status\fR\*(T> \fR
 Player status (Playing/Paused/Stopped/Not
-running)
+running) 
+
 .TP 
-\fIaudacious_title\fR \fI(最大长度)\fR
+\fB\*(T<\fBaudacious_title\fR\*(T> \fR\*(T<\fB(max length)\fR\*(T> 
 Title of current tune with optional maximum
-length specifier
+length specifier 
+
 .TP 
-\fIbattery\fR \fI(数字)\fR
+\fB\*(T<\fBbattery\fR\*(T> \fR\*(T<\fB(num)\fR\*(T> 
 Battery status and remaining percentage capacity
 of ACPI or APM battery. ACPI battery number can be given as
-argument (default is BAT0).
+argument (default is BAT0). 
+
 .TP 
-\fIbattery_bar\fR \fI(height),(width) (num)\fR
+\fB\*(T<\fBbattery_bar\fR\*(T> \fR\*(T<\fB(height),(width) (num)\fR\*(T> 
 Battery percentage remaining of ACPI battery in a
 bar. ACPI battery number can be given as argument (default
-is BAT0).
+is BAT0). 
+
 .TP 
-\fIbattery_percent\fR \fI(数字)\fR
+\fB\*(T<\fBbattery_percent\fR\*(T> \fR\*(T<\fB(num)\fR\*(T> 
 Battery percentage remaining for ACPI battery.
 ACPI battery number can be given as argument (default is
-BAT0).
+BAT0). 
+
 .TP 
-\fIbattery_short\fR \fI(数字)\fR
+\fB\*(T<\fBbattery_short\fR\*(T> \fR\*(T<\fB(num)\fR\*(T> 
 Battery status and remaining percentage capacity
 of ACPI or APM battery. ACPI battery number can be given as
 argument (default is BAT0). This mode display a short
 status, which means that C is displayed instead of
 charging, D for discharging, F for full, N for not present,
-E for empty and U for unknown.
+E for empty and U for unknown. 
+
 .TP 
-\fIbattery_time\fR \fI(数字)\fR
+\fB\*(T<\fBbattery_time\fR\*(T> \fR\*(T<\fB(num)\fR\*(T> 
 Battery charge/discharge time remaining of ACPI
 battery. ACPI battery number can be given as argument
-(default is BAT0).
+(default is BAT0). 
+
 .TP 
-\fIblink\fR \fItext_and_other_conky_vars\fR
+\fB\*(T<\fBblink\fR\*(T> \fR\*(T<\fBtext_and_other_conky_vars\fR\*(T> 
 Let 'text_and_other_conky_vars' blink on and off.
+
 .TP 
-\fIbmpx_album\fR 
-Album in current BMPx track
+\fB\*(T<\fBbmpx_album\fR\*(T> \fR
+Album in current BMPx track 
+
 .TP 
-\fIbmpx_artist\fR 
-Artist in current BMPx track
+\fB\*(T<\fBbmpx_artist\fR\*(T> \fR
+Artist in current BMPx track 
+
 .TP 
-\fIbmpx_bitrate\fR 
-Bitrate of the current BMPx track
+\fB\*(T<\fBbmpx_bitrate\fR\*(T> \fR
+Bitrate of the current BMPx track 
+
 .TP 
-\fIbmpx_title\fR 
-Title of the current BMPx track
+\fB\*(T<\fBbmpx_title\fR\*(T> \fR
+Title of the current BMPx track 
+
 .TP 
-\fIbmpx_track\fR 
-Track number of the current BMPx track
+\fB\*(T<\fBbmpx_track\fR\*(T> \fR
+Track number of the current BMPx track 
+
 .TP 
-\fIbmpx_uri\fR 
-URI of the current BMPx track
+\fB\*(T<\fBbmpx_uri\fR\*(T> \fR
+URI of the current BMPx track 
+
 .TP 
-\fIbuffers\fR 
-Amount of memory buffered
+\fB\*(T<\fBbuffers\fR\*(T> \fR
+Amount of memory buffered 
+
 .TP 
-\fIcached\fR 
-Amount of memory cached
+\fB\*(T<\fBcached\fR\*(T> \fR
+Amount of memory cached 
+
 .TP 
-\fIcmdline_to_pid\fR \fIstring\fR
+\fB\*(T<\fBcmdline_to_pid\fR\*(T> \fR\*(T<\fBstring\fR\*(T> 
 PID of the first process that has string in it's
 commandline
+
 .TP 
-\fIcolor\fR \fI(color)\fR
+\fB\*(T<\fBcolor\fR\*(T> \fR\*(T<\fB(color)\fR\*(T> 
 Change drawing color to 'color' which is a name of
 a color or a hexcode preceded with # (for example #0A1B2C ).
 If you use ncurses only the following colors are supported:
 red,green,yellow,blue,magenta,cyan,black,white.
+
 .TP 
-\fIcolorN\fR 
+\fB\*(T<\fBcolorN\fR\*(T> \fR
 Change drawing color to colorN configuration
-option, where N is a digit between 0 and 9, inclusively.
+option, where N is a digit between 0 and 9, inclusively. 
+
 .TP 
-\fIcombine\fR \fIvar1 var2\fR
+\fB\*(T<\fBcombine\fR\*(T> \fR\*(T<\fBvar1 var2\fR\*(T> 
 Places the lines of var2 to the right of the
 lines of var1 separated by the chars that are put between
 var1 and var2. For example: ${combine ${head /proc/cpuinfo
 2} - ${head /proc/meminfo 1}} gives as output
 "cpuinfo_line1 - meminfo_line1" on line 1 and
 "cpuinfo_line2 -" on line 2. $combine vars can also be
-nested to place more vars next to each other.
+nested to place more vars next to each other. 
+
 .TP 
-\fIconky_build_arch\fR 
-CPU architecture Conky was built for
+\fB\*(T<\fBconky_build_arch\fR\*(T> \fR
+CPU architecture Conky was built for 
+
 .TP 
-\fIconky_build_date\fR 
-Date Conky was built
+\fB\*(T<\fBconky_build_date\fR\*(T> \fR
+Date Conky was built 
+
 .TP 
-\fIconky_version\fR 
-Conky version
+\fB\*(T<\fBconky_version\fR\*(T> \fR
+Conky version 
+
 .TP 
-\fIcpu\fR \fI(cpuN)\fR
+\fB\*(T<\fBcpu\fR\*(T> \fR\*(T<\fB(cpuN)\fR\*(T> 
 CPU usage in percents. For SMP machines, the CPU
 number can be provided as an argument. ${cpu cpu0} is the
 total usage, and ${cpu cpuX} (X >= 1) are individual
-CPUs.
+CPUs. 
+
 .TP 
-\fIcpubar\fR \fI(cpuN) (height),(width)\fR
+\fB\*(T<\fBcpubar\fR\*(T> \fR\*(T<\fB(cpuN) (height),(width)\fR\*(T> 
 Bar that shows CPU usage, height is bar's height
-in pixels. See $cpu for more info on SMP.
+in pixels. See $cpu for more info on SMP. 
+
 .TP 
-\fIcpugauge\fR \fI(cpuN) (height),(width)\fR
+\fB\*(T<\fBcpugauge\fR\*(T> \fR\*(T<\fB(cpuN) (height),(width)\fR\*(T> 
 Elliptical gauge that shows CPU usage, height and
 width are gauge's vertical and horizontal axis
-respectively. See $cpu for more info on SMP.
+respectively. See $cpu for more info on SMP. 
+
 .TP 
-\fIcpugraph\fR \fI(cpuN) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)\fR
+\fB\*(T<\fBcpugraph\fR\*(T> \fR\*(T<\fB(cpuN) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
 CPU usage graph, with optional colours in hex,
 minus the #. See $cpu for more info on SMP. Uses a
 logarithmic scale (to see small numbers) when you use the
 -l switch. Takes the switch '-t' to use a temperature
 gradient, which makes the gradient values change depending
 on the amplitude of a particular graph value (try it and
-see).
+see). 
+
 .TP 
-\fIcurl\fR \fIurl (interval_in_minutes)\fR
+\fB\*(T<\fBcurl\fR\*(T> \fR\*(T<\fBurl (interval_in_minutes)\fR\*(T> 
 Download data from URI using Curl at the
 specified interval. The interval may be a floating
 point value greater than 0, otherwise defaults to 15
@@ -627,133 +1038,160 @@ thread is created it can't be explicitly destroyed.
 One thread will run for each URI specified. You can use
 any protocol that Curl supports.
 .TP 
-\fIdesktop\fR 
+\fB\*(T<\fBdesktop\fR\*(T> \fR
 Number of the desktop on which conky is running
-or the message "Not running in X" if this is the case.
+or the message "Not running in X" if this is the case. 
+
 .TP 
-\fIdesktop_name\fR 
+\fB\*(T<\fBdesktop_name\fR\*(T> \fR
 Name of the desktop on which conky is running or
-the message "Not running in X" if this is the case.
+the message "Not running in X" if this is the case. 
+
 .TP 
-\fIdesktop_number\fR 
+\fB\*(T<\fBdesktop_number\fR\*(T> \fR
 Number of desktops or the message "Not running in
-X" if this is the case.
+X" if this is the case. 
+
 .TP 
-\fIdisk_protect\fR \fIdevice\fR
-磁盘保护状态，若支持的话 (需要内核补丁)。将打印 "冻结" 或 "自由 " (注意自由后面的空格)。
+\fB\*(T<\fBdisk_protect\fR\*(T> \fR\*(T<\fBdevice\fR\*(T> 
+Disk protection status, if supported (needs
+kernel-patch). Prints either "frozen" or "free " (note the
+padding). 
+
 .TP 
-\fIdiskio\fR \fI(device)\fR
+\fB\*(T<\fBdiskio\fR\*(T> \fR\*(T<\fB(device)\fR\*(T> 
 Displays current disk IO. Device is optional, and
 takes the form of sda for /dev/sda. Individual partitions
-are allowed.
+are allowed. 
+
 .TP 
-\fIdiskio_read\fR \fI(device)\fR
+\fB\*(T<\fBdiskio_read\fR\*(T> \fR\*(T<\fB(device)\fR\*(T> 
 Displays current disk IO for reads. Device as in
-diskio.
+diskio. 
+
 .TP 
-\fIdiskio_write\fR \fI(device)\fR
+\fB\*(T<\fBdiskio_write\fR\*(T> \fR\*(T<\fB(device)\fR\*(T> 
 Displays current disk IO for writes. Device as in
-diskio.
+diskio. 
+
 .TP 
-\fIdiskiograph\fR \fI(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)\fR
+\fB\*(T<\fBdiskiograph\fR\*(T> \fR\*(T<\fB(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
 Disk IO graph, colours defined in hex, minus the
 #. If scale is non-zero, it becomes the scale for the
 graph. Uses a logarithmic scale (to see small numbers) when
 you use -l switch. Takes the switch '-t' to use a
 temperature gradient, which makes the gradient values
 change depending on the amplitude of a particular graph
-value (try it and see).
+value (try it and see). 
+
 .TP 
-\fIdiskiograph_read\fR \fI(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)\fR
+\fB\*(T<\fBdiskiograph_read\fR\*(T> \fR\*(T<\fB(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
 Disk IO graph for reads, colours defined in hex,
 minus the #. If scale is non-zero, it becomes the scale for
 the graph. Device as in diskio. Uses a logarithmic scale
 (to see small numbers) when you use -l switch. Takes the
 switch '-t' to use a temperature gradient, which makes the
 gradient values change depending on the amplitude of a
-particular graph value (try it and see).
+particular graph value (try it and see). 
+
 .TP 
-\fIdiskiograph_write\fR \fI(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)\fR
+\fB\*(T<\fBdiskiograph_write\fR\*(T> \fR\*(T<\fB(device) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
 Disk IO graph for writes, colours defined in hex,
 minus the #. If scale is non-zero, it becomes the scale for
 the graph. Device as in diskio. Uses a logarithmic scale
 (to see small numbers) when you use -l switch. Takes the
 switch '-t' to use a temperature gradient, which makes the
 gradient values change depending on the amplitude of a
-particular graph value (try it and see).
+particular graph value (try it and see). 
+
 .TP 
-\fIdownspeed\fR \fI(net)\fR
-Download speed in suitable IEC units
+\fB\*(T<\fBdownspeed\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Download speed in suitable IEC units 
+
 .TP 
-\fIdownspeedf\fR \fI(net)\fR
-Download speed in KiB with one decimal
+\fB\*(T<\fBdownspeedf\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Download speed in KiB with one decimal 
+
 .TP 
-\fIdownspeedgraph\fR \fI(netdev) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)\fR
+\fB\*(T<\fBdownspeedgraph\fR\*(T> \fR\*(T<\fB(netdev) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
 Download speed graph, colours defined in hex,
 minus the #. If scale is non-zero, it becomes the scale for
 the graph. Uses a logarithmic scale (to see small numbers)
 when you use -l switch. Takes the switch '-t' to use a
 temperature gradient, which makes the gradient values
 change depending on the amplitude of a particular graph
-value (try it and see).
+value (try it and see). 
+
 .TP 
-\fIdraft_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBdraft_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of mails marked as draft in the specified
 mailbox or mail spool if not. Only maildir type mailboxes
-are supported, mbox type will return -1.
+are supported, mbox type will return -1. 
+
 .TP 
-\fIelse\fR 
-Text to show if any of the above are not true
+\fB\*(T<\fBelse\fR\*(T> \fR
+Text to show if any of the above are not true 
+
 .TP 
-\fIendif\fR 
-Ends an $if block.
+\fB\*(T<\fBendif\fR\*(T> \fR
+Ends an $if block. 
+
 .TP 
-\fIentropy_avail\fR 
-Current entropy available for crypto freaks
+\fB\*(T<\fBentropy_avail\fR\*(T> \fR
+Current entropy available for crypto freaks 
+
 .TP 
-\fIentropy_bar\fR \fI(高度),(宽度)\fR
+\fB\*(T<\fBentropy_bar\fR\*(T> \fR\*(T<\fB(height),(width)\fR\*(T> 
 Normalized bar of available entropy for crypto
-freaks
+freaks 
+
 .TP 
-\fIentropy_perc\fR 
+\fB\*(T<\fBentropy_perc\fR\*(T> \fR
 Percentage of entropy available in comparison to
-the poolsize
+the poolsize 
+
 .TP 
-\fIentropy_poolsize\fR 
+\fB\*(T<\fBentropy_poolsize\fR\*(T> \fR
 Total size of system entropy pool for crypto
-freaks
+freaks 
+
 .TP 
-\fIeval\fR \fIstring\fR
+\fB\*(T<\fBeval\fR\*(T> \fR\*(T<\fBstring\fR\*(T> 
 Evaluates given string according to the rules of
 TEXT interpretation, i.e. parsing any contained text object
 specifications into their output, any occuring '$$' into a
 single '$' and so on. The output is then being parsed
-again.
+again. 
+
 .TP 
-\fIeve\fR \fIapi_userid api_key character_id\fR
+\fB\*(T<\fBeve\fR\*(T> \fR\*(T<\fBapi_userid api_key character_id\fR\*(T> 
 Fetches your currently training skill from the
-Eve Online API servers (〈http://www.eve-online.com/〉) and
-displays the skill along with the remaining training time.
+Eve Online API servers (http://www.eve-online.com/) and
+displays the skill along with the remaining training time. 
+
 .TP 
-\fIexec\fR \fIcommand\fR
+\fB\*(T<\fBexec\fR\*(T> \fR\*(T<\fBcommand\fR\*(T> 
 Executes a shell command and displays the output
 in conky. warning: this takes a lot more resources than
 other variables. I'd recommend coding wanted behaviour in C
-and posting a patch.
+and posting a patch. 
+
 .TP 
-\fIexecbar\fR \fIcommand\fR
+\fB\*(T<\fBexecbar\fR\*(T> \fR\*(T<\fBcommand\fR\*(T> 
 Same as exec, except if the first value return is
 a value between 0-100, it will use that number for a bar.
 The size for bars can be controlled via the
-default_bar_size config setting.
+default_bar_size config setting. 
+
 .TP 
-\fIexecgauge\fR \fIcommand\fR
+\fB\*(T<\fBexecgauge\fR\*(T> \fR\*(T<\fBcommand\fR\*(T> 
 Same as exec, except if the first value returned
 is a value between 0-100, it will use that number for a
 gauge. The size for gauges can be controlled via the
-default_gauge_size config setting.
+default_gauge_size config setting. 
+
 .TP 
-\fIexecgraph\fR \fI(-t) (-l) command\fR
+\fB\*(T<\fBexecgraph\fR\*(T> \fR\*(T<\fB(\-t) (\-l) command\fR\*(T> 
 Same as execbar, but graphs values. Uses a
 logaritmic scale when the log option (-l switch) is given
 (to see small numbers). Values still have to be between 0
@@ -763,23 +1201,30 @@ use a temperature gradient, which makes the gradient values
 change depending on the amplitude of a particular graph
 value (try it and see). If -t or -l is your first argument,
 you may need to preceed it by a space (' ').
+
 .TP 
-\fIexeci\fR \fIinterval command\fR
-与 exec 一样，但是在指定的周期执行。周期不能小于配置中 update_interval 定义的秒数。也请看 $texeci
+\fB\*(T<\fBexeci\fR\*(T> \fR\*(T<\fBinterval command\fR\*(T> 
+Same as exec but with specific interval. Interval
+can't be less than update_interval in configuration. See
+also $texeci
+
 .TP 
-\fIexecibar\fR \fIinterval command\fR
-Same as execbar, except with an interval
+\fB\*(T<\fBexecibar\fR\*(T> \fR\*(T<\fBinterval command\fR\*(T> 
+Same as execbar, except with an interval 
+
 .TP 
-\fIexecigauge\fR \fIinterval command\fR
+\fB\*(T<\fBexecigauge\fR\*(T> \fR\*(T<\fBinterval command\fR\*(T> 
 Same as execgauge, but takes an interval arg and
-gauges values.
+gauges values. 
+
 .TP 
-\fIexecigraph\fR \fIinterval (-t) (-l) command\fR
+\fB\*(T<\fBexecigraph\fR\*(T> \fR\*(T<\fBinterval (\-t) (\-l) command\fR\*(T> 
 Same as execgraph, but takes an interval arg and
 graphs values. If -t or -l is your first argument, you may
-need to preceed it by a space (' ').
+need to preceed it by a space (' '). 
+
 .TP 
-\fIexecp\fR \fIcommand\fR
+\fB\*(T<\fBexecp\fR\*(T> \fR\*(T<\fBcommand\fR\*(T> 
 Executes a shell command and displays the output
 in conky. warning: this takes a lot more resources than
 other variables. I'd recommend coding wanted behaviour in C
@@ -792,23 +1237,30 @@ then destroys all the objects. If you try to use anything
 like $execi within an $execp statement, it will
 functionally run at the same interval that the $execp
 statement runs, as it is created and destroyed at every
-interval.
+interval. 
+
 .TP 
-\fIexecpi\fR \fIinterval command\fR
-与 execp 一样，但是在指定的周期执行。周期不能小于配置中 update_interval 定义的秒数。注意 $execpi 命令的输出仍将在每个周期解析并评估。
+\fB\*(T<\fBexecpi\fR\*(T> \fR\*(T<\fBinterval command\fR\*(T> 
+Same as execp but with specific interval.
+Interval can't be less than update_interval in
+configuration. Note that the output from the $execpi
+command is still parsed and evaluated at every interval. 
+
 .TP 
-\fIflagged_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBflagged_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of mails marked as flagged in the
 specified mailbox or mail spool if not. Only maildir type
-mailboxes are supported, mbox type will return -1.
+mailboxes are supported, mbox type will return -1. 
+
 .TP 
-\fIfont\fR \fI(font)\fR
+\fB\*(T<\fBfont\fR\*(T> \fR\*(T<\fB(font)\fR\*(T> 
 Specify a different font. This new font will
 apply to the current line and everything following. You can
 use a $font with no arguments to change back to the default
-font (much like with $color)
+font (much like with $color) 
+
 .TP 
-\fIformat_time\fR \fIseconds format\fR
+\fB\*(T<\fBformat_time\fR\*(T> \fR\*(T<\fBseconds format\fR\*(T> 
 Format time given in seconds. This var only works when
 the times_in_seconds configuration setting is on. Format is a string
 that should start and end with a "-char. The "-chars are not
@@ -822,77 +1274,95 @@ followed by a number that specifies the amount of
 digits behind the point that you want to see (maximum 9).
 You can also place a 'x' behind \eS so you have all digits behind
 the point and no trailing zero's. (also maximum 9)
+
 .TP 
-\fIforwarded_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBforwarded_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of mails marked as forwarded in the
 specified mailbox or mail spool if not. Only maildir type
-mailboxes are supported, mbox type will return -1.
+mailboxes are supported, mbox type will return -1. 
+
 .TP 
-\fIfreq\fR \fI(n)\fR
+\fB\*(T<\fBfreq\fR\*(T> \fR\*(T<\fB(n)\fR\*(T> 
 Returns CPU #n's frequency in MHz. CPUs are
-counted from 1. If omitted, the parameter defaults to 1.
+counted from 1. If omitted, the parameter defaults to 1. 
+
 .TP 
-\fIfreq_g\fR \fI(n)\fR
+\fB\*(T<\fBfreq_g\fR\*(T> \fR\*(T<\fB(n)\fR\*(T> 
 Returns CPU #n's frequency in GHz. CPUs are
-counted from 1. If omitted, the parameter defaults to 1.
+counted from 1. If omitted, the parameter defaults to 1. 
+
 .TP 
-\fIfs_bar\fR \fI(height),(width) fs\fR
+\fB\*(T<\fBfs_bar\fR\*(T> \fR\*(T<\fB(height),(width) fs\fR\*(T> 
 Bar that shows how much space is used on a file
 system. height is the height in pixels. fs is any file on
-that file system.
+that file system. 
+
 .TP 
-\fIfs_bar_free\fR \fI(height),(width) fs\fR
+\fB\*(T<\fBfs_bar_free\fR\*(T> \fR\*(T<\fB(height),(width) fs\fR\*(T> 
 Bar that shows how much space is free on a file
 system. height is the height in pixels. fs is any file on
-that file system.
+that file system. 
+
 .TP 
-\fIfs_free\fR \fI(fs)\fR
-Free space on a file system available for users.
+\fB\*(T<\fBfs_free\fR\*(T> \fR\*(T<\fB(fs)\fR\*(T> 
+Free space on a file system available for users. 
+
 .TP 
-\fIfs_free_perc\fR \fI(fs)\fR
+\fB\*(T<\fBfs_free_perc\fR\*(T> \fR\*(T<\fB(fs)\fR\*(T> 
 Free percentage of space on a file system
-available for users.
+available for users. 
+
 .TP 
-\fIfs_size\fR \fI(fs)\fR
-File system size.
+\fB\*(T<\fBfs_size\fR\*(T> \fR\*(T<\fB(fs)\fR\*(T> 
+File system size. 
+
 .TP 
-\fIfs_type\fR \fI(fs)\fR
-File system type.
+\fB\*(T<\fBfs_type\fR\*(T> \fR\*(T<\fB(fs)\fR\*(T> 
+File system type. 
+
 .TP 
-\fIfs_used\fR \fI(fs)\fR
-File system used space.
+\fB\*(T<\fBfs_used\fR\*(T> \fR\*(T<\fB(fs)\fR\*(T> 
+File system used space. 
+
 .TP 
-\fIfs_used_perc\fR \fI(fs)\fR
-Percent of file system used space.
+\fB\*(T<\fBfs_used_perc\fR\*(T> \fR\*(T<\fB(fs)\fR\*(T> 
+Percent of file system used space. 
+
 .TP 
-\fIgoto\fR \fIx\fR
+\fB\*(T<\fBgoto\fR\*(T> \fR\*(T<\fBx\fR\*(T> 
 The next element will be printed at position 'x'.
+
 .TP 
-\fIgw_iface\fR 
+\fB\*(T<\fBgw_iface\fR\*(T> \fR
 Displays the default route's interface or
-"multiple"/"none" accordingly.
+"multiple"/"none" accordingly. 
+
 .TP 
-\fIgw_ip\fR 
+\fB\*(T<\fBgw_ip\fR\*(T> \fR
 Displays the default gateway's IP or
-"multiple"/"none" accordingly.
+"multiple"/"none" accordingly. 
+
 .TP 
-\fIhddtemp\fR \fI(dev)\fR
+\fB\*(T<\fBhddtemp\fR\*(T> \fR\*(T<\fB(dev)\fR\*(T> 
 Displays temperature of a selected hard disk
 drive as reported by the hddtemp daemon. Use hddtemp_host
 and hddtemp_port to specify a host and port for all hddtemp
 objects. If no dev parameter is given, the first disk returned
 by the hddtemp daemon is used.
+
 .TP 
-\fIhead\fR \fIlogfile lines (next_check)\fR
+\fB\*(T<\fBhead\fR\*(T> \fR\*(T<\fBlogfile lines (next_check)\fR\*(T> 
 Displays first N lines of supplied text file. The
 file is checked every 'next_check' update. If next_check is
 not supplied, Conky defaults to 2. Max of 30 lines can be
-displayed, or until the text buffer is filled.
+displayed, or until the text buffer is filled. 
+
 .TP 
-\fIhr\fR \fI(height)\fR
-Horizontal line, height is the height in pixels
+\fB\*(T<\fBhr\fR\*(T> \fR\*(T<\fB(height)\fR\*(T> 
+Horizontal line, height is the height in pixels 
+
 .TP 
-\fIhwmon\fR \fI(dev) type n (factor offset)\fR
+\fB\*(T<\fBhwmon\fR\*(T> \fR\*(T<\fB(dev) type n (factor offset)\fR\*(T> 
 Hwmon sensor from sysfs (Linux 2.6). Parameter
 dev may be omitted if you have only one hwmon device.
 Parameter type is either 'in' or 'vol' meaning voltage;
@@ -902,9 +1372,10 @@ local computer. The optional arguments 'factor' and
 \&'offset' allow precalculation of the raw input, which is
 being modified as follows: 'input = input * factor +
 offset'. Note that they have to be given as decimal values
-(i.e. contain at least one decimal place).
+(i.e. contain at least one decimal place). 
+
 .TP 
-\fIi2c\fR \fI(dev) type n (factor offset)\fR
+\fB\*(T<\fBi2c\fR\*(T> \fR\*(T<\fB(dev) type n (factor offset)\fR\*(T> 
 I2C sensor from sysfs (Linux 2.6). Parameter dev
 may be omitted if you have only one I2C device. Parameter
 type is either 'in' or 'vol' meaning voltage; 'fan' meaning
@@ -914,158 +1385,190 @@ computer. The optional arguments 'factor' and 'offset'
 allow precalculation of the raw input, which is being
 modified as follows: 'input = input * factor + offset'.
 Note that they have to be given as decimal values (i.e.
-contain at least one decimal place).
+contain at least one decimal place). 
+
 .TP 
-\fIi8k_ac_status\fR 
+\fB\*(T<\fBi8k_ac_status\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
 laptops, displays whether ac power is on, as listed in
 /proc/i8k (translated to human-readable). Beware that this
-is by default not enabled by i8k itself.
+is by default not enabled by i8k itself. 
+
 .TP 
-\fIi8k_bios\fR 
+\fB\*(T<\fBi8k_bios\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
-laptops, displays the bios version as listed in /proc/i8k.
+laptops, displays the bios version as listed in /proc/i8k. 
+
 .TP 
-\fIi8k_buttons_status\fR 
+\fB\*(T<\fBi8k_buttons_status\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
 laptops, displays the volume buttons status as listed in
-/proc/i8k.
+/proc/i8k. 
+
 .TP 
-\fIi8k_cpu_temp\fR 
+\fB\*(T<\fBi8k_cpu_temp\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
 laptops, displays the cpu temperature in Celsius, as
-reported by /proc/i8k.
+reported by /proc/i8k. 
+
 .TP 
-\fIi8k_left_fan_rpm\fR 
+\fB\*(T<\fBi8k_left_fan_rpm\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
 laptops, displays the left fan's rate of rotation, in
 revolutions per minute as listed in /proc/i8k. Beware, some
-laptops i8k reports these fans in reverse order.
+laptops i8k reports these fans in reverse order. 
+
 .TP 
-\fIi8k_left_fan_status\fR 
+\fB\*(T<\fBi8k_left_fan_status\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
 laptops, displays the left fan status as listed in
 /proc/i8k (translated to human-readable). Beware, some
-laptops i8k reports these fans in reverse order.
+laptops i8k reports these fans in reverse order. 
+
 .TP 
-\fIi8k_right_fan_rpm\fR 
+\fB\*(T<\fBi8k_right_fan_rpm\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
 laptops, displays the right fan's rate of rotation, in
 revolutions per minute as listed in /proc/i8k. Beware, some
-laptops i8k reports these fans in reverse order.
+laptops i8k reports these fans in reverse order. 
+
 .TP 
-\fIi8k_right_fan_status\fR 
+\fB\*(T<\fBi8k_right_fan_status\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
 laptops, displays the right fan status as listed in
 /proc/i8k (translated to human-readable). Beware, some
-laptops i8k reports these fans in reverse order.
+laptops i8k reports these fans in reverse order. 
+
 .TP 
-\fIi8k_serial\fR 
+\fB\*(T<\fBi8k_serial\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
 laptops, displays your laptop serial number as listed in
-/proc/i8k.
+/proc/i8k. 
+
 .TP 
-\fIi8k_version\fR 
+\fB\*(T<\fBi8k_version\fR\*(T> \fR
 If running the i8k kernel driver for Inspiron
-laptops, displays the version formatting of /proc/i8k.
+laptops, displays the version formatting of /proc/i8k. 
+
 .TP 
-\fIibm_brightness\fR 
+\fB\*(T<\fBibm_brightness\fR\*(T> \fR
 If running the IBM ACPI, displays the brigtness
-of the laptops's LCD (0-7).
+of the laptops's LCD (0-7). 
+
 .TP 
-\fIibm_fan\fR 
-If running the IBM ACPI, displays the fan speed.
+\fB\*(T<\fBibm_fan\fR\*(T> \fR
+If running the IBM ACPI, displays the fan speed. 
+
 .TP 
-\fIibm_temps\fR \fIN\fR
+\fB\*(T<\fBibm_temps\fR\*(T> \fR\*(T<\fBN\fR\*(T> 
 If running the IBM ACPI, displays the
 temperatures from the IBM temperature sensors (N=0..7)
-Sensor 0 is on the CPU, 3 is on the GPU.
+Sensor 0 is on the CPU, 3 is on the GPU. 
+
 .TP 
-\fIibm_volume\fR 
+\fB\*(T<\fBibm_volume\fR\*(T> \fR
 If running the IBM ACPI, displays the "master"
-volume, controlled by the volume keys (0-14).
+volume, controlled by the volume keys (0-14). 
+
 .TP 
-\fIiconv_start\fR \fIcodeset_from codeset_to\fR
+\fB\*(T<\fBiconv_start\fR\*(T> \fR\*(T<\fBcodeset_from codeset_to\fR\*(T> 
 Convert text from one codeset to another using
-GNU iconv. Needs to be stopped with iconv_stop.
+GNU iconv. Needs to be stopped with iconv_stop. 
+
 .TP 
-\fIiconv_stop\fR 
-Stop iconv codeset conversion.
+\fB\*(T<\fBiconv_stop\fR\*(T> \fR
+Stop iconv codeset conversion. 
+
 .TP 
-\fIif_empty\fR \fI(var)\fR
+\fB\*(T<\fBif_empty\fR\*(T> \fR\*(T<\fB(var)\fR\*(T> 
 if conky variable VAR is empty, display
-everything between $if_empty and the matching $endif
+everything between $if_empty and the matching $endif 
+
 .TP 
-\fIif_existing\fR \fIfile (string)\fR
+\fB\*(T<\fBif_existing\fR\*(T> \fR\*(T<\fBfile (string)\fR\*(T> 
 if FILE exists, display everything between
 if_existing and the matching $endif. The optional second
 parameter checks for FILE containing the specified string
 and prints everything between $if_existing and the matching
-$endif.
+$endif. 
+
 .TP 
-\fIif_gw\fR 
+\fB\*(T<\fBif_gw\fR\*(T> \fR
 if there is at least one default gateway, display
-everything between $if_gw and the matching $endif
+everything between $if_gw and the matching $endif 
+
 .TP 
-\fIif_match\fR \fIexpression\fR
+\fB\*(T<\fBif_match\fR\*(T> \fR\*(T<\fBexpression\fR\*(T> 
 Evaluates the given boolean expression, printing
 everything between $if_match and the matching $endif
 depending on whether the evaluation returns true or not.
 Valid expressions consist of a left side, an operator and a
 right side. Left and right sides are being parsed for
 contained text objects before evaluation. Recognised left
-and right side types are:
+and right side types are: 
 
-\fIdouble\fRArgument consists of only
+\fBdouble\fRArgument consists of only
 digits and a single dot.
-\fIlong\fRArgument consists of only
+.br
+\fBlong\fRArgument consists of only
 digits.
-\fIstring\fRArgument is enclosed in
+.br
+\fBstring\fRArgument is enclosed in
 quotation marks (")
 
 Valid operands are: '>', '<', '>=',
-\&'<=', '==', '!='.
+\&'<=', '==', '!='. 
+
 .TP 
-\fIif_mixer_mute\fR \fI(mixer)\fR
+\fB\*(T<\fBif_mixer_mute\fR\*(T> \fR\*(T<\fB(mixer)\fR\*(T> 
 If mixer exists, display everything between
 $if_mixer_mute and the matching $endif. If no mixer is
-specified, "Vol" is used.
+specified, "Vol" is used. 
+
 .TP 
-\fIif_mounted\fR \fI(mountpoint)\fR
+\fB\*(T<\fBif_mounted\fR\*(T> \fR\*(T<\fB(mountpoint)\fR\*(T> 
 if MOUNTPOINT is mounted, display everything
-between $if_mounted and the matching $endif
+between $if_mounted and the matching $endif 
+
 .TP 
-\fIif_mpd_playing\fR 
-若 mpd 正在播放或暂定了，则显示 $if_mpd_playing 和相匹配的 $endif 间的全部文字。
+\fB\*(T<\fBif_mpd_playing\fR\*(T> \fR
+if mpd is playing or paused, display everything
+between $if_mpd_playing and the matching $endif 
+
 .TP 
-\fIif_running\fR \fI(process)\fR
+\fB\*(T<\fBif_running\fR\*(T> \fR\*(T<\fB(process)\fR\*(T> 
 if PROCESS is running, display everything
 $if_running and the matching $endif. This uses the
-“pidof” command, so the -x switch is also supported.
+``pidof'' command, so the -x switch is also supported. 
+
 .TP 
-\fIif_smapi_bat_installed\fR \fI(INDEX)\fR
+\fB\*(T<\fBif_smapi_bat_installed\fR\*(T> \fR\*(T<\fB(INDEX)\fR\*(T> 
 when using smapi, if the battery with index INDEX
 is installed, display everything between
-$if_smapi_bat_installed and the matching $endif
+$if_smapi_bat_installed and the matching $endif 
+
 .TP 
-\fIif_up\fR \fI(接口)\fR
+\fB\*(T<\fBif_up\fR\*(T> \fR\*(T<\fB(interface)\fR\*(T> 
 if INTERFACE exists and is up, display everything
-between $if_up and the matching $endif
+between $if_up and the matching $endif 
+
 .TP 
-\fIif_updatenr\fR \fI(updatenr)\fR
+\fB\*(T<\fBif_updatenr\fR\*(T> \fR\*(T<\fB(updatenr)\fR\*(T> 
 If it's the UPDATENR-th time that conky updates,
 display everything between $if_updatenr and the matching
 $endif. The counter resets when the highest UPDATENR is
 reached. Example : "{$if_updatenr 1}foo$endif{$if_updatenr
 2}bar$endif{$if_updatenr 4}$endif" shows foo 25% of the
 time followed by bar 25% of the time followed by nothing
-the other half of the time.
+the other half of the time. 
+
 .TP 
-\fIif_xmms2_connected\fR 
+\fB\*(T<\fBif_xmms2_connected\fR\*(T> \fR
 Display everything between $if_xmms2_connected
-and the matching $endif if xmms2 is running.
+and the matching $endif if xmms2 is running. 
+
 .TP 
-\fIimage\fR \fI<path to image> (-p x,y) (-s WxH) (-n) (-f interval)\fR
+\fB\*(T<\fBimage\fR\*(T> \fR\*(T<\fB<path to image> (\-p x,y) (\-s WxH) (\-n) (\-f interval)\fR\*(T> 
 Renders an image from the path specified using
 Imlib2. Takes 4 optional arguments: a position, a size, a
 no-cache switch, and a cache flush interval. Changing the
@@ -1081,9 +1584,10 @@ position (or any other formatting) of images, they are just
 rendered as per the arguments passed. The only reason
 $image is part of the TEXT section, is to allow for runtime
 modifications, through $execp $lua_parse, or some other
-method.
+method. 
+
 .TP 
-\fIimap_messages\fR \fI(args)\fR
+\fB\*(T<\fBimap_messages\fR\*(T> \fR\*(T<\fB(args)\fR\*(T> 
 Displays the number of messages in your global
 IMAP inbox by default. You can define individual IMAP
 inboxes separately by passing arguments to this object.
@@ -1092,9 +1596,10 @@ Arguments are: "host user pass [-i interval (in seconds)]
 port is 143, default folder is 'INBOX', default interval is
 5 minutes, and default number of retries before giving up
 is 5. If the password is supplied as '*', you will be
-prompted to enter the password when Conky starts.
+prompted to enter the password when Conky starts. 
+
 .TP 
-\fIimap_unseen\fR \fI(args)\fR
+\fB\*(T<\fBimap_unseen\fR\*(T> \fR\*(T<\fB(args)\fR\*(T> 
 Displays the number of unseen messages in your
 global IMAP inbox by default. You can define individual
 IMAP inboxes separately by passing arguments to this
@@ -1103,65 +1608,75 @@ seconds)] [-f 'folder'] [-p port] [-e 'command'] [-r retries]".
 Default port is 143, default folder is 'INBOX', default
 interval is 5 minutes, and default number of retries before
 giving up is 5. If the password is supplied as '*', you
-will be prompted to enter the password when Conky starts.
+will be prompted to enter the password when Conky starts. 
+
 .TP 
-\fIinclude\fR \fIpath\fR
+\fB\*(T<\fBinclude\fR\*(T> \fR\*(T<\fBpath\fR\*(T> 
 Loads the configfile at path, places the
 configsettings behind the configsettings in the orginal
 config and places the vars where the includevar
 stood.
 .TP 
-\fIioscheduler\fR \fIdisk\fR
+\fB\*(T<\fBioscheduler\fR\*(T> \fR\*(T<\fBdisk\fR\*(T> 
 Prints the current ioscheduler used for the given
-disk name (i.e. e.g. "hda" or "sdb")
+disk name (i.e. e.g. "hda" or "sdb") 
+
 .TP 
-\fIkernel\fR 
-Kernel version
+\fB\*(T<\fBkernel\fR\*(T> \fR
+Kernel version 
+
 .TP 
-\fIlaptop_mode\fR 
-The value of /proc/sys/vm/laptop_mode
+\fB\*(T<\fBlaptop_mode\fR\*(T> \fR
+The value of /proc/sys/vm/laptop_mode 
+
 .TP 
-\fIlines\fR \fItextfile\fR
-Displays the number of lines in the given file
+\fB\*(T<\fBlines\fR\*(T> \fR\*(T<\fBtextfile\fR\*(T> 
+Displays the number of lines in the given file 
+
 .TP 
-\fIloadavg\fR \fI(1|2|3)\fR
+\fB\*(T<\fBloadavg\fR\*(T> \fR\*(T<\fB(1|2|3)\fR\*(T> 
 System load average, 1 is for past 1 minute, 2
 for past 5 minutes and 3 for past 15 minutes. Without argument, prints
 all three values separated by whitespace.
+
 .TP 
-\fIloadgraph\fR \fI(高度),(宽度) (渐变色 1) (渐变色 2) (比例) (-t) (-l)\fR
+\fB\*(T<\fBloadgraph\fR\*(T> \fR\*(T<\fB(height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
 Load1 average graph, similar to xload, with
 optional colours in hex, minus the #. Uses a logarithmic
 scale (to see small numbers) when you use the -l switch.
 Takes the switch '-t' to use a temperature gradient, which
 makes the gradient values change depending on the amplitude
-of a particular graph value (try it and see).
+of a particular graph value (try it and see). 
+
 .TP 
-\fIlua\fR \fIfunction_name (function parameters)\fR
+\fB\*(T<\fBlua\fR\*(T> \fR\*(T<\fBfunction_name (function parameters)\fR\*(T> 
 Executes a Lua function with given parameters,
 then prints the returned string. See also 'lua_load' on how
 to load scripts. Conky puts 'conky_' in front of
 function_name to prevent accidental calls to the wrong
 function unless you put you place 'conky_' in front of it
-yourself.
+yourself. 
+
 .TP 
-\fIlua_bar\fR \fI(height, width) function_name (function parameters)\fR
+\fB\*(T<\fBlua_bar\fR\*(T> \fR\*(T<\fB(height, width) function_name (function parameters)\fR\*(T> 
 Executes a Lua function with given parameters and
 draws a bar. Expects result value to be an integer between
 0 and 100. See also 'lua_load' on how to load scripts.
 Conky puts 'conky_' in front of function_name to prevent
 accidental calls to the wrong function unless you put you
-place 'conky_' in front of it yourself.
+place 'conky_' in front of it yourself. 
+
 .TP 
-\fIlua_gauge\fR \fI(height, width) function_name (function parameters)\fR
+\fB\*(T<\fBlua_gauge\fR\*(T> \fR\*(T<\fB(height, width) function_name (function parameters)\fR\*(T> 
 Executes a Lua function with given parameters and
 draws a gauge. Expects result value to be an integer
 between 0 and 100. See also 'lua_load' on how to load
 scripts. Conky puts 'conky_' in front of function_name to
 prevent accidental calls to the wrong function unless you
-put you place 'conky_' in front of it yourself.
+put you place 'conky_' in front of it yourself. 
+
 .TP 
-\fIlua_graph\fR \fIfunction_name (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)\fR
+\fB\*(T<\fBlua_graph\fR\*(T> \fR\*(T<\fBfunction_name (height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
 Executes a Lua function with and draws a graph.
 Expects result value to be any number, and by default will
 scale to show the full range. See also 'lua_load' on how to
@@ -1170,64 +1685,77 @@ gradient, which makes the gradient values change depending
 on the amplitude of a particular graph value (try it and
 see). Conky puts 'conky_' in front of function_name to
 prevent accidental calls to the wrong function unless you
-put you place 'conky_' in front of it yourself.
+put you place 'conky_' in front of it yourself. 
+
 .TP 
-\fIlua_parse\fR \fIfunction_name (function parameters)\fR
+\fB\*(T<\fBlua_parse\fR\*(T> \fR\*(T<\fBfunction_name (function parameters)\fR\*(T> 
 Executes a Lua function with given parameters as
 per $lua, then parses and prints the result value as per
 the syntax for Conky's TEXT section. See also 'lua_load' on
 how to load scripts. Conky puts 'conky_' in front of
 function_name to prevent accidental calls to the wrong
 function unless you put you place 'conky_' in front of it
-yourself.
+yourself. 
+
 .TP 
-\fImachine\fR 
-Machine, i686 for example
+\fB\*(T<\fBmachine\fR\*(T> \fR
+Machine, i686 for example 
+
 .TP 
-\fImails\fR \fI(mailbox)\fR \fI(interval)\fR
+\fB\*(T<\fBmails\fR\*(T> \fR\*(T<\fB(mailbox)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Mail count in the specified mailbox or your mail
 spool if not. Both mbox and maildir type mailboxes are
 supported. You can use a program like fetchmail to get
 mails from some server using your favourite protocol. See
-also new_mails.
+also new_mails. 
+
 .TP 
-\fImboxscan\fR \fI(-n number of messages to print) (-fw from width) (-sw subject width) mbox\fR
+\fB\*(T<\fBmboxscan\fR\*(T> \fR\*(T<\fB(\-n number of messages to print) (\-fw from width) (\-sw subject width) mbox\fR\*(T> 
 Print a summary of recent messages in an mbox
 format mailbox. mbox parameter is the filename of the
 mailbox (can be encapsulated using '"', ie. ${mboxscan -n
-10 "/home/brenden/some box"}
+10 "/home/brenden/some box"} 
+
 .TP 
-\fImem\fR 
-Amount of memory in use
+\fB\*(T<\fBmem\fR\*(T> \fR
+Amount of memory in use 
+
 .TP 
-\fImembar\fR \fI(高度),(宽度)\fR
-Bar that shows amount of memory in use
+\fB\*(T<\fBmembar\fR\*(T> \fR\*(T<\fB(height),(width)\fR\*(T> 
+Bar that shows amount of memory in use 
+
 .TP 
-\fImemeasyfree\fR 
+\fB\*(T<\fBmemeasyfree\fR\*(T> \fR
 Amount of free memory including the memory that
-is very easily freed (buffers/cache)
+is very easily freed (buffers/cache) 
+
 .TP 
-\fImemfree\fR 
-Amount of free memory
+\fB\*(T<\fBmemfree\fR\*(T> \fR
+Amount of free memory 
+
 .TP 
-\fImemgauge\fR \fI(高度),(宽度)\fR
+\fB\*(T<\fBmemgauge\fR\*(T> \fR\*(T<\fB(height),(width)\fR\*(T> 
 Gauge that shows amount of memory in use (see
-cpugauge)
+cpugauge) 
+
 .TP 
-\fImemgraph\fR \fI(高度),(宽度) (渐变色 1) (渐变色 2) (比例) (-t) (-l)\fR
+\fB\*(T<\fBmemgraph\fR\*(T> \fR\*(T<\fB(height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
 Memory usage graph. Uses a logarithmic scale (to
 see small numbers) when you use the -l switch. Takes the
 switch '-t' to use a temperature gradient, which makes the
 gradient values change depending on the amplitude of a
-particular graph value (try it and see).
+particular graph value (try it and see). 
+
 .TP 
-\fImemmax\fR 
-Total amount of memory
+\fB\*(T<\fBmemmax\fR\*(T> \fR
+Total amount of memory 
+
 .TP 
-\fImemperc\fR 
-Percentage of memory in use
+\fB\*(T<\fBmemperc\fR\*(T> \fR
+Percentage of memory in use 
+
 .TP 
-\fImixer\fR \fI(device)\fR
+\fB\*(T<\fBmixer\fR\*(T> \fR\*(T<\fB(device)\fR\*(T> 
 Prints the mixer value as reported by the OS.
 On Linux, this variable uses the OSS emulation, so you
 need the proper kernel module loaded.
@@ -1237,309 +1765,404 @@ available OSS controls: "Vol", "Bass", "Trebl", "Synth",
 "IGain", "OGain", "Line1", "Line2", "Line3", "Digital1",
 "Digital2", "Digital3", "PhoneIn", "PhoneOut", "Video",
 "Radio" and "Monitor".
+
 .TP 
-\fImixerbar\fR \fI(device)\fR
+\fB\*(T<\fBmixerbar\fR\*(T> \fR\*(T<\fB(device)\fR\*(T> 
 Displays mixer value in a bar as reported by the
-OS. See docs for $mixer for details on arguments.
+OS. See docs for $mixer for details on arguments. 
+
 .TP 
-\fImixerl\fR \fI(device)\fR
+\fB\*(T<\fBmixerl\fR\*(T> \fR\*(T<\fB(device)\fR\*(T> 
 Prints the left channel mixer value as reported
-by the OS. See docs for $mixer for details on arguments.
+by the OS. See docs for $mixer for details on arguments. 
+
 .TP 
-\fImixerlbar\fR \fI(device)\fR
+\fB\*(T<\fBmixerlbar\fR\*(T> \fR\*(T<\fB(device)\fR\*(T> 
 Displays the left channel mixer value in a bar as
 reported by the OS. See docs for $mixer for details on
-arguments.
+arguments. 
+
 .TP 
-\fImixerr\fR \fI(device)\fR
+\fB\*(T<\fBmixerr\fR\*(T> \fR\*(T<\fB(device)\fR\*(T> 
 Prints the right channel mixer value as reported
-by the OS. See docs for $mixer for details on arguments.
+by the OS. See docs for $mixer for details on arguments. 
+
 .TP 
-\fImixerrbar\fR \fI(device)\fR
+\fB\*(T<\fBmixerrbar\fR\*(T> \fR\*(T<\fB(device)\fR\*(T> 
 Displays the right channel mixer value in a bar
 as reported by the OS. See docs for $mixer for details on
-arguments.
+arguments. 
+
 .TP 
-\fImoc_album\fR 
-Album of the current MOC song
+\fB\*(T<\fBmoc_album\fR\*(T> \fR
+Album of the current MOC song 
+
 .TP 
-\fImoc_artist\fR 
-Artist of the current MOC song
+\fB\*(T<\fBmoc_artist\fR\*(T> \fR
+Artist of the current MOC song 
+
 .TP 
-\fImoc_bitrate\fR 
-Bitrate in the current MOC song
+\fB\*(T<\fBmoc_bitrate\fR\*(T> \fR
+Bitrate in the current MOC song 
+
 .TP 
-\fImoc_curtime\fR 
-Current time of the current MOC song
+\fB\*(T<\fBmoc_curtime\fR\*(T> \fR
+Current time of the current MOC song 
+
 .TP 
-\fImoc_file\fR 
-File name of the current MOC song
+\fB\*(T<\fBmoc_file\fR\*(T> \fR
+File name of the current MOC song 
+
 .TP 
-\fImoc_rate\fR 
-Rate of the current MOC song
+\fB\*(T<\fBmoc_rate\fR\*(T> \fR
+Rate of the current MOC song 
+
 .TP 
-\fImoc_song\fR 
-The current song name being played in MOC.
+\fB\*(T<\fBmoc_song\fR\*(T> \fR
+The current song name being played in MOC. 
+
 .TP 
-\fImoc_state\fR 
-Current state of MOC; playing, stopped etc.
+\fB\*(T<\fBmoc_state\fR\*(T> \fR
+Current state of MOC; playing, stopped etc. 
+
 .TP 
-\fImoc_timeleft\fR 
-Time left in the current MOC song
+\fB\*(T<\fBmoc_timeleft\fR\*(T> \fR
+Time left in the current MOC song 
+
 .TP 
-\fImoc_title\fR 
-Title of the current MOC song
+\fB\*(T<\fBmoc_title\fR\*(T> \fR
+Title of the current MOC song 
+
 .TP 
-\fImoc_totaltime\fR 
-Total length of the current MOC song
+\fB\*(T<\fBmoc_totaltime\fR\*(T> \fR
+Total length of the current MOC song 
+
 .TP 
-\fImonitor\fR 
+\fB\*(T<\fBmonitor\fR\*(T> \fR
 Number of the monitor on which conky is running
-or the message "Not running in X" if this is the case.
+or the message "Not running in X" if this is the case. 
+
 .TP 
-\fImonitor_number\fR 
+\fB\*(T<\fBmonitor_number\fR\*(T> \fR
 Number of monitors or the message "Not running in
-X" if this is the case.
+X" if this is the case. 
+
 .TP 
-\fImpd_album\fR 
-当前 MPD 歌曲所在的专辑
+\fB\*(T<\fBmpd_album\fR\*(T> \fR
+Album in current MPD song 
+
 .TP 
-\fImpd_artist\fR 
-必须在编译时启用显示当前 MPD 歌曲的演唱者
+\fB\*(T<\fBmpd_artist\fR\*(T> \fR
+Artist in current MPD song must be enabled at
+compile 
+
 .TP 
-\fImpd_bar\fR \fI(高度),(宽度)\fR
-MPD 进度条
+\fB\*(T<\fBmpd_bar\fR\*(T> \fR\*(T<\fB(height),(width)\fR\*(T> 
+Bar of mpd's progress 
+
 .TP 
-\fImpd_bitrate\fR 
-Bitrate of current song
+\fB\*(T<\fBmpd_bitrate\fR\*(T> \fR
+Bitrate of current song 
+
 .TP 
-\fImpd_date\fR 
+\fB\*(T<\fBmpd_date\fR\*(T> \fR
 Date of current song
+
 .TP 
-\fImpd_elapsed\fR 
-Song's elapsed time
+\fB\*(T<\fBmpd_elapsed\fR\*(T> \fR
+Song's elapsed time 
+
 .TP 
-\fImpd_file\fR 
-打印当前 MPD 歌曲的文件名。
+\fB\*(T<\fBmpd_file\fR\*(T> \fR
+Prints the file name of the current MPD song 
+
 .TP 
-\fImpd_length\fR 
-Song's length
+\fB\*(T<\fBmpd_length\fR\*(T> \fR
+Song's length 
+
 .TP 
-\fImpd_name\fR 
-打印 MPD 名称字段
+\fB\*(T<\fBmpd_name\fR\*(T> \fR
+Prints the MPD name field 
+
 .TP 
-\fImpd_percent\fR 
-Percent of song's progress
+\fB\*(T<\fBmpd_percent\fR\*(T> \fR
+Percent of song's progress 
+
 .TP 
-\fImpd_random\fR 
-Random status (On/Off)
+\fB\*(T<\fBmpd_random\fR\*(T> \fR
+Random status (On/Off) 
+
 .TP 
-\fImpd_repeat\fR 
-Repeat status (On/Off)
+\fB\*(T<\fBmpd_repeat\fR\*(T> \fR
+Repeat status (On/Off) 
+
 .TP 
-\fImpd_smart\fR \fI(最大长度)\fR
+\fB\*(T<\fBmpd_smart\fR\*(T> \fR\*(T<\fB(max length)\fR\*(T> 
 Prints the song name in either the form "artist -
-title" or file name, depending on whats available
+title" or file name, depending on whats available 
+
 .TP 
-\fImpd_status\fR 
-Playing, stopped, et cetera.
+\fB\*(T<\fBmpd_status\fR\*(T> \fR
+Playing, stopped, et cetera. 
+
 .TP 
-\fImpd_title\fR \fI(最大长度)\fR
-当前 MPD 歌曲标题
+\fB\*(T<\fBmpd_title\fR\*(T> \fR\*(T<\fB(max length)\fR\*(T> 
+Title of current MPD song 
+
 .TP 
-\fImpd_track\fR 
-打印 MPD 音轨字段
+\fB\*(T<\fBmpd_track\fR\*(T> \fR
+Prints the MPD track field 
+
 .TP 
-\fImpd_vol\fR 
-MPD 的音量
+\fB\*(T<\fBmpd_vol\fR\*(T> \fR
+MPD's volume 
+
 .TP 
-\fInameserver\fR \fI(index)\fR
+\fB\*(T<\fBnameserver\fR\*(T> \fR\*(T<\fB(index)\fR\*(T> 
 Print a nameserver from /etc/resolv.conf. Index
-starts at and defaults to 0.
+starts at and defaults to 0. 
+
 .TP 
-\fInew_mails\fR \fI(mailbox)\fR \fI(interval)\fR
+\fB\*(T<\fBnew_mails\fR\*(T> \fR\*(T<\fB(mailbox)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Unread mail count in the specified mailbox or
 mail spool if not. Both mbox and maildir type mailboxes are
-supported.
-.TP 
-\fInodename\fR 
-Hostname
-.TP 
-\fInodename_short\fR 
-Short hostname (same as 'hostname -s' shell command).
-.TP 
-\fInvidia\fR \fIthreshold\fR \fItemp\fR \fIambient\fR \fIgpufreq\fR \fImemfreq\fR \fIimagequality\fR
-XNVCtrl 库的 Nvidia 图形卡支持。每个选项都可以缩写为最不显著的部分。温度打印为浮点数，全部其它值都打印为整型数。
+supported. 
 
-\fIthreshold\fR
-\fIThe thresholdtemperature at
-which the gpu slows down\fR
-\fItemp\fR
-\fIGives the gpu current
-temperature\fR
-\fIambient\fR
-\fIGives current air temperature near GPU
-case\fR
-\fIgpufreq\fR
-\fIGives the current gpu frequency\fR
-\fImemfreq\fR
-\fIGives the current mem frequency\fR
-\fIimagequality\fR
-\fIWhich imagequality should be chosen by
-OpenGL applications\fR
 .TP 
-\fIoffset\fR \fI(像素)\fR
-Move text over by N pixels. See also $voffset.
+\fB\*(T<\fBnodename\fR\*(T> \fR
+Hostname 
+
 .TP 
-\fIoutlinecolor\fR \fI(color)\fR
-Change outline color
+\fB\*(T<\fBnodename_short\fR\*(T> \fR
+Short hostname (same as 'hostname -s' shell command).
+
 .TP 
-\fIpb_battery\fR \fIitem\fR
+\fB\*(T<\fBnvidia\fR\*(T> \fR\*(T<\fBthreshold\fR\*(T> \*(T<\fBtemp\fR\*(T> \*(T<\fBambient\fR\*(T> \*(T<\fBgpufreq\fR\*(T> \*(T<\fBmemfreq\fR\*(T> \*(T<\fBimagequality\fR\*(T> 
+Nvidia graficcard support for the XNVCtrl
+library. Each option can be shortened to the least
+significant part. Temperatures are printed as float, all
+other values as integer. 
+
+\fBthreshold\fR
+\*(T<\fBThe thresholdtemperature at
+which the gpu slows down\fR\*(T>
+.br
+\fBtemp\fR
+\*(T<\fBGives the gpu current
+temperature\fR\*(T>
+.br
+\fBambient\fR
+\*(T<\fBGives current air temperature near GPU
+case\fR\*(T>
+.br
+\fBgpufreq\fR
+\*(T<\fBGives the current gpu frequency\fR\*(T>
+.br
+\fBmemfreq\fR
+\*(T<\fBGives the current mem frequency\fR\*(T>
+.br
+\fBimagequality\fR
+\*(T<\fBWhich imagequality should be chosen by
+OpenGL applications\fR\*(T>
+
+.TP 
+\fB\*(T<\fBoffset\fR\*(T> \fR\*(T<\fB(pixels)\fR\*(T> 
+Move text over by N pixels. See also $voffset. 
+
+.TP 
+\fB\*(T<\fBoutlinecolor\fR\*(T> \fR\*(T<\fB(color)\fR\*(T> 
+Change outline color 
+
+.TP 
+\fB\*(T<\fBpb_battery\fR\*(T> \fR\*(T<\fBitem\fR\*(T> 
 If running on Apple powerbook/ibook, display
 information on battery status. The item parameter
 specifies, what information to display. Exactly one item
-must be specified. Valid items are:
+must be specified. Valid items are: 
 
-\fIstatus\fR
-\fIDisplay if battery is fully charged,
+\fBstatus\fR
+\*(T<\fBDisplay if battery is fully charged,
 charging, discharging or absent (running on
-AC)\fR
-\fIpercent\fR
-\fIDisplay charge of battery in percent, if
+AC)\fR\*(T>
+.br
+\fBpercent\fR
+\*(T<\fBDisplay charge of battery in percent, if
 charging or discharging. Nothing will be displayed,
-if battery is fully charged or absent.\fR
-\fItime\fR
-\fIDisplay the time remaining until the
+if battery is fully charged or absent.\fR\*(T>
+.br
+\fBtime\fR
+\*(T<\fBDisplay the time remaining until the
 battery will be fully charged or discharged at
 current rate. Nothing is displayed, if battery is
 absent or if it's present but fully charged and not
-discharging.\fR
+discharging.\fR\*(T>
+
 .TP 
-\fIpid_chroot\fR \fIpid\fR
+\fB\*(T<\fBpid_chroot\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Directory used as rootdirectory by the process
 (this will be "/" unless the process did a chroot syscall)
+
 .TP 
-\fIpid_cmdline\fR \fIpid\fR
+\fB\*(T<\fBpid_cmdline\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Command line this process was invoked with
+
 .TP 
-\fIpid_cwd\fR \fIpid\fR
+\fB\*(T<\fBpid_cwd\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Current working directory of the process
+
 .TP 
-\fIpid_environ\fR \fIpid varname\fR
+\fB\*(T<\fBpid_environ\fR\*(T> \fR\*(T<\fBpid varname\fR\*(T> 
 Contents of a environment-var of the process
+
 .TP 
-\fIpid_environ_list\fR \fIpid\fR
+\fB\*(T<\fBpid_environ_list\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 List of environment-vars that the process can see
+
 .TP 
-\fIpid_exe\fR \fIpid\fR
+\fB\*(T<\fBpid_exe\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Path to executed command that started the process
+
 .TP 
-\fIpid_nice\fR \fIpid\fR
+\fB\*(T<\fBpid_nice\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The nice value of the process
+
 .TP 
-\fIpid_openfiles\fR \fIpid\fR
+\fB\*(T<\fBpid_openfiles\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 List of files that the process has open
+
 .TP 
-\fIpid_parent\fR \fIpid\fR
+\fB\*(T<\fBpid_parent\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The pid of the parent of the process
+
 .TP 
-\fIpid_priority\fR \fIpid\fR
+\fB\*(T<\fBpid_priority\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The priority of the process (see 'priority' in "man 5 proc")
+
 .TP 
-\fIpid_read\fR \fIpid\fR
+\fB\*(T<\fBpid_read\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Total number of bytes read by the process
+
 .TP 
-\fIpid_state\fR \fIpid\fR
+\fB\*(T<\fBpid_state\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 State of the process
+
 .TP 
-\fIpid_state_short\fR \fIpid\fR
+\fB\*(T<\fBpid_state_short\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 One of the chars in "RSDZTW" representing the state
 of the process where R is running, S is sleeping in an
 interruptible wait, D is waiting in uninterruptible disk sleep,
 Z is zombie, T is traced or stopped (on a signal), and W is paging
+
 .TP 
-\fIpid_stderr\fR \fIpid\fR
+\fB\*(T<\fBpid_stderr\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Filedescriptor binded to the STDERR of the process
+
 .TP 
-\fIpid_stdin\fR \fIpid\fR
+\fB\*(T<\fBpid_stdin\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Filedescriptor binded to the STDIN of the process
+
 .TP 
-\fIpid_stdout\fR \fIpid\fR
+\fB\*(T<\fBpid_stdout\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Filedescriptor binded to the STDOUT of the process
+
 .TP 
-\fIpid_threads\fR \fIpid\fR
+\fB\*(T<\fBpid_threads\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Number of threads in process containing this thread
+
 .TP 
-\fIpid_thread_list\fR \fIpid\fR
+\fB\*(T<\fBpid_thread_list\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 List with pid's from threads from this process
+
 .TP 
-\fIpid_time_kernelmode\fR \fIpid\fR
+\fB\*(T<\fBpid_time_kernelmode\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Amount of time that the process has been scheduled in kernel mode in seconds
+
 .TP 
-\fIpid_time_usermode\fR \fIpid\fR
+\fB\*(T<\fBpid_time_usermode\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Amount of time that the process has been scheduled in user mode in seconds
+
 .TP 
-\fIpid_time\fR \fIpid\fR
+\fB\*(T<\fBpid_time\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Sum of $pid_time_kernelmode and $pid_time_usermode
+
 .TP 
-\fIpid_uid\fR \fIpid\fR
+\fB\*(T<\fBpid_uid\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The real uid of the process
+
 .TP 
-\fIpid_euid\fR \fIpid\fR
+\fB\*(T<\fBpid_euid\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The effective uid of the process
+
 .TP 
-\fIpid_suid\fR \fIpid\fR
+\fB\*(T<\fBpid_suid\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The saved set uid of the process
+
 .TP 
-\fIpid_fsuid\fR \fIpid\fR
+\fB\*(T<\fBpid_fsuid\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The file system uid of the process
+
 .TP 
-\fIpid_gid\fR \fIpid\fR
+\fB\*(T<\fBpid_gid\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The real gid of the process
+
 .TP 
-\fIpid_egid\fR \fIpid\fR
+\fB\*(T<\fBpid_egid\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The effective gid of the process
+
 .TP 
-\fIpid_sgid\fR \fIpid\fR
+\fB\*(T<\fBpid_sgid\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The saved set gid of the process
+
 .TP 
-\fIpid_fsgid\fR \fIpid\fR
+\fB\*(T<\fBpid_fsgid\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 The file system gid of the process
+
 .TP 
-\fIpid_vmpeak\fR \fIpid\fR
+\fB\*(T<\fBpid_vmpeak\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Peak virtual memory size of the process
+
 .TP 
-\fIpid_vmsize\fR \fIpid\fR
+\fB\*(T<\fBpid_vmsize\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Virtual memory size of the process
+
 .TP 
-\fIpid_vmlck\fR \fIpid\fR
+\fB\*(T<\fBpid_vmlck\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Locked memory size of the process
+
 .TP 
-\fIpid_vmhwm\fR \fIpid\fR
+\fB\*(T<\fBpid_vmhwm\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Peak resident set size ("high water mark") of the process
+
 .TP 
-\fIpid_vmrss\fR \fIpid\fR
+\fB\*(T<\fBpid_vmrss\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Resident set size of the process
+
 .TP 
-\fIpid_vmdata\fR \fIpid\fR
+\fB\*(T<\fBpid_vmdata\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Data segment size of the process
+
 .TP 
-\fIpid_vmstk\fR \fIpid\fR
+\fB\*(T<\fBpid_vmstk\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Stack segment size of the process
+
 .TP 
-\fIpid_vmexe\fR \fIpid\fR
+\fB\*(T<\fBpid_vmexe\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Text segment size of the process
+
 .TP 
-\fIpid_vmlib\fR \fIpid\fR
+\fB\*(T<\fBpid_vmlib\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Shared library code size of the process
+
 .TP 
-\fIpid_vmpte\fR \fIpid\fR
+\fB\*(T<\fBpid_vmpte\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Page table entries size of the process
+
 .TP 
-\fIpid_write\fR \fIpid\fR
+\fB\*(T<\fBpid_write\fR\*(T> \fR\*(T<\fBpid\fR\*(T> 
 Total number of bytes written by the process
+
 .TP 
-\fIplatform\fR \fI(dev) type n (factor offset)\fR
+\fB\*(T<\fBplatform\fR\*(T> \fR\*(T<\fB(dev) type n (factor offset)\fR\*(T> 
 Platform sensor from sysfs (Linux 2.6). Parameter
 dev may be omitted if you have only one platform device.
 Platform type is either 'in' or 'vol' meaning voltage;
@@ -1549,9 +2172,10 @@ your local computer. The optional arguments 'factor' and
 \&'offset' allow precalculation of the raw input, which is
 being modified as follows: 'input = input * factor +
 offset'. Note that they have to be given as decimal values
-(i.e. contain at least one decimal place).
+(i.e. contain at least one decimal place). 
+
 .TP 
-\fIpop3_unseen\fR \fI(args)\fR
+\fB\*(T<\fBpop3_unseen\fR\*(T> \fR\*(T<\fB(args)\fR\*(T> 
 Displays the number of unseen messages in your
 global POP3 inbox by default. You can define individual
 POP3 inboxes separately by passing arguments to this
@@ -1560,9 +2184,10 @@ seconds)] [-p port] [-e 'command'] [-r retries]". Default
 port is 110, default interval is 5 minutes, and default
 number of retries before giving up is 5. If the password is
 supplied as '*', you will be prompted to enter the password
-when Conky starts.
+when Conky starts. 
+
 .TP 
-\fIpop3_used\fR \fI(args)\fR
+\fB\*(T<\fBpop3_used\fR\*(T> \fR\*(T<\fB(args)\fR\*(T> 
 Displays the amount of space (in MiB, 2^20) used
 in your global POP3 inbox by default. You can define
 individual POP3 inboxes separately by passing arguments to
@@ -1571,26 +2196,31 @@ this object. Arguments are: "host user pass [-i interval
 port is 110, default interval is 5 minutes, and default
 number of retries before giving up is 5. If the password is
 supplied as '*', you will be prompted to enter the password
-when Conky starts.
+when Conky starts. 
+
 .TP 
-\fIpre_exec\fR \fIshell command\fR
+\fB\*(T<\fBpre_exec\fR\*(T> \fR\*(T<\fBshell command\fR\*(T> 
 Executes a shell command one time before conky
-displays anything and puts output as text.
+displays anything and puts output as text. 
+
 .TP 
-\fIprocesses\fR 
-Total processes (sleeping and running)
+\fB\*(T<\fBprocesses\fR\*(T> \fR
+Total processes (sleeping and running) 
+
 .TP 
-\fIread_tcp\fR \fI(host) port\fR
+\fB\*(T<\fBread_tcp\fR\*(T> \fR\*(T<\fB(host) port\fR\*(T> 
 Connects to a tcp port on a host (default is
 localhost), reads every char available at the moment and
-shows them.
+shows them. 
+
 .TP 
-\fIreplied_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBreplied_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of mails marked as replied in the
 specified mailbox or mail spool if not. Only maildir type
-mailboxes are supported, mbox type will return -1.
+mailboxes are supported, mbox type will return -1. 
+
 .TP 
-\fIrss\fR \fIuri interval_in_minutes action (num_par (spaces_in_front))\fR
+\fB\*(T<\fBrss\fR\*(T> \fR\*(T<\fBuri interval_in_minutes action (num_par (spaces_in_front))\fR\*(T> 
 Download and parse RSS feeds. The interval may be
 a floating point value greater than 0, otherwise
 defaults to 15 minutes. Action may be one of the
@@ -1603,14 +2233,16 @@ explicitly destroyed. One thread will run for each URI
 specified. You can use any protocol that Curl
 supports.
 .TP 
-\fIrunning_processes\fR 
+\fB\*(T<\fBrunning_processes\fR\*(T> \fR
 Running processes (not sleeping), requires Linux
-2.6
+2.6 
+
 .TP 
-\fIrunning_threads\fR 
+\fB\*(T<\fBrunning_threads\fR\*(T> \fR
 Number of running (runnable) threads. Linux only.
+
 .TP 
-\fIscroll\fR \fIlength (step) text\fR
+\fB\*(T<\fBscroll\fR\*(T> \fR\*(T<\fBlength (step) text\fR\*(T> 
 Scroll 'text' by 'step' characters showing
 \&'length' number of characters at the same time. The text
 may also contain variables. 'step' is optional and defaults
@@ -1619,108 +2251,134 @@ then the lines are placed behind each other separated with
 a '|'-sign. If you change the textcolor inside $scroll it
 will automatically have it's old value back at the end of
 $scroll. The end and the start of text will be separated by
-\&'length' number of spaces.
+\&'length' number of spaces. 
+
 .TP 
-\fIseen_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBseen_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of mails marked as seen in the specified
 mailbox or mail spool if not. Only maildir type mailboxes
-are supported, mbox type will return -1.
+are supported, mbox type will return -1. 
+
 .TP 
-\fIshadecolor\fR \fI(color)\fR
-Change shading color
+\fB\*(T<\fBshadecolor\fR\*(T> \fR\*(T<\fB(color)\fR\*(T> 
+Change shading color 
+
 .TP 
-\fIsmapi\fR \fI(ARGS)\fR
+\fB\*(T<\fBsmapi\fR\*(T> \fR\*(T<\fB(ARGS)\fR\*(T> 
 when using smapi, display contents of the
 /sys/devices/platform/smapi directory. ARGS are either
 \&'(FILENAME)' or 'bat (INDEX) (FILENAME)' to display the
 corresponding files' content. This is a very raw method of
 accessing the smapi values. When available, better use one
-of the smapi_* variables instead.
+of the smapi_* variables instead. 
+
 .TP 
-\fIsmapi_bat_bar\fR \fI(INDEX),(height),(width)\fR
+\fB\*(T<\fBsmapi_bat_bar\fR\*(T> \fR\*(T<\fB(INDEX),(height),(width)\fR\*(T> 
 when using smapi, display the remaining capacity
-of the battery with index INDEX as a bar.
+of the battery with index INDEX as a bar. 
+
 .TP 
-\fIsmapi_bat_perc\fR \fI(INDEX)\fR
+\fB\*(T<\fBsmapi_bat_perc\fR\*(T> \fR\*(T<\fB(INDEX)\fR\*(T> 
 when using smapi, display the remaining capacity
 in percent of the battery with index INDEX. This is a
 separate variable because it supports the 'use_spacer'
-configuration option.
+configuration option. 
+
 .TP 
-\fIsmapi_bat_power\fR \fIINDEX\fR
+\fB\*(T<\fBsmapi_bat_power\fR\*(T> \fR\*(T<\fBINDEX\fR\*(T> 
 when using smapi, display the current power of
 the battery with index INDEX in watt. This is a separate
 variable because the original read out value is being
 converted from mW. The sign of the output reflects charging
-(positive) or discharging (negative) state.
+(positive) or discharging (negative) state. 
+
 .TP 
-\fIsmapi_bat_temp\fR \fIINDEX\fR
+\fB\*(T<\fBsmapi_bat_temp\fR\*(T> \fR\*(T<\fBINDEX\fR\*(T> 
 when using smapi, display the current temperature
 of the battery with index INDEX in degree Celsius. This is
 a separate variable because the original read out value is
-being converted from milli degree Celsius.
+being converted from milli degree Celsius. 
+
 .TP 
-\fIsony_fanspeed\fR 
+\fB\*(T<\fBsony_fanspeed\fR\*(T> \fR
 Displays the Sony VAIO fanspeed information if
-sony-laptop kernel support is enabled. Linux only.
+sony-laptop kernel support is enabled. Linux only. 
+
 .TP 
-\fIstippled_hr\fR \fI(space)\fR
-Stippled (dashed) horizontal line
+\fB\*(T<\fBstippled_hr\fR\*(T> \fR\*(T<\fB(space)\fR\*(T> 
+Stippled (dashed) horizontal line 
+
 .TP 
-\fIswap\fR 
-Amount of swap in use
+\fB\*(T<\fBswap\fR\*(T> \fR
+Amount of swap in use 
+
 .TP 
-\fIswapbar\fR \fI(高度),(宽度)\fR
-Bar that shows amount of swap in use
+\fB\*(T<\fBswapbar\fR\*(T> \fR\*(T<\fB(height),(width)\fR\*(T> 
+Bar that shows amount of swap in use 
+
 .TP 
-\fIswapfree\fR 
-Amount of free swap
+\fB\*(T<\fBswapfree\fR\*(T> \fR
+Amount of free swap 
+
 .TP 
-\fIswapmax\fR 
-Total amount of swap
+\fB\*(T<\fBswapmax\fR\*(T> \fR
+Total amount of swap 
+
 .TP 
-\fIswapperc\fR 
-Percentage of swap in use
+\fB\*(T<\fBswapperc\fR\*(T> \fR
+Percentage of swap in use 
+
 .TP 
-\fIsysname\fR 
-System name, Linux for example
+\fB\*(T<\fBsysname\fR\*(T> \fR
+System name, Linux for example 
+
 .TP 
-\fItab\fR \fI(width, (start))\fR
+\fB\*(T<\fBtab\fR\*(T> \fR\*(T<\fB(width, (start))\fR\*(T> 
 Puts a tab of the specified width, starting from
-column 'start'. The unit is pixels for both arguments.
+column 'start'. The unit is pixels for both arguments. 
+
 .TP 
-\fItail\fR \fIlogfile lines (next_check)\fR
+\fB\*(T<\fBtail\fR\*(T> \fR\*(T<\fBlogfile lines (next_check)\fR\*(T> 
 Displays last N lines of supplied text file. The
 file is checked every 'next_check' update. If next_check is
 not supplied, Conky defaults to 2. Max of 30 lines can be
-displayed, or until the text buffer is filled.
+displayed, or until the text buffer is filled. 
+
 .TP 
-\fItcp_portmon\fR \fIport_begin port_end item (index)\fR
+\fB\*(T<\fBtcp_portmon\fR\*(T> \fR\*(T<\fBport_begin port_end item (index)\fR\*(T> 
 TCP port (both IPv6 and IPv4) monitor for
 specified local ports. Port numbers must be in
 the range 1 to 65535. Valid items are:
 
-\fIcount\fR
-\fITotal number of connections in the
-range\fR
-\fIrip\fR
-\fIRemote ip address\fR
-\fIrhost\fR
-\fIRemote host name\fR
-\fIrport\fR
-\fIRemote port number\fR
-\fIrservice\fR
-\fIRemote service name from
-/etc/services\fR
-\fIlip\fR
-\fILocal ip address\fR
-\fIlhost\fR
-\fILocal host name\fR
-\fIlport\fR
-\fILocal port number\fR
-\fIlservice\fR
-\fILocal service name from
-/etc/services\fR
+\fBcount\fR
+\*(T<\fBTotal number of connections in the
+range\fR\*(T>
+.br
+\fBrip\fR
+\*(T<\fBRemote ip address\fR\*(T>
+.br
+\fBrhost\fR
+\*(T<\fBRemote host name\fR\*(T>
+.br
+\fBrport\fR
+\*(T<\fBRemote port number\fR\*(T>
+.br
+\fBrservice\fR
+\*(T<\fBRemote service name from
+/etc/services\fR\*(T>
+.br
+\fBlip\fR
+\*(T<\fBLocal ip address\fR\*(T>
+.br
+\fBlhost\fR
+\*(T<\fBLocal host name\fR\*(T>
+.br
+\fBlport\fR
+\*(T<\fBLocal port number\fR\*(T>
+.br
+\fBlservice\fR
+\*(T<\fBLocal service name from
+/etc/services\fR\*(T>
 
 The connection index provides you with access to
 each connection in the port monitor. The monitor will
@@ -1731,29 +2389,34 @@ omitted. It is required for all other items.
 
 Examples:
 
-\fI${tcp_portmon 6881 6999
+\fB${tcp_portmon 6881 6999
 count}\fR
-\fIDisplays the number of connections in
-the bittorrent port range\fR
-\fI${tcp_portmon 22 22 rip 0}\fR
-\fIDisplays the remote host ip of the
-first sshd connection\fR
-\fI${tcp_portmon 22 22 rip 9}\fR
-\fIDisplays the remote host ip of the
-tenth sshd connection\fR
-\fI${tcp_portmon 1 1024 rhost
+\*(T<\fBDisplays the number of connections in
+the bittorrent port range\fR\*(T>
+.br
+\fB${tcp_portmon 22 22 rip 0}\fR
+\*(T<\fBDisplays the remote host ip of the
+first sshd connection\fR\*(T>
+.br
+\fB${tcp_portmon 22 22 rip 9}\fR
+\*(T<\fBDisplays the remote host ip of the
+tenth sshd connection\fR\*(T>
+.br
+\fB${tcp_portmon 1 1024 rhost
 0}\fR
-\fIDisplays the remote host name of the
-first connection on a privileged port\fR
-\fI${tcp_portmon 1 1024 rport
+\*(T<\fBDisplays the remote host name of the
+first connection on a privileged port\fR\*(T>
+.br
+\fB${tcp_portmon 1 1024 rport
 4}\fR
-\fIDisplays the remote host port of the
-fifth connection on a privileged port\fR
-\fI${tcp_portmon 1 65535 lservice
+\*(T<\fBDisplays the remote host port of the
+fifth connection on a privileged port\fR\*(T>
+.br
+\fB${tcp_portmon 1 65535 lservice
 14}\fR
-\fIDisplays the local service name of the
+\*(T<\fBDisplays the local service name of the
 fifteenth connection in the range of all
-ports\fR
+ports\fR\*(T>
 
 Note that port monitor variables which share the
 same port range actually refer to the same monitor, so
@@ -1762,7 +2425,7 @@ items and different indexes all use the same monitor
 internally. In other words, the program avoids creating
 redundant monitors.
 .TP 
-\fItemplateN\fR \fI(arg1)\fR \fI(arg2)\fR \fI(arg3 ...)\fR
+\fB\*(T<\fBtemplateN\fR\*(T> \fR\*(T<\fB(arg1)\fR\*(T> \*(T<\fB(arg2)\fR\*(T> \*(T<\fB(arg3 ...)\fR\*(T> 
 Evaluate the content of the templateN
 configuration variable (where N is a value between 0
 and 9, inclusively), applying substitutions as
@@ -1779,8 +2442,10 @@ Here are some examples of template
 definitions:
 
 template0 $\e1\e2
+.br
 template1 \e1: ${fs_used \e2} / ${fs_size
 \e2}
+.br
 template2 \e1 \e2
 
 The following list shows sample usage of the
@@ -1793,26 +2458,11 @@ using template
 T}	T{
 same without template
 T}
-T{
-\&.T&
-T}	T{
-T}
-T{
+.T&
 _ _
-T}	T{
-T}
-T{
 l l
-T}	T{
-T}
-T{
 l l
-T}	T{
-T}
-T{
 l l.
-T}	T{
-T}
 T{
 ${template0 node name}
 T}	T{
@@ -1835,7 +2485,7 @@ ${fs_free /} / ${fs_size
 T}
 .TE
 .TP 
-\fItexeci\fR \fIinterval command\fR
+\fB\*(T<\fBtexeci\fR\*(T> \fR\*(T<\fBinterval command\fR\*(T> 
 Runs a command at an interval inside a thread and
 displays the output. Same as $execi, except the command is
 run inside a thread. Use this if you have a slow script to
@@ -1846,149 +2496,184 @@ execute, you should make the interval at least 6 seconds.
 See also $execi. This object will clean up the thread when
 it is destroyed, so it can safely be used in a nested
 fashion, though it may not produce the desired behaviour if
-used this way.
+used this way. 
+
 .TP 
-\fIthreads\fR 
+\fB\*(T<\fBthreads\fR\*(T> \fR
 Total threads
+
 .TP 
-\fItime\fR \fI(format)\fR
+\fB\*(T<\fBtime\fR\*(T> \fR\*(T<\fB(format)\fR\*(T> 
 Local time, see man strftime to get more
-information about format
+information about format 
+
 .TP 
-\fIto_bytes\fR \fIsize\fR
+\fB\*(T<\fBto_bytes\fR\*(T> \fR\*(T<\fBsize\fR\*(T> 
 If 'size' is a number followed by a size-unit
 (kilobyte,mb,GiB,...) then it converts the size to bytes
-and shows it without unit, otherwise it just shows 'size'.
+and shows it without unit, otherwise it just shows 'size'. 
+
 .TP 
-\fItop\fR \fItype num\fR
+\fB\*(T<\fBtop\fR\*(T> \fR\*(T<\fBtype num\fR\*(T> 
 This takes arguments in the form:top (name)
 (number) Basically, processes are ranked from highest to
 lowest in terms of cpu usage, which is what (num)
 represents. The types are: "name", "pid", "cpu", "mem",
 "mem_res", "mem_vsize", "time", "uid", "user", "io_perc", "io_read" and
-"io_write". There can be a max of 10 processes listed.
+"io_write". There can be a max of 10 processes listed. 
+
 .TP 
-\fItop_io\fR \fItype num\fR
+\fB\*(T<\fBtop_io\fR\*(T> \fR\*(T<\fBtype num\fR\*(T> 
 Same as top, except sorted by the amount of I/O
-the process has done during the update interval
+the process has done during the update interval 
+
 .TP 
-\fItop_mem\fR \fItype num\fR
+\fB\*(T<\fBtop_mem\fR\*(T> \fR\*(T<\fBtype num\fR\*(T> 
 Same as top, except sorted by mem usage instead
-of cpu
+of cpu 
+
 .TP 
-\fItop_time\fR \fItype num\fR
+\fB\*(T<\fBtop_time\fR\*(T> \fR\*(T<\fBtype num\fR\*(T> 
 Same as top, except sorted by total CPU time
-instead of current CPU usage
+instead of current CPU usage 
+
 .TP 
-\fItotaldown\fR \fI(net)\fR
+\fB\*(T<\fBtotaldown\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
 Total download, overflows at 4 GB on Linux with
 32-bit arch and there doesn't seem to be a way to know how
 many times it has already done that before conky has
-started.
+started. 
+
 .TP 
-\fItotalup\fR \fI(net)\fR
-Total upload, this one too, may overflow
+\fB\*(T<\fBtotalup\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Total upload, this one too, may overflow 
+
 .TP 
-\fItrashed_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBtrashed_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of mails marked as trashed in the
 specified mailbox or mail spool if not. Only maildir type
-mailboxes are supported, mbox type will return -1.
+mailboxes are supported, mbox type will return -1. 
+
 .TP 
-\fItztime\fR \fI(timezone (format))\fR
+\fB\*(T<\fBtztime\fR\*(T> \fR\*(T<\fB(timezone (format))\fR\*(T> 
 Local time for specified timezone, see man
 strftime to get more information about format. The timezone
 argument is specified in similar fashion as TZ environment
 variable. For hints, look in /usr/share/zoneinfo. e.g.
-US/Pacific, Europe/Zurich, etc.
+US/Pacific, Europe/Zurich, etc. 
+
 .TP 
-\fIgid_name\fR \fIgid\fR
+\fB\*(T<\fBgid_name\fR\*(T> \fR\*(T<\fBgid\fR\*(T> 
 Name of group with this gid
+
 .TP 
-\fIuid_name\fR \fIuid\fR
+\fB\*(T<\fBuid_name\fR\*(T> \fR\*(T<\fBuid\fR\*(T> 
 Username of user with this uid
+
 .TP 
-\fIunflagged_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBunflagged_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of mails not marked as flagged in the
 specified mailbox or mail spool if not. Only maildir type
-mailboxes are supported, mbox type will return -1.
+mailboxes are supported, mbox type will return -1. 
+
 .TP 
-\fIunforwarded_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBunforwarded_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of mails not marked as forwarded in the
 specified mailbox or mail spool if not. Only maildir type
-mailboxes are supported, mbox type will return -1.
+mailboxes are supported, mbox type will return -1. 
+
 .TP 
-\fIunreplied_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBunreplied_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of mails not marked as replied in the
 specified mailbox or mail spool if not. Only maildir type
-mailboxes are supported, mbox type will return -1.
+mailboxes are supported, mbox type will return -1. 
+
 .TP 
-\fIunseen_mails\fR \fI(maildir)\fR \fI(interval)\fR
+\fB\*(T<\fBunseen_mails\fR\*(T> \fR\*(T<\fB(maildir)\fR\*(T> \*(T<\fB(interval)\fR\*(T> 
 Number of new or unseen mails in the specified
 mailbox or mail spool if not. Only maildir type mailboxes
-are supported, mbox type will return -1.
+are supported, mbox type will return -1. 
+
 .TP 
-\fIupdates\fR \fINumber of updates\fR
-for debugging
+\fB\*(T<\fBupdates\fR\*(T> \fR\*(T<\fBNumber of updates\fR\*(T> 
+for debugging 
+
 .TP 
-\fIupspeed\fR \fI(net)\fR
-Upload speed in suitable IEC units
+\fB\*(T<\fBupspeed\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Upload speed in suitable IEC units 
+
 .TP 
-\fIupspeedf\fR \fI(net)\fR
-Upload speed in KiB with one decimal
+\fB\*(T<\fBupspeedf\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Upload speed in KiB with one decimal 
+
 .TP 
-\fIupspeedgraph\fR \fI(netdev) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (-t) (-l)\fR
+\fB\*(T<\fBupspeedgraph\fR\*(T> \fR\*(T<\fB(netdev) (height),(width) (gradient colour 1) (gradient colour 2) (scale) (\-t) (\-l)\fR\*(T> 
 Upload speed graph, colours defined in hex, minus
 the #. If scale is non-zero, it becomes the scale for the
 graph. Uses a logarithmic scale (to see small numbers) when
 you use the -l switch. Takes the switch '-t' to use a
 temperature gradient, which makes the gradient values
 change depending on the amplitude of a particular graph
-value (try it and see).
+value (try it and see). 
+
 .TP 
-\fIuptime\fR 
-Uptime
+\fB\*(T<\fBuptime\fR\*(T> \fR
+Uptime 
+
 .TP 
-\fIuptime_short\fR 
-Uptime in a shorter format
+\fB\*(T<\fBuptime_short\fR\*(T> \fR
+Uptime in a shorter format 
+
 .TP 
-\fIuser_names\fR 
-Lists the names of the users logged in
+\fB\*(T<\fBuser_names\fR\*(T> \fR
+Lists the names of the users logged in 
+
 .TP 
-\fIuser_number\fR 
-Number of users logged in
+\fB\*(T<\fBuser_number\fR\*(T> \fR
+Number of users logged in 
+
 .TP 
-\fIuser_terms\fR 
-Lists the consoles in use
+\fB\*(T<\fBuser_terms\fR\*(T> \fR
+Lists the consoles in use 
+
 .TP 
-\fIuser_times\fR 
-Lists how long users have been logged in for
+\fB\*(T<\fBuser_times\fR\*(T> \fR
+Lists how long users have been logged in for 
+
 .TP 
-\fIuser_time\fR \fIconsole\fR
+\fB\*(T<\fBuser_time\fR\*(T> \fR\*(T<\fBconsole\fR\*(T> 
 Lists how long the user for the given console has been
 logged in for
+
 .TP 
-\fIutime\fR \fI(format)\fR
-Display time in UTC (universal coordinate time).
+\fB\*(T<\fButime\fR\*(T> \fR\*(T<\fB(format)\fR\*(T> 
+Display time in UTC (universal coordinate time). 
+
 .TP 
-\fIvoffset\fR \fI(像素)\fR
-修改垂直偏移 N 像素。负值将造成文本重叠。也请看 $offset。
+\fB\*(T<\fBvoffset\fR\*(T> \fR\*(T<\fB(pixels)\fR\*(T> 
+Change vertical offset by N pixels. Negative
+values will cause text to overlap. See also $offset. 
+
 .TP 
-\fIvoltage_mv\fR \fI(n)\fR
+\fB\*(T<\fBvoltage_mv\fR\*(T> \fR\*(T<\fB(n)\fR\*(T> 
 Returns CPU #n's voltage in mV. CPUs are counted
-from 1. If omitted, the parameter defaults to 1.
+from 1. If omitted, the parameter defaults to 1. 
+
 .TP 
-\fIvoltage_v\fR \fI(n)\fR
+\fB\*(T<\fBvoltage_v\fR\*(T> \fR\*(T<\fB(n)\fR\*(T> 
 Returns CPU #n's voltage in V. CPUs are counted
-from 1. If omitted, the parameter defaults to 1.
+from 1. If omitted, the parameter defaults to 1. 
+
 .TP 
-\fIweather\fR \fIURI locID data_type (interval_in_minutes)\fR
+\fB\*(T<\fBweather\fR\*(T> \fR\*(T<\fBURI locID data_type (interval_in_minutes)\fR\*(T> 
 Download, parse and display METAR data.
 
 For the 'URI', there are two
 possibilities:
 
-〈http://weather.noaa.gov/pub/data/observations/metar/stations/〉
-〈http://xoap.weather.com/weather/local/〉
+http://weather.noaa.gov/pub/data/observations/metar/stations/
+.br
+http://xoap.weather.com/weather/local/
 
 The first one is free to use but the second
 requires you to register and obtain your partner ID and
@@ -2002,47 +2687,56 @@ valid ICAO (see for instance
 https://pilotweb.nas.faa.gov/qryhtml/icao/). For the
 weather.com site this must be a valid location ID (see
 for instance
-〈http://aspnetresources.com/tools/locid.aspx〉).
+http://aspnetresources.com/tools/locid.aspx).
 
 \&'data_type' must be one of the following:
 
-\fIlast_update\fR
+\fBlast_update\fR
 The date and time stamp of the data.
 The result depends on the URI used. For the
 NOAA site it is date (yyyy/mm/dd) and UTC time.
 For the weather.com one it is date
 ([m]m/[d]d/yy) and Local Time of the
 station.
-\fItemperature\fR
+.br
+\fBtemperature\fR
 
 Air temperature (you can use the
 \&'temperature_unit' config setting to change
 units)
-\fIcloud_cover\fR
+.br
+\fBcloud_cover\fR
 
 The highest cloud cover status
-\fIpressure\fR
+.br
+\fBpressure\fR
 
 Air pressure in millibar
-\fIwind_speed\fR
+.br
+\fBwind_speed\fR
 
 Wind speed in km/h
-\fIwind_dir\fR
+.br
+\fBwind_dir\fR
 
 Wind direction
-\fIwind_dir_DEG\fR
+.br
+\fBwind_dir_DEG\fR
 
 Compass wind direction
-\fIhumidity\fR
+.br
+\fBhumidity\fR
 
 Relative humidity in %
-\fIweather\fR
+.br
+\fBweather\fR
 
 Any relevant weather event (rain, snow,
 etc.). This is not used if you are querying the
 weather.com site since this data is aggregated
 into the cloud_cover one
-\fIicon\fR
+.br
+\fBicon\fR
 
 Weather icon (only for
 www.weather.com). Can be used together with the
@@ -2059,12 +2753,12 @@ will run for each URI specified.
 Note that these variables are still EXPERIMENTAL
 and can be subject to many future changes.
 .TP 
-\fIweather_forecast\fR \fIURI locID day data_type (interval_in_minutes)\fR
+\fB\*(T<\fBweather_forecast\fR\*(T> \fR\*(T<\fBURI locID day data_type (interval_in_minutes)\fR\*(T> 
 Download, parse and display weather forecast data
 for a given day (daytime only).
 
 For the 'URI', for the time being only
-〈http://xoap.weather.com/weather/local/〉 is
+http://xoap.weather.com/weather/local/ is
 supported. See 'weather' above for details of usage
 
 \&'locID', see 'weather' above.
@@ -2074,31 +2768,45 @@ after tomorrow).
 
 \&'data_type' must be one of the following:
 
-\fIday\fR
-\fIDay of the week\fR
-\fIdate\fR
-\fIDate, in the form MMM DD (ie. Jul 14)\fR
-\fIlow\fR
-\fI最小温度。(您可以使用 'temperature_unit' 配置设置来修改温度单位)\fR
-\fIhi\fR
-\fI最大温度。(您可使用 'temperature_unit' 配置设置来修改温度单位)\fR
-\fIicon\fR
-\fIWeather icon. Can be used together with the
+\fBday\fR
+\*(T<\fBDay of the week\fR\*(T>
+.br
+\fBdate\fR
+\*(T<\fBDate, in the form MMM DD (ie. Jul 14)\fR\*(T>
+.br
+\fBlow\fR
+\*(T<\fBMinimun temperature (you can use the
+\&'temperature_unit' config setting to change
+units)\fR\*(T>
+.br
+\fBhi\fR
+\*(T<\fBMaximum temperature (you can use the
+\&'temperature_unit' config setting to change
+units)\fR\*(T>
+.br
+\fBicon\fR
+\*(T<\fBWeather icon. Can be used together with the
 icon kit provided upon registering to the weather.com
-service\fR
-\fIforecast\fR
-\fIWeather forecast (sunny, rainy, etc.)\fR
-\fIwind_speed\fR
-\fIWind speed in km/h\fR
-\fIwind_dir\fR
-\fIWind direction\fR
-\fIwind_dir_DEG\fR
-\fICompass wind direction\fR
-\fIhumidity\fR
-\fIRelative humidity in %\fR
-\fIprecipitation\fR
-\fIProbability of having a
-precipitation (in %)\fR
+service\fR\*(T>
+.br
+\fBforecast\fR
+\*(T<\fBWeather forecast (sunny, rainy, etc.)\fR\*(T>
+.br
+\fBwind_speed\fR
+\*(T<\fBWind speed in km/h\fR\*(T>
+.br
+\fBwind_dir\fR
+\*(T<\fBWind direction\fR\*(T>
+.br
+\fBwind_dir_DEG\fR
+\*(T<\fBCompass wind direction\fR\*(T>
+.br
+\fBhumidity\fR
+\*(T<\fBRelative humidity in %\fR\*(T>
+.br
+\fBprecipitation\fR
+\*(T<\fBProbability of having a
+precipitation (in %)\fR\*(T>
 
 \&'delay_in_minutes' (optional, default 210) cannot
 be lower than 210 min.
@@ -2111,92 +2819,120 @@ protocol that Curl supports.
 Note that these variables are still EXPERIMENTAL
 and can be subject to many future changes.
 .TP 
-\fIwireless_ap\fR \fI(net)\fR
-Wireless access point MAC address (Linux only)
+\fB\*(T<\fBwireless_ap\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Wireless access point MAC address (Linux only) 
+
 .TP 
-\fIwireless_bitrate\fR \fI(net)\fR
-Wireless bitrate (ie 11 Mb/s) (Linux only)
+\fB\*(T<\fBwireless_bitrate\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Wireless bitrate (ie 11 Mb/s) (Linux only) 
+
 .TP 
-\fIwireless_essid\fR \fI(net)\fR
-Wireless access point ESSID (Linux only)
+\fB\*(T<\fBwireless_essid\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Wireless access point ESSID (Linux only) 
+
 .TP 
-\fIwireless_link_bar\fR \fI(height),(width) (net)\fR
-Wireless link quality bar (Linux only)
+\fB\*(T<\fBwireless_link_bar\fR\*(T> \fR\*(T<\fB(height),(width) (net)\fR\*(T> 
+Wireless link quality bar (Linux only) 
+
 .TP 
-\fIwireless_link_qual\fR \fI(net)\fR
-Wireless link quality (Linux only)
+\fB\*(T<\fBwireless_link_qual\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Wireless link quality (Linux only) 
+
 .TP 
-\fIwireless_link_qual_max\fR \fI(net)\fR
-Wireless link quality maximum value (Linux only)
+\fB\*(T<\fBwireless_link_qual_max\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Wireless link quality maximum value (Linux only) 
+
 .TP 
-\fIwireless_link_qual_perc\fR \fI(net)\fR
-Wireless link quality in percents (Linux only)
+\fB\*(T<\fBwireless_link_qual_perc\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
+Wireless link quality in percents (Linux only) 
+
 .TP 
-\fIwireless_mode\fR \fI(net)\fR
+\fB\*(T<\fBwireless_mode\fR\*(T> \fR\*(T<\fB(net)\fR\*(T> 
 Wireless mode (Managed/Ad-Hoc/Master) (Linux
-only)
+only) 
+
 .TP 
-\fIwords\fR \fItextfile\fR
-Displays the number of words in the given file
+\fB\*(T<\fBwords\fR\*(T> \fR\*(T<\fBtextfile\fR\*(T> 
+Displays the number of words in the given file 
+
 .TP 
-\fIxmms2_album\fR 
-Album in current XMMS2 song
+\fB\*(T<\fBxmms2_album\fR\*(T> \fR
+Album in current XMMS2 song 
+
 .TP 
-\fIxmms2_artist\fR 
-Artist in current XMMS2 song
+\fB\*(T<\fBxmms2_artist\fR\*(T> \fR
+Artist in current XMMS2 song 
+
 .TP 
-\fIxmms2_bar\fR \fI(高度),(宽度)\fR
-Bar of XMMS2's progress
+\fB\*(T<\fBxmms2_bar\fR\*(T> \fR\*(T<\fB(height),(width)\fR\*(T> 
+Bar of XMMS2's progress 
+
 .TP 
-\fIxmms2_bitrate\fR 
-Bitrate of current song
+\fB\*(T<\fBxmms2_bitrate\fR\*(T> \fR
+Bitrate of current song 
+
 .TP 
-\fIxmms2_comment\fR 
-Comment in current XMMS2 song
+\fB\*(T<\fBxmms2_comment\fR\*(T> \fR
+Comment in current XMMS2 song 
+
 .TP 
-\fIxmms2_date\fR 
-Returns song's date.
+\fB\*(T<\fBxmms2_date\fR\*(T> \fR
+Returns song's date. 
+
 .TP 
-\fIxmms2_duration\fR 
-Duration of current song
+\fB\*(T<\fBxmms2_duration\fR\*(T> \fR
+Duration of current song 
+
 .TP 
-\fIxmms2_elapsed\fR 
-Song's elapsed time
+\fB\*(T<\fBxmms2_elapsed\fR\*(T> \fR
+Song's elapsed time 
+
 .TP 
-\fIxmms2_genre\fR 
-Genre in current XMMS2 song
+\fB\*(T<\fBxmms2_genre\fR\*(T> \fR
+Genre in current XMMS2 song 
+
 .TP 
-\fIxmms2_id\fR 
-XMMS2 id of current song
+\fB\*(T<\fBxmms2_id\fR\*(T> \fR
+XMMS2 id of current song 
+
 .TP 
-\fIxmms2_percent\fR 
-Percent of song's progress
+\fB\*(T<\fBxmms2_percent\fR\*(T> \fR
+Percent of song's progress 
+
 .TP 
-\fIxmms2_playlist\fR 
-Returns the XMMS2 playlist.
+\fB\*(T<\fBxmms2_playlist\fR\*(T> \fR
+Returns the XMMS2 playlist. 
+
 .TP 
-\fIxmms2_size\fR 
-Size of current song
+\fB\*(T<\fBxmms2_size\fR\*(T> \fR
+Size of current song 
+
 .TP 
-\fIxmms2_smart\fR 
+\fB\*(T<\fBxmms2_smart\fR\*(T> \fR
 Prints the song name in either the form "artist -
-title" or file name, depending on whats available
+title" or file name, depending on whats available 
+
 .TP 
-\fIxmms2_status\fR 
+\fB\*(T<\fBxmms2_status\fR\*(T> \fR
 XMMS2 status (Playing, Paused, Stopped, or
-Disconnected)
+Disconnected) 
+
 .TP 
-\fIxmms2_timesplayed\fR 
-Number of times a song was played (presumably).
+\fB\*(T<\fBxmms2_timesplayed\fR\*(T> \fR
+Number of times a song was played (presumably). 
+
 .TP 
-\fIxmms2_title\fR 
-Title in current XMMS2 song
+\fB\*(T<\fBxmms2_title\fR\*(T> \fR
+Title in current XMMS2 song 
+
 .TP 
-\fIxmms2_tracknr\fR 
-Track number in current XMMS2 song
+\fB\*(T<\fBxmms2_tracknr\fR\*(T> \fR
+Track number in current XMMS2 song 
+
 .TP 
-\fIxmms2_url\fR 
-Full path to current song
+\fB\*(T<\fBxmms2_url\fR\*(T> \fR
+Full path to current song 
+
 .SH "LUA API"
 Conky features a Lua Programming API, and also ships with Lua
 bindings for some useful libraries. Conky defines certain global
@@ -2204,7 +2940,7 @@ functions and variables which can be accessed from Lua code running
 in Conky.
 .PP
 To use Lua Conky, you first need to make sure you have a version of Conky
-with Lua support enabled (“conky -v” will report this). Scripts
+with Lua support enabled (``conky -v'' will report this). Scripts
 must first be loaded using the lua_load configuration option. You
 then call functions in Lua via Conky's $lua, $lua_read, and Lua
 hooks.
@@ -2220,128 +2956,167 @@ NOTE: In order to accommodate certain features in the cairo
 library's API, Conky will export a few additional functions for the
 creation of certain structures. These are documented below.
 .TP 
-\fIconky_parse(string)\fR \fIfunction\fR
+\fB\*(T<\fBconky_parse(string)\fR\*(T> \fR\*(T<\fBfunction\fR\*(T> 
 This function takes a string that is evaluated as
 per Conky's TEXT section, and then returns a string
 with the result.
 .TP 
-\fIconky_set_update_interval(数字)\fR \fIfunction\fR
+\fB\*(T<\fBconky_set_update_interval(number)\fR\*(T> \fR\*(T<\fBfunction\fR\*(T> 
 Sets Conky's update interval (in seconds) to
 \&'number'.
 .TP 
-\fIconky_window\fR \fItable\fR
+\fB\*(T<\fBconky_window\fR\*(T> \fR\*(T<\fBtable\fR\*(T> 
 This table contains some information about
 Conky's window. The following table describes the
 values contained:
 
-\fIdrawable\fR
-\fIWindow's drawable (Xlib Drawable),
+\fBdrawable\fR
+\*(T<\fBWindow's drawable (Xlib Drawable),
 requires Lua extras enabled at compile
-time.\fR
-\fIvisual\fR
-\fIWindow's visual (Xlib Visual), requires
-Lua extras enabled at compile time.\fR
-\fIdisplay\fR
-\fIWindow's display (Xlib Display),
+time.\fR\*(T>
+.br
+\fBvisual\fR
+\*(T<\fBWindow's visual (Xlib Visual), requires
+Lua extras enabled at compile time.\fR\*(T>
+.br
+\fBdisplay\fR
+\*(T<\fBWindow's display (Xlib Display),
 requires Lua extras enabled at compile
-time.\fR
-\fI宽度\fR
-\fI以像素计的窗口宽度。\fR
-\fIheight\fR
-\fI以像素计的窗口高度。\fR
-\fIborder_inner_margin\fR
-\fI以像素计的窗口内边框 margin。\fR
-\fIborder_outer_margin\fR
-\fI以像计的窗口外边框 margin。\fR
-\fIborder_width\fR
-\fI以像素计的窗口边框宽度。\fR
-\fItext_start_x\fR
-\fIThe x component of the starting
-coordinate of text drawing.\fR
-\fItext_start_y\fR
-\fIThe y component of the starting
-coordinate of text drawing.\fR
-\fItext_width\fR
-\fIThe width of the text drawing
-region.\fR
-\fItext_height\fR
-\fIThe height of the text drawing
-region.\fR
+time.\fR\*(T>
+.br
+\fBwidth\fR
+\*(T<\fBWindow width (in pixels).\fR\*(T>
+.br
+\fBheight\fR
+\*(T<\fBWindow height (in pixels).\fR\*(T>
+.br
+\fBborder_inner_margin\fR
+\*(T<\fBWindow's inner border margin (in
+pixels).\fR\*(T>
+.br
+\fBborder_outer_margin\fR
+\*(T<\fBWindow's outer border margin (in
+pixels).\fR\*(T>
+.br
+\fBborder_width\fR
+\*(T<\fBWindow's border width (in
+pixels).\fR\*(T>
+.br
+\fBtext_start_x\fR
+\*(T<\fBThe x component of the starting
+coordinate of text drawing.\fR\*(T>
+.br
+\fBtext_start_y\fR
+\*(T<\fBThe y component of the starting
+coordinate of text drawing.\fR\*(T>
+.br
+\fBtext_width\fR
+\*(T<\fBThe width of the text drawing
+region.\fR\*(T>
+.br
+\fBtext_height\fR
+\*(T<\fBThe height of the text drawing
+region.\fR\*(T>
 
 NOTE: This table is only defined when X support
 is enabled.
 .TP 
-\fIconky_info\fR \fItable\fR
+\fB\*(T<\fBconky_info\fR\*(T> \fR\*(T<\fBtable\fR\*(T> 
 This table contains some information about
 Conky's internal data. The following table describes
 the values contained:
 
-\fIupdate_interval\fR
-\fIConky's update interval (in
-seconds).\fR
-\fIuptime\fR
-\fISystem uptime, in seconds.\fR
+\fBupdate_interval\fR
+\*(T<\fBConky's update interval (in
+seconds).\fR\*(T>
+.br
+\fBuptime\fR
+\*(T<\fBSystem uptime, in seconds.\fR\*(T>
 .TP 
-\fIconky_build_info\fR \fIstring\fR
+\fB\*(T<\fBconky_build_info\fR\*(T> \fR\*(T<\fBstring\fR\*(T> 
 A string containing the build info for this
 particular instance of Conky, including the version,
 build date, and architecture.
 .TP 
-\fIconky_build_date\fR \fIstring\fR
+\fB\*(T<\fBconky_build_date\fR\*(T> \fR\*(T<\fBstring\fR\*(T> 
 A string containing the build date for this
 particular instance of Conky.
 .TP 
-\fIconky_build_arch\fR \fIstring\fR
+\fB\*(T<\fBconky_build_arch\fR\*(T> \fR\*(T<\fBstring\fR\*(T> 
 A string containing the build architecture for
 this particular instance of Conky.
 .TP 
-\fIconky_version\fR \fIstring\fR
+\fB\*(T<\fBconky_version\fR\*(T> \fR\*(T<\fBstring\fR\*(T> 
 A string containing the version of the current
 instance of Conky.
 .TP 
-\fIconky_config\fR \fIstring\fR
+\fB\*(T<\fBconky_config\fR\*(T> \fR\*(T<\fBstring\fR\*(T> 
 A string containing the path of the current Conky
 configuration file.
 .TP 
-\fIcairo_text_extents_t:create()\fR \fIfunction\fR
+\fB\*(T<\fBcairo_text_extents_t:create()\fR\*(T> \fR\*(T<\fBfunction\fR\*(T> 
 Call this function to return a new cairo_text_extents_t structure. A creation function for this structure is not provided by the cairo API. After calling this, you should use tolua.takeownership() on the return value to ensure ownership is passed properly.
 .TP 
-\fIcairo_font_extents_t:create()\fR \fIfunction\fR
+\fB\*(T<\fBcairo_font_extents_t:create()\fR\*(T> \fR\*(T<\fBfunction\fR\*(T> 
 Call this function to return a new cairo_font_extents_t structure. A creation function for this structure is not provided by the cairo API. After calling this, you should use tolua.takeownership() on the return value to ensure ownership is passed properly.
 .TP 
-\fIcairo_matrix_t:create()\fR \fIfunction\fR
+\fB\*(T<\fBcairo_matrix_t:create()\fR\*(T> \fR\*(T<\fBfunction\fR\*(T> 
 Call this function to return a new cairo_matrix_t structure. A creation function for this structure is not provided by the cairo API. After calling this, you should use tolua.takeownership() on the return value to ensure ownership is passed properly.
-.SH 范例
+.SH EXAMPLES
 .TP 
-conky \*(T<\fB\-t '${time %D %H:%M}' \-o \-u 30\fR\*(T>
-在它自己的窗口中启动 Conky，并带有文本格式的日期和时钟，以 30 秒为更新周期。
+\*(T<conky\*(T> \*(T<\fB\-t '${time %D %H:%M}' \-o \-u 30\fR\*(T> 
+Start Conky in its own window with date
+and clock as text and 30 sec update
+interval.
 .TP 
-conky \*(T<\fB\-a top_left \-x 5 \-y 500 \-d\fR\*(T>
-在位置 (5,500) 启动 Conky 并放其到后台。
+\*(T<conky\*(T> \*(T<\fB\-a top_left \-x 5 \-y 500 \-d\fR\*(T> 
+Start Conky to background at coordinates
+(5, 500).
 .TP 
-conky \*(T<\fB\-C > ~/.conkyrc\fR\*(T>
-不启动 Conky，而是让它把内置默认配置文件输出到 ~/.conkyrc 以供后续自定义用。
-.SH 文件
+\*(T<conky\*(T> \*(T<\fB\-C > ~/.conkyrc\fR\*(T> 
+Do not start Conky, but have it output
+the builtin default config file to ~/.conkyrc for
+later customising.
+.SH FILES
 .TP 
-\fI${sysconfdir}/conky/conky.conf\fR
-默认系统级别配置文件。${sysconfdir} 的值取决于编译时的选项 (多数是 /etc)。
+\*(T<\fI${sysconfdir}/conky/conky.conf\fR\*(T> 
+Default system-wide configuration file.
+The value of ${sysconfdir} depends on the
+compile-time options (most likely /etc).
 .TP 
-\*(T<\fI~/.conkyrc\fR\*(T>
-默认个人配置文件。
-.SH 故障
-直接画到桌面环境根窗口或其它桌面窗口上不是对全部窗口管理器都有效。尤其是 GNOME 不行，也有报告说 KDE 也不行。可使用 gconf-editor 程序禁用 Nautilus 往桌面上画图。在 /apps/nautilus/preferences/ 里取消勾选 show_desktop 即可。Conky 中有一个 -w 切换可以设置一些指定窗口 ID。您在查找要画到的窗口时可能会觉得 xwininfo -tree 挺有用的。您也可以是用 -o 参数来让 Conky 创建它自己的窗口。若您尝试了在其自身窗口中运行 Conky，请确保读完了 own_window_type 设置并做了点实验。
-.SH 参考
-〈〉
-.URL http://conky.sourceforge.net/ http://conky.sourceforge.net/〉
+\*(T<\fI~/.conkyrc\fR\*(T> 
+Default personal configuration
+file.
+.SH BUGS
+Drawing to root or some other desktop window directly
+doesn't work with all window managers. Especially doesn't
+work well with Gnome and it has been reported that it
+doesn't work with KDE either. Nautilus can be disabled from
+drawing to desktop with program gconf-editor. Uncheck
+show_desktop in /apps/nautilus/preferences/. There is -w
+switch in Conky to set some specific window id. You might
+find xwininfo -tree useful to find the window to draw to.
+You can also use -o argument which makes Conky to create
+its own window. If you do try running Conky in its own
+window, be sure to read up on the own_window_type settings
+and experiment.
+.SH "SEE ALSO"
+\(lahttp://conky.sourceforge.net/\(ra
 .PP
-〈〉
-.URL http://www.sourceforge.net/projects/conky http://www.sourceforge.net/projects/conky〉
+\(lahttp://www.sourceforge.net/projects/conky\(ra
 .PP
-〈〉
-.URL http://wiki.conky.be http://wiki.conky.be〉
+\(lahttp://wiki.conky.be\(ra
 .PP
-irc.freenode.net 上的 #conky 频道
-.SH 版权
-Copyright (c) 2005-2010 Brenden Matthews, Philip Kovacs 等人。任何原始的torsmo 代码均以 BSD 许可证授权 (副本见 LICENSE.BSD)。全部自派生 torsmo 后所写代码均以 GPL 授权 (副本见 LICENSE.GPL)，除了特别标明之处 (诸如 portmon 代码、时控线程代码、和 audacious 代码以 LGPL 授权，prss 以 MIT 风格的许可证授权)。
-.SH 作者
-Conky 开发团队 (完整贡献者列表请见 AUTHORS)。
+#conky on irc.freenode.net
+.SH COPYING
+Copyright (c) 2005-2010 Brenden Matthews, Philip
+Kovacs, et. al. Any original torsmo code is licensed under
+the BSD license (see LICENSE.BSD for a copy). All code
+written since the fork of torsmo is licensed under the GPL
+(see LICENSE.GPL for a copy), except where noted
+differently (such as in portmon code, timed thread code,
+and audacious code which are LGPL, and prss which is an
+MIT-style license).
+.SH AUTHORS
+The Conky dev team (see AUTHORS for a full list of
+contributors).
