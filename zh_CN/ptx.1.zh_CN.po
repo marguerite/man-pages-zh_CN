@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,7 +35,10 @@ msgid "produce a permuted index of file contents"
 msgstr ""
 
 #: ptx.1.xml:19(para)
-msgid "<command>ptx</command> [<emphasis remap=\"I\">OPTION</emphasis>]... [<emphasis remap=\"I\">INPUT</emphasis>]... <emphasis remap=\"I\">(without -G)</emphasis>"
+msgid ""
+"<command>ptx</command> [<emphasis remap=\"I\">OPTION</emphasis>]... "
+"[<emphasis remap=\"I\">INPUT</emphasis>]... <emphasis remap=\"I\">(without -"
+"G)</emphasis>"
 msgstr ""
 
 #: ptx.1.xml:23(arg)
@@ -59,11 +63,13 @@ msgstr ""
 
 #. Add any additional description here
 #: ptx.1.xml:33(para)
-msgid "Output a permuted index, including context, of the words in the input files."
+msgid ""
+"Output a permuted index, including context, of the words in the input files."
 msgstr ""
 
 #: ptx.1.xml:35(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: ptx.1.xml:38(term)
@@ -83,7 +89,9 @@ msgid "behave more like System V 'ptx'"
 msgstr ""
 
 #: ptx.1.xml:50(term)
-msgid "<option>-F</option>, <option>--flag-truncation</option>=<emphasis remap=\"I\">STRING</emphasis>"
+msgid ""
+"<option>-F</option>, <option>--flag-truncation</option>=<emphasis remap=\"I"
+"\">STRING</emphasis>"
 msgstr ""
 
 #: ptx.1.xml:52(para)
@@ -91,7 +99,9 @@ msgid "use STRING for flagging line truncations"
 msgstr ""
 
 #: ptx.1.xml:56(term)
-msgid "<option>-M</option>, <option>--macro-name</option>=<emphasis remap=\"I\">STRING</emphasis>"
+msgid ""
+"<option>-M</option>, <option>--macro-name</option>=<emphasis remap=\"I"
+"\">STRING</emphasis>"
 msgstr ""
 
 #: ptx.1.xml:58(para)
@@ -99,7 +109,9 @@ msgid "macro name to use instead of 'xx'"
 msgstr ""
 
 #: ptx.1.xml:62(term)
-msgid "<option>-O</option>, <option>--format</option>=<emphasis remap=\"I\">roff</emphasis>"
+msgid ""
+"<option>-O</option>, <option>--format</option>=<emphasis remap=\"I\">roff</"
+"emphasis>"
 msgstr ""
 
 #: ptx.1.xml:64(para)
@@ -115,7 +127,9 @@ msgid "put references at right, not counted in <option>-w</option>"
 msgstr ""
 
 #: ptx.1.xml:74(term)
-msgid "<option>-S</option>, <option>--sentence-regexp</option>=<emphasis remap=\"I\">REGEXP</emphasis>"
+msgid ""
+"<option>-S</option>, <option>--sentence-regexp</option>=<emphasis remap=\"I"
+"\">REGEXP</emphasis>"
 msgstr ""
 
 #: ptx.1.xml:76(para)
@@ -123,7 +137,9 @@ msgid "for end of lines or end of sentences"
 msgstr ""
 
 #: ptx.1.xml:80(term)
-msgid "<option>-T</option>, <option>--format</option>=<emphasis remap=\"I\">tex</emphasis>"
+msgid ""
+"<option>-T</option>, <option>--format</option>=<emphasis remap=\"I\">tex</"
+"emphasis>"
 msgstr ""
 
 #: ptx.1.xml:82(para)
@@ -131,7 +147,9 @@ msgid "generate output as TeX directives"
 msgstr ""
 
 #: ptx.1.xml:86(term)
-msgid "<option>-W</option>, <option>--word-regexp</option>=<emphasis remap=\"I\">REGEXP</emphasis>"
+msgid ""
+"<option>-W</option>, <option>--word-regexp</option>=<emphasis remap=\"I"
+"\">REGEXP</emphasis>"
 msgstr ""
 
 #: ptx.1.xml:88(para)
@@ -139,7 +157,9 @@ msgid "use REGEXP to match each keyword"
 msgstr ""
 
 #: ptx.1.xml:92(term)
-msgid "<option>-b</option>, <option>--break-file</option>=<emphasis remap=\"I\">FILE</emphasis>"
+msgid ""
+"<option>-b</option>, <option>--break-file</option>=<emphasis remap=\"I"
+"\">FILE</emphasis>"
 msgstr ""
 
 #: ptx.1.xml:94(para)
@@ -155,7 +175,9 @@ msgid "fold lower case to upper case for sorting"
 msgstr ""
 
 #: ptx.1.xml:104(term)
-msgid "<option>-g</option>, <option>--gap-size</option>=<emphasis remap=\"I\">NUMBER</emphasis>"
+msgid ""
+"<option>-g</option>, <option>--gap-size</option>=<emphasis remap=\"I"
+"\">NUMBER</emphasis>"
 msgstr ""
 
 #: ptx.1.xml:106(para)
@@ -163,7 +185,9 @@ msgid "gap size in columns between output fields"
 msgstr ""
 
 #: ptx.1.xml:110(term)
-msgid "<option>-i</option>, <option>--ignore-file</option>=<emphasis remap=\"I\">FILE</emphasis>"
+msgid ""
+"<option>-i</option>, <option>--ignore-file</option>=<emphasis remap=\"I"
+"\">FILE</emphasis>"
 msgstr ""
 
 #: ptx.1.xml:112(para)
@@ -171,7 +195,9 @@ msgid "read ignore word list from FILE"
 msgstr ""
 
 #: ptx.1.xml:116(term)
-msgid "<option>-o</option>, <option>--only-file</option>=<emphasis remap=\"I\">FILE</emphasis>"
+msgid ""
+"<option>-o</option>, <option>--only-file</option>=<emphasis remap=\"I"
+"\">FILE</emphasis>"
 msgstr ""
 
 #: ptx.1.xml:118(para)
@@ -187,11 +213,14 @@ msgid "first field of each line is a reference"
 msgstr ""
 
 #: ptx.1.xml:126(para)
-msgid "<option>-t</option>, <option>--typeset-mode</option> - not implemented -"
+msgid ""
+"<option>-t</option>, <option>--typeset-mode</option> - not implemented -"
 msgstr ""
 
 #: ptx.1.xml:130(term)
-msgid "<option>-w</option>, <option>--width</option>=<emphasis remap=\"I\">NUMBER</emphasis>"
+msgid ""
+"<option>-w</option>, <option>--width</option>=<emphasis remap=\"I\">NUMBER</"
+"emphasis>"
 msgstr ""
 
 #: ptx.1.xml:132(para)
@@ -215,11 +244,16 @@ msgid "output version information and exit"
 msgstr ""
 
 #: ptx.1.xml:146(para)
-msgid "With no FILE, or when FILE is -, read standard input. Default is '-F /'."
+msgid ""
+"With no FILE, or when FILE is -, read standard input. Default is '-F /'."
 msgstr ""
 
 #: ptx.1.xml:148(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report ptx translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"ptx translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: ptx.1.xml:155(title)
@@ -235,7 +269,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: ptx.1.xml:160(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: ptx.1.xml:167(title)
@@ -243,7 +282,10 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: ptx.1.xml:168(para)
-msgid "The full documentation for <command>ptx</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>ptx</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>ptx</command> is maintained as a Texinfo "
+"manual. If the <emphasis remap=\"B\">info</emphasis> and <command>ptx</"
+"command> programs are properly installed at your site, the command"
 msgstr ""
 
 #: ptx.1.xml:176(emphasis)
@@ -258,4 +300,3 @@ msgstr ""
 #: ptx.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

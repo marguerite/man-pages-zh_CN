@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +26,8 @@ msgstr ""
 msgid "GNU coreutils 8.22"
 msgstr ""
 
-#: chown.1.xml:14(refname) chown.1.xml:20(command) chown.1.xml:26(command) chown.1.xml:210(refentrytitle)
+#: chown.1.xml:14(refname) chown.1.xml:20(command) chown.1.xml:26(command)
+#: chown.1.xml:210(refentrytitle)
 msgid "chown"
 msgstr ""
 
@@ -62,7 +64,20 @@ msgid "DESCRIPTION"
 msgstr ""
 
 #: chown.1.xml:36(para)
-msgid "This manual page documents the GNU version of <command>chown</command>. <command>chown</command> changes the user and/or group ownership of each given file. If only an owner (a user name or numeric user ID) is given, that user is made the owner of each given file, and the files' group is not changed. If the owner is followed by a colon and a group name (or numeric group ID), with no spaces between them, the group ownership of the files is changed as well. If a colon but no group name follows the user name, that user is made the owner of the files and the group of the files is changed to that user's login group. If the colon and group are given, but the owner is omitted, only the group of the files is changed; in this case, <command>chown</command> performs the same function as <emphasis remap=\"B\">chgrp</emphasis>. If only a colon is given, or if the entire operand is empty, neither the owner nor the group is changed."
+msgid ""
+"This manual page documents the GNU version of <command>chown</command>. "
+"<command>chown</command> changes the user and/or group ownership of each "
+"given file. If only an owner (a user name or numeric user ID) is given, that "
+"user is made the owner of each given file, and the files' group is not "
+"changed. If the owner is followed by a colon and a group name (or numeric "
+"group ID), with no spaces between them, the group ownership of the files is "
+"changed as well. If a colon but no group name follows the user name, that "
+"user is made the owner of the files and the group of the files is changed to "
+"that user's login group. If the colon and group are given, but the owner is "
+"omitted, only the group of the files is changed; in this case, "
+"<command>chown</command> performs the same function as <emphasis remap=\"B"
+"\">chgrp</emphasis>. If only a colon is given, or if the entire operand is "
+"empty, neither the owner nor the group is changed."
 msgstr ""
 
 #: chown.1.xml:57(title)
@@ -70,7 +85,10 @@ msgid "OPTIONS"
 msgstr ""
 
 #: chown.1.xml:58(para)
-msgid "Change the owner and/or group of each FILE to OWNER and/or GROUP. With <option>--reference</option>, change the owner and group of each FILE to those of RFILE."
+msgid ""
+"Change the owner and/or group of each FILE to OWNER and/or GROUP. With "
+"<option>--reference</option>, change the owner and group of each FILE to "
+"those of RFILE."
 msgstr ""
 
 #: chown.1.xml:62(term)
@@ -82,7 +100,8 @@ msgid "like verbose but report only when a change is made"
 msgstr ""
 
 #: chown.1.xml:68(term)
-msgid "<option>-f</option>, <option>--silent</option>, <option>--quiet</option>"
+msgid ""
+"<option>-f</option>, <option>--silent</option>, <option>--quiet</option>"
 msgstr ""
 
 #: chown.1.xml:70(para)
@@ -102,7 +121,9 @@ msgid "--dereference"
 msgstr ""
 
 #: chown.1.xml:82(para)
-msgid "affect the referent of each symbolic link (this is the default), rather than the symbolic link itself"
+msgid ""
+"affect the referent of each symbolic link (this is the default), rather than "
+"the symbolic link itself"
 msgstr ""
 
 #: chown.1.xml:87(term)
@@ -110,15 +131,22 @@ msgid "<option>-h</option>, <option>--no-dereference</option>"
 msgstr ""
 
 #: chown.1.xml:89(para)
-msgid "affect symbolic links instead of any referenced file (useful only on systems that can change the ownership of a symlink)"
+msgid ""
+"affect symbolic links instead of any referenced file (useful only on systems "
+"that can change the ownership of a symlink)"
 msgstr ""
 
 #: chown.1.xml:95(term)
-msgid "<option>--from</option>=<emphasis remap=\"I\">CURRENT_OWNER</emphasis>:CURRENT_GROUP"
+msgid ""
+"<option>--from</option>=<emphasis remap=\"I\">CURRENT_OWNER</emphasis>:"
+"CURRENT_GROUP"
 msgstr ""
 
 #: chown.1.xml:97(para)
-msgid "change the owner and/or group of each file only if its current owner and/or group match those specified here. Either may be omitted, in which case a match is not required for the omitted attribute"
+msgid ""
+"change the owner and/or group of each file only if its current owner and/or "
+"group match those specified here. Either may be omitted, in which case a "
+"match is not required for the omitted attribute"
 msgstr ""
 
 #: chown.1.xml:104(option)
@@ -154,7 +182,10 @@ msgid "operate on files and directories recursively"
 msgstr ""
 
 #: chown.1.xml:127(para)
-msgid "The following options modify how a hierarchy is traversed when the <option>-R</option> option is also specified. If more than one is specified, only the final one takes effect."
+msgid ""
+"The following options modify how a hierarchy is traversed when the <option>-"
+"R</option> option is also specified. If more than one is specified, only the "
+"final one takes effect."
 msgstr ""
 
 #: chown.1.xml:133(option)
@@ -162,7 +193,8 @@ msgid "-H"
 msgstr ""
 
 #: chown.1.xml:135(para)
-msgid "if a command line argument is a symbolic link to a directory, traverse it"
+msgid ""
+"if a command line argument is a symbolic link to a directory, traverse it"
 msgstr ""
 
 #: chown.1.xml:140(option)
@@ -198,7 +230,10 @@ msgid "output version information and exit"
 msgstr ""
 
 #: chown.1.xml:163(para)
-msgid "Owner is unchanged if missing. Group is unchanged if missing, but changed to login group if implied by a ':' following a symbolic OWNER. OWNER and GROUP may be numeric as well as symbolic."
+msgid ""
+"Owner is unchanged if missing. Group is unchanged if missing, but changed to "
+"login group if implied by a ':' following a symbolic OWNER. OWNER and GROUP "
+"may be numeric as well as symbolic."
 msgstr ""
 
 #: chown.1.xml:171(title)
@@ -230,7 +265,11 @@ msgid "Change the owner of /u and subfiles to \"root\"."
 msgstr ""
 
 #: chown.1.xml:190(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report chown translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"chown translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: chown.1.xml:197(title)
@@ -246,7 +285,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: chown.1.xml:202(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: chown.1.xml:209(title)
@@ -258,7 +302,11 @@ msgid "2"
 msgstr ""
 
 #: chown.1.xml:212(para)
-msgid "The full documentation for <command>chown</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>chown</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>chown</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>chown</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: chown.1.xml:220(emphasis)
@@ -273,4 +321,3 @@ msgstr ""
 #: chown.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

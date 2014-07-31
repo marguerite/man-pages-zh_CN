@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +60,9 @@ msgid "Write sorted concatenation of all FILE(s) to standard output."
 msgstr ""
 
 #: sort.1.xml:38(para)
-msgid "Mandatory arguments to long options are mandatory for short options too. Ordering options:"
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too. "
+"Ordering options:"
 msgstr ""
 
 #: sort.1.xml:42(term)
@@ -155,7 +158,10 @@ msgid "<option>--sort</option>=<emphasis remap=\"I\">WORD</emphasis>"
 msgstr ""
 
 #: sort.1.xml:110(para)
-msgid "sort according to WORD: general-numeric <option>-g</option>, human-numeric <option>-h</option>, month <option>-M</option>, numeric <option>-n</option>, random <option>-R</option>, version <option>-V</option>"
+msgid ""
+"sort according to WORD: general-numeric <option>-g</option>, human-numeric "
+"<option>-h</option>, month <option>-M</option>, numeric <option>-n</option>, "
+"random <option>-R</option>, version <option>-V</option>"
 msgstr ""
 
 #: sort.1.xml:116(term)
@@ -179,7 +185,9 @@ msgid "merge at most NMERGE inputs at once; for more use temp files"
 msgstr ""
 
 #: sort.1.xml:131(term)
-msgid "<option>-c</option>, <option>--check</option>, <option>--check</option>=<emphasis remap=\"I\">diagnose-first</emphasis>"
+msgid ""
+"<option>-c</option>, <option>--check</option>, <option>--check</"
+"option>=<emphasis remap=\"I\">diagnose-first</emphasis>"
 msgstr ""
 
 #: sort.1.xml:133(para)
@@ -187,7 +195,9 @@ msgid "check for sorted input; do not sort"
 msgstr ""
 
 #: sort.1.xml:137(term)
-msgid "<option>-C</option>, <option>--check</option>=<emphasis remap=\"I\">quiet</emphasis>, <option>--check</option>=<emphasis remap=\"I\">silent</emphasis>"
+msgid ""
+"<option>-C</option>, <option>--check</option>=<emphasis remap=\"I\">quiet</"
+"emphasis>, <option>--check</option>=<emphasis remap=\"I\">silent</emphasis>"
 msgstr ""
 
 #: sort.1.xml:139(para)
@@ -195,11 +205,13 @@ msgid "like <option>-c</option>, but do not report first bad line"
 msgstr ""
 
 #: sort.1.xml:143(term)
-msgid "<option>--compress-program</option>=<emphasis remap=\"I\">PROG</emphasis>"
+msgid ""
+"<option>--compress-program</option>=<emphasis remap=\"I\">PROG</emphasis>"
 msgstr ""
 
 #: sort.1.xml:145(para)
-msgid "compress temporaries with PROG; decompress them with PROG <option>-d</option>"
+msgid ""
+"compress temporaries with PROG; decompress them with PROG <option>-d</option>"
 msgstr ""
 
 #: sort.1.xml:150(option)
@@ -207,7 +219,9 @@ msgid "--debug"
 msgstr ""
 
 #: sort.1.xml:152(para)
-msgid "annotate the part of the line used to sort, and warn about questionable usage to stderr"
+msgid ""
+"annotate the part of the line used to sort, and warn about questionable "
+"usage to stderr"
 msgstr ""
 
 #: sort.1.xml:157(term)
@@ -215,11 +229,15 @@ msgid "<option>--files0-from</option>=<emphasis remap=\"I\">F</emphasis>"
 msgstr ""
 
 #: sort.1.xml:159(para)
-msgid "read input from the files specified by NUL-terminated names in file F; If F is - then read names from standard input"
+msgid ""
+"read input from the files specified by NUL-terminated names in file F; If F "
+"is - then read names from standard input"
 msgstr ""
 
 #: sort.1.xml:165(term)
-msgid "<option>-k</option>, <option>--key</option>=<emphasis remap=\"I\">KEYDEF</emphasis>"
+msgid ""
+"<option>-k</option>, <option>--key</option>=<emphasis remap=\"I\">KEYDEF</"
+"emphasis>"
 msgstr ""
 
 #: sort.1.xml:167(para)
@@ -235,7 +253,9 @@ msgid "merge already sorted files; do not sort"
 msgstr ""
 
 #: sort.1.xml:177(term)
-msgid "<option>-o</option>, <option>--output</option>=<emphasis remap=\"I\">FILE</emphasis>"
+msgid ""
+"<option>-o</option>, <option>--output</option>=<emphasis remap=\"I\">FILE</"
+"emphasis>"
 msgstr ""
 
 #: sort.1.xml:179(para)
@@ -251,7 +271,9 @@ msgid "stabilize sort by disabling last-resort comparison"
 msgstr ""
 
 #: sort.1.xml:189(term)
-msgid "<option>-S</option>, <option>--buffer-size</option>=<emphasis remap=\"I\">SIZE</emphasis>"
+msgid ""
+"<option>-S</option>, <option>--buffer-size</option>=<emphasis remap=\"I"
+"\">SIZE</emphasis>"
 msgstr ""
 
 #: sort.1.xml:191(para)
@@ -259,7 +281,9 @@ msgid "use SIZE for main memory buffer"
 msgstr ""
 
 #: sort.1.xml:195(term)
-msgid "<option>-t</option>, <option>--field-separator</option>=<emphasis remap=\"I\">SEP</emphasis>"
+msgid ""
+"<option>-t</option>, <option>--field-separator</option>=<emphasis remap=\"I"
+"\">SEP</emphasis>"
 msgstr ""
 
 #: sort.1.xml:197(para)
@@ -267,11 +291,15 @@ msgid "use SEP instead of non-blank to blank transition"
 msgstr ""
 
 #: sort.1.xml:201(term)
-msgid "<option>-T</option>, <option>--temporary-directory</option>=<emphasis remap=\"I\">DIR</emphasis>"
+msgid ""
+"<option>-T</option>, <option>--temporary-directory</option>=<emphasis remap="
+"\"I\">DIR</emphasis>"
 msgstr ""
 
 #: sort.1.xml:203(para)
-msgid "use DIR for temporaries, not $TMPDIR or <filename>/tmp</filename>; multiple options specify multiple directories"
+msgid ""
+"use DIR for temporaries, not $TMPDIR or <filename>/tmp</filename>; multiple "
+"options specify multiple directories"
 msgstr ""
 
 #: sort.1.xml:208(term)
@@ -287,7 +315,9 @@ msgid "<option>-u</option>, <option>--unique</option>"
 msgstr ""
 
 #: sort.1.xml:216(para)
-msgid "with <option>-c</option>, check for strict ordering; without <option>-c</option>, output only the first of an equal run"
+msgid ""
+"with <option>-c</option>, check for strict ordering; without <option>-c</"
+"option>, output only the first of an equal run"
 msgstr ""
 
 #: sort.1.xml:221(term)
@@ -315,11 +345,20 @@ msgid "output version information and exit"
 msgstr ""
 
 #: sort.1.xml:237(para)
-msgid "KEYDEF is F[.C][OPTS][,F[.C][OPTS]] for start and stop position, where F is a field number and C a character position in the field; both are origin 1, and the stop position defaults to the line's end. If neither <option>-t</option> nor <option>-b</option> is in effect, characters in a field are counted from the beginning of the preceding whitespace. OPTS is one or more single-letter ordering options [bdfgiMhnRrV], which override global ordering options for that key. If no key is given, use the entire line as the key."
+msgid ""
+"KEYDEF is F[.C][OPTS][,F[.C][OPTS]] for start and stop position, where F is "
+"a field number and C a character position in the field; both are origin 1, "
+"and the stop position defaults to the line's end. If neither <option>-t</"
+"option> nor <option>-b</option> is in effect, characters in a field are "
+"counted from the beginning of the preceding whitespace. OPTS is one or more "
+"single-letter ordering options [bdfgiMhnRrV], which override global ordering "
+"options for that key. If no key is given, use the entire line as the key."
 msgstr ""
 
 #: sort.1.xml:245(para)
-msgid "SIZE may be followed by the following multiplicative suffixes: % 1% of memory, b 1, K 1024 (default), and so on for M, G, T, P, E, Z, Y."
+msgid ""
+"SIZE may be followed by the following multiplicative suffixes: % 1% of "
+"memory, b 1, K 1024 (default), and so on for M, G, T, P, E, Z, Y."
 msgstr ""
 
 #: sort.1.xml:248(para)
@@ -327,11 +366,17 @@ msgid "With no FILE, or when FILE is -, read standard input."
 msgstr ""
 
 #: sort.1.xml:250(para)
-msgid "*** WARNING *** The locale specified by the environment affects sort order. Set LC_ALL=C to get the traditional sort order that uses native byte values."
+msgid ""
+"*** WARNING *** The locale specified by the environment affects sort order. "
+"Set LC_ALL=C to get the traditional sort order that uses native byte values."
 msgstr ""
 
 #: sort.1.xml:255(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report sort translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"sort translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: sort.1.xml:262(title)
@@ -347,7 +392,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: sort.1.xml:267(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: sort.1.xml:274(title)
@@ -359,7 +409,11 @@ msgid "uniq"
 msgstr ""
 
 #: sort.1.xml:277(para)
-msgid "The full documentation for <command>sort</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>sort</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>sort</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>sort</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: sort.1.xml:285(emphasis)
@@ -374,4 +428,3 @@ msgstr ""
 #: sort.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

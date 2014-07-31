@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,11 +52,15 @@ msgstr ""
 
 #. Add any additional description here
 #: fmt.1.xml:32(para)
-msgid "Reformat each paragraph in the FILE(s), writing to standard output. The option <option>-WIDTH</option> is an abbreviated form of <option>--width</option>=<emphasis remap=\"I\">DIGITS</emphasis>."
+msgid ""
+"Reformat each paragraph in the FILE(s), writing to standard output. The "
+"option <option>-WIDTH</option> is an abbreviated form of <option>--width</"
+"option>=<emphasis remap=\"I\">DIGITS</emphasis>."
 msgstr ""
 
 #: fmt.1.xml:35(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: fmt.1.xml:38(term)
@@ -67,11 +72,15 @@ msgid "preserve indentation of first two lines"
 msgstr ""
 
 #: fmt.1.xml:44(term)
-msgid "<option>-p</option>, <option>--prefix</option>=<emphasis remap=\"I\">STRING</emphasis>"
+msgid ""
+"<option>-p</option>, <option>--prefix</option>=<emphasis remap=\"I\">STRING</"
+"emphasis>"
 msgstr ""
 
 #: fmt.1.xml:46(para)
-msgid "reformat only lines beginning with STRING, reattaching the prefix to reformatted lines"
+msgid ""
+"reformat only lines beginning with STRING, reattaching the prefix to "
+"reformatted lines"
 msgstr ""
 
 #: fmt.1.xml:51(term)
@@ -99,7 +108,9 @@ msgid "one space between words, two after sentences"
 msgstr ""
 
 #: fmt.1.xml:69(term)
-msgid "<option>-w</option>, <option>--width</option>=<emphasis remap=\"I\">WIDTH</emphasis>"
+msgid ""
+"<option>-w</option>, <option>--width</option>=<emphasis remap=\"I\">WIDTH</"
+"emphasis>"
 msgstr ""
 
 #: fmt.1.xml:71(para)
@@ -107,7 +118,9 @@ msgid "maximum line width (default of 75 columns)"
 msgstr ""
 
 #: fmt.1.xml:75(term)
-msgid "<option>-g</option>, <option>--goal</option>=<emphasis remap=\"I\">WIDTH</emphasis>"
+msgid ""
+"<option>-g</option>, <option>--goal</option>=<emphasis remap=\"I\">WIDTH</"
+"emphasis>"
 msgstr ""
 
 #: fmt.1.xml:77(para)
@@ -135,7 +148,11 @@ msgid "With no FILE, or when FILE is -, read standard input."
 msgstr ""
 
 #: fmt.1.xml:93(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report fmt translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"fmt translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: fmt.1.xml:100(title)
@@ -151,7 +168,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: fmt.1.xml:105(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: fmt.1.xml:112(title)
@@ -159,7 +181,10 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: fmt.1.xml:113(para)
-msgid "The full documentation for <command>fmt</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>fmt</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>fmt</command> is maintained as a Texinfo "
+"manual. If the <emphasis remap=\"B\">info</emphasis> and <command>fmt</"
+"command> programs are properly installed at your site, the command"
 msgstr ""
 
 #: fmt.1.xml:121(emphasis)
@@ -174,4 +199,3 @@ msgstr ""
 #: fmt.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

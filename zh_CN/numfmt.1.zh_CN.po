@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,11 +48,13 @@ msgstr ""
 
 #. Add any additional description here
 #: numfmt.1.xml:31(para)
-msgid "Reformat NUMBER(s), or the numbers from standard input if none are specified."
+msgid ""
+"Reformat NUMBER(s), or the numbers from standard input if none are specified."
 msgstr ""
 
 #: numfmt.1.xml:33(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: numfmt.1.xml:36(option)
@@ -63,7 +66,9 @@ msgid "print warnings about invalid input"
 msgstr ""
 
 #: numfmt.1.xml:42(term)
-msgid "<option>-d</option>, <option>--delimiter</option>=<emphasis remap=\"I\">X</emphasis>"
+msgid ""
+"<option>-d</option>, <option>--delimiter</option>=<emphasis remap=\"I\">X</"
+"emphasis>"
 msgstr ""
 
 #: numfmt.1.xml:44(para)
@@ -107,7 +112,9 @@ msgid "--grouping"
 msgstr ""
 
 #: numfmt.1.xml:76(para)
-msgid "use locale-defined grouping of digits, e.g. 1,000,000 (which means it has no effect in the C/POSIX locale)"
+msgid ""
+"use locale-defined grouping of digits, e.g. 1,000,000 (which means it has no "
+"effect in the C/POSIX locale)"
 msgstr ""
 
 #: numfmt.1.xml:81(term)
@@ -115,7 +122,9 @@ msgid "<option>--header</option>[=<emphasis remap=\"I\">N</emphasis>]"
 msgstr ""
 
 #: numfmt.1.xml:83(para)
-msgid "print (without converting) the first N header lines; N defaults to 1 if not specified"
+msgid ""
+"print (without converting) the first N header lines; N defaults to 1 if not "
+"specified"
 msgstr ""
 
 #: numfmt.1.xml:88(term)
@@ -123,7 +132,9 @@ msgid "<option>--invalid</option>=<emphasis remap=\"I\">MODE</emphasis>"
 msgstr ""
 
 #: numfmt.1.xml:90(para)
-msgid "failure mode for invalid numbers: MODE can be: abort (default), fail, warn, ignore"
+msgid ""
+"failure mode for invalid numbers: MODE can be: abort (default), fail, warn, "
+"ignore"
 msgstr ""
 
 #: numfmt.1.xml:95(term)
@@ -131,7 +142,10 @@ msgid "<option>--padding</option>=<emphasis remap=\"I\">N</emphasis>"
 msgstr ""
 
 #: numfmt.1.xml:97(para)
-msgid "pad the output to N characters; positive N will right-align; negative N will left-align; padding is ignored if the output is wider than N; the default is to automatically pad if a whitespace is found"
+msgid ""
+"pad the output to N characters; positive N will right-align; negative N will "
+"left-align; padding is ignored if the output is wider than N; the default is "
+"to automatically pad if a whitespace is found"
 msgstr ""
 
 #: numfmt.1.xml:105(term)
@@ -139,7 +153,9 @@ msgid "<option>--round</option>=<emphasis remap=\"I\">METHOD</emphasis>"
 msgstr ""
 
 #: numfmt.1.xml:107(para)
-msgid "use METHOD for rounding when scaling; METHOD can be: up, down, from-zero (default), towards-zero, nearest"
+msgid ""
+"use METHOD for rounding when scaling; METHOD can be: up, down, from-zero "
+"(default), towards-zero, nearest"
 msgstr ""
 
 #: numfmt.1.xml:112(term)
@@ -147,7 +163,8 @@ msgid "<option>--suffix</option>=<emphasis remap=\"I\">SUFFIX</emphasis>"
 msgstr ""
 
 #: numfmt.1.xml:114(para)
-msgid "add SUFFIX to output numbers, and accept optional SUFFIX in input numbers"
+msgid ""
+"add SUFFIX to output numbers, and accept optional SUFFIX in input numbers"
 msgstr ""
 
 #: numfmt.1.xml:119(term)
@@ -239,11 +256,22 @@ msgid "1Ki = 1024, 1Mi = 1048576, ..."
 msgstr ""
 
 #: numfmt.1.xml:192(para)
-msgid "FORMAT must be suitable for printing one floating-point argument '%f'. Optional quote (%'f) will enable <option>--grouping</option> (if supported by current locale). Optional width value (%10f) will pad output. Optional negative width values (%-10f) will left-pad output."
+msgid ""
+"FORMAT must be suitable for printing one floating-point argument '%f'. "
+"Optional quote (%'f) will enable <option>--grouping</option> (if supported "
+"by current locale). Optional width value (%10f) will pad output. Optional "
+"negative width values (%-10f) will left-pad output."
 msgstr ""
 
 #: numfmt.1.xml:197(para)
-msgid "Exit status is 0 if all input numbers were successfully converted. By default, numfmt will stop at the first conversion error with exit status 2. With <option>--invalid=</option>'fail' a warning is printed for each conversion error and the exit status is 2. With <option>--invalid=</option>'warn' each conversion error is diagnosed, but the exit status is 0. With <option>--invalid=</option>'ignore' conversion errors are not diagnosed and the exit status is 0."
+msgid ""
+"Exit status is 0 if all input numbers were successfully converted. By "
+"default, numfmt will stop at the first conversion error with exit status 2. "
+"With <option>--invalid=</option>'fail' a warning is printed for each "
+"conversion error and the exit status is 2. With <option>--invalid=</"
+"option>'warn' each conversion error is diagnosed, but the exit status is 0. "
+"With <option>--invalid=</option>'ignore' conversion errors are not diagnosed "
+"and the exit status is 0."
 msgstr ""
 
 #: numfmt.1.xml:209(title)
@@ -310,7 +338,11 @@ msgid "$ ls -lh | numfmt --header --field 5 --from=iec --format %10f"
 msgstr ""
 
 #: numfmt.1.xml:239(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report numfmt translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"numfmt translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: numfmt.1.xml:243(title)
@@ -326,7 +358,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: numfmt.1.xml:248(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: numfmt.1.xml:255(title)
@@ -334,7 +371,11 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: numfmt.1.xml:256(para)
-msgid "The full documentation for <command>numfmt</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>numfmt</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>numfmt</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>numfmt</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: numfmt.1.xml:264(emphasis)
@@ -349,4 +390,3 @@ msgstr ""
 #: numfmt.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

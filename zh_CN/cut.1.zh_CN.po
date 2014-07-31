@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,11 +52,14 @@ msgid "Print selected parts of lines from each FILE to standard output."
 msgstr ""
 
 #: cut.1.xml:33(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: cut.1.xml:36(term)
-msgid "<option>-b</option>, <option>--bytes</option>=<emphasis remap=\"I\">LIST</emphasis>"
+msgid ""
+"<option>-b</option>, <option>--bytes</option>=<emphasis remap=\"I\">LIST</"
+"emphasis>"
 msgstr ""
 
 #: cut.1.xml:38(para)
@@ -63,7 +67,9 @@ msgid "select only these bytes"
 msgstr ""
 
 #: cut.1.xml:42(term)
-msgid "<option>-c</option>, <option>--characters</option>=<emphasis remap=\"I\">LIST</emphasis>"
+msgid ""
+"<option>-c</option>, <option>--characters</option>=<emphasis remap=\"I"
+"\">LIST</emphasis>"
 msgstr ""
 
 #: cut.1.xml:44(para)
@@ -71,7 +77,9 @@ msgid "select only these characters"
 msgstr ""
 
 #: cut.1.xml:48(term)
-msgid "<option>-d</option>, <option>--delimiter</option>=<emphasis remap=\"I\">DELIM</emphasis>"
+msgid ""
+"<option>-d</option>, <option>--delimiter</option>=<emphasis remap=\"I"
+"\">DELIM</emphasis>"
 msgstr ""
 
 #: cut.1.xml:50(para)
@@ -79,11 +87,15 @@ msgid "use DELIM instead of TAB for field delimiter"
 msgstr ""
 
 #: cut.1.xml:54(term)
-msgid "<option>-f</option>, <option>--fields</option>=<emphasis remap=\"I\">LIST</emphasis>"
+msgid ""
+"<option>-f</option>, <option>--fields</option>=<emphasis remap=\"I\">LIST</"
+"emphasis>"
 msgstr ""
 
 #: cut.1.xml:56(para)
-msgid "select only these fields; also print any line that contains no delimiter character, unless the <option>-s</option> option is specified"
+msgid ""
+"select only these fields; also print any line that contains no delimiter "
+"character, unless the <option>-s</option> option is specified"
 msgstr ""
 
 #: cut.1.xml:62(option)
@@ -111,11 +123,13 @@ msgid "do not print lines not containing delimiters"
 msgstr ""
 
 #: cut.1.xml:81(term)
-msgid "<option>--output-delimiter</option>=<emphasis remap=\"I\">STRING</emphasis>"
+msgid ""
+"<option>--output-delimiter</option>=<emphasis remap=\"I\">STRING</emphasis>"
 msgstr ""
 
 #: cut.1.xml:83(para)
-msgid "use STRING as the output delimiter the default is to use the input delimiter"
+msgid ""
+"use STRING as the output delimiter the default is to use the input delimiter"
 msgstr ""
 
 #: cut.1.xml:88(option)
@@ -135,7 +149,11 @@ msgid "output version information and exit"
 msgstr ""
 
 #: cut.1.xml:98(para)
-msgid "Use one, and only one of <option>-b</option>, <option>-c</option> or <option>-f</option>. Each LIST is made up of one range, or many ranges separated by commas. Selected input is written in the same order that it is read, and is written exactly once. Each range is one of:"
+msgid ""
+"Use one, and only one of <option>-b</option>, <option>-c</option> or "
+"<option>-f</option>. Each LIST is made up of one range, or many ranges "
+"separated by commas. Selected input is written in the same order that it is "
+"read, and is written exactly once. Each range is one of:"
 msgstr ""
 
 #: cut.1.xml:105(term)
@@ -175,7 +193,11 @@ msgid "With no FILE, or when FILE is -, read standard input."
 msgstr ""
 
 #: cut.1.xml:129(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report cut translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"cut translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: cut.1.xml:136(title)
@@ -191,7 +213,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: cut.1.xml:141(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: cut.1.xml:148(title)
@@ -199,7 +226,10 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: cut.1.xml:149(para)
-msgid "The full documentation for <command>cut</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>cut</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>cut</command> is maintained as a Texinfo "
+"manual. If the <emphasis remap=\"B\">info</emphasis> and <command>cut</"
+"command> programs are properly installed at your site, the command"
 msgstr ""
 
 #: cut.1.xml:157(emphasis)
@@ -214,4 +244,3 @@ msgstr ""
 #: cut.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

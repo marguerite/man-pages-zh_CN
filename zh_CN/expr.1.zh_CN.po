@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -62,7 +63,9 @@ msgid "output version information and exit"
 msgstr ""
 
 #: expr.1.xml:44(para)
-msgid "Print the value of EXPRESSION to standard output. A blank line below separates increasing precedence groups. EXPRESSION may be:"
+msgid ""
+"Print the value of EXPRESSION to standard output. A blank line below "
+"separates increasing precedence groups. EXPRESSION may be:"
 msgstr ""
 
 #: expr.1.xml:49(term)
@@ -230,15 +233,27 @@ msgid "value of EXPRESSION"
 msgstr ""
 
 #: expr.1.xml:169(para)
-msgid "Beware that many operators need to be escaped or quoted for shells. Comparisons are arithmetic if both ARGs are numbers, else lexicographical. Pattern matches return the string matched between &bsol;( and &bsol;) or null; if &bsol;( and &bsol;) are not used, they return the number of characters matched or 0."
+msgid ""
+"Beware that many operators need to be escaped or quoted for shells. "
+"Comparisons are arithmetic if both ARGs are numbers, else lexicographical. "
+"Pattern matches return the string matched between &bsol;( and &bsol;) or "
+"null; if &bsol;( and &bsol;) are not used, they return the number of "
+"characters matched or 0."
 msgstr ""
 
 #: expr.1.xml:174(para)
-msgid "Exit status is 0 if EXPRESSION is neither null nor 0, 1 if EXPRESSION is null or 0, 2 if EXPRESSION is syntactically invalid, and 3 if an error occurred."
+msgid ""
+"Exit status is 0 if EXPRESSION is neither null nor 0, 1 if EXPRESSION is "
+"null or 0, 2 if EXPRESSION is syntactically invalid, and 3 if an error "
+"occurred."
 msgstr ""
 
 #: expr.1.xml:177(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report expr translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"expr translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: expr.1.xml:184(title)
@@ -254,7 +269,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: expr.1.xml:189(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: expr.1.xml:196(title)
@@ -262,7 +282,11 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: expr.1.xml:197(para)
-msgid "The full documentation for <command>expr</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>expr</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>expr</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>expr</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: expr.1.xml:205(emphasis)
@@ -277,4 +301,3 @@ msgstr ""
 #: expr.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

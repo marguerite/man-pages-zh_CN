@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +26,8 @@ msgstr ""
 msgid "GNU coreutils 8.22"
 msgstr ""
 
-#: mkfifo.1.xml:14(refname) mkfifo.1.xml:20(command) mkfifo.1.xml:79(refentrytitle)
+#: mkfifo.1.xml:14(refname) mkfifo.1.xml:20(command)
+#: mkfifo.1.xml:79(refentrytitle)
 msgid "mkfifo"
 msgstr ""
 
@@ -51,11 +53,14 @@ msgid "Create named pipes (FIFOs) with the given NAMEs."
 msgstr ""
 
 #: mkfifo.1.xml:33(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: mkfifo.1.xml:36(term)
-msgid "<option>-m</option>, <option>--mode</option>=<emphasis remap=\"I\">MODE</emphasis>"
+msgid ""
+"<option>-m</option>, <option>--mode</option>=<emphasis remap=\"I\">MODE</"
+"emphasis>"
 msgstr ""
 
 #: mkfifo.1.xml:38(para)
@@ -63,11 +68,15 @@ msgid "set file permission bits to MODE, not a=rw - umask"
 msgstr ""
 
 #: mkfifo.1.xml:42(term)
-msgid "<option>-Z</option>, <option>--context</option>[=<emphasis remap=\"I\">CTX</emphasis>]"
+msgid ""
+"<option>-Z</option>, <option>--context</option>[=<emphasis remap=\"I\">CTX</"
+"emphasis>]"
 msgstr ""
 
 #: mkfifo.1.xml:44(para)
-msgid "set the SELinux security context of each NAME to default type, or CTX if specified"
+msgid ""
+"set the SELinux security context of each NAME to default type, or CTX if "
+"specified"
 msgstr ""
 
 #: mkfifo.1.xml:49(option)
@@ -87,7 +96,11 @@ msgid "output version information and exit"
 msgstr ""
 
 #: mkfifo.1.xml:59(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report mkfifo translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"mkfifo translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: mkfifo.1.xml:66(title)
@@ -103,7 +116,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: mkfifo.1.xml:71(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: mkfifo.1.xml:78(title)
@@ -115,7 +133,11 @@ msgid "3"
 msgstr ""
 
 #: mkfifo.1.xml:81(para)
-msgid "The full documentation for <command>mkfifo</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>mkfifo</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>mkfifo</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>mkfifo</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: mkfifo.1.xml:89(emphasis)
@@ -130,4 +152,3 @@ msgstr ""
 #: mkfifo.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

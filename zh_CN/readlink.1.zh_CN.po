@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -55,7 +56,9 @@ msgid "<option>-f</option>, <option>--canonicalize</option>"
 msgstr ""
 
 #: readlink.1.xml:36(para)
-msgid "canonicalize by following every symlink in every component of the given name recursively; all but the last component must exist"
+msgid ""
+"canonicalize by following every symlink in every component of the given name "
+"recursively; all but the last component must exist"
 msgstr ""
 
 #: readlink.1.xml:42(term)
@@ -63,7 +66,9 @@ msgid "<option>-e</option>, <option>--canonicalize-existing</option>"
 msgstr ""
 
 #: readlink.1.xml:44(para)
-msgid "canonicalize by following every symlink in every component of the given name recursively, all components must exist"
+msgid ""
+"canonicalize by following every symlink in every component of the given name "
+"recursively, all components must exist"
 msgstr ""
 
 #: readlink.1.xml:50(term)
@@ -71,7 +76,9 @@ msgid "<option>-m</option>, <option>--canonicalize-missing</option>"
 msgstr ""
 
 #: readlink.1.xml:52(para)
-msgid "canonicalize by following every symlink in every component of the given name recursively, without requirements on components existence"
+msgid ""
+"canonicalize by following every symlink in every component of the given name "
+"recursively, without requirements on components existence"
 msgstr ""
 
 #: readlink.1.xml:58(term)
@@ -127,7 +134,11 @@ msgid "output version information and exit"
 msgstr ""
 
 #: readlink.1.xml:94(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report readlink translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"readlink translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: readlink.1.xml:101(title)
@@ -143,7 +154,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: readlink.1.xml:106(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: readlink.1.xml:113(title)
@@ -151,11 +167,20 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: readlink.1.xml:114(para)
-msgid "<citerefentry><refentrytitle>readlink</refentrytitle><manvolnum>2</manvolnum></citerefentry>, <citerefentry><refentrytitle>realpath</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>realpath</refentrytitle><manvolnum>3</manvolnum></citerefentry>"
+msgid ""
+"<citerefentry><refentrytitle>readlink</refentrytitle><manvolnum>2</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>realpath</"
+"refentrytitle><manvolnum>1</manvolnum></citerefentry>, "
+"<citerefentry><refentrytitle>realpath</refentrytitle><manvolnum>3</"
+"manvolnum></citerefentry>"
 msgstr ""
 
 #: readlink.1.xml:116(para)
-msgid "The full documentation for <command>readlink</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>readlink</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>readlink</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>readlink</command> programs are properly installed at your site, "
+"the command"
 msgstr ""
 
 #: readlink.1.xml:124(emphasis)
@@ -170,4 +195,3 @@ msgstr ""
 #: readlink.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

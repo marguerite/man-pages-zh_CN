@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,7 +68,11 @@ msgid "output version information and exit"
 msgstr ""
 
 #: yes.1.xml:47(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report yes translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"yes translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: yes.1.xml:54(title)
@@ -83,7 +88,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: yes.1.xml:59(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: yes.1.xml:66(title)
@@ -91,7 +101,10 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: yes.1.xml:67(para)
-msgid "The full documentation for <command>yes</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>yes</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>yes</command> is maintained as a Texinfo "
+"manual. If the <emphasis remap=\"B\">info</emphasis> and <command>yes</"
+"command> programs are properly installed at your site, the command"
 msgstr ""
 
 #: yes.1.xml:75(emphasis)
@@ -106,4 +119,3 @@ msgstr ""
 #: yes.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

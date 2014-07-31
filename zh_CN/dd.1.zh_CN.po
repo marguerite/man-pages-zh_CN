@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -151,11 +152,16 @@ msgid "status=WHICH"
 msgstr ""
 
 #: dd.1.xml:111(para)
-msgid "WHICH info to suppress outputting to stderr; 'noxfer' suppresses transfer stats, 'none' suppresses all"
+msgid ""
+"WHICH info to suppress outputting to stderr; 'noxfer' suppresses transfer "
+"stats, 'none' suppresses all"
 msgstr ""
 
 #: dd.1.xml:114(para)
-msgid "N and BYTES may be followed by the following multiplicative suffixes: c =1, w =2, b =512, kB =1000, K =1024, MB =1000*1000, M =1024*1024, xM =M GB =1000*1000*1000, G =1024*1024*1024, and so on for T, P, E, Z, Y."
+msgid ""
+"N and BYTES may be followed by the following multiplicative suffixes: c =1, "
+"w =2, b =512, kB =1000, K =1024, MB =1000*1000, M =1024*1024, xM =M GB "
+"=1000*1000*1000, G =1024*1024*1024, and so on for T, P, E, Z, Y."
 msgstr ""
 
 #: dd.1.xml:118(para)
@@ -239,7 +245,9 @@ msgid "sync"
 msgstr ""
 
 #: dd.1.xml:178(para)
-msgid "pad every input block with NULs to ibs-size; when used with block or unblock, pad with spaces rather than NULs"
+msgid ""
+"pad every input block with NULs to ibs-size; when used with block or "
+"unblock, pad with spaces rather than NULs"
 msgstr ""
 
 #: dd.1.xml:183(term)
@@ -403,7 +411,9 @@ msgid "treat 'seek=N' as a byte count (oflag only)"
 msgstr ""
 
 #: dd.1.xml:303(para)
-msgid "Sending a USR1 signal to a running 'dd' process makes it print I/O statistics to standard error and then resume copying."
+msgid ""
+"Sending a USR1 signal to a running 'dd' process makes it print I/O "
+"statistics to standard error and then resume copying."
 msgstr ""
 
 #: dd.1.xml:306(emphasis)
@@ -416,7 +426,9 @@ msgid "$ kill -USR1 $pid; sleep 1; kill $pid"
 msgstr ""
 
 #: dd.1.xml:310(para)
-msgid "18335302+0 records in 18335302+0 records out 9387674624 bytes (9.4 GB) copied, 34.6279 seconds, 271 MB/s"
+msgid ""
+"18335302+0 records in 18335302+0 records out 9387674624 bytes (9.4 GB) "
+"copied, 34.6279 seconds, 271 MB/s"
 msgstr ""
 
 #: dd.1.xml:314(para)
@@ -440,7 +452,11 @@ msgid "output version information and exit"
 msgstr ""
 
 #: dd.1.xml:328(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report dd translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"dd translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: dd.1.xml:335(title)
@@ -456,7 +472,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: dd.1.xml:340(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: dd.1.xml:347(title)
@@ -464,7 +485,10 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: dd.1.xml:348(para)
-msgid "The full documentation for <command>dd</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>dd</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>dd</command> is maintained as a Texinfo "
+"manual. If the <emphasis remap=\"B\">info</emphasis> and <command>dd</"
+"command> programs are properly installed at your site, the command"
 msgstr ""
 
 #: dd.1.xml:356(emphasis)
@@ -479,4 +503,3 @@ msgstr ""
 #: dd.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

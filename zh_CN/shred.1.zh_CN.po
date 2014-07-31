@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,11 +48,14 @@ msgstr ""
 
 #. Add any additional description here
 #: shred.1.xml:31(para)
-msgid "Overwrite the specified FILE(s) repeatedly, in order to make it harder for even very expensive hardware probing to recover the data."
+msgid ""
+"Overwrite the specified FILE(s) repeatedly, in order to make it harder for "
+"even very expensive hardware probing to recover the data."
 msgstr ""
 
 #: shred.1.xml:34(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: shred.1.xml:37(term)
@@ -63,7 +67,9 @@ msgid "change permissions to allow writing if necessary"
 msgstr ""
 
 #: shred.1.xml:43(term)
-msgid "<option>-n</option>, <option>--iterations</option>=<emphasis remap=\"I\">N</emphasis>"
+msgid ""
+"<option>-n</option>, <option>--iterations</option>=<emphasis remap=\"I\">N</"
+"emphasis>"
 msgstr ""
 
 #: shred.1.xml:45(para)
@@ -79,7 +85,9 @@ msgid "get random bytes from FILE"
 msgstr ""
 
 #: shred.1.xml:55(term)
-msgid "<option>-s</option>, <option>--size</option>=<emphasis remap=\"I\">N</emphasis>"
+msgid ""
+"<option>-s</option>, <option>--size</option>=<emphasis remap=\"I\">N</"
+"emphasis>"
 msgstr ""
 
 #: shred.1.xml:57(para)
@@ -87,7 +95,9 @@ msgid "shred this many bytes (suffixes like K, M, G accepted)"
 msgstr ""
 
 #: shred.1.xml:61(term)
-msgid "<option>-u</option>, <option>--remove</option>[=<emphasis remap=\"I\">HOW</emphasis>]"
+msgid ""
+"<option>-u</option>, <option>--remove</option>[=<emphasis remap=\"I\">HOW</"
+"emphasis>]"
 msgstr ""
 
 #: shred.1.xml:63(para)
@@ -143,27 +153,47 @@ msgid "If FILE is -, shred standard output."
 msgstr ""
 
 #: shred.1.xml:99(para)
-msgid "Delete FILE(s) if <option>--remove</option> (<option>-u</option>) is specified. The default is not to remove the files because it is common to operate on device files like <filename>/dev/hda</filename>, and those files usually should not be removed. The optional HOW parameter indicates how to remove a directory entry: 'unlink' =&gt; use a standard unlink call. 'wipe' =&gt; also first obfuscate bytes in the name. 'wipesync' =&gt; also sync each obfuscated byte to disk. The default mode is 'wipesync', but note it can be expensive."
+msgid ""
+"Delete FILE(s) if <option>--remove</option> (<option>-u</option>) is "
+"specified. The default is not to remove the files because it is common to "
+"operate on device files like <filename>/dev/hda</filename>, and those files "
+"usually should not be removed. The optional HOW parameter indicates how to "
+"remove a directory entry: 'unlink' =&gt; use a standard unlink call. 'wipe' "
+"=&gt; also first obfuscate bytes in the name. 'wipesync' =&gt; also sync "
+"each obfuscated byte to disk. The default mode is 'wipesync', but note it "
+"can be expensive."
 msgstr ""
 
 #: shred.1.xml:108(para)
-msgid "CAUTION: Note that shred relies on a very important assumption: that the file system overwrites data in place. This is the traditional way to do things, but many modern file system designs do not satisfy this assumption. The following are examples of file systems on which shred is not effective, or is not guaranteed to be effective in all file system modes:"
+msgid ""
+"CAUTION: Note that shred relies on a very important assumption: that the "
+"file system overwrites data in place. This is the traditional way to do "
+"things, but many modern file system designs do not satisfy this assumption. "
+"The following are examples of file systems on which shred is not effective, "
+"or is not guaranteed to be effective in all file system modes:"
 msgstr ""
 
 #: shred.1.xml:114(para)
-msgid "* log-structured or journaled file systems, such as those supplied with AIX and Solaris (and JFS, ReiserFS, XFS, Ext3, etc.)"
+msgid ""
+"* log-structured or journaled file systems, such as those supplied with AIX "
+"and Solaris (and JFS, ReiserFS, XFS, Ext3, etc.)"
 msgstr ""
 
 #: shred.1.xml:117(para)
-msgid "* file systems that write redundant data and carry on even if some writes fail, such as RAID-based file systems"
+msgid ""
+"* file systems that write redundant data and carry on even if some writes "
+"fail, such as RAID-based file systems"
 msgstr ""
 
 #: shred.1.xml:120(para)
-msgid "* file systems that make snapshots, such as Network Appliance's NFS server"
+msgid ""
+"* file systems that make snapshots, such as Network Appliance's NFS server"
 msgstr ""
 
 #: shred.1.xml:122(para)
-msgid "* file systems that cache in temporary locations, such as NFS version 3 clients"
+msgid ""
+"* file systems that cache in temporary locations, such as NFS version 3 "
+"clients"
 msgstr ""
 
 #: shred.1.xml:125(para)
@@ -171,15 +201,29 @@ msgid "* compressed file systems"
 msgstr ""
 
 #: shred.1.xml:127(para)
-msgid "In the case of ext3 file systems, the above disclaimer applies (and shred is thus of limited effectiveness) only in data=journal mode, which journals file data in addition to just metadata. In both the data=ordered (default) and data=writeback modes, shred works as usual. Ext3 journaling modes can be changed by adding the data=something option to the mount options for a particular file system in the <filename>/etc/fstab</filename> file, as documented in the mount man page (man mount)."
+msgid ""
+"In the case of ext3 file systems, the above disclaimer applies (and shred is "
+"thus of limited effectiveness) only in data=journal mode, which journals "
+"file data in addition to just metadata. In both the data=ordered (default) "
+"and data=writeback modes, shred works as usual. Ext3 journaling modes can be "
+"changed by adding the data=something option to the mount options for a "
+"particular file system in the <filename>/etc/fstab</filename> file, as "
+"documented in the mount man page (man mount)."
 msgstr ""
 
 #: shred.1.xml:135(para)
-msgid "In addition, file system backups and remote mirrors may contain copies of the file that cannot be removed, and that will allow a shredded file to be recovered later."
+msgid ""
+"In addition, file system backups and remote mirrors may contain copies of "
+"the file that cannot be removed, and that will allow a shredded file to be "
+"recovered later."
 msgstr ""
 
 #: shred.1.xml:139(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report shred translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"shred translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: shred.1.xml:146(title)
@@ -195,7 +239,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: shred.1.xml:151(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: shred.1.xml:158(title)
@@ -203,7 +252,11 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: shred.1.xml:159(para)
-msgid "The full documentation for <command>shred</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>shred</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>shred</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>shred</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: shred.1.xml:167(emphasis)
@@ -218,4 +271,3 @@ msgstr ""
 #: shred.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

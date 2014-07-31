@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +26,8 @@ msgstr ""
 msgid "GNU coreutils 8.22"
 msgstr ""
 
-#: chmod.1.xml:14(refname) chmod.1.xml:20(command) chmod.1.xml:28(command) chmod.1.xml:35(command) chmod.1.xml:229(refentrytitle)
+#: chmod.1.xml:14(refname) chmod.1.xml:20(command) chmod.1.xml:28(command)
+#: chmod.1.xml:35(command) chmod.1.xml:229(refentrytitle)
 msgid "chmod"
 msgstr ""
 
@@ -33,7 +35,8 @@ msgstr ""
 msgid "change file mode bits"
 msgstr ""
 
-#: chmod.1.xml:21(replaceable) chmod.1.xml:29(replaceable) chmod.1.xml:36(replaceable)
+#: chmod.1.xml:21(replaceable) chmod.1.xml:29(replaceable)
+#: chmod.1.xml:36(replaceable)
 msgid "OPTION"
 msgstr ""
 
@@ -45,7 +48,8 @@ msgstr ""
 msgid ",MODE"
 msgstr ""
 
-#: chmod.1.xml:24(replaceable) chmod.1.xml:31(replaceable) chmod.1.xml:38(replaceable)
+#: chmod.1.xml:24(replaceable) chmod.1.xml:31(replaceable)
+#: chmod.1.xml:38(replaceable)
 msgid "FILE"
 msgstr ""
 
@@ -66,31 +70,86 @@ msgid "DESCRIPTION"
 msgstr ""
 
 #: chmod.1.xml:45(para)
-msgid "This manual page documents the GNU version of <command>chmod</command>. <command>chmod</command> changes the file mode bits of each given file according to <emphasis remap=\"I\">mode</emphasis>, which can be either a symbolic representation of changes to make, or an octal number representing the bit pattern for the new mode bits."
+msgid ""
+"This manual page documents the GNU version of <command>chmod</command>. "
+"<command>chmod</command> changes the file mode bits of each given file "
+"according to <emphasis remap=\"I\">mode</emphasis>, which can be either a "
+"symbolic representation of changes to make, or an octal number representing "
+"the bit pattern for the new mode bits."
 msgstr ""
 
 #: chmod.1.xml:54(para)
-msgid "The format of a symbolic mode is [<emphasis remap=\"B\">ugoa</emphasis>.&thinsp;.&thinsp;.][[<emphasis remap=\"B\">+-=</emphasis>][<emphasis remap=\"I\">perms</emphasis>.&thinsp;.&thinsp;.].&thinsp;.&thinsp;.], where <emphasis remap=\"I\">perms</emphasis> is either zero or more letters from the set <emphasis remap=\"B\">rwxXst</emphasis>, or a single letter from the set <emphasis remap=\"B\">ugo</emphasis>. Multiple symbolic modes can be given, separated by commas."
+msgid ""
+"The format of a symbolic mode is [<emphasis remap=\"B\">ugoa</emphasis>."
+"&thinsp;.&thinsp;.][[<emphasis remap=\"B\">+-=</emphasis>][<emphasis remap="
+"\"I\">perms</emphasis>.&thinsp;.&thinsp;.].&thinsp;.&thinsp;.], where "
+"<emphasis remap=\"I\">perms</emphasis> is either zero or more letters from "
+"the set <emphasis remap=\"B\">rwxXst</emphasis>, or a single letter from the "
+"set <emphasis remap=\"B\">ugo</emphasis>. Multiple symbolic modes can be "
+"given, separated by commas."
 msgstr ""
 
 #: chmod.1.xml:62(para)
-msgid "A combination of the letters <emphasis remap=\"B\">ugoa</emphasis> controls which users' access to the file will be changed: the user who owns it (<emphasis remap=\"B\">u</emphasis>), other users in the file's group (<emphasis remap=\"B\">g</emphasis>), other users not in the file's group (<emphasis remap=\"B\">o</emphasis>), or all users (<emphasis remap=\"B\">a</emphasis>). If none of these are given, the effect is as if <emphasis remap=\"B\">a</emphasis> were given, but bits that are set in the umask are not affected."
+msgid ""
+"A combination of the letters <emphasis remap=\"B\">ugoa</emphasis> controls "
+"which users' access to the file will be changed: the user who owns it "
+"(<emphasis remap=\"B\">u</emphasis>), other users in the file's group "
+"(<emphasis remap=\"B\">g</emphasis>), other users not in the file's group "
+"(<emphasis remap=\"B\">o</emphasis>), or all users (<emphasis remap=\"B\">a</"
+"emphasis>). If none of these are given, the effect is as if <emphasis remap="
+"\"B\">a</emphasis> were given, but bits that are set in the umask are not "
+"affected."
 msgstr ""
 
 #: chmod.1.xml:69(para)
-msgid "The operator <emphasis remap=\"B\">+</emphasis> causes the selected file mode bits to be added to the existing file mode bits of each file; <emphasis remap=\"B\">-</emphasis> causes them to be removed; and <emphasis remap=\"B\">=</emphasis> causes them to be added and causes unmentioned bits to be removed except that a directory's unmentioned set user and group ID bits are not affected."
+msgid ""
+"The operator <emphasis remap=\"B\">+</emphasis> causes the selected file "
+"mode bits to be added to the existing file mode bits of each file; <emphasis "
+"remap=\"B\">-</emphasis> causes them to be removed; and <emphasis remap=\"B"
+"\">=</emphasis> causes them to be added and causes unmentioned bits to be "
+"removed except that a directory's unmentioned set user and group ID bits are "
+"not affected."
 msgstr ""
 
 #: chmod.1.xml:75(para)
-msgid "The letters <emphasis remap=\"B\">rwxXst</emphasis> select file mode bits for the affected users: read (<emphasis remap=\"B\">r</emphasis>), write (<emphasis remap=\"B\">w</emphasis>), execute (or search for directories) (<emphasis remap=\"B\">x</emphasis>), execute/search only if the file is a directory or already has execute permission for some user (<emphasis remap=\"B\">X</emphasis>), set user or group ID on execution (<emphasis remap=\"B\">s</emphasis>), restricted deletion flag or sticky bit (<emphasis remap=\"B\">t</emphasis>). Instead of one or more of these letters, you can specify exactly one of the letters <emphasis remap=\"B\">ugo</emphasis>: the permissions granted to the user who owns the file (<emphasis remap=\"B\">u</emphasis>), the permissions granted to other users who are members of the file's group (<emphasis remap=\"B\">g</emphasis>), and the permissions granted to users that are in neither of the two preceding categories (<emphasis remap=\"B\">o</emphasis>)."
+msgid ""
+"The letters <emphasis remap=\"B\">rwxXst</emphasis> select file mode bits "
+"for the affected users: read (<emphasis remap=\"B\">r</emphasis>), write "
+"(<emphasis remap=\"B\">w</emphasis>), execute (or search for directories) "
+"(<emphasis remap=\"B\">x</emphasis>), execute/search only if the file is a "
+"directory or already has execute permission for some user (<emphasis remap="
+"\"B\">X</emphasis>), set user or group ID on execution (<emphasis remap=\"B"
+"\">s</emphasis>), restricted deletion flag or sticky bit (<emphasis remap=\"B"
+"\">t</emphasis>). Instead of one or more of these letters, you can specify "
+"exactly one of the letters <emphasis remap=\"B\">ugo</emphasis>: the "
+"permissions granted to the user who owns the file (<emphasis remap=\"B\">u</"
+"emphasis>), the permissions granted to other users who are members of the "
+"file's group (<emphasis remap=\"B\">g</emphasis>), and the permissions "
+"granted to users that are in neither of the two preceding categories "
+"(<emphasis remap=\"B\">o</emphasis>)."
 msgstr ""
 
 #: chmod.1.xml:87(para)
-msgid "A numeric mode is from one to four octal digits (0-7), derived by adding up the bits with values 4, 2, and 1. Omitted digits are assumed to be leading zeros. The first digit selects the set user ID (4) and set group ID (2) and restricted deletion or sticky (1) attributes. The second digit selects permissions for the user who owns the file: read (4), write (2), and execute (1); the third selects permissions for other users in the file's group, with the same values; and the fourth for other users not in the file's group, with the same values."
+msgid ""
+"A numeric mode is from one to four octal digits (0-7), derived by adding up "
+"the bits with values 4, 2, and 1. Omitted digits are assumed to be leading "
+"zeros. The first digit selects the set user ID (4) and set group ID (2) and "
+"restricted deletion or sticky (1) attributes. The second digit selects "
+"permissions for the user who owns the file: read (4), write (2), and execute "
+"(1); the third selects permissions for other users in the file's group, with "
+"the same values; and the fourth for other users not in the file's group, "
+"with the same values."
 msgstr ""
 
 #: chmod.1.xml:97(para)
-msgid "<command>chmod</command> never changes the permissions of symbolic links; the <command>chmod</command> system call cannot change their permissions. This is not a problem since the permissions of symbolic links are never used. However, for each symbolic link listed on the command line, <command>chmod</command> changes the permissions of the pointed-to file. In contrast, <command>chmod</command> ignores symbolic links encountered during recursive directory traversals."
+msgid ""
+"<command>chmod</command> never changes the permissions of symbolic links; "
+"the <command>chmod</command> system call cannot change their permissions. "
+"This is not a problem since the permissions of symbolic links are never "
+"used. However, for each symbolic link listed on the command line, "
+"<command>chmod</command> changes the permissions of the pointed-to file. In "
+"contrast, <command>chmod</command> ignores symbolic links encountered during "
+"recursive directory traversals."
 msgstr ""
 
 #: chmod.1.xml:111(title)
@@ -98,11 +157,24 @@ msgid "SETUID AND SETGID BITS"
 msgstr ""
 
 #: chmod.1.xml:112(para)
-msgid "<command>chmod</command> clears the set-group-ID bit of a regular file if the file's group ID does not match the user's effective group ID or one of the user's supplementary group IDs, unless the user has appropriate privileges. Additional restrictions may cause the set-user-ID and set-group-ID bits of <emphasis remap=\"I\">MODE</emphasis> or <emphasis remap=\"I\">RFILE</emphasis> to be ignored. This behavior depends on the policy and functionality of the underlying <command>chmod</command> system call. When in doubt, check the underlying system behavior."
+msgid ""
+"<command>chmod</command> clears the set-group-ID bit of a regular file if "
+"the file's group ID does not match the user's effective group ID or one of "
+"the user's supplementary group IDs, unless the user has appropriate "
+"privileges. Additional restrictions may cause the set-user-ID and set-group-"
+"ID bits of <emphasis remap=\"I\">MODE</emphasis> or <emphasis remap=\"I"
+"\">RFILE</emphasis> to be ignored. This behavior depends on the policy and "
+"functionality of the underlying <command>chmod</command> system call. When "
+"in doubt, check the underlying system behavior."
 msgstr ""
 
 #: chmod.1.xml:127(para)
-msgid "<command>chmod</command> preserves a directory's set-user-ID and set-group-ID bits unless you explicitly specify otherwise. You can set or clear the bits with symbolic modes like <emphasis remap=\"B\">u+s</emphasis> and <emphasis remap=\"B\">g-s</emphasis>, and you can set (but not clear) the bits with a numeric mode."
+msgid ""
+"<command>chmod</command> preserves a directory's set-user-ID and set-group-"
+"ID bits unless you explicitly specify otherwise. You can set or clear the "
+"bits with symbolic modes like <emphasis remap=\"B\">u+s</emphasis> and "
+"<emphasis remap=\"B\">g-s</emphasis>, and you can set (but not clear) the "
+"bits with a numeric mode."
 msgstr ""
 
 #: chmod.1.xml:137(title)
@@ -110,7 +182,16 @@ msgid "RESTRICTED DELETION FLAG OR STICKY BIT"
 msgstr ""
 
 #: chmod.1.xml:138(para)
-msgid "The restricted deletion flag or sticky bit is a single bit, whose interpretation depends on the file type. For directories, it prevents unprivileged users from removing or renaming a file in the directory unless they own the file or the directory; this is called the <emphasis remap=\"I\">restricted deletion flag</emphasis> for the directory, and is commonly found on world-writable directories like <filename>/tmp</filename>. For regular files on some older systems, the bit saves the program's text image on the swap device so it will load more quickly when run; this is called the <emphasis remap=\"I\">sticky bit</emphasis>."
+msgid ""
+"The restricted deletion flag or sticky bit is a single bit, whose "
+"interpretation depends on the file type. For directories, it prevents "
+"unprivileged users from removing or renaming a file in the directory unless "
+"they own the file or the directory; this is called the <emphasis remap=\"I"
+"\">restricted deletion flag</emphasis> for the directory, and is commonly "
+"found on world-writable directories like <filename>/tmp</filename>. For "
+"regular files on some older systems, the bit saves the program's text image "
+"on the swap device so it will load more quickly when run; this is called the "
+"<emphasis remap=\"I\">sticky bit</emphasis>."
 msgstr ""
 
 #: chmod.1.xml:150(title)
@@ -118,7 +199,9 @@ msgid "OPTIONS"
 msgstr ""
 
 #: chmod.1.xml:151(para)
-msgid "Change the mode of each FILE to MODE. With <option>--reference</option>, change the mode of each FILE to that of RFILE."
+msgid ""
+"Change the mode of each FILE to MODE. With <option>--reference</option>, "
+"change the mode of each FILE to that of RFILE."
 msgstr ""
 
 #: chmod.1.xml:155(term)
@@ -130,7 +213,8 @@ msgid "like verbose but report only when a change is made"
 msgstr ""
 
 #: chmod.1.xml:161(term)
-msgid "<option>-f</option>, <option>--silent</option>, <option>--quiet</option>"
+msgid ""
+"<option>-f</option>, <option>--silent</option>, <option>--quiet</option>"
 msgstr ""
 
 #: chmod.1.xml:163(para)
@@ -194,11 +278,16 @@ msgid "output version information and exit"
 msgstr ""
 
 #: chmod.1.xml:207(para)
-msgid "Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'."
+msgid ""
+"Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'."
 msgstr ""
 
 #: chmod.1.xml:209(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report chmod translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"chmod translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: chmod.1.xml:216(title)
@@ -214,7 +303,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: chmod.1.xml:221(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: chmod.1.xml:228(title)
@@ -226,7 +320,11 @@ msgid "2"
 msgstr ""
 
 #: chmod.1.xml:231(para)
-msgid "The full documentation for <command>chmod</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>chmod</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>chmod</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>chmod</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: chmod.1.xml:239(emphasis)
@@ -241,4 +339,3 @@ msgstr ""
 #: chmod.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

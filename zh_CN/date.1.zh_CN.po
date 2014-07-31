@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -79,11 +80,14 @@ msgid "Display the current time in the given FORMAT, or set the system date."
 msgstr ""
 
 #: date.1.xml:37(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: date.1.xml:40(term)
-msgid "<option>-d</option>, <option>--date</option>=<emphasis remap=\"I\">STRING</emphasis>"
+msgid ""
+"<option>-d</option>, <option>--date</option>=<emphasis remap=\"I\">STRING</"
+"emphasis>"
 msgstr ""
 
 #: date.1.xml:42(para)
@@ -91,7 +95,9 @@ msgid "display time described by STRING, not 'now'"
 msgstr ""
 
 #: date.1.xml:46(term)
-msgid "<option>-f</option>, <option>--file</option>=<emphasis remap=\"I\">DATEFILE</emphasis>"
+msgid ""
+"<option>-f</option>, <option>--file</option>=<emphasis remap=\"I\">DATEFILE</"
+"emphasis>"
 msgstr ""
 
 #: date.1.xml:48(para)
@@ -99,15 +105,22 @@ msgid "like <option>--date</option> once for each line of DATEFILE"
 msgstr ""
 
 #: date.1.xml:52(term)
-msgid "<option>-I[TIMESPEC]</option>, <option>--iso-8601</option>[=<emphasis remap=\"I\">TIMESPEC</emphasis>]"
+msgid ""
+"<option>-I[TIMESPEC]</option>, <option>--iso-8601</option>[=<emphasis remap="
+"\"I\">TIMESPEC</emphasis>]"
 msgstr ""
 
 #: date.1.xml:54(para)
-msgid "output date/time in ISO 8601 format. TIMESPEC='date' for date only (the default), 'hours', 'minutes', 'seconds', or 'ns' for date and time to the indicated precision."
+msgid ""
+"output date/time in ISO 8601 format. TIMESPEC='date' for date only (the "
+"default), 'hours', 'minutes', 'seconds', or 'ns' for date and time to the "
+"indicated precision."
 msgstr ""
 
 #: date.1.xml:61(term)
-msgid "<option>-r</option>, <option>--reference</option>=<emphasis remap=\"I\">FILE</emphasis>"
+msgid ""
+"<option>-r</option>, <option>--reference</option>=<emphasis remap=\"I"
+"\">FILE</emphasis>"
 msgstr ""
 
 #: date.1.xml:63(para)
@@ -119,7 +132,9 @@ msgid "<option>-R</option>, <option>--rfc-2822</option>"
 msgstr ""
 
 #: date.1.xml:69(para)
-msgid "output date and time in RFC 2822 format. Example: Mon, 07 Aug 2006 12:34:56 <option>-0600</option>"
+msgid ""
+"output date and time in RFC 2822 format. Example: Mon, 07 Aug 2006 12:34:56 "
+"<option>-0600</option>"
 msgstr ""
 
 #: date.1.xml:74(term)
@@ -127,11 +142,16 @@ msgid "<option>--rfc-3339</option>=<emphasis remap=\"I\">TIMESPEC</emphasis>"
 msgstr ""
 
 #: date.1.xml:76(para)
-msgid "output date and time in RFC 3339 format. TIMESPEC='date', 'seconds', or 'ns' for date and time to the indicated precision. Date and time components are separated by a single space: 2006-08-07 12:34:56-06:00"
+msgid ""
+"output date and time in RFC 3339 format. TIMESPEC='date', 'seconds', or 'ns' "
+"for date and time to the indicated precision. Date and time components are "
+"separated by a single space: 2006-08-07 12:34:56-06:00"
 msgstr ""
 
 #: date.1.xml:84(term)
-msgid "<option>-s</option>, <option>--set</option>=<emphasis remap=\"I\">STRING</emphasis>"
+msgid ""
+"<option>-s</option>, <option>--set</option>=<emphasis remap=\"I\">STRING</"
+"emphasis>"
 msgstr ""
 
 #: date.1.xml:86(para)
@@ -139,7 +159,8 @@ msgid "set time described by STRING"
 msgstr ""
 
 #: date.1.xml:90(term)
-msgid "<option>-u</option>, <option>--utc</option>, <option>--universal</option>"
+msgid ""
+"<option>-u</option>, <option>--utc</option>, <option>--universal</option>"
 msgstr ""
 
 #: date.1.xml:92(para)
@@ -515,7 +536,9 @@ msgid "%:::z"
 msgstr ""
 
 #: date.1.xml:370(para)
-msgid "numeric time zone with : to necessary precision (e.g., <option>-04</option>, +05:30)"
+msgid ""
+"numeric time zone with : to necessary precision (e.g., <option>-04</option>, "
+"+05:30)"
 msgstr ""
 
 #: date.1.xml:374(term)
@@ -527,7 +550,9 @@ msgid "alphabetic time zone abbreviation (e.g., EDT)"
 msgstr ""
 
 #: date.1.xml:378(para)
-msgid "By default, date pads numeric fields with zeroes. The following optional flags may follow '%':"
+msgid ""
+"By default, date pads numeric fields with zeroes. The following optional "
+"flags may follow '%':"
 msgstr ""
 
 #: date.1.xml:383(term)
@@ -571,7 +596,11 @@ msgid "use opposite case if possible"
 msgstr ""
 
 #: date.1.xml:411(para)
-msgid "After any flags comes an optional field width, as a decimal number; then an optional modifier, which is either E to use the locale's alternate representations if available, or O to use the locale's alternate numeric symbols if available."
+msgid ""
+"After any flags comes an optional field width, as a decimal number; then an "
+"optional modifier, which is either E to use the locale's alternate "
+"representations if available, or O to use the locale's alternate numeric "
+"symbols if available."
 msgstr ""
 
 #: date.1.xml:420(title)
@@ -603,7 +632,11 @@ msgid "$ date --date='TZ=\"America/Los_Angeles\" 09:00 next Fri'"
 msgstr ""
 
 #: date.1.xml:433(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report date translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"date translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: date.1.xml:437(title)
@@ -612,7 +645,14 @@ msgstr ""
 
 #. NOTE: keep this paragraph in sync with the one in touch.x
 #: date.1.xml:439(para)
-msgid "The --date=STRING is a mostly free format human readable date string such as \"Sun, 29 Feb 2004 16:21:42 -0800\" or \"2004-02-29 16:21:42\" or even \"next Thursday\". A date string may contain items indicating calendar date, time of day, time zone, day of week, relative time, relative date, and numbers. An empty string indicates the beginning of the day. The date string format is more complex than is easily documented here but is fully described in the info documentation."
+msgid ""
+"The --date=STRING is a mostly free format human readable date string such as "
+"\"Sun, 29 Feb 2004 16:21:42 -0800\" or \"2004-02-29 16:21:42\" or even "
+"\"next Thursday\". A date string may contain items indicating calendar date, "
+"time of day, time zone, day of week, relative time, relative date, and "
+"numbers. An empty string indicates the beginning of the day. The date string "
+"format is more complex than is easily documented here but is fully described "
+"in the info documentation."
 msgstr ""
 
 #: date.1.xml:448(title)
@@ -628,7 +668,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: date.1.xml:453(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: date.1.xml:460(title)
@@ -636,7 +681,11 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: date.1.xml:461(para)
-msgid "The full documentation for <command>date</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>date</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>date</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>date</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: date.1.xml:469(emphasis)
@@ -651,4 +700,3 @@ msgstr ""
 #: date.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

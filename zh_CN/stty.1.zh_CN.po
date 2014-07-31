@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +26,8 @@ msgstr ""
 msgid "GNU coreutils 8.22"
 msgstr ""
 
-#: stty.1.xml:14(refname) stty.1.xml:20(command) stty.1.xml:26(command) stty.1.xml:31(command)
+#: stty.1.xml:14(refname) stty.1.xml:20(command) stty.1.xml:26(command)
+#: stty.1.xml:31(command)
 msgid "stty"
 msgstr ""
 
@@ -33,7 +35,8 @@ msgstr ""
 msgid "change and print terminal line settings"
 msgstr ""
 
-#: stty.1.xml:21(replaceable) stty.1.xml:21(replaceable) stty.1.xml:27(replaceable) stty.1.xml:27(replaceable) stty.1.xml:32(replaceable) stty.1.xml:32(replaceable)
+#: stty.1.xml:21(replaceable) stty.1.xml:27(replaceable)
+#: stty.1.xml:32(replaceable)
 msgid "DEVICE"
 msgstr ""
 
@@ -75,7 +78,8 @@ msgid "Print or change terminal characteristics."
 msgstr ""
 
 #: stty.1.xml:43(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: stty.1.xml:46(term)
@@ -95,7 +99,9 @@ msgid "print all current settings in a stty-readable form"
 msgstr ""
 
 #: stty.1.xml:58(term)
-msgid "<option>-F</option>, <option>--file</option>=<emphasis remap=\"I\">DEVICE</emphasis>"
+msgid ""
+"<option>-F</option>, <option>--file</option>=<emphasis remap=\"I\">DEVICE</"
+"emphasis>"
 msgstr ""
 
 #: stty.1.xml:60(para)
@@ -119,7 +125,9 @@ msgid "output version information and exit"
 msgstr ""
 
 #: stty.1.xml:74(para)
-msgid "Optional - before SETTING indicates negation. An * marks non-POSIX settings. The underlying system defines which settings are available."
+msgid ""
+"Optional - before SETTING indicates negation. An * marks non-POSIX settings. "
+"The underlying system defines which settings are available."
 msgstr ""
 
 #: stty.1.xml:80(title)
@@ -295,7 +303,8 @@ msgid "min N"
 msgstr ""
 
 #: stty.1.xml:210(para)
-msgid "with <option>-icanon</option>, set N characters minimum for a completed read"
+msgid ""
+"with <option>-icanon</option>, set N characters minimum for a completed read"
 msgstr ""
 
 #: stty.1.xml:214(term)
@@ -871,7 +880,9 @@ msgid "cooked"
 msgstr ""
 
 #: stty.1.xml:655(para)
-msgid "same as brkint ignpar istrip icrnl ixon opost isig icanon, eof and eol characters to their default values"
+msgid ""
+"same as brkint ignpar istrip icrnl ixon opost isig icanon, eof and eol "
+"characters to their default values"
 msgstr ""
 
 #: stty.1.xml:660(option)
@@ -895,7 +906,9 @@ msgid "dec"
 msgstr ""
 
 #: stty.1.xml:674(para)
-msgid "same as echoe echoctl echoke <option>-ixany</option> intr ^c erase 0177 kill ^u"
+msgid ""
+"same as echoe echoctl echoke <option>-ixany</option> intr ^c erase 0177 kill "
+"^u"
 msgstr ""
 
 #: stty.1.xml:679(term)
@@ -943,7 +956,9 @@ msgid "litout"
 msgstr ""
 
 #: stty.1.xml:711(para)
-msgid "same as <option>-parenb</option><option>-istrip</option><option>-opost</option> cs8"
+msgid ""
+"same as <option>-parenb</option><option>-istrip</option><option>-opost</"
+"option> cs8"
 msgstr ""
 
 #: stty.1.xml:715(option)
@@ -967,7 +982,9 @@ msgid "-nl"
 msgstr ""
 
 #: stty.1.xml:729(para)
-msgid "same as icrnl <option>-inlcr</option><option>-igncr</option> onlcr <option>-ocrnl</option><option>-onlret</option>"
+msgid ""
+"same as icrnl <option>-inlcr</option><option>-igncr</option> onlcr <option>-"
+"ocrnl</option><option>-onlret</option>"
 msgstr ""
 
 #: stty.1.xml:733(term)
@@ -1011,7 +1028,14 @@ msgid "raw"
 msgstr ""
 
 #: stty.1.xml:765(para)
-msgid "same as <option>-ignbrk</option><option>-brkint</option><option>-ignpar</option><option>-parmrk</option><option>-inpck</option><option>-istrip</option><option>-inlcr</option><option>-igncr</option><option>-icrnl</option><option>-ixon</option><option>-ixoff</option><option>-iuclc</option><option>-ixany</option><option>-imaxbel</option><option>-opost</option><option>-isig</option><option>-icanon</option><option>-xcase</option> min 1 time 0"
+msgid ""
+"same as <option>-ignbrk</option><option>-brkint</option><option>-ignpar</"
+"option><option>-parmrk</option><option>-inpck</option><option>-istrip</"
+"option><option>-inlcr</option><option>-igncr</option><option>-icrnl</"
+"option><option>-ixon</option><option>-ixoff</option><option>-iuclc</"
+"option><option>-ixany</option><option>-imaxbel</option><option>-opost</"
+"option><option>-isig</option><option>-icanon</option><option>-xcase</option> "
+"min 1 time 0"
 msgstr ""
 
 #: stty.1.xml:771(option)
@@ -1027,15 +1051,32 @@ msgid "sane"
 msgstr ""
 
 #: stty.1.xml:779(para)
-msgid "same as cread <option>-ignbrk</option> brkint <option>-inlcr</option><option>-igncr</option> icrnl <option>-iutf8</option><option>-ixoff</option><option>-iuclc</option><option>-ixany</option> imaxbel opost <option>-olcuc</option><option>-ocrnl</option> onlcr <option>-onocr</option><option>-onlret</option><option>-ofill</option><option>-ofdel</option> nl0 cr0 tab0 bs0 vt0 ff0 isig icanon iexten echo echoe echok <option>-echonl</option><option>-noflsh</option><option>-xcase</option><option>-tostop</option><option>-echoprt</option> echoctl echoke, all special characters to their default values"
+msgid ""
+"same as cread <option>-ignbrk</option> brkint <option>-inlcr</"
+"option><option>-igncr</option> icrnl <option>-iutf8</option><option>-ixoff</"
+"option><option>-iuclc</option><option>-ixany</option> imaxbel opost <option>-"
+"olcuc</option><option>-ocrnl</option> onlcr <option>-onocr</option><option>-"
+"onlret</option><option>-ofill</option><option>-ofdel</option> nl0 cr0 tab0 "
+"bs0 vt0 ff0 isig icanon iexten echo echoe echok <option>-echonl</"
+"option><option>-noflsh</option><option>-xcase</option><option>-tostop</"
+"option><option>-echoprt</option> echoctl echoke, all special characters to "
+"their default values"
 msgstr ""
 
 #: stty.1.xml:786(para)
-msgid "Handle the tty line connected to standard input. Without arguments, prints baud rate, line discipline, and deviations from stty sane. In settings, CHAR is taken literally, or coded as in ^c, 0x37, 0177 or 127; special values ^- or undef used to disable special characters."
+msgid ""
+"Handle the tty line connected to standard input. Without arguments, prints "
+"baud rate, line discipline, and deviations from stty sane. In settings, CHAR "
+"is taken literally, or coded as in ^c, 0x37, 0177 or 127; special values ^- "
+"or undef used to disable special characters."
 msgstr ""
 
 #: stty.1.xml:791(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report stty translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"stty translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: stty.1.xml:799(title)
@@ -1051,7 +1092,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: stty.1.xml:804(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: stty.1.xml:811(title)
@@ -1059,7 +1105,11 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: stty.1.xml:812(para)
-msgid "The full documentation for <command>stty</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>stty</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>stty</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>stty</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: stty.1.xml:820(emphasis)
@@ -1074,4 +1124,3 @@ msgstr ""
 #: stty.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

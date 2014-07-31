@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +60,8 @@ msgid "Summarize disk usage of each FILE, recursively for directories."
 msgstr ""
 
 #: du.1.xml:38(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: du.1.xml:41(term)
@@ -83,15 +85,22 @@ msgid "--apparent-size"
 msgstr ""
 
 #: du.1.xml:55(para)
-msgid "print apparent sizes, rather than disk usage; although the apparent size is usually smaller, it may be larger due to holes in ('sparse') files, internal fragmentation, indirect blocks, and the like"
+msgid ""
+"print apparent sizes, rather than disk usage; although the apparent size is "
+"usually smaller, it may be larger due to holes in ('sparse') files, internal "
+"fragmentation, indirect blocks, and the like"
 msgstr ""
 
 #: du.1.xml:62(term)
-msgid "<option>-B</option>, <option>--block-size</option>=<emphasis remap=\"I\">SIZE</emphasis>"
+msgid ""
+"<option>-B</option>, <option>--block-size</option>=<emphasis remap=\"I"
+"\">SIZE</emphasis>"
 msgstr ""
 
 #: du.1.xml:64(para)
-msgid "scale sizes by SIZE before printing them; e.g., '-BM' prints sizes in units of 1,048,576 bytes; see SIZE format below"
+msgid ""
+"scale sizes by SIZE before printing them; e.g., '-BM' prints sizes in units "
+"of 1,048,576 bytes; see SIZE format below"
 msgstr ""
 
 #: du.1.xml:70(term)
@@ -99,7 +108,9 @@ msgid "<option>-b</option>, <option>--bytes</option>"
 msgstr ""
 
 #: du.1.xml:72(para)
-msgid "equivalent to '--apparent-size <option>--block-size</option>=<literal>1</literal>'"
+msgid ""
+"equivalent to '--apparent-size <option>--block-size</option>=<literal>1</"
+"literal>'"
 msgstr ""
 
 #: du.1.xml:76(term)
@@ -119,11 +130,17 @@ msgid "dereference only symlinks that are listed on the command line"
 msgstr ""
 
 #: du.1.xml:89(term)
-msgid "<option>-d</option>, <option>--max-depth</option>=<emphasis remap=\"I\">N</emphasis>"
+msgid ""
+"<option>-d</option>, <option>--max-depth</option>=<emphasis remap=\"I\">N</"
+"emphasis>"
 msgstr ""
 
 #: du.1.xml:91(para)
-msgid "print the total for a directory (or file, with <option>--all</option>) only if it is N or fewer levels below the command line argument; <option>--max-depth</option>=<literal>0</literal> is the same as <option>--summarize</option>"
+msgid ""
+"print the total for a directory (or file, with <option>--all</option>) only "
+"if it is N or fewer levels below the command line argument; <option>--max-"
+"depth</option>=<literal>0</literal> is the same as <option>--summarize</"
+"option>"
 msgstr ""
 
 #: du.1.xml:98(term)
@@ -131,7 +148,9 @@ msgid "<option>--files0-from</option>=<emphasis remap=\"I\">F</emphasis>"
 msgstr ""
 
 #: du.1.xml:100(para)
-msgid "summarize disk usage of the NUL-terminated file names specified in file F; if F is -, then read names from standard input"
+msgid ""
+"summarize disk usage of the NUL-terminated file names specified in file F; "
+"if F is -, then read names from standard input"
 msgstr ""
 
 #: du.1.xml:106(option)
@@ -223,11 +242,15 @@ msgid "display only a total for each argument"
 msgstr ""
 
 #: du.1.xml:172(term)
-msgid "<option>-t</option>, <option>--threshold</option>=<emphasis remap=\"I\">SIZE</emphasis>"
+msgid ""
+"<option>-t</option>, <option>--threshold</option>=<emphasis remap=\"I"
+"\">SIZE</emphasis>"
 msgstr ""
 
 #: du.1.xml:174(para)
-msgid "exclude entries smaller than SIZE if positive, or entries greater than SIZE if negative"
+msgid ""
+"exclude entries smaller than SIZE if positive, or entries greater than SIZE "
+"if negative"
 msgstr ""
 
 #: du.1.xml:179(option)
@@ -235,7 +258,9 @@ msgid "--time"
 msgstr ""
 
 #: du.1.xml:181(para)
-msgid "show time of the last modification of any file in the directory, or any of its subdirectories"
+msgid ""
+"show time of the last modification of any file in the directory, or any of "
+"its subdirectories"
 msgstr ""
 
 #: du.1.xml:186(term)
@@ -243,7 +268,9 @@ msgid "<option>--time</option>=<emphasis remap=\"I\">WORD</emphasis>"
 msgstr ""
 
 #: du.1.xml:188(para)
-msgid "show time as WORD instead of modification time: atime, access, use, ctime or status"
+msgid ""
+"show time as WORD instead of modification time: atime, access, use, ctime or "
+"status"
 msgstr ""
 
 #: du.1.xml:193(term)
@@ -251,11 +278,15 @@ msgid "<option>--time-style</option>=<emphasis remap=\"I\">STYLE</emphasis>"
 msgstr ""
 
 #: du.1.xml:195(para)
-msgid "show times using STYLE, which can be: full-iso, long-iso, iso, or +FORMAT; FORMAT is interpreted like in 'date'"
+msgid ""
+"show times using STYLE, which can be: full-iso, long-iso, iso, or +FORMAT; "
+"FORMAT is interpreted like in 'date'"
 msgstr ""
 
 #: du.1.xml:201(term)
-msgid "<option>-X</option>, <option>--exclude-from</option>=<emphasis remap=\"I\">FILE</emphasis>"
+msgid ""
+"<option>-X</option>, <option>--exclude-from</option>=<emphasis remap=\"I"
+"\">FILE</emphasis>"
 msgstr ""
 
 #: du.1.xml:203(para)
@@ -295,15 +326,25 @@ msgid "output version information and exit"
 msgstr ""
 
 #: du.1.xml:229(para)
-msgid "Display values are in units of the first available SIZE from <option>--block-size</option>, and the DU_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment variables. Otherwise, units default to 1024 bytes (or 512 if POSIXLY_CORRECT is set)."
+msgid ""
+"Display values are in units of the first available SIZE from <option>--block-"
+"size</option>, and the DU_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment "
+"variables. Otherwise, units default to 1024 bytes (or 512 if POSIXLY_CORRECT "
+"is set)."
 msgstr ""
 
 #: du.1.xml:233(para)
-msgid "The SIZE argument is an integer and optional unit (example: 10K is 10*1024). Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000)."
+msgid ""
+"The SIZE argument is an integer and optional unit (example: 10K is 10*1024). "
+"Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000)."
 msgstr ""
 
 #: du.1.xml:236(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report du translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"du translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: du.1.xml:243(title)
@@ -311,7 +352,12 @@ msgid "PATTERNS"
 msgstr ""
 
 #: du.1.xml:244(para)
-msgid "PATTERN is a shell pattern (not a regular expression). The pattern <emphasis remap=\"B\">?</emphasis> matches any one character, whereas <emphasis remap=\"B\">*</emphasis> matches any string (composed of zero, one or multiple characters). For example, <emphasis remap=\"B\">*.o</emphasis> will match any files whose names end in <markup>.o</markup>. Therefore, the command"
+msgid ""
+"PATTERN is a shell pattern (not a regular expression). The pattern <emphasis "
+"remap=\"B\">?</emphasis> matches any one character, whereas <emphasis remap="
+"\"B\">*</emphasis> matches any string (composed of zero, one or multiple "
+"characters). For example, <emphasis remap=\"B\">*.o</emphasis> will match "
+"any files whose names end in <markup>.o</markup>. Therefore, the command"
 msgstr ""
 
 #: du.1.xml:255(userinput)
@@ -320,7 +366,9 @@ msgid "du --exclude='*.o'"
 msgstr ""
 
 #: du.1.xml:257(para)
-msgid "will skip all files and subdirectories ending in <markup>.o</markup> (including the file <markup>.o</markup> itself)."
+msgid ""
+"will skip all files and subdirectories ending in <markup>.o</markup> "
+"(including the file <markup>.o</markup> itself)."
 msgstr ""
 
 #: du.1.xml:264(title)
@@ -328,7 +376,8 @@ msgid "AUTHOR"
 msgstr ""
 
 #: du.1.xml:265(para)
-msgid "Written by Torbjorn Granlund, David MacKenzie, Paul Eggert, and Jim Meyering."
+msgid ""
+"Written by Torbjorn Granlund, David MacKenzie, Paul Eggert, and Jim Meyering."
 msgstr ""
 
 #: du.1.xml:269(title)
@@ -336,7 +385,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: du.1.xml:270(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: du.1.xml:277(title)
@@ -344,7 +398,10 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: du.1.xml:278(para)
-msgid "The full documentation for <command>du</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>du</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>du</command> is maintained as a Texinfo "
+"manual. If the <emphasis remap=\"B\">info</emphasis> and <command>du</"
+"command> programs are properly installed at your site, the command"
 msgstr ""
 
 #: du.1.xml:286(emphasis)
@@ -359,4 +416,3 @@ msgstr ""
 #: du.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

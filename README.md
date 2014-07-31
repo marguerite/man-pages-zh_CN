@@ -41,7 +41,7 @@ You need `xml2po` program installed, for openSUSE:
  sudo zypper in xml2po
 
 * Copy the manpage you want to translate to the `raw` directory.
-* Run the `unpack_manpage.sh` script, it will unpack the .gz manpages.
+* Run the `unpack.sh` script, it will unpack the .gz manpages.
 * Run the `man2xml.sh` script, it will generate xml files in xml directory.
 * Run the `xml2pot.sh` script, it will generate pot files in 50-pot directory.
 * Run the `merge.sh` script, it will merge the pot into the po files.

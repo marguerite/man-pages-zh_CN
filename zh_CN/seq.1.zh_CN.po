@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +26,8 @@ msgstr ""
 msgid "GNU coreutils 8.22"
 msgstr ""
 
-#: seq.1.xml:14(refname) seq.1.xml:20(command) seq.1.xml:25(command) seq.1.xml:31(command)
+#: seq.1.xml:14(refname) seq.1.xml:20(command) seq.1.xml:25(command)
+#: seq.1.xml:31(command)
 msgid "seq"
 msgstr ""
 
@@ -33,11 +35,13 @@ msgstr ""
 msgid "print a sequence of numbers"
 msgstr ""
 
-#: seq.1.xml:21(replaceable) seq.1.xml:26(replaceable) seq.1.xml:32(replaceable)
+#: seq.1.xml:21(replaceable) seq.1.xml:26(replaceable)
+#: seq.1.xml:32(replaceable)
 msgid "OPTION"
 msgstr ""
 
-#: seq.1.xml:22(replaceable) seq.1.xml:28(replaceable) seq.1.xml:35(replaceable)
+#: seq.1.xml:22(replaceable) seq.1.xml:28(replaceable)
+#: seq.1.xml:35(replaceable)
 msgid "LAST"
 msgstr ""
 
@@ -59,11 +63,14 @@ msgid "Print numbers from FIRST to LAST, in steps of INCREMENT."
 msgstr ""
 
 #: seq.1.xml:45(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: seq.1.xml:48(term)
-msgid "<option>-f</option>, <option>--format</option>=<emphasis remap=\"I\">FORMAT</emphasis>"
+msgid ""
+"<option>-f</option>, <option>--format</option>=<emphasis remap=\"I\">FORMAT</"
+"emphasis>"
 msgstr ""
 
 #: seq.1.xml:50(para)
@@ -71,7 +78,9 @@ msgid "use printf style floating-point FORMAT"
 msgstr ""
 
 #: seq.1.xml:54(term)
-msgid "<option>-s</option>, <option>--separator</option>=<emphasis remap=\"I\">STRING</emphasis>"
+msgid ""
+"<option>-s</option>, <option>--separator</option>=<emphasis remap=\"I"
+"\">STRING</emphasis>"
 msgstr ""
 
 #: seq.1.xml:56(para)
@@ -103,11 +112,24 @@ msgid "output version information and exit"
 msgstr ""
 
 #: seq.1.xml:76(para)
-msgid "If FIRST or INCREMENT is omitted, it defaults to 1. That is, an omitted INCREMENT defaults to 1 even when LAST is smaller than FIRST. The sequence of numbers ends when the sum of the current number and INCREMENT would become greater than LAST. FIRST, INCREMENT, and LAST are interpreted as floating point values. INCREMENT is usually positive if FIRST is smaller than LAST, and INCREMENT is usually negative if FIRST is greater than LAST. FORMAT must be suitable for printing one argument of type 'double'; it defaults to %.PRECf if FIRST, INCREMENT, and LAST are all fixed point decimal numbers with maximum precision PREC, and to %g otherwise."
+msgid ""
+"If FIRST or INCREMENT is omitted, it defaults to 1. That is, an omitted "
+"INCREMENT defaults to 1 even when LAST is smaller than FIRST. The sequence "
+"of numbers ends when the sum of the current number and INCREMENT would "
+"become greater than LAST. FIRST, INCREMENT, and LAST are interpreted as "
+"floating point values. INCREMENT is usually positive if FIRST is smaller "
+"than LAST, and INCREMENT is usually negative if FIRST is greater than LAST. "
+"FORMAT must be suitable for printing one argument of type 'double'; it "
+"defaults to %.PRECf if FIRST, INCREMENT, and LAST are all fixed point "
+"decimal numbers with maximum precision PREC, and to %g otherwise."
 msgstr ""
 
 #: seq.1.xml:87(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report seq translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"seq translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: seq.1.xml:94(title)
@@ -123,7 +145,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: seq.1.xml:99(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: seq.1.xml:106(title)
@@ -131,7 +158,10 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: seq.1.xml:107(para)
-msgid "The full documentation for <command>seq</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>seq</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>seq</command> is maintained as a Texinfo "
+"manual. If the <emphasis remap=\"B\">info</emphasis> and <command>seq</"
+"command> programs are properly installed at your site, the command"
 msgstr ""
 
 #: seq.1.xml:115(emphasis)
@@ -146,4 +176,3 @@ msgstr ""
 #: seq.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

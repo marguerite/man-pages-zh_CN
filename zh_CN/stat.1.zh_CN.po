@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,7 +52,8 @@ msgid "Display file or file system status."
 msgstr ""
 
 #: stat.1.xml:33(para)
-msgid "Mandatory arguments to long options are mandatory for short options too."
+msgid ""
+"Mandatory arguments to long options are mandatory for short options too."
 msgstr ""
 
 #: stat.1.xml:36(term)
@@ -71,11 +73,15 @@ msgid "display file system status instead of file status"
 msgstr ""
 
 #: stat.1.xml:48(term)
-msgid "<option>-c</option><option>--format</option>=<emphasis remap=\"I\">FORMAT</emphasis>"
+msgid ""
+"<option>-c</option><option>--format</option>=<emphasis remap=\"I\">FORMAT</"
+"emphasis>"
 msgstr ""
 
 #: stat.1.xml:50(para)
-msgid "use the specified FORMAT instead of the default; output a newline after each use of FORMAT"
+msgid ""
+"use the specified FORMAT instead of the default; output a newline after each "
+"use of FORMAT"
 msgstr ""
 
 #: stat.1.xml:55(term)
@@ -83,7 +89,10 @@ msgid "<option>--printf</option>=<emphasis remap=\"I\">FORMAT</emphasis>"
 msgstr ""
 
 #: stat.1.xml:57(para)
-msgid "like <option>--format</option>, but interpret backslash escapes, and do not output a mandatory trailing newline; if you want a newline, include &bsol;n in FORMAT"
+msgid ""
+"like <option>--format</option>, but interpret backslash escapes, and do not "
+"output a mandatory trailing newline; if you want a newline, include &bsol;n "
+"in FORMAT"
 msgstr ""
 
 #: stat.1.xml:63(term)
@@ -111,7 +120,9 @@ msgid "output version information and exit"
 msgstr ""
 
 #: stat.1.xml:79(para)
-msgid "The valid format sequences for files (without <option>--file-system</option>):"
+msgid ""
+"The valid format sequences for files (without <option>--file-system</"
+"option>):"
 msgstr ""
 
 #: stat.1.xml:83(term) stat.1.xml:265(term)
@@ -415,11 +426,18 @@ msgid "file system type in human readable form"
 msgstr ""
 
 #: stat.1.xml:335(para)
-msgid "NOTE: your shell may have its own version of stat, which usually supersedes the version described here. Please refer to your shell's documentation for details about the options it supports."
+msgid ""
+"NOTE: your shell may have its own version of stat, which usually supersedes "
+"the version described here. Please refer to your shell's documentation for "
+"details about the options it supports."
 msgstr ""
 
 #: stat.1.xml:339(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report stat translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"stat translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
+"&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: stat.1.xml:346(title)
@@ -435,7 +453,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: stat.1.xml:351(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: stat.1.xml:358(title)
@@ -447,7 +470,11 @@ msgid "2"
 msgstr ""
 
 #: stat.1.xml:361(para)
-msgid "The full documentation for <command>stat</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>stat</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>stat</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>stat</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: stat.1.xml:369(emphasis)
@@ -462,4 +489,3 @@ msgstr ""
 #: stat.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

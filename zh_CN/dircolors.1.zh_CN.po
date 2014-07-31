@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -55,7 +56,8 @@ msgid "Determine format of output:"
 msgstr ""
 
 #: dircolors.1.xml:35(term)
-msgid "<option>-b</option>, <option>--sh</option>, <option>--bourne-shell</option>"
+msgid ""
+"<option>-b</option>, <option>--sh</option>, <option>--bourne-shell</option>"
 msgstr ""
 
 #: dircolors.1.xml:37(para)
@@ -95,11 +97,19 @@ msgid "output version information and exit"
 msgstr ""
 
 #: dircolors.1.xml:63(para)
-msgid "If FILE is specified, read it to determine which colors to use for which file types and extensions. Otherwise, a precompiled database is used. For details on the format of these files, run 'dircolors <option>--print-database</option>'."
+msgid ""
+"If FILE is specified, read it to determine which colors to use for which "
+"file types and extensions. Otherwise, a precompiled database is used. For "
+"details on the format of these files, run 'dircolors <option>--print-"
+"database</option>'."
 msgstr ""
 
 #: dircolors.1.xml:67(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report dircolors translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"dircolors translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: dircolors.1.xml:75(title)
@@ -115,7 +125,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: dircolors.1.xml:80(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: dircolors.1.xml:87(title)
@@ -123,7 +138,11 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: dircolors.1.xml:88(para)
-msgid "The full documentation for <command>dircolors</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>dircolors</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>dircolors</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>dircolors</command> programs are properly installed at your site, "
+"the command"
 msgstr ""
 
 #: dircolors.1.xml:96(emphasis)
@@ -138,4 +157,3 @@ msgstr ""
 #: dircolors.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

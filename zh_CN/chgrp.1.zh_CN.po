@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +60,9 @@ msgstr ""
 
 #. Add any additional description here
 #: chgrp.1.xml:39(para)
-msgid "Change the group of each FILE to GROUP. With <option>--reference</option>, change the group of each FILE to that of RFILE."
+msgid ""
+"Change the group of each FILE to GROUP. With <option>--reference</option>, "
+"change the group of each FILE to that of RFILE."
 msgstr ""
 
 #: chgrp.1.xml:43(term)
@@ -71,7 +74,8 @@ msgid "like verbose but report only when a change is made"
 msgstr ""
 
 #: chgrp.1.xml:49(term)
-msgid "<option>-f</option>, <option>--silent</option>, <option>--quiet</option>"
+msgid ""
+"<option>-f</option>, <option>--silent</option>, <option>--quiet</option>"
 msgstr ""
 
 #: chgrp.1.xml:51(para)
@@ -91,7 +95,9 @@ msgid "--dereference"
 msgstr ""
 
 #: chgrp.1.xml:63(para)
-msgid "affect the referent of each symbolic link (this is the default), rather than the symbolic link itself"
+msgid ""
+"affect the referent of each symbolic link (this is the default), rather than "
+"the symbolic link itself"
 msgstr ""
 
 #: chgrp.1.xml:68(term)
@@ -99,7 +105,9 @@ msgid "<option>-h</option>, <option>--no-dereference</option>"
 msgstr ""
 
 #: chgrp.1.xml:70(para)
-msgid "affect symbolic links instead of any referenced file (useful only on systems that can change the ownership of a symlink)"
+msgid ""
+"affect symbolic links instead of any referenced file (useful only on systems "
+"that can change the ownership of a symlink)"
 msgstr ""
 
 #: chgrp.1.xml:76(option)
@@ -135,7 +143,10 @@ msgid "operate on files and directories recursively"
 msgstr ""
 
 #: chgrp.1.xml:99(para)
-msgid "The following options modify how a hierarchy is traversed when the <option>-R</option> option is also specified. If more than one is specified, only the final one takes effect."
+msgid ""
+"The following options modify how a hierarchy is traversed when the <option>-"
+"R</option> option is also specified. If more than one is specified, only the "
+"final one takes effect."
 msgstr ""
 
 #: chgrp.1.xml:105(option)
@@ -143,7 +154,8 @@ msgid "-H"
 msgstr ""
 
 #: chgrp.1.xml:107(para)
-msgid "if a command line argument is a symbolic link to a directory, traverse it"
+msgid ""
+"if a command line argument is a symbolic link to a directory, traverse it"
 msgstr ""
 
 #: chgrp.1.xml:112(option)
@@ -199,7 +211,11 @@ msgid "Change the group of /u and subfiles to \"staff\"."
 msgstr ""
 
 #: chgrp.1.xml:152(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report chgrp translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"chgrp translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: chgrp.1.xml:159(title)
@@ -215,7 +231,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: chgrp.1.xml:164(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: chgrp.1.xml:171(title)
@@ -223,7 +244,11 @@ msgid "SEE ALSO"
 msgstr ""
 
 #: chgrp.1.xml:172(para)
-msgid "The full documentation for <command>chgrp</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>chgrp</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>chgrp</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>chgrp</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: chgrp.1.xml:180(emphasis)
@@ -238,4 +263,3 @@ msgstr ""
 #: chgrp.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-

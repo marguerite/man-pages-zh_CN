@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 02:53+0800\n"
+"POT-Creation-Date: 2014-07-31 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +26,8 @@ msgstr ""
 msgid "GNU coreutils 8.22"
 msgstr ""
 
-#: sleep.1.xml:14(refname) sleep.1.xml:20(command) sleep.1.xml:26(command) sleep.1.xml:72(refentrytitle)
+#: sleep.1.xml:14(refname) sleep.1.xml:20(command) sleep.1.xml:26(command)
+#: sleep.1.xml:72(refentrytitle)
 msgid "sleep"
 msgstr ""
 
@@ -51,7 +53,12 @@ msgstr ""
 
 #. Add any additional description here
 #: sleep.1.xml:35(para)
-msgid "Pause for NUMBER seconds. SUFFIX may be 's' for seconds (the default), 'm' for minutes, 'h' for hours or 'd' for days. Unlike most implementations that require NUMBER be an integer, here NUMBER may be an arbitrary floating point number. Given two or more arguments, pause for the amount of time specified by the sum of their values."
+msgid ""
+"Pause for NUMBER seconds. SUFFIX may be 's' for seconds (the default), 'm' "
+"for minutes, 'h' for hours or 'd' for days. Unlike most implementations that "
+"require NUMBER be an integer, here NUMBER may be an arbitrary floating point "
+"number. Given two or more arguments, pause for the amount of time specified "
+"by the sum of their values."
 msgstr ""
 
 #: sleep.1.xml:42(option)
@@ -71,7 +78,11 @@ msgid "output version information and exit"
 msgstr ""
 
 #: sleep.1.xml:52(para)
-msgid "GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report sleep translation bugs to &lt;<ulink url=\"http://translationproject.org/team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"sleep translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
 
 #: sleep.1.xml:59(title)
@@ -87,7 +98,12 @@ msgid "COPYRIGHT"
 msgstr ""
 
 #: sleep.1.xml:64(para)
-msgid "Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
 msgstr ""
 
 #: sleep.1.xml:71(title)
@@ -99,7 +115,11 @@ msgid "3"
 msgstr ""
 
 #: sleep.1.xml:74(para)
-msgid "The full documentation for <command>sleep</command> is maintained as a Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and <command>sleep</command> programs are properly installed at your site, the command"
+msgid ""
+"The full documentation for <command>sleep</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>sleep</command> programs are properly installed at your site, the "
+"command"
 msgstr ""
 
 #: sleep.1.xml:82(emphasis)
@@ -114,4 +134,3 @@ msgstr ""
 #: sleep.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-
