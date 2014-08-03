@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:04+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -587,7 +587,7 @@ msgid "The full documentation for <command>dir</command> is maintained as a Texi
 msgstr ""
 
 #: dir.1.xml:475(emphasis)
-msgid "info coreutils 'dir invocation'"
+msgid "info coreutils ''dir invocation''"
 msgstr ""
 
 #: dir.1.xml:477(para)

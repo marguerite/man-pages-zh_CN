@@ -74,7 +74,7 @@ and
 <command>tty</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'tty invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'tty invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

@@ -187,7 +187,7 @@ and
 <command>nl</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'nl invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'nl invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

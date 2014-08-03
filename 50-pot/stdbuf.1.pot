@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:05+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,7 +115,7 @@ msgid "EXAMPLES"
 msgstr ""
 
 #: stdbuf.1.xml:86(para)
-msgid "<userinput>tail -f access.log | stdbuf -oL cut -d ' ' -f1 | uniq</userinput> This will immedidately display unique entries from access.log"
+msgid "<userinput>tail -f access.log | stdbuf -oL cut -d '' '' -f1 | uniq</userinput> This will immedidately display unique entries from access.log"
 msgstr ""
 
 #: stdbuf.1.xml:91(title)
@@ -151,7 +151,7 @@ msgid "The full documentation for <command>stdbuf</command> is maintained as a T
 msgstr ""
 
 #: stdbuf.1.xml:117(emphasis)
-msgid "info coreutils 'stdbuf invocation'"
+msgid "info coreutils ''stdbuf invocation''"
 msgstr ""
 
 #: stdbuf.1.xml:119(para)

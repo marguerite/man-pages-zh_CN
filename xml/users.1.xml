@@ -69,7 +69,7 @@ and
 <command>users</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'users invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'users invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

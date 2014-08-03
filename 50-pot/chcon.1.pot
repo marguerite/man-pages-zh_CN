@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:04+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -259,7 +259,7 @@ msgid "The full documentation for <command>chcon</command> is maintained as a Te
 msgstr ""
 
 #: chcon.1.xml:185(emphasis)
-msgid "info coreutils 'chcon invocation'"
+msgid "info coreutils ''chcon invocation''"
 msgstr ""
 
 #: chcon.1.xml:187(para)

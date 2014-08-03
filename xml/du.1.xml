@@ -252,7 +252,7 @@ will match any files whose names end in
 <markup>.o</markup>.
 Therefore, the command</para>
 
-<para><userinput>du --exclude='*.o'</userinput></para>
+<para><userinput>du --exclude=&apos;'*.o&apos;'</userinput></para>
 
 <para>will skip all files and subdirectories ending in
 <markup>.o</markup>
@@ -283,7 +283,7 @@ and
 <command>du</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'du invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'du invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

@@ -145,7 +145,7 @@ and
 <command>uniq</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'uniq invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'uniq invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

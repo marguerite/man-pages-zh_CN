@@ -128,7 +128,7 @@ and
 <command>sha1sum</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'sha1sum invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'sha1sum invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

@@ -1,0 +1,151 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
+"PO-Revision-Date: 2014-07-31 22:53+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: nproc.1.xml:8(refentrytitle)
+msgid "NPROC"
+msgstr "nproc"
+
+#: nproc.1.xml:9(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: nproc.1.xml:10(refmiscinfo)
+msgid "July 2014"
+msgstr "2014 年 7 月"
+
+#: nproc.1.xml:11(refmiscinfo)
+msgid "GNU coreutils 8.22"
+msgstr "GNU coreutils 8.22"
+
+#: nproc.1.xml:14(refname) nproc.1.xml:20(command)
+msgid "nproc"
+msgstr "nproc"
+
+#: nproc.1.xml:15(refpurpose)
+msgid "print the number of processing units available"
+msgstr "输出可用处理器数"
+
+#: nproc.1.xml:21(replaceable)
+msgid "OPTION"
+msgstr "选项"
+
+#: nproc.1.xml:27(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#. Add any additional description here
+#: nproc.1.xml:30(para)
+msgid ""
+"Print the number of processing units available to the current process, which "
+"may be less than the number of online processors"
+msgstr "输出当前进程可用的处理器数，可能小于在岗处理器数。"
+
+#: nproc.1.xml:34(option)
+msgid "--all"
+msgstr "--all"
+
+#: nproc.1.xml:36(para)
+msgid "print the number of installed processors"
+msgstr "输出已安装处理器数"
+
+#: nproc.1.xml:40(term)
+msgid "<option>--ignore</option>=<emphasis remap=\"I\">N</emphasis>"
+msgstr "<option>--ignore</option>=<emphasis remap=\"I\">N</emphasis>"
+
+#: nproc.1.xml:42(para)
+msgid "if possible, exclude N processing units"
+msgstr "若可行，排除 N 处理器"
+
+#: nproc.1.xml:46(option)
+msgid "--help"
+msgstr "--help"
+
+#: nproc.1.xml:48(para)
+msgid "display this help and exit"
+msgstr "显示此帮助并退出"
+
+#: nproc.1.xml:52(option)
+msgid "--version"
+msgstr "--version"
+
+#: nproc.1.xml:54(para)
+msgid "output version information and exit"
+msgstr "输出版本信息并退出"
+
+#: nproc.1.xml:56(para)
+msgid ""
+"GNU coreutils online help: &lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> Report "
+"nproc translation bugs to &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+msgstr ""
+"GNU coreutils 在线帮助：&lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> 汇报 "
+"nproc 翻译故障 &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
+
+#: nproc.1.xml:63(title)
+msgid "AUTHOR"
+msgstr "作者"
+
+#: nproc.1.xml:64(para)
+msgid "Written by Giuseppe Scrivano."
+msgstr "由 Giuseppe Scrivano 编纂"
+
+#: nproc.1.xml:67(title)
+msgid "COPYRIGHT"
+msgstr "版权"
+
+#: nproc.1.xml:68(para)
+msgid ""
+"Copyright &copy; 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL "
+"version 3 or later &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>. This is free software: you "
+"are free to change and redistribute it. There is NO WARRANTY, to the extent "
+"permitted by law."
+msgstr ""
+"版权所有 &copy; 2013 自由软件基金会。许可证 GPLv3+：GNU 通用公共许可证 "
+"第三版及后续版本 &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>。这是一个自由软件：您可以自由"
+"修订并分发它。在法律允许范围内不作任何保证。"
+
+#: nproc.1.xml:75(title)
+msgid "SEE ALSO"
+msgstr "继续阅读"
+
+#: nproc.1.xml:76(para)
+msgid ""
+"The full documentation for <command>nproc</command> is maintained as a "
+"Texinfo manual. If the <emphasis remap=\"B\">info</emphasis> and "
+"<command>nproc</command> programs are properly installed at your site, the "
+"command"
+msgstr ""
+"<command>nproc</command> 的完整文档以一本 Texinfo 手册的形式维护。"
+"若您的计算机上妥善安装了  <emphasis remap=\"B\">info</emphasis> 和 "
+"<command>nproc</command> 程序，这个命令"
+
+#: nproc.1.xml:84(emphasis)
+msgid "info coreutils ''nproc invocation''"
+msgstr "info coreutils \"nproc invocation\""
+
+#: nproc.1.xml:86(para)
+msgid "should give you access to the complete manual."
+msgstr "应可让您调阅完整手册。"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: nproc.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+

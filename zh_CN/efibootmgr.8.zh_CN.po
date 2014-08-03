@@ -1,0 +1,699 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2014-08-03 13:53+0800\n"
+"PO-Revision-Date: 2014-08-03 14:47+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: efibootmgr.8.xml:11(date) efibootmgr.8.xml:15(refmiscinfo)
+msgid "11 January 2012"
+msgstr "2012 年 1 月 11 日"
+
+#: efibootmgr.8.xml:13(refentrytitle)
+msgid "EFIBOOTMGR"
+msgstr "efibootmgr"
+
+#: efibootmgr.8.xml:14(manvolnum)
+msgid "8"
+msgstr "8"
+
+#: efibootmgr.8.xml:18(refname) efibootmgr.8.xml:24(command)
+msgid "efibootmgr"
+msgstr "efibootmgr"
+
+#: efibootmgr.8.xml:19(refpurpose)
+msgid "manipulate the EFI Boot Manager"
+msgstr "操纵 EFI 引导管理器"
+
+#: efibootmgr.8.xml:24(arg)
+msgid "-a"
+msgstr "-a"
+
+#: efibootmgr.8.xml:25(arg)
+msgid "-A"
+msgstr "-A"
+
+#: efibootmgr.8.xml:26(replaceable) efibootmgr.8.xml:27(replaceable) efibootmgr.8.xml:33(replaceable) efibootmgr.8.xml:37(replaceable) efibootmgr.8.xml:46(replaceable) efibootmgr.8.xml:92(emphasis) efibootmgr.8.xml:135(emphasis) efibootmgr.8.xml:159(emphasis) efibootmgr.8.xml:171(emphasis) efibootmgr.8.xml:220(emphasis)
+msgid "XXXX"
+msgstr "XXXX"
+
+#: efibootmgr.8.xml:26(arg)
+msgid "-b <placeholder-1/>"
+msgstr "-b <placeholder-1/>"
+
+#: efibootmgr.8.xml:27(arg)
+msgid "-B <placeholder-1/>"
+msgstr "-B <placeholder-1/>"
+
+#: efibootmgr.8.xml:28(arg)
+msgid "-c"
+msgstr "-c"
+
+#: efibootmgr.8.xml:29(replaceable) efibootmgr.8.xml:110(emphasis)
+msgid "DISK"
+msgstr "磁盘"
+
+#: efibootmgr.8.xml:29(arg)
+msgid "-d <placeholder-1/>"
+msgstr "-d <placeholder-1/>"
+
+#: efibootmgr.8.xml:30(replaceable) efibootmgr.8.xml:411(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: efibootmgr.8.xml:30(arg)
+msgid "-e <placeholder-1/>"
+msgstr "-e <placeholder-1/>"
+
+#: efibootmgr.8.xml:30(replaceable)
+msgid "3"
+msgstr "3"
+
+#: efibootmgr.8.xml:30(arg)
+msgid "-1"
+msgstr "-1"
+
+#: efibootmgr.8.xml:31(replaceable) efibootmgr.8.xml:123(emphasis)
+msgid "NUM"
+msgstr "数字"
+
+#: efibootmgr.8.xml:31(arg)
+msgid "-E <placeholder-1/>"
+msgstr "-E <placeholder-1/>"
+
+#: efibootmgr.8.xml:32(arg)
+msgid "-g"
+msgstr "-g"
+
+#: efibootmgr.8.xml:33(arg)
+msgid "-H <placeholder-1/>"
+msgstr "-H <placeholder-1/>"
+
+#: efibootmgr.8.xml:34(replaceable) efibootmgr.8.xml:35(replaceable) efibootmgr.8.xml:141(emphasis) efibootmgr.8.xml:147(emphasis)
+msgid "NAME"
+msgstr "名称"
+
+#: efibootmgr.8.xml:34(arg)
+msgid "-i <placeholder-1/>"
+msgstr "-i <placeholder-1/>"
+
+#: efibootmgr.8.xml:35(arg)
+msgid "-l <placeholder-1/>"
+msgstr "-l <placeholder-1/>"
+
+#: efibootmgr.8.xml:36(replaceable) efibootmgr.8.xml:153(emphasis)
+msgid "LABEL"
+msgstr "标签"
+
+#: efibootmgr.8.xml:36(arg)
+msgid "-L <placeholder-1/>"
+msgstr "-L <placeholder-1/>"
+
+#: efibootmgr.8.xml:37(arg)
+msgid "-n <placeholder-1/>"
+msgstr "-n <placeholder-1/>"
+
+#: efibootmgr.8.xml:38(arg)
+msgid "-N"
+msgstr "-N"
+
+#: efibootmgr.8.xml:39(replaceable)
+msgid "XXXX,YYYY,ZZZZ"
+msgstr "XXXX,YYYY,ZZZZ"
+
+#: efibootmgr.8.xml:39(arg)
+msgid "-o <placeholder-1/>"
+msgstr "-o <placeholder-1/>"
+
+#: efibootmgr.8.xml:40(arg)
+msgid "-O"
+msgstr "-O"
+
+#: efibootmgr.8.xml:41(replaceable) efibootmgr.8.xml:183(emphasis)
+msgid "PART"
+msgstr "分区"
+
+#: efibootmgr.8.xml:41(arg)
+msgid "-p <placeholder-1/>"
+msgstr "-p <placeholder-1/>"
+
+#: efibootmgr.8.xml:42(arg)
+msgid "-q"
+msgstr "-q"
+
+#: efibootmgr.8.xml:43(replaceable) efibootmgr.8.xml:201(emphasis)
+msgid "seconds"
+msgstr "秒"
+
+#: efibootmgr.8.xml:43(arg)
+msgid "-t <placeholder-1/>"
+msgstr "-t <placeholder-1/>"
+
+#: efibootmgr.8.xml:44(arg)
+msgid "-T"
+msgstr "-T"
+
+#: efibootmgr.8.xml:45(arg)
+msgid "-u"
+msgstr "-u"
+
+#: efibootmgr.8.xml:46(arg)
+msgid "-U <placeholder-1/>"
+msgstr "-U <placeholder-1/>"
+
+#: efibootmgr.8.xml:47(arg)
+msgid "-v"
+msgstr "-v"
+
+#: efibootmgr.8.xml:48(arg)
+msgid "-V"
+msgstr "-V"
+
+#: efibootmgr.8.xml:49(arg)
+msgid "-w"
+msgstr "-w"
+
+#: efibootmgr.8.xml:50(replaceable)
+msgid "file"
+msgstr "文件"
+
+#: efibootmgr.8.xml:50(arg)
+msgid "-@ <placeholder-1/>"
+msgstr "-@ <placeholder-1/>"
+
+#: efibootmgr.8.xml:56(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: efibootmgr.8.xml:57(para)
+msgid ""
+"<command>efibootmgr</command> is a userspace application used to modify the "
+"Intel Extensible Firmware Interface (EFI) Boot Manager. This application can "
+"create and destroy boot entries, change the boot order, change the next "
+"running boot option, and more."
+msgstr ""
+"<command>efibootmgr</command> 是一个用于修改 Intel 可扩展固件接口 (EFI) "
+"引导管理器的用户空间应用程序。该应用程序可以创建或摧毁引导项、修改引导顺序、修改下一次运行时的引导选项，以及更多功能。"
+
+#: efibootmgr.8.xml:62(para)
+msgid ""
+"Details on the EFI Boot Manager are available from the EFI Specification, "
+"v1.02 or later, available from: &lt;URL:<ulink "
+"url=\"http://developer.intel.com&gt;\">http://developer.intel.com&gt;</ulink>"
+msgstr ""
+"EFI 引导管理器的细节可从 EFI 规范 v1.02 及后续版本中获得，该规范在 &lt;<ulink "
+"url=\"http://developer.intel.com&gt;\">http://developer.intel.com&gt;</ulink>"
+
+#: efibootmgr.8.xml:67(para)
+msgid ""
+"<emphasis remap=\"B\">Note:</emphasis> efibootmgr requires that the kernel "
+"support access to EFI non-volatile variables (through <filename>"
+"/proc/efi/vars</filename> on 2.4 kernels, <filename>/sys/firmware/efi/vars<"
+"/filename> on 2.6 kernels). <emphasis remap=\"B\">modprobe efivars</emphasis> "
+"should do the trick."
+msgstr ""
+"<emphasis remap=\"B\">注意：</emphasis> efibootmgr 需要内核支持访问 EFI 的非可变变量 (在 2.4 "
+"内核上通过 <filename>/proc/efi/vars</filename>，在 2.6 内核上通过 <filename>"
+"/sys/firmware/efi/vars</filename>)。<emphasis remap=\"B\">modprobe efivars<"
+"/emphasis> 应该就可以了。"
+
+#: efibootmgr.8.xml:76(title)
+msgid "OPTIONS"
+msgstr "选项"
+
+#: efibootmgr.8.xml:77(para)
+msgid "The following is a list of options accepted by efibootmgr:"
+msgstr "以下是 efibootmgr 接受的选项列表："
+
+#: efibootmgr.8.xml:80(option)
+msgid "-a | --active"
+msgstr "-a | --active"
+
+#: efibootmgr.8.xml:82(para)
+msgid "Sets bootnum active"
+msgstr "激活 bootnum"
+
+#: efibootmgr.8.xml:86(option)
+msgid "-A | --inactive"
+msgstr "-A | --inactive"
+
+#: efibootmgr.8.xml:88(para)
+msgid "Sets bootnum inactive"
+msgstr "取消激活 bootnum"
+
+#: efibootmgr.8.xml:92(option)
+msgid "-b | --bootnum"
+msgstr "-b | --bootnum"
+
+#: efibootmgr.8.xml:94(para)
+msgid "Modify Boot<emphasis remap=\"I\">XXXX</emphasis> (hex)"
+msgstr "修改 Boot<emphasis remap=\"I\">XXXX</emphasis> (十六进制)"
+
+#: efibootmgr.8.xml:98(option)
+msgid "-B | --delete-bootnum"
+msgstr "-B | --delete-bootnum"
+
+#: efibootmgr.8.xml:100(para)
+msgid "Delete bootnum (hex)"
+msgstr "删除 bootnum (十六进制)"
+
+#: efibootmgr.8.xml:104(option)
+msgid "-c | --create"
+msgstr "-c | --create"
+
+#: efibootmgr.8.xml:106(para)
+msgid "Create new variable bootnum and add to bootorder"
+msgstr "创建一个新的 bootnum 变量并添加到引导序列"
+
+#: efibootmgr.8.xml:110(option)
+msgid "-d | --disk"
+msgstr "-d | --disk"
+
+#: efibootmgr.8.xml:112(para)
+msgid ""
+"The disk containing the loader (defaults to <filename>/dev/sda</filename>)"
+msgstr "包含引导加载器的磁盘 (默认为 <filename>/dev/sda</filename>)"
+
+#: efibootmgr.8.xml:117(option)
+msgid "-e | --edd"
+msgstr "-e | --edd"
+
+#: efibootmgr.8.xml:117(emphasis)
+msgid "1|3|-1"
+msgstr "1|3|-1"
+
+#: efibootmgr.8.xml:119(para)
+msgid "Force EDD 1.0 or 3.0 creation variables, or guess."
+msgstr "强制 EDD 1.0 或 3.0 创建变量，或猜测。"
+
+#: efibootmgr.8.xml:123(option)
+msgid "-E | --device"
+msgstr "-E | --device"
+
+#: efibootmgr.8.xml:125(para)
+msgid "EDD 1.0 device number (defaults to 0x80)"
+msgstr "EDD 1.0 设备编号 (默认为 0x80)"
+
+#: efibootmgr.8.xml:129(option)
+msgid "-g | --gpt"
+msgstr "-g | --gpt"
+
+#: efibootmgr.8.xml:131(para)
+msgid "Force disk with invalid PMBR to be treated as GPT"
+msgstr "强制具有无效 PMBR 的磁盘被视为 GPT"
+
+#: efibootmgr.8.xml:135(option)
+msgid "-H | --acpi_hid"
+msgstr "-H | --acpi_hid"
+
+#: efibootmgr.8.xml:137(para)
+msgid "set the ACPI HID (used with <option>-i</option>)"
+msgstr "设置 ACPI HID (与 <option>-i</option> 一起使用)"
+
+#: efibootmgr.8.xml:141(option)
+msgid "-i | --iface"
+msgstr "-i | --iface"
+
+#: efibootmgr.8.xml:143(para)
+msgid "create a netboot entry for the named interface"
+msgstr "为该名称接口创建网络引导项"
+
+#: efibootmgr.8.xml:147(option)
+msgid "-l | --loader"
+msgstr "-l | --loader"
+
+#: efibootmgr.8.xml:149(para)
+msgid ""
+"Specify a loader (defaults to <emphasis remap=\"I\">&bsol;&bsol;elilo.efi<"
+"/emphasis>)"
+msgstr "指定引导加载器 (默认为 <emphasis remap=\"I\">&bsol;&bsol;elilo.efi</emphasis>)"
+
+#: efibootmgr.8.xml:153(option)
+msgid "-L | --label"
+msgstr "-L | --label"
+
+#: efibootmgr.8.xml:155(para)
+msgid "Boot manager display label (defaults to \"Linux\")"
+msgstr "引导加载器显示标签 (默认为 \"Linux\")"
+
+#: efibootmgr.8.xml:159(option)
+msgid "-n | --bootnext"
+msgstr "-n | --bootnext"
+
+#: efibootmgr.8.xml:161(para)
+msgid "Set BootNext to XXXX (hex)"
+msgstr "设置 BootNext 为 XXXX (十六进制)"
+
+#: efibootmgr.8.xml:165(option)
+msgid "-N | --delete-bootnext"
+msgstr "-N | --delete-bootnext"
+
+#: efibootmgr.8.xml:167(para)
+msgid "Delete BootNext"
+msgstr "删除 BootNext"
+
+#: efibootmgr.8.xml:171(option)
+msgid "-o | --bootorder"
+msgstr "-o | --bootorder"
+
+#: efibootmgr.8.xml:171(emphasis) efibootmgr.8.xml:171(emphasis)
+msgid ","
+msgstr "，"
+
+#: efibootmgr.8.xml:171(emphasis)
+msgid "YYYY"
+msgstr "YYYY"
+
+#: efibootmgr.8.xml:171(emphasis)
+msgid "ZZZZ"
+msgstr "ZZZZ"
+
+#: efibootmgr.8.xml:173(para)
+msgid "Explicitly set BootOrder (hex)"
+msgstr "显式地设置引导顺序 (十六进制)"
+
+#: efibootmgr.8.xml:177(option)
+msgid "-O | --delete-bootorder"
+msgstr "-O | --delete-bootorder"
+
+#: efibootmgr.8.xml:179(para)
+msgid "Delete BootOrder"
+msgstr "删除引导顺序"
+
+#: efibootmgr.8.xml:183(option)
+msgid "-p | --part"
+msgstr "-p | --part"
+
+#: efibootmgr.8.xml:185(para)
+msgid "Partition number containing the bootloader (defaults to 1)"
+msgstr "包含引导加载器的分区编号 (默认为 1)"
+
+#: efibootmgr.8.xml:189(option)
+msgid "-q | --quiet"
+msgstr "-q | --quiet"
+
+#: efibootmgr.8.xml:191(para)
+msgid "Quiet mode - supresses output."
+msgstr "静默模式 - 压制输出。"
+
+#: efibootmgr.8.xml:195(option)
+msgid "--test"
+msgstr "--test"
+
+#: efibootmgr.8.xml:195(emphasis)
+msgid "filename"
+msgstr "文件名"
+
+#: efibootmgr.8.xml:197(para)
+msgid ""
+"Don't write to NVRAM, write to <emphasis remap=\"I\">filename</emphasis>."
+msgstr "不写入到 NVRAM，写入到<emphasis remap=\"I\">文件名</emphasis>。"
+
+#: efibootmgr.8.xml:201(option)
+msgid "-t | --timeout"
+msgstr "-t | --timeout"
+
+#: efibootmgr.8.xml:203(para)
+msgid "Boot Manager timeout, in <emphasis remap=\"I\">seconds</emphasis>."
+msgstr "引导管理器超时，以<emphasis remap=\"I\">秒</emphasis>计。"
+
+#: efibootmgr.8.xml:207(option)
+msgid "-T | --delete-timeout"
+msgstr "-T | --delete-timeout"
+
+#: efibootmgr.8.xml:209(para)
+msgid "Delete Timeout variable."
+msgstr "删除超时变量。"
+
+#: efibootmgr.8.xml:213(option)
+msgid "-u | --unicode | --UCS-2"
+msgstr "-u | --unicode | --UCS-2"
+
+#: efibootmgr.8.xml:215(para)
+msgid "pass extra command line arguments as UCS-2 (default is ASCII)"
+msgstr "将额外命令行参数以 UCS-2 格式发送 (默认为 ASCII)"
+
+#: efibootmgr.8.xml:220(option)
+msgid "-U | --acpi_uid"
+msgstr "-U | --acpi_uid"
+
+#: efibootmgr.8.xml:222(para)
+msgid "set the ACPI UID (used with <option>-i</option>)"
+msgstr "设置 ACPI UID (与 <option>-i</option> 一起使用)"
+
+#: efibootmgr.8.xml:226(option)
+msgid "-v | --verbose"
+msgstr "-v | --verbose"
+
+#: efibootmgr.8.xml:228(para)
+msgid "Verbose mode - prints additional information"
+msgstr "调试模式 - 输出额外信息"
+
+#: efibootmgr.8.xml:232(option)
+msgid "-V | --version"
+msgstr "-V | --version"
+
+#: efibootmgr.8.xml:234(para)
+msgid "Just print version string and exit."
+msgstr "输出版本字符串并退出."
+
+#: efibootmgr.8.xml:238(option)
+msgid "-w | --write-signature"
+msgstr "-w | --write-signature"
+
+#: efibootmgr.8.xml:240(para)
+msgid "write unique signature to the MBR if needed"
+msgstr "有需要就将唯一签名写入到 MBR"
+
+#: efibootmgr.8.xml:244(option)
+msgid "-@ | --append-binary-args"
+msgstr "-@ | --append-binary-args"
+
+#: efibootmgr.8.xml:246(para)
+msgid ""
+"append extra variable args from file (use - to read from stdin). Data in file "
+"is appended as command line arguments to the boot loader command, with no "
+"modification to the data, so you can pass any binary or text data necessary."
+msgstr ""
+"从文件追加额外变量参数 (用 - 来从标准输入读取)。文件中的数据将被追加到引导加载器命令作为命令行参数，不修改数据，因此有需要时您可以传递任何二进制或文本"
+"数据。"
+
+#: efibootmgr.8.xml:255(title)
+msgid "EXAMPLES"
+msgstr "范例"
+
+#: efibootmgr.8.xml:258(para)
+msgid "1."
+msgstr "1."
+
+#: efibootmgr.8.xml:262(title)
+msgid "DISPLAYING THE CURRENT SETTINGS (MUST BE ROOT)."
+msgstr "显示当前设置 (必须以 ROOT 运行)。"
+
+#: efibootmgr.8.xml:266(emphasis)
+msgid "[root@localhost ~]# efibootmgr"
+msgstr "[root@localhost ~]# efibootmgr"
+
+#: efibootmgr.8.xml:265(literallayout)
+#, no-wrap
+msgid ""
+"\n<placeholder-1/>\nBootCurrent: 0004\nBootNext: 0003\nBootOrder: "
+"0004,0000,0001,0002,0003\nTimeout: 30 seconds\nBoot0000* Diskette "
+"Drive(device:0)\nBoot0001* CD-ROM Drive(device:FF) \nBoot0002* Hard "
+"Drive(Device:80)/HD(Part1,Sig00112233)   \nBoot0003* PXE Boot: "
+"MAC(00D0B7C15D91)               \nBoot0004* Linux\n"
+msgstr ""
+"\n<placeholder-1/>\nBootCurrent: 0004\nBootNext: 0003\nBootOrder: "
+"0004,0000,0001,0002,0003\nTimeout: 30 seconds\nBoot0000* Diskette "
+"Drive(device:0)\nBoot0001* CD-ROM Drive(device:FF) \nBoot0002* Hard "
+"Drive(Device:80)/HD(Part1,Sig00112233)   \nBoot0003* PXE Boot: "
+"MAC(00D0B7C15D91)               \nBoot0004* Linux\n"
+
+#. .fi
+#: efibootmgr.8.xml:278(para)
+msgid "This shows:"
+msgstr "这将显示："
+
+#: efibootmgr.8.xml:284(para)
+msgid "BootCurrent - the boot entry used to start the currently running system"
+msgstr "BootCurrent - 用于启动当前运行中系统的引导项"
+
+#: efibootmgr.8.xml:291(para)
+msgid ""
+"BootOrder - the boot order as would appear in the boot manager. The boot "
+"manager tries to boot the first active entry in this list. If unsuccessful, "
+"it tries the next entry, and so on."
+msgstr "BootOrder - 引导管理器中出现的引导顺序。引导管理器将尝试引导此列表中的第一个活动引导项。若不成功，它会尝试下一个，以此类推。"
+
+#: efibootmgr.8.xml:299(para)
+msgid ""
+"BootNext - the boot entry which is scheduled to be run on next boot. This "
+"supercedes BootOrder for one boot only, and is deleted by the boot manager "
+"after first use. This allows you to change the next boot behavior without "
+"changing BootOrder."
+msgstr ""
+"BootNext - 计划在下次引导时运行的引导项。这只能覆盖一次引导顺序，用过之后就会被引导管理器删除。这允许您在不修改引导顺序的情况下修改下次引导行为。"
+
+#: efibootmgr.8.xml:308(para)
+msgid ""
+"Timeout - the time in seconds between when the boot manager appears on the "
+"screen until when it automatically chooses the startup value from BootNext or "
+"BootOrder."
+msgstr "Timeout - 介于引导管理器出现在屏幕上到自动从 BootNext 或 BootOrder 选择启动值间以秒计的超时。"
+
+#: efibootmgr.8.xml:317(para)
+msgid ""
+"Five boot entries (0000 - 0004), along with the active/inactive flag (* means "
+"active) and the name displayed on the screen."
+msgstr "屏幕上显示了五个引导项 (0000 - 0004)、活动/不活动旗标 (* 意味着活动) 和引导项的名称。"
+
+#: efibootmgr.8.xml:325(para)
+msgid "2."
+msgstr "2."
+
+#: efibootmgr.8.xml:330(title)
+msgid "CREATING A NEW BOOT OPTION"
+msgstr "创建一个新引导选项"
+
+#: efibootmgr.8.xml:332(para)
+msgid ""
+"An OS installer would call <userinput>efibootmgr -c</userinput>. This assumes "
+"that <filename>/boot/efi</filename> is your EFI System Partition, and is "
+"mounted at <filename>/dev/sda1</filename>. This creates a new boot option, "
+"called \"Linux\", and puts it at the top of the boot order list. Options may "
+"be passed to modify the default behavior. The default OS Loader is <emphasis "
+"remap=\"I\">elilo.efi</emphasis>."
+msgstr ""
+"操作系统安装器应该调用 <userinput>efibootmgr -c</userinput>。这假设了 <filename>/boot/efi<"
+"/filename> 是您的 EFI 系统分区，并挂载于 <filename>/dev/sda1</filename>。这创建了一个新引导选项，叫做 "
+"\"Linux\"，并将其放到引导顺序列表的第一个。可以传递选项来修改默认行为。默认的操作系统加载器是 <emphasis remap=\"I\">"
+"elilo.efi</emphasis>。"
+
+#: efibootmgr.8.xml:340(para)
+msgid "3."
+msgstr "3."
+
+#: efibootmgr.8.xml:345(title)
+msgid "CHANGING THE BOOT ORDER"
+msgstr "修改引导顺序"
+
+#: efibootmgr.8.xml:347(para)
+msgid ""
+"Assuming the configuration in Example #1, <userinput>efibootmgr -o 3,4<"
+"/userinput> could be called to specify PXE boot first, then Linux boot."
+msgstr ""
+"假设配置就是范例 #1 里的那个，指定 PXE 引导项为第一顺序，然后是 Linux 引导项应调用 <userinput>efibootmgr -o "
+"3,4</userinput>。"
+
+#: efibootmgr.8.xml:352(para)
+msgid "4."
+msgstr "4."
+
+#: efibootmgr.8.xml:357(title)
+msgid "CHANGING THE BOOT ORDER FOR THE NEXT BOOT ONLY"
+msgstr "只为下次引导修改引导顺序"
+
+#: efibootmgr.8.xml:359(para)
+msgid ""
+"Assuming the configuration in Example #1, <userinput>efibootmgr -n 4<"
+"/userinput> could be called to specify that the Linux entry be taken on next "
+"boot."
+msgstr ""
+"假设配置就是范例 #1 里的那个，指定下次引导应引导 Linux 引导项应调用 <userinput>efibootmgr -n 4</userinput>"
+"。"
+
+#: efibootmgr.8.xml:364(para)
+msgid "5."
+msgstr "5."
+
+#: efibootmgr.8.xml:369(title)
+msgid "DELETING A BOOT OPTION"
+msgstr "删除引导选项"
+
+#: efibootmgr.8.xml:371(para)
+msgid ""
+"Assuming the configuration in Example #1, <userinput>efibootmgr -b 4 -B<"
+"/userinput> could be called to delete entry 4 and remove it from the "
+"BootOrder."
+msgstr ""
+"假设配置就是范例 #1 里的那个，要删除 4 号引导项并把其从引导顺序中移除应该调用 <userinput>efibootmgr -b 4 -B<"
+"/userinput>。"
+
+#: efibootmgr.8.xml:376(para)
+msgid "6."
+msgstr "6."
+
+#: efibootmgr.8.xml:381(title)
+msgid "CREATING NETWORK BOOT ENTRIES"
+msgstr "创建网络引导项"
+
+#: efibootmgr.8.xml:383(para)
+msgid ""
+"A system administrator wants to create a boot option to network boot (PXE). "
+"Unfortunately, this requires knowing a little more information about your "
+"system than can be easily found by efibootmgr, so you've got to pass "
+"additional information - the ACPI HID and UID values. These can generally be "
+"found by using the EFI Boot Manager (in the EFI environment) to create a "
+"network boot entry, then using efibootmgr to print it verbosely. Here's one "
+"example: Boot003* Acpi(PNP0A03,0)/PCI(5|0)/Mac(00D0B7F9F510) &bsol; "
+"ACPI(a0341d0,0)PCI(0,5)MAC(00d0b7f9f510,0) In this case, the ACPI HID is "
+"\"0A0341d0\" and the UID is \"0\". For the zx2000 gigE, the HID is \"222F\" "
+"and the UID is \"500\". For the rx2000 gigE, the HID is \"0002\" and the UID "
+"is \"100\". You create the boot entry with: <userinput>efibootmgr -c -i eth0 "
+"-H 222F -U 500 -L netboot</userinput>"
+msgstr ""
+"系统管理员可能想要创建一个用于网络引导 (PXE)  的引导选项。不幸的是，这需要您对您的系统信息了解得稍微多一些，这些信息可以使用 efibootmgr "
+"取得，这样您才能传递额外信息 - ACPI HID 和 UID 值。这些信息通常可使用 EFI 引导管理器 (在 EFI 环境中) 创建一个网络引导项，"
+"然后使用 efibootmgr 进行调试输出来获得。给一个范例：Boot003* "
+"Acpi(PNP0A03,0)/PCI(5|0)/Mac(00D0B7F9F510) &bsol; "
+"ACPI(a0341d0,0)PCI(0,5)MAC(00d0b7f9f510,0)"
+"本例中，ACPI HID 是 \"0A0341d0\"，UID 是 \"0\"。对于 zx2000 gigE，HID 是 \"222F\"，UID 是 "
+"\"500\"。对于 rx2000 gigE，HID 是 \"0002\"，UID 是 \"100\"。您可以这样创建引导项 <userinput>"
+"efibootmgr -c -i eth0 -H 222F -U 500 -L netboot</userinput>。"
+
+#: efibootmgr.8.xml:400(title)
+msgid "BUGS"
+msgstr "故障"
+
+#: efibootmgr.8.xml:401(para)
+msgid ""
+"Please direct any bugs, features, patches, etc. to Jordan Hargrave "
+"&lt;jordan_hargrave@dell.com&gt;."
+msgstr "请把故障、特性请求、补丁等发给 Jordan Hargrave &lt;jordan_hargrave@dell.com&gt;。"
+
+#: efibootmgr.8.xml:405(title)
+msgid "AUTHOR"
+msgstr "作者"
+
+#: efibootmgr.8.xml:406(para)
+msgid ""
+"This man page was generated by dann frazier &lt;dannf@debian.org&gt; for the "
+"Debian GNU/Linux operating system, but may be used by others."
+msgstr ""
+"该手册页的英文版由 dann frazier &lt;dannf@debian.org&gt; 生成，用于 Debian GNU/Linux 及其它 "
+"Linux 操作系统。"
+"该手册页的中文版由 marguerite &lt;marguerite@opensuse.org&gt; 生成，用于 openSUSE Linux 及其它 "
+"Linux 操作系统。"
+
+#: efibootmgr.8.xml:410(title)
+msgid "SEE ALSO"
+msgstr "继续阅读"
+
+#: efibootmgr.8.xml:411(refentrytitle)
+msgid "elilo"
+msgstr "elilo"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: efibootmgr.8.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+
+

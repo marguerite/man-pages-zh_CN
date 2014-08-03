@@ -1,0 +1,590 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-08-03 13:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: efibootmgr.8.xml:11(date) efibootmgr.8.xml:15(refmiscinfo)
+msgid "11 January 2012"
+msgstr ""
+
+#: efibootmgr.8.xml:13(refentrytitle)
+msgid "EFIBOOTMGR"
+msgstr ""
+
+#: efibootmgr.8.xml:14(manvolnum)
+msgid "8"
+msgstr ""
+
+#: efibootmgr.8.xml:18(refname) efibootmgr.8.xml:24(command)
+msgid "efibootmgr"
+msgstr ""
+
+#: efibootmgr.8.xml:19(refpurpose)
+msgid "manipulate the EFI Boot Manager"
+msgstr ""
+
+#: efibootmgr.8.xml:24(arg)
+msgid "-a"
+msgstr ""
+
+#: efibootmgr.8.xml:25(arg)
+msgid "-A"
+msgstr ""
+
+#: efibootmgr.8.xml:26(replaceable) efibootmgr.8.xml:27(replaceable) efibootmgr.8.xml:33(replaceable) efibootmgr.8.xml:37(replaceable) efibootmgr.8.xml:46(replaceable) efibootmgr.8.xml:92(emphasis) efibootmgr.8.xml:135(emphasis) efibootmgr.8.xml:159(emphasis) efibootmgr.8.xml:171(emphasis) efibootmgr.8.xml:220(emphasis)
+msgid "XXXX"
+msgstr ""
+
+#: efibootmgr.8.xml:26(arg)
+msgid "-b <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:27(arg)
+msgid "-B <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:28(arg)
+msgid "-c"
+msgstr ""
+
+#: efibootmgr.8.xml:29(replaceable) efibootmgr.8.xml:110(emphasis)
+msgid "DISK"
+msgstr ""
+
+#: efibootmgr.8.xml:29(arg)
+msgid "-d <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:30(replaceable) efibootmgr.8.xml:411(manvolnum)
+msgid "1"
+msgstr ""
+
+#: efibootmgr.8.xml:30(arg)
+msgid "-e <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:30(replaceable)
+msgid "3"
+msgstr ""
+
+#: efibootmgr.8.xml:30(arg)
+msgid "-1"
+msgstr ""
+
+#: efibootmgr.8.xml:31(replaceable) efibootmgr.8.xml:123(emphasis)
+msgid "NUM"
+msgstr ""
+
+#: efibootmgr.8.xml:31(arg)
+msgid "-E <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:32(arg)
+msgid "-g"
+msgstr ""
+
+#: efibootmgr.8.xml:33(arg)
+msgid "-H <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:34(replaceable) efibootmgr.8.xml:35(replaceable) efibootmgr.8.xml:141(emphasis) efibootmgr.8.xml:147(emphasis)
+msgid "NAME"
+msgstr ""
+
+#: efibootmgr.8.xml:34(arg)
+msgid "-i <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:35(arg)
+msgid "-l <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:36(replaceable) efibootmgr.8.xml:153(emphasis)
+msgid "LABEL"
+msgstr ""
+
+#: efibootmgr.8.xml:36(arg)
+msgid "-L <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:37(arg)
+msgid "-n <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:38(arg)
+msgid "-N"
+msgstr ""
+
+#: efibootmgr.8.xml:39(replaceable)
+msgid "XXXX,YYYY,ZZZZ"
+msgstr ""
+
+#: efibootmgr.8.xml:39(arg)
+msgid "-o <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:40(arg)
+msgid "-O"
+msgstr ""
+
+#: efibootmgr.8.xml:41(replaceable) efibootmgr.8.xml:183(emphasis)
+msgid "PART"
+msgstr ""
+
+#: efibootmgr.8.xml:41(arg)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:42(arg)
+msgid "-q"
+msgstr ""
+
+#: efibootmgr.8.xml:43(replaceable) efibootmgr.8.xml:201(emphasis)
+msgid "seconds"
+msgstr ""
+
+#: efibootmgr.8.xml:43(arg)
+msgid "-t <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:44(arg)
+msgid "-T"
+msgstr ""
+
+#: efibootmgr.8.xml:45(arg)
+msgid "-u"
+msgstr ""
+
+#: efibootmgr.8.xml:46(arg)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:47(arg)
+msgid "-v"
+msgstr ""
+
+#: efibootmgr.8.xml:48(arg)
+msgid "-V"
+msgstr ""
+
+#: efibootmgr.8.xml:49(arg)
+msgid "-w"
+msgstr ""
+
+#: efibootmgr.8.xml:50(replaceable)
+msgid "file"
+msgstr ""
+
+#: efibootmgr.8.xml:50(arg)
+msgid "-@ <placeholder-1/>"
+msgstr ""
+
+#: efibootmgr.8.xml:56(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: efibootmgr.8.xml:57(para)
+msgid "<command>efibootmgr</command> is a userspace application used to modify the Intel Extensible Firmware Interface (EFI) Boot Manager. This application can create and destroy boot entries, change the boot order, change the next running boot option, and more."
+msgstr ""
+
+#: efibootmgr.8.xml:62(para)
+msgid "Details on the EFI Boot Manager are available from the EFI Specification, v1.02 or later, available from: &lt;URL:<ulink url=\"http://developer.intel.com&gt;\">http://developer.intel.com&gt;</ulink>"
+msgstr ""
+
+#: efibootmgr.8.xml:67(para)
+msgid "<emphasis remap=\"B\">Note:</emphasis> efibootmgr requires that the kernel support access to EFI non-volatile variables (through <filename>/proc/efi/vars</filename> on 2.4 kernels, <filename>/sys/firmware/efi/vars</filename> on 2.6 kernels). <emphasis remap=\"B\">modprobe efivars</emphasis> should do the trick."
+msgstr ""
+
+#: efibootmgr.8.xml:76(title)
+msgid "OPTIONS"
+msgstr ""
+
+#: efibootmgr.8.xml:77(para)
+msgid "The following is a list of options accepted by efibootmgr:"
+msgstr ""
+
+#: efibootmgr.8.xml:80(option)
+msgid "-a | --active"
+msgstr ""
+
+#: efibootmgr.8.xml:82(para)
+msgid "Sets bootnum active"
+msgstr ""
+
+#: efibootmgr.8.xml:86(option)
+msgid "-A | --inactive"
+msgstr ""
+
+#: efibootmgr.8.xml:88(para)
+msgid "Sets bootnum inactive"
+msgstr ""
+
+#: efibootmgr.8.xml:92(option)
+msgid "-b | --bootnum"
+msgstr ""
+
+#: efibootmgr.8.xml:94(para)
+msgid "Modify Boot<emphasis remap=\"I\">XXXX</emphasis> (hex)"
+msgstr ""
+
+#: efibootmgr.8.xml:98(option)
+msgid "-B | --delete-bootnum"
+msgstr ""
+
+#: efibootmgr.8.xml:100(para)
+msgid "Delete bootnum (hex)"
+msgstr ""
+
+#: efibootmgr.8.xml:104(option)
+msgid "-c | --create"
+msgstr ""
+
+#: efibootmgr.8.xml:106(para)
+msgid "Create new variable bootnum and add to bootorder"
+msgstr ""
+
+#: efibootmgr.8.xml:110(option)
+msgid "-d | --disk"
+msgstr ""
+
+#: efibootmgr.8.xml:112(para)
+msgid "The disk containing the loader (defaults to <filename>/dev/sda</filename>)"
+msgstr ""
+
+#: efibootmgr.8.xml:117(option)
+msgid "-e | --edd"
+msgstr ""
+
+#: efibootmgr.8.xml:117(emphasis)
+msgid "1|3|-1"
+msgstr ""
+
+#: efibootmgr.8.xml:119(para)
+msgid "Force EDD 1.0 or 3.0 creation variables, or guess."
+msgstr ""
+
+#: efibootmgr.8.xml:123(option)
+msgid "-E | --device"
+msgstr ""
+
+#: efibootmgr.8.xml:125(para)
+msgid "EDD 1.0 device number (defaults to 0x80)"
+msgstr ""
+
+#: efibootmgr.8.xml:129(option)
+msgid "-g | --gpt"
+msgstr ""
+
+#: efibootmgr.8.xml:131(para)
+msgid "Force disk with invalid PMBR to be treated as GPT"
+msgstr ""
+
+#: efibootmgr.8.xml:135(option)
+msgid "-H | --acpi_hid"
+msgstr ""
+
+#: efibootmgr.8.xml:137(para)
+msgid "set the ACPI HID (used with <option>-i</option>)"
+msgstr ""
+
+#: efibootmgr.8.xml:141(option)
+msgid "-i | --iface"
+msgstr ""
+
+#: efibootmgr.8.xml:143(para)
+msgid "create a netboot entry for the named interface"
+msgstr ""
+
+#: efibootmgr.8.xml:147(option)
+msgid "-l | --loader"
+msgstr ""
+
+#: efibootmgr.8.xml:149(para)
+msgid "Specify a loader (defaults to <emphasis remap=\"I\">&bsol;&bsol;elilo.efi</emphasis>)"
+msgstr ""
+
+#: efibootmgr.8.xml:153(option)
+msgid "-L | --label"
+msgstr ""
+
+#: efibootmgr.8.xml:155(para)
+msgid "Boot manager display label (defaults to \"Linux\")"
+msgstr ""
+
+#: efibootmgr.8.xml:159(option)
+msgid "-n | --bootnext"
+msgstr ""
+
+#: efibootmgr.8.xml:161(para)
+msgid "Set BootNext to XXXX (hex)"
+msgstr ""
+
+#: efibootmgr.8.xml:165(option)
+msgid "-N | --delete-bootnext"
+msgstr ""
+
+#: efibootmgr.8.xml:167(para)
+msgid "Delete BootNext"
+msgstr ""
+
+#: efibootmgr.8.xml:171(option)
+msgid "-o | --bootorder"
+msgstr ""
+
+#: efibootmgr.8.xml:171(emphasis) efibootmgr.8.xml:171(emphasis)
+msgid ","
+msgstr ""
+
+#: efibootmgr.8.xml:171(emphasis)
+msgid "YYYY"
+msgstr ""
+
+#: efibootmgr.8.xml:171(emphasis)
+msgid "ZZZZ"
+msgstr ""
+
+#: efibootmgr.8.xml:173(para)
+msgid "Explicitly set BootOrder (hex)"
+msgstr ""
+
+#: efibootmgr.8.xml:177(option)
+msgid "-O | --delete-bootorder"
+msgstr ""
+
+#: efibootmgr.8.xml:179(para)
+msgid "Delete BootOrder"
+msgstr ""
+
+#: efibootmgr.8.xml:183(option)
+msgid "-p | --part"
+msgstr ""
+
+#: efibootmgr.8.xml:185(para)
+msgid "Partition number containing the bootloader (defaults to 1)"
+msgstr ""
+
+#: efibootmgr.8.xml:189(option)
+msgid "-q | --quiet"
+msgstr ""
+
+#: efibootmgr.8.xml:191(para)
+msgid "Quiet mode - supresses output."
+msgstr ""
+
+#: efibootmgr.8.xml:195(option)
+msgid "--test"
+msgstr ""
+
+#: efibootmgr.8.xml:195(emphasis)
+msgid "filename"
+msgstr ""
+
+#: efibootmgr.8.xml:197(para)
+msgid "Don't write to NVRAM, write to <emphasis remap=\"I\">filename</emphasis>."
+msgstr ""
+
+#: efibootmgr.8.xml:201(option)
+msgid "-t | --timeout"
+msgstr ""
+
+#: efibootmgr.8.xml:203(para)
+msgid "Boot Manager timeout, in <emphasis remap=\"I\">seconds</emphasis>."
+msgstr ""
+
+#: efibootmgr.8.xml:207(option)
+msgid "-T | --delete-timeout"
+msgstr ""
+
+#: efibootmgr.8.xml:209(para)
+msgid "Delete Timeout variable."
+msgstr ""
+
+#: efibootmgr.8.xml:213(option)
+msgid "-u | --unicode | --UCS-2"
+msgstr ""
+
+#: efibootmgr.8.xml:215(para)
+msgid "pass extra command line arguments as UCS-2 (default is ASCII)"
+msgstr ""
+
+#: efibootmgr.8.xml:220(option)
+msgid "-U | --acpi_uid"
+msgstr ""
+
+#: efibootmgr.8.xml:222(para)
+msgid "set the ACPI UID (used with <option>-i</option>)"
+msgstr ""
+
+#: efibootmgr.8.xml:226(option)
+msgid "-v | --verbose"
+msgstr ""
+
+#: efibootmgr.8.xml:228(para)
+msgid "Verbose mode - prints additional information"
+msgstr ""
+
+#: efibootmgr.8.xml:232(option)
+msgid "-V | --version"
+msgstr ""
+
+#: efibootmgr.8.xml:234(para)
+msgid "Just print version string and exit."
+msgstr ""
+
+#: efibootmgr.8.xml:238(option)
+msgid "-w | --write-signature"
+msgstr ""
+
+#: efibootmgr.8.xml:240(para)
+msgid "write unique signature to the MBR if needed"
+msgstr ""
+
+#: efibootmgr.8.xml:244(option)
+msgid "-@ | --append-binary-args"
+msgstr ""
+
+#: efibootmgr.8.xml:246(para)
+msgid "append extra variable args from file (use - to read from stdin). Data in file is appended as command line arguments to the boot loader command, with no modification to the data, so you can pass any binary or text data necessary."
+msgstr ""
+
+#: efibootmgr.8.xml:255(title)
+msgid "EXAMPLES"
+msgstr ""
+
+#: efibootmgr.8.xml:258(para)
+msgid "1."
+msgstr ""
+
+#: efibootmgr.8.xml:262(title)
+msgid "DISPLAYING THE CURRENT SETTINGS (MUST BE ROOT)."
+msgstr ""
+
+#: efibootmgr.8.xml:266(emphasis)
+msgid "[root@localhost ~]# efibootmgr"
+msgstr ""
+
+#: efibootmgr.8.xml:265(literallayout)
+#, no-wrap
+msgid "\n<placeholder-1/>\nBootCurrent: 0004\nBootNext: 0003\nBootOrder: 0004,0000,0001,0002,0003\nTimeout: 30 seconds\nBoot0000* Diskette Drive(device:0)\nBoot0001* CD-ROM Drive(device:FF) \nBoot0002* Hard Drive(Device:80)/HD(Part1,Sig00112233)   \nBoot0003* PXE Boot: MAC(00D0B7C15D91)               \nBoot0004* Linux\n"
+msgstr ""
+
+#. .fi
+#: efibootmgr.8.xml:278(para)
+msgid "This shows:"
+msgstr ""
+
+#: efibootmgr.8.xml:284(para)
+msgid "BootCurrent - the boot entry used to start the currently running system"
+msgstr ""
+
+#: efibootmgr.8.xml:291(para)
+msgid "BootOrder - the boot order as would appear in the boot manager. The boot manager tries to boot the first active entry in this list. If unsuccessful, it tries the next entry, and so on."
+msgstr ""
+
+#: efibootmgr.8.xml:299(para)
+msgid "BootNext - the boot entry which is scheduled to be run on next boot. This supercedes BootOrder for one boot only, and is deleted by the boot manager after first use. This allows you to change the next boot behavior without changing BootOrder."
+msgstr ""
+
+#: efibootmgr.8.xml:308(para)
+msgid "Timeout - the time in seconds between when the boot manager appears on the screen until when it automatically chooses the startup value from BootNext or BootOrder."
+msgstr ""
+
+#: efibootmgr.8.xml:317(para)
+msgid "Five boot entries (0000 - 0004), along with the active/inactive flag (* means active) and the name displayed on the screen."
+msgstr ""
+
+#: efibootmgr.8.xml:325(para)
+msgid "2."
+msgstr ""
+
+#: efibootmgr.8.xml:330(title)
+msgid "CREATING A NEW BOOT OPTION"
+msgstr ""
+
+#: efibootmgr.8.xml:332(para)
+msgid "An OS installer would call <userinput>efibootmgr -c</userinput>. This assumes that <filename>/boot/efi</filename> is your EFI System Partition, and is mounted at <filename>/dev/sda1</filename>. This creates a new boot option, called \"Linux\", and puts it at the top of the boot order list. Options may be passed to modify the default behavior. The default OS Loader is <emphasis remap=\"I\">elilo.efi</emphasis>."
+msgstr ""
+
+#: efibootmgr.8.xml:340(para)
+msgid "3."
+msgstr ""
+
+#: efibootmgr.8.xml:345(title)
+msgid "CHANGING THE BOOT ORDER"
+msgstr ""
+
+#: efibootmgr.8.xml:347(para)
+msgid "Assuming the configuration in Example #1, <userinput>efibootmgr -o 3,4</userinput> could be called to specify PXE boot first, then Linux boot."
+msgstr ""
+
+#: efibootmgr.8.xml:352(para)
+msgid "4."
+msgstr ""
+
+#: efibootmgr.8.xml:357(title)
+msgid "CHANGING THE BOOT ORDER FOR THE NEXT BOOT ONLY"
+msgstr ""
+
+#: efibootmgr.8.xml:359(para)
+msgid "Assuming the configuration in Example #1, <userinput>efibootmgr -n 4</userinput> could be called to specify that the Linux entry be taken on next boot."
+msgstr ""
+
+#: efibootmgr.8.xml:364(para)
+msgid "5."
+msgstr ""
+
+#: efibootmgr.8.xml:369(title)
+msgid "DELETING A BOOT OPTION"
+msgstr ""
+
+#: efibootmgr.8.xml:371(para)
+msgid "Assuming the configuration in Example #1, <userinput>efibootmgr -b 4 -B</userinput> could be called to delete entry 4 and remove it from the BootOrder."
+msgstr ""
+
+#: efibootmgr.8.xml:376(para)
+msgid "6."
+msgstr ""
+
+#: efibootmgr.8.xml:381(title)
+msgid "CREATING NETWORK BOOT ENTRIES"
+msgstr ""
+
+#: efibootmgr.8.xml:383(para)
+msgid "A system administrator wants to create a boot option to network boot (PXE). Unfortunately, this requires knowing a little more information about your system than can be easily found by efibootmgr, so you've got to pass additional information - the ACPI HID and UID values. These can generally be found by using the EFI Boot Manager (in the EFI environment) to create a network boot entry, then using efibootmgr to print it verbosely. Here's one example: Boot003* Acpi(PNP0A03,0)/PCI(5|0)/Mac(00D0B7F9F510) &bsol; ACPI(a0341d0,0)PCI(0,5)MAC(00d0b7f9f510,0) In this case, the ACPI HID is \"0A0341d0\" and the UID is \"0\". For the zx2000 gigE, the HID is \"222F\" and the UID is \"500\". For the rx2000 gigE, the HID is \"0002\" and the UID is \"100\". You create the boot entry with: <userinput>efibootmgr -c -i eth0 -H 222F -U 500 -L netboot</userinput>"
+msgstr ""
+
+#: efibootmgr.8.xml:400(title)
+msgid "BUGS"
+msgstr ""
+
+#: efibootmgr.8.xml:401(para)
+msgid "Please direct any bugs, features, patches, etc. to Jordan Hargrave &lt;jordan_hargrave@dell.com&gt;."
+msgstr ""
+
+#: efibootmgr.8.xml:405(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: efibootmgr.8.xml:406(para)
+msgid "This man page was generated by dann frazier &lt;dannf@debian.org&gt; for the Debian GNU/Linux operating system, but may be used by others."
+msgstr ""
+
+#: efibootmgr.8.xml:410(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: efibootmgr.8.xml:411(refentrytitle)
+msgid "elilo"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: efibootmgr.8.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -83,7 +83,7 @@ Report stdbuf translation bugs to &lt;<ulink url='http://translationproject.org/
 </refsect1>
 
 <refsect1 id='examples'><title>EXAMPLES</title>
-<para><userinput>tail -f access.log | stdbuf -oL cut -d ' ' -f1 | uniq</userinput>
+<para><userinput>tail -f access.log | stdbuf -oL cut -d &apos;' &apos;' -f1 | uniq</userinput>
 <!-- br -->
 This will immedidately display unique entries from access.log</para>
 </refsect1>
@@ -114,7 +114,7 @@ and
 <command>stdbuf</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'stdbuf invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'stdbuf invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:04+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -316,7 +316,7 @@ msgstr ""
 
 #: du.1.xml:255(userinput)
 #, no-wrap
-msgid "du --exclude='*.o'"
+msgid "du --exclude=''*.o''"
 msgstr ""
 
 #: du.1.xml:257(para)
@@ -348,7 +348,7 @@ msgid "The full documentation for <command>du</command> is maintained as a Texin
 msgstr ""
 
 #: du.1.xml:286(emphasis)
-msgid "info coreutils 'du invocation'"
+msgid "info coreutils ''du invocation''"
 msgstr ""
 
 #: du.1.xml:288(para)

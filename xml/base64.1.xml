@@ -96,7 +96,7 @@ and
 <command>base64</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'base64 invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'base64 invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

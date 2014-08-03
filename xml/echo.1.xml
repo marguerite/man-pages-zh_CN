@@ -169,7 +169,7 @@ and
 <command>echo</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'echo invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'echo invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

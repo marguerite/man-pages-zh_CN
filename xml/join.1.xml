@@ -169,7 +169,7 @@ and
 <command>join</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'join invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'join invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

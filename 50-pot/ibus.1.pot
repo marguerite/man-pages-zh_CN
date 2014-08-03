@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:04+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,12 +25,12 @@ msgstr ""
 msgid "1.5.8"
 msgstr ""
 
-#: ibus.1.xml:19(refpurpose)
-msgid "command line utility for ibus"
+#: ibus.1.xml:18(refname) ibus.1.xml:24(command)
+msgid "ibus"
 msgstr ""
 
-#: ibus.1.xml:24(command)
-msgid "ibus"
+#: ibus.1.xml:19(refpurpose)
+msgid "command line utility for ibus"
 msgstr ""
 
 #: ibus.1.xml:25(replaceable) ibus.1.xml:48(title)

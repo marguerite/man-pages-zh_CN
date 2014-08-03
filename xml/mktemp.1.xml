@@ -116,7 +116,7 @@ and
 <command>mktemp</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'mktemp invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'mktemp invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

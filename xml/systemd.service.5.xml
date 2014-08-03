@@ -218,7 +218,7 @@ are used, they can appear in either order.</para>
   <blockquote remap='RS'>
 
 <literallayout remap='.nf'>
-ExecStart=/bin/sh -c &#x27;dmesg | tac&#x27;
+ExecStart=/bin/sh -c &apos;dmesg | tac&apos;
                                 
 </literallayout> <!-- .fi -->
     </blockquote> <!-- remap='RE' -->
@@ -437,7 +437,7 @@ or
 <emphasis remap='B'>all</emphasis>. If
 <emphasis remap='B'>none</emphasis>, no daemon status updates are accepted from the service processes, all status update messages are ignored. If
 <emphasis remap='B'>main</emphasis>, only service updates sent from the main process of the service are accepted. If
-<emphasis remap='B'>all</emphasis>, all services updates from all members of the service&#x27;s control group are accepted. This option should be set to open access to the notification socket when using
+<emphasis remap='B'>all</emphasis>, all services updates from all members of the service&apos;s control group are accepted. This option should be set to open access to the notification socket when using
 <emphasis remap='I'>Type=notify</emphasis>
 or
 <emphasis remap='I'>WatchdogSec=</emphasis>
@@ -537,7 +537,7 @@ entries with a value in the fs_passno column &gt; 0. As such it should only be u
 or
 <emphasis remap='I'>Before=</emphasis>, instead. For more details see
 <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>. If used, pass an integer value in the same range as
-/etc/fstab&#x27;s fs_passno column. See
+/etc/fstab&apos;s fs_passno column. See
 <citerefentry><refentrytitle>fstab</refentrytitle><manvolnum>5</manvolnum></citerefentry>
 for details.
   </para></blockquote> <!-- remap='RE' -->

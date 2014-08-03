@@ -159,7 +159,7 @@ and
 <command>tail</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'tail invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'tail invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

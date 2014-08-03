@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:05+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -415,7 +415,7 @@ msgid "The full documentation for <command>test</command> is maintained as a Tex
 msgstr ""
 
 #: test.1.xml:312(emphasis)
-msgid "info coreutils 'test invocation'"
+msgid "info coreutils ''test invocation''"
 msgstr ""
 
 #: test.1.xml:314(para)

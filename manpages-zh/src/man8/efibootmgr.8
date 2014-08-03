@@ -1,0 +1,183 @@
+.\" -*- coding: UTF-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH efibootmgr 8 "2012 年 1 月 11 日" "" ""
+.SH NAME
+efibootmgr \- 操纵 EFI 引导管理器
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBefibootmgr\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[-a] [-A] [-b \fIXXXX\fR] [-B \fIXXXX\fR] [-c] [-d \fI磁盘\fR] [-e \fI1\fR | \fI3\fR | -1] [-E \fI数字\fR] [-g] [-H \fIXXXX\fR] [-i \fI名称\fR] [-l \fI名称\fR] [-L \fI标签\fR] [-n \fIXXXX\fR] [-N] [-o \fIXXXX,YYYY,ZZZZ\fR]… [-O] [-p \fI分区\fR] [-q] [-t \fI秒\fR] [-T] [-u] [-U \fIXXXX\fR] [-v] [-V] [-w] [-@ \fI文件\fR]
+.br
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH 描述
+\fBefibootmgr\fR 是一个用于修改 Intel 可扩展固件接口 (EFI) 引导管理器的用户空间应用程序。该应用程序可以创建或摧毁引导项、修改引导顺序、修改下一次运行时的引导选项，以及更多功能。
+.PP
+EFI 引导管理器的细节可从 EFI 规范 v1.02 及后续版本中获得，该规范在 <〈http://developer.intel.com>〉
+.RS 
+\fI注意：\fR efibootmgr 需要内核支持访问 EFI 的非可变变量 (在 2.4 内核上通过 \*(T<\fI/proc/efi/vars\fR\*(T>，在 2.6 内核上通过 \*(T<\fI/sys/firmware/efi/vars\fR\*(T>)。\fImodprobe efivars\fR 应该就可以了。
+.RE
+.SH 选项
+以下是 efibootmgr 接受的选项列表：
+.TP 
+\*(T<\fB\-a | \-\-active\fR\*(T>
+激活 bootnum
+.TP 
+\*(T<\fB\-A | \-\-inactive\fR\*(T>
+取消激活 bootnum
+.TP 
+\*(T<\fB\-b | \-\-bootnum\fR\*(T>\fIXXXX\fR
+修改 Boot\fIXXXX\fR (十六进制)
+.TP 
+\*(T<\fB\-B | \-\-delete\-bootnum\fR\*(T>
+删除 bootnum (十六进制)
+.TP 
+\*(T<\fB\-c | \-\-create\fR\*(T>
+创建一个新的 bootnum 变量并添加到引导序列
+.TP 
+\*(T<\fB\-d | \-\-disk\fR\*(T>\fI磁盘\fR
+包含引导加载器的磁盘 (默认为 \*(T<\fI/dev/sda\fR\*(T>)
+.TP 
+\*(T<\fB\-e | \-\-edd\fR\*(T>\fI1|3|-1\fR
+强制 EDD 1.0 或 3.0 创建变量，或猜测。
+.TP 
+\*(T<\fB\-E | \-\-device\fR\*(T>\fI数字\fR
+EDD 1.0 设备编号 (默认为 0x80)
+.TP 
+\*(T<\fB\-g | \-\-gpt\fR\*(T>
+强制具有无效 PMBR 的磁盘被视为 GPT
+.TP 
+\*(T<\fB\-H | \-\-acpi_hid\fR\*(T>\fIXXXX\fR
+设置 ACPI HID (与 \*(T<\fB\-i\fR\*(T> 一起使用)
+.TP 
+\*(T<\fB\-i | \-\-iface\fR\*(T>\fI名称\fR
+为该名称接口创建网络引导项
+.TP 
+\*(T<\fB\-l | \-\-loader\fR\*(T>\fI名称\fR
+指定引导加载器 (默认为 \fI\e\eelilo.efi\fR)
+.TP 
+\*(T<\fB\-L | \-\-label\fR\*(T>\fI标签\fR
+引导加载器显示标签 (默认为 "Linux")
+.TP 
+\*(T<\fB\-n | \-\-bootnext\fR\*(T>\fIXXXX\fR
+设置 BootNext 为 XXXX (十六进制)
+.TP 
+\*(T<\fB\-N | \-\-delete\-bootnext\fR\*(T>
+删除 BootNext
+.TP 
+\*(T<\fB\-o | \-\-bootorder\fR\*(T>\fIXXXX\fR\fI，\fR\fIYYYY\fR\fI，\fR\fIZZZZ\fR
+显式地设置引导顺序 (十六进制)
+.TP 
+\*(T<\fB\-O | \-\-delete\-bootorder\fR\*(T>
+删除引导顺序
+.TP 
+\*(T<\fB\-p | \-\-part\fR\*(T>\fI分区\fR
+包含引导加载器的分区编号 (默认为 1)
+.TP 
+\*(T<\fB\-q | \-\-quiet\fR\*(T>
+静默模式 - 压制输出。
+.TP 
+\*(T<\fB\-\-test\fR\*(T>\fI文件名\fR
+不写入到 NVRAM，写入到\fI文件名\fR。
+.TP 
+\*(T<\fB\-t | \-\-timeout\fR\*(T>\fI秒\fR
+引导管理器超时，以\fI秒\fR计。
+.TP 
+\*(T<\fB\-T | \-\-delete\-timeout\fR\*(T>
+删除超时变量。
+.TP 
+\*(T<\fB\-u | \-\-unicode | \-\-UCS\-2\fR\*(T>
+将额外命令行参数以 UCS-2 格式发送 (默认为 ASCII)
+.TP 
+\*(T<\fB\-U | \-\-acpi_uid\fR\*(T>\fIXXXX\fR
+设置 ACPI UID (与 \*(T<\fB\-i\fR\*(T> 一起使用)
+.TP 
+\*(T<\fB\-v | \-\-verbose\fR\*(T>
+调试模式 - 输出额外信息
+.TP 
+\*(T<\fB\-V | \-\-version\fR\*(T>
+输出版本字符串并退出.
+.TP 
+\*(T<\fB\-w | \-\-write\-signature\fR\*(T>
+有需要就将唯一签名写入到 MBR
+.TP 
+\*(T<\fB\-@ | \-\-append\-binary\-args\fR\*(T>
+从文件追加额外变量参数 (用 - 来从标准输入读取)。文件中的数据将被追加到引导加载器命令作为命令行参数，不修改数据，因此有需要时您可以传递任何二进制或文本数据。
+.SH 范例
+.TP 0.2i
+•
+1.
+.SS "显示当前设置 (必须以 ROOT 运行)。"
+.nf
+
+\fI[root@localhost ~]# efibootmgr\fR
+BootCurrent: 0004
+BootNext: 0003
+BootOrder: 0004,0000,0001,0002,0003
+Timeout: 30 seconds
+Boot0000* Diskette Drive(device:0)
+Boot0001* CD\-ROM Drive(device:FF) 
+Boot0002* Hard Drive(Device:80)/HD(Part1,Sig00112233)   
+Boot0003* PXE Boot: MAC(00D0B7C15D91)               
+Boot0004* Linux
+.fi
+.PP
+这将显示：
+.RS 
+.TP 
+•
+BootCurrent - 用于启动当前运行中系统的引导项
+.TP 
+•
+BootOrder - 引导管理器中出现的引导顺序。引导管理器将尝试引导此列表中的第一个活动引导项。若不成功，它会尝试下一个，以此类推。
+.TP 
+•
+BootNext - 计划在下次引导时运行的引导项。这只能覆盖一次引导顺序，用过之后就会被引导管理器删除。这允许您在不修改引导顺序的情况下修改下次引导行为。
+.TP 
+•
+Timeout - 介于引导管理器出现在屏幕上到自动从 BootNext 或 BootOrder 选择启动值间以秒计的超时。
+.TP 
+•
+屏幕上显示了五个引导项 (0000 - 0004)、活动/不活动旗标 (* 意味着活动) 和引导项的名称。
+.RE
+.TP 0.2i
+•
+2.
+.SS 创建一个新引导选项
+操作系统安装器应该调用 \*(T<\fBefibootmgr \-c\fR\*(T>。这假设了 \*(T<\fI/boot/efi\fR\*(T> 是您的 EFI 系统分区，并挂载于 \*(T<\fI/dev/sda1\fR\*(T>。这创建了一个新引导选项，叫做 "Linux"，并将其放到引导顺序列表的第一个。可以传递选项来修改默认行为。默认的操作系统加载器是 \fIelilo.efi\fR。
+.TP 0.2i
+•
+3.
+.SS 修改引导顺序
+假设配置就是范例 #1 里的那个，指定 PXE 引导项为第一顺序，然后是 Linux 引导项应调用 \*(T<\fBefibootmgr \-o 3,4\fR\*(T>。
+.TP 0.2i
+•
+4.
+.SS 只为下次引导修改引导顺序
+假设配置就是范例 #1 里的那个，指定下次引导应引导 Linux 引导项应调用 \*(T<\fBefibootmgr \-n 4\fR\*(T>。
+.TP 0.2i
+•
+5.
+.SS 删除引导选项
+假设配置就是范例 #1 里的那个，要删除 4 号引导项并把其从引导顺序中移除应该调用 \*(T<\fBefibootmgr \-b 4 \-B\fR\*(T>。
+.TP 0.2i
+•
+6.
+.SS 创建网络引导项
+系统管理员可能想要创建一个用于网络引导 (PXE) 的引导选项。不幸的是，这需要您对您的系统信息了解得稍微多一些，这些信息可以使用 efibootmgr 取得，这样您才能传递额外信息 - ACPI HID 和 UID 值。这些信息通常可使用 EFI 引导管理器 (在 EFI 环境中) 创建一个网络引导项，然后使用 efibootmgr 进行调试输出来获得。给一个范例：Boot003* Acpi(PNP0A03,0)/PCI(5|0)/Mac(00D0B7F9F510) \e ACPI(a0341d0,0)PCI(0,5)MAC(00d0b7f9f510,0)本例中，ACPI HID 是 "0A0341d0"，UID 是 "0"。对于 zx2000 gigE，HID 是 "222F"，UID 是 "500"。对于 rx2000 gigE，HID 是 "0002"，UID 是 "100"。您可以这样创建引导项 \*(T<\fBefibootmgr \-c \-i eth0 \-H 222F \-U 500 \-L netboot\fR\*(T>。
+.SH 故障
+请把故障、特性请求、补丁等发给 Jordan Hargrave <jordan_hargrave@dell.com>。
+.SH 作者
+该手册页的英文版由 dann frazier <dannf@debian.org> 生成，用于 Debian GNU/Linux 及其它 Linux 操作系统。该手册页的中文版由 marguerite <marguerite@opensuse.org> 生成，用于 openSUSE Linux 及其它 Linux 操作系统。
+.SH 继续阅读
+\fBelilo\fR(1)

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:04+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,7 +131,7 @@ msgid "The full documentation for <command>fold</command> is maintained as a Tex
 msgstr ""
 
 #: fold.1.xml:99(emphasis)
-msgid "info coreutils 'fold invocation'"
+msgid "info coreutils ''fold invocation''"
 msgstr ""
 
 #: fold.1.xml:101(para)

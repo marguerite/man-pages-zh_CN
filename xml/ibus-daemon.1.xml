@@ -15,6 +15,10 @@ Copyright (c) Peng Huang &lt;shawn.p.huang@gmail.com&gt;, 2013. -->
 <refmiscinfo class='manual'>1.5.8</refmiscinfo>
 </refmeta>
 <refnamediv>
+<refname>ibus</refname>
+<refpurpose>daemon</refpurpose>
+</refnamediv>
+<refnamediv>
 <refname></refname>
 <refpurpose>daemon program for ibus</refpurpose>
 </refnamediv>

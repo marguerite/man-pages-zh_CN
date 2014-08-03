@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:04+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,7 +127,7 @@ msgid "The full documentation for <command>dircolors</command> is maintained as 
 msgstr ""
 
 #: dircolors.1.xml:96(emphasis)
-msgid "info coreutils 'dircolors invocation'"
+msgid "info coreutils ''dircolors invocation''"
 msgstr ""
 
 #: dircolors.1.xml:98(para)

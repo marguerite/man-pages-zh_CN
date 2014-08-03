@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: 2014-08-01 01:32+0800\n"
+"PO-Revision-Date: 2014-08-01 22:38+0800\n"
 "Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
 "Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
 "Language: zh_CN\n"
@@ -147,37 +147,38 @@ msgstr ""
 
 #: ls.1.xml:97(term)
 msgid "<option>-d</option>, <option>--directory</option>"
-msgstr ""
+msgstr "<option>-d</option>, <option>--directory</option>"
 
 #: ls.1.xml:99(para)
 msgid "list directories themselves, not their contents"
-msgstr ""
+msgstr "列出文件夹本身而非其内容"
 
 #: ls.1.xml:103(term)
 msgid "<option>-D</option>, <option>--dired</option>"
-msgstr ""
+msgstr "<option>-D</option>, <option>--dired</option>"
 
 #: ls.1.xml:105(para)
 msgid "generate output designed for Emacs' dired mode"
-msgstr ""
+msgstr "生成设计用于 Emacs 的 dired 模式的输出"
 
 #: ls.1.xml:109(option)
 msgid "-f"
-msgstr ""
+msgstr "-f"
 
 #: ls.1.xml:111(para)
 msgid ""
 "do not sort, enable <option>-aU</option>, disable <option>-ls</"
 "option><option>--color</option>"
 msgstr ""
+"不排序，启用 <option>-aU</option>，禁用 <option>-ls</option><option>--color</option>"
 
 #: ls.1.xml:115(term)
 msgid "<option>-F</option>, <option>--classify</option>"
-msgstr ""
+msgstr "<option>-F</option>, <option>--classify</option>"
 
 #: ls.1.xml:117(para)
 msgid "append indicator (one of */=&gt;@|) to entries"
-msgstr ""
+msgstr "追加指示符 (*/=&gt;@| 之一) 到项"
 
 #: ls.1.xml:121(option)
 msgid "--file-type"
@@ -696,4 +697,5 @@ msgstr "应可让您调阅完整手册。"
 #: ls.1.xml:0(None)
 msgid "translator-credits"
 msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+
 

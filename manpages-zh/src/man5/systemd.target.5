@@ -1,0 +1,22 @@
+.\" -*- coding: UTF-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH systemd.target 5 "3 August 2014" "" "systemd 208"
+.SH NAME
+systemd.target \- 对象单元配置
+.SH SYNOPSIS
+\fI对象\fR.target
+.SH 描述
+一个名称以 ".target" 结尾的单元配置文件汇编了关于一个 systemd 对象单元的信息，其用于分组单元和在启动时作为周知的同步点。
+.PP
+此单元类型没有特殊选项。全部单元配置文件的通用选项请参考 \fBsystemd.unit\fR(5)。通用配置条目在常规的 [Unit] 和 [Install] 部分配置。不存在一个单独的 [Target] 部分，因为没有需要配置的特定于对象的选项。
+.PP
+在单元提供的常规功能之外对象单元并不提供任何额外的功能。它们的存在只是为了通过依赖关系分组单元 (作为引导对象很有用)，以及来建立单元间依赖关系中使用的同步点的标准名称。与其它能力一起，对象单元成为了对经典 SysV 初始化系统中的 SysV runlevel 的一种更加灵活的替换。(并且出于兼容需要的原因，也存在特殊对象单元诸如 runlevel3.target，其可为 systemd 中的 SysV runlevel 兼容代码所用。细节请参考 \fBsystemd.special\fR(7))。
+.PP
+除非 \fIDefaultDependencies=\fR 设为 \fIfalse\fR，否则若问题单元有 \fIDefaultDependencies=true\fR，对象单元将显式地在全部已配置的类型为 \fIWants=\fR、\fIRequires=\fR、\fIRequiresOverridable=\fR 的依赖关系之外， 补充类型为 \fIAfter=\fR 的依赖关系。
+.SH 继续阅读
+\fBsystemd\fR(1), \fBsystemctl\fR(8), \fBsystemd.unit\fR(5), \fBsystemd.special\fR(7), \fBsystemd.directives\fR(7)

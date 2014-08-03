@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:05+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,7 +99,7 @@ msgid "The full documentation for <command>unlink</command> is maintained as a T
 msgstr ""
 
 #: unlink.1.xml:76(emphasis)
-msgid "info coreutils 'unlink invocation'"
+msgid "info coreutils ''unlink invocation''"
 msgstr ""
 
 #: unlink.1.xml:78(para)

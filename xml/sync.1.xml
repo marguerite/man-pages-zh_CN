@@ -69,7 +69,7 @@ and
 <command>sync</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'sync invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'sync invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

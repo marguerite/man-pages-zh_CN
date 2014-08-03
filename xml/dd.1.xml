@@ -353,7 +353,7 @@ and
 <command>dd</command>
 programs are properly installed at your site, the command</para>
 
-<para><emphasis remap='B'>info coreutils 'dd invocation'</emphasis></para>
+<para><emphasis remap='B'>info coreutils &apos;'dd invocation&apos;'</emphasis></para>
 
 <para>should give you access to the complete manual.</para>
 </refsect1>

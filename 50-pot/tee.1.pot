@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 17:05+0800\n"
+"POT-Creation-Date: 2014-07-31 17:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,7 +115,7 @@ msgid "The full documentation for <command>tee</command> is maintained as a Texi
 msgstr ""
 
 #: tee.1.xml:86(emphasis)
-msgid "info coreutils 'tee invocation'"
+msgid "info coreutils ''tee invocation''"
 msgstr ""
 
 #: tee.1.xml:88(para)
