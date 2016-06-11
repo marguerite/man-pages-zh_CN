@@ -1,11 +1,11 @@
-# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-30 20:56+0800\n"
-"PO-Revision-Date: 2014-07-30 21:22+0800\n"
-"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
-"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2015-03-15 21:52+0800\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +45,7 @@ msgstr "描述"
 msgid ""
 "A unit configuration file whose name ends in .service encodes information "
 "about a process controlled and supervised by systemd."
-msgstr ""
+msgstr "单元配置文件的名称以 .service 结尾，编码了由 systemd 控制和监视的某个进程的信息。"
 
 #: systemd.service.5.xml:27(para)
 msgid ""
@@ -56,6 +56,10 @@ msgid ""
 "\"[Unit]\" and \"[Install]\" sections. The service specific configuration "
 "options are configured in the \"[Service]\" section."
 msgstr ""
+"此手册页列出了此单元类型所独有的配置选项。全部单元配置文件的通用选项请见 <citerefentry><refentrytitle>"
+"systemd.unit</refentrytitle><manvolnum>5</"
+"manvolnum></citerefentry>。通用配置项在通用的 \"[Unit]\" 和 \"[Install]\" 部分配置。"
+"服务所特有的配置选项在 \"[Service]\" 部分配置。"
 
 #: systemd.service.5.xml:37(para)
 msgid ""
@@ -68,6 +72,11 @@ msgid ""
 "control</refentrytitle><manvolnum>5</manvolnum></citerefentry>, which "
 "configure resource control settings for the processes of the service."
 msgstr ""
+"额外选项列在 <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5<"
+"/manvolnum></citerefentry>，其定义了命令执行的执行环境，<citerefentry><refentrytitle>"
+"systemd.exec</refentrytitle><manvolnum>5</manvolnum></citerefentry>"
+"，其定义了服务进程的终止方法，和 <citerefentry><refentrytitle>systemd.resource-control<"
+"/refentrytitle><manvolnum>5</manvolnum></citerefentry>，其配置了服务进程的资源控制设置。"
 
 #: systemd.service.5.xml:42(para)
 msgid ""
@@ -81,6 +90,11 @@ msgid ""
 "terminated cleanly prior to system shutdown. Only services involved with "
 "early boot or late system shutdown should disable this option."
 msgstr ""
+"除非 <emphasis remap=\"I\">DefaultDependencies=</emphasis> 设为 <emphasis "
+"remap=\"B\">false</emphasis>，服务单元将显式地依赖 basic.target 作为 <emphasis remap=\"I\">"
+"Requires=</emphasis> 和 <emphasis remap=\"I\">After=</emphasis>，并依赖 "
+"shutdown.target 作为 <emphasis remap=\"I\">Conflicts=</emphasis> 和 <emphasis "
+"remap=\"I\">Before=</emphasis>。"
 
 #: systemd.service.5.xml:58(para)
 msgid ""
@@ -93,10 +107,15 @@ msgid ""
 "\">Incompatibilities with SysV</emphasis></phrase><?troff ps -2?"
 "><superscript>[1]</superscript><?troff ps +2?> document."
 msgstr ""
+"若通过特定名称请求某服务但未找到其单元配置文件，systemd 将查找同名的 SysV 初始化脚本 (没有 .service 后缀) "
+"并从那个脚本动态创建一个服务单元。这用于与 SysV 兼容。注意这种兼容性是非常周密的但并不是 100% 周密的。关于不兼容的详情请见 <phrase "
+"remap=\"color:blue\"><emphasis remap=\"B"
+"\">与 SysV 不兼容的地方</emphasis></phrase><?troff ps -2?><superscript>[1]<"
+"/superscript><?troff ps +2?> 文档。"
 
 #: systemd.service.5.xml:65(title)
 msgid "OPTIONS"
-msgstr ""
+msgstr "选项"
 
 #: systemd.service.5.xml:66(para)
 msgid ""
@@ -109,10 +128,15 @@ msgid ""
 "manvolnum></citerefentry>. The options specific to the \"[Service]\" section "
 "of service units are the following:"
 msgstr ""
+"服务文件必须包含一个 \"[Service]\" 部分，其承载了关于该服务和其监视的进程的信息。一些可用在此部分的选项也可用在其它单元类型中。这些选项记录在"
+" <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5<"
+"/manvolnum></citerefentry> 和"
+"<citerefentry><refentrytitle>systemd.kill</refentrytitle><manvolnum>5<"
+"/manvolnum></citerefentry> 中。服务单元的 \"[Service]\" 部分特有的选项如下："
 
 #: systemd.service.5.xml:75(emphasis)
 msgid "Type="
-msgstr ""
+msgstr "Type="
 
 #: systemd.service.5.xml:77(para)
 msgid ""
@@ -122,6 +146,11 @@ msgid ""
 "emphasis>, <emphasis remap=\"B\">notify</emphasis> or <emphasis remap=\"B"
 "\">idle</emphasis>."
 msgstr ""
+"配置了此服务单元的进程启动类型。可用 <emphasis remap=\"B\">simple</emphasis>, <emphasis "
+"remap=\"B\">forking</emphasis>, "
+"<emphasis remap=\"B\">oneshot</emphasis>, <emphasis remap=\"B\">dbus</"
+"emphasis>, <emphasis remap=\"B\">notify</emphasis> 或 <emphasis remap=\"B"
+"\">idle</emphasis> 其中之一。"
 
 #: systemd.service.5.xml:86(para)
 msgid ""
@@ -134,6 +163,10 @@ msgid ""
 "systemd, via socket activation), as systemd will immediately proceed "
 "starting follow-up units."
 msgstr ""
+"若设为 <emphasis remap=\"B\">simple</emphasis> (若未指定 <emphasis remap=\"I\">"
+"BusName=</emphasis> 则为默认值)，则期望 <emphasis remap=\"I\">ExecStart=</emphasis> "
+"所配置的进程就是服务的主进程。在此模式中，若该进程为系统上其它进程提供了功能，其通信信道应在该守护进程启动前就安装好 (例如，由 systemd "
+"通过套接字激活先行设置套接字)，因为 systemd 将立即启动接下来的单元。"
 
 #: systemd.service.5.xml:94(para)
 msgid ""
@@ -147,6 +180,11 @@ msgid ""
 "option, so that systemd can identify the main process of the daemon. systemd "
 "will proceed starting follow-up units as soon as the parent process exits."
 msgstr ""
+"若设为 <emphasis remap=\"B\">forking</emphasis>，则期望 <emphasis remap=\"I\">"
+"ExecStart=</emphasis> 所配置的进程将调用 <function>fork()</function> "
+"作为其启动过程的一步。启动完成后父进程应退出，全部通讯信道也应设置完毕。子进程继续运行作为主守护进程。这是典型的 UNIX "
+"守护进程行为。若使用了此设置，推荐也使用 <emphasis remap=\"I\">PIDFile=</emphasis> 选项，这样 systemd "
+"可识别守护进程的主进程。systemd 将在父进程退出后开始启动接下来的单元。"
 
 #: systemd.service.5.xml:103(para)
 msgid ""
@@ -859,4 +897,5 @@ msgstr "http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities"
 #: systemd.service.5.xml:0(None)
 msgid "translator-credits"
 msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>"
+
 

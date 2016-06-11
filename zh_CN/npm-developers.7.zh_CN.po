@@ -1,0 +1,428 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-developers.7.xml:7(refentrytitle)
+msgid "NPM-DEVELOPERS"
+msgstr ""
+
+#: npm-developers.7.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: npm-developers.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-developers.7.xml:12(refname)
+msgid "npm-developers"
+msgstr ""
+
+#: npm-developers.7.xml:13(refpurpose)
+msgid "Developer Guide"
+msgstr ""
+
+#: npm-developers.7.xml:17(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-developers.7.xml:18(para)
+msgid "So, you've decided to use npm to develop (and maybe publish/deploy) your project."
+msgstr ""
+
+#: npm-developers.7.xml:21(para)
+msgid "Fantastic!"
+msgstr ""
+
+#: npm-developers.7.xml:23(para)
+msgid "There are a few things that you need to do above the simple steps that your users will do to install your program."
+msgstr ""
+
+#: npm-developers.7.xml:27(title)
+msgid "About These Documents"
+msgstr ""
+
+#: npm-developers.7.xml:28(para)
+msgid "These are man pages. If you install npm, you should be able to then do <emphasis remap=\"B\">man npm-thing</emphasis> to get the documentation on a particular topic, or <emphasis remap=\"B\">npm help thing</emphasis> to see the same information."
+msgstr ""
+
+#: npm-developers.7.xml:33(title)
+msgid "What is a <emphasis remap=\"B\">package</emphasis>"
+msgstr ""
+
+#: npm-developers.7.xml:34(para)
+msgid "A package is:"
+msgstr ""
+
+#: npm-developers.7.xml:38(para)
+msgid "a) a folder containing a program described by a package.json file"
+msgstr ""
+
+#: npm-developers.7.xml:41(para)
+msgid "b) a gzipped tarball containing (a)"
+msgstr ""
+
+#: npm-developers.7.xml:44(para)
+msgid "c) a url that resolves to (b)"
+msgstr ""
+
+#: npm-developers.7.xml:47(para)
+msgid "d) a <emphasis remap=\"B\">&lt;name&gt;@&lt;version&gt;</emphasis> that is published on the registry with (c)"
+msgstr ""
+
+#: npm-developers.7.xml:50(para)
+msgid "e) a <emphasis remap=\"B\">&lt;name&gt;@&lt;tag&gt;</emphasis> that points to (d)"
+msgstr ""
+
+#: npm-developers.7.xml:53(para)
+msgid "f) a <emphasis remap=\"B\">&lt;name&gt;</emphasis> that has a \"latest\" tag satisfying (e)"
+msgstr ""
+
+#: npm-developers.7.xml:56(para)
+msgid "g) a <emphasis remap=\"B\">git</emphasis> url that, when cloned, results in (a)."
+msgstr ""
+
+#. remap='RE'
+#: npm-developers.7.xml:62(para)
+msgid "Even if you never publish your package, you can still get a lot of benefits of using npm if you just want to write a node program (a), and perhaps if you also want to be able to easily install it elsewhere after packing it up into a tarball (b)."
+msgstr ""
+
+#: npm-developers.7.xml:67(para)
+msgid "Git urls can be of the form:"
+msgstr ""
+
+#: npm-developers.7.xml:72(ulink)
+msgid "http://user"
+msgstr ""
+
+#: npm-developers.7.xml:69(literallayout)
+#, no-wrap
+msgid "\ngit://github.com/user/project.git#commit-ish\ngit+ssh://user@hostname:project.git#commit-ish\ngit+<placeholder-1/>@hostname/project/blah.git#commit-ish\ngit+https://user@hostname/project/blah.git#commit-ish\n"
+msgstr ""
+
+#. .fi
+#: npm-developers.7.xml:76(para)
+msgid "The <emphasis remap=\"B\">commit-ish</emphasis> can be any tag, sha, or branch which can be supplied as an argument to <emphasis remap=\"B\">git checkout</emphasis>&thinsp;. The default is <emphasis remap=\"B\">master</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-developers.7.xml:80(title)
+msgid "The package.json File"
+msgstr ""
+
+#: npm-developers.7.xml:81(para)
+msgid "You need to have a <emphasis remap=\"B\">package.json</emphasis> file in the root of your project to do much of anything with npm. That is basically the whole interface."
+msgstr ""
+
+#: npm-developers.7.xml:84(para)
+msgid "See npm help 5 <emphasis remap=\"B\">package.json</emphasis> for details about what goes in that file. At the very least, you need:"
+msgstr ""
+
+#: npm-developers.7.xml:89(para)
+msgid "name: This should be a string that identifies your project. Please do not use the name to specify that it runs on node, or is in JavaScript. You can use the \"engines\" field to explicitly state the versions of node (or whatever else) that your program requires, and it's pretty well assumed that it's javascript. It does not necessarily need to match your github repository name. So, <emphasis remap=\"B\">node-foo</emphasis> and <emphasis remap=\"B\">bar-js</emphasis> are bad names. <emphasis remap=\"B\">foo</emphasis> or <emphasis remap=\"B\">bar</emphasis> are better."
+msgstr ""
+
+#: npm-developers.7.xml:99(para)
+msgid "version: A semver-compatible version."
+msgstr ""
+
+#: npm-developers.7.xml:103(para)
+msgid "engines: Specify the versions of node (or whatever else) that your program runs on. The node API changes a lot, and there may be bugs or new functionality that you depend on. Be explicit."
+msgstr ""
+
+#: npm-developers.7.xml:109(para)
+msgid "author: Take some credit."
+msgstr ""
+
+#: npm-developers.7.xml:113(para)
+msgid "scripts: If you have a special compilation or installation script, then you should put it in the <emphasis remap=\"B\">scripts</emphasis> object. You should definitely have at least a basic smoke-test command as the \"scripts.test\" field. See npm help 7 scripts."
+msgstr ""
+
+#: npm-developers.7.xml:120(para)
+msgid "main: If you have a single module that serves as the entry point to your program (like what the \"foo\" package gives you at require(\"foo\")), then you need to specify that in the \"main\" field."
+msgstr ""
+
+#: npm-developers.7.xml:126(para)
+msgid "directories: This is an object mapping names to folders. The best ones to include are \"lib\" and \"doc\", but if you use \"man\" to specify a folder full of man pages, they'll get installed just like these ones."
+msgstr ""
+
+#. remap='RE'
+#: npm-developers.7.xml:135(para)
+msgid "You can use <emphasis remap=\"B\">npm init</emphasis> in the root of your package in order to get you started with a pretty basic package.json file. See npm help <emphasis remap=\"B\">npm-init</emphasis> for more info."
+msgstr ""
+
+#: npm-developers.7.xml:140(title)
+msgid "Keeping files <emphasis remap=\"I\">out</emphasis> of your package"
+msgstr ""
+
+#: npm-developers.7.xml:141(para)
+msgid "Use a <emphasis remap=\"B\">&thinsp;.npmignore</emphasis> file to keep stuff out of your package. If there's no <emphasis remap=\"B\">&thinsp;.npmignore</emphasis> file, but there <emphasis remap=\"I\">is</emphasis> a <emphasis remap=\"B\">&thinsp;.gitignore</emphasis> file, then npm will ignore the stuff matched by the <emphasis remap=\"B\">&thinsp;.gitignore</emphasis> file. If you <emphasis remap=\"I\">want</emphasis> to include something that is excluded by your <emphasis remap=\"B\">&thinsp;.gitignore</emphasis> file, you can create an empty <emphasis remap=\"B\">&thinsp;.npmignore</emphasis> file to override it. Like <emphasis remap=\"B\">git</emphasis>, <emphasis remap=\"B\">npm</emphasis> looks for <emphasis remap=\"B\">&thinsp;.npmignore</emphasis> and <emphasis remap=\"B\">&thinsp;.gitignore</emphasis> files in all subdirectories of your package, not only the root directory."
+msgstr ""
+
+#: npm-developers.7.xml:149(para)
+msgid "<emphasis remap=\"B\">&thinsp;.npmignore</emphasis> files follow the same pattern rules <emphasis remap=\"I\"><ulink url=\"http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository\">http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository</ulink>#Ignoring-Files</emphasis> as <emphasis remap=\"B\">&thinsp;.gitignore</emphasis> files:"
+msgstr ""
+
+#: npm-developers.7.xml:154(para)
+msgid "Blank lines or lines starting with <emphasis remap=\"B\">#</emphasis> are ignored."
+msgstr ""
+
+#: npm-developers.7.xml:157(para)
+msgid "Standard glob patterns work."
+msgstr ""
+
+#: npm-developers.7.xml:160(para)
+msgid "You can end patterns with a forward slash <emphasis remap=\"B\">/</emphasis> to specify a directory."
+msgstr ""
+
+#: npm-developers.7.xml:163(para)
+msgid "You can negate a pattern by starting it with an exclamation point <emphasis remap=\"B\">!</emphasis>&thinsp;."
+msgstr ""
+
+#. remap='RE'
+#: npm-developers.7.xml:169(para)
+msgid "By default, the following paths and files are ignored, so there's no need to add them to <emphasis remap=\"B\">&thinsp;.npmignore</emphasis> explicitly:"
+msgstr ""
+
+#: npm-developers.7.xml:174(emphasis)
+msgid "&thinsp;.*.swp"
+msgstr ""
+
+#: npm-developers.7.xml:177(emphasis)
+msgid "&thinsp;._*"
+msgstr ""
+
+#: npm-developers.7.xml:180(emphasis)
+msgid "&thinsp;.DS_Store"
+msgstr ""
+
+#: npm-developers.7.xml:183(emphasis)
+msgid "&thinsp;.git"
+msgstr ""
+
+#: npm-developers.7.xml:186(emphasis)
+msgid "&thinsp;.hg"
+msgstr ""
+
+#: npm-developers.7.xml:189(emphasis)
+msgid "&thinsp;.npmrc"
+msgstr ""
+
+#: npm-developers.7.xml:192(emphasis)
+msgid "&thinsp;.lock-wscript"
+msgstr ""
+
+#: npm-developers.7.xml:195(emphasis)
+msgid "&thinsp;.svn"
+msgstr ""
+
+#: npm-developers.7.xml:198(emphasis)
+msgid "&thinsp;.wafpickle-*"
+msgstr ""
+
+#: npm-developers.7.xml:201(emphasis)
+msgid "config.gypi"
+msgstr ""
+
+#: npm-developers.7.xml:204(emphasis)
+msgid "CVS"
+msgstr ""
+
+#: npm-developers.7.xml:207(emphasis)
+msgid "npm-debug.log"
+msgstr ""
+
+#. remap='RE'
+#: npm-developers.7.xml:213(para)
+msgid "Additionally, everything in <emphasis remap=\"B\">node_modules</emphasis> is ignored, except for bundled dependencies. npm automatically handles this for you, so don't bother adding <emphasis remap=\"B\">node_modules</emphasis> to <emphasis remap=\"B\">&thinsp;.npmignore</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-developers.7.xml:217(para)
+msgid "The following paths and files are never ignored, so adding them to <emphasis remap=\"B\">&thinsp;.npmignore</emphasis> is pointless:"
+msgstr ""
+
+#: npm-developers.7.xml:222(emphasis)
+msgid "package.json"
+msgstr ""
+
+#: npm-developers.7.xml:225(para)
+msgid "<emphasis remap=\"B\">README</emphasis> (and its variants)"
+msgstr ""
+
+#: npm-developers.7.xml:228(para)
+msgid "<emphasis remap=\"B\">CHANGELOG</emphasis> (and its variants)"
+msgstr ""
+
+#: npm-developers.7.xml:231(para)
+msgid "<emphasis remap=\"B\">LICENSE</emphasis> / <emphasis remap=\"B\">LICENCE</emphasis>"
+msgstr ""
+
+#: npm-developers.7.xml:238(title)
+msgid "Link Packages"
+msgstr ""
+
+#: npm-developers.7.xml:239(para)
+msgid "<emphasis remap=\"B\">npm link</emphasis> is designed to install a development package and see the changes in real time without having to keep re-installing it. (You do need to either re-link or <emphasis remap=\"B\">npm rebuild -g</emphasis> to update compiled packages, of course.)"
+msgstr ""
+
+#: npm-developers.7.xml:244(para)
+msgid "More info at npm help <emphasis remap=\"B\">npm-link</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-developers.7.xml:247(title)
+msgid "Before Publishing: Make Sure Your Package Installs and Works"
+msgstr ""
+
+#: npm-developers.7.xml:248(emphasis)
+msgid "This is important."
+msgstr ""
+
+#: npm-developers.7.xml:250(para)
+msgid "If you can not install it locally, you'll have problems trying to publish it. Or, worse yet, you'll be able to publish it, but you'll be publishing a broken or pointless package. So don't do that."
+msgstr ""
+
+#: npm-developers.7.xml:255(para)
+msgid "In the root of your package, do this:"
+msgstr ""
+
+#: npm-developers.7.xml:257(literallayout)
+#, no-wrap
+msgid "\nnpm install . -g\n"
+msgstr ""
+
+#. .fi
+#: npm-developers.7.xml:261(para)
+msgid "That'll show you that it's working. If you'd rather just create a symlink package that points to your working directory, then do this:"
+msgstr ""
+
+#: npm-developers.7.xml:264(literallayout)
+#, no-wrap
+msgid "\nnpm link\n"
+msgstr ""
+
+#. .fi
+#: npm-developers.7.xml:268(para)
+msgid "Use <emphasis remap=\"B\">npm ls -g</emphasis> to see if it's there."
+msgstr ""
+
+#: npm-developers.7.xml:270(para)
+msgid "To test a local install, go into some other folder, and then do:"
+msgstr ""
+
+#: npm-developers.7.xml:272(literallayout)
+#, no-wrap
+msgid "\ncd ../some-other-folder\nnpm install ../my-package\n"
+msgstr ""
+
+#. .fi
+#: npm-developers.7.xml:277(para)
+msgid "to install it locally into the node_modules folder in that other place."
+msgstr ""
+
+#: npm-developers.7.xml:279(para)
+msgid "Then go into the node-repl, and try using require(\"my-thing\") to bring in your module's main module."
+msgstr ""
+
+#: npm-developers.7.xml:283(title)
+msgid "Create a User Account"
+msgstr ""
+
+#: npm-developers.7.xml:284(para)
+msgid "Create a user with the adduser command. It works like this:"
+msgstr ""
+
+#: npm-developers.7.xml:286(literallayout)
+#, no-wrap
+msgid "\nnpm adduser\n"
+msgstr ""
+
+#. .fi
+#: npm-developers.7.xml:290(para)
+msgid "and then follow the prompts."
+msgstr ""
+
+#: npm-developers.7.xml:292(para)
+msgid "This is documented better in npm help adduser."
+msgstr ""
+
+#: npm-developers.7.xml:295(title)
+msgid "Publish your package"
+msgstr ""
+
+#: npm-developers.7.xml:296(para)
+msgid "This part's easy. IN the root of your folder, do this:"
+msgstr ""
+
+#: npm-developers.7.xml:298(literallayout)
+#, no-wrap
+msgid "\nnpm publish\n"
+msgstr ""
+
+#. .fi
+#: npm-developers.7.xml:302(para)
+msgid "You can give publish a url to a tarball, or a filename of a tarball, or a path to a folder."
+msgstr ""
+
+#: npm-developers.7.xml:305(para)
+msgid "Note that pretty much <emphasis remap=\"B\">everything in that folder will be exposed</emphasis> by default. So, if you have secret stuff in there, use a <emphasis remap=\"B\">&thinsp;.npmignore</emphasis> file to list out the globs to ignore, or publish from a fresh checkout."
+msgstr ""
+
+#: npm-developers.7.xml:311(title)
+msgid "Brag about it"
+msgstr ""
+
+#: npm-developers.7.xml:312(para)
+msgid "Send emails, write blogs, blab in IRC."
+msgstr ""
+
+#: npm-developers.7.xml:314(para)
+msgid "Tell the world how easy it is to install your program!"
+msgstr ""
+
+#: npm-developers.7.xml:317(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-developers.7.xml:321(para)
+msgid "npm help 7 faq"
+msgstr ""
+
+#: npm-developers.7.xml:324(para)
+msgid "npm help npm"
+msgstr ""
+
+#: npm-developers.7.xml:327(para)
+msgid "npm help init"
+msgstr ""
+
+#: npm-developers.7.xml:330(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm-developers.7.xml:333(para)
+msgid "npm help 7 scripts"
+msgstr ""
+
+#: npm-developers.7.xml:336(para)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-developers.7.xml:339(para)
+msgid "npm help adduser"
+msgstr ""
+
+#: npm-developers.7.xml:342(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-developers.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

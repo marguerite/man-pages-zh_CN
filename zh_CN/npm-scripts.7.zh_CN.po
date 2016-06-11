@@ -1,0 +1,353 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-scripts.7.xml:7(refentrytitle)
+msgid "NPM-SCRIPTS"
+msgstr ""
+
+#: npm-scripts.7.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: npm-scripts.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-scripts.7.xml:12(refname)
+msgid "npm-scripts"
+msgstr ""
+
+#: npm-scripts.7.xml:13(refpurpose)
+msgid "How npm handles the \"scripts\" field"
+msgstr ""
+
+#: npm-scripts.7.xml:17(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-scripts.7.xml:18(para)
+msgid "npm supports the \"scripts\" property of the package.json script, for the following scripts:"
+msgstr ""
+
+#: npm-scripts.7.xml:23(para)
+msgid "prepublish: Run BEFORE the package is published. (Also run on local <emphasis remap=\"B\">npm install</emphasis> without any arguments.)"
+msgstr ""
+
+#: npm-scripts.7.xml:28(para)
+msgid "publish, postpublish: Run AFTER the package is published."
+msgstr ""
+
+#: npm-scripts.7.xml:32(para)
+msgid "preinstall: Run BEFORE the package is installed"
+msgstr ""
+
+#: npm-scripts.7.xml:36(para)
+msgid "install, postinstall: Run AFTER the package is installed."
+msgstr ""
+
+#: npm-scripts.7.xml:40(para)
+msgid "preuninstall, uninstall: Run BEFORE the package is uninstalled."
+msgstr ""
+
+#: npm-scripts.7.xml:44(para)
+msgid "postuninstall: Run AFTER the package is uninstalled."
+msgstr ""
+
+#: npm-scripts.7.xml:48(para)
+msgid "preversion, version: Run BEFORE bump the package version."
+msgstr ""
+
+#: npm-scripts.7.xml:52(para)
+msgid "postversion: Run AFTER bump the package version."
+msgstr ""
+
+#: npm-scripts.7.xml:56(para)
+msgid "pretest, test, posttest: Run by the <emphasis remap=\"B\">npm test</emphasis> command."
+msgstr ""
+
+#: npm-scripts.7.xml:60(para)
+msgid "prestop, stop, poststop: Run by the <emphasis remap=\"B\">npm stop</emphasis> command."
+msgstr ""
+
+#: npm-scripts.7.xml:64(para)
+msgid "prestart, start, poststart: Run by the <emphasis remap=\"B\">npm start</emphasis> command."
+msgstr ""
+
+#: npm-scripts.7.xml:68(para)
+msgid "prerestart, restart, postrestart: Run by the <emphasis remap=\"B\">npm restart</emphasis> command. Note: <emphasis remap=\"B\">npm restart</emphasis> will run the stop and start scripts if no <emphasis remap=\"B\">restart</emphasis> script is provided."
+msgstr ""
+
+#. remap='RE'
+#: npm-scripts.7.xml:76(para)
+msgid "Additionally, arbitrary scripts can be executed by running <emphasis remap=\"B\">npm run-script &lt;pkg&gt; &lt;stage&gt;</emphasis>&thinsp;. <emphasis remap=\"I\">Pre</emphasis> and <emphasis remap=\"I\">post</emphasis> commands with matching names will be run for those as well (e.g. <emphasis remap=\"B\">premyscript</emphasis>, <emphasis remap=\"B\">myscript</emphasis>, <emphasis remap=\"B\">postmyscript</emphasis>)."
+msgstr ""
+
+#: npm-scripts.7.xml:82(title)
+msgid "COMMON USES"
+msgstr ""
+
+#: npm-scripts.7.xml:83(para)
+msgid "If you need to perform operations on your package before it is used, in a way that is not dependent on the operating system or architecture of the target system, use a <emphasis remap=\"B\">prepublish</emphasis> script. This includes tasks such as:"
+msgstr ""
+
+#: npm-scripts.7.xml:90(para)
+msgid "Compiling CoffeeScript source code into JavaScript."
+msgstr ""
+
+#: npm-scripts.7.xml:93(para)
+msgid "Creating minified versions of JavaScript source code."
+msgstr ""
+
+#: npm-scripts.7.xml:96(para)
+msgid "Fetching remote resources that your package will use."
+msgstr ""
+
+#. remap='RE'
+#: npm-scripts.7.xml:102(para)
+msgid "The advantage of doing these things at <emphasis remap=\"B\">prepublish</emphasis> time is that they can be done once, in a single place, thus reducing complexity and variability. Additionally, this means that:"
+msgstr ""
+
+#: npm-scripts.7.xml:108(para)
+msgid "You can depend on <emphasis remap=\"B\">coffee-script</emphasis> as a <emphasis remap=\"B\">devDependency</emphasis>, and thus your users don't need to have it installed."
+msgstr ""
+
+#: npm-scripts.7.xml:112(para)
+msgid "You don't need to include minifiers in your package, reducing the size for your users."
+msgstr ""
+
+#: npm-scripts.7.xml:116(para)
+msgid "You don't need to rely on your users having <emphasis remap=\"B\">curl</emphasis> or <emphasis remap=\"B\">wget</emphasis> or other system tools on the target machines."
+msgstr ""
+
+#: npm-scripts.7.xml:124(title)
+msgid "DEFAULT VALUES"
+msgstr ""
+
+#: npm-scripts.7.xml:125(para)
+msgid "npm will default some script values based on package contents."
+msgstr ""
+
+#: npm-scripts.7.xml:129(para)
+msgid "<emphasis remap=\"B\">\"start\": \"node server.js\"</emphasis>: If there is a <emphasis remap=\"B\">server.js</emphasis> file in the root of your package, then npm will default the <emphasis remap=\"B\">start</emphasis> command to <emphasis remap=\"B\">node server.js</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-scripts.7.xml:134(para)
+msgid "<emphasis remap=\"B\">\"install\": \"node-gyp rebuild\"</emphasis>: If there is a <emphasis remap=\"B\">binding.gyp</emphasis> file in the root of your package, npm will default the <emphasis remap=\"B\">install</emphasis> command to compile using node-gyp."
+msgstr ""
+
+#: npm-scripts.7.xml:143(title)
+msgid "USER"
+msgstr ""
+
+#: npm-scripts.7.xml:144(para)
+msgid "If npm was invoked with root privileges, then it will change the uid to the user account or uid specified by the <emphasis remap=\"B\">user</emphasis> config, which defaults to <emphasis remap=\"B\">nobody</emphasis>&thinsp;. Set the <emphasis remap=\"B\">unsafe-perm</emphasis> flag to run scripts with root privileges."
+msgstr ""
+
+#: npm-scripts.7.xml:150(title)
+msgid "ENVIRONMENT"
+msgstr ""
+
+#: npm-scripts.7.xml:151(para)
+msgid "Package scripts run in an environment where many pieces of information are made available regarding the setup of npm and the current state of the process."
+msgstr ""
+
+#: npm-scripts.7.xml:155(title)
+msgid "path"
+msgstr ""
+
+#: npm-scripts.7.xml:157(para)
+msgid "If you depend on modules that define executable scripts, like test suites, then those executables will be added to the <envar>PATH</envar> for executing the scripts. So, if your package.json has this:"
+msgstr ""
+
+#: npm-scripts.7.xml:161(literallayout)
+#, no-wrap
+msgid "\n{ \"name\" : \"foo\"\n, \"dependencies\" : { \"bar\" : \"0.1.x\" }\n, \"scripts\": { \"start\" : \"bar ./test\" } }\n"
+msgstr ""
+
+#. .fi
+#: npm-scripts.7.xml:167(para)
+msgid "then you could run <emphasis remap=\"B\">npm start</emphasis> to execute the <emphasis remap=\"B\">bar</emphasis> script, which is exported into the <emphasis remap=\"B\">node_modules/.bin</emphasis> directory on <emphasis remap=\"B\">npm install</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-scripts.7.xml:171(title)
+msgid "package.json vars"
+msgstr ""
+
+#: npm-scripts.7.xml:173(para)
+msgid "The package.json fields are tacked onto the <emphasis remap=\"B\">npm_package_</emphasis> prefix. So, for instance, if you had <emphasis remap=\"B\">{\"name\":\"foo\", \"version\":\"1.2.5\"}</emphasis> in your package.json file, then your package scripts would have the <emphasis remap=\"B\">npm_package_name</emphasis> environment variable set to \"foo\", and the <emphasis remap=\"B\">npm_package_version</emphasis> set to \"1.2.5\""
+msgstr ""
+
+#: npm-scripts.7.xml:180(title)
+msgid "configuration"
+msgstr ""
+
+#: npm-scripts.7.xml:182(para)
+msgid "Configuration parameters are put in the environment with the <emphasis remap=\"B\">npm_config_</emphasis> prefix. For instance, you can view the effective <emphasis remap=\"B\">root</emphasis> config by checking the <emphasis remap=\"B\">npm_config_root</emphasis> environment variable."
+msgstr ""
+
+#: npm-scripts.7.xml:187(title)
+msgid "Special: package.json config object"
+msgstr ""
+
+#: npm-scripts.7.xml:189(para)
+msgid "The package.json \"config\" keys are overwritten in the environment if there is a config param of <emphasis remap=\"B\">&lt;name&gt;[@&lt;version&gt;]:&lt;key&gt;</emphasis>&thinsp;. For example, if the package.json has this:"
+msgstr ""
+
+#: npm-scripts.7.xml:193(literallayout)
+#, no-wrap
+msgid "\n{ \"name\" : \"foo\"\n, \"config\" : { \"port\" : \"8080\" }\n, \"scripts\" : { \"start\" : \"node server.js\" } }\n"
+msgstr ""
+
+#. .fi
+#: npm-scripts.7.xml:199(para)
+msgid "and the server.js is this:"
+msgstr ""
+
+#: npm-scripts.7.xml:201(literallayout)
+#, no-wrap
+msgid "\nhttp.createServer(...).listen(process.env.npm_package_config_port)\n"
+msgstr ""
+
+#. .fi
+#: npm-scripts.7.xml:205(para)
+msgid "then the user could change the behavior by doing:"
+msgstr ""
+
+#: npm-scripts.7.xml:207(literallayout)
+#, no-wrap
+msgid "\nnpm config set foo:port 80\n"
+msgstr ""
+
+#: npm-scripts.7.xml:212(title)
+msgid "current lifecycle event"
+msgstr ""
+
+#: npm-scripts.7.xml:214(para)
+msgid "Lastly, the <emphasis remap=\"B\">npm_lifecycle_event</emphasis> environment variable is set to whichever stage of the cycle is being executed. So, you could have a single script used for different parts of the process which switches based on what's currently happening."
+msgstr ""
+
+#: npm-scripts.7.xml:219(para)
+msgid "Objects are flattened following this format, so if you had <emphasis remap=\"B\">{\"scripts\":{\"install\":\"foo.js\"}}</emphasis> in your package.json, then you'd see this in the script:"
+msgstr ""
+
+#: npm-scripts.7.xml:223(literallayout)
+#, no-wrap
+msgid "\nprocess.env.npm_package_scripts_install === \"foo.js\"\n"
+msgstr ""
+
+#: npm-scripts.7.xml:229(title)
+msgid "EXAMPLES"
+msgstr ""
+
+#: npm-scripts.7.xml:230(para)
+msgid "For example, if your package.json contains this:"
+msgstr ""
+
+#: npm-scripts.7.xml:232(literallayout)
+#, no-wrap
+msgid "\n{ \"scripts\" :\n  { \"install\" : \"scripts/install.js\"\n  , \"postinstall\" : \"scripts/install.js\"\n  , \"uninstall\" : \"scripts/uninstall.js\"\n  }\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-scripts.7.xml:241(para)
+msgid "then the <emphasis remap=\"B\">scripts/install.js</emphasis> will be called for the install, post-install, stages of the lifecycle, and the <emphasis remap=\"B\">scripts/uninstall.js</emphasis> would be called when the package is uninstalled. Since <emphasis remap=\"B\">scripts/install.js</emphasis> is running for three different phases, it would be wise in this case to look at the <emphasis remap=\"B\">npm_lifecycle_event</emphasis> environment variable."
+msgstr ""
+
+#: npm-scripts.7.xml:248(para)
+msgid "If you want to run a make command, you can do so. This works just fine:"
+msgstr ""
+
+#: npm-scripts.7.xml:251(literallayout)
+#, no-wrap
+msgid "\n{ \"scripts\" :\n  { \"preinstall\" : \"./configure\"\n  , \"install\" : \"make &amp;&amp; make install\"\n  , \"test\" : \"make test\"\n  }\n}\n"
+msgstr ""
+
+#: npm-scripts.7.xml:261(title)
+msgid "EXITING"
+msgstr ""
+
+#: npm-scripts.7.xml:262(para)
+msgid "Scripts are run by passing the line as a script argument to <emphasis remap=\"B\">sh</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-scripts.7.xml:264(para)
+msgid "If the script exits with a code other than 0, then this will abort the process."
+msgstr ""
+
+#: npm-scripts.7.xml:267(para)
+msgid "Note that these script files don't have to be nodejs or even javascript programs. They just have to be some kind of executable file."
+msgstr ""
+
+#: npm-scripts.7.xml:272(title)
+msgid "HOOK SCRIPTS"
+msgstr ""
+
+#: npm-scripts.7.xml:273(para)
+msgid "If you want to run a specific script at a specific lifecycle event for ALL packages, then you can use a hook script."
+msgstr ""
+
+#: npm-scripts.7.xml:276(para)
+msgid "Place an executable file at <emphasis remap=\"B\">node_modules/.hooks/{eventname}</emphasis>, and it'll get run for all packages when they are going through that point in the package lifecycle for any packages installed in that root."
+msgstr ""
+
+#: npm-scripts.7.xml:280(para)
+msgid "Hook scripts are run exactly the same way as package.json scripts. That is, they are in a separate child process, with the env described above."
+msgstr ""
+
+#: npm-scripts.7.xml:285(title)
+msgid "BEST PRACTICES"
+msgstr ""
+
+#: npm-scripts.7.xml:289(para)
+msgid "Don't exit with a non-zero error code unless you <emphasis remap=\"I\">really</emphasis> mean it. Except for uninstall scripts, this will cause the npm action to fail, and potentially be rolled back. If the failure is minor or only will prevent some optional features, then it's better to just print a warning and exit successfully."
+msgstr ""
+
+#: npm-scripts.7.xml:296(para)
+msgid "Try not to use scripts to do what npm can do for you. Read through npm help 5 <emphasis remap=\"B\">package.json</emphasis> to see all the things that you can specify and enable by simply describing your package appropriately. In general, this will lead to a more robust and consistent state."
+msgstr ""
+
+#: npm-scripts.7.xml:302(para)
+msgid "Inspect the env to determine where to put things. For instance, if the <emphasis remap=\"B\">npm_config_binroot</emphasis> environ is set to <filename>/home/user/bin</filename>, then don't try to install executables into <filename>/usr/local/bin</filename>&thinsp;. The user probably set it up that way for a reason."
+msgstr ""
+
+#: npm-scripts.7.xml:308(para)
+msgid "Don't prefix your script commands with \"sudo\". If root permissions are required for some reason, then it'll fail with that error, and the user will sudo the npm command in question."
+msgstr ""
+
+#: npm-scripts.7.xml:313(para)
+msgid "Don't use <emphasis remap=\"B\">install</emphasis>&thinsp;. Use a <emphasis remap=\"B\">&thinsp;.gyp</emphasis> file for compilation, and <emphasis remap=\"B\">prepublish</emphasis> for anything else. You should almost never have to explicitly set a preinstall or install script. If you are doing this, please consider if there is another option. The only valid use of <emphasis remap=\"B\">install</emphasis> or <emphasis remap=\"B\">preinstall</emphasis> scripts is for compilation which must be done on the target architecture."
+msgstr ""
+
+#: npm-scripts.7.xml:324(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-scripts.7.xml:328(para)
+msgid "npm help run-script"
+msgstr ""
+
+#: npm-scripts.7.xml:331(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm-scripts.7.xml:334(para)
+msgid "npm help 7 developers"
+msgstr ""
+
+#: npm-scripts.7.xml:337(para)
+msgid "npm help install"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-scripts.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

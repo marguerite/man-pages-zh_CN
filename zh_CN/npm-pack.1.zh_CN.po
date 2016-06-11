@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-pack.1.xml:7(refentrytitle)
+msgid "NPM-PACK"
+msgstr ""
+
+#: npm-pack.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-pack.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-pack.1.xml:12(refname)
+msgid "npm-pack"
+msgstr ""
+
+#: npm-pack.1.xml:13(refpurpose)
+msgid "Create a tarball from a package"
+msgstr ""
+
+#: npm-pack.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-pack.1.xml:18(replaceable)
+msgid "pack"
+msgstr ""
+
+#: npm-pack.1.xml:19(replaceable)
+msgid "&lt;@scope&gt;/"
+msgstr ""
+
+#: npm-pack.1.xml:19(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-pack.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-pack.1.xml:25(para)
+msgid "For anything that's installable (that is, a package folder, tarball, tarball url, name@tag, name@version, name, or scoped name), this command will fetch it to the cache, and then copy the tarball to the current working directory as <emphasis remap=\"B\">&lt;name&gt;-&lt;version&gt;.tgz</emphasis>, and then write the filenames out to stdout."
+msgstr ""
+
+#: npm-pack.1.xml:31(para)
+msgid "If the same package is specified multiple times, then the file will be overwritten the second time."
+msgstr ""
+
+#: npm-pack.1.xml:34(para)
+msgid "If no arguments are supplied, then npm packs the current package folder."
+msgstr ""
+
+#: npm-pack.1.xml:37(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-pack.1.xml:41(para)
+msgid "npm help cache"
+msgstr ""
+
+#: npm-pack.1.xml:44(para)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-pack.1.xml:47(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-pack.1.xml:50(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-pack.1.xml:53(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-pack.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

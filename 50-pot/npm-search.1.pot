@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-search.1.xml:7(refentrytitle)
+msgid "NPM-SEARCH"
+msgstr ""
+
+#: npm-search.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-search.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-search.1.xml:12(refname)
+msgid "npm-search"
+msgstr ""
+
+#: npm-search.1.xml:13(refpurpose)
+msgid "Search for packages"
+msgstr ""
+
+#: npm-search.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-search.1.xml:18(replaceable) npm-search.1.xml:20(replaceable)
+msgid "search"
+msgstr ""
+
+#: npm-search.1.xml:19(arg)
+msgid "-l"
+msgstr ""
+
+#: npm-search.1.xml:19(arg)
+msgid "--long"
+msgstr ""
+
+#: npm-search.1.xml:20(replaceable)
+msgid "terms"
+msgstr ""
+
+#: npm-search.1.xml:23(para)
+msgid "aliases: s, se"
+msgstr ""
+
+#: npm-search.1.xml:27(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-search.1.xml:28(para)
+msgid "Search the registry for packages matching the search terms."
+msgstr ""
+
+#: npm-search.1.xml:30(para)
+msgid "If a term starts with <emphasis remap=\"B\">/</emphasis>, then it's interpreted as a regular expression. A trailing <emphasis remap=\"B\">/</emphasis> will be ignored in this case. (Note that many regular expression characters must be escaped or quoted in most shells.)"
+msgstr ""
+
+#: npm-search.1.xml:35(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-search.1.xml:37(title)
+msgid "long"
+msgstr ""
+
+#: npm-search.1.xml:41(para)
+msgid "Default: false"
+msgstr ""
+
+#: npm-search.1.xml:44(para)
+msgid "Type: Boolean"
+msgstr ""
+
+#. remap='RE'
+#: npm-search.1.xml:50(para)
+msgid "Display full package descriptions and other long text across multiple lines. When disabled (default) search results are truncated to fit neatly on a single line. Modules with extremely long names will fall on multiple lines."
+msgstr ""
+
+#: npm-search.1.xml:57(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-search.1.xml:61(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-search.1.xml:64(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-search.1.xml:67(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-search.1.xml:70(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-search.1.xml:73(para)
+msgid "npm help view"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-search.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

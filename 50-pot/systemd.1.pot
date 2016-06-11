@@ -1,0 +1,939 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:47+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: systemd.1.xml:8(refentrytitle)
+msgid "SYSTEMD"
+msgstr ""
+
+#: systemd.1.xml:9(manvolnum)
+msgid "1"
+msgstr ""
+
+#: systemd.1.xml:10(refmiscinfo)
+msgid "systemd 210"
+msgstr ""
+
+#: systemd.1.xml:13(refname) systemd.1.xml:20(command)
+msgid "systemd"
+msgstr ""
+
+#: systemd.1.xml:14(refname) systemd.1.xml:21(replaceable)
+msgid "init"
+msgstr ""
+
+#: systemd.1.xml:15(refpurpose)
+msgid "systemd system and service manager"
+msgstr ""
+
+#: systemd.1.xml:20(replaceable) systemd.1.xml:22(replaceable) systemd.1.xml:50(title)
+msgid "OPTIONS"
+msgstr ""
+
+#: systemd.1.xml:23(replaceable)
+msgid "COMMAND"
+msgstr ""
+
+#: systemd.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: systemd.1.xml:29(para)
+msgid "systemd is a system and service manager for Linux operating systems. When run as first process on boot (as PID 1), it acts as init system that brings up and maintains userspace services."
+msgstr ""
+
+#: systemd.1.xml:31(para)
+msgid "For compatibility with SysV, if systemd is called as <emphasis remap=\"B\">init</emphasis> and a PID that is not 1, it will execute <emphasis remap=\"B\">telinit</emphasis> and pass all command line arguments unmodified. That means <emphasis remap=\"B\">init</emphasis> and <emphasis remap=\"B\">telinit</emphasis> are mostly equivalent when invoked from normal login sessions. See <citerefentry><refentrytitle>telinit</refentrytitle><manvolnum>8</manvolnum></citerefentry> for more information."
+msgstr ""
+
+#: systemd.1.xml:43(para)
+msgid "When run as system instance, systemd interprets the configuration file system.conf, otherwise user.conf. See <citerefentry><refentrytitle>systemd-system.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> for more information."
+msgstr ""
+
+#: systemd.1.xml:51(para)
+msgid "The following options are understood:"
+msgstr ""
+
+#: systemd.1.xml:53(option)
+msgid "--test"
+msgstr ""
+
+#: systemd.1.xml:54(literallayout)
+#, no-wrap
+msgid "\nDetermine startup sequence, dump it and exit. This is an option useful for debugging only.\n"
+msgstr ""
+
+#: systemd.1.xml:58(option)
+msgid "--dump-configuration-items"
+msgstr ""
+
+#: systemd.1.xml:59(literallayout)
+#, no-wrap
+msgid "\nDump understood unit configuration items. This outputs a terse but complete list of configuration items understood in unit definition files.\n"
+msgstr ""
+
+#: systemd.1.xml:63(option)
+msgid "--unit="
+msgstr ""
+
+#: systemd.1.xml:65(para)
+msgid "Set default unit to activate on startup. If not specified, defaults to default.target."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:69(para)
+msgid "<option>--system</option>, <option>--user</option>"
+msgstr ""
+
+#: systemd.1.xml:71(para)
+msgid "For <option>--system</option>, tell systemd to run a system instance, even if the process ID is not 1, i.e. systemd is not run as init process. <option>--user</option> does the opposite, running a user instance even if the process ID is 1. Normally it should not be necessary to pass these options, as systemd automatically detects the mode it is started in. These options are hence of little use except for debugging. Note that it is not supported booting and maintaining a full system with systemd running in <option>--system</option> mode, but PID not 1. In practice, passing <option>--system</option> explicitly is only useful in conjunction with <option>--test</option>."
+msgstr ""
+
+#: systemd.1.xml:82(option)
+msgid "--dump-core"
+msgstr ""
+
+#: systemd.1.xml:83(literallayout)
+#, no-wrap
+msgid "\nDump core on crash. This switch has no effect when run as user instance.\n"
+msgstr ""
+
+#: systemd.1.xml:87(option)
+msgid "--crash-shell"
+msgstr ""
+
+#: systemd.1.xml:88(literallayout)
+#, no-wrap
+msgid "\nRun shell on crash. This switch has no effect when run as user instance.\n"
+msgstr ""
+
+#: systemd.1.xml:92(option)
+msgid "--confirm-spawn"
+msgstr ""
+
+#: systemd.1.xml:93(literallayout)
+#, no-wrap
+msgid "\nAsk for confirmation when spawning processes. This switch has no effect when run as user instance.\n"
+msgstr ""
+
+#: systemd.1.xml:97(option)
+msgid "--show-status="
+msgstr ""
+
+#: systemd.1.xml:99(para)
+msgid "Show terse service status information while booting. This switch has no effect when run as user instance. Takes a boolean argument which may be omitted which is interpreted as <emphasis remap=\"B\">true</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:103(option)
+msgid "--log-target="
+msgstr ""
+
+#: systemd.1.xml:105(para)
+msgid "Set log target. Argument must be one of <emphasis remap=\"B\">console</emphasis>, <emphasis remap=\"B\">journal</emphasis>, <emphasis remap=\"B\">syslog</emphasis>, <emphasis remap=\"B\">kmsg</emphasis>, <emphasis remap=\"B\">journal-or-kmsg</emphasis>, <emphasis remap=\"B\">syslog-or-kmsg</emphasis>, <emphasis remap=\"B\">null</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:115(option)
+msgid "--log-level="
+msgstr ""
+
+#: systemd.1.xml:117(para)
+msgid "Set log level. As argument this accepts a numerical log level or the well-known <citerefentry><refentrytitle>syslog</refentrytitle><manvolnum>3</manvolnum></citerefentry> symbolic names (lowercase): <emphasis remap=\"B\">emerg</emphasis>, <emphasis remap=\"B\">alert</emphasis>, <emphasis remap=\"B\">crit</emphasis>, <emphasis remap=\"B\">err</emphasis>, <emphasis remap=\"B\">warning</emphasis>, <emphasis remap=\"B\">notice</emphasis>, <emphasis remap=\"B\">info</emphasis>, <emphasis remap=\"B\">debug</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:130(option)
+msgid "--log-color="
+msgstr ""
+
+#: systemd.1.xml:132(para)
+msgid "Highlight important log messages. Argument is a boolean value. If the argument is omitted, it defaults to <emphasis remap=\"B\">true</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:136(option)
+msgid "--log-location="
+msgstr ""
+
+#: systemd.1.xml:138(para)
+msgid "Include code location in log messages. This is mostly relevant for debugging purposes. Argument is a boolean value. If the argument is omitted it defaults to <emphasis remap=\"B\">true</emphasis>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:142(para)
+msgid "<option>--default-standard-output=</option>, <option>--default-standard-error=</option>"
+msgstr ""
+
+#: systemd.1.xml:144(para)
+msgid "Sets the default output or error output for all services and sockets, respectively. That is, controls the default for <emphasis remap=\"B\">StandardOutput=</emphasis> and <emphasis remap=\"B\">StandardError=</emphasis> (see <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5</manvolnum></citerefentry> for details). Takes one of <emphasis remap=\"B\">inherit</emphasis>, <emphasis remap=\"B\">null</emphasis>, <emphasis remap=\"B\">tty</emphasis>, <emphasis remap=\"B\">journal</emphasis>, <emphasis remap=\"B\">journal+console</emphasis>, <emphasis remap=\"B\">syslog</emphasis>, <emphasis remap=\"B\">syslog+console</emphasis>, <emphasis remap=\"B\">kmsg</emphasis>, <emphasis remap=\"B\">kmsg+console</emphasis>. If the argument is omitted <option>--default-standard-output=</option> defaults to <emphasis remap=\"B\">journal</emphasis> and <option>--default-standard-error=</option> to <emphasis remap=\"B\">inherit</emphasis>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:169(para)
+msgid "<option>-h</option>, <option>--help</option>"
+msgstr ""
+
+#: systemd.1.xml:170(programlisting)
+#, no-wrap
+msgid "\nPrint a short help text and exit.\n"
+msgstr ""
+
+#: systemd.1.xml:174(option)
+msgid "--version"
+msgstr ""
+
+#: systemd.1.xml:175(programlisting)
+#, no-wrap
+msgid "\nPrint a short version string and exit.\n"
+msgstr ""
+
+#: systemd.1.xml:180(title)
+msgid "CONCEPTS"
+msgstr ""
+
+#: systemd.1.xml:181(para)
+msgid "systemd provides a dependency system between various entities called \"units\" of 12 different types. Units encapsulate various objects that are relevant for system boot-up and maintenance. The majority of units are configured in unit configuration files, whose syntax and basic set of options is described in <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>, however some are created automatically from other configuration, dynamically from system state or programmatically at runtime. Units may be \"active\" (meaning started, bound, plugged in, ..., depending on the unit type, see below), or \"inactive\" (meaning stopped, unbound, unplugged, ...), as well as in the process of being activated or deactivated, i.e. between the two states (these states are called \"activating\", \"deactivating\"). A special \"failed\" state is available as well, which is very similar to \"inactive\" and is entered when the service failed in some way (process returned error code on exit, or crashed, or an operation timed out). If this state is entered, the cause will be logged, for later reference. Note that the various unit types may have a number of additional substates, which are mapped to the five generalized unit states described here."
+msgstr ""
+
+#: systemd.1.xml:184(para)
+msgid "The following unit types are available:"
+msgstr ""
+
+#: systemd.1.xml:187(para)
+msgid "\\h'-04' 1.\\h'+01' Service units, which start and control daemons and the processes they consist of. For details see <citerefentry><refentrytitle>systemd.service</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:193(para)
+msgid "\\h'-04' 2.\\h'+01' Socket units, which encapsulate local IPC or network sockets in the system, useful for socket-based activation. For details about socket units see <citerefentry><refentrytitle>systemd.socket</refentrytitle><manvolnum>5</manvolnum></citerefentry>, for details on socket-based activation and other forms of activation, see <citerefentry><refentrytitle>daemon</refentrytitle><manvolnum>7</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:200(para)
+msgid "\\h'-04' 3.\\h'+01' Target units are useful to group units, or provide well-known synchronization points during boot-up, see <citerefentry><refentrytitle>systemd.target</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:206(para)
+msgid "\\h'-04' 4.\\h'+01' Device units expose kernel devices in systemd and may be used to implement device-based activation. For details see <citerefentry><refentrytitle>systemd.device</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:212(para)
+msgid "\\h'-04' 5.\\h'+01' Mount units control mount points in the file system, for details see <citerefentry><refentrytitle>systemd.mount</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:218(para)
+msgid "\\h'-04' 6.\\h'+01' Automount units provide automount capabilities, for on-demand mounting of file systems as well as parallelized boot-up. See <citerefentry><refentrytitle>systemd.automount</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:224(para)
+msgid "\\h'-04' 7.\\h'+01' Snapshot units can be used to temporarily save the state of the set of systemd units, which later may be restored by activating the saved snapshot unit. For more information see <citerefentry><refentrytitle>systemd.snapshot</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:230(para)
+msgid "\\h'-04' 8.\\h'+01' Timer units are useful for triggering activation of other units based on timers. You may find details in <citerefentry><refentrytitle>systemd.timer</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:236(para)
+msgid "\\h'-04' 9.\\h'+01' Swap units are very similar to mount units and encapsulate memory swap partitions or files of the operating system. They are described in <citerefentry><refentrytitle>systemd.swap</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:242(para)
+msgid "\\h'-04'10.\\h'+01' Path units may be used to activate other services when file system objects change or are modified. See <citerefentry><refentrytitle>systemd.path</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:248(para)
+msgid "\\h'-04'11.\\h'+01' Slice units may be used to group units which manage system processes (such as service and scope units) in a hierarchical tree for resource management purposes. See <citerefentry><refentrytitle>systemd.slice</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:254(para)
+msgid "\\h'-04'12.\\h'+01' Scope units are similar to service units, but manage foreign processes instead of starting them as well. See <citerefentry><refentrytitle>systemd.scope</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:259(para)
+msgid "Units are named as their configuration files. Some units have special semantics. A detailed list is available in <citerefentry><refentrytitle>systemd.special</refentrytitle><manvolnum>7</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:262(para)
+msgid "systemd knows various kinds of dependencies, including positive and negative requirement dependencies (i.e. <emphasis remap=\"I\">Requires=</emphasis> and <emphasis remap=\"I\">Conflicts=</emphasis>) as well as ordering dependencies (<emphasis remap=\"I\">After=</emphasis> and <emphasis remap=\"I\">Before=</emphasis>). NB: ordering and requirement dependencies are orthogonal. If only a requirement dependency exists between two units (e.g. foo.service requires bar.service), but no ordering dependency (e.g. foo.service after bar.service) and both are requested to start, they will be started in parallel. It is a common pattern that both requirement and ordering dependencies are placed between two units. Also note that the majority of dependencies are implicitly created and maintained by systemd. In most cases, it should be unnecessary to declare additional dependencies manually, however it is possible to do this."
+msgstr ""
+
+#: systemd.1.xml:275(para)
+msgid "Application programs and units (via dependencies) may request state changes of units. In systemd, these requests are encapsulated as 'jobs' and maintained in a job queue. Jobs may succeed or can fail, their execution is ordered based on the ordering dependencies of the units they have been scheduled for."
+msgstr ""
+
+#: systemd.1.xml:277(para)
+msgid "On boot systemd activates the target unit default.target whose job is to activate on-boot services and other on-boot units by pulling them in via dependencies. Usually the unit name is just an alias (symlink) for either graphical.target (for fully-featured boots into the UI) or multi-user.target (for limited console-only boots for use in embedded or server environments, or similar; a subset of graphical.target). However, it is at the discretion of the administrator to configure it as an alias to any other target unit. See <citerefentry><refentrytitle>systemd.special</refentrytitle><manvolnum>7</manvolnum></citerefentry> for details about these target units."
+msgstr ""
+
+#: systemd.1.xml:287(para)
+msgid "Processes systemd spawns are placed in individual Linux control groups named after the unit which they belong to in the private systemd hierarchy. (see <phrase remap=\"color:blue\"><emphasis remap=\"B\">cgroups.txt</emphasis></phrase><?troff ps -2?><superscript>[1]</superscript><?troff ps +2?> for more information about control groups, or short \"cgroups\"). systemd uses this to effectively keep track of processes. Control group information is maintained in the kernel, and is accessible via the file system hierarchy (beneath /sys/fs/cgroup/systemd/), or in tools such as <citerefentry><refentrytitle>ps</refentrytitle><manvolnum>1</manvolnum></citerefentry> (<emphasis remap=\"B\">ps xawf -eo pid,user,cgroup,args</emphasis> is particularly useful to list all processes and the systemd units they belong to.)."
+msgstr ""
+
+#: systemd.1.xml:295(para)
+msgid "systemd is compatible with the SysV init system to a large degree: SysV init scripts are supported and simply read as an alternative (though limited) configuration file format. The SysV /dev/initctl interface is provided, and compatibility implementations of the various SysV client tools are available. In addition to that, various established Unix functionality such as /etc/fstab or the utmp database are supported."
+msgstr ""
+
+#: systemd.1.xml:303(para)
+msgid "systemd has a minimal transaction system: if a unit is requested to start up or shut down it will add it and all its dependencies to a temporary transaction. Then, it will verify if the transaction is consistent (i.e. whether the ordering of all units is cycle-free). If it is not, systemd will try to fix it up, and removes non-essential jobs from the transaction that might remove the loop. Also, systemd tries to suppress non-essential jobs in the transaction that would stop a running service. Finally it is checked whether the jobs of the transaction contradict jobs that have already been queued, and optionally the transaction is aborted then. If all worked out and the transaction is consistent and minimized in its impact it is merged with all already outstanding jobs and added to the run queue. Effectively this means that before executing a requested operation, systemd will verify that it makes sense, fixing it if possible, and only failing if it really cannot work."
+msgstr ""
+
+#: systemd.1.xml:305(para)
+msgid "Systemd contains native implementations of various tasks that need to be executed as part of the boot process. For example, it sets the hostname or configures the loopback network device. It also sets up and mounts various API file systems, such as /sys or /proc."
+msgstr ""
+
+#: systemd.1.xml:310(para)
+msgid "For more information about the concepts and ideas behind systemd, please refer to the <phrase remap=\"color:blue\"><emphasis remap=\"B\">Original Design Document</emphasis></phrase><?troff ps -2?><superscript>[2]</superscript><?troff ps +2?>."
+msgstr ""
+
+#: systemd.1.xml:313(para)
+msgid "Note that some but not all interfaces provided by systemd are covered by the <phrase remap=\"color:blue\"><emphasis remap=\"B\">Interface Stability Promise</emphasis></phrase><?troff ps -2?><superscript>[3]</superscript><?troff ps +2?>."
+msgstr ""
+
+#: systemd.1.xml:316(para)
+msgid "Units may be generated dynamically at boot and system manager reload time, for example based on other configuration files or parameters passed on the kernel command line. For details see the <phrase remap=\"color:blue\"><emphasis remap=\"B\">Generators Specification</emphasis></phrase><?troff ps -2?><superscript>[4]</superscript><?troff ps +2?>."
+msgstr ""
+
+#: systemd.1.xml:319(para)
+msgid "Systems which invoke systemd in a container or initrd environment should implement the <phrase remap=\"color:blue\"><emphasis remap=\"B\">Container Interface</emphasis></phrase><?troff ps -2?><superscript>[5]</superscript><?troff ps +2?> or <phrase remap=\"color:blue\"><emphasis remap=\"B\">initrd Interface</emphasis></phrase><?troff ps -2?><superscript>[6]</superscript><?troff ps +2?> specifications, respectively."
+msgstr ""
+
+#: systemd.1.xml:326(title)
+msgid "DIRECTORIES"
+msgstr ""
+
+#: systemd.1.xml:327(para)
+msgid "System unit directories"
+msgstr ""
+
+#: systemd.1.xml:329(para)
+msgid "The systemd system manager reads unit configuration from various directories. Packages that want to install unit files shall place them in the directory returned by <emphasis remap=\"B\">pkg-config systemd --variable=systemdsystemunitdir</emphasis>. Other directories checked are /usr/local/lib/systemd/system and /usr/lib/systemd/system. User configuration always takes precedence. <emphasis remap=\"B\">pkg-config systemd --variable=systemdsystemconfdir</emphasis> returns the path of the system configuration directory. Packages should alter the content of these directories only with the <emphasis remap=\"B\">enable</emphasis> and <emphasis remap=\"B\">disable</emphasis> commands of the <citerefentry><refentrytitle>systemctl</refentrytitle><manvolnum>1</manvolnum></citerefentry> tool. Full list of directories is provided in <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:345(para)
+msgid "User unit directories"
+msgstr ""
+
+#: systemd.1.xml:347(para)
+msgid "Similar rules apply for the user unit directories. However, here the <phrase remap=\"color:blue\"><emphasis remap=\"B\">XDG Base Directory specification</emphasis></phrase><?troff ps -2?><superscript>[7]</superscript><?troff ps +2?> is followed to find units. Applications should place their unit files in the directory returned by <emphasis remap=\"B\">pkg-config systemd --variable=systemduserunitdir</emphasis>. Global configuration is done in the directory reported by <emphasis remap=\"B\">pkg-config systemd --variable=systemduserconfdir</emphasis>. The <emphasis remap=\"B\">enable</emphasis> and <emphasis remap=\"B\">disable</emphasis> commands of the <citerefentry><refentrytitle>systemctl</refentrytitle><manvolnum>1</manvolnum></citerefentry> tool can handle both global (i.e. for all users) and private (for one user) enabling/disabling of units. Full list of directories is provided in <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:361(para)
+msgid "SysV init scripts directory"
+msgstr ""
+
+#: systemd.1.xml:363(para)
+msgid "The location of the SysV init script directory varies between distributions. If systemd cannot find a native unit file for a requested service, it will look for a SysV init script of the same name (with the .service suffix removed)."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:368(para)
+msgid "SysV runlevel link farm directory"
+msgstr ""
+
+#: systemd.1.xml:369(programlisting)
+#, no-wrap
+msgid "\nThe location of the SysV runlevel link farm directory varies between distributions. systemd will take the link farm into account when figuring out whether a service shall be enabled. Note that a service unit with a native unit configuration file cannot be started by activating it in the SysV runlevel link farm.\n"
+msgstr ""
+
+#: systemd.1.xml:374(title)
+msgid "SIGNALS"
+msgstr ""
+
+#: systemd.1.xml:375(constant)
+msgid "SIGTERM"
+msgstr ""
+
+#: systemd.1.xml:377(para)
+msgid "Upon receiving this signal the systemd system manager serializes its state, reexecutes itself and deserializes the saved state again. This is mostly equivalent to <emphasis remap=\"B\">systemctl daemon-reexec</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:380(para)
+msgid "systemd user managers will start the exit.target unit when this signal is received. This is mostly equivalent to <userinput>systemctl --user start exit.target</userinput>."
+msgstr ""
+
+#: systemd.1.xml:386(constant)
+msgid "SIGINT"
+msgstr ""
+
+#: systemd.1.xml:388(para)
+msgid "Upon receiving this signal the systemd system manager will start the ctrl-alt-del.target unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl start ctl-alt-del.target</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:393(para)
+msgid "systemd user managers treat this signal the same way as <constant>SIGTERM</constant>."
+msgstr ""
+
+#: systemd.1.xml:397(constant)
+msgid "SIGWINCH"
+msgstr ""
+
+#: systemd.1.xml:399(para)
+msgid "When this signal is received the systemd system manager will start the kbrequest.target unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl start kbrequest.target</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:404(para)
+msgid "This signal is ignored by systemd user managers."
+msgstr ""
+
+#: systemd.1.xml:407(constant)
+msgid "SIGPWR"
+msgstr ""
+
+#: systemd.1.xml:409(para)
+msgid "When this signal is received the systemd manager will start the sigpwr.target unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl start sigpwr.target</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:415(emphasis)
+msgid "SIGUSR1"
+msgstr ""
+
+#: systemd.1.xml:416(programlisting)
+#, no-wrap
+msgid "\nWhen this signal is received the systemd manager will try to reconnect to the D-Bus bus.\n"
+msgstr ""
+
+#: systemd.1.xml:420(emphasis)
+msgid "SIGUSR2"
+msgstr ""
+
+#: systemd.1.xml:422(para)
+msgid "When this signal is received the systemd manager will log its complete state in human readable form. The data logged is the same as printed by <emphasis remap=\"B\">systemctl dump</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:426(constant)
+msgid "SIGHUP"
+msgstr ""
+
+#: systemd.1.xml:428(para)
+msgid "Reloads the complete daemon configuration. This is mostly equivalent to <emphasis remap=\"B\">systemctl daemon-reload</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:432(emphasis)
+msgid "SIGRTMIN+0"
+msgstr ""
+
+#: systemd.1.xml:434(para)
+msgid "Enters default mode, starts the default.target unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl start default.target</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:440(emphasis)
+msgid "SIGRTMIN+1"
+msgstr ""
+
+#: systemd.1.xml:442(para)
+msgid "Enters rescue mode, starts the rescue.target unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl isolate rescue.target</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:448(emphasis)
+msgid "SIGRTMIN+2"
+msgstr ""
+
+#: systemd.1.xml:450(para)
+msgid "Enters emergency mode, starts the emergency.service unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl isolate emergency.service</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:456(emphasis)
+msgid "SIGRTMIN+3"
+msgstr ""
+
+#: systemd.1.xml:458(para)
+msgid "Halts the machine, starts the halt.target unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl start halt.target</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:464(emphasis)
+msgid "SIGRTMIN+4"
+msgstr ""
+
+#: systemd.1.xml:466(para)
+msgid "Powers off the machine, starts the poweroff.target unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl start poweroff.target</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:472(emphasis)
+msgid "SIGRTMIN+5"
+msgstr ""
+
+#: systemd.1.xml:474(para)
+msgid "Reboots the machine, starts the reboot.target unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl start reboot.target</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:480(emphasis)
+msgid "SIGRTMIN+6"
+msgstr ""
+
+#: systemd.1.xml:482(para)
+msgid "Reboots the machine via kexec, starts the kexec.target unit. This is mostly equivalent to <emphasis remap=\"B\">systemctl start kexec.target</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:488(emphasis)
+msgid "SIGRTMIN+13"
+msgstr ""
+
+#: systemd.1.xml:489(literallayout)
+#, no-wrap
+msgid "\nImmediately halts the machine.\n"
+msgstr ""
+
+#: systemd.1.xml:493(emphasis)
+msgid "SIGRTMIN+14"
+msgstr ""
+
+#: systemd.1.xml:494(literallayout)
+#, no-wrap
+msgid "\nImmediately powers off the machine.\n"
+msgstr ""
+
+#: systemd.1.xml:498(emphasis)
+msgid "SIGRTMIN+15"
+msgstr ""
+
+#: systemd.1.xml:499(literallayout)
+#, no-wrap
+msgid "\nImmediately reboots the machine.\n"
+msgstr ""
+
+#: systemd.1.xml:503(emphasis)
+msgid "SIGRTMIN+16"
+msgstr ""
+
+#: systemd.1.xml:504(literallayout)
+#, no-wrap
+msgid "\nImmediately reboots the machine with kexec.\n"
+msgstr ""
+
+#: systemd.1.xml:508(emphasis)
+msgid "SIGRTMIN+20"
+msgstr ""
+
+#: systemd.1.xml:510(para)
+msgid "Enables display of status messages on the console, as controlled via <emphasis remap=\"I\">systemd.show_status=1</emphasis> on the kernel command line."
+msgstr ""
+
+#: systemd.1.xml:515(emphasis)
+msgid "SIGRTMIN+21"
+msgstr ""
+
+#: systemd.1.xml:517(para)
+msgid "Disables display of status messages on the console, as controlled via <emphasis remap=\"I\">systemd.show_status=0</emphasis> on the kernel command line."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:522(para)
+msgid "<emphasis remap=\"B\">SIGRTMIN+22</emphasis>, <emphasis remap=\"B\">SIGRTMIN+23</emphasis>"
+msgstr ""
+
+#: systemd.1.xml:524(para)
+msgid "Sets the log level to \"debug\" (or \"info\" on <emphasis remap=\"B\">SIGRTMIN+23</emphasis>), as controlled via <emphasis remap=\"I\">systemd.log_level=debug</emphasis> (or <emphasis remap=\"I\">systemd.log_level=info</emphasis> on <emphasis remap=\"B\">SIGRTMIN+23</emphasis>) on the kernel command line."
+msgstr ""
+
+#: systemd.1.xml:537(emphasis)
+msgid "SIGRTMIN+24"
+msgstr ""
+
+#: systemd.1.xml:538(literallayout)
+#, no-wrap
+msgid "\nImmediately exits the manager (only available for --user instances).\n"
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:541(para)
+msgid "<emphasis remap=\"B\">SIGRTMIN+26</emphasis>, <emphasis remap=\"B\">SIGRTMIN+27</emphasis>, <emphasis remap=\"B\">SIGRTMIN+28</emphasis>, <emphasis remap=\"B\">SIGRTMIN+29</emphasis>"
+msgstr ""
+
+#: systemd.1.xml:543(para)
+msgid "Sets the log level to \"journal-or-kmsg\" (or \"console\" on <emphasis remap=\"B\">SIGRTMIN+27</emphasis>, \"kmsg\" on <emphasis remap=\"B\">SIGRTMIN+28</emphasis>, or \"syslog-or-kmsg\" on <emphasis remap=\"B\">SIGRTMIN+29</emphasis>), as controlled via <emphasis remap=\"I\">systemd.log_target=journal-or-kmsg</emphasis> (or <emphasis remap=\"I\">systemd.log_target=console</emphasis> on <emphasis remap=\"B\">SIGRTMIN+27</emphasis>, <emphasis remap=\"I\">systemd.log_target=kmsg</emphasis> on <emphasis remap=\"B\">SIGRTMIN+28</emphasis>, or <emphasis remap=\"I\">systemd.log_target=syslog-or-kmsg</emphasis> on <emphasis remap=\"B\">SIGRTMIN+29</emphasis>) on the kernel command line."
+msgstr ""
+
+#: systemd.1.xml:569(title)
+msgid "ENVIRONMENT"
+msgstr ""
+
+#: systemd.1.xml:570(emphasis)
+msgid "$SYSTEMD_LOG_LEVEL"
+msgstr ""
+
+#: systemd.1.xml:572(para)
+msgid "systemd reads the log level from this environment variable. This can be overridden with <option>--log-level=</option>."
+msgstr ""
+
+#: systemd.1.xml:576(emphasis)
+msgid "$SYSTEMD_LOG_TARGET"
+msgstr ""
+
+#: systemd.1.xml:578(para)
+msgid "systemd reads the log target from this environment variable. This can be overridden with <option>--log-target=</option>."
+msgstr ""
+
+#: systemd.1.xml:582(emphasis)
+msgid "$SYSTEMD_LOG_COLOR"
+msgstr ""
+
+#: systemd.1.xml:584(para)
+msgid "Controls whether systemd highlights important log messages. This can be overridden with <option>--log-color=</option>."
+msgstr ""
+
+#: systemd.1.xml:588(emphasis)
+msgid "$SYSTEMD_LOG_LOCATION"
+msgstr ""
+
+#: systemd.1.xml:590(para)
+msgid "Controls whether systemd prints the code location along with log messages. This can be overridden with <option>--log-location=</option>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:594(para)
+msgid "<emphasis remap=\"I\">$XDG_CONFIG_HOME</emphasis>, <emphasis remap=\"I\">$XDG_CONFIG_DIRS</emphasis>, <emphasis remap=\"I\">$XDG_DATA_HOME</emphasis>, <emphasis remap=\"I\">$XDG_DATA_DIRS</emphasis>"
+msgstr ""
+
+#: systemd.1.xml:596(para)
+msgid "The systemd user manager uses these variables in accordance to the <phrase remap=\"color:blue\"><emphasis remap=\"B\">XDG Base Directory specification</emphasis></phrase><?troff ps -2?><superscript>[7]</superscript><?troff ps +2?> to find its configuration."
+msgstr ""
+
+#: systemd.1.xml:601(emphasis)
+msgid "$SYSTEMD_UNIT_PATH"
+msgstr ""
+
+#: systemd.1.xml:602(literallayout)
+#, no-wrap
+msgid "\nControls where systemd looks for unit files.\n"
+msgstr ""
+
+#: systemd.1.xml:606(emphasis)
+msgid "$SYSTEMD_SYSVINIT_PATH"
+msgstr ""
+
+#: systemd.1.xml:607(literallayout)
+#, no-wrap
+msgid "\nControls where systemd looks for SysV init scripts.\n"
+msgstr ""
+
+#: systemd.1.xml:611(emphasis)
+msgid "$SYSTEMD_SYSVRCND_PATH"
+msgstr ""
+
+#: systemd.1.xml:612(literallayout)
+#, no-wrap
+msgid "\nControls where systemd looks for SysV init script runlevel link farms.\n"
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:616(para)
+msgid "<emphasis remap=\"I\">$LISTEN_PID</emphasis>, <emphasis remap=\"I\">$LISTEN_FDS</emphasis>"
+msgstr ""
+
+#: systemd.1.xml:618(para)
+msgid "Set by systemd for supervised processes during socket-based activation. See <citerefentry><refentrytitle>sd_listen_fds</refentrytitle><manvolnum>3</manvolnum></citerefentry> for more information."
+msgstr ""
+
+#: systemd.1.xml:623(emphasis)
+msgid "$NOTIFY_SOCKET"
+msgstr ""
+
+#: systemd.1.xml:625(para)
+msgid "Set by systemd for supervised processes for status and start-up completion notification. See <citerefentry><refentrytitle>sd_notify</refentrytitle><manvolnum>3</manvolnum></citerefentry> for more information."
+msgstr ""
+
+#: systemd.1.xml:631(title)
+msgid "KERNEL COMMAND LINE"
+msgstr ""
+
+#: systemd.1.xml:632(para)
+msgid "When run as system instance systemd parses a number of kernel command line arguments<?troff ps -2?><superscript>[8]</superscript><?troff ps +2?>:"
+msgstr ""
+
+#: systemd.1.xml:634(para)
+msgid "<emphasis remap=\"I\">systemd.unit=</emphasis>, <emphasis remap=\"I\">rd.systemd.unit=</emphasis>"
+msgstr ""
+
+#: systemd.1.xml:636(para)
+msgid "Overrides the unit to activate on boot. Defaults to default.target. This may be used to temporarily boot into a different boot unit, for example rescue.target or emergency.service. See <citerefentry><refentrytitle>systemd.special</refentrytitle><manvolnum>7</manvolnum></citerefentry> for details about these units. The option prefixed with \"rd.\" is honored only in the initial RAM disk (initrd), while the one that is not prefixed only in the main system."
+msgstr ""
+
+#: systemd.1.xml:647(emphasis)
+msgid "systemd.dump_core="
+msgstr ""
+
+#: systemd.1.xml:649(para)
+msgid "Takes a boolean argument. If <emphasis remap=\"B\">true</emphasis>, systemd dumps core when it crashes. Otherwise, no core dump is created. Defaults to <emphasis remap=\"B\">true</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:654(emphasis)
+msgid "systemd.crash_shell="
+msgstr ""
+
+#: systemd.1.xml:656(para)
+msgid "Takes a boolean argument. If <emphasis remap=\"B\">true</emphasis>, systemd spawns a shell when it crashes. Otherwise, no shell is spawned. Defaults to <emphasis remap=\"B\">false</emphasis>, for security reasons, as the shell is not protected by any password authentication."
+msgstr ""
+
+#: systemd.1.xml:661(emphasis)
+msgid "systemd.crash_chvt="
+msgstr ""
+
+#: systemd.1.xml:663(para)
+msgid "Takes an integer argument. If positive systemd activates the specified virtual terminal when it crashes. Defaults to <option>-1</option>."
+msgstr ""
+
+#: systemd.1.xml:667(emphasis)
+msgid "systemd.confirm_spawn="
+msgstr ""
+
+#: systemd.1.xml:669(para)
+msgid "Takes a boolean argument. If <emphasis remap=\"B\">true</emphasis>, asks for confirmation when spawning processes. Defaults to <emphasis remap=\"B\">false</emphasis>."
+msgstr ""
+
+#: systemd.1.xml:674(emphasis)
+msgid "systemd.show_status="
+msgstr ""
+
+#: systemd.1.xml:676(para)
+msgid "Takes a boolean argument or the constant <emphasis remap=\"B\">auto</emphasis>. If <emphasis remap=\"B\">true</emphasis>, shows terse service status updates on the console during bootup. <emphasis remap=\"B\">auto</emphasis> behaves like <emphasis remap=\"B\">false</emphasis> until a service fails or there is a significant delay in boot. Defaults to <emphasis remap=\"B\">true</emphasis>, unless <emphasis remap=\"B\">quiet</emphasis> is passed as kernel command line option in which case it defaults to <emphasis remap=\"B\">auto</emphasis>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:689(para)
+msgid "<emphasis remap=\"I\">systemd.log_target=</emphasis>, <emphasis remap=\"I\">systemd.log_level=</emphasis>, <emphasis remap=\"I\">systemd.log_color=</emphasis>, <emphasis remap=\"I\">systemd.log_location=</emphasis>"
+msgstr ""
+
+#: systemd.1.xml:691(para)
+msgid "Controls log output, with the same effect as the <emphasis remap=\"I\">$SYSTEMD_LOG_TARGET</emphasis>, <emphasis remap=\"I\">$SYSTEMD_LOG_LEVEL</emphasis>, <emphasis remap=\"I\">$SYSTEMD_LOG_COLOR</emphasis>, <emphasis remap=\"I\">$SYSTEMD_LOG_LOCATION</emphasis> environment variables described above."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:699(para)
+msgid "<emphasis remap=\"I\">systemd.default_standard_output=</emphasis>, <emphasis remap=\"I\">systemd.default_standard_error=</emphasis>"
+msgstr ""
+
+#: systemd.1.xml:701(para)
+msgid "Controls default standard output and error output for services, with the same effect as the <option>--default-standard-output=</option> and <option>--default-standard-error=</option> command line arguments described above, respectively."
+msgstr ""
+
+#: systemd.1.xml:708(emphasis)
+msgid "systemd.setenv="
+msgstr ""
+
+#: systemd.1.xml:709(literallayout)
+#, no-wrap
+msgid "\nTakes a string argument in the form VARIABLE=VALUE. May be used to set default environment variables to add to forked child processes. May be used more than once to set multiple variables.\n"
+msgstr ""
+
+#: systemd.1.xml:713(emphasis)
+msgid "quiet"
+msgstr ""
+
+#: systemd.1.xml:715(para)
+msgid "Turn off status output at boot, much like <emphasis remap=\"I\">systemd.show_status=false</emphasis> would. Note that this option is also read by the kernel itself and disables kernel log output. Passing this option hence turns off the usual output from both the system manager and the kernel."
+msgstr ""
+
+#: systemd.1.xml:720(emphasis)
+msgid "debug"
+msgstr ""
+
+#: systemd.1.xml:722(para)
+msgid "Turn on debugging output. This is equivalent to <emphasis remap=\"I\">systemd.log_level=debug</emphasis>. Note that this option is also read by the kernel itself and enables kernel debug output. Passing this option hence turns on the debug output from both the system manager and the kernel."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:726(para)
+msgid "<option>-b</option>, <emphasis remap=\"I\">emergency</emphasis>"
+msgstr ""
+
+#: systemd.1.xml:728(para)
+msgid "Boot into emergency mode. This is equivalent to <emphasis remap=\"I\">systemd.unit=emergency.target</emphasis> and provided for compatibility reasons and to be easier to type."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:733(para)
+msgid "<emphasis remap=\"I\">single</emphasis>, <emphasis remap=\"I\">s</emphasis>, <emphasis remap=\"I\">S</emphasis>, <literal>1</literal>"
+msgstr ""
+
+#: systemd.1.xml:735(para)
+msgid "Boot into rescue mode. This is equivalent to <emphasis remap=\"I\">systemd.unit=rescue.target</emphasis> and provided for compatibility reasons and to be easier to type."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:740(para)
+msgid "<literal>2</literal>, <literal>3</literal>, <literal>4</literal>, <literal>5</literal>"
+msgstr ""
+
+#: systemd.1.xml:742(para)
+msgid "Boot into the specified legacy SysV runlevel. These are equivalent to <emphasis remap=\"I\">systemd.unit=runlevel2.target</emphasis>, <emphasis remap=\"I\">systemd.unit=runlevel3.target</emphasis>, <emphasis remap=\"I\">systemd.unit=runlevel4.target</emphasis>, and <emphasis remap=\"I\">systemd.unit=runlevel5.target</emphasis>, respectively, and provided for compatibility reasons and to be easier to type."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:749(para)
+msgid "<emphasis remap=\"I\">locale.LANG=</emphasis>, <emphasis remap=\"I\">locale.LANGUAGE=</emphasis>, <emphasis remap=\"I\">locale.LC_CTYPE=</emphasis>, <emphasis remap=\"I\">locale.LC_NUMERIC=</emphasis>, <emphasis remap=\"I\">locale.LC_TIME=</emphasis>, <emphasis remap=\"I\">locale.LC_COLLATE=</emphasis>, <emphasis remap=\"I\">locale.LC_MONETARY=</emphasis>, <emphasis remap=\"I\">locale.LC_MESSAGES=</emphasis>, <emphasis remap=\"I\">locale.LC_PAPER=</emphasis>, <emphasis remap=\"I\">locale.LC_NAME=</emphasis>, <emphasis remap=\"I\">locale.LC_ADDRESS=</emphasis>, <emphasis remap=\"I\">locale.LC_TELEPHONE=</emphasis>, <emphasis remap=\"I\">locale.LC_MEASUREMENT=</emphasis>, <emphasis remap=\"I\">locale.LC_IDENTIFICATION=</emphasis>"
+msgstr ""
+
+#: systemd.1.xml:751(para)
+msgid "Set the system locale to use. This overrides the settings in /etc/locale.conf. For more information see <citerefentry><refentrytitle>locale.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry> and <citerefentry><refentrytitle>locale</refentrytitle><manvolnum>7</manvolnum></citerefentry>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:758(para)
+msgid "For other kernel command line parameters understood by components of the core OS, please refer to <citerefentry><refentrytitle>kernel-command-line</refentrytitle><manvolnum>7</manvolnum></citerefentry>."
+msgstr ""
+
+#: systemd.1.xml:762(title)
+msgid "SOCKETS AND FIFOS"
+msgstr ""
+
+#: systemd.1.xml:763(para)
+msgid "/run/systemd/notify"
+msgstr ""
+
+#: systemd.1.xml:765(para)
+msgid "Daemon status notification socket. This is an <emphasis remap=\"B\">AF_UNIX</emphasis> datagram socket and is used to implement the daemon notification logic as implemented by <citerefentry><refentrytitle>sd_notify</refentrytitle><manvolnum>3</manvolnum></citerefentry>."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:771(para)
+msgid "/run/systemd/shutdownd"
+msgstr ""
+
+#: systemd.1.xml:773(para)
+msgid "Used internally by the <citerefentry><refentrytitle>shutdown</refentrytitle><manvolnum>8</manvolnum></citerefentry> tool to implement delayed shutdowns. This is an <emphasis remap=\"B\">AF_UNIX</emphasis> datagram socket."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:780(para)
+msgid "/run/systemd/private"
+msgstr ""
+
+#: systemd.1.xml:782(para)
+msgid "Used internally as communication channel between <citerefentry><refentrytitle>systemctl</refentrytitle><manvolnum>1</manvolnum></citerefentry> and the systemd process. This is an <emphasis remap=\"B\">AF_UNIX</emphasis> stream socket. This interface is private to systemd and should not be used in external projects."
+msgstr ""
+
+#. remap='RE'
+#: systemd.1.xml:789(para)
+msgid "/dev/initctl"
+msgstr ""
+
+#: systemd.1.xml:791(para)
+msgid "Limited compatibility support for the SysV client interface, as implemented by the systemd-initctl.service unit. This is a named pipe in the file system. This interface is obsolete and should not be used in new applications."
+msgstr ""
+
+#: systemd.1.xml:797(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: systemd.1.xml:798(para)
+msgid "The <phrase remap=\"color:blue\"><emphasis remap=\"B\">systemd Homepage</emphasis></phrase><?troff ps -2?><superscript>[9]</superscript><?troff ps +2?>, <citerefentry><refentrytitle>systemd-system.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <citerefentry><refentrytitle>locale.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemctl</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>journalctl</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd-notify</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>daemon</refentrytitle><manvolnum>7</manvolnum></citerefentry>, <citerefentry><refentrytitle>sd-daemon</refentrytitle><manvolnum>3</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.unit</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.special</refentrytitle><manvolnum>5</manvolnum></citerefentry>, <citerefentry><refentrytitle>pkg-config</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>kernel-command-line</refentrytitle><manvolnum>7</manvolnum></citerefentry>, <citerefentry><refentrytitle>bootup</refentrytitle><manvolnum>7</manvolnum></citerefentry>, <citerefentry><refentrytitle>systemd.directives</refentrytitle><manvolnum>7</manvolnum></citerefentry>"
+msgstr ""
+
+#: systemd.1.xml:815(title)
+msgid "NOTES"
+msgstr ""
+
+#: systemd.1.xml:818(term)
+msgid "1."
+msgstr ""
+
+#: systemd.1.xml:820(para)
+msgid "cgroups.txt"
+msgstr ""
+
+#: systemd.1.xml:822(para)
+msgid "&shy;https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt"
+msgstr ""
+
+#: systemd.1.xml:827(term)
+msgid "2."
+msgstr ""
+
+#: systemd.1.xml:829(para)
+msgid "Original Design Document"
+msgstr ""
+
+#: systemd.1.xml:831(ulink)
+msgid "http://0pointer.de/blog/projects/systemd.html"
+msgstr ""
+
+#: systemd.1.xml:836(term)
+msgid "3."
+msgstr ""
+
+#: systemd.1.xml:838(para)
+msgid "Interface Stability Promise"
+msgstr ""
+
+#: systemd.1.xml:840(ulink)
+msgid "http://www.freedesktop.org/wiki/Software/systemd/InterfaceStabilityPromise"
+msgstr ""
+
+#: systemd.1.xml:845(term)
+msgid "4."
+msgstr ""
+
+#: systemd.1.xml:847(para)
+msgid "Generators Specification"
+msgstr ""
+
+#: systemd.1.xml:849(ulink)
+msgid "http://www.freedesktop.org/wiki/Software/systemd/Generators"
+msgstr ""
+
+#: systemd.1.xml:854(term)
+msgid "5."
+msgstr ""
+
+#: systemd.1.xml:856(para)
+msgid "Container Interface"
+msgstr ""
+
+#: systemd.1.xml:858(ulink)
+msgid "http://www.freedesktop.org/wiki/Software/systemd/ContainerInterface"
+msgstr ""
+
+#: systemd.1.xml:863(term)
+msgid "6."
+msgstr ""
+
+#: systemd.1.xml:865(para)
+msgid "initrd Interface"
+msgstr ""
+
+#: systemd.1.xml:867(ulink)
+msgid "http://www.freedesktop.org/wiki/Software/systemd/InitrdInterface"
+msgstr ""
+
+#: systemd.1.xml:872(term)
+msgid "7."
+msgstr ""
+
+#: systemd.1.xml:874(para)
+msgid "XDG Base Directory specification"
+msgstr ""
+
+#: systemd.1.xml:876(ulink)
+msgid "http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html"
+msgstr ""
+
+#: systemd.1.xml:881(term)
+msgid "8."
+msgstr ""
+
+#: systemd.1.xml:883(para)
+msgid "If run inside a Linux container these arguments may be passed as command line arguments to systemd itself, next to any of the command line options listed in the Options section above. If run outside of Linux containers, these arguments are parsed from /proc/cmdline instead."
+msgstr ""
+
+#: systemd.1.xml:889(term)
+msgid "9."
+msgstr ""
+
+#: systemd.1.xml:891(para)
+msgid "systemd Homepage"
+msgstr ""
+
+#: systemd.1.xml:893(ulink)
+msgid "http://www.freedesktop.org/wiki/Software/systemd/"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: systemd.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

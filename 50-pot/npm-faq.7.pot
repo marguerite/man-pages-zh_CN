@@ -1,0 +1,632 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-faq.7.xml:7(refentrytitle)
+msgid "NPM-FAQ"
+msgstr ""
+
+#: npm-faq.7.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: npm-faq.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-faq.7.xml:12(refname)
+msgid "npm-faq"
+msgstr ""
+
+#: npm-faq.7.xml:13(refpurpose)
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: npm-faq.7.xml:17(title)
+msgid "Where can I find these docs in HTML?"
+msgstr ""
+
+#: npm-faq.7.xml:18(para)
+msgid "https://docs.npmjs.com/, or run:"
+msgstr ""
+
+#: npm-faq.7.xml:20(literallayout)
+#, no-wrap
+msgid "\nnpm config set viewer browser\n"
+msgstr ""
+
+#. .fi
+#: npm-faq.7.xml:24(para)
+msgid "This command will set the npm docs to open in your default web browser rather than <emphasis remap=\"B\">man</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:27(title)
+msgid "It didn't work."
+msgstr ""
+
+#: npm-faq.7.xml:28(para)
+msgid "Please provide a little more detail, search for the error via Google <emphasis remap=\"I\">https://google.com</emphasis> or StackOverflow npm <emphasis remap=\"I\"><ulink url=\"http://stackoverflow.com/search\">http://stackoverflow.com/search</ulink>?q=npm</emphasis> to see if another developer has encountered a similar problem."
+msgstr ""
+
+#: npm-faq.7.xml:31(title)
+msgid "Why didn't it work?"
+msgstr ""
+
+#: npm-faq.7.xml:32(para)
+msgid "I don't know yet."
+msgstr ""
+
+#: npm-faq.7.xml:34(para)
+msgid "Try reading the error output first, ensure this is a true npm issue and not a package issue. If you are having an issue with a package dependency, please submit your error to that particular package maintainer."
+msgstr ""
+
+#: npm-faq.7.xml:36(para)
+msgid "For any npm issues, try following the instructions, or even retracing your steps. If the issue continues to persist, submit a bug with the steps to reproduce, please include the operating system you are working on, along with the error you recieve."
+msgstr ""
+
+#: npm-faq.7.xml:39(title)
+msgid "Where does npm put stuff?"
+msgstr ""
+
+#: npm-faq.7.xml:40(para)
+msgid "See npm help 5 <emphasis remap=\"B\">npm-folders</emphasis>"
+msgstr ""
+
+#: npm-faq.7.xml:42(para)
+msgid "tl;dr:"
+msgstr ""
+
+#: npm-faq.7.xml:46(para)
+msgid "Use the <emphasis remap=\"B\">npm root</emphasis> command to see where modules go, and the <emphasis remap=\"B\">npm bin</emphasis> command to see where executables go"
+msgstr ""
+
+#: npm-faq.7.xml:50(para)
+msgid "Global installs are different from local installs. If you install something with the <option>-g</option> flag, then its executables go in <emphasis remap=\"B\">npm bin -g</emphasis> and its modules go in <emphasis remap=\"B\">npm root -g</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:59(title)
+msgid "How do I install something on my computer in a central location?"
+msgstr ""
+
+#: npm-faq.7.xml:60(para)
+msgid "Install it globally by tacking <option>-g</option> or <option>--global</option> to the command. (This is especially important for command line utilities that need to add their bins to the global system <envar>PATH</envar>&thinsp;.)"
+msgstr ""
+
+#: npm-faq.7.xml:65(title)
+msgid "I installed something globally, but I can't <function>require()</function> it"
+msgstr ""
+
+#: npm-faq.7.xml:66(para)
+msgid "Install it locally."
+msgstr ""
+
+#: npm-faq.7.xml:68(para)
+msgid "The global install location is a place for command-line utilities to put their bins in the system <envar>PATH</envar>&thinsp;. It's not for use with <function>require()</function>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:71(para)
+msgid "If you <function>require()</function> a module in your code, then that means it's a dependency, and a part of your program. You need to install it locally in your program."
+msgstr ""
+
+#: npm-faq.7.xml:76(title)
+msgid "Why can't npm just put everything in one place, like other package managers?"
+msgstr ""
+
+#: npm-faq.7.xml:77(para)
+msgid "Not every change is an improvement, but every improvement is a change. This would be like asking git to do network IO for every commit. It's not going to happen, because it's a terrible idea that causes more problems than it solves."
+msgstr ""
+
+#: npm-faq.7.xml:82(para)
+msgid "It is much harder to avoid dependency conflicts without nesting dependencies. This is fundamental to the way that npm works, and has proven to be an extremely successful approach. See npm help 5 <emphasis remap=\"B\">npm-folders</emphasis> for more details."
+msgstr ""
+
+#: npm-faq.7.xml:87(para)
+msgid "If you want a package to be installed in one place, and have all your programs reference the same copy of it, then use the <emphasis remap=\"B\">npm link</emphasis> command. That's what it's for. Install it globally, then link it into each program that uses it."
+msgstr ""
+
+#: npm-faq.7.xml:93(title)
+msgid "Whatever, I really want the old style 'everything global' style."
+msgstr ""
+
+#: npm-faq.7.xml:94(para)
+msgid "Write your own package manager. You could probably even wrap up <emphasis remap=\"B\">npm</emphasis> in a shell script if you really wanted to."
+msgstr ""
+
+#: npm-faq.7.xml:97(para)
+msgid "npm will not help you do something that is known to be a bad idea."
+msgstr ""
+
+#: npm-faq.7.xml:100(title)
+msgid "Should I check my <emphasis remap=\"B\">node_modules</emphasis> folder into git?"
+msgstr ""
+
+#: npm-faq.7.xml:101(para)
+msgid "Usually, no. Allow npm to resolve dependencies for your packages."
+msgstr ""
+
+#: npm-faq.7.xml:103(para)
+msgid "For packages you <emphasis remap=\"B\">deploy</emphasis>, such as websites and apps, you should use npm shrinkwrap to lock down your full dependency tree:"
+msgstr ""
+
+#: npm-faq.7.xml:106(para)
+msgid "https://docs.npmjs.com/cli/shrinkwrap"
+msgstr ""
+
+#: npm-faq.7.xml:108(para)
+msgid "If you are paranoid about depending on the npm ecosystem, you should run a private npm mirror or a private cache."
+msgstr ""
+
+#: npm-faq.7.xml:111(para)
+msgid "If you want 100% confidence in being able to reproduce the specific bytes included in a deployment, you should use an additional mechanism that can verify contents rather than versions. For example, Amazon machine images, DigitalOcean snapshots, Heroku slugs, or simple tarballs."
+msgstr ""
+
+#: npm-faq.7.xml:117(title)
+msgid "Is it 'npm' or 'NPM' or 'Npm'?"
+msgstr ""
+
+#: npm-faq.7.xml:118(para)
+msgid "npm should never be capitalized unless it is being displayed in a location that is customarily all-caps (such as the title of man pages.)"
+msgstr ""
+
+#: npm-faq.7.xml:122(title)
+msgid "If 'npm' is an acronym, why is it never capitalized?"
+msgstr ""
+
+#: npm-faq.7.xml:123(para)
+msgid "Contrary to the belief of many, \"npm\" is not in fact an abbreviation for \"Node Package Manager\". It is a recursive bacronymic abbreviation for \"npm is not an acronym\". (If it was \"ninaa\", then it would be an acronym, and thus incorrectly named.)"
+msgstr ""
+
+#: npm-faq.7.xml:128(para)
+msgid "\"NPM\", however, <emphasis remap=\"I\">is</emphasis> an acronym (more precisely, a capitonym) for the National Association of Pastoral Musicians. You can learn more about them at &thinsp;<ulink url=\"http://npm.org/\">http://npm.org/&thinsp;</ulink>."
+msgstr ""
+
+#: npm-faq.7.xml:132(para)
+msgid "In software, \"NPM\" is a Non-Parametric Mapping utility written by Chris Rorden. You can analyze pictures of brains with it. Learn more about the (capitalized) NPM program at &thinsp;<ulink url=\"http://www.cabiatl.com/mricro/npm/\">http://www.cabiatl.com/mricro/npm/&thinsp;</ulink>."
+msgstr ""
+
+#: npm-faq.7.xml:136(para)
+msgid "The first seed that eventually grew into this flower was a bash utility named \"pm\", which was a shortened descendent of \"pkgmakeinst\", a bash function that was used to install various different things on different platforms, most often using Yahoo's <emphasis remap=\"B\">yinst</emphasis>&thinsp;. If <emphasis remap=\"B\">npm</emphasis> was ever an acronym for anything, it was <emphasis remap=\"B\">node pm</emphasis> or maybe <emphasis remap=\"B\">new pm</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:142(para)
+msgid "So, in all seriousness, the \"npm\" project is named after its command-line utility, which was organically selected to be easily typed by a right-handed programmer using a US QWERTY keyboard layout, ending with the right-ring-finger in a postition to type the <emphasis remap=\"B\">-</emphasis> key for flags and other command-line arguments. That command-line utility is always lower-case, though it starts most sentences it is a part of."
+msgstr ""
+
+#: npm-faq.7.xml:150(title)
+msgid "How do I list installed packages?"
+msgstr ""
+
+#: npm-faq.7.xml:151(emphasis)
+msgid "npm ls"
+msgstr ""
+
+#: npm-faq.7.xml:154(title)
+msgid "How do I search for packages?"
+msgstr ""
+
+#: npm-faq.7.xml:155(emphasis)
+msgid "npm search"
+msgstr ""
+
+#: npm-faq.7.xml:157(para)
+msgid "Arguments are greps. <emphasis remap=\"B\">npm search jsdom</emphasis> shows jsdom packages."
+msgstr ""
+
+#: npm-faq.7.xml:160(title)
+msgid "How do I update npm?"
+msgstr ""
+
+#: npm-faq.7.xml:161(literallayout)
+#, no-wrap
+msgid "\nnpm install npm -g\n"
+msgstr ""
+
+#. .fi
+#: npm-faq.7.xml:165(para)
+msgid "You can also update all outdated local packages by doing <emphasis remap=\"B\">npm update</emphasis> without any arguments, or global packages by doing <emphasis remap=\"B\">npm update -g</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:168(para)
+msgid "Occasionally, the version of npm will progress such that the current version cannot be properly installed with the version that you have installed already. (Consider, if there is ever a bug in the <emphasis remap=\"B\">update</emphasis> command.)"
+msgstr ""
+
+#: npm-faq.7.xml:173(para)
+msgid "In those cases, you can do this:"
+msgstr ""
+
+#: npm-faq.7.xml:175(literallayout)
+#, no-wrap
+msgid "\ncurl https://www.npmjs.com/install.sh | sh\n"
+msgstr ""
+
+#: npm-faq.7.xml:180(title)
+msgid "What is a <emphasis remap=\"B\">package</emphasis>?"
+msgstr ""
+
+#: npm-faq.7.xml:181(para)
+msgid "A package is:"
+msgstr ""
+
+#: npm-faq.7.xml:185(para)
+msgid "a) a folder containing a program described by a package.json file"
+msgstr ""
+
+#: npm-faq.7.xml:188(para)
+msgid "b) a gzipped tarball containing (a)"
+msgstr ""
+
+#: npm-faq.7.xml:191(para)
+msgid "c) a url that resolves to (b)"
+msgstr ""
+
+#: npm-faq.7.xml:194(para)
+msgid "d) a <emphasis remap=\"B\">&lt;name&gt;@&lt;version&gt;</emphasis> that is published on the registry with (c)"
+msgstr ""
+
+#: npm-faq.7.xml:197(para)
+msgid "e) a <emphasis remap=\"B\">&lt;name&gt;@&lt;tag&gt;</emphasis> that points to (d)"
+msgstr ""
+
+#: npm-faq.7.xml:200(para)
+msgid "f) a <emphasis remap=\"B\">&lt;name&gt;</emphasis> that has a \"latest\" tag satisfying (e)"
+msgstr ""
+
+#: npm-faq.7.xml:203(para)
+msgid "g) a <emphasis remap=\"B\">git</emphasis> url that, when cloned, results in (a)."
+msgstr ""
+
+#. remap='RE'
+#: npm-faq.7.xml:209(para)
+msgid "Even if you never publish your package, you can still get a lot of benefits of using npm if you just want to write a node program (a), and perhaps if you also want to be able to easily install it elsewhere after packing it up into a tarball (b)."
+msgstr ""
+
+#: npm-faq.7.xml:214(para)
+msgid "Git urls can be of the form:"
+msgstr ""
+
+#: npm-faq.7.xml:219(ulink)
+msgid "http://user"
+msgstr ""
+
+#: npm-faq.7.xml:216(literallayout)
+#, no-wrap
+msgid "\ngit://github.com/user/project.git#commit-ish\ngit+ssh://user@hostname:project.git#commit-ish\ngit+<placeholder-1/>@hostname/project/blah.git#commit-ish\ngit+https://user@hostname/project/blah.git#commit-ish\n"
+msgstr ""
+
+#. .fi
+#: npm-faq.7.xml:223(para)
+msgid "The <emphasis remap=\"B\">commit-ish</emphasis> can be any tag, sha, or branch which can be supplied as an argument to <emphasis remap=\"B\">git checkout</emphasis>&thinsp;. The default is <emphasis remap=\"B\">master</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:227(title)
+msgid "What is a <emphasis remap=\"B\">module</emphasis>?"
+msgstr ""
+
+#: npm-faq.7.xml:228(para)
+msgid "A module is anything that can be loaded with <function>require()</function> in a Node.js program. The following things are all examples of things that can be loaded as modules:"
+msgstr ""
+
+#: npm-faq.7.xml:234(para)
+msgid "A folder with a <emphasis remap=\"B\">package.json</emphasis> file containing a <emphasis remap=\"B\">main</emphasis> field."
+msgstr ""
+
+#: npm-faq.7.xml:237(para)
+msgid "A folder with an <emphasis remap=\"B\">index.js</emphasis> file in it."
+msgstr ""
+
+#: npm-faq.7.xml:240(para)
+msgid "A JavaScript file."
+msgstr ""
+
+#. remap='RE'
+#: npm-faq.7.xml:246(para)
+msgid "Most npm packages are modules, because they are libraries that you load with <emphasis remap=\"B\">require</emphasis>&thinsp;. However, there's no requirement that an npm package be a module! Some only contain an executable command-line interface, and don't provide a <emphasis remap=\"B\">main</emphasis> field for use in Node programs."
+msgstr ""
+
+#: npm-faq.7.xml:251(para)
+msgid "Almost all npm packages (at least, those that are Node programs) <emphasis remap=\"I\">contain</emphasis> many modules within them (because every file they load with <function>require()</function> is a module)."
+msgstr ""
+
+#: npm-faq.7.xml:255(para)
+msgid "In the context of a Node program, the <emphasis remap=\"B\">module</emphasis> is also the thing that was loaded <emphasis remap=\"I\">from</emphasis> a file. For example, in the following program:"
+msgstr ""
+
+#: npm-faq.7.xml:258(literallayout)
+#, no-wrap
+msgid "\nvar req = require('request')\n"
+msgstr ""
+
+#. .fi
+#: npm-faq.7.xml:262(para)
+msgid "we might say that \"The variable <emphasis remap=\"B\">req</emphasis> refers to the <emphasis remap=\"B\">request</emphasis> module\"."
+msgstr ""
+
+#: npm-faq.7.xml:265(title)
+msgid "So, why is it the <emphasis remap=\"B\">node_modules</emphasis> folder, but <emphasis remap=\"B\">package.json</emphasis> file? Why not <emphasis remap=\"B\">node_packages</emphasis> or <emphasis remap=\"B\">module.json</emphasis>?"
+msgstr ""
+
+#: npm-faq.7.xml:266(para)
+msgid "The <emphasis remap=\"B\">package.json</emphasis> file defines the package. (See \"What is a package?\" above.)"
+msgstr ""
+
+#: npm-faq.7.xml:269(para)
+msgid "The <emphasis remap=\"B\">node_modules</emphasis> folder is the place Node.js looks for modules. (See \"What is a module?\" above.)"
+msgstr ""
+
+#: npm-faq.7.xml:272(para)
+msgid "For example, if you create a file at <emphasis remap=\"B\">node_modules/foo.js</emphasis> and then had a program that did <emphasis remap=\"B\">var f = require('foo.js')</emphasis> then it would load the module. However, <emphasis remap=\"B\">foo.js</emphasis> is not a \"package\" in this case, because it does not have a package.json."
+msgstr ""
+
+#: npm-faq.7.xml:277(para)
+msgid "Alternatively, if you create a package which does not have an <emphasis remap=\"B\">index.js</emphasis> or a <emphasis remap=\"B\">\"main\"</emphasis> field in the <emphasis remap=\"B\">package.json</emphasis> file, then it is not a module. Even if it's installed in <emphasis remap=\"B\">node_modules</emphasis>, it can't be an argument to <function>require()</function>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:283(title)
+msgid "<emphasis remap=\"B\">\"node_modules\"</emphasis> is the name of my deity's arch-rival, and a Forbidden Word in my religion. Can I configure npm to use a different folder?"
+msgstr ""
+
+#: npm-faq.7.xml:284(para)
+msgid "No. This will never happen. This question comes up sometimes, because it seems silly from the outside that npm couldn't just be configured to put stuff somewhere else, and then npm could load them from there. It's an arbitrary spelling choice, right? What's the big deal?"
+msgstr ""
+
+#: npm-faq.7.xml:290(para)
+msgid "At the time of this writing, the string <emphasis remap=\"B\">&thinsp;'node_modules'</emphasis> appears 151 times in 53 separate files in npm and node core (excluding tests and documentation)."
+msgstr ""
+
+#: npm-faq.7.xml:294(para)
+msgid "Some of these references are in node's built-in module loader. Since npm is not involved <emphasis remap=\"B\">at all</emphasis> at run-time, node itself would have to be configured to know where you've decided to stick stuff. Complexity hurdle #1. Since the Node module system is locked, this cannot be changed, and is enough to kill this request. But I'll continue, in deference to your deity's delicate feelings regarding spelling."
+msgstr ""
+
+#: npm-faq.7.xml:301(para)
+msgid "Many of the others are in dependencies that npm uses, which are not necessarily tightly coupled to npm (in the sense that they do not read npm's configuration files, etc.) Each of these would have to be configured to take the name of the <emphasis remap=\"B\">node_modules</emphasis> folder as a parameter. Complexity hurdle #2."
+msgstr ""
+
+#: npm-faq.7.xml:307(para)
+msgid "Furthermore, npm has the ability to \"bundle\" dependencies by adding the dep names to the <emphasis remap=\"B\">\"bundledDependencies\"</emphasis> list in package.json, which causes the folder to be included in the package tarball. What if the author of a module bundles its dependencies, and they use a different spelling for <emphasis remap=\"B\">node_modules</emphasis>? npm would have to rename the folder at publish time, and then be smart enough to unpack it using your locally configured name. Complexity hurdle #3."
+msgstr ""
+
+#: npm-faq.7.xml:315(para)
+msgid "Furthermore, what happens when you <emphasis remap=\"I\">change</emphasis> this name? Fine, it's easy enough the first time, just rename the <emphasis remap=\"B\">node_modules</emphasis> folders to <emphasis remap=\"B\">&thinsp;./blergyblerp/</emphasis> or whatever name you choose. But what about when you change it again? npm doesn't currently track any state about past configuration settings, so this would be rather difficult to do properly. It would have to track every previous value for this config, and always accept any of them, or else yesterday's install may be broken tomorrow. Complexity hurdle #4."
+msgstr ""
+
+#: npm-faq.7.xml:324(para)
+msgid "Never going to happen. The folder is named <emphasis remap=\"B\">node_modules</emphasis>&thinsp;. It is written indelibly in the Node Way, handed down from the ancient times of Node 0.3."
+msgstr ""
+
+#: npm-faq.7.xml:329(title)
+msgid "How do I install node with npm?"
+msgstr ""
+
+#: npm-faq.7.xml:330(para)
+msgid "You don't. Try one of these node version managers:"
+msgstr ""
+
+#: npm-faq.7.xml:332(para)
+msgid "Unix:"
+msgstr ""
+
+#: npm-faq.7.xml:336(ulink)
+msgid "http://github.com/isaacs/nave"
+msgstr ""
+
+#: npm-faq.7.xml:339(ulink)
+msgid "http://github.com/visionmedia/n"
+msgstr ""
+
+#: npm-faq.7.xml:342(ulink)
+msgid "http://github.com/creationix/nvm"
+msgstr ""
+
+#. remap='RE'
+#: npm-faq.7.xml:348(para)
+msgid "Windows:"
+msgstr ""
+
+#: npm-faq.7.xml:352(ulink)
+msgid "http://github.com/marcelklehr/nodist"
+msgstr ""
+
+#: npm-faq.7.xml:355(para)
+msgid "https://github.com/coreybutler/nvm-windows"
+msgstr ""
+
+#: npm-faq.7.xml:358(para)
+msgid "https://github.com/hakobera/nvmw"
+msgstr ""
+
+#: npm-faq.7.xml:361(para)
+msgid "https://github.com/nanjingboy/nvmw"
+msgstr ""
+
+#: npm-faq.7.xml:368(title)
+msgid "How can I use npm for development?"
+msgstr ""
+
+#: npm-faq.7.xml:369(para)
+msgid "See npm help 7 <emphasis remap=\"B\">npm-developers</emphasis> and npm help 5 <emphasis remap=\"B\">package.json</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:371(para)
+msgid "You'll most likely want to <emphasis remap=\"B\">npm link</emphasis> your development folder. That's awesomely handy."
+msgstr ""
+
+#: npm-faq.7.xml:374(para)
+msgid "To set up your own private registry, check out npm help 7 <emphasis remap=\"B\">npm-registry</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:377(title)
+msgid "Can I list a url as a dependency?"
+msgstr ""
+
+#: npm-faq.7.xml:378(para)
+msgid "Yes. It should be a url to a gzipped tarball containing a single folder that has a package.json in its root, or a git url. (See \"what is a package?\" above.)"
+msgstr ""
+
+#: npm-faq.7.xml:383(title)
+msgid "How do I symlink to a dev folder so I don't have to keep re-installing?"
+msgstr ""
+
+#: npm-faq.7.xml:384(para)
+msgid "See npm help <emphasis remap=\"B\">npm-link</emphasis>"
+msgstr ""
+
+#: npm-faq.7.xml:387(title)
+msgid "The package registry website. What is that exactly?"
+msgstr ""
+
+#: npm-faq.7.xml:388(para)
+msgid "See npm help 7 <emphasis remap=\"B\">npm-registry</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:391(title)
+msgid "I forgot my password, and can't publish. How do I reset it?"
+msgstr ""
+
+#: npm-faq.7.xml:392(para)
+msgid "Go to https://npmjs.com/forgot&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:395(title)
+msgid "I get ECONNREFUSED a lot. What's up?"
+msgstr ""
+
+#: npm-faq.7.xml:396(para)
+msgid "Either the registry is down, or node's DNS isn't able to reach out."
+msgstr ""
+
+#: npm-faq.7.xml:398(para)
+msgid "To check if the registry is down, open up https://registry.npmjs.org/ in a web browser. This will also tell you if you are just unable to access the internet for some reason."
+msgstr ""
+
+#: npm-faq.7.xml:402(para)
+msgid "If the registry IS down, let us know by emailing support@npmjs.com or posting an issue at https://github.com/npm/npm/issues&thinsp;. If it's down for the world (and not just on your local network) then we're probably already being pinged about it."
+msgstr ""
+
+#: npm-faq.7.xml:407(para)
+msgid "You can also often get a faster response by visiting the #npm channel on Freenode IRC."
+msgstr ""
+
+#: npm-faq.7.xml:411(title)
+msgid "Why no namespaces?"
+msgstr ""
+
+#: npm-faq.7.xml:412(para)
+msgid "npm has only one global namespace. If you want to namespace your own packages, you may: simply use the <emphasis remap=\"B\">-</emphasis> character to separate the names or use scoped packages. npm is a mostly anarchic system. There is not sufficient need to impose namespace rules on everyone."
+msgstr ""
+
+#: npm-faq.7.xml:417(para)
+msgid "As of 2.0, npm supports scoped packages, which allow you to publish a group of related modules without worrying about name collisions."
+msgstr ""
+
+#: npm-faq.7.xml:420(para)
+msgid "Every npm user owns the scope associated with their username. For example, the user named <emphasis remap=\"B\">npm</emphasis> owns the scope <emphasis remap=\"B\">@npm</emphasis>&thinsp;. Scoped packages are published inside a scope by naming them as if they were files under the scope directory, e.g., by setting <emphasis remap=\"B\">name</emphasis> in <emphasis remap=\"B\">package.json</emphasis> to <emphasis remap=\"B\">@npm/npm</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-faq.7.xml:425(para)
+msgid "Scoped packages are supported by the public npm registry. The npm client is backwards-compatible with un-scoped registries, so it can be used to work with scoped and un-scoped registries at the same time."
+msgstr ""
+
+#: npm-faq.7.xml:429(para)
+msgid "Unscoped packages can only depend on other unscoped packages. Scoped packages can depend on packages from their own scope, a different scope, or the public registry (unscoped)."
+msgstr ""
+
+#: npm-faq.7.xml:433(para)
+msgid "For the current documentation of scoped packages, see https://docs.npmjs.com/misc/scope"
+msgstr ""
+
+#: npm-faq.7.xml:436(para)
+msgid "References:"
+msgstr ""
+
+#: npm-faq.7.xml:440(term)
+msgid "1."
+msgstr ""
+
+#: npm-faq.7.xml:442(para)
+msgid "For the reasoning behind the \"one global namespace\", please see this discussion: https://github.com/npm/npm/issues/798 (TL;DR: It doesn't actually make things better, and can make them worse.)"
+msgstr ""
+
+#: npm-faq.7.xml:448(term)
+msgid "2."
+msgstr ""
+
+#: npm-faq.7.xml:450(para)
+msgid "For the pre-implementation discussion of the scoped package feature, see this discussion: https://github.com/npm/npm/issues/5239"
+msgstr ""
+
+#: npm-faq.7.xml:459(title)
+msgid "Who does npm?"
+msgstr ""
+
+#: npm-faq.7.xml:460(para)
+msgid "npm was originally written by Isaac Z. Schlueter, and many others have contributed to it, some of them quite substantially."
+msgstr ""
+
+#: npm-faq.7.xml:463(para)
+msgid "The npm open source project, The npm Registry, and the community website <emphasis remap=\"I\">https://www.npmjs.com</emphasis> are maintained and operated by the good folks at npm, Inc. <emphasis remap=\"I\"><ulink url=\"http://www.npmjs.com\">http://www.npmjs.com</ulink></emphasis>"
+msgstr ""
+
+#: npm-faq.7.xml:468(title)
+msgid "I have a question or request not addressed here. Where should I put it?"
+msgstr ""
+
+#: npm-faq.7.xml:469(para)
+msgid "Post an issue on the github project:"
+msgstr ""
+
+#: npm-faq.7.xml:473(para)
+msgid "https://github.com/npm/npm/issues"
+msgstr ""
+
+#: npm-faq.7.xml:480(title)
+msgid "Why does npm hate me?"
+msgstr ""
+
+#: npm-faq.7.xml:481(para)
+msgid "npm is not capable of hatred. It loves everyone, especially you."
+msgstr ""
+
+#: npm-faq.7.xml:484(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-faq.7.xml:488(para)
+msgid "npm help npm"
+msgstr ""
+
+#: npm-faq.7.xml:491(para)
+msgid "npm help 7 developers"
+msgstr ""
+
+#: npm-faq.7.xml:494(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm-faq.7.xml:497(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-faq.7.xml:500(para) npm-faq.7.xml:506(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-faq.7.xml:503(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-faq.7.xml:509(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-faq.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

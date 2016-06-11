@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: 2014-07-31 18:11+0800\n"
+"PO-Revision-Date: 2014-08-07 02:27+0800\n"
 "Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
 "Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
 "Language: zh_CN\n"
@@ -2257,7 +2257,7 @@ msgstr ""
 
 #: conky.1.xml:1679(emphasis)
 msgid "downspeed"
-msgstr ""
+msgstr "downspeed"
 
 #: conky.1.xml:1679(emphasis) conky.1.xml:1686(emphasis)
 #: conky.1.xml:3791(emphasis) conky.1.xml:3801(emphasis)
@@ -2267,15 +2267,15 @@ msgstr ""
 #: conky.1.xml:4188(emphasis) conky.1.xml:4195(emphasis)
 #: conky.1.xml:4202(emphasis)
 msgid "(net)"
-msgstr ""
+msgstr "(net)"
 
 #: conky.1.xml:1681(para)
 msgid "Download speed in suitable IEC units"
-msgstr ""
+msgstr "以合适的 IEC 单位表示的下载速度"
 
 #: conky.1.xml:1686(emphasis)
 msgid "downspeedf"
-msgstr ""
+msgstr "downspeedf"
 
 #: conky.1.xml:1688(para)
 msgid "Download speed in KiB with one decimal"
@@ -6117,4 +6117,5 @@ msgstr "Conky 开发团队 (完整贡献者列表请见 AUTHORS)。"
 #: conky.1.xml:0(None)
 msgid "translator-credits"
 msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2013"
+
 

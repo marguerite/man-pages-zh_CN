@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmupdate1'>
+<refmeta>
+<refentrytitle>NPM-UPDATE</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-update</refname>
+<refpurpose>Update a package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>update</replaceable></arg>
+    <arg choice='opt'>-g </arg>
+    <arg choice='opt' rep='repeat'><replaceable>&lt;pkg&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This command will update all the packages listed to the latest version
+(specified by the <emphasis remap='B'>tag</emphasis> config), respecting semver.</para>
+
+<para>It will also install missing packages. As with all commands that install
+packages, the <option>--dev</option> flag will cause <emphasis remap='B'>devDependencies</emphasis> to be processed
+as well.</para>
+
+<para>If the <option>-g</option> flag is specified, this command will update globally installed
+packages.</para>
+
+<para>If no package name is specified, all packages in the specified location (global
+or local) will be updated.</para>
+
+<para>As of <email>npm@2.6.1</email>, the <emphasis remap='B'>npm update</emphasis> will only inspect top-level packages.
+Prior versions of <command>npm</command> would also recursively inspect all dependencies.
+To get the old behavior, use <userinput>npm --depth 9999 update</userinput>, but be warned that
+simultaneous asynchronous update of all packages, including <command>npm</command> itself
+and packages that <command>npm</command> depends on, often causes problems up to and including
+the uninstallation of <command>npm</command> itself.</para>
+
+<para>To restore a missing <command>npm</command>, use the command:</para>
+
+<literallayout remap='.nf'>
+curl -L https://npmjs.com/install.sh | sh
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='examples'><title>EXAMPLES</title>
+<para>IMPORTANT VERSION NOTE: these examples assume <email>npm@2.6.1</email> or later.  For
+older versions of <command>npm</command>, you must specify <option>--depth 0</option> to get the behavior
+described below.</para>
+
+<para>For the examples below, assume that the current package is <emphasis remap='B'>app</emphasis> and it depends
+on dependencies, <emphasis remap='B'>dep1</emphasis> (<emphasis remap='B'>dep2</emphasis>, .. etc.).  The published versions of <emphasis remap='B'>dep1</emphasis> are:</para>
+
+<literallayout remap='.nf'>
+{
+  dist-tags: { latest: "1.2.2" },
+  versions: { "1.2.2",
+              "1.2.1",
+              "1.2.0",
+              "1.1.2",
+              "1.1.1",
+              "1.0.0",
+              "0.4.1",
+              "0.4.0",
+              "0.2.0"
+  }
+}
+</literallayout> <!-- .fi -->
+
+<refsect2 id='caret_dependencies'><title>Caret Dependencies</title>
+
+<para>If <emphasis remap='B'>app</emphasis>&thinsp;'s <emphasis remap='B'>package.json</emphasis> contains:</para>
+
+<literallayout remap='.nf'>
+dependencies: {
+  dep1: "^1.1.1"
+}
+</literallayout> <!-- .fi -->
+
+<para>Then <emphasis remap='B'>npm update</emphasis> will install <email>dep1@1.2.2</email>, because <literal>1.2.2</literal> is <emphasis remap='B'>latest</emphasis> and
+<literal>1.2.2</literal> satisfies <emphasis remap='B'>^1.1.1</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='tilde_dependencies'><title>Tilde Dependencies</title>
+
+<para>However, if <emphasis remap='B'>app</emphasis>&thinsp;'s <emphasis remap='B'>package.json</emphasis> contains:</para>
+
+<literallayout remap='.nf'>
+dependencies: {
+  dep1: "~1.1.1"
+}
+</literallayout> <!-- .fi -->
+
+<para>In this case, running <emphasis remap='B'>npm update</emphasis> will install <email>dep1@1.1.2</email>&thinsp;.  Even though the <emphasis remap='B'>latest</emphasis>
+tag points to <literal>1.2.2</literal>, this version does not satisfy <emphasis remap='B'>~1.1.1</emphasis>, which is equivalent
+to <emphasis remap='B'>&gt;=1.1.1 &lt;1.2.0</emphasis>&thinsp;.  So the highest-sorting version that satisfies <emphasis remap='B'>~1.1.1</emphasis> is used,
+which is <literal>1.1.2</literal>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='caret_dependencies_below_100'><title>Caret Dependencies below 1.0.0</title>
+
+<para>Suppose <emphasis remap='B'>app</emphasis> has a caret dependency on a version below <literal>1.0.0</literal>, for example:</para>
+
+<literallayout remap='.nf'>
+dependencies: {
+  dep1: "^0.2.0"
+}
+</literallayout> <!-- .fi -->
+
+<para><emphasis remap='B'>npm update</emphasis> will install <email>dep1@0.2.0</email>, because there are no other
+versions which satisfy <emphasis remap='B'>^0.2.0</emphasis>&thinsp;.</para>
+
+<para>If the dependence were on <emphasis remap='B'>^0.4.0</emphasis>:</para>
+
+<literallayout remap='.nf'>
+dependencies: {
+  dep1: "^0.4.0"
+}
+</literallayout> <!-- .fi -->
+
+<para>Then <emphasis remap='B'>npm update</emphasis> will install <email>dep1@0.4.1</email>, because that is the highest-sorting
+version that satisfies <emphasis remap='B'>^0.4.0</emphasis> (<emphasis remap='B'>&gt;= 0.4.0 &lt;0.5.0</emphasis>)</para>
+</refsect2>
+
+<refsect2 id='recording_updates_with_fbsavefp'><title>Recording Updates with <option>--save</option></title>
+
+<para>When you want to update a package and save the new version as
+the minimum required dependency in <emphasis remap='B'>package.json</emphasis>, you can use
+<emphasis remap='B'>npm update -S</emphasis> or <emphasis remap='B'>npm update --save</emphasis>&thinsp;.  For example if
+<emphasis remap='B'>package.json</emphasis> contains:</para>
+
+<literallayout remap='.nf'>
+dependencies: {
+  dep1: "^1.1.1"
+}
+</literallayout> <!-- .fi -->
+
+<para>Then <emphasis remap='B'>npm update --save</emphasis> will install <email>dep1@1.2.2</email> (i.e., <emphasis remap='B'>latest</emphasis>),
+and <emphasis remap='B'>package.json</emphasis> will be modified:</para>
+
+<literallayout remap='.nf'>
+dependencies: {
+  dep1: "^1.2.2"
+}
+</literallayout> <!-- .fi -->
+
+<para>Note that <command>npm</command> will only write an updated version to <emphasis remap='B'>package.json</emphasis>
+if it installs a new package.</para>
+</refsect2>
+
+<refsect2 id='updating_globallyinstalled_packages'><title>Updating Globally-Installed Packages</title>
+
+<para><emphasis remap='B'>npm update -g</emphasis> will apply the <emphasis remap='B'>update</emphasis> action to each globally- installed
+package that is <emphasis remap='B'>outdated</emphasis> -- that is, has a version that is different from
+<emphasis remap='B'>latest</emphasis>&thinsp;.</para>
+
+<para>NOTE: If a package has been upgraded to a version newer than <emphasis remap='B'>latest</emphasis>, it will
+be <emphasis remap='I'>downgraded</emphasis>&thinsp;.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help outdated</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help shrinkwrap</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help ls</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

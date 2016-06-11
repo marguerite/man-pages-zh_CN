@@ -1,0 +1,292 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm.1.xml:7(refentrytitle)
+msgid "NPM"
+msgstr ""
+
+#: npm.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm.1.xml:12(refname) npm.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm.1.xml:13(refpurpose)
+msgid "javascript package manager"
+msgstr ""
+
+#: npm.1.xml:18(replaceable)
+msgid "&lt;command&gt;"
+msgstr ""
+
+#: npm.1.xml:19(replaceable)
+msgid "args"
+msgstr ""
+
+#: npm.1.xml:24(title)
+msgid "VERSION"
+msgstr ""
+
+#: npm.1.xml:25(para)
+msgid "3.3.12"
+msgstr ""
+
+#: npm.1.xml:28(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm.1.xml:29(para)
+msgid "npm is the package manager for the Node JavaScript platform. It puts modules in place so that node can find them, and manages dependency conflicts intelligently."
+msgstr ""
+
+#: npm.1.xml:33(para)
+msgid "It is extremely configurable to support a wide variety of use cases. Most commonly, it is used to publish, discover, install, and develop node programs."
+msgstr ""
+
+#: npm.1.xml:37(para)
+msgid "Run <emphasis remap=\"B\">npm help</emphasis> to get a list of available commands."
+msgstr ""
+
+#: npm.1.xml:40(title)
+msgid "INTRODUCTION"
+msgstr ""
+
+#: npm.1.xml:41(para)
+msgid "You probably got npm because you want to install stuff."
+msgstr ""
+
+#: npm.1.xml:43(para)
+msgid "Use <emphasis remap=\"B\">npm install blerg</emphasis> to install the latest version of \"blerg\". Check out npm help <emphasis remap=\"B\">npm-install</emphasis> for more info. It can do a lot of stuff."
+msgstr ""
+
+#: npm.1.xml:46(para)
+msgid "Use the <emphasis remap=\"B\">npm search</emphasis> command to show everything that's available. Use <emphasis remap=\"B\">npm ls</emphasis> to show everything you've installed."
+msgstr ""
+
+#: npm.1.xml:50(title)
+msgid "DEPENDENCIES"
+msgstr ""
+
+#: npm.1.xml:51(para)
+msgid "If a package references to another package with a git URL, npm depends on a preinstalled git."
+msgstr ""
+
+#: npm.1.xml:54(para)
+msgid "If one of the packages npm tries to install is a native node module and requires compiling of C++ Code, npm will use node-gyp <emphasis remap=\"I\">https://github.com/TooTallNate/node-gyp</emphasis> for that task. For a Unix system, node-gyp <emphasis remap=\"I\">https://github.com/TooTallNate/node-gyp</emphasis> needs Python, make and a buildchain like GCC. On Windows, Python and Microsoft Visual Studio C++ is needed. Python 3 is not supported by node-gyp <emphasis remap=\"I\">https://github.com/TooTallNate/node-gyp</emphasis>&thinsp;. For more information visit the node-gyp repository <emphasis remap=\"I\">https://github.com/TooTallNate/node-gyp</emphasis> and the node-gyp Wiki <emphasis remap=\"I\">https://github.com/TooTallNate/node-gyp/wiki</emphasis>&thinsp;."
+msgstr ""
+
+#: npm.1.xml:66(title)
+msgid "DIRECTORIES"
+msgstr ""
+
+#: npm.1.xml:67(para)
+msgid "See npm help 5 <emphasis remap=\"B\">npm-folders</emphasis> to learn about where npm puts stuff."
+msgstr ""
+
+#: npm.1.xml:69(para)
+msgid "In particular, npm has two modes of operation:"
+msgstr ""
+
+#: npm.1.xml:73(para)
+msgid "global mode: npm installs packages into the install prefix at <emphasis remap=\"B\">prefix/lib/node_modules</emphasis> and bins are installed in <emphasis remap=\"B\">prefix/bin</emphasis>&thinsp;."
+msgstr ""
+
+#: npm.1.xml:79(para)
+msgid "local mode: npm installs packages into the current project directory, which defaults to the current working directory. Packages are installed to <emphasis remap=\"B\">&thinsp;./node_modules</emphasis>, and bins are installed to <emphasis remap=\"B\">&thinsp;./node_modules/.bin</emphasis>&thinsp;."
+msgstr ""
+
+#. remap='RE'
+#: npm.1.xml:89(para)
+msgid "Local mode is the default. Use <option>-g</option> or <option>--global</option> on any command to operate in global mode instead."
+msgstr ""
+
+#: npm.1.xml:93(title)
+msgid "DEVELOPER USAGE"
+msgstr ""
+
+#: npm.1.xml:94(para)
+msgid "If you're using npm to develop and publish your code, check out the following help topics:"
+msgstr ""
+
+#: npm.1.xml:99(para)
+msgid "json: Make a package.json file. See npm help 5 <emphasis remap=\"B\">package.json</emphasis>&thinsp;."
+msgstr ""
+
+#: npm.1.xml:103(para)
+msgid "link: For linking your current working code into Node's path, so that you don't have to reinstall every time you make a change. Use <emphasis remap=\"B\">npm link</emphasis> to do this."
+msgstr ""
+
+#: npm.1.xml:109(para)
+msgid "install: It's a good idea to install things if you don't need the symbolic link. Especially, installing other peoples code from the registry is done via <emphasis remap=\"B\">npm install</emphasis>"
+msgstr ""
+
+#: npm.1.xml:115(para)
+msgid "adduser: Create an account or log in. Credentials are stored in the user config file."
+msgstr ""
+
+#: npm.1.xml:120(para)
+msgid "publish: Use the <emphasis remap=\"B\">npm publish</emphasis> command to upload your code to the registry."
+msgstr ""
+
+#: npm.1.xml:128(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm.1.xml:129(para)
+msgid "npm is extremely configurable. It reads its configuration options from 5 places."
+msgstr ""
+
+#: npm.1.xml:134(para)
+msgid "Command line switches: Set a config with <option>--key val</option>&thinsp;. All keys take a value, even if they are booleans (the config parser doesn't know what the options are at the time of parsing.) If no value is provided, then the option is set to boolean <emphasis remap=\"B\">true</emphasis>&thinsp;."
+msgstr ""
+
+#: npm.1.xml:142(para)
+msgid "Environment Variables: Set any config by prefixing the name in an environment variable with <emphasis remap=\"B\">npm_config_</emphasis>&thinsp;. For example, <emphasis remap=\"B\">export npm_config_key=val</emphasis>&thinsp;."
+msgstr ""
+
+#: npm.1.xml:148(para)
+msgid "User Configs: The file at $HOME/.npmrc is an ini-formatted list of configs. If present, it is parsed. If the <emphasis remap=\"B\">userconfig</emphasis> option is set in the cli or env, then that will be used instead."
+msgstr ""
+
+#: npm.1.xml:155(para)
+msgid "Global Configs: The file found at ../etc/npmrc (from the node executable, by default this resolves to /usr/local/etc/npmrc) will be parsed if it is found. If the <emphasis remap=\"B\">globalconfig</emphasis> option is set in the cli, env, or user config, then that file is parsed instead."
+msgstr ""
+
+#: npm.1.xml:163(para)
+msgid "Defaults: npm's default configuration options are defined in lib/utils/config-defs.js. These must not be changed."
+msgstr ""
+
+#. remap='RE'
+#: npm.1.xml:172(para)
+msgid "See npm help 7 <emphasis remap=\"B\">npm-config</emphasis> for much much more information."
+msgstr ""
+
+#: npm.1.xml:175(title)
+msgid "CONTRIBUTIONS"
+msgstr ""
+
+#: npm.1.xml:176(para)
+msgid "Patches welcome!"
+msgstr ""
+
+#: npm.1.xml:180(para)
+msgid "code: Read through npm help 7 <emphasis remap=\"B\">npm-coding-style</emphasis> if you plan to submit code. You don't have to agree with it, but you do have to follow it."
+msgstr ""
+
+#: npm.1.xml:185(para)
+msgid "docs: If you find an error in the documentation, edit the appropriate markdown file in the \"doc\" folder. (Don't worry about generating the man page.)"
+msgstr ""
+
+#. remap='RE'
+#: npm.1.xml:193(para)
+msgid "Contributors are listed in npm's <emphasis remap=\"B\">package.json</emphasis> file. You can view them easily by doing <emphasis remap=\"B\">npm view npm contributors</emphasis>&thinsp;."
+msgstr ""
+
+#: npm.1.xml:196(para)
+msgid "If you would like to contribute, but don't know what to work on, check the issues list or ask on the mailing list."
+msgstr ""
+
+#: npm.1.xml:201(ulink)
+msgid "http://github.com/npm/npm/issues"
+msgstr ""
+
+#: npm.1.xml:204(para)
+msgid "npm-@googlegroups.com"
+msgstr ""
+
+#: npm.1.xml:211(title)
+msgid "BUGS"
+msgstr ""
+
+#: npm.1.xml:212(para)
+msgid "When you find issues, please report them:"
+msgstr ""
+
+#: npm.1.xml:216(para)
+msgid "web: <ulink url=\"http://github.com/npm/npm/issues\">http://github.com/npm/npm/issues</ulink>"
+msgstr ""
+
+#: npm.1.xml:220(para)
+msgid "email: npm-@googlegroups.com"
+msgstr ""
+
+#. remap='RE'
+#: npm.1.xml:227(para)
+msgid "Be sure to include <emphasis remap=\"I\">all</emphasis> of the output from the npm command that didn't work as expected. The <emphasis remap=\"B\">npm-debug.log</emphasis> file is also helpful to provide."
+msgstr ""
+
+#: npm.1.xml:230(para)
+msgid "You can also look for isaacs in #node.js on irc://irc.freenode.net. He will no doubt tell you to put the output in a gist or email."
+msgstr ""
+
+#: npm.1.xml:234(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: npm.1.xml:235(para)
+msgid "Isaac Z. Schlueter <emphasis remap=\"I\"><ulink url=\"http://blog.izs.me/\">http://blog.izs.me/</ulink></emphasis> :: isaacs <emphasis remap=\"I\">https://github.com/isaacs/</emphasis> :: @izs <emphasis remap=\"I\"><ulink url=\"http://twitter.com/izs\">http://twitter.com/izs</ulink></emphasis> :: i@izs.me"
+msgstr ""
+
+#: npm.1.xml:241(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm.1.xml:245(para)
+msgid "npm help help"
+msgstr ""
+
+#: npm.1.xml:248(para)
+msgid "npm help 7 faq"
+msgstr ""
+
+#: npm.1.xml:251(para)
+msgid "README"
+msgstr ""
+
+#: npm.1.xml:254(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm.1.xml:257(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm.1.xml:260(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm.1.xml:263(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm.1.xml:266(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm.1.xml:269(para)
+msgid "npm help 7 index"
+msgstr ""
+
+#: npm.1.xml:272(para)
+msgid "npm apihelp npm"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

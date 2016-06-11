@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmls1'>
+<refmeta>
+<refentrytitle>NPM-LS</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-ls</refname>
+<refpurpose>List installed packages</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>ls</replaceable></arg>
+    <arg choice='opt'><arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg><arg choice='plain' rep='repeat'><replaceable>&lt;pkg&gt;</replaceable></arg></arg>
+    <sbr/>
+</cmdsynopsis>
+<para>aliases: list, la, ll</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This command will print to stdout all the versions of packages that are
+installed, as well as their dependencies, in a tree-structure.</para>
+
+<para>Positional arguments are <email>name@version-range</email> identifiers, which will
+limit the results to only the paths to the packages named.  Note that
+nested packages will <emphasis remap='I'>also</emphasis> show the paths to the specified packages.
+For example, running <emphasis remap='B'>npm ls promzard</emphasis> in npm's source tree will show:</para>
+
+<literallayout remap='.nf'>
+npm@3.3.12 /path/to/npm
+└─┬ init-package-json@0.0.4
+  └── promzard@0.1.5
+</literallayout> <!-- .fi -->
+
+<para>It will print out extraneous, missing, and invalid packages.</para>
+
+<para>If a project specifies git urls for dependencies these are shown
+in parentheses after the name@version to make it easier for users to
+recognize potential forks of a project.</para>
+
+<para>The tree shown is the logical dependency tree, based on package
+dependencies, not the physical layout of your node_modules folder.</para>
+
+<para>When run as <emphasis remap='B'>ll</emphasis> or <emphasis remap='B'>la</emphasis>, it shows extended information by default.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='json'><title>json</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Show information in JSON format.</para>
+</refsect2>
+
+<refsect2 id='long'><title>long</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Show extended information.</para>
+</refsect2>
+
+<refsect2 id='parseable'><title>parseable</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Show parseable output instead of tree view.</para>
+</refsect2>
+
+<refsect2 id='global'><title>global</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>List packages in the global install prefix instead of in the current
+project.</para>
+</refsect2>
+
+<refsect2 id='depth'><title>depth</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Type: Int</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Max display depth of the dependency tree.</para>
+</refsect2>
+
+<refsect2 id='prod__production'><title>prod / production</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Default: false</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Display only the dependency tree for packages in <emphasis remap='B'>dependencies</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='dev'><title>dev</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Default: false</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Display only the dependency tree for packages in <emphasis remap='B'>devDependencies</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='only'><title>only</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>When "dev" or "development", is an alias to <emphasis remap='B'>dev</emphasis>&thinsp;.</para>
+
+<para>When "prod" or "production", is an alias to <emphasis remap='B'>production</emphasis>&thinsp;.`</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help link</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help prune</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help outdated</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help update</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

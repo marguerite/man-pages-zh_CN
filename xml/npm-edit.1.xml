@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmedit1'>
+<refmeta>
+<refentrytitle>NPM-EDIT</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-edit</refname>
+<refpurpose>Edit an installed package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>edit</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;pkg&gt;</replaceable></arg>
+    <arg choice='opt'><replaceable>@&lt;version&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Opens the package folder in the default editor (or whatever you've
+configured as the npm <emphasis remap='B'>editor</emphasis> config -- see npm help 7 <emphasis remap='B'>npm-config</emphasis>&thinsp;.)</para>
+
+<para>After it has been edited, the package is rebuilt so as to pick up any
+changes in compiled packages.</para>
+
+<para>For instance, you can do <emphasis remap='B'>npm install connect</emphasis> to install connect
+into your package, and then <emphasis remap='B'>npm edit connect</emphasis> to make a few
+changes to your locally installed copy.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='editor'><title>editor</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <envar>EDITOR</envar> environment variable if set, or <emphasis remap='B'>"vi"</emphasis> on Posix,
+or <emphasis remap='B'>"notepad"</emphasis> on Windows.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The command to run for <emphasis remap='B'>npm edit</emphasis> or <emphasis remap='B'>npm config edit</emphasis>&thinsp;.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help explore</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

@@ -1,0 +1,226 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-ls.1.xml:7(refentrytitle)
+msgid "NPM-LS"
+msgstr ""
+
+#: npm-ls.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-ls.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-ls.1.xml:12(refname)
+msgid "npm-ls"
+msgstr ""
+
+#: npm-ls.1.xml:13(refpurpose)
+msgid "List installed packages"
+msgstr ""
+
+#: npm-ls.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-ls.1.xml:18(replaceable)
+msgid "ls"
+msgstr ""
+
+#: npm-ls.1.xml:19(replaceable)
+msgid "&lt;@scope&gt;/"
+msgstr ""
+
+#: npm-ls.1.xml:19(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-ls.1.xml:22(para)
+msgid "aliases: list, la, ll"
+msgstr ""
+
+#: npm-ls.1.xml:26(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-ls.1.xml:27(para)
+msgid "This command will print to stdout all the versions of packages that are installed, as well as their dependencies, in a tree-structure."
+msgstr ""
+
+#: npm-ls.1.xml:30(para)
+msgid "Positional arguments are <email>name@version-range</email> identifiers, which will limit the results to only the paths to the packages named. Note that nested packages will <emphasis remap=\"I\">also</emphasis> show the paths to the specified packages. For example, running <emphasis remap=\"B\">npm ls promzard</emphasis> in npm's source tree will show:"
+msgstr ""
+
+#: npm-ls.1.xml:35(literallayout)
+#, no-wrap
+msgid "\nnpm@3.3.12 /path/to/npm\nâââ¬ init-package-json@0.0.4\n  âââ promzard@0.1.5\n"
+msgstr ""
+
+#. .fi
+#: npm-ls.1.xml:41(para)
+msgid "It will print out extraneous, missing, and invalid packages."
+msgstr ""
+
+#: npm-ls.1.xml:43(para)
+msgid "If a project specifies git urls for dependencies these are shown in parentheses after the name@version to make it easier for users to recognize potential forks of a project."
+msgstr ""
+
+#: npm-ls.1.xml:47(para)
+msgid "The tree shown is the logical dependency tree, based on package dependencies, not the physical layout of your node_modules folder."
+msgstr ""
+
+#: npm-ls.1.xml:50(para)
+msgid "When run as <emphasis remap=\"B\">ll</emphasis> or <emphasis remap=\"B\">la</emphasis>, it shows extended information by default."
+msgstr ""
+
+#: npm-ls.1.xml:53(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-ls.1.xml:55(title)
+msgid "json"
+msgstr ""
+
+#: npm-ls.1.xml:59(para) npm-ls.1.xml:75(para) npm-ls.1.xml:91(para) npm-ls.1.xml:107(para) npm-ls.1.xml:140(para) npm-ls.1.xml:156(para)
+msgid "Default: false"
+msgstr ""
+
+#: npm-ls.1.xml:62(para) npm-ls.1.xml:78(para) npm-ls.1.xml:94(para) npm-ls.1.xml:110(para) npm-ls.1.xml:137(para) npm-ls.1.xml:153(para)
+msgid "Type: Boolean"
+msgstr ""
+
+#. remap='RE'
+#: npm-ls.1.xml:68(para)
+msgid "Show information in JSON format."
+msgstr ""
+
+#: npm-ls.1.xml:71(title)
+msgid "long"
+msgstr ""
+
+#. remap='RE'
+#: npm-ls.1.xml:84(para)
+msgid "Show extended information."
+msgstr ""
+
+#: npm-ls.1.xml:87(title)
+msgid "parseable"
+msgstr ""
+
+#. remap='RE'
+#: npm-ls.1.xml:100(para)
+msgid "Show parseable output instead of tree view."
+msgstr ""
+
+#: npm-ls.1.xml:103(title)
+msgid "global"
+msgstr ""
+
+#. remap='RE'
+#: npm-ls.1.xml:116(para)
+msgid "List packages in the global install prefix instead of in the current project."
+msgstr ""
+
+#: npm-ls.1.xml:120(title)
+msgid "depth"
+msgstr ""
+
+#: npm-ls.1.xml:124(para)
+msgid "Type: Int"
+msgstr ""
+
+#. remap='RE'
+#: npm-ls.1.xml:130(para)
+msgid "Max display depth of the dependency tree."
+msgstr ""
+
+#: npm-ls.1.xml:133(title)
+msgid "prod / production"
+msgstr ""
+
+#. remap='RE'
+#: npm-ls.1.xml:146(para)
+msgid "Display only the dependency tree for packages in <emphasis remap=\"B\">dependencies</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-ls.1.xml:149(title)
+msgid "dev"
+msgstr ""
+
+#. remap='RE'
+#: npm-ls.1.xml:162(para)
+msgid "Display only the dependency tree for packages in <emphasis remap=\"B\">devDependencies</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-ls.1.xml:165(title)
+msgid "only"
+msgstr ""
+
+#: npm-ls.1.xml:169(para)
+msgid "Type: String"
+msgstr ""
+
+#. remap='RE'
+#: npm-ls.1.xml:175(para)
+msgid "When \"dev\" or \"development\", is an alias to <emphasis remap=\"B\">dev</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-ls.1.xml:177(para)
+msgid "When \"prod\" or \"production\", is an alias to <emphasis remap=\"B\">production</emphasis>&thinsp;.`"
+msgstr ""
+
+#: npm-ls.1.xml:181(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-ls.1.xml:185(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-ls.1.xml:188(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-ls.1.xml:191(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-ls.1.xml:194(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-ls.1.xml:197(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-ls.1.xml:200(para)
+msgid "npm help link"
+msgstr ""
+
+#: npm-ls.1.xml:203(para)
+msgid "npm help prune"
+msgstr ""
+
+#: npm-ls.1.xml:206(para)
+msgid "npm help outdated"
+msgstr ""
+
+#: npm-ls.1.xml:209(para)
+msgid "npm help update"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-ls.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

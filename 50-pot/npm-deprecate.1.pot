@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-deprecate.1.xml:7(refentrytitle)
+msgid "NPM-DEPRECATE"
+msgstr ""
+
+#: npm-deprecate.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-deprecate.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-deprecate.1.xml:12(refname)
+msgid "npm-deprecate"
+msgstr ""
+
+#: npm-deprecate.1.xml:13(refpurpose)
+msgid "Deprecate a version of a package"
+msgstr ""
+
+#: npm-deprecate.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-deprecate.1.xml:18(replaceable)
+msgid "deprecate"
+msgstr ""
+
+#: npm-deprecate.1.xml:19(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-deprecate.1.xml:20(replaceable)
+msgid "@&lt;version&gt;"
+msgstr ""
+
+#: npm-deprecate.1.xml:21(replaceable)
+msgid "&lt;message&gt;"
+msgstr ""
+
+#: npm-deprecate.1.xml:26(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-deprecate.1.xml:27(para)
+msgid "This command will update the npm registry entry for a package, providing a deprecation warning to all who attempt to install it."
+msgstr ""
+
+#: npm-deprecate.1.xml:30(para)
+msgid "It works on version ranges as well as specific versions, so you can do something like this:"
+msgstr ""
+
+#: npm-deprecate.1.xml:33(literallayout)
+#, no-wrap
+msgid "\nnpm deprecate my-thing@\"&lt; 0.2.3\" \"critical bug fixed in v0.2.3\"\n"
+msgstr ""
+
+#. .fi
+#: npm-deprecate.1.xml:37(para)
+msgid "Note that you must be the package owner to deprecate something. See the <emphasis remap=\"B\">owner</emphasis> and <emphasis remap=\"B\">adduser</emphasis> help topics."
+msgstr ""
+
+#: npm-deprecate.1.xml:40(para)
+msgid "To un-deprecate a package, specify an empty string (<emphasis remap=\"B\">\"\"</emphasis>) for the <emphasis remap=\"B\">message</emphasis> argument."
+msgstr ""
+
+#: npm-deprecate.1.xml:43(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-deprecate.1.xml:47(para)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-deprecate.1.xml:50(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-deprecate.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

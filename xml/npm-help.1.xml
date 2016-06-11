@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmhelp1'>
+<refmeta>
+<refentrytitle>NPM-HELP</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-help</refname>
+<refpurpose>Get help on npm</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>help</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;term&gt;</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;terms..&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>If supplied a topic, then show the appropriate documentation page.</para>
+
+<para>If the topic does not exist, or if multiple terms are provided, then run
+the <emphasis remap='B'>help-search</emphasis> command to find a match.  Note that, if <emphasis remap='B'>help-search</emphasis>
+finds a single subject, then it will run <emphasis remap='B'>help</emphasis> on that topic, so unique
+matches are equivalent to specifying a topic name.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='viewer'><title>viewer</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: "man" on Posix, "browser" on Windows</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The program to use to view help content.</para>
+
+<para>Set to <emphasis remap='B'>"browser"</emphasis> to view html help content in the default web browser.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help npm</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>README</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 faq</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help help-search</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 index</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

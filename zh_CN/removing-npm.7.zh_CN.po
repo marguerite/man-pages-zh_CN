@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:47+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: removing-npm.7.xml:7(refentrytitle)
+msgid "NPM-REMOVAL"
+msgstr ""
+
+#: removing-npm.7.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: removing-npm.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: removing-npm.7.xml:12(refname)
+msgid "npm-removal"
+msgstr ""
+
+#: removing-npm.7.xml:13(refpurpose)
+msgid "Cleaning the Slate"
+msgstr ""
+
+#: removing-npm.7.xml:17(para)
+msgid "So sad to see you go."
+msgstr ""
+
+#: removing-npm.7.xml:19(command) removing-npm.7.xml:27(command)
+msgid "sudo"
+msgstr ""
+
+#: removing-npm.7.xml:19(replaceable) removing-npm.7.xml:21(replaceable)
+msgid "npm"
+msgstr ""
+
+#: removing-npm.7.xml:20(replaceable) removing-npm.7.xml:28(replaceable)
+msgid "uninstall"
+msgstr ""
+
+#: removing-npm.7.xml:22(arg)
+msgid "-g"
+msgstr ""
+
+#: removing-npm.7.xml:25(para)
+msgid "Or, if that fails, get the npm source code, and do:"
+msgstr ""
+
+#: removing-npm.7.xml:27(replaceable)
+msgid "make"
+msgstr ""
+
+#: removing-npm.7.xml:33(title)
+msgid "More Severe Uninstalling"
+msgstr ""
+
+#: removing-npm.7.xml:34(para)
+msgid "Usually, the above instructions are sufficient. That will remove npm, but leave behind anything you've installed."
+msgstr ""
+
+#: removing-npm.7.xml:37(para)
+msgid "If that doesn't work, or if you require more drastic measures, continue reading."
+msgstr ""
+
+#: removing-npm.7.xml:40(para)
+msgid "Note that this is only necessary for globally-installed packages. Local installs are completely contained within a project's <emphasis remap=\"B\">node_modules</emphasis> folder. Delete that folder, and everything is gone (unless a package's install script is particularly ill-behaved)."
+msgstr ""
+
+#: removing-npm.7.xml:45(para)
+msgid "This assumes that you installed node and npm in the default place. If you configured node with a different <option>--prefix</option>, or installed npm with a different prefix setting, then adjust the paths accordingly, replacing <filename>/usr/local</filename> with your install prefix."
+msgstr ""
+
+#: removing-npm.7.xml:50(para)
+msgid "To remove everything npm-related manually:"
+msgstr ""
+
+#: removing-npm.7.xml:52(literallayout)
+#, no-wrap
+msgid "\nrm -rf /usr/local/{lib/node{,/.npm,_modules},bin,share/man}/npm*\n"
+msgstr ""
+
+#. .fi
+#: removing-npm.7.xml:56(para)
+msgid "If you installed things <emphasis remap=\"I\">with</emphasis> npm, then your best bet is to uninstall them with npm first, and then install them again once you have a proper install. This can help find any symlinks that are lying around:"
+msgstr ""
+
+#: removing-npm.7.xml:61(literallayout)
+#, no-wrap
+msgid "\nls -laF /usr/local/{lib/node{,/.npm},bin,share/man} | grep npm\n"
+msgstr ""
+
+#. .fi
+#: removing-npm.7.xml:65(para)
+msgid "Prior to version 0.3, npm used shim files for executables and node modules. To track those down, you can do the following:"
+msgstr ""
+
+#: removing-npm.7.xml:68(literallayout)
+#, no-wrap
+msgid "\nfind /usr/local/{lib/node,bin} -exec grep -l npm &bsol;{&bsol;} &bsol;; ;\n"
+msgstr ""
+
+#. .fi
+#: removing-npm.7.xml:72(para)
+msgid "(This is also in the README file.)"
+msgstr ""
+
+#: removing-npm.7.xml:75(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: removing-npm.7.xml:79(para)
+msgid "README"
+msgstr ""
+
+#: removing-npm.7.xml:82(para)
+msgid "npm help rm"
+msgstr ""
+
+#: removing-npm.7.xml:85(para)
+msgid "npm help prune"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: removing-npm.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

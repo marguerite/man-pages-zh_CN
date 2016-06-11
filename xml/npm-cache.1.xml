@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmcache1'>
+<refmeta>
+<refentrytitle>NPM-CACHE</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-cache</refname>
+<refpurpose>Manipulates packages cache</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<para>npm cache add &lt;tarball file&gt;
+npm cache add &lt;folder&gt;
+npm cache add &lt;tarball url&gt;
+npm cache add &lt;name&gt;@&lt;version&gt;</para>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>cache</replaceable></arg>
+    <arg choice='plain'><replaceable>ls</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;path&gt;</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>cache</replaceable></arg>
+    <arg choice='plain'><replaceable>clean</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;path&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Used to add, list, or clear the npm cache folder.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>add:
+Add the specified package to the local cache.  This command is primarily
+intended to be used internally by npm, but it can provide a way to
+add data to the local installation cache explicitly.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>ls:
+Show the data in the cache.  Argument is a path to show in the cache
+folder.  Works a bit like the <emphasis remap='B'>find</emphasis> program, but limited by the
+<emphasis remap='B'>depth</emphasis> config.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>clean:
+Delete data out of the cache folder.  If an argument is provided, then
+it specifies a subpath to delete.  If no argument is provided, then
+the entire cache is cleared.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='details'><title>DETAILS</title>
+<para>npm stores cache data in the directory specified in <emphasis remap='B'>npm config get cache</emphasis>&thinsp;.
+For each package that is added to the cache, three pieces of information are
+stored in <emphasis remap='B'>{cache}/{name}/{version}</emphasis>:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>&thinsp;.../package/package.json:
+The package.json file, as npm sees it.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>&thinsp;.../package.tgz:
+The tarball for that version.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Additionally, whenever a registry request is made, a <emphasis remap='B'>&thinsp;.cache.json</emphasis> file
+is placed at the corresponding URI, to store the ETag and the requested
+data.  This is stored in <emphasis remap='B'>{cache}/{hostname}/{path}/.cache.json</emphasis>&thinsp;.</para>
+
+<para>Commands that make non-essential registry requests (such as <emphasis remap='B'>search</emphasis> and
+<emphasis remap='B'>view</emphasis>, or the completion scripts) generally specify a minimum timeout.
+If the <emphasis remap='B'>&thinsp;.cache.json</emphasis> file is younger than the specified timeout, then
+they do not make an HTTP request to the registry.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='cache'><title>cache</title>
+
+<para>Default: <filename>~/.npm</filename> on Posix, or <emphasis remap='B'>%AppData%/npm-cache</emphasis> on Windows.</para>
+
+<para>The root cache folder.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help publish</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help pack</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

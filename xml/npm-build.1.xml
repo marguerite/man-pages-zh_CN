@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmbuild1'>
+<refmeta>
+<refentrytitle>NPM-BUILD</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-build</refname>
+<refpurpose>Build a package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>build</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;package-folder&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>&bull;</replaceable></arg>
+    <arg choice='plain'><replaceable>2</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>&lt;package-folder&gt;:</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>
+</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>A</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>folder</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>containing</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>a</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>package.json</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>file</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>in</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>its</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>root.</command></cmdsynopsis>
+<cmdsynopsis>
+  <command>
+</command></cmdsynopsis>
+<cmdsynopsis>
+  <command><sbr/></command>    
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This is the plumbing command called by <emphasis remap='B'>npm link</emphasis> and <emphasis remap='B'>npm install</emphasis>&thinsp;.</para>
+
+<para>It should generally be called during installation, but if you need to run it
+directly, run:</para>
+
+<literallayout remap='.nf'>
+npm run-script build
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help link</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 scripts</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

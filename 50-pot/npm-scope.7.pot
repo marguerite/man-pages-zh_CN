@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-scope.7.xml:7(refentrytitle)
+msgid "NPM-SCOPE"
+msgstr ""
+
+#: npm-scope.7.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: npm-scope.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-scope.7.xml:12(refname)
+msgid "npm-scope"
+msgstr ""
+
+#: npm-scope.7.xml:13(refpurpose)
+msgid "Scoped packages"
+msgstr ""
+
+#: npm-scope.7.xml:17(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-scope.7.xml:18(para)
+msgid "All npm packages have a name. Some package names also have a scope. A scope follows the usual rules for package names (url-safe characters, no leading dots or underscores). When used in package names, preceded by an @-symbol and followed by a slash, e.g."
+msgstr ""
+
+#: npm-scope.7.xml:23(literallayout)
+#, no-wrap
+msgid "\n@somescope/somepackagename\n"
+msgstr ""
+
+#. .fi
+#: npm-scope.7.xml:27(para)
+msgid "Scopes are a way of grouping related packages together, and also affect a few things about the way npm treats the package."
+msgstr ""
+
+#: npm-scope.7.xml:30(para)
+msgid "Scoped packages are supported by the public npm registry. The npm client is backwards-compatible with un-scoped registries, so it can be used to work with scoped and un-scoped registries at the same time."
+msgstr ""
+
+#: npm-scope.7.xml:35(title)
+msgid "Installing scoped packages"
+msgstr ""
+
+#: npm-scope.7.xml:36(para)
+msgid "Scoped packages are installed to a sub-folder of the regular installation folder, e.g. if your other packages are installed in <emphasis remap=\"B\">node_modules/packagename</emphasis>, scoped modules will be in <emphasis remap=\"B\">node_modules/@myorg/packagename</emphasis>&thinsp;. The scope folder (<emphasis remap=\"B\">@myorg</emphasis>) is simply the name of the scope preceded by an @-symbol, and can contain any number of scoped packages."
+msgstr ""
+
+#: npm-scope.7.xml:42(para)
+msgid "A scoped package is installed by referencing it by name, preceded by an @-symbol, in <emphasis remap=\"B\">npm install</emphasis>:"
+msgstr ""
+
+#: npm-scope.7.xml:45(literallayout)
+#, no-wrap
+msgid "\nnpm install @myorg/mypackage\n"
+msgstr ""
+
+#. .fi
+#: npm-scope.7.xml:49(para)
+msgid "Or in <emphasis remap=\"B\">package.json</emphasis>:"
+msgstr ""
+
+#: npm-scope.7.xml:51(literallayout)
+#, no-wrap
+msgid "\n\"dependencies\": {\n  \"@myorg/mypackage\": \"^1.3.0\"\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-scope.7.xml:57(para)
+msgid "Note that if the @-symbol is omitted in either case npm will instead attempt to install from GitHub; see npm help <emphasis remap=\"B\">npm-install</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-scope.7.xml:61(title)
+msgid "Requiring scoped packages"
+msgstr ""
+
+#: npm-scope.7.xml:62(para)
+msgid "Because scoped packages are installed into a scope folder, you have to include the name of the scope when requiring them in your code, e.g."
+msgstr ""
+
+#: npm-scope.7.xml:65(literallayout)
+#, no-wrap
+msgid "\nrequire('@myorg/mypackage')\n"
+msgstr ""
+
+#. .fi
+#: npm-scope.7.xml:69(para)
+msgid "There is nothing special about the way Node treats scope folders, this is just specifying to require the module <emphasis remap=\"B\">mypackage</emphasis> in the folder called <emphasis remap=\"B\">@myorg</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-scope.7.xml:73(title)
+msgid "Publishing scoped packages"
+msgstr ""
+
+#: npm-scope.7.xml:74(para)
+msgid "Scoped packages can be published to any registry that supports them, including the public npm registry."
+msgstr ""
+
+#: npm-scope.7.xml:77(para)
+msgid "(As of 2015-04-19, the public npm registry <emphasis remap=\"B\">does</emphasis> support scoped packages)"
+msgstr ""
+
+#: npm-scope.7.xml:79(para)
+msgid "If you wish, you may associate a scope with a registry; see below."
+msgstr ""
+
+#: npm-scope.7.xml:81(title)
+msgid "Publishing public scoped packages to the public npm registry"
+msgstr ""
+
+#: npm-scope.7.xml:83(para)
+msgid "To publish a public scoped package, you must specify <option>--access public</option> with the initial publication. This will publish the package and set access to <emphasis remap=\"B\">public</emphasis> as if you had run <emphasis remap=\"B\">npm access public</emphasis> after publishing."
+msgstr ""
+
+#: npm-scope.7.xml:88(title)
+msgid "Publishing private scoped packages to the npm registry"
+msgstr ""
+
+#: npm-scope.7.xml:90(para)
+msgid "To publish a private scoped package to the npm registry, you must have an npm Private Modules <emphasis remap=\"I\">https://www.npmjs.com/private-modules</emphasis> account."
+msgstr ""
+
+#: npm-scope.7.xml:94(para)
+msgid "You can then publish the module with <emphasis remap=\"B\">npm publish</emphasis> or <emphasis remap=\"B\">npm publish --access restricted</emphasis>, and it will be present in the npm registry, with restricted access. You can then change the access permissions, if desired, with <emphasis remap=\"B\">npm access</emphasis> or on the npmjs.com website."
+msgstr ""
+
+#: npm-scope.7.xml:101(title)
+msgid "Associating a scope with a registry"
+msgstr ""
+
+#: npm-scope.7.xml:102(para)
+msgid "Scopes can be associated with a separate registry. This allows you to seamlessly use a mix of packages from the public npm registry and one or more private registries, such as npm Enterprise."
+msgstr ""
+
+#: npm-scope.7.xml:106(para)
+msgid "You can associate a scope with a registry at login, e.g."
+msgstr ""
+
+#: npm-scope.7.xml:109(ulink) npm-scope.7.xml:118(ulink)
+msgid "http://reg.example.com"
+msgstr ""
+
+#: npm-scope.7.xml:108(literallayout)
+#, no-wrap
+msgid "\nnpm login --registry=<placeholder-1/> --scope=@myco\n"
+msgstr ""
+
+#. .fi
+#: npm-scope.7.xml:112(para)
+msgid "Scopes have a many-to-one relationship with registries: one registry can host multiple scopes, but a scope only ever points to one registry."
+msgstr ""
+
+#: npm-scope.7.xml:115(para)
+msgid "You can also associate a scope with a registry using <emphasis remap=\"B\">npm config</emphasis>:"
+msgstr ""
+
+#: npm-scope.7.xml:117(literallayout)
+#, no-wrap
+msgid "\nnpm config set @myco:registry <placeholder-1/>\n"
+msgstr ""
+
+#. .fi
+#: npm-scope.7.xml:121(para)
+msgid "Once a scope is associated with a registry, any <emphasis remap=\"B\">npm install</emphasis> for a package with that scope will request packages from that registry instead. Any <emphasis remap=\"B\">npm publish</emphasis> for a package name that contains the scope will be published to that registry instead."
+msgstr ""
+
+#: npm-scope.7.xml:127(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-scope.7.xml:131(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-scope.7.xml:134(para)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-scope.7.xml:137(para)
+msgid "npm help access"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-scope.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,189 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-access.1.xml:7(refentrytitle)
+msgid "NPM-ACCESS"
+msgstr ""
+
+#: npm-access.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-access.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-access.1.xml:12(refname)
+msgid "npm-access"
+msgstr ""
+
+#: npm-access.1.xml:13(refpurpose)
+msgid "Set access level on published packages"
+msgstr ""
+
+#: npm-access.1.xml:18(command) npm-access.1.xml:21(replaceable) npm-access.1.xml:27(command) npm-access.1.xml:30(replaceable) npm-access.1.xml:37(command) npm-access.1.xml:40(replaceable) npm-access.1.xml:44(replaceable)
+msgid "npm"
+msgstr ""
+
+#: npm-access.1.xml:18(replaceable) npm-access.1.xml:22(replaceable) npm-access.1.xml:27(replaceable) npm-access.1.xml:31(replaceable) npm-access.1.xml:37(replaceable) npm-access.1.xml:41(replaceable) npm-access.1.xml:45(replaceable)
+msgid "access"
+msgstr ""
+
+#: npm-access.1.xml:19(replaceable)
+msgid "public"
+msgstr ""
+
+#: npm-access.1.xml:20(replaceable) npm-access.1.xml:24(replaceable) npm-access.1.xml:29(replaceable) npm-access.1.xml:34(replaceable) npm-access.1.xml:43(replaceable) npm-access.1.xml:47(replaceable)
+msgid "&lt;package&gt;"
+msgstr ""
+
+#: npm-access.1.xml:23(replaceable)
+msgid "restricted"
+msgstr ""
+
+#: npm-access.1.xml:28(replaceable)
+msgid "grant"
+msgstr ""
+
+#: npm-access.1.xml:29(replaceable)
+msgid "&lt;read-only"
+msgstr ""
+
+#: npm-access.1.xml:29(replaceable)
+msgid "read-write&gt;"
+msgstr ""
+
+#: npm-access.1.xml:29(replaceable) npm-access.1.xml:33(replaceable) npm-access.1.xml:39(replaceable)
+msgid "&lt;scope:team&gt;"
+msgstr ""
+
+#: npm-access.1.xml:32(replaceable)
+msgid "revoke"
+msgstr ""
+
+#: npm-access.1.xml:38(replaceable)
+msgid "ls-packages"
+msgstr ""
+
+#: npm-access.1.xml:39(replaceable) npm-access.1.xml:43(replaceable)
+msgid "&lt;user&gt;"
+msgstr ""
+
+#: npm-access.1.xml:39(replaceable)
+msgid "&lt;scope&gt;"
+msgstr ""
+
+#: npm-access.1.xml:42(replaceable)
+msgid "ls-collaborators"
+msgstr ""
+
+#: npm-access.1.xml:46(replaceable)
+msgid "edit"
+msgstr ""
+
+#: npm-access.1.xml:52(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-access.1.xml:53(para)
+msgid "Used to set access controls on private packages."
+msgstr ""
+
+#: npm-access.1.xml:55(para)
+msgid "For all of the subcommands, <emphasis remap=\"B\">npm access</emphasis> will perform actions on the packages in the current working directory if no package name is passed to the subcommand."
+msgstr ""
+
+#: npm-access.1.xml:61(para)
+msgid "public / restricted: Set a package to be either publicly accessible or restricted."
+msgstr ""
+
+#: npm-access.1.xml:65(para)
+msgid "grant / revoke: Add or remove the ability of users and teams to have read-only or read-write access to a package."
+msgstr ""
+
+#: npm-access.1.xml:70(para)
+msgid "ls-packages: Show all of the packages a user or a team is able to access, along with the access level, except for read-only public packages (it won't print the whole registry listing)"
+msgstr ""
+
+#: npm-access.1.xml:76(para)
+msgid "ls-collaborators: Show all of the access privileges for a package. Will only show permissions for packages to which you have at least read access. If <emphasis remap=\"B\">&lt;user&gt;</emphasis> is passed in, the list is filtered only to teams <emphasis remap=\"I\">that</emphasis> user happens to belong to."
+msgstr ""
+
+#: npm-access.1.xml:82(para)
+msgid "edit: Set the access privileges for a package at once using <emphasis remap=\"B\">$EDITOR</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-access.1.xml:90(title)
+msgid "DETAILS"
+msgstr ""
+
+#: npm-access.1.xml:91(para)
+msgid "<emphasis remap=\"B\">npm access</emphasis> always operates directly on the current registry, configurable from the command line using <option>--registry=&lt;registry url&gt;</option>&thinsp;."
+msgstr ""
+
+#: npm-access.1.xml:94(para)
+msgid "Unscoped packages are <emphasis remap=\"I\">always public</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-access.1.xml:96(para)
+msgid "Scoped packages <emphasis remap=\"I\">default to restricted</emphasis>, but you can either publish them as public using <emphasis remap=\"B\">npm publish --access=public</emphasis>, or set their access as public using <emphasis remap=\"B\">npm access public</emphasis> after the initial publish."
+msgstr ""
+
+#: npm-access.1.xml:100(para)
+msgid "You must have privileges to set the access of a package:"
+msgstr ""
+
+#: npm-access.1.xml:104(para)
+msgid "You are an owner of an unscoped or scoped package."
+msgstr ""
+
+#: npm-access.1.xml:107(para)
+msgid "You are a member of the team that owns a scope."
+msgstr ""
+
+#: npm-access.1.xml:110(para)
+msgid "You have been given read-write privileges for a package, either as a member of a team or directly as an owner."
+msgstr ""
+
+#. remap='RE'
+#: npm-access.1.xml:117(para)
+msgid "If your account is not paid, then attempts to publish scoped packages will fail with an HTTP 402 status code (logically enough), unless you use <option>--access=public</option>&thinsp;."
+msgstr ""
+
+#: npm-access.1.xml:121(para)
+msgid "Management of teams and team memberships is done with the <emphasis remap=\"B\">npm team</emphasis> command."
+msgstr ""
+
+#: npm-access.1.xml:124(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-access.1.xml:128(para)
+msgid "npm help team"
+msgstr ""
+
+#: npm-access.1.xml:131(para)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-access.1.xml:134(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-access.1.xml:137(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-access.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,130 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-bugs.1.xml:7(refentrytitle)
+msgid "NPM-BUGS"
+msgstr ""
+
+#: npm-bugs.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-bugs.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-bugs.1.xml:12(refname)
+msgid "npm-bugs"
+msgstr ""
+
+#: npm-bugs.1.xml:13(refpurpose)
+msgid "Bugs for a package in a web browser maybe"
+msgstr ""
+
+#: npm-bugs.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-bugs.1.xml:18(replaceable)
+msgid "bugs"
+msgstr ""
+
+#: npm-bugs.1.xml:19(replaceable)
+msgid "&lt;pkgname&gt;"
+msgstr ""
+
+#: npm-bugs.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-bugs.1.xml:25(para)
+msgid "This command tries to guess at the likely location of a package's bug tracker URL, and then tries to open it using the <option>--browser</option> config param. If no package name is provided, it will search for a <emphasis remap=\"B\">package.json</emphasis> in the current folder and use the <emphasis remap=\"B\">name</emphasis> property."
+msgstr ""
+
+#: npm-bugs.1.xml:31(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-bugs.1.xml:33(title)
+msgid "browser"
+msgstr ""
+
+#: npm-bugs.1.xml:37(para)
+msgid "Default: OS X: <emphasis remap=\"B\">\"open\"</emphasis>, Windows: <emphasis remap=\"B\">\"start\"</emphasis>, Others: <emphasis remap=\"B\">\"xdg-open\"</emphasis>"
+msgstr ""
+
+#: npm-bugs.1.xml:40(para)
+msgid "Type: String"
+msgstr ""
+
+#. remap='RE'
+#: npm-bugs.1.xml:46(para)
+msgid "The browser that is called by the <emphasis remap=\"B\">npm bugs</emphasis> command to open websites."
+msgstr ""
+
+#: npm-bugs.1.xml:49(title)
+msgid "registry"
+msgstr ""
+
+#: npm-bugs.1.xml:53(para)
+msgid "Default: https://registry.npmjs.org/"
+msgstr ""
+
+#: npm-bugs.1.xml:56(para)
+msgid "Type: url"
+msgstr ""
+
+#. remap='RE'
+#: npm-bugs.1.xml:62(para)
+msgid "The base URL of the npm package registry."
+msgstr ""
+
+#: npm-bugs.1.xml:66(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-bugs.1.xml:70(para)
+msgid "npm help docs"
+msgstr ""
+
+#: npm-bugs.1.xml:73(para)
+msgid "npm help view"
+msgstr ""
+
+#: npm-bugs.1.xml:76(para)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-bugs.1.xml:79(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-bugs.1.xml:82(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-bugs.1.xml:85(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-bugs.1.xml:88(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-bugs.1.xml:91(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-bugs.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

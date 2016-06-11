@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmtag1'>
+<refmeta>
+<refentrytitle>NPM-TAG</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-tag</refname>
+<refpurpose>Tag a published version</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<para>[DEPRECATED] npm tag &lt;name&gt;@&lt;version&gt; [&lt;tag&gt;]
+See `dist-tag`</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>THIS COMMAND IS DEPRECATED. See npm help dist-tag for details.</para>
+
+<para>Tags the specified version of the package with the specified tag, or the
+<option>--tag</option> config if not specified.</para>
+
+<para>A tag can be used when installing packages as a reference to a version instead
+of using a specific version number:</para>
+
+<literallayout remap='.nf'>
+npm install &lt;name&gt;@&lt;tag&gt;
+</literallayout> <!-- .fi -->
+
+<para>When installing dependencies, a preferred tagged version may be specified:</para>
+
+<literallayout remap='.nf'>
+npm install --tag &lt;tag&gt;
+</literallayout> <!-- .fi -->
+
+<para>This also applies to <emphasis remap='B'>npm dedupe</emphasis>&thinsp;.</para>
+
+<para>Publishing a package always sets the "latest" tag to the published version.</para>
+</refsect1>
+
+<refsect1 id='purpose'><title>PURPOSE</title>
+<para>Tags can be used to provide an alias instead of version numbers.  For
+example, <emphasis remap='B'>npm</emphasis> currently uses the tag "next" to identify the upcoming
+version, and the tag "latest" to identify the current version.</para>
+
+<para>A project might choose to have multiple streams of development, e.g.,
+"stable", "canary".</para>
+</refsect1>
+
+<refsect1 id='caveats'><title>CAVEATS</title>
+<para>Tags must share a namespace with version numbers, because they are
+specified in the same slot: <emphasis remap='B'>npm install &lt;pkg&gt;@&lt;version&gt;</emphasis> vs <emphasis remap='B'>npm
+install &lt;pkg&gt;@&lt;tag&gt;</emphasis>&thinsp;.</para>
+
+<para>Tags that can be interpreted as valid semver ranges will be
+rejected. For example, <emphasis remap='B'>v1.4</emphasis> cannot be used as a tag, because it is
+interpreted by semver as <emphasis remap='B'>&gt;=1.4.0 &lt;1.5.0</emphasis>&thinsp;.  See
+https://github.com/npm/npm/issues/6082&thinsp;.</para>
+
+<para>The simplest way to avoid semver problems with tags is to use tags
+that do not begin with a number or the letter <emphasis remap='B'>v</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help publish</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help dedupe</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm apihelp tag</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

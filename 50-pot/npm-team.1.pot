@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-team.1.xml:7(refentrytitle)
+msgid "NPM-TEAM"
+msgstr ""
+
+#: npm-team.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-team.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-team.1.xml:12(refname)
+msgid "npm-team"
+msgstr ""
+
+#: npm-team.1.xml:13(refpurpose)
+msgid "Manage organization teams and team memberships"
+msgstr ""
+
+#: npm-team.1.xml:17(para)
+msgid "npm team create &lt;scope:team&gt; npm team destroy &lt;scope:team&gt; npm team add &lt;scope:team&gt; &lt;user&gt; npm team rm &lt;scope:team&gt; &lt;user&gt;"
+msgstr ""
+
+#: npm-team.1.xml:22(command) npm-team.1.xml:25(replaceable)
+msgid "npm"
+msgstr ""
+
+#: npm-team.1.xml:22(replaceable) npm-team.1.xml:26(replaceable)
+msgid "team"
+msgstr ""
+
+#: npm-team.1.xml:23(replaceable)
+msgid "ls"
+msgstr ""
+
+#: npm-team.1.xml:24(replaceable)
+msgid "&lt;scope&gt;"
+msgstr ""
+
+#: npm-team.1.xml:24(replaceable) npm-team.1.xml:28(replaceable)
+msgid "&lt;scope:team&gt;"
+msgstr ""
+
+#: npm-team.1.xml:27(replaceable)
+msgid "edit"
+msgstr ""
+
+#: npm-team.1.xml:33(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-team.1.xml:34(para)
+msgid "Used to manage teams in organizations, and change team memberships. Does not handle permissions for packages."
+msgstr ""
+
+#: npm-team.1.xml:37(para)
+msgid "Teams must always be fully qualified with the organization/scope they belong to when operating on them, separated by a colon (<emphasis remap=\"B\">:</emphasis>). That is, if you have a <emphasis remap=\"B\">developers</emphasis> team on a <emphasis remap=\"B\">foo</emphasis> organization, you must always refer to that team as <emphasis remap=\"B\">developers:foo</emphasis> in these commands."
+msgstr ""
+
+#: npm-team.1.xml:44(para)
+msgid "create / destroy: Create a new team, or destroy an existing one."
+msgstr ""
+
+#: npm-team.1.xml:48(para)
+msgid "add / rm: Add a user to an existing team, or remove a user from a team they belong to."
+msgstr ""
+
+#: npm-team.1.xml:52(para)
+msgid "ls: If performed on an organization name, will return a list of existing teams under that organization. If performed on a team, it will instead return a list of all users belonging to that particular team."
+msgstr ""
+
+#: npm-team.1.xml:62(title)
+msgid "DETAILS"
+msgstr ""
+
+#: npm-team.1.xml:63(para)
+msgid "<emphasis remap=\"B\">npm team</emphasis> always operates directly on the current registry, configurable from the command line using <option>--registry=&lt;registry url&gt;</option>&thinsp;."
+msgstr ""
+
+#: npm-team.1.xml:66(para)
+msgid "In order to create teams and manage team membership, you must be a <emphasis remap=\"I\">team admin</emphasis> under the given organization. Listing teams and team memberships may be done by any member of the organizations."
+msgstr ""
+
+#: npm-team.1.xml:70(para)
+msgid "Organization creation and management of team admins and <emphasis remap=\"I\">organization</emphasis> members is done through the website, not the npm CLI."
+msgstr ""
+
+#: npm-team.1.xml:73(para)
+msgid "To use teams to manage permissions on packages belonging to your organization, use the <emphasis remap=\"B\">npm access</emphasis> command to grant or revoke the appropriate permissions."
+msgstr ""
+
+#: npm-team.1.xml:77(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-team.1.xml:81(para)
+msgid "npm help access"
+msgstr ""
+
+#: npm-team.1.xml:84(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-team.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

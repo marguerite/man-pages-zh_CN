@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-tag.1.xml:7(refentrytitle)
+msgid "NPM-TAG"
+msgstr ""
+
+#: npm-tag.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-tag.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-tag.1.xml:12(refname)
+msgid "npm-tag"
+msgstr ""
+
+#: npm-tag.1.xml:13(refpurpose)
+msgid "Tag a published version"
+msgstr ""
+
+#: npm-tag.1.xml:17(para)
+msgid "[DEPRECATED] npm tag &lt;name&gt;@&lt;version&gt; [&lt;tag&gt;] See `dist-tag`"
+msgstr ""
+
+#: npm-tag.1.xml:22(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-tag.1.xml:23(para)
+msgid "THIS COMMAND IS DEPRECATED. See npm help dist-tag for details."
+msgstr ""
+
+#: npm-tag.1.xml:25(para)
+msgid "Tags the specified version of the package with the specified tag, or the <option>--tag</option> config if not specified."
+msgstr ""
+
+#: npm-tag.1.xml:28(para)
+msgid "A tag can be used when installing packages as a reference to a version instead of using a specific version number:"
+msgstr ""
+
+#: npm-tag.1.xml:31(literallayout)
+#, no-wrap
+msgid "\nnpm install &lt;name&gt;@&lt;tag&gt;\n"
+msgstr ""
+
+#. .fi
+#: npm-tag.1.xml:35(para)
+msgid "When installing dependencies, a preferred tagged version may be specified:"
+msgstr ""
+
+#: npm-tag.1.xml:37(literallayout)
+#, no-wrap
+msgid "\nnpm install --tag &lt;tag&gt;\n"
+msgstr ""
+
+#. .fi
+#: npm-tag.1.xml:41(para)
+msgid "This also applies to <emphasis remap=\"B\">npm dedupe</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-tag.1.xml:43(para)
+msgid "Publishing a package always sets the \"latest\" tag to the published version."
+msgstr ""
+
+#: npm-tag.1.xml:46(title)
+msgid "PURPOSE"
+msgstr ""
+
+#: npm-tag.1.xml:47(para)
+msgid "Tags can be used to provide an alias instead of version numbers. For example, <emphasis remap=\"B\">npm</emphasis> currently uses the tag \"next\" to identify the upcoming version, and the tag \"latest\" to identify the current version."
+msgstr ""
+
+#: npm-tag.1.xml:51(para)
+msgid "A project might choose to have multiple streams of development, e.g., \"stable\", \"canary\"."
+msgstr ""
+
+#: npm-tag.1.xml:55(title)
+msgid "CAVEATS"
+msgstr ""
+
+#: npm-tag.1.xml:56(para)
+msgid "Tags must share a namespace with version numbers, because they are specified in the same slot: <emphasis remap=\"B\">npm install &lt;pkg&gt;@&lt;version&gt;</emphasis> vs <emphasis remap=\"B\">npm install &lt;pkg&gt;@&lt;tag&gt;</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-tag.1.xml:60(para)
+msgid "Tags that can be interpreted as valid semver ranges will be rejected. For example, <emphasis remap=\"B\">v1.4</emphasis> cannot be used as a tag, because it is interpreted by semver as <emphasis remap=\"B\">&gt;=1.4.0 &lt;1.5.0</emphasis>&thinsp;. See https://github.com/npm/npm/issues/6082&thinsp;."
+msgstr ""
+
+#: npm-tag.1.xml:65(para)
+msgid "The simplest way to avoid semver problems with tags is to use tags that do not begin with a number or the letter <emphasis remap=\"B\">v</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-tag.1.xml:69(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-tag.1.xml:73(para)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-tag.1.xml:76(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-tag.1.xml:79(para)
+msgid "npm help dedupe"
+msgstr ""
+
+#: npm-tag.1.xml:82(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-tag.1.xml:85(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-tag.1.xml:88(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-tag.1.xml:91(para)
+msgid "npm apihelp tag"
+msgstr ""
+
+#: npm-tag.1.xml:94(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-tag.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

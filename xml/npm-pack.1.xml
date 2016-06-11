@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmpack1'>
+<refmeta>
+<refentrytitle>NPM-PACK</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-pack</refname>
+<refpurpose>Create a tarball from a package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>pack</replaceable></arg>
+    <arg choice='opt'><arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg><arg choice='plain' rep='repeat'><replaceable>&lt;pkg&gt;</replaceable></arg></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>For anything that's installable (that is, a package folder, tarball,
+tarball url, name@tag, name@version, name, or scoped name), this
+command will fetch it to the cache, and then copy the tarball to the
+current working directory as <emphasis remap='B'>&lt;name&gt;-&lt;version&gt;.tgz</emphasis>, and then write
+the filenames out to stdout.</para>
+
+<para>If the same package is specified multiple times, then the file will be
+overwritten the second time.</para>
+
+<para>If no arguments are supplied, then npm packs the current package folder.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help cache</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help publish</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

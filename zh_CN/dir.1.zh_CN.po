@@ -1,50 +1,53 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-08-17 21:34+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: dir.1.xml:8(refentrytitle)
 msgid "DIR"
-msgstr ""
+msgstr "dir"
 
 #: dir.1.xml:9(manvolnum) dir.1.xml:436(term)
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: dir.1.xml:10(refmiscinfo)
 msgid "July 2014"
-msgstr ""
+msgstr "2014 年 7 月"
 
 #: dir.1.xml:11(refmiscinfo)
 msgid "GNU coreutils 8.22"
-msgstr ""
+msgstr "GNU coreutils 8.22"
 
 #: dir.1.xml:14(refname) dir.1.xml:20(command)
 msgid "dir"
-msgstr ""
+msgstr "dir"
 
 #: dir.1.xml:15(refpurpose)
 msgid "list directory contents"
-msgstr ""
+msgstr "列出文件夹内容"
 
 #: dir.1.xml:21(replaceable)
 msgid "OPTION"
-msgstr ""
+msgstr "选项"
 
 #: dir.1.xml:22(replaceable)
 msgid "FILE"
-msgstr ""
+msgstr "FILE"
 
 #: dir.1.xml:28(title)
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #. Add any additional description here
 #: dir.1.xml:31(para)
@@ -53,65 +56,69 @@ msgid ""
 "entries alphabetically if none of <option>-cftuvSUX</option> nor <option>--"
 "sort</option> is specified."
 msgstr ""
+"列出关于文件的信息 (默认为当前文件夹)。若未指定 <option>-cftuvSUX</option> 之一或 <option>--"
+"sort</option> 则按字母顺序排序项。"
 
 #: dir.1.xml:34(para)
 msgid ""
 "Mandatory arguments to long options are mandatory for short options too."
-msgstr ""
+msgstr "针对长选项的强制参数对短选项来说也是强制的。"
 
 #: dir.1.xml:37(term)
 msgid "<option>-a</option>, <option>--all</option>"
-msgstr ""
+msgstr "<option>-a</option>, <option>--all</option>"
 
 #: dir.1.xml:39(para)
 msgid "do not ignore entries starting with ."
-msgstr ""
+msgstr "不忽略以 . 开头的项"
 
 #: dir.1.xml:43(term)
 msgid "<option>-A</option>, <option>--almost-all</option>"
-msgstr ""
+msgstr "<option>-A</option>, <option>--almost-all</option>"
 
 #: dir.1.xml:45(para)
 msgid "do not list implied . and .."
-msgstr ""
+msgstr "不列出隐含的 . 和 .."
 
 #: dir.1.xml:49(option)
 msgid "--author"
-msgstr ""
+msgstr "--author"
 
 #: dir.1.xml:51(para)
 msgid "with <option>-l</option>, print the author of each file"
-msgstr ""
+msgstr "与 <option>-l</option> 一起，输出每个文件的所有者"
 
 #: dir.1.xml:55(term)
 msgid "<option>-b</option>, <option>--escape</option>"
-msgstr ""
+msgstr "<option>-b</option>, <option>--escape</option>"
 
 #: dir.1.xml:57(para)
 msgid "print C-style escapes for nongraphic characters"
-msgstr ""
+msgstr "以 C 语言风格 (反斜杠加字符编号) 的逃逸符输出不可输出的字符"
 
 #: dir.1.xml:61(term)
 msgid "<option>--block-size</option>=<emphasis remap=\"I\">SIZE</emphasis>"
-msgstr ""
+msgstr "<option>--block-size</option>=<emphasis remap=\"I\">SIZE</emphasis>"
 
 #: dir.1.xml:63(para)
 msgid ""
 "scale sizes by SIZE before printing them; e.g., '--block-size=M' prints "
 "sizes in units of 1,048,576 bytes; see SIZE format below"
 msgstr ""
+"在输出前按 SIZE 计算大小; 例如，'--block-size=M' 将以每 1048,576 节 (1 MB) 为一单位输出大小; 请参考后面的 "
+"SIZE 格式"
 
 #: dir.1.xml:69(term)
 msgid "<option>-B</option>, <option>--ignore-backups</option>"
-msgstr ""
+msgstr "<option>-B</option>, <option>--ignore-backups</option>"
 
 #: dir.1.xml:71(para)
 msgid "do not list implied entries ending with ~"
-msgstr ""
+msgstr "不列出隐含的以 ~ 结尾的项"
 
 #: dir.1.xml:75(option)
 msgid "-c"
-msgstr ""
+msgstr "-c"
 
 #: dir.1.xml:77(para)
 msgid ""
@@ -554,41 +561,43 @@ msgstr ""
 
 #: dir.1.xml:394(term)
 msgid "<option>-Z</option>, <option>--context</option>"
-msgstr ""
+msgstr "<option>-Z</option>, <option>--context</option>"
 
 #: dir.1.xml:396(para)
 msgid "print any SELinux security context of each file"
-msgstr ""
+msgstr "输出每个文件的 SELinux 安全环境"
 
 #: dir.1.xml:400(option)
 msgid "-1"
-msgstr ""
+msgstr "-1"
 
 #: dir.1.xml:402(para)
 msgid "list one file per line"
-msgstr ""
+msgstr "每行列出一个文件"
 
 #: dir.1.xml:406(option)
 msgid "--help"
-msgstr ""
+msgstr "--help"
 
 #: dir.1.xml:408(para)
 msgid "display this help and exit"
-msgstr ""
+msgstr "显示此帮助并退出"
 
 #: dir.1.xml:412(option)
 msgid "--version"
-msgstr ""
+msgstr "--version"
 
 #: dir.1.xml:414(para)
 msgid "output version information and exit"
-msgstr ""
+msgstr "输出版本信息并退出"
 
 #: dir.1.xml:416(para)
 msgid ""
 "The SIZE argument is an integer and optional unit (example: 10K is 10*1024). "
 "Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000)."
 msgstr ""
+"SIZE 参数是一个整数，也可以加上单位 (例如：10K 是 10*1024)。"
+"单位为 K,M,G,T,P,E,Z,Y (乘数为 1024) 或 KB,MB,... (乘数为 1000)。"
 
 #: dir.1.xml:419(para)
 msgid ""
@@ -602,27 +611,27 @@ msgstr ""
 
 #: dir.1.xml:427(title)
 msgid "Exit status:"
-msgstr ""
+msgstr "退出状态："
 
 #: dir.1.xml:430(term)
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: dir.1.xml:432(para)
 msgid "if OK,"
-msgstr ""
+msgstr "若 OK，"
 
 #: dir.1.xml:438(para)
 msgid "if minor problems (e.g., cannot access subdirectory),"
-msgstr ""
+msgstr "若有小问题 (例如，无法访问子文件夹)，"
 
 #: dir.1.xml:442(term)
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: dir.1.xml:444(para)
 msgid "if serious trouble (e.g., cannot access command-line argument)."
-msgstr ""
+msgstr "若有严重问题 (例如，无法获取命令行参数)。"
 
 #: dir.1.xml:446(para)
 msgid ""
@@ -631,18 +640,22 @@ msgid ""
 "dir translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
 "&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
+"GNU coreutils 在线帮助：&lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> 汇报 "
+"dir 翻译故障 &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 
 #: dir.1.xml:454(title)
 msgid "AUTHOR"
-msgstr ""
+msgstr "作者"
 
 #: dir.1.xml:455(para)
 msgid "Written by Richard M. Stallman and David MacKenzie."
-msgstr ""
+msgstr "由 Richard M. Stallman 和 David MacKenzie 编纂。"
 
 #: dir.1.xml:458(title)
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "版权"
 
 #: dir.1.xml:459(para)
 msgid ""
@@ -652,10 +665,14 @@ msgid ""
 "are free to change and redistribute it. There is NO WARRANTY, to the extent "
 "permitted by law."
 msgstr ""
+"版权所有 &copy; 2013 自由软件基金会。许可证 GPLv3+：GNU 通用公共许可证 "
+"第三版及后续版本 &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>。这是一个自由软件：您可以自由"
+"修订并分发它。在法律允许范围内不作任何保证。"
 
 #: dir.1.xml:466(title)
 msgid "SEE ALSO"
-msgstr ""
+msgstr "继续阅读"
 
 #: dir.1.xml:467(para)
 msgid ""
@@ -663,16 +680,20 @@ msgid ""
 "manual. If the <emphasis remap=\"B\">info</emphasis> and <command>dir</"
 "command> programs are properly installed at your site, the command"
 msgstr ""
+"<command>dir</command> 的完整文档以一本 Texinfo 手册的形式维护。"
+"若您的计算机上妥善安装了  <emphasis remap=\"B\">info</emphasis> 和 "
+"<command>dir</command> 程序，这个命令"
 
 #: dir.1.xml:475(emphasis)
 msgid "info coreutils ''dir invocation''"
-msgstr ""
+msgstr "info coreutils \"dir invocation\""
 
 #: dir.1.xml:477(para)
 msgid "should give you access to the complete manual."
-msgstr ""
+msgstr "应可让您调阅完整手册。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: dir.1.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+

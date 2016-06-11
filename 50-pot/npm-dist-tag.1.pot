@@ -1,0 +1,189 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-dist-tag.1.xml:7(refentrytitle)
+msgid "NPM-DIST-TAG"
+msgstr ""
+
+#: npm-dist-tag.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-dist-tag.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-dist-tag.1.xml:12(refname)
+msgid "npm-dist-tag"
+msgstr ""
+
+#: npm-dist-tag.1.xml:13(refpurpose)
+msgid "Modify package distribution tags"
+msgstr ""
+
+#: npm-dist-tag.1.xml:18(command) npm-dist-tag.1.xml:22(replaceable) npm-dist-tag.1.xml:27(replaceable)
+msgid "npm"
+msgstr ""
+
+#: npm-dist-tag.1.xml:18(replaceable) npm-dist-tag.1.xml:23(replaceable) npm-dist-tag.1.xml:28(replaceable)
+msgid "dist-tag"
+msgstr ""
+
+#: npm-dist-tag.1.xml:19(replaceable)
+msgid "add"
+msgstr ""
+
+#: npm-dist-tag.1.xml:20(replaceable)
+msgid "&lt;pkg&gt;@&lt;version&gt;"
+msgstr ""
+
+#: npm-dist-tag.1.xml:21(replaceable) npm-dist-tag.1.xml:26(replaceable)
+msgid "&lt;tag&gt;"
+msgstr ""
+
+#: npm-dist-tag.1.xml:24(replaceable)
+msgid "rm"
+msgstr ""
+
+#: npm-dist-tag.1.xml:25(replaceable) npm-dist-tag.1.xml:30(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-dist-tag.1.xml:29(replaceable)
+msgid "ls"
+msgstr ""
+
+#: npm-dist-tag.1.xml:35(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-dist-tag.1.xml:36(para)
+msgid "Add, remove, and enumerate distribution tags on a package:"
+msgstr ""
+
+#: npm-dist-tag.1.xml:40(para)
+msgid "add: Tags the specified version of the package with the specified tag, or the <option>--tag</option> config if not specified."
+msgstr ""
+
+#: npm-dist-tag.1.xml:45(para)
+msgid "rm: Clear a tag that is no longer in use from the package."
+msgstr ""
+
+#: npm-dist-tag.1.xml:49(para)
+msgid "ls: Show all of the dist-tags for a package, defaulting to the package in the current prefix."
+msgstr ""
+
+#. remap='RE'
+#: npm-dist-tag.1.xml:57(para)
+msgid "A tag can be used when installing packages as a reference to a version instead of using a specific version number:"
+msgstr ""
+
+#: npm-dist-tag.1.xml:60(literallayout)
+#, no-wrap
+msgid "\nnpm install &lt;name&gt;@&lt;tag&gt;\n"
+msgstr ""
+
+#. .fi
+#: npm-dist-tag.1.xml:64(para)
+msgid "When installing dependencies, a preferred tagged version may be specified:"
+msgstr ""
+
+#: npm-dist-tag.1.xml:66(literallayout)
+#, no-wrap
+msgid "\nnpm install --tag &lt;tag&gt;\n"
+msgstr ""
+
+#. .fi
+#: npm-dist-tag.1.xml:70(para)
+msgid "This also applies to <emphasis remap=\"B\">npm dedupe</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-dist-tag.1.xml:72(para)
+msgid "Publishing a package sets the \"latest\" tag to the published version unless the <option>--tag</option> option is used. For example, <emphasis remap=\"B\">npm publish --tag=beta</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-dist-tag.1.xml:76(title)
+msgid "PURPOSE"
+msgstr ""
+
+#: npm-dist-tag.1.xml:77(para)
+msgid "Tags can be used to provide an alias instead of version numbers. For example, <command>npm</command> currently uses the tag \"next\" to identify the upcoming version, and the tag \"latest\" to identify the current version."
+msgstr ""
+
+#: npm-dist-tag.1.xml:81(para)
+msgid "A project might choose to have multiple streams of development, e.g., \"stable\", \"canary\"."
+msgstr ""
+
+#: npm-dist-tag.1.xml:85(title)
+msgid "CAVEATS"
+msgstr ""
+
+#: npm-dist-tag.1.xml:86(para)
+msgid "This command used to be known as <emphasis remap=\"B\">npm tag</emphasis>, which only created new tags, and so had a different syntax."
+msgstr ""
+
+#: npm-dist-tag.1.xml:89(para)
+msgid "Tags must share a namespace with version numbers, because they are specified in the same slot: <emphasis remap=\"B\">npm install &lt;pkg&gt;@&lt;version&gt;</emphasis> vs <emphasis remap=\"B\">npm install &lt;pkg&gt;@&lt;tag&gt;</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-dist-tag.1.xml:92(para)
+msgid "Tags that can be interpreted as valid semver ranges will be rejected. For example, <emphasis remap=\"B\">v1.4</emphasis> cannot be used as a tag, because it is interpreted by semver as <emphasis remap=\"B\">&gt;=1.4.0 &lt;1.5.0</emphasis>&thinsp;. See https://github.com/npm/npm/issues/6082&thinsp;."
+msgstr ""
+
+#: npm-dist-tag.1.xml:96(para)
+msgid "The simplest way to avoid semver problems with tags is to use tags that do not begin with a number or the letter <emphasis remap=\"B\">v</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-dist-tag.1.xml:100(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-dist-tag.1.xml:104(para)
+msgid "npm help tag"
+msgstr ""
+
+#: npm-dist-tag.1.xml:107(para)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-dist-tag.1.xml:110(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-dist-tag.1.xml:113(para)
+msgid "npm help dedupe"
+msgstr ""
+
+#: npm-dist-tag.1.xml:116(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-dist-tag.1.xml:119(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-dist-tag.1.xml:122(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-dist-tag.1.xml:125(para)
+msgid "npm apihelp tag"
+msgstr ""
+
+#: npm-dist-tag.1.xml:128(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-dist-tag.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,146 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-logout.1.xml:7(refentrytitle)
+msgid "NPM-LOGOUT"
+msgstr ""
+
+#: npm-logout.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-logout.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-logout.1.xml:12(refname)
+msgid "npm-logout"
+msgstr ""
+
+#: npm-logout.1.xml:13(refpurpose)
+msgid "Log out of the registry"
+msgstr ""
+
+#: npm-logout.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-logout.1.xml:18(replaceable)
+msgid "logout"
+msgstr ""
+
+#: npm-logout.1.xml:19(replaceable)
+msgid "&lt;url&gt;"
+msgstr ""
+
+#: npm-logout.1.xml:19(arg)
+msgid "--registry=<placeholder-1/>"
+msgstr ""
+
+#: npm-logout.1.xml:20(replaceable)
+msgid "&lt;@scope&gt;"
+msgstr ""
+
+#: npm-logout.1.xml:20(arg)
+msgid "--scope=<placeholder-1/>"
+msgstr ""
+
+#: npm-logout.1.xml:25(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-logout.1.xml:26(para)
+msgid "When logged into a registry that supports token-based authentication, tell the server to end this token's session. This will invalidate the token everywhere you're using it, not just for the current environment."
+msgstr ""
+
+#: npm-logout.1.xml:30(para)
+msgid "When logged into a legacy registry that uses username and password authentication, this will clear the credentials in your user configuration. In this case, it will <emphasis remap=\"I\">only</emphasis> affect the current environment."
+msgstr ""
+
+#: npm-logout.1.xml:34(para)
+msgid "If <option>--scope</option> is provided, this will find the credentials for the registry connected to that scope, if set."
+msgstr ""
+
+#: npm-logout.1.xml:38(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-logout.1.xml:40(title)
+msgid "registry"
+msgstr ""
+
+#: npm-logout.1.xml:42(para)
+msgid "Default: <ulink url=\"http://registry.npmjs.org/\">http://registry.npmjs.org/</ulink>"
+msgstr ""
+
+#: npm-logout.1.xml:44(para)
+msgid "The base URL of the npm package registry. If <emphasis remap=\"B\">scope</emphasis> is also specified, it takes precedence."
+msgstr ""
+
+#: npm-logout.1.xml:48(title)
+msgid "scope"
+msgstr ""
+
+#: npm-logout.1.xml:50(para)
+msgid "Default: none"
+msgstr ""
+
+#: npm-logout.1.xml:52(para)
+msgid "If specified, the user and login credentials given will be associated with the specified scope. See npm help 7 <emphasis remap=\"B\">npm-scope</emphasis>&thinsp;. You can use both at the same time, e.g."
+msgstr ""
+
+#: npm-logout.1.xml:57(ulink)
+msgid "http://myregistry.example.com"
+msgstr ""
+
+#: npm-logout.1.xml:56(literallayout)
+#, no-wrap
+msgid "\nnpm adduser --registry=<placeholder-1/> --scope=@myco\n"
+msgstr ""
+
+#. .fi
+#: npm-logout.1.xml:60(para)
+msgid "This will set a registry for the given scope and login or create a user for that registry at the same time."
+msgstr ""
+
+#: npm-logout.1.xml:65(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-logout.1.xml:69(para)
+msgid "npm help adduser"
+msgstr ""
+
+#: npm-logout.1.xml:72(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-logout.1.xml:75(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-logout.1.xml:78(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-logout.1.xml:81(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-logout.1.xml:84(para)
+msgid "npm help whoami"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-logout.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-completion.1.xml:7(refentrytitle)
+msgid "NPM-COMPLETION"
+msgstr ""
+
+#: npm-completion.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-completion.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-completion.1.xml:12(refname)
+msgid "npm-completion"
+msgstr ""
+
+#: npm-completion.1.xml:13(refpurpose)
+msgid "Tab Completion for npm"
+msgstr ""
+
+#: npm-completion.1.xml:17(para)
+msgid "source &lt;(npm completion)"
+msgstr ""
+
+#: npm-completion.1.xml:21(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-completion.1.xml:22(para)
+msgid "Enables tab-completion in all npm commands."
+msgstr ""
+
+#: npm-completion.1.xml:24(para)
+msgid "The synopsis above loads the completions into your current shell. Adding it to your ~/.bashrc or ~/.zshrc will make the completions available everywhere:"
+msgstr ""
+
+#: npm-completion.1.xml:29(literallayout)
+#, no-wrap
+msgid "\nnpm completion &gt;&gt; ~/.bashrc\nnpm completion &gt;&gt; ~/.zshrc\n"
+msgstr ""
+
+#. .fi
+#: npm-completion.1.xml:34(para)
+msgid "You may of course also pipe the output of npm completion to a file such as <filename>/usr/local/etc/bash_completion.d/npm</filename> if you have a system that will read that file for you."
+msgstr ""
+
+#: npm-completion.1.xml:38(para)
+msgid "When <emphasis remap=\"B\">COMP_CWORD</emphasis>, <emphasis remap=\"B\">COMP_LINE</emphasis>, and <emphasis remap=\"B\">COMP_POINT</emphasis> are defined in the environment, <emphasis remap=\"B\">npm completion</emphasis> acts in \"plumbing mode\", and outputs completions based on the arguments."
+msgstr ""
+
+#: npm-completion.1.xml:43(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-completion.1.xml:47(para)
+msgid "npm help 7 developers"
+msgstr ""
+
+#: npm-completion.1.xml:50(para)
+msgid "npm help 7 faq"
+msgstr ""
+
+#: npm-completion.1.xml:53(para)
+msgid "npm help npm"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-completion.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

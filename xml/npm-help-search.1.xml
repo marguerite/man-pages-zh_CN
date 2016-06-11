@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmhelpsearch1'>
+<refmeta>
+<refentrytitle>NPM-HELP-SEARCH</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-help-search</refname>
+<refpurpose>Search npm help documentation</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<para>npm help-search &lt;text&gt;</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This command will search the npm markdown documentation files for the
+terms provided, and then list the results, sorted by relevance.</para>
+
+<para>If only one result is found, then it will show that help topic.</para>
+
+<para>If the argument to <emphasis remap='B'>npm help</emphasis> is not a known help topic, then it will
+call <emphasis remap='B'>help-search</emphasis>&thinsp;.  It is rarely if ever necessary to call this
+command directly.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='long'><title>long</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Default false</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If true, the "long" flag will cause help-search to output context around
+where the terms were found in the documentation.</para>
+
+<para>If false, then help-search will just list out the help topics found.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help npm</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 faq</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help help</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

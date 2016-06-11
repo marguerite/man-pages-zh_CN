@@ -1,0 +1,233 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-update.1.xml:7(refentrytitle)
+msgid "NPM-UPDATE"
+msgstr ""
+
+#: npm-update.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-update.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-update.1.xml:12(refname)
+msgid "npm-update"
+msgstr ""
+
+#: npm-update.1.xml:13(refpurpose)
+msgid "Update a package"
+msgstr ""
+
+#: npm-update.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-update.1.xml:18(replaceable)
+msgid "update"
+msgstr ""
+
+#: npm-update.1.xml:19(arg)
+msgid "-g"
+msgstr ""
+
+#: npm-update.1.xml:20(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-update.1.xml:25(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-update.1.xml:26(para)
+msgid "This command will update all the packages listed to the latest version (specified by the <emphasis remap=\"B\">tag</emphasis> config), respecting semver."
+msgstr ""
+
+#: npm-update.1.xml:29(para)
+msgid "It will also install missing packages. As with all commands that install packages, the <option>--dev</option> flag will cause <emphasis remap=\"B\">devDependencies</emphasis> to be processed as well."
+msgstr ""
+
+#: npm-update.1.xml:33(para)
+msgid "If the <option>-g</option> flag is specified, this command will update globally installed packages."
+msgstr ""
+
+#: npm-update.1.xml:36(para)
+msgid "If no package name is specified, all packages in the specified location (global or local) will be updated."
+msgstr ""
+
+#: npm-update.1.xml:39(para)
+msgid "As of <email>npm@2.6.1</email>, the <emphasis remap=\"B\">npm update</emphasis> will only inspect top-level packages. Prior versions of <command>npm</command> would also recursively inspect all dependencies. To get the old behavior, use <userinput>npm --depth 9999 update</userinput>, but be warned that simultaneous asynchronous update of all packages, including <command>npm</command> itself and packages that <command>npm</command> depends on, often causes problems up to and including the uninstallation of <command>npm</command> itself."
+msgstr ""
+
+#: npm-update.1.xml:46(para)
+msgid "To restore a missing <command>npm</command>, use the command:"
+msgstr ""
+
+#: npm-update.1.xml:48(literallayout)
+#, no-wrap
+msgid "\ncurl -L https://npmjs.com/install.sh | sh\n"
+msgstr ""
+
+#: npm-update.1.xml:53(title)
+msgid "EXAMPLES"
+msgstr ""
+
+#: npm-update.1.xml:54(para)
+msgid "IMPORTANT VERSION NOTE: these examples assume <email>npm@2.6.1</email> or later. For older versions of <command>npm</command>, you must specify <option>--depth 0</option> to get the behavior described below."
+msgstr ""
+
+#: npm-update.1.xml:58(para)
+msgid "For the examples below, assume that the current package is <emphasis remap=\"B\">app</emphasis> and it depends on dependencies, <emphasis remap=\"B\">dep1</emphasis> (<emphasis remap=\"B\">dep2</emphasis>, .. etc.). The published versions of <emphasis remap=\"B\">dep1</emphasis> are:"
+msgstr ""
+
+#: npm-update.1.xml:61(literallayout)
+#, no-wrap
+msgid "\n{\n  dist-tags: { latest: \"1.2.2\" },\n  versions: { \"1.2.2\",\n              \"1.2.1\",\n              \"1.2.0\",\n              \"1.1.2\",\n              \"1.1.1\",\n              \"1.0.0\",\n              \"0.4.1\",\n              \"0.4.0\",\n              \"0.2.0\"\n  }\n}\n"
+msgstr ""
+
+#: npm-update.1.xml:77(title)
+msgid "Caret Dependencies"
+msgstr ""
+
+#: npm-update.1.xml:79(para)
+msgid "If <emphasis remap=\"B\">app</emphasis>&thinsp;'s <emphasis remap=\"B\">package.json</emphasis> contains:"
+msgstr ""
+
+#: npm-update.1.xml:81(literallayout) npm-update.1.xml:139(literallayout)
+#, no-wrap
+msgid "\ndependencies: {\n  dep1: \"^1.1.1\"\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-update.1.xml:87(para)
+msgid "Then <emphasis remap=\"B\">npm update</emphasis> will install <email>dep1@1.2.2</email>, because <literal>1.2.2</literal> is <emphasis remap=\"B\">latest</emphasis> and <literal>1.2.2</literal> satisfies <emphasis remap=\"B\">^1.1.1</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-update.1.xml:91(title)
+msgid "Tilde Dependencies"
+msgstr ""
+
+#: npm-update.1.xml:93(para)
+msgid "However, if <emphasis remap=\"B\">app</emphasis>&thinsp;'s <emphasis remap=\"B\">package.json</emphasis> contains:"
+msgstr ""
+
+#: npm-update.1.xml:95(literallayout)
+#, no-wrap
+msgid "\ndependencies: {\n  dep1: \"~1.1.1\"\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-update.1.xml:101(para)
+msgid "In this case, running <emphasis remap=\"B\">npm update</emphasis> will install <email>dep1@1.1.2</email>&thinsp;. Even though the <emphasis remap=\"B\">latest</emphasis> tag points to <literal>1.2.2</literal>, this version does not satisfy <emphasis remap=\"B\">~1.1.1</emphasis>, which is equivalent to <emphasis remap=\"B\">&gt;=1.1.1 &lt;1.2.0</emphasis>&thinsp;. So the highest-sorting version that satisfies <emphasis remap=\"B\">~1.1.1</emphasis> is used, which is <literal>1.1.2</literal>&thinsp;."
+msgstr ""
+
+#: npm-update.1.xml:107(title)
+msgid "Caret Dependencies below 1.0.0"
+msgstr ""
+
+#: npm-update.1.xml:109(para)
+msgid "Suppose <emphasis remap=\"B\">app</emphasis> has a caret dependency on a version below <literal>1.0.0</literal>, for example:"
+msgstr ""
+
+#: npm-update.1.xml:111(literallayout)
+#, no-wrap
+msgid "\ndependencies: {\n  dep1: \"^0.2.0\"\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-update.1.xml:117(para)
+msgid "<emphasis remap=\"B\">npm update</emphasis> will install <email>dep1@0.2.0</email>, because there are no other versions which satisfy <emphasis remap=\"B\">^0.2.0</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-update.1.xml:120(para)
+msgid "If the dependence were on <emphasis remap=\"B\">^0.4.0</emphasis>:"
+msgstr ""
+
+#: npm-update.1.xml:122(literallayout)
+#, no-wrap
+msgid "\ndependencies: {\n  dep1: \"^0.4.0\"\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-update.1.xml:128(para)
+msgid "Then <emphasis remap=\"B\">npm update</emphasis> will install <email>dep1@0.4.1</email>, because that is the highest-sorting version that satisfies <emphasis remap=\"B\">^0.4.0</emphasis> (<emphasis remap=\"B\">&gt;= 0.4.0 &lt;0.5.0</emphasis>)"
+msgstr ""
+
+#: npm-update.1.xml:132(title)
+msgid "Recording Updates with <option>--save</option>"
+msgstr ""
+
+#: npm-update.1.xml:134(para)
+msgid "When you want to update a package and save the new version as the minimum required dependency in <emphasis remap=\"B\">package.json</emphasis>, you can use <emphasis remap=\"B\">npm update -S</emphasis> or <emphasis remap=\"B\">npm update --save</emphasis>&thinsp;. For example if <emphasis remap=\"B\">package.json</emphasis> contains:"
+msgstr ""
+
+#. .fi
+#: npm-update.1.xml:145(para)
+msgid "Then <emphasis remap=\"B\">npm update --save</emphasis> will install <email>dep1@1.2.2</email> (i.e., <emphasis remap=\"B\">latest</emphasis>), and <emphasis remap=\"B\">package.json</emphasis> will be modified:"
+msgstr ""
+
+#: npm-update.1.xml:148(literallayout)
+#, no-wrap
+msgid "\ndependencies: {\n  dep1: \"^1.2.2\"\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-update.1.xml:154(para)
+msgid "Note that <command>npm</command> will only write an updated version to <emphasis remap=\"B\">package.json</emphasis> if it installs a new package."
+msgstr ""
+
+#: npm-update.1.xml:158(title)
+msgid "Updating Globally-Installed Packages"
+msgstr ""
+
+#: npm-update.1.xml:160(para)
+msgid "<emphasis remap=\"B\">npm update -g</emphasis> will apply the <emphasis remap=\"B\">update</emphasis> action to each globally- installed package that is <emphasis remap=\"B\">outdated</emphasis> -- that is, has a version that is different from <emphasis remap=\"B\">latest</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-update.1.xml:164(para)
+msgid "NOTE: If a package has been upgraded to a version newer than <emphasis remap=\"B\">latest</emphasis>, it will be <emphasis remap=\"I\">downgraded</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-update.1.xml:169(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-update.1.xml:173(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-update.1.xml:176(para)
+msgid "npm help outdated"
+msgstr ""
+
+#: npm-update.1.xml:179(para)
+msgid "npm help shrinkwrap"
+msgstr ""
+
+#: npm-update.1.xml:182(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-update.1.xml:185(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-update.1.xml:188(para)
+msgid "npm help ls"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-update.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,421 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: btrfs.5.xml:36(refname)
+msgid "btrfs-mount"
+msgstr ""
+
+#: btrfs.5.xml:37(refpurpose)
+msgid "mount options and supported file attributes for the btrfs filesystem"
+msgstr ""
+
+#: btrfs.5.xml:42(command)
+msgid "man"
+msgstr ""
+
+#: btrfs.5.xml:42(replaceable)
+msgid "btrfs"
+msgstr ""
+
+#: btrfs.5.xml:47(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: btrfs.5.xml:49(para)
+msgid "This document describes mount options specific to the btrfs filesystem. Other generic mount options are available,and are described in the <citerefentry><refentrytitle>mount</refentrytitle><manvolnum>8</manvolnum></citerefentry> manpage."
+msgstr ""
+
+#: btrfs.5.xml:52(title)
+msgid "MOUNT OPTIONS"
+msgstr ""
+
+#: btrfs.5.xml:53(emphasis)
+msgid "alloc_start="
+msgstr ""
+
+#: btrfs.5.xml:53(emphasis) btrfs.5.xml:127(emphasis)
+msgid "bytes"
+msgstr ""
+
+#: btrfs.5.xml:54(literallayout)
+#, no-wrap
+msgid "\nDebugging option to force all block allocations above a certain byte threshold on each block device. The value is specified in bytes, optionally with a K, M, or G suffix, case insensitive. Default is 1MB.\n"
+msgstr ""
+
+#: btrfs.5.xml:58(emphasis)
+msgid "autodefrag"
+msgstr ""
+
+#: btrfs.5.xml:59(programlisting)
+#, no-wrap
+msgid "\nDisable/enable auto defragmentation. Auto defragmentation detects small random writes into files and queue them up for the defrag process. Works best for small files; Not well suited for large database workloads.\n"
+msgstr ""
+
+#. remap='RE'
+#: btrfs.5.xml:63(para)
+msgid "<emphasis remap=\"B\">check_int</emphasis>|<emphasis remap=\"B\">check_int_data</emphasis>|<emphasis remap=\"B\">check_int_print_mask=</emphasis><emphasis remap=\"I\">value</emphasis>"
+msgstr ""
+
+#: btrfs.5.xml:65(para)
+msgid "These debugging options control the behavior of the integrity checking module (the BTRFS_FS_CHECK_INTEGRITY config option required). <emphasis remap=\"B\">check_int</emphasis> enables the integrity checker module, which examines all block write requests to ensure on-disk consistency, at a large memory and CPU cost. <emphasis remap=\"B\">check_int_data</emphasis> includes extent data in the integrity checks, and implies the check_int option. <emphasis remap=\"B\">check_int_print_mask</emphasis> takes a bitmask of BTRFSIC_PRINT_MASK_* values as defined in <emphasis remap=\"I\">fs/btrfs/check-integrity.c</emphasis>, to control the integrity checker module behavior."
+msgstr ""
+
+#: btrfs.5.xml:74(para)
+msgid "See comments at the top of <emphasis remap=\"I\">fs/btrfs/check-integrity.c</emphasis> for more info."
+msgstr ""
+
+#: btrfs.5.xml:79(emphasis)
+msgid "commit="
+msgstr ""
+
+#: btrfs.5.xml:79(emphasis)
+msgid "seconds"
+msgstr ""
+
+#: btrfs.5.xml:80(programlisting)
+#, no-wrap
+msgid "\nSet the interval of periodic commit, 30 seconds by default. Higher values defer data being synced to permanent storage with obvious consequences when the system crashes. The upper bound is not forced, but a warning is printed if it&rsquo;s more than 300 seconds (5 minutes).\n"
+msgstr ""
+
+#. remap='RE'
+#: btrfs.5.xml:83(para)
+msgid "<emphasis remap=\"B\">compress</emphasis>|<emphasis remap=\"B\">compress=</emphasis><emphasis remap=\"I\">type</emphasis>|<emphasis remap=\"B\">compress-force</emphasis>|<emphasis remap=\"B\">compress-force=</emphasis><emphasis remap=\"I\">type</emphasis>"
+msgstr ""
+
+#: btrfs.5.xml:84(literallayout)
+#, no-wrap
+msgid "\nControl BTRFS file data compression. Type may be specified as \"zlib\" \"lzo\" or \"no\" (for no compression, used for remounting). If no type is specified, zlib is used. If compress-force is specified, all files will be compressed, whether or not they compress well. If compression is enabled, nodatacow and nodatasum are disabled.\n"
+msgstr ""
+
+#: btrfs.5.xml:87(emphasis)
+msgid "degraded"
+msgstr ""
+
+#: btrfs.5.xml:88(literallayout)
+#, no-wrap
+msgid "\nAllow mounts to continue with missing devices. A read-write mount may fail with too many devices missing, for example if a stripe member is completely missing.\n"
+msgstr ""
+
+#: btrfs.5.xml:92(emphasis)
+msgid "device="
+msgstr ""
+
+#: btrfs.5.xml:92(emphasis)
+msgid "devicepath"
+msgstr ""
+
+#: btrfs.5.xml:93(programlisting)
+#, no-wrap
+msgid "\nSpecify a device during mount so that ioctls on the control device can be avoided. Especially useful when trying to mount a multi-device setup as root. May be specified multiple times for multiple devices.\n"
+msgstr ""
+
+#: btrfs.5.xml:97(emphasis)
+msgid "discard"
+msgstr ""
+
+#: btrfs.5.xml:98(literallayout)
+#, no-wrap
+msgid "\nDisable/enable discard mount option. Discard issues frequent commands to let the block device reclaim space freed by the filesystem. This is useful for SSD devices, thinly provisioned LUNs and virtual machine images, but may have a significant performance impact. (The fstrim command is also available to initiate batch trims from userspace).\n"
+msgstr ""
+
+#: btrfs.5.xml:101(emphasis)
+msgid "enospc_debug"
+msgstr ""
+
+#: btrfs.5.xml:102(literallayout)
+#, no-wrap
+msgid "\nDisable/enable debugging option to be more verbose in some ENOSPC conditions.\n"
+msgstr ""
+
+#: btrfs.5.xml:106(emphasis)
+msgid "fatal_errors="
+msgstr ""
+
+#: btrfs.5.xml:106(emphasis)
+msgid "action"
+msgstr ""
+
+#: btrfs.5.xml:108(para)
+msgid "Action to take when encountering a fatal error."
+msgstr ""
+
+#: btrfs.5.xml:110(para)
+msgid "\"bug\" - BUG() on a fatal error. This is the default."
+msgstr ""
+
+#: btrfs.5.xml:112(para)
+msgid "\"panic\" - panic() on a fatal error."
+msgstr ""
+
+#: btrfs.5.xml:115(emphasis)
+msgid "flushoncommit"
+msgstr ""
+
+#: btrfs.5.xml:117(para)
+msgid "The <emphasis remap=\"B\">flushoncommit</emphasis> mount option forces any data dirtied by a write in a prior transaction to commit as part of the current commit. This makes the committed state a fully consistent view of the file system from the application&rsquo;s perspective (i.e., it includes all completed file system operations). This was previously the behavior only when a snapshot is created."
+msgstr ""
+
+#: btrfs.5.xml:122(emphasis)
+msgid "inode_cache"
+msgstr ""
+
+#: btrfs.5.xml:123(literallayout)
+#, no-wrap
+msgid "\nEnable free inode number caching. Defaults to off due to an overflow problem when the free space crcs don&rsquo;t fit inside a single page.\n"
+msgstr ""
+
+#: btrfs.5.xml:127(emphasis)
+msgid "max_inline="
+msgstr ""
+
+#: btrfs.5.xml:128(literallayout)
+#, no-wrap
+msgid "\nSpecify the maximum amount of space, in bytes, that can be inlined in a metadata B-tree leaf. The value is specified in bytes, optionally with a K, M, or G suffix, case insensitive. In practice, this value is limited by the root sector size, with some space unavailable due to leaf headers. For a 4k sectorsize, max inline data is ~3900 bytes.\n"
+msgstr ""
+
+#: btrfs.5.xml:132(emphasis)
+msgid "metadata_ratio="
+msgstr ""
+
+#: btrfs.5.xml:132(emphasis)
+msgid "value"
+msgstr ""
+
+#: btrfs.5.xml:134(para)
+msgid "Specify that 1 metadata chunk should be allocated after every <emphasis remap=\"I\">value</emphasis> data chunks. Off by default."
+msgstr ""
+
+#: btrfs.5.xml:139(emphasis)
+msgid "noacl"
+msgstr ""
+
+#: btrfs.5.xml:141(para)
+msgid "Enable/disable support for Posix Access Control Lists (ACLs). See the <citerefentry><refentrytitle>acl</refentrytitle><manvolnum>5</manvolnum></citerefentry> manual page for more information about ACLs."
+msgstr ""
+
+#: btrfs.5.xml:145(emphasis)
+msgid "nobarrier"
+msgstr ""
+
+#: btrfs.5.xml:146(literallayout)
+#, no-wrap
+msgid "\nensure that certain IOs make it through the device cache and are on persistent storage. If disabled on a device with a volatile (non-battery-backed) write-back cache, nobarrier option will lead to filesystem corruption on a system crash or power loss.\n"
+msgstr ""
+
+#: btrfs.5.xml:149(emphasis)
+msgid "nodatacow"
+msgstr ""
+
+#: btrfs.5.xml:150(literallayout)
+#, no-wrap
+msgid "\nEnable/disable data copy-on-write for newly created files. Nodatacow implies nodatasum, and disables all compression.\n"
+msgstr ""
+
+#: btrfs.5.xml:154(emphasis)
+msgid "nodatasum"
+msgstr ""
+
+#: btrfs.5.xml:155(literallayout)
+#, no-wrap
+msgid "\nEnable/disable data checksumming for newly created files. Datasum implies datacow.\n"
+msgstr ""
+
+#: btrfs.5.xml:159(emphasis)
+msgid "notreelog"
+msgstr ""
+
+#: btrfs.5.xml:160(literallayout)
+#, no-wrap
+msgid "\nEnable/disable the tree logging used for fsync and O_SYNC writes.\n"
+msgstr ""
+
+#: btrfs.5.xml:164(emphasis)
+msgid "recovery"
+msgstr ""
+
+#: btrfs.5.xml:165(literallayout)
+#, no-wrap
+msgid "\nEnable autorecovery attempts if a bad tree root is found at mount time. Currently this scans a list of several previous tree roots and tries to use the first readable.\n"
+msgstr ""
+
+#: btrfs.5.xml:169(emphasis)
+msgid "rescan_uuid_tree"
+msgstr ""
+
+#: btrfs.5.xml:170(literallayout)
+#, no-wrap
+msgid "\nForce check and rebuild procedure of the UUID tree. This should not normally be needed.\n"
+msgstr ""
+
+#: btrfs.5.xml:174(emphasis)
+msgid "skip_balance"
+msgstr ""
+
+#: btrfs.5.xml:175(programlisting)
+#, no-wrap
+msgid "\nSkip automatic resume of interrupted balance operation after mount. May be resumed with \"btrfs balance resume.\"\n"
+msgstr ""
+
+#: btrfs.5.xml:179(emphasis)
+msgid "nospace_cache"
+msgstr ""
+
+#: btrfs.5.xml:180(literallayout)
+#, no-wrap
+msgid "\nDisable freespace cache loading without clearing the cache.\n"
+msgstr ""
+
+#: btrfs.5.xml:184(emphasis)
+msgid "clear_cache"
+msgstr ""
+
+#: btrfs.5.xml:185(literallayout)
+#, no-wrap
+msgid "\nForce clearing and rebuilding of the disk space cache if something has gone wrong.\n"
+msgstr ""
+
+#. remap='RE'
+#: btrfs.5.xml:189(para)
+msgid "<emphasis remap=\"B\">ssd</emphasis>|<emphasis remap=\"B\">nossd</emphasis>|<emphasis remap=\"B\">ssd_spread</emphasis>"
+msgstr ""
+
+#: btrfs.5.xml:191(para)
+msgid "Options to control ssd allocation schemes. By default, BTRFS will enable or disable ssd allocation heuristics depending on whether a rotational or nonrotational disk is in use. The ssd and nossd options can override this autodetection."
+msgstr ""
+
+#: btrfs.5.xml:193(para)
+msgid "The ssd_spread mount option attempts to allocate into big chunks of unused space, and may perform better on low-end ssds. ssd_spread implies ssd, enabling all other ssd heuristics as well."
+msgstr ""
+
+#: btrfs.5.xml:196(emphasis)
+msgid "subvol="
+msgstr ""
+
+#: btrfs.5.xml:196(emphasis)
+msgid "path"
+msgstr ""
+
+#: btrfs.5.xml:198(para)
+msgid "Mount subvolume at <emphasis remap=\"I\">path</emphasis> rather than the root subvolume. The <emphasis remap=\"I\">path</emphasis> is relative to the top level subvolume."
+msgstr ""
+
+#: btrfs.5.xml:205(emphasis)
+msgid "subvolid="
+msgstr ""
+
+#: btrfs.5.xml:205(emphasis)
+msgid "ID"
+msgstr ""
+
+#: btrfs.5.xml:206(literallayout)
+#, no-wrap
+msgid "\nMount subvolume specified by an ID number rather than the root subvolume. This allows mounting of subvolumes which are not in the root of the mounted filesystem. You can use \"btrfs subvolume list\" to see subvolume ID numbers.\n"
+msgstr ""
+
+#: btrfs.5.xml:210(emphasis)
+msgid "subvolrootid="
+msgstr ""
+
+#: btrfs.5.xml:210(emphasis)
+msgid "objectid"
+msgstr ""
+
+#: btrfs.5.xml:210(emphasis)
+msgid "(deprecated)"
+msgstr ""
+
+#: btrfs.5.xml:212(para)
+msgid "Mount subvolume specified by <emphasis remap=\"I\">objectid</emphasis> rather than the root subvolume. This allows mounting of subvolumes which are not in the root of the mounted filesystem. You can use \"btrfs subvolume show\" to see the object ID for a subvolume."
+msgstr ""
+
+#: btrfs.5.xml:217(emphasis)
+msgid "thread_pool="
+msgstr ""
+
+#: btrfs.5.xml:217(emphasis)
+msgid "number"
+msgstr ""
+
+#: btrfs.5.xml:218(literallayout)
+#, no-wrap
+msgid "\nThe number of worker threads to allocate. The default number is equal to the number of CPUs + 2, or 8, whichever is smaller.\n"
+msgstr ""
+
+#: btrfs.5.xml:222(emphasis)
+msgid "user_subvol_rm_allowed"
+msgstr ""
+
+#: btrfs.5.xml:223(literallayout)
+#, no-wrap
+msgid "\nAllow subvolumes to be deleted by a non-root user. Use with caution.\n"
+msgstr ""
+
+#: btrfs.5.xml:228(title)
+msgid "FILE ATTRIBUTES"
+msgstr ""
+
+#: btrfs.5.xml:230(para)
+msgid "The btrfs filesystem supports setting the following file attributes the <citerefentry><refentrytitle>chattr</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility"
+msgstr ""
+
+#: btrfs.5.xml:232(para)
+msgid "<emphasis remap=\"B\">a</emphasis>&mdash; append only"
+msgstr ""
+
+#: btrfs.5.xml:234(para)
+msgid "<emphasis remap=\"B\">A</emphasis>&mdash; no atime updates"
+msgstr ""
+
+#: btrfs.5.xml:236(para)
+msgid "<emphasis remap=\"B\">c</emphasis>&mdash; compressed"
+msgstr ""
+
+#: btrfs.5.xml:238(para)
+msgid "<emphasis remap=\"B\">C</emphasis>&mdash; no copy on write"
+msgstr ""
+
+#: btrfs.5.xml:240(para)
+msgid "<emphasis remap=\"B\">d</emphasis>&mdash; no dump"
+msgstr ""
+
+#: btrfs.5.xml:242(para)
+msgid "<emphasis remap=\"B\">D</emphasis>&mdash; synchronous directory updates"
+msgstr ""
+
+#: btrfs.5.xml:244(para)
+msgid "<emphasis remap=\"B\">i</emphasis>&mdash; immutable"
+msgstr ""
+
+#: btrfs.5.xml:246(para)
+msgid "<emphasis remap=\"B\">S</emphasis>&mdash; synchronous updates"
+msgstr ""
+
+#: btrfs.5.xml:248(para)
+msgid "<emphasis remap=\"B\">X</emphasis>&mdash; no compression"
+msgstr ""
+
+#: btrfs.5.xml:250(para)
+msgid "For descriptions of these attribute flags, please refer to the <citerefentry><refentrytitle>chattr</refentrytitle><manvolnum>1</manvolnum></citerefentry> man page."
+msgstr ""
+
+#: btrfs.5.xml:253(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: btrfs.5.xml:255(para)
+msgid "<citerefentry><refentrytitle>chattr</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>mkfs.btrfs</refentrytitle><manvolnum>8</manvolnum></citerefentry>, <citerefentry><refentrytitle>mount</refentrytitle><manvolnum>8</manvolnum></citerefentry>, <citerefentry><refentrytitle>btrfs</refentrytitle><manvolnum>8</manvolnum></citerefentry>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: btrfs.5.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

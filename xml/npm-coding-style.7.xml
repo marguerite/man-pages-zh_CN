@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmcodingstyle7'>
+<refmeta>
+<refentrytitle>NPM-CODING-STYLE</refentrytitle>
+<manvolnum>7</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-coding-style</refname>
+<refpurpose>npm's "funny" coding style</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>npm's coding style is a bit unconventional.  It is not different for
+difference's sake, but rather a carefully crafted style that is
+designed to reduce visual clutter and make bugs more apparent.</para>
+
+<para>If you want to contribute to npm (which is very encouraged), you should
+make your code conform to npm's style.</para>
+
+<para>Note: this concerns npm's code not the specific packages that you can download from the npm registry.</para>
+</refsect1>
+
+<refsect1 id='line_length'><title>Line Length</title>
+<para>Keep lines shorter than 80 characters.  It's better for lines to be
+too short than to be too long.  Break up long lists, objects, and other
+statements onto multiple lines.</para>
+</refsect1>
+
+<refsect1 id='indentation'><title>Indentation</title>
+<para>Two-spaces.  Tabs are better, but they look like hell in web browsers
+(and on GitHub), and node uses 2 spaces, so that's that.</para>
+
+<para>Configure your editor appropriately.</para>
+</refsect1>
+
+<refsect1 id='curly_braces'><title>Curly braces</title>
+<para>Curly braces belong on the same line as the thing that necessitates them.</para>
+
+<para>Bad:</para>
+
+<literallayout remap='.nf'>
+function ()
+{
+</literallayout> <!-- .fi -->
+
+<para>Good:</para>
+
+<literallayout remap='.nf'>
+function () {
+</literallayout> <!-- .fi -->
+
+<para>If a block needs to wrap to the next line, use a curly brace.  Don't
+use it if it doesn't.</para>
+
+<para>Bad:</para>
+
+<literallayout remap='.nf'>
+if (foo) { bar() }
+while (foo)
+  bar()
+</literallayout> <!-- .fi -->
+
+<para>Good:</para>
+
+<literallayout remap='.nf'>
+if (foo) bar()
+while (foo) {
+  bar()
+}
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='semicolons'><title>Semicolons</title>
+<para>Don't use them except in four situations:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>for (;;)</emphasis> loops.  They're actually required.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>null loops like: <emphasis remap='B'>while (something) ;</emphasis> (But you'd better have a good
+reason for doing that.)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>case 'foo': doSomething(); break</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>In front of a leading <emphasis remap='B'>(</emphasis> or <emphasis remap='B'>[</emphasis> at the start of the line.
+This prevents the expression from being interpreted
+as a function call or property access, respectively.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Some examples of good semicolon usage:</para>
+
+<literallayout remap='.nf'>
+;(x || y).doSomething()
+;[a, b, c].forEach(doSomething)
+for (var i = 0; i &lt; 10; i ++) {
+  switch (state) {
+    case 'begin': start(); continue
+    case 'end': finish(); break
+    default: throw new Error('unknown state')
+  }
+  end()
+}
+</literallayout> <!-- .fi -->
+
+<para>Note that starting lines with <emphasis remap='B'>-</emphasis> and <emphasis remap='B'>+</emphasis> also should be prefixed
+with a semicolon, but this is much less common.</para>
+</refsect1>
+
+<refsect1 id='comma_first'><title>Comma First</title>
+<para>If there is a list of things separated by commas, and it wraps
+across multiple lines, put the comma at the start of the next
+line, directly below the token that starts the list.  Put the
+final token in the list on a line by itself.  For example:</para>
+
+<literallayout remap='.nf'>
+var magicWords = [ 'abracadabra'
+                 , 'gesundheit'
+                 , 'ventrilo'
+                 ]
+  , spells = { 'fireball' : function () { setOnFire() }
+             , 'water' : function () { putOut() }
+             }
+  , a = 1
+  , b = 'abc'
+  , etc
+  , somethingElse
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='quotes'><title>Quotes</title>
+<para>Use single quotes for strings except to avoid escaping.</para>
+
+<para>Bad:</para>
+
+<literallayout remap='.nf'>
+var notOk = "Just double quotes"
+</literallayout> <!-- .fi -->
+
+<para>Good:</para>
+
+<literallayout remap='.nf'>
+var ok = 'String contains "double" quotes'
+var alsoOk = "String contains 'single' quotes or apostrophe"
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='whitespace'><title>Whitespace</title>
+<para>Put a single space in front of ( for anything other than a function call.
+Also use a single space wherever it makes things more readable.</para>
+
+<para>Don't leave trailing whitespace at the end of lines.  Don't indent empty
+lines.  Don't use more spaces than are helpful.</para>
+</refsect1>
+
+<refsect1 id='functions'><title>Functions</title>
+<para>Use named functions.  They make stack traces a lot easier to read.</para>
+</refsect1>
+
+<refsect1 id='callbacks_syncasync_style'><title>Callbacks, Sync/async Style</title>
+<para>Use the asynchronous/non-blocking versions of things as much as possible.
+It might make more sense for npm to use the synchronous fs APIs, but this
+way, the fs and http and child process stuff all uses the same callback-passing
+methodology.</para>
+
+<para>The callback should always be the last argument in the list.  Its first
+argument is the Error or null.</para>
+
+<para>Be very careful never to ever ever throw anything.  It's worse than useless.
+Just send the error message back as the first argument to the callback.</para>
+</refsect1>
+
+<refsect1 id='errors'><title>Errors</title>
+<para>Always create a new Error object with your message.  Don't just return a
+string message to the callback.  Stack traces are handy.</para>
+</refsect1>
+
+<refsect1 id='logging'><title>Logging</title>
+<para>Logging is done using the npmlog <emphasis remap='I'>https://github.com/npm/npmlog</emphasis>
+utility.</para>
+
+<para>Please clean up logs when they are no longer helpful.  In particular,
+logging the same object over and over again is not helpful.  Logs should
+report what's happening so that it's easier to track down where a fault
+occurs.</para>
+
+<para>Use appropriate log levels.  See npm help 7 <emphasis remap='B'>npm-config</emphasis> and search for
+"loglevel".</para>
+</refsect1>
+
+<refsect1 id='case_naming_etc'><title>Case, naming, etc.</title>
+<para>Use <emphasis remap='B'>lowerCamelCase</emphasis> for multiword identifiers when they refer to objects,
+functions, methods, properties, or anything not specified in this section.</para>
+
+<para>Use <emphasis remap='B'>UpperCamelCase</emphasis> for class names (things that you'd pass to "new").</para>
+
+<para>Use <emphasis remap='B'>all-lower-hyphen-css-case</emphasis> for multiword filenames and config keys.</para>
+
+<para>Use named functions.  They make stack traces easier to follow.</para>
+
+<para>Use <emphasis remap='B'>CAPS_SNAKE_CASE</emphasis> for constants, things that should never change
+and are rarely used.</para>
+
+<para>Use a single uppercase letter for function names where the function
+would normally be anonymous, but needs to call itself recursively.  It
+makes it clear that it's a "throwaway" function.</para>
+</refsect1>
+
+<refsect1 id='null_undefined_false_0'><title>null, undefined, false, 0</title>
+<para>Boolean variables and functions should always be either <emphasis remap='B'>true</emphasis> or
+<emphasis remap='B'>false</emphasis>&thinsp;.  Don't set it to 0 unless it's supposed to be a number.</para>
+
+<para>When something is intentionally missing or removed, set it to <emphasis remap='B'>null</emphasis>&thinsp;.</para>
+
+<para>Don't set things to <emphasis remap='B'>undefined</emphasis>&thinsp;.  Reserve that value to mean "not yet
+set to anything."</para>
+
+<para>Boolean objects are verboten.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 7 developers</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 faq</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help npm</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

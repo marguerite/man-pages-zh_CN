@@ -1,0 +1,188 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-adduser.1.xml:7(refentrytitle)
+msgid "NPM-ADDUSER"
+msgstr ""
+
+#: npm-adduser.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-adduser.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-adduser.1.xml:12(refname)
+msgid "npm-adduser"
+msgstr ""
+
+#: npm-adduser.1.xml:13(refpurpose)
+msgid "Add a registry user account"
+msgstr ""
+
+#: npm-adduser.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-adduser.1.xml:18(replaceable)
+msgid "adduser"
+msgstr ""
+
+#: npm-adduser.1.xml:19(replaceable)
+msgid "url"
+msgstr ""
+
+#: npm-adduser.1.xml:19(arg)
+msgid "--registry=<placeholder-1/>"
+msgstr ""
+
+#: npm-adduser.1.xml:20(replaceable)
+msgid "@orgname"
+msgstr ""
+
+#: npm-adduser.1.xml:20(arg)
+msgid "--scope=<placeholder-1/>"
+msgstr ""
+
+#: npm-adduser.1.xml:21(arg)
+msgid "--always-auth"
+msgstr ""
+
+#: npm-adduser.1.xml:26(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-adduser.1.xml:27(para)
+msgid "Create or verify a user named <emphasis remap=\"B\">&lt;username&gt;</emphasis> in the specified registry, and save the credentials to the <emphasis remap=\"B\">&thinsp;.npmrc</emphasis> file. If no registry is specified, the default registry will be used (see npm help 7 <emphasis remap=\"B\">npm-config</emphasis>)."
+msgstr ""
+
+#: npm-adduser.1.xml:31(para)
+msgid "The username, password, and email are read in from prompts."
+msgstr ""
+
+#: npm-adduser.1.xml:33(para)
+msgid "To reset your password, go to https://www.npmjs.com/forgot"
+msgstr ""
+
+#: npm-adduser.1.xml:35(para)
+msgid "To change your email address, go to https://www.npmjs.com/email-edit"
+msgstr ""
+
+#: npm-adduser.1.xml:37(para)
+msgid "You may use this command multiple times with the same user account to authorize on a new machine. When authenticating on a new machine, the username, password and email address must all match with your existing record."
+msgstr ""
+
+#: npm-adduser.1.xml:42(para)
+msgid "<emphasis remap=\"B\">npm login</emphasis> is an alias to <emphasis remap=\"B\">adduser</emphasis> and behaves exactly the same way."
+msgstr ""
+
+#: npm-adduser.1.xml:45(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-adduser.1.xml:47(title)
+msgid "registry"
+msgstr ""
+
+#: npm-adduser.1.xml:49(para)
+msgid "Default: <ulink url=\"http://registry.npmjs.org/\">http://registry.npmjs.org/</ulink>"
+msgstr ""
+
+#: npm-adduser.1.xml:51(para)
+msgid "The base URL of the npm package registry. If <emphasis remap=\"B\">scope</emphasis> is also specified, this registry will only be used for packages with that scope. See npm help 7 <emphasis remap=\"B\">npm-scope</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-adduser.1.xml:55(title)
+msgid "scope"
+msgstr ""
+
+#: npm-adduser.1.xml:57(para)
+msgid "Default: none"
+msgstr ""
+
+#: npm-adduser.1.xml:59(para)
+msgid "If specified, the user and login credentials given will be associated with the specified scope. See npm help 7 <emphasis remap=\"B\">npm-scope</emphasis>&thinsp;. You can use both at the same time, e.g."
+msgstr ""
+
+#: npm-adduser.1.xml:64(ulink)
+msgid "http://myregistry.example.com"
+msgstr ""
+
+#: npm-adduser.1.xml:63(literallayout)
+#, no-wrap
+msgid "\nnpm adduser --registry=<placeholder-1/> --scope=@myco\n"
+msgstr ""
+
+#. .fi
+#: npm-adduser.1.xml:67(para)
+msgid "This will set a registry for the given scope and login or create a user for that registry at the same time."
+msgstr ""
+
+#: npm-adduser.1.xml:71(title)
+msgid "always-auth"
+msgstr ""
+
+#: npm-adduser.1.xml:73(para)
+msgid "Default: false"
+msgstr ""
+
+#: npm-adduser.1.xml:75(para)
+msgid "If specified, save configuration indicating that all requests to the given registry should include authorization information. Useful for private registries. Can be used with <option>--registry</option> and / or <option>--scope</option>, e.g."
+msgstr ""
+
+#: npm-adduser.1.xml:80(ulink)
+msgid "http://private-registry.example.com"
+msgstr ""
+
+#: npm-adduser.1.xml:79(literallayout)
+#, no-wrap
+msgid "\nnpm adduser --registry=<placeholder-1/> --always-auth\n"
+msgstr ""
+
+#. .fi
+#: npm-adduser.1.xml:83(para)
+msgid "This will ensure that all requests to that registry (including for tarballs) include an authorization header. See <emphasis remap=\"B\">always-auth</emphasis> in npm help 7 <emphasis remap=\"B\">npm-config</emphasis> for more details on always-auth. Registry-specific configuration of <emphasis remap=\"B\">always-auth</emphasis> takes precedence over any global configuration."
+msgstr ""
+
+#: npm-adduser.1.xml:90(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-adduser.1.xml:94(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-adduser.1.xml:97(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-adduser.1.xml:100(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-adduser.1.xml:103(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-adduser.1.xml:106(para)
+msgid "npm help owner"
+msgstr ""
+
+#: npm-adduser.1.xml:109(para)
+msgid "npm help whoami"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-adduser.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

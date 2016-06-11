@@ -1,0 +1,308 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-coding-style.7.xml:7(refentrytitle)
+msgid "NPM-CODING-STYLE"
+msgstr ""
+
+#: npm-coding-style.7.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: npm-coding-style.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-coding-style.7.xml:12(refname)
+msgid "npm-coding-style"
+msgstr ""
+
+#: npm-coding-style.7.xml:13(refpurpose)
+msgid "npm's \"funny\" coding style"
+msgstr ""
+
+#: npm-coding-style.7.xml:17(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-coding-style.7.xml:18(para)
+msgid "npm's coding style is a bit unconventional. It is not different for difference's sake, but rather a carefully crafted style that is designed to reduce visual clutter and make bugs more apparent."
+msgstr ""
+
+#: npm-coding-style.7.xml:22(para)
+msgid "If you want to contribute to npm (which is very encouraged), you should make your code conform to npm's style."
+msgstr ""
+
+#: npm-coding-style.7.xml:25(para)
+msgid "Note: this concerns npm's code not the specific packages that you can download from the npm registry."
+msgstr ""
+
+#: npm-coding-style.7.xml:28(title)
+msgid "Line Length"
+msgstr ""
+
+#: npm-coding-style.7.xml:29(para)
+msgid "Keep lines shorter than 80 characters. It's better for lines to be too short than to be too long. Break up long lists, objects, and other statements onto multiple lines."
+msgstr ""
+
+#: npm-coding-style.7.xml:34(title)
+msgid "Indentation"
+msgstr ""
+
+#: npm-coding-style.7.xml:35(para)
+msgid "Two-spaces. Tabs are better, but they look like hell in web browsers (and on GitHub), and node uses 2 spaces, so that's that."
+msgstr ""
+
+#: npm-coding-style.7.xml:38(para)
+msgid "Configure your editor appropriately."
+msgstr ""
+
+#: npm-coding-style.7.xml:41(title)
+msgid "Curly braces"
+msgstr ""
+
+#: npm-coding-style.7.xml:42(para)
+msgid "Curly braces belong on the same line as the thing that necessitates them."
+msgstr ""
+
+#: npm-coding-style.7.xml:44(para) npm-coding-style.7.xml:60(para) npm-coding-style.7.xml:144(para)
+msgid "Bad:"
+msgstr ""
+
+#: npm-coding-style.7.xml:46(literallayout)
+#, no-wrap
+msgid "\nfunction ()\n{\n"
+msgstr ""
+
+#. .fi
+#: npm-coding-style.7.xml:51(para) npm-coding-style.7.xml:68(para) npm-coding-style.7.xml:150(para)
+msgid "Good:"
+msgstr ""
+
+#: npm-coding-style.7.xml:53(literallayout)
+#, no-wrap
+msgid "\nfunction () {\n"
+msgstr ""
+
+#. .fi
+#: npm-coding-style.7.xml:57(para)
+msgid "If a block needs to wrap to the next line, use a curly brace. Don't use it if it doesn't."
+msgstr ""
+
+#: npm-coding-style.7.xml:62(literallayout)
+#, no-wrap
+msgid "\nif (foo) { bar() }\nwhile (foo)\n  bar()\n"
+msgstr ""
+
+#: npm-coding-style.7.xml:70(literallayout)
+#, no-wrap
+msgid "\nif (foo) bar()\nwhile (foo) {\n  bar()\n}\n"
+msgstr ""
+
+#: npm-coding-style.7.xml:78(title)
+msgid "Semicolons"
+msgstr ""
+
+#: npm-coding-style.7.xml:79(para)
+msgid "Don't use them except in four situations:"
+msgstr ""
+
+#: npm-coding-style.7.xml:83(para)
+msgid "<emphasis remap=\"B\">for (;;)</emphasis> loops. They're actually required."
+msgstr ""
+
+#: npm-coding-style.7.xml:86(para)
+msgid "null loops like: <emphasis remap=\"B\">while (something) ;</emphasis> (But you'd better have a good reason for doing that.)"
+msgstr ""
+
+#: npm-coding-style.7.xml:90(emphasis)
+msgid "case 'foo': doSomething(); break"
+msgstr ""
+
+#: npm-coding-style.7.xml:93(para)
+msgid "In front of a leading <emphasis remap=\"B\">(</emphasis> or <emphasis remap=\"B\">[</emphasis> at the start of the line. This prevents the expression from being interpreted as a function call or property access, respectively."
+msgstr ""
+
+#. remap='RE'
+#: npm-coding-style.7.xml:101(para)
+msgid "Some examples of good semicolon usage:"
+msgstr ""
+
+#: npm-coding-style.7.xml:103(literallayout)
+#, no-wrap
+msgid "\n;(x || y).doSomething()\n;[a, b, c].forEach(doSomething)\nfor (var i = 0; i &lt; 10; i ++) {\n  switch (state) {\n    case 'begin': start(); continue\n    case 'end': finish(); break\n    default: throw new Error('unknown state')\n  }\n  end()\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-coding-style.7.xml:116(para)
+msgid "Note that starting lines with <emphasis remap=\"B\">-</emphasis> and <emphasis remap=\"B\">+</emphasis> also should be prefixed with a semicolon, but this is much less common."
+msgstr ""
+
+#: npm-coding-style.7.xml:120(title)
+msgid "Comma First"
+msgstr ""
+
+#: npm-coding-style.7.xml:121(para)
+msgid "If there is a list of things separated by commas, and it wraps across multiple lines, put the comma at the start of the next line, directly below the token that starts the list. Put the final token in the list on a line by itself. For example:"
+msgstr ""
+
+#: npm-coding-style.7.xml:126(literallayout)
+#, no-wrap
+msgid "\nvar magicWords = [ 'abracadabra'\n                 , 'gesundheit'\n                 , 'ventrilo'\n                 ]\n  , spells = { 'fireball' : function () { setOnFire() }\n             , 'water' : function () { putOut() }\n             }\n  , a = 1\n  , b = 'abc'\n  , etc\n  , somethingElse\n"
+msgstr ""
+
+#: npm-coding-style.7.xml:141(title)
+msgid "Quotes"
+msgstr ""
+
+#: npm-coding-style.7.xml:142(para)
+msgid "Use single quotes for strings except to avoid escaping."
+msgstr ""
+
+#: npm-coding-style.7.xml:146(literallayout)
+#, no-wrap
+msgid "\nvar notOk = \"Just double quotes\"\n"
+msgstr ""
+
+#: npm-coding-style.7.xml:152(literallayout)
+#, no-wrap
+msgid "\nvar ok = 'String contains \"double\" quotes'\nvar alsoOk = \"String contains 'single' quotes or apostrophe\"\n"
+msgstr ""
+
+#: npm-coding-style.7.xml:158(title)
+msgid "Whitespace"
+msgstr ""
+
+#: npm-coding-style.7.xml:159(para)
+msgid "Put a single space in front of ( for anything other than a function call. Also use a single space wherever it makes things more readable."
+msgstr ""
+
+#: npm-coding-style.7.xml:162(para)
+msgid "Don't leave trailing whitespace at the end of lines. Don't indent empty lines. Don't use more spaces than are helpful."
+msgstr ""
+
+#: npm-coding-style.7.xml:166(title)
+msgid "Functions"
+msgstr ""
+
+#: npm-coding-style.7.xml:167(para)
+msgid "Use named functions. They make stack traces a lot easier to read."
+msgstr ""
+
+#: npm-coding-style.7.xml:170(title)
+msgid "Callbacks, Sync/async Style"
+msgstr ""
+
+#: npm-coding-style.7.xml:171(para)
+msgid "Use the asynchronous/non-blocking versions of things as much as possible. It might make more sense for npm to use the synchronous fs APIs, but this way, the fs and http and child process stuff all uses the same callback-passing methodology."
+msgstr ""
+
+#: npm-coding-style.7.xml:176(para)
+msgid "The callback should always be the last argument in the list. Its first argument is the Error or null."
+msgstr ""
+
+#: npm-coding-style.7.xml:179(para)
+msgid "Be very careful never to ever ever throw anything. It's worse than useless. Just send the error message back as the first argument to the callback."
+msgstr ""
+
+#: npm-coding-style.7.xml:183(title)
+msgid "Errors"
+msgstr ""
+
+#: npm-coding-style.7.xml:184(para)
+msgid "Always create a new Error object with your message. Don't just return a string message to the callback. Stack traces are handy."
+msgstr ""
+
+#: npm-coding-style.7.xml:188(title)
+msgid "Logging"
+msgstr ""
+
+#: npm-coding-style.7.xml:189(para)
+msgid "Logging is done using the npmlog <emphasis remap=\"I\">https://github.com/npm/npmlog</emphasis> utility."
+msgstr ""
+
+#: npm-coding-style.7.xml:192(para)
+msgid "Please clean up logs when they are no longer helpful. In particular, logging the same object over and over again is not helpful. Logs should report what's happening so that it's easier to track down where a fault occurs."
+msgstr ""
+
+#: npm-coding-style.7.xml:197(para)
+msgid "Use appropriate log levels. See npm help 7 <emphasis remap=\"B\">npm-config</emphasis> and search for \"loglevel\"."
+msgstr ""
+
+#: npm-coding-style.7.xml:201(title)
+msgid "Case, naming, etc."
+msgstr ""
+
+#: npm-coding-style.7.xml:202(para)
+msgid "Use <emphasis remap=\"B\">lowerCamelCase</emphasis> for multiword identifiers when they refer to objects, functions, methods, properties, or anything not specified in this section."
+msgstr ""
+
+#: npm-coding-style.7.xml:205(para)
+msgid "Use <emphasis remap=\"B\">UpperCamelCase</emphasis> for class names (things that you'd pass to \"new\")."
+msgstr ""
+
+#: npm-coding-style.7.xml:207(para)
+msgid "Use <emphasis remap=\"B\">all-lower-hyphen-css-case</emphasis> for multiword filenames and config keys."
+msgstr ""
+
+#: npm-coding-style.7.xml:209(para)
+msgid "Use named functions. They make stack traces easier to follow."
+msgstr ""
+
+#: npm-coding-style.7.xml:211(para)
+msgid "Use <emphasis remap=\"B\">CAPS_SNAKE_CASE</emphasis> for constants, things that should never change and are rarely used."
+msgstr ""
+
+#: npm-coding-style.7.xml:214(para)
+msgid "Use a single uppercase letter for function names where the function would normally be anonymous, but needs to call itself recursively. It makes it clear that it's a \"throwaway\" function."
+msgstr ""
+
+#: npm-coding-style.7.xml:219(title)
+msgid "null, undefined, false, 0"
+msgstr ""
+
+#: npm-coding-style.7.xml:220(para)
+msgid "Boolean variables and functions should always be either <emphasis remap=\"B\">true</emphasis> or <emphasis remap=\"B\">false</emphasis>&thinsp;. Don't set it to 0 unless it's supposed to be a number."
+msgstr ""
+
+#: npm-coding-style.7.xml:223(para)
+msgid "When something is intentionally missing or removed, set it to <emphasis remap=\"B\">null</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-coding-style.7.xml:225(para)
+msgid "Don't set things to <emphasis remap=\"B\">undefined</emphasis>&thinsp;. Reserve that value to mean \"not yet set to anything.\""
+msgstr ""
+
+#: npm-coding-style.7.xml:228(para)
+msgid "Boolean objects are verboten."
+msgstr ""
+
+#: npm-coding-style.7.xml:231(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-coding-style.7.xml:235(para)
+msgid "npm help 7 developers"
+msgstr ""
+
+#: npm-coding-style.7.xml:238(para)
+msgid "npm help 7 faq"
+msgstr ""
+
+#: npm-coding-style.7.xml:241(para)
+msgid "npm help npm"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-coding-style.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmexplore1'>
+<refmeta>
+<refentrytitle>NPM-EXPLORE</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-explore</refname>
+<refpurpose>Browse an installed package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>explore</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;pkg&gt;</replaceable></arg>
+    <arg choice='opt'>-- <replaceable>&lt;cmd&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Spawn a subshell in the directory of the installed package specified.</para>
+
+<para>If a command is specified, then it is run in the subshell, which then
+immediately terminates.</para>
+
+<para>This is particularly handy in the case of git submodules in the
+<emphasis remap='B'>node_modules</emphasis> folder:</para>
+
+<literallayout remap='.nf'>
+npm explore some-dependency -- git pull origin master
+</literallayout> <!-- .fi -->
+
+<para>Note that the package is <emphasis remap='I'>not</emphasis> automatically rebuilt afterwards, so be
+sure to use <emphasis remap='B'>npm rebuild &lt;pkg&gt;</emphasis> if you make any changes.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='shell'><title>shell</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: SHELL environment variable, or "bash" on Posix, or "cmd" on
+Windows</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The shell to run for the <emphasis remap='B'>npm explore</emphasis> command.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help edit</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help rebuild</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help build</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help install</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

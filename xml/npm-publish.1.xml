@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmpublish1'>
+<refmeta>
+<refentrytitle>NPM-PUBLISH</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-publish</refname>
+<refpurpose>Publish a package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>publish</replaceable></arg>
+    <group choice='opt'><arg choice='plain'><replaceable>&lt;tarball&gt;</replaceable></arg><arg choice='plain'><replaceable>&lt;folder&gt;</replaceable></arg></group>
+    <arg choice='opt'>--tag <replaceable>&lt;tag&gt;</replaceable></arg>
+    <group choice='opt'><arg choice='plain'>--access <replaceable>&lt;public</replaceable></arg><arg choice='plain'><replaceable>restricted&gt;</replaceable></arg></group>
+    <sbr/>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>Publishes</command>    <arg choice='plain'><replaceable>'.'</replaceable></arg>
+    <arg choice='plain'><replaceable>if</replaceable></arg>
+    <arg choice='plain'><replaceable>no</replaceable></arg>
+    <arg choice='plain'><replaceable>argument</replaceable></arg>
+    <arg choice='plain'><replaceable>supplied</replaceable></arg>
+    <arg choice='plain'><replaceable>Sets</replaceable></arg>
+    <arg choice='plain'><replaceable>tag</replaceable></arg>
+    <arg choice='plain'><replaceable>'latest'</replaceable></arg>
+    <arg choice='plain'><replaceable>if</replaceable></arg>
+    <arg choice='plain'><replaceable>no</replaceable></arg>
+    <arg choice='plain'>--tag <replaceable>specified</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Publishes a package to the registry so that it can be installed by name. See
+npm help 7 <emphasis remap='B'>npm-developers</emphasis> for details on what's included in the published package, as
+well as details on how the package is built.</para>
+
+<para>By default npm will publish to the public registry. This can be overridden by
+specifying a different default registry or using a npm help 7 <emphasis remap='B'>npm-scope</emphasis> in the name
+(see npm help 5 <emphasis remap='B'>package.json</emphasis>).</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&lt;folder&gt;</emphasis>:
+A folder containing a package.json file</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&lt;tarball&gt;</emphasis>:
+A url or file path to a gzipped tar archive containing a single folder
+with a package.json file inside.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>[--tag &lt;tag&gt;]</emphasis>
+Registers the published package with the given tag, such that <emphasis remap='B'>npm install
+&lt;name&gt;@&lt;tag&gt;</emphasis> will install this version.  By default, <emphasis remap='B'>npm publish</emphasis> updates
+and <emphasis remap='B'>npm install</emphasis> installs the <emphasis remap='B'>latest</emphasis> tag.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>[--access &lt;public|restricted&gt;]</emphasis>
+Tells the registry whether this package should be published as public or
+restricted. Only applies to scoped packages, which default to <emphasis remap='B'>restricted</emphasis>&thinsp;.
+If you don't have a paid account, you must publish with <option>--access public</option>
+to publish scoped packages.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Fails if the package name and version combination already exists in
+the specified registry.</para>
+
+<para>Once a package is published with a given name and version, that
+specific name and version combination can never be used again, even if
+it is removed with npm help unpublish.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 scope</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help adduser</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help owner</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help deprecate</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help tag</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

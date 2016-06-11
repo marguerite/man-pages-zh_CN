@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npminit1'>
+<refmeta>
+<refentrytitle>NPM-INIT</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-init</refname>
+<refpurpose>Interactively create a package.json file</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>init</replaceable></arg>
+    <group choice='opt'><arg choice='plain'>-f </arg><arg choice='plain'>--force </arg><arg choice='plain'>-y </arg><arg choice='plain'>--yes </arg></group>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This will ask you a bunch of questions, and then write a package.json for you.</para>
+
+<para>It attempts to make reasonable guesses about what you want things to be set to,
+and then writes a package.json file with the options you've selected.</para>
+
+<para>If you already have a package.json file, it'll read that first, and default to
+the options in there.</para>
+
+<para>It is strictly additive, so it does not delete options from your package.json
+without a really good reason to do so.</para>
+
+<para>If you invoke it with <option>-f</option>, <option>--force</option>, <option>-y</option>, or <option>--yes</option>, it will use only
+defaults and not prompt you for any options.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='scope'><title>scope</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: none</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The scope under which the new module should be created.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>https://github.com/isaacs/init-package-json</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help version</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 scope</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

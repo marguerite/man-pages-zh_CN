@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-build.1.xml:7(refentrytitle)
+msgid "NPM-BUILD"
+msgstr ""
+
+#: npm-build.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-build.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-build.1.xml:12(refname)
+msgid "npm-build"
+msgstr ""
+
+#: npm-build.1.xml:13(refpurpose)
+msgid "Build a package"
+msgstr ""
+
+#: npm-build.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-build.1.xml:18(replaceable)
+msgid "build"
+msgstr ""
+
+#: npm-build.1.xml:19(replaceable)
+msgid "&lt;package-folder&gt;"
+msgstr ""
+
+#: npm-build.1.xml:21(replaceable)
+msgid "2"
+msgstr ""
+
+#: npm-build.1.xml:24(command)
+msgid "&lt;package-folder&gt;:"
+msgstr ""
+
+#: npm-build.1.xml:29(command)
+msgid "A"
+msgstr ""
+
+#: npm-build.1.xml:31(command)
+msgid "folder"
+msgstr ""
+
+#: npm-build.1.xml:33(command)
+msgid "containing"
+msgstr ""
+
+#: npm-build.1.xml:35(command)
+msgid "a"
+msgstr ""
+
+#: npm-build.1.xml:37(command)
+msgid "package.json"
+msgstr ""
+
+#: npm-build.1.xml:39(command)
+msgid "file"
+msgstr ""
+
+#: npm-build.1.xml:41(command)
+msgid "in"
+msgstr ""
+
+#: npm-build.1.xml:43(command)
+msgid "its"
+msgstr ""
+
+#: npm-build.1.xml:45(command)
+msgid "root."
+msgstr ""
+
+#: npm-build.1.xml:55(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-build.1.xml:56(para)
+msgid "This is the plumbing command called by <emphasis remap=\"B\">npm link</emphasis> and <emphasis remap=\"B\">npm install</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-build.1.xml:58(para)
+msgid "It should generally be called during installation, but if you need to run it directly, run:"
+msgstr ""
+
+#: npm-build.1.xml:61(literallayout)
+#, no-wrap
+msgid "\nnpm run-script build\n"
+msgstr ""
+
+#: npm-build.1.xml:66(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-build.1.xml:70(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-build.1.xml:73(para)
+msgid "npm help link"
+msgstr ""
+
+#: npm-build.1.xml:76(para)
+msgid "npm help 7 scripts"
+msgstr ""
+
+#: npm-build.1.xml:79(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-build.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

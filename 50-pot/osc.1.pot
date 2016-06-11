@@ -1,0 +1,1972 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-06-12 02:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: osc.1.xml:7(refentrytitle)
+msgid "OSC"
+msgstr ""
+
+#: osc.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: osc.1.xml:9(refmiscinfo)
+msgid "Apr 2016"
+msgstr ""
+
+#: osc.1.xml:10(refmiscinfo)
+msgid "osc 0.154.0"
+msgstr ""
+
+#: osc.1.xml:13(refname) osc.1.xml:19(command) osc.1.xml:26(command)
+msgid "osc"
+msgstr ""
+
+#: osc.1.xml:14(refpurpose) osc.1.xml:34(para)
+msgid "openSUSE build service command-line tool."
+msgstr ""
+
+#: osc.1.xml:20(replaceable)
+msgid "GLOBALOPTS"
+msgstr ""
+
+#: osc.1.xml:21(replaceable) osc.1.xml:28(replaceable)
+msgid "SUBCOMMAND"
+msgstr ""
+
+#: osc.1.xml:22(replaceable)
+msgid "OPTS"
+msgstr ""
+
+#: osc.1.xml:23(replaceable)
+msgid "ARGS"
+msgstr ""
+
+#: osc.1.xml:27(replaceable)
+msgid "help"
+msgstr ""
+
+#: osc.1.xml:33(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: osc.1.xml:37(title)
+msgid "COMMANDS"
+msgstr ""
+
+#: osc.1.xml:40(emphasis)
+msgid "add"
+msgstr ""
+
+#: osc.1.xml:42(para)
+msgid "Mark files to be added upon the next commit"
+msgstr ""
+
+#: osc.1.xml:44(para)
+msgid "In case a URL is given the file will get downloaded and registered to be downloaded by the server as well via the download_url source service."
+msgstr ""
+
+#: osc.1.xml:47(para)
+msgid "This is recommended for release tar balls to track their source and to help others to review your changes esp. on version upgrades."
+msgstr ""
+
+#: osc.1.xml:50(para)
+msgid "usage: osc add URL [URL...] osc add FILE [FILE...]"
+msgstr ""
+
+#: osc.1.xml:57(emphasis)
+msgid "addchannels"
+msgstr ""
+
+#: osc.1.xml:59(para)
+msgid "Add channels to project."
+msgstr ""
+
+#: osc.1.xml:61(para)
+msgid "The command adds all channels which are defined to be used for a given source package. The source link target is used to lookup the channels. The command can be used for a certain package or for all in the specified project."
+msgstr ""
+
+#: osc.1.xml:65(para)
+msgid "In case no channel is defined the operation is just returning."
+msgstr ""
+
+#: osc.1.xml:67(para)
+msgid "Examples: osc addchannels [PROJECT [PACKAGE]] Options: -h, --help show this help message and exit -e, --enable-all Enable all added channels including the ones disabled by default. -s, --skip-disabled Skip disabled channels. Otherwise the source gets added, but not the repositories."
+msgstr ""
+
+#: osc.1.xml:82(emphasis)
+msgid "addremove (ar)"
+msgstr ""
+
+#: osc.1.xml:84(para)
+msgid "Adds new files, removes disappeared files"
+msgstr ""
+
+#: osc.1.xml:86(para)
+msgid "Adds all files new in the local copy, and removes all disappeared files."
+msgstr ""
+
+#: osc.1.xml:88(para) osc.1.xml:2650(para)
+msgid "ARG, if specified, is a package working copy."
+msgstr ""
+
+#: osc.1.xml:90(para)
+msgid "Usage: osc addremove [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:93(para)
+msgid "Options: -h, --help show this help message and exit -r, --recursive If CWD is a project dir then scan all package dirs as well"
+msgstr ""
+
+#: osc.1.xml:103(emphasis)
+msgid "aggregatepac"
+msgstr ""
+
+#: osc.1.xml:105(para)
+msgid "\"Aggregate\" a package to another package"
+msgstr ""
+
+#: osc.1.xml:107(para)
+msgid "Aggregation of a package means that the build results (binaries) of a package are basically copied into another project. This can be used to make packages available from building that are needed in a project but available only in a different project. Note that this is done at the expense of disk space. See <ulink url=\"http://en.opensuse.org/openSUSE\">http://en.opensuse.org/openSUSE</ulink>:Build_Service_Tips_and_Tricks#link_and_aggregate for more information."
+msgstr ""
+
+#: osc.1.xml:115(para) osc.1.xml:731(para) osc.1.xml:1164(para)
+msgid "The DESTPAC name is optional; the source packages' name will be used if DESTPAC is omitted."
+msgstr ""
+
+#: osc.1.xml:118(para)
+msgid "usage: osc aggregatepac SOURCEPRJ SOURCEPAC DESTPRJ [DESTPAC] Options: -h, --help show this help message and exit -d, --disable-publish disable publishing of the aggregated package -m SRC=TARGET[,SRC=TARGET], --map-repo=SRC=TARGET[,SRC=TARGET] Allows repository mapping(s) to be given as SRC=TARGET[,SRC=TARGET] --nosources ignore source packages when copying build results to destination project"
+msgstr ""
+
+#: osc.1.xml:135(emphasis)
+msgid "api"
+msgstr ""
+
+#: osc.1.xml:137(para)
+msgid "Issue an arbitrary request to the API"
+msgstr ""
+
+#: osc.1.xml:139(para)
+msgid "Useful for testing."
+msgstr ""
+
+#: osc.1.xml:141(para)
+msgid "URL can be specified either partially (only the path component), or fully with URL scheme and hostname ('http://...')."
+msgstr ""
+
+#: osc.1.xml:144(para)
+msgid "Note the global -A and -H options (see osc help)."
+msgstr ""
+
+#: osc.1.xml:146(para)
+msgid "Examples: osc api /source/home:user osc api -X PUT -T /etc/fstab source/home:user/test5/myfstab osc api -e /configuration"
+msgstr ""
+
+#: osc.1.xml:151(para)
+msgid "Usage: osc api URL"
+msgstr ""
+
+#: osc.1.xml:154(para)
+msgid "Options: -h, --help show this help message and exit -a NAME STRING, --add-header=NAME STRING add the specified header to the request -T FILE, -f FILE, --file=FILE specify filename to upload, uses PUT mode by default -d STRING, --data=STRING specify string data for e.g. POST -e, --edit GET, edit and PUT the location -X HTTP_METHOD, -m HTTP_METHOD, --method=HTTP_METHOD specify HTTP method to use (GET|PUT|DELETE|POST)"
+msgstr ""
+
+#: osc.1.xml:170(emphasis)
+msgid "branch (bco, branchco, getpac)"
+msgstr ""
+
+#: osc.1.xml:172(para)
+msgid "Branch a package"
+msgstr ""
+
+#: osc.1.xml:174(para) osc.1.xml:524(para) osc.1.xml:2007(para) osc.1.xml:2468(para)
+msgid "[See <ulink url=\"http://en.opensuse.org/openSUSE\">http://en.opensuse.org/openSUSE</ulink>:Build_Service_Collaboration for information on this topic.]"
+msgstr ""
+
+#: osc.1.xml:177(para)
+msgid "Create a source link from a package of an existing project to a new subproject of the requesters home project (home:branches:)"
+msgstr ""
+
+#: osc.1.xml:180(para)
+msgid "The branched package will live in home:USERNAME:branches:PROJECT/PACKAGE if nothing else specified."
+msgstr ""
+
+#: osc.1.xml:184(para)
+msgid "With getpac or bco, the branched package will come from one of openSUSE:Factory (list of projects from oscrc:getpac_default_project) if nothing else is specfied on the command line."
+msgstr ""
+
+#: osc.1.xml:189(para)
+msgid "In case of branch errors, where the source has currently merge conflicts use --linkrev=base option."
+msgstr ""
+
+#: osc.1.xml:192(para)
+msgid "usage: osc branch osc branch SOURCEPROJECT SOURCEPACKAGE osc branch SOURCEPROJECT SOURCEPACKAGE TARGETPROJECT osc branch SOURCEPROJECT SOURCEPACKAGE TARGETPROJECT TARGETPACKAGE osc getpac SOURCEPACKAGE osc bco ... Options: -h, --help show this help message and exit --add-repositories-rebuild=add_repositories_rebuild specify the used rebuild strategy for new repositories --add-repositories-block=add_repositories_block specify the used block strategy for new repositories --linkrev=linkrev specify the used revision in the link target. -r rev, --revision=rev branch against a specific revision -N, --new-package create a branch pointing to a not yet existing package -M, --maintenance Create project and package in maintenance mode -m TEXT, --message=TEXT specify message TEXT --noaccess Create a hidden project --extend-package-names Extend packages names with project name as suffix --add-repositories Add repositories to target project (happens by default when project is new) -f, --force force branch, overwrite target -c, --checkout Checkout branched package afterwards using \"co -e -S\"('osc bco' is a shorthand for this option) --nodevelproject do not follow a defined devel project (primary project where a package is developed)"
+msgstr ""
+
+#: osc.1.xml:234(emphasis)
+msgid "build"
+msgstr ""
+
+#: osc.1.xml:236(para)
+msgid "Build a package on your local machine"
+msgstr ""
+
+#: osc.1.xml:238(para)
+msgid "You need to call the command inside a package directory, which should be a buildsystem checkout. (Local modifications are fine.)"
+msgstr ""
+
+#: osc.1.xml:241(para)
+msgid "The arguments REPOSITORY and ARCH can be taken from the first two columns of the 'osc repos' output. BUILD_DESCR is either a RPM spec file, or a Debian dsc file."
+msgstr ""
+
+#: osc.1.xml:245(para)
+msgid "The command honours packagecachedir, build-root and build-uid settings in .oscrc, if present. You may want to set su-wrapper = 'sudo' in .oscrc, and configure sudo with option NOPASSWD for /usr/bin/build."
+msgstr ""
+
+#: osc.1.xml:249(para)
+msgid "If neither --clean nor --noinit is given, build will reuse an existing build-root again, removing unneeded packages and add missing ones. This is usually the fastest option."
+msgstr ""
+
+#: osc.1.xml:253(para)
+msgid "If the package doesn't exist on the server please use the --local-package option. If the project of the package doesn't exist on the server please use the --alternative-project &lt;alternative-project&gt; option: Example: osc build [OPTS] --alternative-project openSUSE:10.3 standard i586 BUILD_DESCR"
+msgstr ""
+
+#: osc.1.xml:260(para)
+msgid "usage: osc build [OPTS] REPOSITORY ARCH BUILD_DESCR osc build [OPTS] REPOSITORY ARCH osc build [OPTS] REPOSITORY (ARCH = hostarch, BUILD_DESCR is detected automatically) osc build [OPTS] ARCH (REPOSITORY = build_repository (config option), BUILD_DESCR is detected automatically) osc build [OPTS] BUILD_DESCR (REPOSITORY = build_repository (config option), ARCH = hostarch) osc build [OPTS] (REPOSITORY = build_repository (config option), ARCH = hostarch, BUILD_DESCR is detected automatically)"
+msgstr ""
+
+#: osc.1.xml:268(para)
+msgid "# Note: # Configuration can be overridden by envvars, e.g. # OSC_SU_WRAPPER overrides the setting of su-wrapper. # OSC_BUILD_ROOT overrides the setting of build-root. # OSC_PACKAGECACHEDIR overrides the setting of packagecachedir."
+msgstr ""
+
+#: osc.1.xml:274(para)
+msgid "Options: -h, --help show this help message and exit --trust-all-projects trust packages from all projects --host=HOST perform the build on a remote server - user@server:~/remote/directory --oldpackages=DIR take previous build from DIR (special values: _self, _link) --download-api-only only fetch packages from the api --disable-cpio-bulk-download disable downloading packages as cpio archive from api --release=N set release number of the package to N -b, --baselibs Create -32bit/-64bit/-x86 rpms for other architectures --disable-debuginfo disable build of debuginfo packages -d, --debuginfo also build debuginfo sub-packages --alternative-project=PROJECT specify the build target project --target=TARGET define target platform --vm-telnet=TELNET Launch a telnet server inside of VM build --vm-type=TYPE use VM type TYPE (e.g. kvm) --linksources use hard links instead of a deep copied source --local-package build a package which does not exist on the server --build-uid=uid:gid|\"caller\" specify the numeric uid:gid pair to assign to the unprivileged \"abuild\" user or use \"caller\" to use the current user uid:gid --userootforbuild Run build as root. The default is to build as unprivileged user. Note that a line \"# norootforbuild\" in the spec file will invalidate this option. --define='X Y' define macro X with value Y --without=X disable feature X for build --with=X enable feature X for build --ccache use ccache to speed up rebuilds --icecream=N use N parallel build jobs with icecream -t N, --threads=N Compile with N threads -j N, --jobs=N Compile with N jobs --root=ROOT Build in specified directory -x PAC, --extra-pkgs=PAC Add this package when installing the build-root -k DIR, --keep-pkgs=DIR Save built packages into this directory -p DIR, --prefer-pkgs=DIR Prefer packages from this directory when installing the build-root --noservice, --no-service Skip run of local source services as specified in _service file. --no-verify, --noverify Skip signature verification of packages used for build. (Global config in .oscrc: no_verify) --nochecks, --no-checks Do not run build checks on the resulting packages. --noinit, --no-init Skip initialization of build root and start with build immediately. --overlay=OVERLAY Copy overlay filesystem to buildroot after installing all RPMs . --rsync-dest=RSYNCDESTPATH Copy folder to buildroot after installing all RPMs. Use together with --rsync-src. This is the path on the TARGET filesystem e.g. /usr/src/packages/BUILD/linux-2.6 . --rsync-src=RSYNCSRCPATH Copy folder to buildroot after installing all RPMs. Use together with --rsync-dest. This is the path on the HOST filesystem e.g. /tmp/linux-kernel-tree. It defines RSYNCDONE 1 . --no-changelog don't update the package changelog from a changes file -l, --preload Preload all files into the cache for offline operation -o, --offline Start with cached prjconf and packages without contacting the api server --clean Delete old build root before initializing it"
+msgstr ""
+
+#: osc.1.xml:374(emphasis)
+msgid "buildconfig"
+msgstr ""
+
+#: osc.1.xml:376(para)
+msgid "Shows the build config"
+msgstr ""
+
+#: osc.1.xml:378(para)
+msgid "Shows the build configuration which is used in building a package. This command is mostly used internally by the 'build' command."
+msgstr ""
+
+#: osc.1.xml:381(para)
+msgid "The returned data is the project-wide build configuration in a format which is directly readable by the build script. It contains RPM macros and BuildRequires expansions, for example."
+msgstr ""
+
+#: osc.1.xml:385(para)
+msgid "The argument REPOSITORY an be taken from the first column of the 'osc repos' output."
+msgstr ""
+
+#: osc.1.xml:388(para)
+msgid "usage: osc buildconfig REPOSITORY (in pkg or prj dir) osc buildconfig PROJECT REPOSITORY"
+msgstr ""
+
+#: osc.1.xml:395(emphasis)
+msgid "buildhistory (buildhist)"
+msgstr ""
+
+#: osc.1.xml:397(para)
+msgid "Shows the build history of a package"
+msgstr ""
+
+#: osc.1.xml:399(para) osc.1.xml:904(para) osc.1.xml:1141(para) osc.1.xml:1828(para)
+msgid "The arguments REPOSITORY and ARCH can be taken from the first two columns of the 'osc repos' output."
+msgstr ""
+
+#: osc.1.xml:402(para)
+msgid "usage: osc buildhist REPOSITORY ARCHITECTURE osc buildhist PROJECT PACKAGE REPOSITORY ARCHITECTURE Options: -h, --help show this help message and exit -l limit, --limit=limit for setting the number of results --csv generate output in CSV (separated by |)"
+msgstr ""
+
+#: osc.1.xml:415(emphasis)
+msgid "buildinfo"
+msgstr ""
+
+#: osc.1.xml:417(para)
+msgid "Shows the build info"
+msgstr ""
+
+#: osc.1.xml:419(para)
+msgid "Shows the build \"info\" which is used in building a package. This command is mostly used internally by the 'build' subcommand. It needs to be called from within a package directory."
+msgstr ""
+
+#: osc.1.xml:423(para)
+msgid "The BUILD_DESCR argument is optional. BUILD_DESCR is a local RPM specfile or Debian \"dsc\" file. If specified, it is sent to the server, and the buildinfo will be based on it. If the argument is not supplied, the buildinfo is derived from the specfile which is currently on the source repository server."
+msgstr ""
+
+#: osc.1.xml:429(para)
+msgid "The returned data is XML and contains a list of the packages used in building, their source, and the expanded BuildRequires."
+msgstr ""
+
+#: osc.1.xml:432(para)
+msgid "The arguments REPOSITORY and ARCH are optional. They can be taken from the first two columns of the 'osc repos' output. If not specified, REPOSITORY defaults to the 'build_repositoy' config entry in your '.oscrc' and ARCH defaults to your host architecture."
+msgstr ""
+
+#: osc.1.xml:437(para)
+msgid "usage: in a package working copy: osc buildinfo [OPTS] REPOSITORY ARCH BUILD_DESCR osc buildinfo [OPTS] REPOSITORY (ARCH = hostarch, BUILD_DESCR is detected automatically) osc buildinfo [OPTS] ARCH (REPOSITORY = build_repository (config option), BUILD_DESCR is detected automatically) osc buildinfo [OPTS] BUILD_DESCR (REPOSITORY = build_repository (config option), ARCH = hostarch) osc buildinfo [OPTS] (REPOSITORY = build_repository (config option), ARCH = hostarch, BUILD_DESCR is detected automatically) Note: if BUILD_DESCR does not exist locally the remote BUILD_DESCR is used"
+msgstr ""
+
+#: osc.1.xml:446(para)
+msgid "osc buildinfo [OPTS] PROJECT PACKAGE REPOSITORY ARCH [BUILD_DESCR]"
+msgstr ""
+
+#: osc.1.xml:448(para)
+msgid "Options: -h, --help show this help message and exit -p DIR, --prefer-pkgs=DIR Prefer packages from this directory when installing the build-root -x PAC, --extra-pkgs=PAC Add this package when computing the buildinfo -d, --debug verbose output of build dependencies"
+msgstr ""
+
+#: osc.1.xml:462(emphasis)
+msgid "buildlog (bl, blt, buildlogtail)"
+msgstr ""
+
+#: osc.1.xml:464(para) osc.1.xml:1897(para)
+msgid "Shows the build log of a package"
+msgstr ""
+
+#: osc.1.xml:466(para)
+msgid "Shows the log file of the build of a package. Can be used to follow the log while it is being written. Needs to be called from within a package directory."
+msgstr ""
+
+#: osc.1.xml:470(para)
+msgid "When called as buildlogtail (or blt) it just shows the end of the logfile. This is useful to see just a build failure reasons."
+msgstr ""
+
+#: osc.1.xml:473(para)
+msgid "The arguments REPOSITORY and ARCH are the first two columns in the 'osc results' output. If the buildlog url is used buildlog command has the same behavior as remotebuildlog."
+msgstr ""
+
+#: osc.1.xml:477(para)
+msgid "Usage: osc buildlog [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:480(para)
+msgid "[REPOSITORY ARCH | BUILDLOGURL] Options: -h, --help show this help message and exit -s, --strip-time strip leading build time from the log -o OFFSET, --offset=OFFSET get log start or end from the offset -l, --last Show the last finished log file"
+msgstr ""
+
+#: osc.1.xml:493(emphasis)
+msgid "cat (less)"
+msgstr ""
+
+#: osc.1.xml:495(para)
+msgid "Output the content of a file to standard output"
+msgstr ""
+
+#: osc.1.xml:497(para)
+msgid "Examples: osc cat project package file osc cat project/package/file osc cat <ulink url=\"http://api.opensuse.org/build/.../_log\">http://api.opensuse.org/build/.../_log</ulink> osc cat <ulink url=\"http://api.opensuse.org/source/../_link\">http://api.opensuse.org/source/../_link</ulink>"
+msgstr ""
+
+#: osc.1.xml:503(para)
+msgid "Usage: osc cat [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:506(para)
+msgid "Options: -h, --help show this help message and exit -M, --meta list meta data files -u, --unexpand always work with unexpanded packages. -e, --expand force expansion of linked packages. -r rev, --revision=rev print out the specified revision"
+msgstr ""
+
+#: osc.1.xml:520(emphasis)
+msgid "changedevelrequest (changedevelreq, cr)"
+msgstr ""
+
+#: osc.1.xml:522(para)
+msgid "Create request to change the devel package definition."
+msgstr ""
+
+#: osc.1.xml:527(para) osc.1.xml:2471(para)
+msgid "See the \"request\" command for showing and modifing existing requests."
+msgstr ""
+
+#: osc.1.xml:529(para)
+msgid "osc changedevelrequest PROJECT PACKAGE DEVEL_PROJECT [DEVEL_PACKAGE]"
+msgstr ""
+
+#: osc.1.xml:534(emphasis)
+msgid "checkout (co)"
+msgstr ""
+
+#: osc.1.xml:536(para)
+msgid "Check out content from the repository"
+msgstr ""
+
+#: osc.1.xml:538(para)
+msgid "Check out content from the repository server, creating a local working copy."
+msgstr ""
+
+#: osc.1.xml:541(para)
+msgid "When checking out a single package, the option --revision can be used to specify a revision of the package to be checked out."
+msgstr ""
+
+#: osc.1.xml:544(para)
+msgid "When a package is a source link, then it will be checked out in expanded form. If --unexpand-link option is used, the checkout will instead produce the raw _link file plus patches."
+msgstr ""
+
+#: osc.1.xml:548(para)
+msgid "usage: osc co PROJECT [PACKAGE] [FILE] osc co PROJECT # entire project osc co PROJECT PACKAGE # a package osc co PROJECT PACKAGE FILE # single file -&gt; to current dir"
+msgstr ""
+
+#: osc.1.xml:554(para)
+msgid "while inside a project directory: osc co PACKAGE # check out PACKAGE from project with the result of rpm -q --qf '%{DISTURL}0 PACKAGE osc co obs://API/PROJECT/PLATFORM/REVISION-PACKAGE"
+msgstr ""
+
+#: osc.1.xml:560(para)
+msgid "Options: -h, --help show this help message and exit -l limit_size, --limit-size=limit_size Skip all files with a given size -S, --server-side-source-service-files Use server side generated sources instead of local generation. -s, --source-service-files Run source services. -o outdir, --output-dir=outdir place package in the specified directoryinstead of a PROJECT/PACKAGE directory -c, --current-dir place PACKAGE folder in the current directoryinstead of a PROJECT/PACKAGE directory -M, --meta checkout out meta data instead of sources -u, --unexpand-link if a package is a link, check out the _link file instead of the expanded sources -e, --expand-link if a package is a link, check out the expanded sources (no-op, since this became the default) -r rev, --revision=rev checkout the specified revision. NOTE: if you checkout the complete project this option is ignored!"
+msgstr ""
+
+#: osc.1.xml:590(emphasis)
+msgid "chroot"
+msgstr ""
+
+#: osc.1.xml:592(para)
+msgid "opens a shell inside of the build root"
+msgstr ""
+
+#: osc.1.xml:594(para)
+msgid "chroot into the build root for the given repository, arch and build description (NOTE: this command does not work if a VM is used)"
+msgstr ""
+
+#: osc.1.xml:597(para)
+msgid "usage: osc chroot [OPTS] REPOSITORY ARCH BUILD_DESCR osc chroot [OPTS] REPOSITORY (ARCH = hostarch, BUILD_DESCR is detected automatically) osc chroot [OPTS] ARCH (REPOSITORY = build_repository (config option), BUILD_DESCR is detected automatically) osc chroot [OPTS] BUILD_DESCR (REPOSITORY = build_repository (config option), ARCH = hostarch) osc chroot [OPTS] (REPOSITORY = build_repository (config option), ARCH = hostarch, BUILD_DESCR is detected automatically) Options: -h, --help show this help message and exit -o, --offline Use cached data without contacting the api server --root=ROOT Path to the buildroot -r, --login-as-root login as root instead of abuild --noinit, --no-init do not guess/verify specified repository --alternative-project=PROJECT specify the used build target project --local-package package doesn't exist on the server"
+msgstr ""
+
+#: osc.1.xml:622(emphasis)
+msgid "clean"
+msgstr ""
+
+#: osc.1.xml:624(para)
+msgid "removes all untracked files from the package working copy"
+msgstr ""
+
+#: osc.1.xml:626(para)
+msgid "Examples: osc clean &lt;path&gt;"
+msgstr ""
+
+#: osc.1.xml:629(para)
+msgid "Note: if &lt;path&gt; is omitted it defaults to '.' (&lt;path&gt; has to be a package working copy)"
+msgstr ""
+
+#: osc.1.xml:632(para)
+msgid "Warning: This command removes all files with status '?'."
+msgstr ""
+
+#: osc.1.xml:634(para)
+msgid "Usage: osc clean [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:637(para)
+msgid "Options: -h, --help show this help message and exit -n, --dry-run print the results without actually removing a file"
+msgstr ""
+
+#: osc.1.xml:646(emphasis)
+msgid "commit (checkin, ci)"
+msgstr ""
+
+#: osc.1.xml:648(para)
+msgid "Upload content to the repository server"
+msgstr ""
+
+#: osc.1.xml:650(para)
+msgid "Upload content which is changed in your working copy, to the repository server."
+msgstr ""
+
+#: osc.1.xml:653(para)
+msgid "examples: osc ci # current dir osc ci &lt;dir&gt; osc ci file1 file2 ..."
+msgstr ""
+
+#: osc.1.xml:658(para)
+msgid "Usage: osc commit [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:661(para)
+msgid "Options: -h, --help show this help message and exit --skip-local-service-run, --noservice Skip service run of configured source services for local run -v, --verbose Run the source services with verbose information --skip-validation deprecated, don't use it -f, --force force commit, even if there were no changes -F FILE, --file=FILE read log message from FILE, '-' denotes standard input. -n, --no-message do not specify a log message -m TEXT, --message=TEXT specify log message TEXT"
+msgstr ""
+
+#: osc.1.xml:684(emphasis)
+msgid "config"
+msgstr ""
+
+#: osc.1.xml:686(para)
+msgid "get/set a config option"
+msgstr ""
+
+#: osc.1.xml:688(para)
+msgid "Examples: osc config section option (get current value) osc config section option value (set to value) osc config section option --delete (delete option/reset to the default) (section is either an apiurl or an alias or 'general') osc config --dump (dump the complete configuration)"
+msgstr ""
+
+#: osc.1.xml:695(para)
+msgid "Usage: osc config [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:698(para)
+msgid "Options: -h, --help show this help message and exit --dump-full dump the complete configuration (including 'pass' and 'passx' options) --dump dump the complete configuration (without 'pass' and 'passx' options) --no-echo prompt for a value but do not echo entered characters -p, --prompt prompt for a value -s, --stdin indicates that the config value should be read from stdin -d, --delete delete option from config or reset option to the default)"
+msgstr ""
+
+#: osc.1.xml:719(emphasis)
+msgid "copypac"
+msgstr ""
+
+#: osc.1.xml:721(para)
+msgid "Copy a package"
+msgstr ""
+
+#: osc.1.xml:723(para)
+msgid "A way to copy package to somewhere else."
+msgstr ""
+
+#: osc.1.xml:725(para)
+msgid "It can be done across buildservice instances, if the -t option is used. In that case, a client-side copy and link expansion are implied."
+msgstr ""
+
+#: osc.1.xml:728(para)
+msgid "Using --client-side-copy always involves downloading all files, and uploading them to the target."
+msgstr ""
+
+#: osc.1.xml:734(para)
+msgid "usage: osc copypac SOURCEPRJ SOURCEPAC DESTPRJ [DESTPAC] Options: -h, --help show this help message and exit -e, --expand if the source package is a link then copy the expanded version of the link -m TEXT, --message=TEXT specify message TEXT -t URL, --to-apiurl=URL URL of destination api server. Default is the source api server. -r rev, --revision=rev copy the specified revision. -d, --keep-develproject keep develproject tag in the package metadata -K, --keep-link keep the source link in target, this also expands the source -k, --keep-maintainers keep original maintainers. Default is remove all and replace with the one calling the script. -c, --client-side-copy do a (slower) client-side copy"
+msgstr ""
+
+#: osc.1.xml:763(emphasis)
+msgid "createincident"
+msgstr ""
+
+#: osc.1.xml:765(para)
+msgid "Create a maintenance incident"
+msgstr ""
+
+#: osc.1.xml:767(para) osc.1.xml:1400(para) osc.1.xml:1877(para)
+msgid "[See <ulink url=\"http://doc.opensuse.org/products/draft/OBS/obs-reference-guide_draft/cha.obs.maintenance_setup.html\">http://doc.opensuse.org/products/draft/OBS/obs-reference-guide_draft/cha.obs.maintenance_setup.html</ulink> for information on this topic.]"
+msgstr ""
+
+#: osc.1.xml:770(para)
+msgid "This command is asking to open an empty maintence incident. This can usually only be done by a responsible maintenance team. Please see the \"mbranch\" command on how to full such a project content and the \"patchinfo\" command how add the required maintenance update information."
+msgstr ""
+
+#: osc.1.xml:775(para)
+msgid "usage: osc createincident [ MAINTENANCEPROJECT ] Options: -h, --help show this help message and exit -m TEXT, --message=TEXT specify message TEXT --noaccess Create a hidden project -a ATTRIBUTE, --attribute=ATTRIBUTE Use this attribute to find default maintenance project (default is OBS:MaintenanceProject)"
+msgstr ""
+
+#: osc.1.xml:790(emphasis)
+msgid "createrequest (creq)"
+msgstr ""
+
+#: osc.1.xml:792(para)
+msgid "create multiple requests with a single command"
+msgstr ""
+
+#: osc.1.xml:794(para)
+msgid "usage: osc creq [OPTIONS] [ -a submit SOURCEPRJ SOURCEPKG DESTPRJ [DESTPKG] -a delete PROJECT [PACKAGE] -a change_devel PROJECT PACKAGE DEVEL_PROJECT [DEVEL_PACKAGE] -a add_me ROLE PROJECT [PACKAGE] -a add_group GROUP ROLE PROJECT [PACKAGE] -a add_role USER ROLE PROJECT [PACKAGE] -a set_bugowner USER PROJECT [PACKAGE] ]"
+msgstr ""
+
+#: osc.1.xml:805(para)
+msgid "Option -m works for all types of request, the rest work only for submit. example: osc creq -a submit -a delete home:someone:branches:openSUSE:Tools -a change_devel openSUSE:Tools osc home:someone:branches:openSUSE:Tools -m ok"
+msgstr ""
+
+#: osc.1.xml:809(para)
+msgid "This will submit all modified packages under current directory, delete project home:someone:branches:openSUSE:Tools and change the devel project to home:someone:branches:openSUSE:Tools for package osc in project openSUSE:Tools. Options: -h, --help show this help message and exit --yes proceed without asking. --no-update never touch source package on accept (will break source links) --no-cleanup never remove source package on accept, but update its content --cleanup remove package if submission gets accepted (default for home:&lt;id&gt;:branch projects) --nodevelproject do not follow a defined devel project (primary project where a package is developed) -s SUPERSEDE, --supersede=SUPERSEDE Superseding another request by this one -r REV, --revision=REV for \"create\", specify a certain source revision ID (the md5 sum) -m TEXT, --message=TEXT specify message TEXT -a, --action specify action type of a request, can be : submit/delete/change_devel/add_role/set_bugowner"
+msgstr ""
+
+#: osc.1.xml:839(emphasis)
+msgid "delete (del, remove, rm)"
+msgstr ""
+
+#: osc.1.xml:841(para)
+msgid "Mark files or package directories to be deleted upon the next 'checkin'"
+msgstr ""
+
+#: osc.1.xml:843(para)
+msgid "usage: cd .../PROJECT/PACKAGE osc delete FILE [...] cd .../PROJECT osc delete PACKAGE [...]"
+msgstr ""
+
+#: osc.1.xml:849(para)
+msgid "This command works on check out copies. Use \"rdelete\" for working on server side only. This is needed for removing the entire project."
+msgstr ""
+
+#: osc.1.xml:852(para)
+msgid "As a safety measure, projects must be empty (i.e., you need to delete all packages first)."
+msgstr ""
+
+#: osc.1.xml:855(para)
+msgid "If you are sure that you want to remove a package and all its files use '--force' switch. Sometimes this also works without --force."
+msgstr ""
+
+#: osc.1.xml:858(para) osc.1.xml:1572(para)
+msgid "Options: -h, --help show this help message and exit -f, --force forces removal of entire package and its files"
+msgstr ""
+
+#: osc.1.xml:867(emphasis)
+msgid "deleterequest (deletereq, dr, dropreq, droprequest)"
+msgstr ""
+
+#: osc.1.xml:869(para)
+msgid "Request to delete (or 'drop') a package or project"
+msgstr ""
+
+#: osc.1.xml:871(para)
+msgid "usage: osc deletereq [-m TEXT] # works in checked out project/package osc deletereq [-m TEXT] PROJECT [PACKAGE] osc deletereq [-m TEXT] PROJECT [--repository REPOSITORY] Options: -h, --help show this help message and exit --accept-in-hours=HOURS specify time when request shall get accepted automatically. Only works with write permissions in target. -r REPOSITORY, --repository=REPOSITORY specify repository -m TEXT, --message=TEXT specify message TEXT"
+msgstr ""
+
+#: osc.1.xml:890(emphasis)
+msgid "dependson (whatdependson)"
+msgstr ""
+
+#: osc.1.xml:892(para)
+msgid "Show the build dependencies"
+msgstr ""
+
+#: osc.1.xml:894(para)
+msgid "The command dependson and whatdependson can be used to find out what will be triggered when a certain package changes. This is no guarantee, since the new build might have changed dependencies."
+msgstr ""
+
+#: osc.1.xml:898(para)
+msgid "dependson shows the build dependencies inside of a project, valid for a given repository and architecture. NOTE: to see all binary packages, which can trigger a build you need to refer the buildinfo, since this command shows only the dependencies inside of a project."
+msgstr ""
+
+#: osc.1.xml:907(para)
+msgid "usage in package or project directory: osc dependson REPOSITORY ARCH osc whatdependson REPOSITORY ARCH"
+msgstr ""
+
+#: osc.1.xml:911(para)
+msgid "usage: osc dependson PROJECT [PACKAGE] REPOSITORY ARCH osc whatdependson PROJECT [PACKAGE] REPOSITORY ARCH"
+msgstr ""
+
+#: osc.1.xml:919(emphasis)
+msgid "detachbranch"
+msgstr ""
+
+#: osc.1.xml:921(para)
+msgid "replace a link with its expanded sources"
+msgstr ""
+
+#: osc.1.xml:923(para)
+msgid "If a package is a link it is replaced with its expanded sources. The link does not exist anymore."
+msgstr ""
+
+#: osc.1.xml:926(para)
+msgid "usage: osc detachbranch # can be used in package working copy osc detachbranch PROJECT PACKAGE Options: -h, --help show this help message and exit -m TEXT, --message=TEXT specify message TEXT"
+msgstr ""
+
+#: osc.1.xml:938(emphasis)
+msgid "develproject (bsdevelproject, dp)"
+msgstr ""
+
+#: osc.1.xml:940(para)
+msgid "print the devel project / package of a package"
+msgstr ""
+
+#: osc.1.xml:942(para)
+msgid "Examples: osc develproject PRJ PKG osc develproject Options: -h, --help show this help message and exit -r, --raw deprecated option"
+msgstr ""
+
+#: osc.1.xml:953(emphasis)
+msgid "diff (di, ldiff, linkdiff)"
+msgstr ""
+
+#: osc.1.xml:955(para)
+msgid "Generates a diff"
+msgstr ""
+
+#: osc.1.xml:957(para)
+msgid "Generates a diff, comparing local changes against the repository server."
+msgstr ""
+
+#: osc.1.xml:960(para)
+msgid "Usage: osc diff [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:963(para)
+msgid "ARG, if specified, is a filename to include in the diff. Default: all files."
+msgstr ""
+
+#: osc.1.xml:966(para)
+msgid "osc diff --link osc linkdiff Compare current checkout directory against the link base."
+msgstr ""
+
+#: osc.1.xml:970(para)
+msgid "osc diff --link PROJ PACK osc linkdiff PROJ PACK Compare a package against the link base (ignoring working copy changes)."
+msgstr ""
+
+#: osc.1.xml:974(para)
+msgid "Options: -h, --help show this help message and exit --missingok do not fail if the source or target project/package does not exist on the server -l, --link (osc linkdiff): compare against the base revision of the link -p, --plain output the diff in plain (not unified) diff format -r rev1[:rev2], --revision=rev1[:rev2] If rev1 is specified it will compare your working copy against the revision (rev1) on the server. If rev1 and rev2 are specified it will compare rev1 against rev2 (NOTE: changes in your working copy are ignored in this case) -c rev, --change=rev the change made by revision rev (like -r rev-1:rev).If rev is negative this is like -r rev:rev-1."
+msgstr ""
+
+#: osc.1.xml:997(emphasis)
+msgid "distributions (dists)"
+msgstr ""
+
+#: osc.1.xml:999(para)
+msgid "Shows all available distributions"
+msgstr ""
+
+#: osc.1.xml:1001(para)
+msgid "This command shows the available distributions. For active distributions it shows the name, project and name of the repository and a suggested default repository name."
+msgstr ""
+
+#: osc.1.xml:1004(para)
+msgid "usage: osc distributions"
+msgstr ""
+
+#: osc.1.xml:1011(emphasis)
+msgid "enablechannels (enablechannel)"
+msgstr ""
+
+#: osc.1.xml:1013(para)
+msgid "Enables channels"
+msgstr ""
+
+#: osc.1.xml:1015(para)
+msgid "Enables existing channel packages in a project. Enabling means adding the needed repositories for building. The command can be used to enable a specific one or all channels of a project."
+msgstr ""
+
+#: osc.1.xml:1019(para)
+msgid "Examples: osc enablechannels [PROJECT [CHANNEL_PACKAGE]]"
+msgstr ""
+
+#: osc.1.xml:1025(emphasis)
+msgid "getbinaries"
+msgstr ""
+
+#: osc.1.xml:1027(para)
+msgid "Download binaries to a local directory"
+msgstr ""
+
+#: osc.1.xml:1029(para)
+msgid "This command downloads packages directly from the api server. Thus, it directly accesses the packages that are used for building others even when they are not \"published\" yet."
+msgstr ""
+
+#: osc.1.xml:1033(para)
+msgid "usage: osc getbinaries REPOSITORY # works in checked out project/package (check out all archs in subdirs) osc getbinaries REPOSITORY ARCHITECTURE # works in checked out project/package osc getbinaries PROJECT PACKAGE REPOSITORY ARCHITECTURE osc getbinaries PROJECT PACKAGE REPOSITORY ARCHITECTURE FILE Options: -h, --help show this help message and exit --debug also fetch debug packages --sources also fetch source packages -d DIR, --destdir=DIR destination directory -q, --quiet do not show downloading progress"
+msgstr ""
+
+#: osc.1.xml:1051(emphasis)
+msgid "help (?, h)"
+msgstr ""
+
+#: osc.1.xml:1053(para)
+msgid "give detailed help on a specific sub-command"
+msgstr ""
+
+#: osc.1.xml:1055(para)
+msgid "usage: osc help [SUBCOMMAND]"
+msgstr ""
+
+#: osc.1.xml:1061(emphasis)
+msgid "importsrcpkg"
+msgstr ""
+
+#: osc.1.xml:1063(para)
+msgid "Import a new package from a src.rpm"
+msgstr ""
+
+#: osc.1.xml:1065(para)
+msgid "A new package dir will be created inside the project dir (if no project is specified and the current working dir is a project dir the package will be created in this project). If the package does not exist on the server it will be created too otherwise the meta data of the existing package will be updated (&lt;title /&gt; and &lt;description /&gt;). The src.rpm will be extracted into the package dir. The files won't be committed unless you explicitly pass the --commit switch."
+msgstr ""
+
+#: osc.1.xml:1074(para)
+msgid "SRPM is the path of the src.rpm in the local filesystem, or an URL."
+msgstr ""
+
+#: osc.1.xml:1077(para)
+msgid "Usage: osc importsrcpkg SRPM"
+msgstr ""
+
+#: osc.1.xml:1080(para)
+msgid "Options: -h, --help show this help message and exit -c, --commit commit the new files --delete-old-files delete existing files from the server -d description, --description=description set the description of the package -t title, --title=title set a title -n name, --name=name specify a package name -p project, --project=project specify the path to a project"
+msgstr ""
+
+#: osc.1.xml:1099(emphasis)
+msgid "info"
+msgstr ""
+
+#: osc.1.xml:1101(para)
+msgid "Print information about a working copy"
+msgstr ""
+
+#: osc.1.xml:1103(para)
+msgid "Print information about each ARG (default: '.') ARG is a working-copy path."
+msgstr ""
+
+#: osc.1.xml:1106(para)
+msgid "Usage: osc info [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:1113(emphasis)
+msgid "init"
+msgstr ""
+
+#: osc.1.xml:1115(para)
+msgid "Initialize a directory as working copy"
+msgstr ""
+
+#: osc.1.xml:1117(para)
+msgid "Initialize an existing directory to be a working copy of an (already existing) buildservice project/package."
+msgstr ""
+
+#: osc.1.xml:1120(para)
+msgid "(This is the same as checking out a package and then copying sources into the directory. It does NOT create a new package. To create a package, use 'osc meta pkg ... ...')"
+msgstr ""
+
+#: osc.1.xml:1124(para)
+msgid "You wouldn't normally use this command."
+msgstr ""
+
+#: osc.1.xml:1126(para)
+msgid "To get a working copy of a package (e.g. for building it or working on it, you would normally use the checkout command. Use \"osc help checkout\" to get help for it."
+msgstr ""
+
+#: osc.1.xml:1130(para)
+msgid "usage: osc init PRJ osc init PRJ PAC"
+msgstr ""
+
+#: osc.1.xml:1137(emphasis)
+msgid "jobhistory (jobhist)"
+msgstr ""
+
+#: osc.1.xml:1139(para)
+msgid "Shows the job history of a project"
+msgstr ""
+
+#: osc.1.xml:1144(para)
+msgid "usage: osc jobhist REPOSITORY ARCHITECTURE (in project dir) osc jobhist PROJECT [PACKAGE] REPOSITORY ARCHITECTURE Options: -h, --help show this help message and exit -l limit, --limit=limit for setting the number of results --csv generate output in CSV (separated by |)"
+msgstr ""
+
+#: osc.1.xml:1157(emphasis)
+msgid "linkpac"
+msgstr ""
+
+#: osc.1.xml:1159(para)
+msgid "\"Link\" a package to another package"
+msgstr ""
+
+#: osc.1.xml:1161(para)
+msgid "A linked package is a clone of another package, but plus local modifications. It can be cross-project."
+msgstr ""
+
+#: osc.1.xml:1167(para)
+msgid "Afterwards, you will want to 'checkout DESTPRJ DESTPAC'."
+msgstr ""
+
+#: osc.1.xml:1169(para)
+msgid "To add a patch, add the patch as file and add it to the _link file. You can also specify text which will be inserted at the top of the spec file."
+msgstr ""
+
+#: osc.1.xml:1172(para)
+msgid "See the examples in the _link file."
+msgstr ""
+
+#: osc.1.xml:1174(para)
+msgid "NOTE: In case you want to fix or update another package, you should use the 'branch' command. A branch has correct repositories (and a link) setup up by default and will be cleaned up automatically after it was submitted back."
+msgstr ""
+
+#: osc.1.xml:1178(para)
+msgid "usage: osc linkpac SOURCEPRJ SOURCEPAC DESTPRJ [DESTPAC] Options: -h, --help show this help message and exit -N, --new-package create a link to a not yet existing package -d, --disable-publish disable publishing of the linked package -f, --force overwrite an existing link file if it is there. -r rev, --revision=rev link the specified revision. -c, --current link fixed against current revision. -C CICOUNT, --cicount=CICOUNT cicount attribute in the link, known values are add, copy, and local, default in buildservice is currently add."
+msgstr ""
+
+#: osc.1.xml:1201(emphasis)
+msgid "linktobranch"
+msgstr ""
+
+#: osc.1.xml:1203(para)
+msgid "Convert a package containing a classic link with patch to a branch"
+msgstr ""
+
+#: osc.1.xml:1205(para)
+msgid "This command tells the server to convert a _link with or without a project.diff to a branch. This is a full copy with a _link file pointing to the branched place."
+msgstr ""
+
+#: osc.1.xml:1208(para)
+msgid "usage: osc linktobranch # can be used in checked out package osc linktobranch PROJECT PACKAGE"
+msgstr ""
+
+#: osc.1.xml:1215(emphasis)
+msgid "list (LL, lL, ll, ls)"
+msgstr ""
+
+#: osc.1.xml:1217(para)
+msgid "List sources or binaries on the server"
+msgstr ""
+
+#: osc.1.xml:1219(para)
+msgid "Examples for listing sources: ls # list all projects (deprecated) ls / # list all projects ls . # take PROJECT/PACKAGE from current dir. ls PROJECT # list packages in a project ls PROJECT PACKAGE # list source files of package of a project ls PROJECT PACKAGE &lt;file&gt; # list &lt;file&gt; if this file exists ls -v PROJECT PACKAGE # verbosely list source files of package ls -l PROJECT PACKAGE # verbosely list source files of package ll PROJECT PACKAGE # verbosely list source files of package LL PROJECT PACKAGE # verbosely list source files of expanded link"
+msgstr ""
+
+#: osc.1.xml:1231(para)
+msgid "With --verbose, the following fields will be shown for each item: MD5 hash of file Revision number of the last commit Size (in bytes) Date and time of the last commit"
+msgstr ""
+
+#: osc.1.xml:1237(para)
+msgid "Examples for listing binaries: ls -b PROJECT # list all binaries of a project ls -b PROJECT -a ARCH # list ARCH binaries of a project ls -b PROJECT -r REPO # list binaries in REPO ls -b PROJECT PACKAGE REPO ARCH"
+msgstr ""
+
+#: osc.1.xml:1243(para)
+msgid "Usage: list (LL, lL, ll, ls) [PROJECT [PACKAGE]] list (LL, lL, ll, ls) -b [PROJECT [PACKAGE [REPO [ARCH]]]] Options: -h, --help show this help message and exit -R REVISION, --revision=REVISION specify revision (only for sources) -M, --meta list meta data files -D, --deleted show only the former deleted projects or packages -l, --long print extra information -v, --verbose print extra information -u, --unexpand always work with unexpanded (source) packages -e, --expand expand linked package (only for sources) -b, --binaries list built binaries instead of sources -r REPO, --repo=REPO specify repository (only for binaries) -a ARCH, --arch=ARCH specify architecture (only for binaries)"
+msgstr ""
+
+#: osc.1.xml:1271(emphasis)
+msgid "localbuildlog (lbl)"
+msgstr ""
+
+#: osc.1.xml:1273(para)
+msgid "Shows the build log of a local buildchroot"
+msgstr ""
+
+#: osc.1.xml:1275(para)
+msgid "usage: osc lbl [REPOSITORY [ARCH]] osc lbl # show log of newest last local build"
+msgstr ""
+
+#: osc.1.xml:1279(para)
+msgid "Options: -h, --help show this help message and exit -s, --strip-time strip leading build time from the log -o OFFSET, --offset=OFFSET get log starting from offset"
+msgstr ""
+
+#: osc.1.xml:1290(emphasis)
+msgid "lock"
+msgstr ""
+
+#: osc.1.xml:1292(para)
+msgid "Locks a project or package."
+msgstr ""
+
+#: osc.1.xml:1294(para)
+msgid "usage: osc lock PROJECT [PACKAGE]"
+msgstr ""
+
+#: osc.1.xml:1301(emphasis)
+msgid "log"
+msgstr ""
+
+#: osc.1.xml:1303(para)
+msgid "Shows the commit log of a package"
+msgstr ""
+
+#: osc.1.xml:1305(para)
+msgid "Usage: osc log (inside working copy) osc log remote_project [remote_package]"
+msgstr ""
+
+#: osc.1.xml:1309(para)
+msgid "Options: -h, --help show this help message and exit -M, --meta checkout out meta data instead of sources -D, --deleted work on deleted package --xml generate output in XML --csv generate output in CSV (separated by |) -r rev, --revision=rev show log of the specified revision"
+msgstr ""
+
+#: osc.1.xml:1323(emphasis)
+msgid "maintainer (bugowner)"
+msgstr ""
+
+#: osc.1.xml:1325(para)
+msgid "Show maintainers according to server side configuration"
+msgstr ""
+
+#: osc.1.xml:1327(para)
+msgid "# Search for official maintained sources in OBS instance osc maintainer BINARY &lt;options&gt; osc maintainer -U &lt;user&gt; &lt;options&gt; osc maintainer -G &lt;group&gt; &lt;options&gt;"
+msgstr ""
+
+#: osc.1.xml:1332(para)
+msgid "# Lookup via containers osc maintainer &lt;options&gt; osc maintainer PRJ &lt;options&gt; osc maintainer PRJ PKG &lt;options&gt; The tool looks up the default responsible person for a certain project or package. When using with an OBS 2.4 (or later) server it is doing the lookup for a given binary according to the server side configuration of default owners."
+msgstr ""
+
+#: osc.1.xml:1341(para)
+msgid "The tool is also looking into devel packages and supports to fallback to the project in case a package has no defined maintainer."
+msgstr ""
+
+#: osc.1.xml:1344(para)
+msgid "Please use \"osc meta pkg\" in case you need to know the definition in a specific container."
+msgstr ""
+
+#: osc.1.xml:1346(para)
+msgid "PRJ and PKG default to current working-copy path."
+msgstr ""
+
+#: osc.1.xml:1348(para)
+msgid "Usage: osc maintainer [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:1351(para)
+msgid "Options: -h, --help show this help message and exit -m MESSAGE, --message=MESSAGE Define message as commit entry or request description -r role, --role=role Specify user role -d user, --delete=user delete a maintainer/bugowner (can be specified via --role) -G GROUP, --group=GROUP All official maintained instances for the specified GROUP -U USER, --user=USER All official maintained instances for the specified USER -S user, --set-bugowner-request=user Set the bugowner to specified person via a request (or group via group: prefix) -s user, --set-bugowner=user Set the bugowner to specified person (or group via group: prefix) -A, --all list all found entries not just the first one -a user, --add=user add a new person for given role (\"maintainer\" by default) -D devel_project, --devel-project=devel_project define the project where this package is primarily developed -v, --verbose show more information --nodevelproject do not follow a defined devel project (primary project where a package is developed) -e, --email show email addresses instead of user names -B, --bugowner Show only the bugowner if defined, or maintainer otherwise -b, --bugowner-only Show only the bugowner"
+msgstr ""
+
+#: osc.1.xml:1396(emphasis)
+msgid "maintenancerequest (mr)"
+msgstr ""
+
+#: osc.1.xml:1398(para)
+msgid "Create a request for starting a maintenance incident."
+msgstr ""
+
+#: osc.1.xml:1403(para)
+msgid "This command is asking the maintence team to start a maintence incident based on a created maintenance update. Please see the \"mbranch\" command on how to create such a project and the \"patchinfo\" command how add the required maintenance update information."
+msgstr ""
+
+#: osc.1.xml:1407(para)
+msgid "usage: osc maintenancerequest [ SOURCEPROJECT [ SOURCEPACKAGES RELEASEPROJECT ] ] osc maintenancerequest ."
+msgstr ""
+
+#: osc.1.xml:1411(para)
+msgid "The 2nd line when issued within a package directory provides a short cut to submit a single package (the one in the current directory) from the project of this package to be submitted to the release project this package links to. This syntax is only valid when specified from a package subdirectory. Options: -h, --help show this help message and exit -s SUPERSEDE, --supersede=SUPERSEDE Superseding another request by this one --incident-project=INCIDENT_PROJECT specify incident project to merge in --incident=INCIDENT specify incident number to merge in --cleanup do remove source project on accept --no-cleanup do not remove source project on accept --release-project=RELEASEPROJECT Specify the release project -m TEXT, --message=TEXT specify message TEXT -a ATTRIBUTE, --attribute=ATTRIBUTE Use this attribute to find default maintenance project (default is OBS:MaintenanceProject)"
+msgstr ""
+
+#: osc.1.xml:1438(emphasis)
+msgid "man"
+msgstr ""
+
+#: osc.1.xml:1440(para)
+msgid "generates a man page"
+msgstr ""
+
+#: osc.1.xml:1442(para)
+msgid "usage: osc man"
+msgstr ""
+
+#: osc.1.xml:1448(emphasis)
+msgid "mbranch (maintained, sm)"
+msgstr ""
+
+#: osc.1.xml:1450(para)
+msgid "Search or branch multiple instances of a package"
+msgstr ""
+
+#: osc.1.xml:1452(para)
+msgid "This command is used for searching all relevant instances of packages and creating links of them in one project. This is esp. used for maintenance updates. It can also be used to branch all packages marked before with a given attribute."
+msgstr ""
+
+#: osc.1.xml:1457(para)
+msgid "[See <ulink url=\"http://en.opensuse.org/openSUSE\">http://en.opensuse.org/openSUSE</ulink>:Build_Service_Concept_Maintenance for information on this topic.]"
+msgstr ""
+
+#: osc.1.xml:1460(para)
+msgid "The branched package will live in home:USERNAME:branches:ATTRIBUTE:PACKAGE if nothing else specified."
+msgstr ""
+
+#: osc.1.xml:1464(para)
+msgid "usage: osc sm [SOURCEPACKAGE] [-a ATTRIBUTE] osc mbranch [ SOURCEPACKAGE [ TARGETPROJECT ] ] Options: -h, --help show this help message and exit --nodevelproject do not follow a defined devel project (primary project where a package is developed) --noaccess Create a hidden project --dryrun Just simulate the action and report back the result. -u UPDATE_ATTRIBUTE, --update-project-attribute=UPDATE_ATTRIBUTE Use this attribute to find update projects (default is OBS:UpdateProject) -a ATTRIBUTE, --attribute=ATTRIBUTE Use this attribute to find affected packages (default is OBS:Maintained) -c, --checkout Checkout branched package afterwards ('osc bco' is a shorthand for this option)"
+msgstr ""
+
+#: osc.1.xml:1488(emphasis)
+msgid "meta"
+msgstr ""
+
+#: osc.1.xml:1490(para)
+msgid "Show meta information, or edit it"
+msgstr ""
+
+#: osc.1.xml:1492(para)
+msgid "Show or edit build service metadata of type &lt;prj|pkg|prjconf|user|pattern&gt;."
+msgstr ""
+
+#: osc.1.xml:1494(para)
+msgid "This command displays metadata on buildservice objects like projects, packages, or users. The type of metadata is specified by the word after \"meta\", like e.g. \"meta prj\"."
+msgstr ""
+
+#: osc.1.xml:1498(para)
+msgid "prj denotes metadata of a buildservice project. prjconf denotes the (build) configuration of a project. pkg denotes metadata of a buildservice package. user denotes the metadata of a user. pattern denotes installation patterns defined for a project."
+msgstr ""
+
+#: osc.1.xml:1504(para)
+msgid "To list patterns, use 'osc meta pattern PRJ'. An additional argument will be the pattern file to view or edit."
+msgstr ""
+
+#: osc.1.xml:1507(para)
+msgid "With the --edit switch, the metadata can be edited. Per default, osc opens the program specified by the environmental variable EDITOR with a temporary file. Alternatively, content to be saved can be supplied via the --file switch. If the argument is '-', input is taken from stdin: osc meta prjconf home:user | sed ... | osc meta prjconf home:user -F -"
+msgstr ""
+
+#: osc.1.xml:1513(para)
+msgid "When trying to edit a non-existing resource, it is created implicitly."
+msgstr ""
+
+#: osc.1.xml:1516(para)
+msgid "Examples: osc meta prj PRJ osc meta pkg PRJ PKG osc meta pkg PRJ PKG -e"
+msgstr ""
+
+#: osc.1.xml:1521(para)
+msgid "Usage: osc meta &lt;prj|pkg|prjconf|user|pattern&gt; ARGS... osc meta &lt;prj|pkg|prjconf|user|pattern&gt; -e|--edit ARGS... osc meta &lt;prj|pkg|prjconf|user|pattern&gt; -F|--file ARGS... osc meta pattern --delete PRJ PATTERN osc meta attribute PRJ [PKG [SUBPACKAGE]] [--attribute ATTRIBUTE] [--create|--delete|--set [value_list]] Options: -h, --help show this help message and exit --delete delete a pattern or attribute -s ATTRIBUTE_VALUES, --set=ATTRIBUTE_VALUES set attribute values -R, --remove-linking-repositories Try to remove also all repositories building against remove ones. -c, --create create attribute without values -e, --edit edit metadata -F FILE, --file=FILE read metadata from FILE, instead of opening an editor. '-' denotes standard input. -f, --force force the save operation, allows one to ignores some errors like depending repositories. For prj meta only. --attribute-project include project values, if missing in packages --attribute-defaults include defined attribute defaults -a ATTRIBUTE, --attribute=ATTRIBUTE affect only a given attribute"
+msgstr ""
+
+#: osc.1.xml:1555(emphasis)
+msgid "mkpac"
+msgstr ""
+
+#: osc.1.xml:1557(para)
+msgid "Create a new package under version control"
+msgstr ""
+
+#: osc.1.xml:1559(para)
+msgid "usage: osc mkpac new_package"
+msgstr ""
+
+#: osc.1.xml:1565(emphasis)
+msgid "mv"
+msgstr ""
+
+#: osc.1.xml:1567(para)
+msgid "Move SOURCE file to DEST and keep it under version control"
+msgstr ""
+
+#: osc.1.xml:1569(para)
+msgid "Usage: osc mv SOURCE DEST"
+msgstr ""
+
+#: osc.1.xml:1581(emphasis)
+msgid "my"
+msgstr ""
+
+#: osc.1.xml:1583(para)
+msgid "show waiting work, packages, projects or requests involving yourself"
+msgstr ""
+
+#: osc.1.xml:1585(para)
+msgid "Examples: # list all open tasks for me osc my [work] # list packages where I am bugowner osc my pkg -b # list projects where I am maintainer osc my prj -m # list request for all my projects and packages osc my rq # list requests, excluding project 'foo' and 'bar' osc my rq --exclude-project foo,bar # list requests I made osc my sr"
+msgstr ""
+
+#: osc.1.xml:1599(para)
+msgid "Usage: osc my [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:1602(para)
+msgid "where TYPE is one of requests, submitrequests, projects or packages (rq, sr, prj or pkg)"
+msgstr ""
+
+#: osc.1.xml:1605(para)
+msgid "Options: -h, --help show this help message and exit --maintained limit search results to packages with maintained attribute set. -v, --verbose verbose listing --exclude-project=EXCLUDE_PROJECT exclude requests for specified project -U USER, --user=USER search for USER instead of yourself -a, --all all involvements -m, --maintainer restrict listing to items where the user is maintainer -b, --bugowner restrict listing to items where the user is bugowner"
+msgstr ""
+
+#: osc.1.xml:1628(emphasis)
+msgid "patchinfo"
+msgstr ""
+
+#: osc.1.xml:1630(para)
+msgid "Generate and edit a patchinfo file."
+msgstr ""
+
+#: osc.1.xml:1632(para)
+msgid "A patchinfo file describes the packages for an update and the kind of problem it solves."
+msgstr ""
+
+#: osc.1.xml:1635(para)
+msgid "This command either creates a new _patchinfo or updates an existing one."
+msgstr ""
+
+#: osc.1.xml:1637(para)
+msgid "Examples: osc patchinfo osc patchinfo [PROJECT [PATCH_NAME]] Options: -h, --help show this help message and exit -f, --force force generation of new patchinfo file, do not update existing one."
+msgstr ""
+
+#: osc.1.xml:1650(emphasis)
+msgid "pdiff"
+msgstr ""
+
+#: osc.1.xml:1652(para)
+msgid "Quick alias to diff the content of a package with its parent."
+msgstr ""
+
+#: osc.1.xml:1654(para)
+msgid "Usage: osc pdiff [--plain|-p] [--nomissing-ok|-n] osc pdiff [--plain|-p] [--nomissing-ok|-n] PKG osc pdiff [--plain|-p] [--nomissing-ok|-n] PRJ PKG"
+msgstr ""
+
+#: osc.1.xml:1659(para)
+msgid "Options: -h, --help show this help message and exit -n, --nomissingok fail if the parent package does not exist on the server -p, --plain output the diff in plain (not unified) diff format"
+msgstr ""
+
+#: osc.1.xml:1671(emphasis)
+msgid "prdiff (projdiff, projectdiff)"
+msgstr ""
+
+#: osc.1.xml:1673(para)
+msgid "Server-side diff of two projects"
+msgstr ""
+
+#: osc.1.xml:1675(para)
+msgid "Compares two projects and either summarises or outputs the differences in full. In the second form, a project is compared with one of its branches inside a home:$USER project (the branch is treated as NEWPRJ). The home branch is optional if the current working directory is a checked out copy of it."
+msgstr ""
+
+#: osc.1.xml:1681(para)
+msgid "Usage: osc prdiff [OPTIONS] OLDPRJ NEWPRJ osc prdiff [OPTIONS] [home:$USER:branch:$PRJ]"
+msgstr ""
+
+#: osc.1.xml:1685(para)
+msgid "Options: -h, --help show this help message and exit -d, --diffstat show diffstat of differences -u, --unified show full unified diffs of differences -o, --show-not-in-new show packages only in the old project -n, --show-not-in-old show packages only in the new project -i REGEXP, --include=REGEXP only consider packages matching REGEXP -e REGEXP, --exclude=REGEXP skip packages matching REGEXP -r, --requests show open requests for any packages with differences"
+msgstr ""
+
+#: osc.1.xml:1706(emphasis)
+msgid "prjresults (pr)"
+msgstr ""
+
+#: osc.1.xml:1708(para)
+msgid "Shows project-wide build results"
+msgstr ""
+
+#: osc.1.xml:1710(para)
+msgid "Usage: osc prjresults (inside working copy) osc prjresults PROJECT"
+msgstr ""
+
+#: osc.1.xml:1714(para)
+msgid "Options: -h, --help show this help message and exit --show-excluded show packages that are excluded in all repos, also hide repos that have only excluded packages -V, --vertical list packages vertically instead horizontally -r REPO, --repo=REPO show results only for specified repo(s) -a ARCH, --arch=ARCH show results only for specified architecture(s) -n EXPR, --name-filter=EXPR show only packages whose names match EXPR -s STATUS, --status-filter=STATUS show only packages with buildstatus STATUS (see legend) --xml generate output in XML -c, --csv csv output -q, --hide-legend hide the legend"
+msgstr ""
+
+#: osc.1.xml:1739(emphasis)
+msgid "pull"
+msgstr ""
+
+#: osc.1.xml:1741(para)
+msgid "merge the changes of the link target into your working copy."
+msgstr ""
+
+#: osc.1.xml:1747(emphasis)
+msgid "rdelete"
+msgstr ""
+
+#: osc.1.xml:1749(para)
+msgid "Delete a project or packages on the server."
+msgstr ""
+
+#: osc.1.xml:1751(para)
+msgid "As a safety measure, project must be empty (i.e., you need to delete all packages first). Also, packages must have no requests pending (i.e., you need to accept/revoke such requests first). If you are sure that you want to remove this project and all its packages use '--recursive' switch. It may still not work because other depends on it. If you want to ignore this as well use '--force' switch."
+msgstr ""
+
+#: osc.1.xml:1759(para)
+msgid "usage: osc rdelete [-r] [-f] PROJECT [PACKAGE]"
+msgstr ""
+
+#: osc.1.xml:1762(para)
+msgid "Options: -h, --help show this help message and exit -m TEXT, --message=TEXT specify log message TEXT -f, --force deletes a project where other depends on -r, --recursive deletes a project with packages inside"
+msgstr ""
+
+#: osc.1.xml:1775(emphasis)
+msgid "rdiff"
+msgstr ""
+
+#: osc.1.xml:1777(para)
+msgid "Server-side \"pretty\" diff of two packages"
+msgstr ""
+
+#: osc.1.xml:1779(para)
+msgid "Compares two packages (three or four arguments) or shows the changes of a specified revision of a package (two arguments)"
+msgstr ""
+
+#: osc.1.xml:1782(para)
+msgid "If no revision is specified the latest revision is used."
+msgstr ""
+
+#: osc.1.xml:1784(para)
+msgid "Note that this command doesn't return a normal diff (which could be applied as patch), but a \"pretty\" diff, which also compares the content of tarballs."
+msgstr ""
+
+#: osc.1.xml:1789(para)
+msgid "usage: osc rdiff OLDPRJ OLDPAC NEWPRJ [NEWPAC] osc rdiff PROJECT PACKAGE Options: -h, --help show this help message and exit -u, --unexpand diff unexpanded version if sources are linked --missingok do not fail if the source or target project/package does not exist on the server -c rev, --change=rev the change made by revision rev (like -r rev-1:rev). If rev is negative this is like -r rev:rev-1. -p, --plain output the diff in plain (not unified) diff format -r N[:M], --revision=N[:M] revision id, where N = old revision and M = new revision -M, --meta diff meta data --oldpkg=OLDPKG package to compare against (deprecated, use 3 argument form) --oldprj=OLDPRJ project to compare against (deprecated, use 3 argument form)"
+msgstr ""
+
+#: osc.1.xml:1819(emphasis)
+msgid "rebuild (rebuildpac)"
+msgstr ""
+
+#: osc.1.xml:1821(para)
+msgid "Trigger package rebuilds"
+msgstr ""
+
+#: osc.1.xml:1823(para)
+msgid "Note that it is normally NOT needed to kick off rebuilds like this, because they principally happen in a fully automatic way, triggered by source check-ins. In particular, the order in which packages are built is handled by the build service."
+msgstr ""
+
+#: osc.1.xml:1831(para)
+msgid "usage: osc rebuild [PROJECT [PACKAGE [REPOSITORY [ARCH]]]] Options: -h, --help show this help message and exit --all Rebuild all packages of entire project -f, --failed rebuild all failed packages -r REPO, --repo=REPO trigger rebuilds for a specific repository -a ARCH, --arch=ARCH trigger rebuilds for a specific architecture"
+msgstr ""
+
+#: osc.1.xml:1847(emphasis)
+msgid "release"
+msgstr ""
+
+#: osc.1.xml:1849(para)
+msgid "Release sources and binaries"
+msgstr ""
+
+#: osc.1.xml:1851(para)
+msgid "This command is used to transfer sources and binaries without rebuilding them. It requires defined release targets set to trigger=\"manual\". Please refer the release management chapter in the OBS book for details."
+msgstr ""
+
+#: osc.1.xml:1855(para)
+msgid "usage: osc release [ SOURCEPROJECT [ SOURCEPACKAGE ] ]"
+msgstr ""
+
+#: osc.1.xml:1858(para)
+msgid "Options: -h, --help show this help message and exit --set-release=RELEASETAG rename binaries during release using this release tag --target-repository=TARGETREPOSITORY Release only to specified repository --target-project=TARGETPROJECT Release only to specified project -r REPO, --repo=REPO Release only binaries from the specified repository"
+msgstr ""
+
+#: osc.1.xml:1873(emphasis)
+msgid "releaserequest"
+msgstr ""
+
+#: osc.1.xml:1875(para)
+msgid "Create a request for releasing a maintenance update."
+msgstr ""
+
+#: osc.1.xml:1880(para)
+msgid "This command is used by the maintence team to start the release process of a maintenance update. This includes usually testing based on the defined reviewers of the update project."
+msgstr ""
+
+#: osc.1.xml:1883(para)
+msgid "usage: osc releaserequest [ SOURCEPROJECT ]"
+msgstr ""
+
+#: osc.1.xml:1886(para)
+msgid "Options: -h, --help show this help message and exit -m TEXT, --message=TEXT specify message TEXT"
+msgstr ""
+
+#: osc.1.xml:1895(emphasis)
+msgid "remotebuildlog (rbl, rblt, rbuildlog, rbuildlogtail, remotebuildlogtail)"
+msgstr ""
+
+#: osc.1.xml:1899(para)
+msgid "Shows the log file of the build of a package. Can be used to follow the log while it is being written."
+msgstr ""
+
+#: osc.1.xml:1902(para)
+msgid "remotebuildlogtail shows just the tail of the log file."
+msgstr ""
+
+#: osc.1.xml:1904(para)
+msgid "usage: osc remotebuildlog project package repository arch or osc remotebuildlog project/package/repository/arch or osc remotebuildlog buildlogurl Options: -h, --help show this help message and exit -s, --strip-time strip leading build time from the log -o OFFSET, --offset=OFFSET get log starting or ending from the offset -l, --last Show the last finished log file"
+msgstr ""
+
+#: osc.1.xml:1922(emphasis)
+msgid "repairlink"
+msgstr ""
+
+#: osc.1.xml:1924(para)
+msgid "Repair a broken source link"
+msgstr ""
+
+#: osc.1.xml:1926(para)
+msgid "This command checks out a package with merged source changes. It uses a 3-way merge to resolve file conflicts. After reviewing/repairing the merge, use 'osc resolved ...' and 'osc ci' to re-create a working source link."
+msgstr ""
+
+#: osc.1.xml:1931(para)
+msgid "usage: * For merging conflicting changes of a checkout package: osc repairlink"
+msgstr ""
+
+#: osc.1.xml:1935(para)
+msgid "* Check out a package and merge changes: osc repairlink PROJECT PACKAGE"
+msgstr ""
+
+#: osc.1.xml:1938(para)
+msgid "* Pull conflicting changes from one project into another one: osc repairlink PROJECT PACKAGE INTO_PROJECT [INTO_PACKAGE]"
+msgstr ""
+
+#: osc.1.xml:1941(para)
+msgid "Options: -h, --help show this help message and exit -d DIR, --destdir=DIR destination directory"
+msgstr ""
+
+#: osc.1.xml:1950(emphasis)
+msgid "repairwc"
+msgstr ""
+
+#: osc.1.xml:1952(para)
+msgid "try to repair an inconsistent working copy"
+msgstr ""
+
+#: osc.1.xml:1954(para)
+msgid "Examples: osc repairwc &lt;path&gt;"
+msgstr ""
+
+#: osc.1.xml:1957(para)
+msgid "Note: if &lt;path&gt; is omitted it defaults to '.' (&lt;path&gt; can be a project or package working copy)"
+msgstr ""
+
+#: osc.1.xml:1960(para)
+msgid "Warning: This command might delete some files in the storedir (.osc). Please check the state of the wc afterwards (via 'osc status')."
+msgstr ""
+
+#: osc.1.xml:1963(para)
+msgid "Usage: osc repairwc [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:1966(para)
+msgid "Options: -h, --help show this help message and exit --force-apiurl ask once for an apiurl and force this apiurl for all inconsistent projects/packages"
+msgstr ""
+
+#: osc.1.xml:1976(emphasis)
+msgid "repositories (platforms, repos)"
+msgstr ""
+
+#: osc.1.xml:1978(para)
+msgid "shows repositories configured for a project. It skips repositories by default which are disabled for a given package."
+msgstr ""
+
+#: osc.1.xml:1981(para)
+msgid "usage: osc repos osc repos [PROJECT] [PACKAGE]"
+msgstr ""
+
+#: osc.1.xml:1989(emphasis)
+msgid "repourls"
+msgstr ""
+
+#: osc.1.xml:1991(para)
+msgid "Shows URLs of .repo files"
+msgstr ""
+
+#: osc.1.xml:1993(para)
+msgid "Shows URLs on which to access the project .repos files (yum-style metadata) on download.opensuse.org."
+msgstr ""
+
+#: osc.1.xml:1996(para)
+msgid "usage: osc repourls [PROJECT]"
+msgstr ""
+
+#: osc.1.xml:2003(emphasis)
+msgid "request (review, rq)"
+msgstr ""
+
+#: osc.1.xml:2005(para)
+msgid "Show or modify requests and reviews"
+msgstr ""
+
+#: osc.1.xml:2010(para)
+msgid "The 'request' command has the following sub commands:"
+msgstr ""
+
+#: osc.1.xml:2012(para)
+msgid "\"list\" lists open requests attached to a project or package or person. Uses the project/package of the current directory if none of -M, -U USER, project/package are given."
+msgstr ""
+
+#: osc.1.xml:2016(para)
+msgid "\"log\" will show the history of the given ID"
+msgstr ""
+
+#: osc.1.xml:2018(para)
+msgid "\"show\" will show the request itself, and generate a diff for review, if used with the --diff option. The keyword show can be omitted if the ID is numeric."
+msgstr ""
+
+#: osc.1.xml:2021(para)
+msgid "\"decline\" will change the request state to \"declined\""
+msgstr ""
+
+#: osc.1.xml:2023(para)
+msgid "\"reopen\" will set the request back to new or review."
+msgstr ""
+
+#: osc.1.xml:2025(para)
+msgid "\"setincident\" will direct \"maintenance\" requests into specific incidents"
+msgstr ""
+
+#: osc.1.xml:2027(para)
+msgid "\"supersede\" will supersede one request with another existing one."
+msgstr ""
+
+#: osc.1.xml:2029(para)
+msgid "\"revoke\" will set the request state to \"revoked\""
+msgstr ""
+
+#: osc.1.xml:2031(para)
+msgid "\"accept\" will change the request state to \"accepted\" and will trigger the actual submit process. That would normally be a server-side copy of the source package to the target package."
+msgstr ""
+
+#: osc.1.xml:2035(para)
+msgid "\"checkout\" will checkout the request's source package (\"submit\" requests only)."
+msgstr ""
+
+#: osc.1.xml:2037(para)
+msgid "\"priorize\" change the prioritity of a request to either \"critical\", \"important\", \"moderate\" or \"low\""
+msgstr ""
+
+#: osc.1.xml:2040(para)
+msgid "The 'review' command has the following sub commands:"
+msgstr ""
+
+#: osc.1.xml:2042(para)
+msgid "\"list\" lists open requests that need to be reviewed by the specified user or group"
+msgstr ""
+
+#: osc.1.xml:2045(para)
+msgid "\"add\" adds a person or group as reviewer to a request"
+msgstr ""
+
+#: osc.1.xml:2047(para)
+msgid "\"accept\" mark the review positive"
+msgstr ""
+
+#: osc.1.xml:2049(para)
+msgid "\"decline\" mark the review negative. A negative review will decline the request."
+msgstr ""
+
+#: osc.1.xml:2052(para)
+msgid "usage: osc request list [-M] [-U USER] [-s state] [-D DAYS] [-t type] [-B] [PRJ [PKG]] osc request log ID osc request [show] [-d] [-b] ID"
+msgstr ""
+
+#: osc.1.xml:2057(para)
+msgid "osc request accept [-m TEXT] ID osc request decline [-m TEXT] ID osc request revoke [-m TEXT] ID osc request reopen [-m TEXT] ID osc request setincident [-m TEXT] ID INCIDENT osc request supersede [-m TEXT] ID SUPERSEDING_ID osc request approvenew [-m TEXT] PROJECT osc request priorize [-m TEXT] ID PRIORITY"
+msgstr ""
+
+#: osc.1.xml:2066(para)
+msgid "osc request checkout/co ID osc request clone [-m TEXT] ID"
+msgstr ""
+
+#: osc.1.xml:2069(para)
+msgid "osc review show [-d] [-b] ID osc review list [-U USER] [-G GROUP] [-P PROJECT [-p PACKAGE]] [-s state] osc review add [-m TEXT] [-U USER] [-G GROUP] [-P PROJECT [-p PACKAGE]] ID osc review accept [-m TEXT] [-U USER] [-G GROUP] [-P PROJECT [-p PACKAGE]] ID osc review decline [-m TEXT] [-U USER] [-G GROUP] [-P PROJECT [-p PACKAGE]] ID osc review reopen [-m TEXT] [-U USER] [-G GROUP] [-P PROJECT [-p PACKAGE]] ID osc review supersede [-m TEXT] [-U USER] [-G GROUP] [-P PROJECT [-p PACKAGE]] ID SUPERSEDING_ID"
+msgstr ""
+
+#: osc.1.xml:2077(para)
+msgid "Options: -h, --help show this help message and exit --source-buildstatus print the buildstatus of the source package (only works with \"show\" and the interactive review) --involved-projects show all requests for project/packages where USER is involved --exclude-target-project=EXCLUDE_TARGET_PROJECT exclude target project from request list --non-interactive non-interactive review of request --or-revoke For automatisation scripts: accepts (if using with accept argument) a request when it is in new or review state. Or revoke it when it got declined. Otherwise just do nothing. -i, --interactive interactive review of request -e, --edit edit a submit action -B, --bugowner also show requests about packages where I am bugowner -M, --mine only show requests created by yourself -b, --brief print output in list view as list subcommand -p PACKAGE, --package=PACKAGE requests or reviews limited for the specified PACKAGE, requires also a PROJECT -P PROJECT, --project=PROJECT requests or reviews limited for the specified PROJECT -G GROUP, --group=GROUP requests or reviews limited for the specified GROUP -U USER, --user=USER requests or reviews limited for the specified USER -D DAYS, --days=DAYS only list requests in state \"new\" or changed in the last DAYS. [default=0] -s STATE, --state=STATE only list requests in one of the comma separated given states (new/review/accepted/revoked/declined) or \"all\" [default=\"declined,new,review\", or \"all\", if no args given] -f, --force enforce state change, can be used to ignore open reviews -a, --all all states. Same as'-s all' -t TYPE, --type=TYPE limit to requests which contain a given action type (submit/delete/change_devel) -m TEXT, --message=TEXT specify message TEXT --no-devel Do not attempt to forward to devel project -u, --unified output the diff in the unified diff format -d, --diff generate a diff"
+msgstr ""
+
+#: osc.1.xml:2137(emphasis)
+msgid "requestmaintainership (reqbs, reqbugownership, reqmaintainership, reqms, requestbugownership)"
+msgstr ""
+
+#: osc.1.xml:2139(para)
+msgid "requests to add user as maintainer or bugowner"
+msgstr ""
+
+#: osc.1.xml:2141(para)
+msgid "usage: osc requestmaintainership # for current user in checked out package osc requestmaintainership USER # for specified user in checked out package osc requestmaintainership PROJECT # for current user if cwd is not a checked out package osc requestmaintainership PROJECT PACKAGE # for current user osc requestmaintainership PROJECT PACKAGE USER # request for specified user osc requestmaintainership PROJECT PACKAGE group:NAME # request for specified group osc requestbugownership ... # accepts same parameters but uses bugowner role"
+msgstr ""
+
+#: osc.1.xml:2151(para)
+msgid "Options: -h, --help show this help message and exit -r role, --role=role specify user role (default: maintainer) -m TEXT, --message=TEXT specify message TEXT"
+msgstr ""
+
+#: osc.1.xml:2162(emphasis)
+msgid "resolved"
+msgstr ""
+
+#: osc.1.xml:2164(para)
+msgid "Remove 'conflicted' state on working copy files"
+msgstr ""
+
+#: osc.1.xml:2166(para)
+msgid "If an upstream change can't be merged automatically, a file is put into in 'conflicted' ('C') state. Within the file, conflicts are marked with special &lt;&lt;&lt;&lt;&lt;&lt;&lt; as well as ======== and &gt;&gt;&gt;&gt;&gt;&gt;&gt; lines."
+msgstr ""
+
+#: osc.1.xml:2170(para)
+msgid "After manually resolving all conflicting parts, use this command to remove the 'conflicted' state."
+msgstr ""
+
+#: osc.1.xml:2173(para)
+msgid "Note: this subcommand does not semantically resolve conflicts or remove conflict markers; it merely removes the conflict-related artifact files and allows PATH to be committed again."
+msgstr ""
+
+#: osc.1.xml:2177(para)
+msgid "usage: osc resolved FILE [FILE...]"
+msgstr ""
+
+#: osc.1.xml:2183(emphasis)
+msgid "restartbuild (abortbuild)"
+msgstr ""
+
+#: osc.1.xml:2185(para)
+msgid "Restart the build of a certain project or package"
+msgstr ""
+
+#: osc.1.xml:2187(para)
+msgid "usage: osc restartbuild [PROJECT [PACKAGE [REPOSITORY [ARCH]]]] Options: -h, --help show this help message and exit --all Restart all running builds of entire project -r REPO, --repo=REPO Restart builds for a specific repository -a ARCH, --arch=ARCH Restart builds for a specific architecture"
+msgstr ""
+
+#: osc.1.xml:2201(emphasis)
+msgid "results (r)"
+msgstr ""
+
+#: osc.1.xml:2203(para)
+msgid "Shows the build results of a package or project"
+msgstr ""
+
+#: osc.1.xml:2205(para)
+msgid "Usage: osc results # (inside working copy of PRJ or PKG) osc results PROJECT [PACKAGE]"
+msgstr ""
+
+#: osc.1.xml:2209(para)
+msgid "Options: -h, --help show this help message and exit --format=FORMAT format string for csv output --csv generate output in CSV format --xml generate output in XML (former results_meta) -w, --watch watch the results until all finished building -v, --verbose more verbose output -a ARCH, --arch=ARCH Show results only for specified architecture(s) -r REPO, --repo=REPO Show results only for specified repo(s) -l, --last-build show last build results (succeeded/failed/unknown)"
+msgstr ""
+
+#: osc.1.xml:2230(emphasis)
+msgid "revert"
+msgstr ""
+
+#: osc.1.xml:2232(para)
+msgid "Restore changed files or the entire working copy."
+msgstr ""
+
+#: osc.1.xml:2234(para)
+msgid "Examples: osc revert &lt;modified file(s)&gt; ose revert . Note: this only works for package working copies"
+msgstr ""
+
+#: osc.1.xml:2239(para)
+msgid "Usage: osc revert [FILES...]"
+msgstr ""
+
+#: osc.1.xml:2246(emphasis)
+msgid "rremove"
+msgstr ""
+
+#: osc.1.xml:2248(para)
+msgid "Remove source files from selected package"
+msgstr ""
+
+#: osc.1.xml:2250(para)
+msgid "Usage: osc rremove PROJECT PACKAGE [FILES...]"
+msgstr ""
+
+#: osc.1.xml:2253(para)
+msgid "Options: -h, --help show this help message and exit -f, --force Don't ask and delete files"
+msgstr ""
+
+#: osc.1.xml:2262(emphasis)
+msgid "search (bse, se)"
+msgstr ""
+
+#: osc.1.xml:2264(para)
+msgid "Search for a project and/or package."
+msgstr ""
+
+#: osc.1.xml:2266(para)
+msgid "If no option is specified osc will search for projects and packages which contains the 'search term' in their name, title or description."
+msgstr ""
+
+#: osc.1.xml:2270(para)
+msgid "usage: osc search 'search term' &lt;options&gt; osc bse ... ('osc search --binary') osc se 'perl(Foo::Bar)' ('osc --package perl-Foo-Bar') Options: -h, --help show this help message and exit --binaryversion=VERSION search for binary with specified version (implies --binary) -B PROJECT, --baseproject=PROJECT search packages built for PROJECT (implies --binary) --binary search binary packages --csv generate output in CSV (separated by |) -M, --mine shorthand for --bugowner --package --maintained OBSOLETE: please use maintained command instead. -m, --maintainer as -i, but only maintainer -b, --bugowner as -i, but only bugowner -i, --involved show projects/packages where given person (or myself) is involved as bugowner or maintainer [[{group|person}/]&lt;name&gt;] default: person -V, --version show package version, revision, and srcmd5. CAUTION: This is slow and unreliable -v, --verbose show more information -a ATTRIBUTE, --limit-to-attribute=ATTRIBUTE match only when given attribute exists in meta data --description search for matches in the 'description' element --title search for matches in the 'title' element --project search for a project --package search for a package -s, --substring Show also results where the search term is a sub string, slower search -e, --exact show only exact matches, this is default now --repos-baseurl show base URLs of download repositories"
+msgstr ""
+
+#: osc.1.xml:2318(emphasis)
+msgid "service"
+msgstr ""
+
+#: osc.1.xml:2320(para)
+msgid "Handle source services"
+msgstr ""
+
+#: osc.1.xml:2322(para)
+msgid "Source services can be used to modify sources like downloading files, verify files, generating files or modify existing files."
+msgstr ""
+
+#: osc.1.xml:2325(para)
+msgid "usage: osc service COMMAND (inside working copy) osc service run [SOURCE_SERVICE] osc service localrun osc service disabledrun osc service remoterun [PROJECT PACKAGE] osc service merge [PROJECT PACKAGE] osc service wait [PROJECT PACKAGE]"
+msgstr ""
+
+#: osc.1.xml:2334(para)
+msgid "COMMAND can be: run r run defined services locally, it takes an optional parameter to run only a specified source service. In case parameters exist for this one in _service file they are used. localrun lr run services locally and store files as local created disabledrun dr run disabled or server side only services locally and store files as local created remoterun rr trigger a re-run on the server side merge commits all server side generated files and drops the _service definition wait waits until the service finishes and returns with an error if it failed"
+msgstr ""
+
+#: osc.1.xml:2348(emphasis)
+msgid "setdevelproject (sdp)"
+msgstr ""
+
+#: osc.1.xml:2350(para)
+msgid "Set the devel project / package of a package"
+msgstr ""
+
+#: osc.1.xml:2352(para)
+msgid "Examples: osc setdevelproject [PRJ PKG] DEVPRJ [DEVPKG] Options: -h, --help show this help message and exit -u, --unset remove devel project"
+msgstr ""
+
+#: osc.1.xml:2363(emphasis)
+msgid "setlinkrev"
+msgstr ""
+
+#: osc.1.xml:2365(para)
+msgid "Updates a revision number in a source link."
+msgstr ""
+
+#: osc.1.xml:2367(para)
+msgid "This command adds or updates a specified revision number in a source link. The current revision of the source is used, if no revision number is specified."
+msgstr ""
+
+#: osc.1.xml:2370(para)
+msgid "usage: osc setlinkrev osc setlinkrev PROJECT [PACKAGE] Options: -h, --help show this help message and exit -u, --unset remove revision in link, it will point always to latest revision -R, --use-plain-revision Do not expand revision the specified or latest rev -r rev, --revision=rev use the specified revision."
+msgstr ""
+
+#: osc.1.xml:2387(emphasis)
+msgid "signkey"
+msgstr ""
+
+#: osc.1.xml:2389(para)
+msgid "Manage Project Signing Key"
+msgstr ""
+
+#: osc.1.xml:2391(para)
+msgid "osc signkey [--create|--delete|--extend] &lt;PROJECT&gt; osc signkey [--notraverse] &lt;PROJECT&gt;"
+msgstr ""
+
+#: osc.1.xml:2394(para)
+msgid "This command is for managing gpg keys. It shows the public key by default. There is no way to download or upload the private part of a key by design."
+msgstr ""
+
+#: osc.1.xml:2398(para)
+msgid "However you can create a new own key. You may want to consider to sign the public key with your own existing key."
+msgstr ""
+
+#: osc.1.xml:2401(para)
+msgid "If a project has no key, the key from upper level project will be used (eg. when dropping \"KDE:KDE4:Community\" key, the one from \"KDE:KDE4\" will be used)."
+msgstr ""
+
+#: osc.1.xml:2405(para)
+msgid "WARNING: THE OLD KEY WILL NOT BE RESTORABLE WHEN USING DELETE OR CREATE"
+msgstr ""
+
+#: osc.1.xml:2407(para)
+msgid "Usage: osc signkey [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:2410(para)
+msgid "Options: -h, --help show this help message and exit --sslcert fetch SSL certificate instead of GPG key --notraverse don' traverse projects upwards to find key --delete delete the gpg signing key in this project --extend extend expiration date of the gpg public key for this project --create create new gpg signing key for this project"
+msgstr ""
+
+#: osc.1.xml:2424(emphasis)
+msgid "status (st)"
+msgstr ""
+
+#: osc.1.xml:2426(para)
+msgid "Show status of files in working copy"
+msgstr ""
+
+#: osc.1.xml:2428(para)
+msgid "Show the status of files in a local working copy, indicating whether files have been changed locally, deleted, added, ..."
+msgstr ""
+
+#: osc.1.xml:2431(para)
+msgid "The first column in the output specifies the status and is one of the following characters: ' ' no modifications 'A' Added 'C' Conflicted 'D' Deleted 'M' Modified '?' item is not under version control '!' item is missing (removed by non-osc command) or incomplete 'S' item is skipped (item exceeds a file size limit or is _service:* file) 'F' Frozen (use \"osc pull\" to merge conflicts) (package-only state)"
+msgstr ""
+
+#: osc.1.xml:2443(para)
+msgid "examples: osc st osc st &lt;directory&gt; osc st file1 file2 ..."
+msgstr ""
+
+#: osc.1.xml:2448(para)
+msgid "usage: osc status [OPTS] [PATH...] Options: -h, --help show this help message and exit -e, --show-excluded also show files which are excluded by the \"exclude_glob\" config option -v, --verbose print extra information -q, --quiet print as little as possible"
+msgstr ""
+
+#: osc.1.xml:2464(emphasis)
+msgid "submitrequest (sr, submitpac, submitreq)"
+msgstr ""
+
+#: osc.1.xml:2466(para)
+msgid "Create request to submit source into another Project"
+msgstr ""
+
+#: osc.1.xml:2473(para)
+msgid "usage: osc submitreq [OPTIONS] osc submitreq [OPTIONS] DESTPRJ [DESTPKG] osc submitreq [OPTIONS] SOURCEPRJ SOURCEPKG DESTPRJ [DESTPKG]"
+msgstr ""
+
+#: osc.1.xml:2478(para)
+msgid "osc submitpac ... is a shorthand for osc submitreq --cleanup ..."
+msgstr ""
+
+#: osc.1.xml:2480(para)
+msgid "Options: -h, --help show this help message and exit --yes proceed without asking. -d, --diff show diff only instead of creating the actual request --update-link This transfers the source including the _link file. --no-update never touch source package on accept (will break source links) --no-cleanup never remove source package on accept, but update its content --cleanup remove package if submission gets accepted (default for home:&lt;id&gt;:branch projects) --seperate-requests Create multiple request instead of a single one (when command is used for entire project) --nodevelproject do not follow a defined devel project (primary project where a package is developed) -s SUPERSEDE, --supersede=SUPERSEDE Superseding another request by this one -r REV, --revision=REV specify a certain source revision ID (the md5 sum) for the source package -m TEXT, --message=TEXT specify message TEXT"
+msgstr ""
+
+#: osc.1.xml:2512(emphasis)
+msgid "token"
+msgstr ""
+
+#: osc.1.xml:2514(para)
+msgid "Show and manage authentication token"
+msgstr ""
+
+#: osc.1.xml:2516(para)
+msgid "Authentication token can be used to run specific commands without sending credentials."
+msgstr ""
+
+#: osc.1.xml:2519(para)
+msgid "Usage: osc token osc token --create [&lt;PROJECT&gt; &lt;PACKAGE&gt;] osc token --delete &lt;TOKENID&gt; osc token --trigger &lt;TOKENID&gt; Options: -h, --help show this help message and exit -t TOKENID, --trigger=TOKENID Trigger the action of a token -d TOKENID, --delete=TOKENID Create a new token -c, --create Create a new token"
+msgstr ""
+
+#: osc.1.xml:2537(emphasis)
+msgid "triggerreason (tr)"
+msgstr ""
+
+#: osc.1.xml:2539(para)
+msgid "Show reason why a package got triggered to build"
+msgstr ""
+
+#: osc.1.xml:2541(para)
+msgid "The server decides when a package needs to get rebuild, this command shows the detailed reason for a package. A brief reason is also stored in the jobhistory, which can be accessed via \"osc jobhistory\"."
+msgstr ""
+
+#: osc.1.xml:2545(para)
+msgid "Trigger reasons might be: - new build (never build yet or rebuild manually forced) - source change (eg. on updating sources) - meta change (packages which are used for building have changed) - rebuild count sync (In case that it is configured to sync release numbers)"
+msgstr ""
+
+#: osc.1.xml:2551(para)
+msgid "usage in package or project directory: osc reason REPOSITORY ARCH osc reason PROJECT PACKAGE REPOSITORY ARCH"
+msgstr ""
+
+#: osc.1.xml:2559(emphasis)
+msgid "undelete"
+msgstr ""
+
+#: osc.1.xml:2561(para)
+msgid "Restores a deleted project or package on the server."
+msgstr ""
+
+#: osc.1.xml:2563(para)
+msgid "The server restores a package including the sources and meta configuration. Binaries remain to be lost and will be rebuild."
+msgstr ""
+
+#: osc.1.xml:2566(para)
+msgid "usage: osc undelete PROJECT osc undelete PROJECT PACKAGE [PACKAGE ...]"
+msgstr ""
+
+#: osc.1.xml:2570(para) osc.1.xml:2588(para)
+msgid "Options: -h, --help show this help message and exit -m TEXT, --message=TEXT specify log message TEXT"
+msgstr ""
+
+#: osc.1.xml:2579(emphasis)
+msgid "unlock"
+msgstr ""
+
+#: osc.1.xml:2581(para)
+msgid "Unlocks a project or package"
+msgstr ""
+
+#: osc.1.xml:2583(para)
+msgid "Unlocks a locked project or package. A comment is required."
+msgstr ""
+
+#: osc.1.xml:2585(para)
+msgid "usage: osc unlock PROJECT [PACKAGE]"
+msgstr ""
+
+#: osc.1.xml:2597(emphasis)
+msgid "update (up)"
+msgstr ""
+
+#: osc.1.xml:2599(para)
+msgid "Update a working copy"
+msgstr ""
+
+#: osc.1.xml:2601(para)
+msgid "examples:"
+msgstr ""
+
+#: osc.1.xml:2603(para)
+msgid "1. osc up If the current working directory is a package, update it. If the directory is a project directory, update all contained packages, AND check out newly added packages."
+msgstr ""
+
+#: osc.1.xml:2608(para)
+msgid "To update only checked out packages, without checking out new ones, you might want to use \"osc up *\" from within the project dir."
+msgstr ""
+
+#: osc.1.xml:2612(para)
+msgid "2. osc up PAC Update the packages specified by the path argument(s)"
+msgstr ""
+
+#: osc.1.xml:2615(para)
+msgid "When --expand-link is used with source link packages, the expanded sources will be checked out. Without this option, the _link file and patches will be checked out. The option --unexpand-link can be used to switch back to the \"raw\" source with a _link file plus patch(es)."
+msgstr ""
+
+#: osc.1.xml:2620(para)
+msgid "Usage: osc update [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:2623(para)
+msgid "Options: -h, --help show this help message and exit -l limit_size, --limit-size=limit_size Skip all files with a given size -S, --server-side-source-service-files Use server side generated sources instead of local generation. -s, --source-service-files Run local source services after update. -e, --expand-link if a package is a link, update to the expanded sources -u, --unexpand-link if a package is an expanded link, update to the raw _link file -r REV, --revision=REV update to specified revision (this option will be ignored if you are going to update the complete project or more than one package)"
+msgstr ""
+
+#: osc.1.xml:2646(emphasis)
+msgid "updatepacmetafromspec (metafromspec, updatepkgmetafromspec)"
+msgstr ""
+
+#: osc.1.xml:2648(para)
+msgid "Update package meta information from a specfile"
+msgstr ""
+
+#: osc.1.xml:2652(para)
+msgid "Usage: osc updatepacmetafromspec [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:2655(para)
+msgid "Options: -h, --help show this help message and exit --specfile=FILE Path to specfile. (if you pass more than working copy this option is ignored)"
+msgstr ""
+
+#: osc.1.xml:2665(emphasis)
+msgid "vc"
+msgstr ""
+
+#: osc.1.xml:2667(para)
+msgid "Edit the changes file"
+msgstr ""
+
+#: osc.1.xml:2669(para)
+msgid "osc vc [-m MESSAGE|-e] [filename[.changes]|path [file_with_comment]] If no &lt;filename&gt; is given, exactly one *.changes or *.spec file has to be in the cwd or in path."
+msgstr ""
+
+#: osc.1.xml:2673(para)
+msgid "The email address used in .changes file is read from BuildService instance, or should be defined in ~/.oscrc [https://api.opensuse.org/] user = login pass = password email = user@defined.email"
+msgstr ""
+
+#: osc.1.xml:2680(para)
+msgid "or can be specified via mailaddr environment variable."
+msgstr ""
+
+#: osc.1.xml:2682(para)
+msgid "Usage: osc vc [ARGS...]"
+msgstr ""
+
+#: osc.1.xml:2685(para)
+msgid "Options: -h, --help show this help message and exit -e, --just-edit just open changes (cannot be used with -m) -F FILE, --file=FILE read changes message from FILE (do not open an editor) -m MESSAGE, --message=MESSAGE add MESSAGE to changes (do not open an editor)"
+msgstr ""
+
+#: osc.1.xml:2698(emphasis)
+msgid "whois (user, who)"
+msgstr ""
+
+#: osc.1.xml:2700(para)
+msgid "Show fullname and email of a buildservice user"
+msgstr ""
+
+#: osc.1.xml:2702(para)
+msgid "Usage: osc whois [USERNAMES...]"
+msgstr ""
+
+#: osc.1.xml:2709(emphasis)
+msgid "wipebinaries"
+msgstr ""
+
+#: osc.1.xml:2711(para)
+msgid "Delete all binary packages of a certain project/package"
+msgstr ""
+
+#: osc.1.xml:2713(para)
+msgid "With the optional argument &lt;package&gt; you can specify a certain package otherwise all binary packages in the project will be deleted."
+msgstr ""
+
+#: osc.1.xml:2716(para)
+msgid "usage: osc wipebinaries OPTS # works in checked out project dir osc wipebinaries OPTS PROJECT [PACKAGE] Options: -h, --help show this help message and exit --all Delete all binaries regardless of the package status (previously default) --unresolvable Delete all binaries of packages which have dependency errors --broken Delete all binaries of packages for which the package source is bad --build-failed Delete all binaries of packages for which the build failed --build-disabled Delete all binaries of packages for which the build is disabled -r REPO, --repo=REPO Delete all binary packages for a specific repository -a ARCH, --arch=ARCH Delete all binary packages for a specific architecture"
+msgstr ""
+
+#: osc.1.xml:2746(title)
+msgid "GLOBAL OPTIONS"
+msgstr ""
+
+#: osc.1.xml:2747(para)
+msgid "Options: --version show program's version number and exit -h, --help show this help message and exit --debugger jump into the debugger before executing anything --post-mortem jump into the debugger in case of errors -t, --traceback print call trace in case of errors -H, --http-debug debug HTTP traffic (filters some headers) --http-full-debug debug HTTP traffic (filters no headers) -d, --debug print info useful for debugging -A URL/alias, --apiurl=URL/alias specify URL to access API server at or an alias -c FILE, --config=FILE specify alternate configuration file --no-keyring disable usage of desktop keyring system --no-gnome-keyring disable usage of GNOME Keyring -v, --verbose increase verbosity -q, --quiet be quiet, not verbose"
+msgstr ""
+
+#: osc.1.xml:2769(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: osc.1.xml:2770(para)
+msgid "Type 'osc help &lt;subcommand&gt;' for more detailed help on a specific subcommand."
+msgstr ""
+
+#: osc.1.xml:2772(para)
+msgid "For additional information, see * <ulink url=\"http://en.opensuse.org/openSUSE\">http://en.opensuse.org/openSUSE</ulink>:Build_Service_Tutorial * <ulink url=\"http://en.opensuse.org/openSUSE\">http://en.opensuse.org/openSUSE</ulink>:OSC"
+msgstr ""
+
+#: osc.1.xml:2776(para)
+msgid "You can modify osc commands, or roll your own, via the plugin API: * <ulink url=\"http://en.opensuse.org/openSUSE\">http://en.opensuse.org/openSUSE</ulink>:OSC_plugins"
+msgstr ""
+
+#: osc.1.xml:2780(title)
+msgid "AUTHOR"
+msgstr ""
+
+#: osc.1.xml:2781(para)
+msgid "osc was written by several authors. This man page is automatically generated."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: osc.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

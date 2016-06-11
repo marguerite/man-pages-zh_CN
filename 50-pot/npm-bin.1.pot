@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-bin.1.xml:7(refentrytitle)
+msgid "NPM-BIN"
+msgstr ""
+
+#: npm-bin.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-bin.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-bin.1.xml:12(refname)
+msgid "npm-bin"
+msgstr ""
+
+#: npm-bin.1.xml:13(refpurpose)
+msgid "Display npm bin folder"
+msgstr ""
+
+#: npm-bin.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-bin.1.xml:18(replaceable)
+msgid "bin"
+msgstr ""
+
+#: npm-bin.1.xml:19(arg)
+msgid "-g"
+msgstr ""
+
+#: npm-bin.1.xml:19(arg)
+msgid "--global"
+msgstr ""
+
+#: npm-bin.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-bin.1.xml:25(para)
+msgid "Print the folder where npm will install executables."
+msgstr ""
+
+#: npm-bin.1.xml:28(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-bin.1.xml:32(para)
+msgid "npm help prefix"
+msgstr ""
+
+#: npm-bin.1.xml:35(para)
+msgid "npm help root"
+msgstr ""
+
+#: npm-bin.1.xml:38(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-bin.1.xml:41(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-bin.1.xml:44(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-bin.1.xml:47(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-bin.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

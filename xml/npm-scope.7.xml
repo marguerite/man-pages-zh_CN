@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmscope7'>
+<refmeta>
+<refentrytitle>NPM-SCOPE</refentrytitle>
+<manvolnum>7</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-scope</refname>
+<refpurpose>Scoped packages</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>All npm packages have a name. Some package names also have a scope. A scope
+follows the usual rules for package names (url-safe characters, no leading dots
+or underscores). When used in package names, preceded by an @-symbol and
+followed by a slash, e.g.</para>
+
+<literallayout remap='.nf'>
+@somescope/somepackagename
+</literallayout> <!-- .fi -->
+
+<para>Scopes are a way of grouping related packages together, and also affect a few
+things about the way npm treats the package.</para>
+
+<para>Scoped packages are supported by the public npm registry.  The npm
+client is backwards-compatible with un-scoped registries, so it can be
+used to work with scoped and un-scoped registries at the same time.</para>
+</refsect1>
+
+<refsect1 id='installing_scoped_packages'><title>Installing scoped packages</title>
+<para>Scoped packages are installed to a sub-folder of the regular installation
+folder, e.g. if your other packages are installed in <emphasis remap='B'>node_modules/packagename</emphasis>,
+scoped modules will be in <emphasis remap='B'>node_modules/@myorg/packagename</emphasis>&thinsp;. The scope folder
+(<emphasis remap='B'>@myorg</emphasis>) is simply the name of the scope preceded by an @-symbol, and can
+contain any number of scoped packages.</para>
+
+<para>A scoped package is installed by referencing it by name, preceded by an
+@-symbol, in <emphasis remap='B'>npm install</emphasis>:</para>
+
+<literallayout remap='.nf'>
+npm install @myorg/mypackage
+</literallayout> <!-- .fi -->
+
+<para>Or in <emphasis remap='B'>package.json</emphasis>:</para>
+
+<literallayout remap='.nf'>
+"dependencies": {
+  "@myorg/mypackage": "^1.3.0"
+}
+</literallayout> <!-- .fi -->
+
+<para>Note that if the @-symbol is omitted in either case npm will instead attempt to
+install from GitHub; see npm help <emphasis remap='B'>npm-install</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='requiring_scoped_packages'><title>Requiring scoped packages</title>
+<para>Because scoped packages are installed into a scope folder, you have to
+include the name of the scope when requiring them in your code, e.g.</para>
+
+<literallayout remap='.nf'>
+require('@myorg/mypackage')
+</literallayout> <!-- .fi -->
+
+<para>There is nothing special about the way Node treats scope folders, this is
+just specifying to require the module <emphasis remap='B'>mypackage</emphasis> in the folder called <emphasis remap='B'>@myorg</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='publishing_scoped_packages'><title>Publishing scoped packages</title>
+<para>Scoped packages can be published to any registry that supports them, including
+the public npm registry.</para>
+
+<para>(As of 2015-04-19, the public npm registry <emphasis remap='B'>does</emphasis> support scoped packages)</para>
+
+<para>If you wish, you may associate a scope with a registry; see below.</para>
+
+<refsect2 id='publishing_public_scoped_packages_to_the'><title>Publishing public scoped packages to the public npm registry</title>
+
+<para>To publish a public scoped package, you must specify <option>--access public</option> with
+the initial publication.  This will publish the package and set access
+to <emphasis remap='B'>public</emphasis> as if you had run <emphasis remap='B'>npm access public</emphasis> after publishing.</para>
+</refsect2>
+
+<refsect2 id='publishing_private_scoped_packages_to_th'><title>Publishing private scoped packages to the npm registry</title>
+
+<para>To publish a private scoped package to the npm registry, you must have
+an npm Private Modules <emphasis remap='I'>https://www.npmjs.com/private-modules</emphasis>
+account.</para>
+
+<para>You can then publish the module with <emphasis remap='B'>npm publish</emphasis> or <emphasis remap='B'>npm publish
+--access restricted</emphasis>, and it will be present in the npm registry, with
+restricted access.  You can then change the access permissions, if
+desired, with <emphasis remap='B'>npm access</emphasis> or on the npmjs.com website.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='associating_a_scope_with_a_registry'><title>Associating a scope with a registry</title>
+<para>Scopes can be associated with a separate registry. This allows you to
+seamlessly use a mix of packages from the public npm registry and one or more
+private registries, such as npm Enterprise.</para>
+
+<para>You can associate a scope with a registry at login, e.g.</para>
+
+<literallayout remap='.nf'>
+npm login --registry=<ulink url='http://reg.example.com'>http://reg.example.com</ulink> --scope=@myco
+</literallayout> <!-- .fi -->
+
+<para>Scopes have a many-to-one relationship with registries: one registry can
+host multiple scopes, but a scope only ever points to one registry.</para>
+
+<para>You can also associate a scope with a registry using <emphasis remap='B'>npm config</emphasis>:</para>
+
+<literallayout remap='.nf'>
+npm config set @myco:registry <ulink url='http://reg.example.com'>http://reg.example.com</ulink>
+</literallayout> <!-- .fi -->
+
+<para>Once a scope is associated with a registry, any <emphasis remap='B'>npm install</emphasis> for a package
+with that scope will request packages from that registry instead. Any
+<emphasis remap='B'>npm publish</emphasis> for a package name that contains the scope will be published to
+that registry instead.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help publish</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help access</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

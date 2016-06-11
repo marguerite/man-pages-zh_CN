@@ -1,0 +1,244 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-shrinkwrap.1.xml:7(refentrytitle)
+msgid "NPM-SHRINKWRAP"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:12(refname)
+msgid "npm-shrinkwrap"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:13(refpurpose)
+msgid "Lock down dependency versions"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:17(para)
+msgid "npm shrinkwrap"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:21(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:22(para)
+msgid "This command locks down the versions of a package's dependencies so that you can control exactly which versions of each dependency will be used when your package is installed. The <emphasis remap=\"B\">package.json</emphasis> file is still required if you want to use <emphasis remap=\"B\">npm install</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:27(para)
+msgid "By default, <emphasis remap=\"B\">npm install</emphasis> recursively installs the target's dependencies (as specified in <emphasis remap=\"B\">package.json</emphasis>), choosing the latest available version that satisfies the dependency's semver pattern. In some situations, particularly when shipping software where each change is tightly managed, it's desirable to fully specify each version of each dependency recursively so that subsequent builds and deploys do not inadvertently pick up newer versions of a dependency that satisfy the semver pattern. Specifying specific semver patterns in each dependency's <emphasis remap=\"B\">package.json</emphasis> would facilitate this, but that's not always possible or desirable, as when another author owns the npm package. It's also possible to check dependencies directly into source control, but that may be undesirable for other reasons."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:40(para)
+msgid "As an example, consider package A:"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:42(literallayout)
+#, no-wrap
+msgid "\n{\n  \"name\": \"A\",\n  \"version\": \"0.1.0\",\n  \"dependencies\": {\n    \"B\": \"&lt;0.1.0\"\n  }\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-shrinkwrap.1.xml:52(para)
+msgid "package B:"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:54(literallayout)
+#, no-wrap
+msgid "\n{\n  \"name\": \"B\",\n  \"version\": \"0.0.1\",\n  \"dependencies\": {\n    \"C\": \"&lt;0.1.0\"\n  }\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-shrinkwrap.1.xml:64(para)
+msgid "and package C:"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:66(literallayout)
+#, no-wrap
+msgid "\n{\n  \"name\": \"C\",\n  \"version\": \"0.0.1\"\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-shrinkwrap.1.xml:73(para)
+msgid "If these are the only versions of A, B, and C available in the registry, then a normal <emphasis remap=\"B\">npm install A</emphasis> will install:"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:76(literallayout)
+#, no-wrap
+msgid "\nA@0.1.0\n`-- B@0.0.1\n    `-- C@0.0.1\n"
+msgstr ""
+
+#. .fi
+#: npm-shrinkwrap.1.xml:82(para)
+msgid "However, if B@0.0.2 is published, then a fresh <emphasis remap=\"B\">npm install A</emphasis> will install:"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:85(literallayout)
+#, no-wrap
+msgid "\nA@0.1.0\n`-- B@0.0.2\n    `-- C@0.0.1\n"
+msgstr ""
+
+#. .fi
+#: npm-shrinkwrap.1.xml:91(para)
+msgid "assuming the new version did not modify B's dependencies. Of course, the new version of B could include a new version of C and any number of new dependencies. If such changes are undesirable, the author of A could specify a dependency on B@0.0.1. However, if A's author and B's author are not the same person, there's no way for A's author to say that he or she does not want to pull in newly published versions of C when B hasn't changed at all."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:99(para)
+msgid "In this case, A's author can run"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:101(literallayout)
+#, no-wrap
+msgid "\nnpm shrinkwrap\n"
+msgstr ""
+
+#. .fi
+#: npm-shrinkwrap.1.xml:105(para)
+msgid "This generates <emphasis remap=\"B\">npm-shrinkwrap.json</emphasis>, which will look something like this:"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:107(programlisting)
+#, no-wrap
+msgid "\n{\n  \"name\": \"A\",\n  \"version\": \"1.1.0\",\n  \"dependencies\": {\n    \"B\": {\n      \"version\": \"1.0.1\",\n      \"from\": \"B@^1.0.0\",\n      \"resolved\": \"https://registry.npmjs.org/B/-/B-1.0.1.tgz\",\n      \"dependencies\": {\n        \"C\": {\n          \"version\": \"1.0.1\",\n          \"from\": \"org/C#v1.0.1\",\n          \"resolved\": \"git://github.com/org/C.git#5c380ae319fc4efe9e7f2d9c78b0faa588fd99b4\"\n        }\n      }\n    }\n  }\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-shrinkwrap.1.xml:128(para)
+msgid "The shrinkwrap command has locked down the dependencies based on what's currently installed in <emphasis remap=\"B\">node_modules</emphasis>&thinsp;. The installation behavior is changed to:"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:133(term) npm-shrinkwrap.1.xml:164(term) npm-shrinkwrap.1.xml:191(term)
+msgid "1."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:135(para)
+msgid "The module tree described by the shrinkwrap is reproduced. This means reproducing the structure described in the file, using the specific files referenced in \"resolved\" if available, falling back to normal package resolution using \"version\" if one isn't."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:142(term) npm-shrinkwrap.1.xml:171(term) npm-shrinkwrap.1.xml:198(term)
+msgid "2."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:144(para)
+msgid "The tree is walked and any missing dependencies are installed in the usual fashion."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:151(title)
+msgid "Using shrinkwrapped packages"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:153(para)
+msgid "Using a shrinkwrapped package is no different than using any other package: you can <emphasis remap=\"B\">npm install</emphasis> it by hand, or add a dependency to your <emphasis remap=\"B\">package.json</emphasis> file and <emphasis remap=\"B\">npm install</emphasis> it."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:158(title)
+msgid "Building shrinkwrapped packages"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:160(para)
+msgid "To shrinkwrap an existing package:"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:166(para) npm-shrinkwrap.1.xml:193(para)
+msgid "Run <emphasis remap=\"B\">npm install</emphasis> in the package root to install the current versions of all dependencies."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:173(para)
+msgid "Validate that the package works as expected with these versions."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:177(term) npm-shrinkwrap.1.xml:208(term)
+msgid "3."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:179(para)
+msgid "Run <emphasis remap=\"B\">npm shrinkwrap</emphasis>, add <emphasis remap=\"B\">npm-shrinkwrap.json</emphasis> to git, and publish your package."
+msgstr ""
+
+#. remap='RE'
+#: npm-shrinkwrap.1.xml:187(para)
+msgid "To add or update a dependency in a shrinkwrapped package:"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:200(para)
+msgid "Add or update dependencies. <emphasis remap=\"B\">npm install --save</emphasis> each new or updated package individually to update the <emphasis remap=\"B\">package.json</emphasis> and the shrinkwrap. Note that they must be explicitly named in order to be installed: running <emphasis remap=\"B\">npm install</emphasis> with no arguments will merely reproduce the existing shrinkwrap."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:210(para)
+msgid "Validate that the package works as expected with the new dependencies."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:215(term)
+msgid "4."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:217(para)
+msgid "Commit the new <emphasis remap=\"B\">npm-shrinkwrap.json</emphasis>, and publish your package."
+msgstr ""
+
+#. remap='RE'
+#: npm-shrinkwrap.1.xml:224(para)
+msgid "You can use npm help outdated to view dependencies with newer versions available."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:228(title)
+msgid "Other Notes"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:230(para)
+msgid "A shrinkwrap file must be consistent with the package's <emphasis remap=\"B\">package.json</emphasis> file. <emphasis remap=\"B\">npm shrinkwrap</emphasis> will fail if required dependencies are not already installed, since that would result in a shrinkwrap that wouldn't actually work. Similarly, the command will fail if there are extraneous packages (not referenced by <emphasis remap=\"B\">package.json</emphasis>), since that would indicate that <emphasis remap=\"B\">package.json</emphasis> is not correct."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:237(para)
+msgid "Since <emphasis remap=\"B\">npm shrinkwrap</emphasis> is intended to lock down your dependencies for production use, <emphasis remap=\"B\">devDependencies</emphasis> will not be included unless you explicitly set the <option>--dev</option> flag when you run <emphasis remap=\"B\">npm shrinkwrap</emphasis>&thinsp;. If installed <emphasis remap=\"B\">devDependencies</emphasis> are excluded, then npm will print a warning. If you want them to be installed with your module by default, please consider adding them to <emphasis remap=\"B\">dependencies</emphasis> instead."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:244(para)
+msgid "If shrinkwrapped package A depends on shrinkwrapped package B, B's shrinkwrap will not be used as part of the installation of A. However, because A's shrinkwrap is constructed from a valid installation of B and recursively specifies all dependencies, the contents of B's shrinkwrap will implicitly be included in A's shrinkwrap."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:251(title)
+msgid "Caveats"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:253(para)
+msgid "If you wish to lock down the specific bytes included in a package, for example to have 100% confidence in being able to reproduce a deployment or build, then you ought to check your dependencies into source control, or pursue some other mechanism that can verify contents rather than versions."
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:261(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:265(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:268(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm-shrinkwrap.1.xml:271(para)
+msgid "npm help ls"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-shrinkwrap.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

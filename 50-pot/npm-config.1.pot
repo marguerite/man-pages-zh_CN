@@ -1,0 +1,186 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-config.1.xml:7(refentrytitle)
+msgid "NPM-CONFIG"
+msgstr ""
+
+#: npm-config.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-config.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-config.1.xml:12(refname)
+msgid "npm-config"
+msgstr ""
+
+#: npm-config.1.xml:13(refpurpose)
+msgid "Manage the npm configuration files"
+msgstr ""
+
+#: npm-config.1.xml:18(command) npm-config.1.xml:23(replaceable) npm-config.1.xml:27(replaceable) npm-config.1.xml:31(replaceable) npm-config.1.xml:34(replaceable) npm-config.1.xml:37(replaceable) npm-config.1.xml:40(replaceable)
+msgid "npm"
+msgstr ""
+
+#: npm-config.1.xml:18(replaceable) npm-config.1.xml:24(replaceable) npm-config.1.xml:28(replaceable) npm-config.1.xml:32(replaceable) npm-config.1.xml:35(replaceable)
+msgid "config"
+msgstr ""
+
+#: npm-config.1.xml:19(replaceable) npm-config.1.xml:41(replaceable) npm-config.1.xml:65(title)
+msgid "set"
+msgstr ""
+
+#: npm-config.1.xml:20(replaceable) npm-config.1.xml:26(replaceable) npm-config.1.xml:30(replaceable) npm-config.1.xml:39(replaceable) npm-config.1.xml:42(replaceable)
+msgid "&lt;key&gt;"
+msgstr ""
+
+#: npm-config.1.xml:21(replaceable) npm-config.1.xml:43(replaceable)
+msgid "&lt;value&gt;"
+msgstr ""
+
+#: npm-config.1.xml:22(arg) npm-config.1.xml:44(arg)
+msgid "-g"
+msgstr ""
+
+#: npm-config.1.xml:22(arg) npm-config.1.xml:44(arg)
+msgid "--global"
+msgstr ""
+
+#: npm-config.1.xml:25(replaceable) npm-config.1.xml:38(replaceable) npm-config.1.xml:76(title)
+msgid "get"
+msgstr ""
+
+#: npm-config.1.xml:29(replaceable) npm-config.1.xml:94(title)
+msgid "delete"
+msgstr ""
+
+#: npm-config.1.xml:33(replaceable) npm-config.1.xml:85(title)
+msgid "list"
+msgstr ""
+
+#: npm-config.1.xml:36(replaceable) npm-config.1.xml:103(title)
+msgid "edit"
+msgstr ""
+
+#: npm-config.1.xml:49(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-config.1.xml:50(para)
+msgid "npm gets its config settings from the command line, environment variables, <emphasis remap=\"B\">npmrc</emphasis> files, and in some cases, the <emphasis remap=\"B\">package.json</emphasis> file."
+msgstr ""
+
+#: npm-config.1.xml:53(para)
+msgid "See npm help 5 npmrc for more information about the npmrc files."
+msgstr ""
+
+#: npm-config.1.xml:55(para)
+msgid "See npm help 7 <emphasis remap=\"B\">npm-config</emphasis> for a more thorough discussion of the mechanisms involved."
+msgstr ""
+
+#: npm-config.1.xml:58(para)
+msgid "The <emphasis remap=\"B\">npm config</emphasis> command can be used to update and edit the contents of the user and global npmrc files."
+msgstr ""
+
+#: npm-config.1.xml:62(title)
+msgid "Sub-commands"
+msgstr ""
+
+#: npm-config.1.xml:63(para)
+msgid "Config supports the following sub-commands:"
+msgstr ""
+
+#: npm-config.1.xml:67(literallayout)
+#, no-wrap
+msgid "\nnpm config set key value\n"
+msgstr ""
+
+#. .fi
+#: npm-config.1.xml:71(para)
+msgid "Sets the config key to the value."
+msgstr ""
+
+#: npm-config.1.xml:73(para)
+msgid "If value is omitted, then it sets it to \"true\"."
+msgstr ""
+
+#: npm-config.1.xml:78(literallayout)
+#, no-wrap
+msgid "\nnpm config get key\n"
+msgstr ""
+
+#. .fi
+#: npm-config.1.xml:82(para)
+msgid "Echo the config value to stdout."
+msgstr ""
+
+#: npm-config.1.xml:87(literallayout)
+#, no-wrap
+msgid "\nnpm config list\n"
+msgstr ""
+
+#. .fi
+#: npm-config.1.xml:91(para)
+msgid "Show all the config settings."
+msgstr ""
+
+#: npm-config.1.xml:96(literallayout)
+#, no-wrap
+msgid "\nnpm config delete key\n"
+msgstr ""
+
+#. .fi
+#: npm-config.1.xml:100(para)
+msgid "Deletes the key from all configuration files."
+msgstr ""
+
+#: npm-config.1.xml:105(literallayout)
+#, no-wrap
+msgid "\nnpm config edit\n"
+msgstr ""
+
+#. .fi
+#: npm-config.1.xml:109(para)
+msgid "Opens the config file in an editor. Use the <option>--global</option> flag to edit the global config."
+msgstr ""
+
+#: npm-config.1.xml:114(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-config.1.xml:118(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-config.1.xml:121(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-config.1.xml:124(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm-config.1.xml:127(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-config.1.xml:130(para)
+msgid "npm help npm"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-config.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

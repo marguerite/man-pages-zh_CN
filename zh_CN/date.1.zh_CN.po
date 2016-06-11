@@ -1,114 +1,123 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-08-09 22:57+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: date.1.xml:8(refentrytitle)
 msgid "DATE"
-msgstr ""
+msgstr "date"
 
 #: date.1.xml:9(manvolnum)
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: date.1.xml:10(refmiscinfo)
 msgid "July 2014"
-msgstr ""
+msgstr "2014 年 7 月"
 
 #: date.1.xml:11(refmiscinfo)
 msgid "GNU coreutils 8.22"
-msgstr ""
+msgstr "GNU coreutils 8.22"
 
 #: date.1.xml:14(refname) date.1.xml:20(command) date.1.xml:25(command)
 msgid "date"
-msgstr ""
+msgstr "date"
 
 #: date.1.xml:15(refpurpose)
 msgid "print or set the system date and time"
-msgstr ""
+msgstr "输出或设置系统日期和时间"
 
 #: date.1.xml:21(replaceable)
 msgid "OPTION"
-msgstr ""
+msgstr "选项"
 
 #: date.1.xml:22(arg)
 msgid "+FORMAT"
-msgstr ""
+msgstr "+FORMAT"
 
 #: date.1.xml:26(arg)
 msgid "-u"
-msgstr ""
+msgstr "-u"
 
 #: date.1.xml:26(arg)
 msgid "--utc"
-msgstr ""
+msgstr "--utc"
 
 #: date.1.xml:26(arg)
 msgid "--universal"
-msgstr ""
+msgstr "--universal"
 
 #: date.1.xml:27(replaceable)
 msgid "MMDDhhmm"
-msgstr ""
+msgstr "MMDDhhmm"
 
 #: date.1.xml:27(replaceable)
 msgid "CC"
-msgstr ""
+msgstr "CC"
 
 #: date.1.xml:27(replaceable)
 msgid "YY"
-msgstr ""
+msgstr "YY"
 
 #: date.1.xml:27(replaceable)
 msgid ".[ss]"
-msgstr ""
+msgstr ".[ss]"
 
 #: date.1.xml:32(title)
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #. Add any additional description here
 #: date.1.xml:35(para)
 msgid "Display the current time in the given FORMAT, or set the system date."
-msgstr ""
+msgstr "以给定格式显示当前时间，或设置系统日期。"
 
 #: date.1.xml:37(para)
 msgid ""
 "Mandatory arguments to long options are mandatory for short options too."
-msgstr ""
+msgstr "针对长选项的强制参数对短选项来说也是强制的。"
 
 #: date.1.xml:40(term)
 msgid ""
 "<option>-d</option>, <option>--date</option>=<emphasis remap=\"I\">STRING</"
 "emphasis>"
 msgstr ""
+"<option>-d</option>, <option>--date</option>=<emphasis remap=\"I\">字符串<"
+"/emphasis>"
 
 #: date.1.xml:42(para)
 msgid "display time described by STRING, not 'now'"
-msgstr ""
+msgstr "显示字符串描述的日期，而非 'now'"
 
 #: date.1.xml:46(term)
 msgid ""
 "<option>-f</option>, <option>--file</option>=<emphasis remap=\"I\">DATEFILE</"
 "emphasis>"
 msgstr ""
+"<option>-f</option>, <option>--file</option>=<emphasis remap=\"I\">日期文件<"
+"/emphasis>"
 
 #: date.1.xml:48(para)
 msgid "like <option>--date</option> once for each line of DATEFILE"
-msgstr ""
+msgstr "像对日期文件的每一行进行一次 <option>--date</option>"
 
 #: date.1.xml:52(term)
 msgid ""
 "<option>-I[TIMESPEC]</option>, <option>--iso-8601</option>[=<emphasis remap="
 "\"I\">TIMESPEC</emphasis>]"
 msgstr ""
+"<option>-I[TIMESPEC]</option>, <option>--iso-8601</option>[=<emphasis remap="
+"\"I\">时间规范</emphasis>]"
 
 #: date.1.xml:54(para)
 msgid ""
@@ -116,30 +125,36 @@ msgid ""
 "default), 'hours', 'minutes', 'seconds', or 'ns' for date and time to the "
 "indicated precision."
 msgstr ""
+"以 ISO 8601 格式输出日期/时间，TIMESPEC=‘date’仅显示日期 (默认), 'hours'、'minutes'、'seconds'，或 "
+"'ns' 以指示精度显示日期和时间。"
 
 #: date.1.xml:61(term)
 msgid ""
 "<option>-r</option>, <option>--reference</option>=<emphasis remap=\"I"
 "\">FILE</emphasis>"
 msgstr ""
+"<option>-r</option>, <option>--reference</option>=<emphasis remap=\"I\">文件<"
+"/emphasis>"
 
 #: date.1.xml:63(para)
 msgid "display the last modification time of FILE"
-msgstr ""
+msgstr "显示文件的最后修订时间"
 
 #: date.1.xml:67(term)
 msgid "<option>-R</option>, <option>--rfc-2822</option>"
-msgstr ""
+msgstr "<option>-R</option>, <option>--rfc-2822</option>"
 
 #: date.1.xml:69(para)
 msgid ""
 "output date and time in RFC 2822 format. Example: Mon, 07 Aug 2006 12:34:56 "
 "<option>-0600</option>"
 msgstr ""
+"以 RFC 2822 格式输出日期和时间。范例：Mon, 07 Aug 2006 12:34:56 "
+"<option>-0600</option>"
 
 #: date.1.xml:74(term)
 msgid "<option>--rfc-3339</option>=<emphasis remap=\"I\">TIMESPEC</emphasis>"
-msgstr ""
+msgstr "<option>--rfc-3339</option>=<emphasis remap=\"I\">日期规范</emphasis>"
 
 #: date.1.xml:76(para)
 msgid ""
@@ -147,453 +162,458 @@ msgid ""
 "for date and time to the indicated precision. Date and time components are "
 "separated by a single space: 2006-08-07 12:34:56-06:00"
 msgstr ""
+"以 RFC 3339 格式输出日期和时间。TIMESPEC='date'，'seconds' 或 'ns' "
+"以指示精度显示日期和时间。日期和时间部件均由一个空格分隔：2006-08-07 12:34:56-06:00"
 
 #: date.1.xml:84(term)
 msgid ""
 "<option>-s</option>, <option>--set</option>=<emphasis remap=\"I\">STRING</"
 "emphasis>"
 msgstr ""
+"<option>-s</option>, <option>--set</option>=<emphasis remap=\"I\">字符串<"
+"/emphasis>"
 
 #: date.1.xml:86(para)
 msgid "set time described by STRING"
-msgstr ""
+msgstr "设置由字符串描述的时间"
 
 #: date.1.xml:90(term)
 msgid ""
 "<option>-u</option>, <option>--utc</option>, <option>--universal</option>"
 msgstr ""
+"<option>-u</option>, <option>--utc</option>, <option>--universal</option>"
 
 #: date.1.xml:92(para)
 msgid "print or set Coordinated Universal Time (UTC)"
-msgstr ""
+msgstr "输出或设置协调世界时 (UTC)"
 
 #: date.1.xml:96(option)
 msgid "--help"
-msgstr ""
+msgstr "--help"
 
 #: date.1.xml:98(para)
 msgid "display this help and exit"
-msgstr ""
+msgstr "显示此帮助并退出"
 
 #: date.1.xml:102(option)
 msgid "--version"
-msgstr ""
+msgstr "--version"
 
 #: date.1.xml:104(para)
 msgid "output version information and exit"
-msgstr ""
+msgstr "输出版本信息并退出"
 
 #: date.1.xml:106(para)
 msgid "FORMAT controls the output. Interpreted sequences are:"
-msgstr ""
+msgstr "FORMAT 控制着输出。解释序列为："
 
 #: date.1.xml:110(term)
 msgid "%%"
-msgstr ""
+msgstr "%%"
 
 #: date.1.xml:112(para)
 msgid "a literal %"
-msgstr ""
+msgstr "名义的 %"
 
 #: date.1.xml:116(term)
 msgid "%a"
-msgstr ""
+msgstr "%a"
 
 #: date.1.xml:118(para)
 msgid "locale's abbreviated weekday name (e.g., Sun)"
-msgstr ""
+msgstr "语系的缩写星期名 (例如, Sun)"
 
 #: date.1.xml:122(term)
 msgid "%A"
-msgstr ""
+msgstr "%A"
 
 #: date.1.xml:124(para)
 msgid "locale's full weekday name (e.g., Sunday)"
-msgstr ""
+msgstr "日期的完整星期名 (例如，Sunday)"
 
 #: date.1.xml:128(term)
 msgid "%b"
-msgstr ""
+msgstr "%b"
 
 #: date.1.xml:130(para)
 msgid "locale's abbreviated month name (e.g., Jan)"
-msgstr ""
+msgstr "语系的缩写月份名 (例如，Jan)"
 
 #: date.1.xml:134(term)
 msgid "%B"
-msgstr ""
+msgstr "%B"
 
 #: date.1.xml:136(para)
 msgid "locale's full month name (e.g., January)"
-msgstr ""
+msgstr "语系的完整月份名 (例如，January)"
 
 #: date.1.xml:140(term)
 msgid "%c"
-msgstr ""
+msgstr "%c"
 
 #: date.1.xml:142(para)
 msgid "locale's date and time (e.g., Thu Mar 3 23:05:25 2005)"
-msgstr ""
+msgstr "语系的日期和时间 (例如，Thu Mar 3 23:05:25 2005)"
 
 #: date.1.xml:146(term)
 msgid "%C"
-msgstr ""
+msgstr "%C"
 
 #: date.1.xml:148(para)
 msgid "century; like %Y, except omit last two digits (e.g., 20)"
-msgstr ""
+msgstr "世纪; 与 %Y 一样，除了省略了最后的两位 (例如，20)"
 
 #: date.1.xml:152(term)
 msgid "%d"
-msgstr ""
+msgstr "%d"
 
 #: date.1.xml:154(para)
 msgid "day of month (e.g., 01)"
-msgstr ""
+msgstr "一个月中的一天 (例如，01)"
 
 #: date.1.xml:158(term)
 msgid "%D"
-msgstr ""
+msgstr "%D"
 
 #: date.1.xml:160(para)
 msgid "date; same as %m/%d/%y"
-msgstr ""
+msgstr "日期; 与 %m/%d/%y 相同"
 
 #: date.1.xml:164(term)
 msgid "%e"
-msgstr ""
+msgstr "%e"
 
 #: date.1.xml:166(para)
 msgid "day of month, space padded; same as %_d"
-msgstr ""
+msgstr "前面加了空格的日期; 与 %_d 相同"
 
 #: date.1.xml:170(term)
 msgid "%F"
-msgstr ""
+msgstr "%F"
 
 #: date.1.xml:172(para)
 msgid "full date; same as %Y-%m-%d"
-msgstr ""
+msgstr "完整日期; 与 %Y-%m-%d 相同"
 
 #: date.1.xml:176(term)
 msgid "%g"
-msgstr ""
+msgstr "%g"
 
 #: date.1.xml:178(para)
 msgid "last two digits of year of ISO week number (see %G)"
-msgstr ""
+msgstr "ISO 星期数年份的最后两位 (见 %G)"
 
 #: date.1.xml:182(term)
 msgid "%G"
-msgstr ""
+msgstr "%G"
 
 #: date.1.xml:184(para)
 msgid "year of ISO week number (see %V); normally useful only with %V"
-msgstr ""
+msgstr "ISO 星期数年份 (见 %V); 正常只与 %V 一起才有用"
 
 #: date.1.xml:188(term)
 msgid "%h"
-msgstr ""
+msgstr "%h"
 
 #: date.1.xml:190(para)
 msgid "same as %b"
-msgstr ""
+msgstr "与 %b 相同"
 
 #: date.1.xml:194(term)
 msgid "%H"
-msgstr ""
+msgstr "%H"
 
 #: date.1.xml:196(para)
 msgid "hour (00..23)"
-msgstr ""
+msgstr "小时 (00..23)"
 
 #: date.1.xml:200(term)
 msgid "%I"
-msgstr ""
+msgstr "%I"
 
 #: date.1.xml:202(para)
 msgid "hour (01..12)"
-msgstr ""
+msgstr "小时 (01..12)"
 
 #: date.1.xml:206(term)
 msgid "%j"
-msgstr ""
+msgstr "%j"
 
 #: date.1.xml:208(para)
 msgid "day of year (001..366)"
-msgstr ""
+msgstr "一年中的一天 (001..366)"
 
 #: date.1.xml:212(term)
 msgid "%k"
-msgstr ""
+msgstr "%k"
 
 #: date.1.xml:214(para)
 msgid "hour, space padded ( 0..23); same as %_H"
-msgstr ""
+msgstr "前面加了空格的小时 ( 0..23); 与 %_H 相同"
 
 #: date.1.xml:218(term)
 msgid "%l"
-msgstr ""
+msgstr "%l"
 
 #: date.1.xml:220(para)
 msgid "hour, space padded ( 1..12); same as %_I"
-msgstr ""
+msgstr "前面加了空格的小时 ( 1..12); 与 %_I 相同"
 
 #: date.1.xml:224(term)
 msgid "%m"
-msgstr ""
+msgstr "%m"
 
 #: date.1.xml:226(para)
 msgid "month (01..12)"
-msgstr ""
+msgstr "月份 (01..12)"
 
 #: date.1.xml:230(term)
 msgid "%M"
-msgstr ""
+msgstr "%M"
 
 #: date.1.xml:232(para)
 msgid "minute (00..59)"
-msgstr ""
+msgstr "分钟 (00..59)"
 
 #: date.1.xml:236(term)
 msgid "%n"
-msgstr ""
+msgstr "%n"
 
 #: date.1.xml:238(para)
 msgid "a newline"
-msgstr ""
+msgstr "新行"
 
 #: date.1.xml:242(term)
 msgid "%N"
-msgstr ""
+msgstr "%N"
 
 #: date.1.xml:244(para)
 msgid "nanoseconds (000000000..999999999)"
-msgstr ""
+msgstr "纳秒 (000000000..999999999)"
 
 #: date.1.xml:248(term)
 msgid "%p"
-msgstr ""
+msgstr "%p"
 
 #: date.1.xml:250(para)
 msgid "locale's equivalent of either AM or PM; blank if not known"
-msgstr ""
+msgstr "语系中 AM 或 PM 的等价物; 未知则留白"
 
 #: date.1.xml:254(term)
 msgid "%P"
-msgstr ""
+msgstr "%P"
 
 #: date.1.xml:256(para)
 msgid "like %p, but lower case"
-msgstr ""
+msgstr "像 %p，但是是小写的"
 
 #: date.1.xml:260(term)
 msgid "%r"
-msgstr ""
+msgstr "%r"
 
 #: date.1.xml:262(para)
 msgid "locale's 12-hour clock time (e.g., 11:11:04 PM)"
-msgstr ""
+msgstr "语系中的 12 小时制时间 (例如，11:11:04 PM)"
 
 #: date.1.xml:266(term)
 msgid "%R"
-msgstr ""
+msgstr "%R"
 
 #: date.1.xml:268(para)
 msgid "24-hour hour and minute; same as %H:%M"
-msgstr ""
+msgstr "24 小时制的小时和分钟; 与 %H:%M 一样"
 
 #: date.1.xml:272(term)
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: date.1.xml:274(para)
 msgid "seconds since 1970-01-01 00:00:00 UTC"
-msgstr ""
+msgstr "自 1970-01-01 00:00:00 UTC 起的秒数"
 
 #: date.1.xml:278(term)
 msgid "%S"
-msgstr ""
+msgstr "%S"
 
 #: date.1.xml:280(para)
 msgid "second (00..60)"
-msgstr ""
+msgstr "秒 (00..60)"
 
 #: date.1.xml:284(term)
 msgid "%t"
-msgstr ""
+msgstr "%t"
 
 #: date.1.xml:286(para)
 msgid "a tab"
-msgstr ""
+msgstr "一个制表符 TAB"
 
 #: date.1.xml:290(term)
 msgid "%T"
-msgstr ""
+msgstr "%T"
 
 #: date.1.xml:292(para)
 msgid "time; same as %H:%M:%S"
-msgstr ""
+msgstr "时间; 与 %H:%M:%S 一样"
 
 #: date.1.xml:296(term)
 msgid "%u"
-msgstr ""
+msgstr "%u"
 
 #: date.1.xml:298(para)
 msgid "day of week (1..7); 1 is Monday"
-msgstr ""
+msgstr "一星期中的一天 (1..7); 1 是星期一"
 
 #: date.1.xml:302(term)
 msgid "%U"
-msgstr ""
+msgstr "%U"
 
 #: date.1.xml:304(para)
 msgid "week number of year, with Sunday as first day of week (00..53)"
-msgstr ""
+msgstr "一年中的星期数目，星期日是一周的第一天 (00..53)"
 
 #: date.1.xml:308(term)
 msgid "%V"
-msgstr ""
+msgstr "%V"
 
 #: date.1.xml:310(para)
 msgid "ISO week number, with Monday as first day of week (01..53)"
-msgstr ""
+msgstr "ISO 星期数目，星期一是一周的第一天 (01..53)"
 
 #: date.1.xml:314(term)
 msgid "%w"
-msgstr ""
+msgstr "%w"
 
 #: date.1.xml:316(para)
 msgid "day of week (0..6); 0 is Sunday"
-msgstr ""
+msgstr "一星期中的一天 (0..6); 0 是星期日"
 
 #: date.1.xml:320(term)
 msgid "%W"
-msgstr ""
+msgstr "%W"
 
 #: date.1.xml:322(para)
 msgid "week number of year, with Monday as first day of week (00..53)"
-msgstr ""
+msgstr "一年中的星期数目，星期一是一周的第一天 (00..53)"
 
 #: date.1.xml:326(term)
 msgid "%x"
-msgstr ""
+msgstr "%x"
 
 #: date.1.xml:328(para)
 msgid "locale's date representation (e.g., 12/31/99)"
-msgstr ""
+msgstr "语系的日期表示 (例如，12/31/99)"
 
 #: date.1.xml:332(term)
 msgid "%X"
-msgstr ""
+msgstr "%X"
 
 #: date.1.xml:334(para)
 msgid "locale's time representation (e.g., 23:13:48)"
-msgstr ""
+msgstr "语系的时间表示 (例如，23:13:48)"
 
 #: date.1.xml:338(term)
 msgid "%y"
-msgstr ""
+msgstr "%y"
 
 #: date.1.xml:340(para)
 msgid "last two digits of year (00..99)"
-msgstr ""
+msgstr "年份的后两位 (00..99)"
 
 #: date.1.xml:344(term)
 msgid "%Y"
-msgstr ""
+msgstr "%Y"
 
 #: date.1.xml:346(para)
 msgid "year"
-msgstr ""
+msgstr "年份"
 
 #: date.1.xml:350(term)
 msgid "%z"
-msgstr ""
+msgstr "%z"
 
 #: date.1.xml:352(para)
 msgid "+hhmm numeric time zone (e.g., <option>-0400</option>)"
-msgstr ""
+msgstr "+hhmm 数字时区 (例如，<option>-0400</option>)"
 
 #: date.1.xml:356(term)
 msgid "%:z"
-msgstr ""
+msgstr "%:z"
 
 #: date.1.xml:358(para)
 msgid "+hh:mm numeric time zone (e.g., <option>-04</option>:00)"
-msgstr ""
+msgstr "+hh:mm 数字时区 (例如，<option>-04</option>:00)"
 
 #: date.1.xml:362(term)
 msgid "%::z"
-msgstr ""
+msgstr "%::z"
 
 #: date.1.xml:364(para)
 msgid "+hh:mm:ss numeric time zone (e.g., <option>-04</option>:00:00)"
-msgstr ""
+msgstr "+hh:mm:ss 数字时区 (例如，<option>-04</option>:00:00)"
 
 #: date.1.xml:368(term)
 msgid "%:::z"
-msgstr ""
+msgstr "%:::z"
 
 #: date.1.xml:370(para)
 msgid ""
 "numeric time zone with : to necessary precision (e.g., <option>-04</option>, "
 "+05:30)"
-msgstr ""
+msgstr "带有必要精度的数字时区 (例如，<option>-04</option>, +05:30)"
 
 #: date.1.xml:374(term)
 msgid "%Z"
-msgstr ""
+msgstr "%Z"
 
 #: date.1.xml:376(para)
 msgid "alphabetic time zone abbreviation (e.g., EDT)"
-msgstr ""
+msgstr "字母时区缩写 (例如，EDT)"
 
 #: date.1.xml:378(para)
 msgid ""
 "By default, date pads numeric fields with zeroes. The following optional "
 "flags may follow '%':"
-msgstr ""
+msgstr "默认情况下，date 以零填充数字区。以下可选旗标可接在 '%' 后："
 
 #: date.1.xml:383(term)
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: date.1.xml:385(para)
 msgid "(hyphen) do not pad the field"
-msgstr ""
+msgstr "(连字符) 不填充数字区"
 
 #: date.1.xml:389(term)
 msgid "_"
-msgstr ""
+msgstr "_"
 
 #: date.1.xml:391(para)
 msgid "(underscore) pad with spaces"
-msgstr ""
+msgstr "(下划线) 以空格填充数字区"
 
 #: date.1.xml:395(term)
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: date.1.xml:397(para)
 msgid "(zero) pad with zeros"
-msgstr ""
+msgstr "(零) 以零填充数字区"
 
 #: date.1.xml:401(term)
 msgid "^"
-msgstr ""
+msgstr "^"
 
 #: date.1.xml:403(para)
 msgid "use upper case if possible"
-msgstr ""
+msgstr "可行则用大写"
 
 #: date.1.xml:407(term)
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: date.1.xml:409(para)
 msgid "use opposite case if possible"
-msgstr ""
+msgstr "可行则用相反的大小写"
 
 #: date.1.xml:411(para)
 msgid ""
@@ -602,34 +622,36 @@ msgid ""
 "representations if available, or O to use the locale's alternate numeric "
 "symbols if available."
 msgstr ""
+"在旗标后是可选的宽度字段，应为十进制数字; 然后是可选的修饰符，要么为 E 即可行时使用语系中替代性的表示法，要么为 O "
+"即可行时使用语系中替代性的数字符号。"
 
 #: date.1.xml:420(title)
 msgid "EXAMPLES"
-msgstr ""
+msgstr "范例"
 
 #: date.1.xml:421(para)
 msgid "Convert seconds since the epoch (1970-01-01 UTC) to a date"
-msgstr ""
+msgstr "将自原点 (1970-01-01 UTC) 起的秒数转换为日期"
 
 #: date.1.xml:423(emphasis)
 msgid "$ date --date='@2147483647'"
-msgstr ""
+msgstr "$ date --date='@2147483647'"
 
 #: date.1.xml:425(para)
 msgid "Show the time on the west coast of the US (use tzselect(1) to find TZ)"
-msgstr ""
+msgstr "显示美国西海岸的时间 (使用 tzselect(1) 来查找时区)"
 
 #: date.1.xml:427(emphasis)
 msgid "$ TZ='America/Los_Angeles' date"
-msgstr ""
+msgstr "$ TZ='America/Los_Angeles' date"
 
 #: date.1.xml:429(para)
 msgid "Show the local time for 9AM next Friday on the west coast of the US"
-msgstr ""
+msgstr "显示下周五上午 9 点美国西海岸的当地时间"
 
 #: date.1.xml:431(emphasis)
 msgid "$ date --date='TZ=\"America/Los_Angeles\" 09:00 next Fri'"
-msgstr ""
+msgstr "$ date --date='TZ=\"America/Los_Angeles\" 09:00 next Fri'"
 
 #: date.1.xml:433(para)
 msgid ""
@@ -638,10 +660,14 @@ msgid ""
 "date translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
 "&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
+"GNU coreutils 在线帮助：&lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> 汇报 "
+"date 翻译故障 &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 
 #: date.1.xml:437(title)
 msgid "DATE STRING"
-msgstr ""
+msgstr "日期字符串"
 
 #. NOTE: keep this paragraph in sync with the one in touch.x
 #: date.1.xml:439(para)
@@ -654,18 +680,23 @@ msgid ""
 "format is more complex than is easily documented here but is fully described "
 "in the info documentation."
 msgstr ""
+"\"--date=字符串\" 是一种多数格式自由的人类可读的日期字符串，诸如"
+"\"Sun, 29 Feb 2004 16:21:42 -0800\" 或 \"2004-02-29 16:21:42\" 甚至是"
+"\"next Thursday\"。日期字符串可包含表示日历日期、时间、时区、星期几、"
+"相对时间、相对日期和数字的项目。空字符串表示一天的开始。日期字符串格式有些复杂，"
+"这里无法简单地阐述，完整描述在 info 文档中。"
 
 #: date.1.xml:448(title)
 msgid "AUTHOR"
-msgstr ""
+msgstr "作者"
 
 #: date.1.xml:449(para)
 msgid "Written by David MacKenzie."
-msgstr ""
+msgstr "由 David MacKenzie 编纂。"
 
 #: date.1.xml:452(title)
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "版权"
 
 #: date.1.xml:453(para)
 msgid ""
@@ -675,10 +706,14 @@ msgid ""
 "are free to change and redistribute it. There is NO WARRANTY, to the extent "
 "permitted by law."
 msgstr ""
+"版权所有 &copy; 2013 自由软件基金会。许可证 GPLv3+：GNU 通用公共许可证 "
+"第三版及后续版本 &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>。这是一个自由软件：您可以自由"
+"修订并分发它。在法律允许范围内不作任何保证。"
 
 #: date.1.xml:460(title)
 msgid "SEE ALSO"
-msgstr ""
+msgstr "继续阅读"
 
 #: date.1.xml:461(para)
 msgid ""
@@ -687,16 +722,21 @@ msgid ""
 "<command>date</command> programs are properly installed at your site, the "
 "command"
 msgstr ""
+"<command>date</command> 的完整文档以一本 Texinfo 手册的形式维护。"
+"若您的计算机上妥善安装了  <emphasis remap=\"B\">info</emphasis> 和 "
+"<command>date</command> 程序，这个命令"
 
 #: date.1.xml:469(emphasis)
 msgid "info coreutils ''date invocation''"
-msgstr ""
+msgstr "info coreutils \"date invocation\""
 
 #: date.1.xml:471(para)
 msgid "should give you access to the complete manual."
-msgstr ""
+msgstr "应可让您调阅完整手册。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: date.1.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+
+

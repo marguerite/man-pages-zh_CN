@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmuninstall1'>
+<refmeta>
+<refentrytitle>NPM-RM</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-rm</refname>
+<refpurpose>Remove a package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>uninstall</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;pkg&gt;</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>@&lt;version&gt;</replaceable></arg>
+    <group choice='opt'><arg choice='plain'>-S </arg><arg choice='plain'>--save </arg><arg choice='plain'>-D </arg><arg choice='plain'>--save-dev </arg><arg choice='plain'>-O </arg><arg choice='plain'>--save-optional </arg></group>
+    <sbr/>
+</cmdsynopsis>
+<para>aliases: remove, rm, r, un, unlink</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This uninstalls a package, completely removing everything npm installed
+on its behalf.</para>
+
+<para>Example:</para>
+
+<literallayout remap='.nf'>
+npm uninstall sax
+</literallayout> <!-- .fi -->
+
+<para>In global mode (ie, with <option>-g</option> or <option>--global</option> appended to the command),
+it uninstalls the current package context as a global package.</para>
+
+<para><emphasis remap='B'>npm uninstall</emphasis> takes 3 exclusive, optional flags which save or update
+the package version in your main package.json:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><option>-S, --save</option>: Package will be removed from your <emphasis remap='B'>dependencies</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-D, --save-dev</option>: Package will be removed from your <emphasis remap='B'>devDependencies</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-O, --save-optional</option>: Package will be removed from your <emphasis remap='B'>optionalDependencies</emphasis>&thinsp;.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Further, if you have an <emphasis remap='B'>npm-shrinkwrap.json</emphasis> then it will be updated as
+well.</para>
+
+<para>Scope is optional and follows the usual rules for npm help 7 <emphasis remap='B'>npm-scope</emphasis>&thinsp;.</para>
+
+<para>Examples:</para>
+
+<literallayout remap='.nf'>
+npm uninstall sax --save
+npm uninstall @myorg/privatepackage --save
+npm uninstall node-tap --save-dev
+npm uninstall dtrace-provider --save-optional
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help prune</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

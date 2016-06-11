@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmowner1'>
+<refmeta>
+<refentrytitle>NPM-OWNER</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-owner</refname>
+<refpurpose>Manage package owners</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>owner</replaceable></arg>
+    <arg choice='plain'><replaceable>add</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;user&gt;</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;pkg&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>owner</replaceable></arg>
+    <arg choice='plain'><replaceable>rm</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;user&gt;</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;pkg&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>owner</replaceable></arg>
+    <arg choice='plain'><replaceable>ls</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;pkg&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Manage ownership of published packages.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>ls:
+List all the users who have access to modify a package and push new versions.
+Handy when you need to know who to bug for help.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>add:
+Add a new user as a maintainer of a package.  This user is enabled to modify
+metadata, publish new versions, and add other owners.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>rm:
+Remove a user from the package owner list.  This immediately revokes their
+privileges.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Note that there is only one level of access.  Either you can modify a package,
+or you can't.  Future versions may contain more fine-grained access levels, but
+that is not implemented at this time.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help publish</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help adduser</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 disputes</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

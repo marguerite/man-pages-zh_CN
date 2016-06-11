@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npmrc.5.xml:7(refentrytitle)
+msgid "NPMRC"
+msgstr ""
+
+#: npmrc.5.xml:8(manvolnum)
+msgid "5"
+msgstr ""
+
+#: npmrc.5.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npmrc.5.xml:12(refname)
+msgid "npmrc"
+msgstr ""
+
+#: npmrc.5.xml:13(refpurpose)
+msgid "The npm config files"
+msgstr ""
+
+#: npmrc.5.xml:17(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npmrc.5.xml:18(para)
+msgid "npm gets its config settings from the command line, environment variables, and <emphasis remap=\"B\">npmrc</emphasis> files."
+msgstr ""
+
+#: npmrc.5.xml:21(para)
+msgid "The <emphasis remap=\"B\">npm config</emphasis> command can be used to update and edit the contents of the user and global npmrc files."
+msgstr ""
+
+#: npmrc.5.xml:24(para)
+msgid "For a list of available configuration options, see npm help 7 config."
+msgstr ""
+
+#: npmrc.5.xml:27(title)
+msgid "FILES"
+msgstr ""
+
+#: npmrc.5.xml:28(para)
+msgid "The four relevant files are:"
+msgstr ""
+
+#: npmrc.5.xml:32(para)
+msgid "per-project config file (/path/to/my/project/.npmrc)"
+msgstr ""
+
+#: npmrc.5.xml:35(para)
+msgid "per-user config file (~/.npmrc)"
+msgstr ""
+
+#: npmrc.5.xml:38(para)
+msgid "global config file ($PREFIX/etc/npmrc)"
+msgstr ""
+
+#: npmrc.5.xml:41(para)
+msgid "npm builtin config file (/path/to/npm/npmrc)"
+msgstr ""
+
+#. remap='RE'
+#: npmrc.5.xml:47(para)
+msgid "All npm config files are an ini-formatted list of <emphasis remap=\"B\">key = value</emphasis> parameters. Environment variables can be replaced using <emphasis remap=\"B\">${VARIABLE_NAME}</emphasis>&thinsp;. For example:"
+msgstr ""
+
+#: npmrc.5.xml:51(literallayout)
+#, no-wrap
+msgid "\nprefix = ${HOME}/.npm-packages\n"
+msgstr ""
+
+#. .fi
+#: npmrc.5.xml:55(para)
+msgid "Each of these files is loaded, and config options are resolved in priority order. For example, a setting in the userconfig file would override the setting in the globalconfig file."
+msgstr ""
+
+#: npmrc.5.xml:59(para)
+msgid "Array values are specified by adding \"[]\" after the key name. For example:"
+msgstr ""
+
+#: npmrc.5.xml:62(literallayout)
+#, no-wrap
+msgid "\nkey[] = \"first value\"\nkey[] = \"second value\"\n"
+msgstr ""
+
+#. .fi
+#: npmrc.5.xml:67(para)
+msgid "<emphasis remap=\"B\">NOTE:</emphasis> Because local (per-project or per-user) <emphasis remap=\"B\">&thinsp;.npmrc</emphasis> files can contain sensitive credentials, they must be readable and writable <emphasis remap=\"I\">only</emphasis> by your user account (i.e. must have a mode of <literal>0600</literal>), otherwise they <emphasis remap=\"I\">will be ignored by npm!</emphasis>"
+msgstr ""
+
+#: npmrc.5.xml:72(title)
+msgid "Per-project config file"
+msgstr ""
+
+#: npmrc.5.xml:74(para)
+msgid "When working locally in a project, a <emphasis remap=\"B\">&thinsp;.npmrc</emphasis> file in the root of the project (ie, a sibling of <emphasis remap=\"B\">node_modules</emphasis> and <emphasis remap=\"B\">package.json</emphasis>) will set config values specific to this project."
+msgstr ""
+
+#: npmrc.5.xml:78(para)
+msgid "Note that this only applies to the root of the project that you're running npm in. It has no effect when your module is published. For example, you can't publish a module that forces itself to install globally, or in a different location."
+msgstr ""
+
+#: npmrc.5.xml:83(para)
+msgid "Additionally, this file is not read in global mode, such as when running <emphasis remap=\"B\">npm install -g</emphasis>&thinsp;."
+msgstr ""
+
+#: npmrc.5.xml:87(title)
+msgid "Per-user config file"
+msgstr ""
+
+#: npmrc.5.xml:89(para)
+msgid "<emphasis remap=\"B\">$HOME/.npmrc</emphasis> (or the <emphasis remap=\"B\">userconfig</emphasis> param, if set in the environment or on the command line)"
+msgstr ""
+
+#: npmrc.5.xml:93(title)
+msgid "Global config file"
+msgstr ""
+
+#: npmrc.5.xml:95(para)
+msgid "<emphasis remap=\"B\">$PREFIX/etc/npmrc</emphasis> (or the <emphasis remap=\"B\">globalconfig</emphasis> param, if set above): This file is an ini-file formatted list of <emphasis remap=\"B\">key = value</emphasis> parameters. Environment variables can be replaced as above."
+msgstr ""
+
+#: npmrc.5.xml:100(title)
+msgid "Built-in config file"
+msgstr ""
+
+#: npmrc.5.xml:102(emphasis)
+msgid "path/to/npm/itself/npmrc"
+msgstr ""
+
+#: npmrc.5.xml:104(para)
+msgid "This is an unchangeable \"builtin\" configuration file that npm keeps consistent across updates. Set fields in here using the <emphasis remap=\"B\">&thinsp;./configure</emphasis> script that comes with npm. This is primarily for distribution maintainers to override default configs in a standard and consistent manner."
+msgstr ""
+
+#: npmrc.5.xml:112(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npmrc.5.xml:116(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npmrc.5.xml:119(para)
+msgid "npm help config"
+msgstr ""
+
+#: npmrc.5.xml:122(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npmrc.5.xml:125(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npmrc.5.xml:128(para)
+msgid "npm help npm"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npmrc.5.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

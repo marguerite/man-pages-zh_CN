@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmstar1'>
+<refmeta>
+<refentrytitle>NPM-STAR</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-star</refname>
+<refpurpose>Mark your favorite packages</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>star</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>&lt;pkg&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>unstar</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>&lt;pkg&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>"Starring" a package means that you have some interest in it.  It's
+a vaguely positive way to show that you care.</para>
+
+<para>"Unstarring" is the same thing, but in reverse.</para>
+
+<para>It's a boolean thing.  Starring repeatedly has no additional effect.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help view</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help whoami</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help adduser</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

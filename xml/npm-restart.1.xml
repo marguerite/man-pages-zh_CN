@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmrestart1'>
+<refmeta>
+<refentrytitle>NPM-RESTART</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-restart</refname>
+<refpurpose>Restart a package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>restart</replaceable></arg>
+    <arg choice='opt'>-- <replaceable>&lt;args&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This restarts a package.</para>
+
+<para>This runs a package's "stop", "restart", and "start" scripts, and associated
+pre- and post- scripts, in the order given below:</para>
+  <blockquote remap='RS'>
+  <variablelist remap='IP'>
+    <varlistentry>
+    <term>1.</term>
+    <listitem>
+<para>prerestart</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>2.</term>
+    <listitem>
+<para>prestop</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>3.</term>
+    <listitem>
+<para>stop</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>4.</term>
+    <listitem>
+<para>poststop</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>5.</term>
+    <listitem>
+<para>restart</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>6.</term>
+    <listitem>
+<para>prestart</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>7.</term>
+    <listitem>
+<para>start</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>8.</term>
+    <listitem>
+<para>poststart</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>9.</term>
+    <listitem>
+<para>postrestart</para>
+
+    </listitem>
+    </varlistentry>
+  </variablelist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='note'><title>NOTE</title>
+<para>Note that the "restart" script is run <emphasis remap='B'>in addition to</emphasis> the "stop"
+and "start" scripts, not instead of them.</para>
+
+<para>This is the behavior as of <command>npm</command> major version 2.  A change in this
+behavior will be accompanied by an increase in major version number</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help run-script</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 scripts</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help test</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help start</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help stop</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm apihelp restart</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

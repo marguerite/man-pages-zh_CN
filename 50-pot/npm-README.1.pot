@@ -1,0 +1,382 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-README.1.xml:7(refentrytitle)
+msgid "NPM"
+msgstr ""
+
+#: npm-README.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-README.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-README.1.xml:12(refname)
+msgid "npm"
+msgstr ""
+
+#: npm-README.1.xml:13(refpurpose)
+msgid "a JavaScript package manager"
+msgstr ""
+
+#: npm-README.1.xml:16(refname)
+msgid "Build Status https://img.shields.io/travis/npm/npm/master.svg https://travis"
+msgstr ""
+
+#: npm-README.1.xml:17(refpurpose)
+msgid "ci.org/npm/npm"
+msgstr ""
+
+#: npm-README.1.xml:21(para)
+msgid "This is just enough info to get you up and running. Much more info available via <emphasis remap=\"B\">npm help</emphasis> once it's installed."
+msgstr ""
+
+#: npm-README.1.xml:26(title)
+msgid "IMPORTANT"
+msgstr ""
+
+#: npm-README.1.xml:27(emphasis)
+msgid "You need node v0.8 or higher to run this program."
+msgstr ""
+
+#: npm-README.1.xml:29(para)
+msgid "To install an old <emphasis remap=\"B\">and unsupported</emphasis> version of npm that works on node 0.3 and prior, clone the git repo and dig through the old tags and branches."
+msgstr ""
+
+#: npm-README.1.xml:33(title)
+msgid "Super Easy Install"
+msgstr ""
+
+#: npm-README.1.xml:34(para)
+msgid "npm is bundled with node <emphasis remap=\"I\"><ulink url=\"http://nodejs.org/download/\">http://nodejs.org/download/</ulink></emphasis>&thinsp;."
+msgstr ""
+
+#: npm-README.1.xml:36(title)
+msgid "Windows Computers"
+msgstr ""
+
+#: npm-README.1.xml:38(para)
+msgid "Get the MSI <emphasis remap=\"I\"><ulink url=\"http://nodejs.org/download/\">http://nodejs.org/download/</ulink></emphasis>&thinsp;. npm is in it."
+msgstr ""
+
+#: npm-README.1.xml:41(title)
+msgid "Apple Macintosh Computers"
+msgstr ""
+
+#: npm-README.1.xml:43(para)
+msgid "Get the pkg <emphasis remap=\"I\"><ulink url=\"http://nodejs.org/download/\">http://nodejs.org/download/</ulink></emphasis>&thinsp;. npm is in it."
+msgstr ""
+
+#: npm-README.1.xml:46(title)
+msgid "Other Sorts of Unices"
+msgstr ""
+
+#: npm-README.1.xml:48(para)
+msgid "Run <emphasis remap=\"B\">make install</emphasis>&thinsp;. npm will be installed with node."
+msgstr ""
+
+#: npm-README.1.xml:50(para)
+msgid "If you want a more fancy pants install (a different version, customized paths, etc.) then read on."
+msgstr ""
+
+#: npm-README.1.xml:55(title)
+msgid "Fancy Install (Unix)"
+msgstr ""
+
+#: npm-README.1.xml:56(para)
+msgid "There's a pretty robust install script at https://www.npmjs.com/install.sh&thinsp;. You can download that and run it."
+msgstr ""
+
+#: npm-README.1.xml:59(para)
+msgid "Here's an example using curl:"
+msgstr ""
+
+#: npm-README.1.xml:61(literallayout)
+#, no-wrap
+msgid "\ncurl -L https://www.npmjs.com/install.sh | sh\n"
+msgstr ""
+
+#: npm-README.1.xml:65(title)
+msgid "Slightly Fancier"
+msgstr ""
+
+#: npm-README.1.xml:67(para)
+msgid "You can set any npm configuration params with that script:"
+msgstr ""
+
+#: npm-README.1.xml:69(literallayout)
+#, no-wrap
+msgid "\nnpm_config_prefix=/some/path sh install.sh\n"
+msgstr ""
+
+#. .fi
+#: npm-README.1.xml:73(para)
+msgid "Or, you can run it in uber-debuggery mode:"
+msgstr ""
+
+#: npm-README.1.xml:75(literallayout)
+#, no-wrap
+msgid "\nnpm_debug=1 sh install.sh\n"
+msgstr ""
+
+#: npm-README.1.xml:80(title)
+msgid "Even Fancier"
+msgstr ""
+
+#: npm-README.1.xml:82(para)
+msgid "Get the code with git. Use <emphasis remap=\"B\">make</emphasis> to build the docs and do other stuff. If you plan on hacking on npm, <emphasis remap=\"B\">make link</emphasis> is your friend."
+msgstr ""
+
+#: npm-README.1.xml:85(para)
+msgid "If you've got the npm source code, you can also semi-permanently set arbitrary config keys using the <emphasis remap=\"B\">&thinsp;./configure --key=val ...</emphasis>, and then run npm commands by doing <emphasis remap=\"B\">node cli.js &lt;cmd&gt; &lt;args&gt;</emphasis>&thinsp;. (This is helpful for testing, or running stuff without actually installing npm itself.)"
+msgstr ""
+
+#: npm-README.1.xml:92(title)
+msgid "Windows Install or Upgrade"
+msgstr ""
+
+#: npm-README.1.xml:93(para)
+msgid "You can download a zip file from https://github.com/npm/npm/releases, and unpack it in the <emphasis remap=\"B\">node_modules&bsol;npm&bsol;</emphasis> folder inside node's installation folder."
+msgstr ""
+
+#: npm-README.1.xml:96(para)
+msgid "To upgrade to npm 2, follow the Windows upgrade instructions in the npm Troubleshooting Guide:"
+msgstr ""
+
+#: npm-README.1.xml:99(para)
+msgid "https://github.com/npm/npm/wiki/Troubleshooting#upgrading-on-windows"
+msgstr ""
+
+#: npm-README.1.xml:101(para)
+msgid "If that's not fancy enough for you, then you can fetch the code with git, and mess with it directly."
+msgstr ""
+
+#: npm-README.1.xml:105(title)
+msgid "Installing on Cygwin"
+msgstr ""
+
+#: npm-README.1.xml:106(para)
+msgid "No."
+msgstr ""
+
+#: npm-README.1.xml:109(title)
+msgid "Uninstalling"
+msgstr ""
+
+#: npm-README.1.xml:110(para)
+msgid "So sad to see you go."
+msgstr ""
+
+#: npm-README.1.xml:112(literallayout)
+#, no-wrap
+msgid "\nsudo npm uninstall npm -g\n"
+msgstr ""
+
+#. .fi
+#: npm-README.1.xml:116(para)
+msgid "Or, if that fails,"
+msgstr ""
+
+#: npm-README.1.xml:118(literallayout)
+#, no-wrap
+msgid "\nsudo make uninstall\n"
+msgstr ""
+
+#: npm-README.1.xml:123(title)
+msgid "More Severe Uninstalling"
+msgstr ""
+
+#: npm-README.1.xml:124(para)
+msgid "Usually, the above instructions are sufficient. That will remove npm, but leave behind anything you've installed."
+msgstr ""
+
+#: npm-README.1.xml:127(para)
+msgid "If you would like to remove all the packages that you have installed, then you can use the <emphasis remap=\"B\">npm ls</emphasis> command to find them, and then <emphasis remap=\"B\">npm rm</emphasis> to remove them."
+msgstr ""
+
+#: npm-README.1.xml:131(para)
+msgid "To remove cruft left behind by npm 0.x, you can use the included <emphasis remap=\"B\">clean-old.sh</emphasis> script file. You can run it conveniently like this:"
+msgstr ""
+
+#: npm-README.1.xml:134(literallayout)
+#, no-wrap
+msgid "\nnpm explore npm -g -- sh scripts/clean-old.sh\n"
+msgstr ""
+
+#. .fi
+#: npm-README.1.xml:138(para)
+msgid "npm uses two configuration files, one for per-user configs, and another for global (every-user) configs. You can view them by doing:"
+msgstr ""
+
+#: npm-README.1.xml:141(literallayout)
+#, no-wrap
+msgid "\nnpm config get userconfig   # defaults to ~/.npmrc\nnpm config get globalconfig # defaults to /usr/local/etc/npmrc\n"
+msgstr ""
+
+#. .fi
+#: npm-README.1.xml:146(para)
+msgid "Uninstalling npm does not remove configuration files by default. You must remove them yourself manually if you want them gone. Note that this means that future npm installs will not remember the settings that you have chosen."
+msgstr ""
+
+#: npm-README.1.xml:152(title)
+msgid "Using npm Programmatically"
+msgstr ""
+
+#: npm-README.1.xml:153(para)
+msgid "Although npm can be used programmatically, its API is meant for use by the CLI <emphasis remap=\"I\">only</emphasis>, and no guarantees are made regarding its fitness for any other purpose. If you want to use npm to reliably perform some task, the safest thing to do is to invoke the desired <emphasis remap=\"B\">npm</emphasis> command with appropriate arguments."
+msgstr ""
+
+#: npm-README.1.xml:158(para)
+msgid "The semantic version of npm refers to the CLI itself, rather than the underlying API. <emphasis remap=\"I\">The internal API is not guaranteed to remain stable even when npm's version indicates no breaking changes have been made according to semver.</emphasis>"
+msgstr ""
+
+#: npm-README.1.xml:163(para)
+msgid "If you <emphasis remap=\"I\">still</emphasis> would like to use npm programmatically, it's <emphasis remap=\"I\">possible</emphasis>&thinsp;. The API isn't very well documented, but it <emphasis remap=\"I\">is</emphasis> rather simple."
+msgstr ""
+
+#: npm-README.1.xml:166(para)
+msgid "Eventually, npm will be just a thin CLI wrapper around the modules that it depends on, but for now, there are some things that only the CLI can do. You should try using one of npm's dependencies first, and only use the API if what you're trying to do is only supported by npm itself."
+msgstr ""
+
+#: npm-README.1.xml:171(programlisting)
+#, no-wrap
+msgid "\nvar npm = require(\"npm\")\nnpm.load(myConfigObject, function (er) {\n  if (er) return handlError(er)\n  npm.commands.install([\"some\", \"args\"], function (er, data) {\n    if (er) return commandFailed(er)\n    // command succeeded, and data might have some info\n  })\n  npm.registry.log.on(\"log\", function (message) { .... })\n})\n"
+msgstr ""
+
+#. .fi
+#: npm-README.1.xml:183(para)
+msgid "The <emphasis remap=\"B\">load</emphasis> function takes an object hash of the command-line configs. The various <emphasis remap=\"B\">npm.commands.&lt;cmd&gt;</emphasis> functions take an <emphasis remap=\"B\">array</emphasis> of positional argument <emphasis remap=\"B\">strings</emphasis>&thinsp;. The last argument to any <emphasis remap=\"B\">npm.commands.&lt;cmd&gt;</emphasis> function is a callback. Some commands take other optional arguments. Read the source."
+msgstr ""
+
+#: npm-README.1.xml:189(para)
+msgid "You cannot set configs individually for any single npm function at this time. Since <emphasis remap=\"B\">npm</emphasis> is a singleton, any call to <emphasis remap=\"B\">npm.config.set</emphasis> will change the value for <emphasis remap=\"I\">all</emphasis> npm commands in that process."
+msgstr ""
+
+#: npm-README.1.xml:193(para)
+msgid "See <emphasis remap=\"B\">&thinsp;./bin/npm-cli.js</emphasis> for an example of pulling config values off of the command line arguments using nopt. You may also want to check out <emphasis remap=\"B\">npm help config</emphasis> to learn about all the options you can set there."
+msgstr ""
+
+#: npm-README.1.xml:198(title)
+msgid "More Docs"
+msgstr ""
+
+#: npm-README.1.xml:199(para)
+msgid "Check out the docs <emphasis remap=\"I\">https://docs.npmjs.com/</emphasis>, especially the faq <emphasis remap=\"I\">https://docs.npmjs.com/misc/faq</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-README.1.xml:202(para)
+msgid "You can use the <emphasis remap=\"B\">npm help</emphasis> command to read any of them."
+msgstr ""
+
+#: npm-README.1.xml:204(para)
+msgid "If you're a developer, and you want to use npm to publish your program, you should read this <emphasis remap=\"I\">https://docs.npmjs.com/misc/developers</emphasis>"
+msgstr ""
+
+#: npm-README.1.xml:208(title)
+msgid "Legal Stuff"
+msgstr ""
+
+#: npm-README.1.xml:209(para)
+msgid "\"npm\" and \"The npm Registry\" are owned by npm, Inc. All rights reserved. See the included LICENSE file for more details."
+msgstr ""
+
+#: npm-README.1.xml:212(para)
+msgid "\"Node.js\" and \"node\" are trademarks owned by Joyent, Inc."
+msgstr ""
+
+#: npm-README.1.xml:214(para)
+msgid "Modules published on the npm registry are not officially endorsed by npm, Inc. or the Node.js project."
+msgstr ""
+
+#: npm-README.1.xml:217(para)
+msgid "Data published to the npm registry is not part of npm itself, and is the sole property of the publisher. While every effort is made to ensure accountability, there is absolutely no guarantee, warranty, or assertion expressed or implied as to the quality, fitness for a specific purpose, or lack of malice in any given npm package."
+msgstr ""
+
+#: npm-README.1.xml:223(para)
+msgid "If you have a complaint about a package in the public npm registry, and cannot resolve it with the package owner <emphasis remap=\"I\">https://docs.npmjs.com/misc/disputes</emphasis>, please email support@npmjs.com and explain the situation."
+msgstr ""
+
+#: npm-README.1.xml:228(para)
+msgid "Any data published to The npm Registry (including user account information) may be removed or modified at the sole discretion of the npm server administrators."
+msgstr ""
+
+#: npm-README.1.xml:232(title)
+msgid "In plainer English"
+msgstr ""
+
+#: npm-README.1.xml:234(para)
+msgid "npm is the property of npm, Inc."
+msgstr ""
+
+#: npm-README.1.xml:236(para)
+msgid "If you publish something, it's yours, and you are solely accountable for it."
+msgstr ""
+
+#: npm-README.1.xml:239(para)
+msgid "If other people publish something, it's theirs."
+msgstr ""
+
+#: npm-README.1.xml:241(para)
+msgid "Users can publish Bad Stuff. It will be removed promptly if reported. But there is no vetting process for published modules, and you use them at your own risk. Please inspect the source."
+msgstr ""
+
+#: npm-README.1.xml:245(para)
+msgid "If you publish Bad Stuff, we may delete it from the registry, or even ban your account in extreme cases. So don't do that."
+msgstr ""
+
+#: npm-README.1.xml:250(title)
+msgid "BUGS"
+msgstr ""
+
+#: npm-README.1.xml:251(para)
+msgid "When you find issues, please report them:"
+msgstr ""
+
+#: npm-README.1.xml:255(para)
+msgid "web: https://github.com/npm/npm/issues"
+msgstr ""
+
+#. remap='RE'
+#: npm-README.1.xml:262(para)
+msgid "Be sure to include <emphasis remap=\"I\">all</emphasis> of the output from the npm command that didn't work as expected. The <emphasis remap=\"B\">npm-debug.log</emphasis> file is also helpful to provide."
+msgstr ""
+
+#: npm-README.1.xml:265(para)
+msgid "You can also look for isaacs in #node.js on irc://irc.freenode.net. He will no doubt tell you to put the output in a gist or email."
+msgstr ""
+
+#: npm-README.1.xml:269(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-README.1.xml:273(para)
+msgid "npm help npm"
+msgstr ""
+
+#: npm-README.1.xml:276(para)
+msgid "npm help 7 faq"
+msgstr ""
+
+#: npm-README.1.xml:279(para)
+msgid "npm help help"
+msgstr ""
+
+#: npm-README.1.xml:282(para)
+msgid "npm help 7 index"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-README.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

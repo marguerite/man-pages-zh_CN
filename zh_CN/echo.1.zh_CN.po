@@ -1,196 +1,199 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-08-09 23:06+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: echo.1.xml:8(refentrytitle)
 msgid "ECHO"
-msgstr ""
+msgstr "echo"
 
 #: echo.1.xml:9(manvolnum)
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: echo.1.xml:10(refmiscinfo)
 msgid "July 2014"
-msgstr ""
+msgstr "2014 年 7 月"
 
 #: echo.1.xml:11(refmiscinfo)
 msgid "GNU coreutils 8.22"
-msgstr ""
+msgstr "GNU coreutils 8.22"
 
 #: echo.1.xml:14(refname) echo.1.xml:20(command) echo.1.xml:26(command)
 msgid "echo"
-msgstr ""
+msgstr "echo"
 
 #: echo.1.xml:15(refpurpose)
 msgid "display a line of text"
-msgstr ""
+msgstr "显示一行文本"
 
 #: echo.1.xml:21(replaceable)
 msgid "SHORT-OPTION"
-msgstr ""
+msgstr "短选项"
 
 #: echo.1.xml:22(replaceable)
 msgid "STRING"
-msgstr ""
+msgstr "字符串"
 
 #: echo.1.xml:27(replaceable)
 msgid "LONG-OPTION"
-msgstr ""
+msgstr "长选项"
 
 #: echo.1.xml:32(title)
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #. Add any additional description here
 #: echo.1.xml:35(para)
 msgid "Echo the STRING(s) to standard output."
-msgstr ""
+msgstr "输出字符串到标准输出。"
 
 #: echo.1.xml:38(option)
 msgid "-n"
-msgstr ""
+msgstr "-n"
 
 #: echo.1.xml:40(para)
 msgid "do not output the trailing newline"
-msgstr ""
+msgstr "不输出结尾的新行符"
 
 #: echo.1.xml:44(option)
 msgid "-e"
-msgstr ""
+msgstr "-e"
 
 #: echo.1.xml:46(para)
 msgid "enable interpretation of backslash escapes"
-msgstr ""
+msgstr "启用反斜线逃逸符转义"
 
 #: echo.1.xml:50(option)
 msgid "-E"
-msgstr ""
+msgstr "-E"
 
 #: echo.1.xml:52(para)
 msgid "disable interpretation of backslash escapes (default)"
-msgstr ""
+msgstr "仅用反斜线逃逸符转义 (默认)"
 
 #: echo.1.xml:56(option)
 msgid "--help"
-msgstr ""
+msgstr "--help"
 
 #: echo.1.xml:58(para)
 msgid "display this help and exit"
-msgstr ""
+msgstr "显示此帮助并退出"
 
 #: echo.1.xml:62(option)
 msgid "--version"
-msgstr ""
+msgstr "--version"
 
 #: echo.1.xml:64(para)
 msgid "output version information and exit"
-msgstr ""
+msgstr "输出版本信息并退出"
 
 #: echo.1.xml:66(para)
 msgid ""
 "If <option>-e</option> is in effect, the following sequences are recognized:"
-msgstr ""
+msgstr "若 <option>-e</option> 生效了，则可识别以下序列："
 
 #: echo.1.xml:72(para)
 msgid "backslash"
-msgstr ""
+msgstr "反斜线"
 
 #: echo.1.xml:76(term)
 msgid "&bsol;a"
-msgstr ""
+msgstr "&bsol;a"
 
 #: echo.1.xml:78(para)
 msgid "alert (BEL)"
-msgstr ""
+msgstr "警报 (响铃)"
 
 #: echo.1.xml:82(term)
 msgid "&bsol;b"
-msgstr ""
+msgstr "&bsol;b"
 
 #: echo.1.xml:84(para)
 msgid "backspace"
-msgstr ""
+msgstr "退格"
 
 #: echo.1.xml:88(term)
 msgid "&bsol;c"
-msgstr ""
+msgstr "&bsol;c"
 
 #: echo.1.xml:90(para)
 msgid "produce no further output"
-msgstr ""
+msgstr "不产生进一步输出"
 
 #: echo.1.xml:94(term)
 msgid "&bsol;e"
-msgstr ""
+msgstr "&bsol;e"
 
 #: echo.1.xml:96(para)
 msgid "escape"
-msgstr ""
+msgstr "Esc"
 
 #: echo.1.xml:100(term)
 msgid "&bsol;f"
-msgstr ""
+msgstr "&bsol;f"
 
 #: echo.1.xml:102(para)
 msgid "form feed"
-msgstr ""
+msgstr "翻页"
 
 #: echo.1.xml:106(term)
 msgid "&bsol;n"
-msgstr ""
+msgstr "&bsol;n"
 
 #: echo.1.xml:108(para)
 msgid "new line"
-msgstr ""
+msgstr "新行"
 
 #: echo.1.xml:112(term)
 msgid "&bsol;r"
-msgstr ""
+msgstr "&bsol;r"
 
 #: echo.1.xml:114(para)
 msgid "carriage return"
-msgstr ""
+msgstr "回车"
 
 #: echo.1.xml:118(term)
 msgid "&bsol;t"
-msgstr ""
+msgstr "&bsol;t"
 
 #: echo.1.xml:120(para)
 msgid "horizontal tab"
-msgstr ""
+msgstr "水平制表符"
 
 #: echo.1.xml:124(term)
 msgid "&bsol;v"
-msgstr ""
+msgstr "&bsol;v"
 
 #: echo.1.xml:126(para)
 msgid "vertical tab"
-msgstr ""
+msgstr "垂直制表符"
 
 #: echo.1.xml:130(term)
 msgid "&bsol;0NNN"
-msgstr ""
+msgstr "&bsol;0NNN"
 
 #: echo.1.xml:132(para)
 msgid "byte with octal value NNN (1 to 3 digits)"
-msgstr ""
+msgstr "八进制值为 NNN 的字节 (1 到 3 位)"
 
 #: echo.1.xml:136(term)
 msgid "&bsol;xHH"
-msgstr ""
+msgstr "&bsol;xHH"
 
 #: echo.1.xml:138(para)
 msgid "byte with hexadecimal value HH (1 to 2 digits)"
-msgstr ""
+msgstr "十六进制值为 HH 的字节 (1 到 2 位)"
 
 #: echo.1.xml:140(para)
 msgid ""
@@ -198,6 +201,8 @@ msgid ""
 "the version described here. Please refer to your shell's documentation for "
 "details about the options it supports."
 msgstr ""
+"注意：您的壳层可能有其自有版本的 echo，其通常会覆盖这里的版本。"
+"关于您壳层支持的选项的细节请参考其文档。"
 
 #: echo.1.xml:144(para)
 msgid ""
@@ -206,18 +211,22 @@ msgid ""
 "echo translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
 "&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
+"GNU coreutils 在线帮助：&lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> 汇报 "
+"echo 翻译故障 &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 
 #: echo.1.xml:151(title)
 msgid "AUTHOR"
-msgstr ""
+msgstr "作者"
 
 #: echo.1.xml:152(para)
 msgid "Written by Brian Fox and Chet Ramey."
-msgstr ""
+msgstr "由 Brian Fox 和 Chet Ramey 编纂。"
 
 #: echo.1.xml:155(title)
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "版权"
 
 #: echo.1.xml:156(para)
 msgid ""
@@ -227,10 +236,14 @@ msgid ""
 "are free to change and redistribute it. There is NO WARRANTY, to the extent "
 "permitted by law."
 msgstr ""
+"版权所有 &copy; 2013 自由软件基金会。许可证 GPLv3+：GNU 通用公共许可证 "
+"第三版及后续版本 &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>。这是一个自由软件：您可以自由"
+"修订并分发它。在法律允许范围内不作任何保证。"
 
 #: echo.1.xml:163(title)
 msgid "SEE ALSO"
-msgstr ""
+msgstr "继续阅读"
 
 #: echo.1.xml:164(para)
 msgid ""
@@ -239,16 +252,20 @@ msgid ""
 "<command>echo</command> programs are properly installed at your site, the "
 "command"
 msgstr ""
+"<command>echo</command> 的完整文档以一本 Texinfo 手册的形式维护。"
+"若您的计算机上妥善安装了  <emphasis remap=\"B\">info</emphasis> 和 "
+"<command>echo</command> 程序，这个命令"
 
 #: echo.1.xml:172(emphasis)
 msgid "info coreutils ''echo invocation''"
-msgstr ""
+msgstr "info coreutils \"echo invocation\""
 
 #: echo.1.xml:174(para)
 msgid "should give you access to the complete manual."
-msgstr ""
+msgstr "应可让您调阅完整手册。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: echo.1.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+

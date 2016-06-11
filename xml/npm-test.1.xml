@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmtest1'>
+<refmeta>
+<refentrytitle>NPM-TEST</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-test</refname>
+<refpurpose>Test a package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>test</replaceable></arg>
+    <arg choice='opt'>-- <replaceable>&lt;args&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>tst</replaceable></arg>
+    <arg choice='opt'>-- <replaceable>&lt;args&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This runs a package's "test" script, if one was provided.</para>
+
+<para>To run tests as a condition of installation, set the <emphasis remap='B'>npat</emphasis> config to
+true.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help run-script</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 scripts</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help start</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help restart</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help stop</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

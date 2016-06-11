@@ -1,0 +1,217 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-view.1.xml:7(refentrytitle)
+msgid "NPM-VIEW"
+msgstr ""
+
+#: npm-view.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-view.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-view.1.xml:12(refname)
+msgid "npm-view"
+msgstr ""
+
+#: npm-view.1.xml:13(refpurpose)
+msgid "View registry info"
+msgstr ""
+
+#: npm-view.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-view.1.xml:18(replaceable)
+msgid "view"
+msgstr ""
+
+#: npm-view.1.xml:19(replaceable)
+msgid "&lt;@scope&gt;/"
+msgstr ""
+
+#: npm-view.1.xml:20(replaceable)
+msgid "&lt;name&gt;"
+msgstr ""
+
+#: npm-view.1.xml:21(replaceable)
+msgid "@&lt;version&gt;"
+msgstr ""
+
+#: npm-view.1.xml:22(replaceable)
+msgid "&lt;field&gt;"
+msgstr ""
+
+#: npm-view.1.xml:22(replaceable)
+msgid ".&lt;subfield&gt;"
+msgstr ""
+
+#: npm-view.1.xml:25(para)
+msgid "aliases: info, show, v"
+msgstr ""
+
+#: npm-view.1.xml:29(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-view.1.xml:30(para)
+msgid "This command shows data about a package and prints it to the stream referenced by the <emphasis remap=\"B\">outfd</emphasis> config, which defaults to stdout."
+msgstr ""
+
+#: npm-view.1.xml:33(para)
+msgid "To show the package registry entry for the <emphasis remap=\"B\">connect</emphasis> package, you can do this:"
+msgstr ""
+
+#: npm-view.1.xml:36(literallayout)
+#, no-wrap
+msgid "\nnpm view connect\n"
+msgstr ""
+
+#. .fi
+#: npm-view.1.xml:40(para)
+msgid "The default version is \"latest\" if unspecified."
+msgstr ""
+
+#: npm-view.1.xml:42(para)
+msgid "Field names can be specified after the package descriptor. For example, to show the dependencies of the <emphasis remap=\"B\">ronn</emphasis> package at version 0.3.5, you could do the following:"
+msgstr ""
+
+#: npm-view.1.xml:46(literallayout)
+#, no-wrap
+msgid "\nnpm view ronn@0.3.5 dependencies\n"
+msgstr ""
+
+#. .fi
+#: npm-view.1.xml:50(para)
+msgid "You can view child fields by separating them with a period. To view the git repository URL for the latest version of npm, you could do this:"
+msgstr ""
+
+#: npm-view.1.xml:54(literallayout)
+#, no-wrap
+msgid "\nnpm view npm repository.url\n"
+msgstr ""
+
+#. .fi
+#: npm-view.1.xml:58(para)
+msgid "This makes it easy to view information about a dependency with a bit of shell scripting. For example, to view all the data about the version of opts that ronn depends on, you can do this:"
+msgstr ""
+
+#: npm-view.1.xml:62(literallayout)
+#, no-wrap
+msgid "\nnpm view opts@$(npm view ronn dependencies.opts)\n"
+msgstr ""
+
+#. .fi
+#: npm-view.1.xml:66(para)
+msgid "For fields that are arrays, requesting a non-numeric field will return all of the values from the objects in the list. For example, to get all the contributor names for the \"express\" project, you can do this:"
+msgstr ""
+
+#: npm-view.1.xml:70(literallayout)
+#, no-wrap
+msgid "\nnpm view express contributors.email\n"
+msgstr ""
+
+#. .fi
+#: npm-view.1.xml:74(para)
+msgid "You may also use numeric indices in square braces to specifically select an item in an array field. To just get the email address of the first contributor in the list, you can do this:"
+msgstr ""
+
+#: npm-view.1.xml:78(literallayout)
+#, no-wrap
+msgid "\nnpm view express contributors[0].email\n"
+msgstr ""
+
+#. .fi
+#: npm-view.1.xml:82(para)
+msgid "Multiple fields may be specified, and will be printed one after another. For example, to get all the contributor names and email addresses, you can do this:"
+msgstr ""
+
+#: npm-view.1.xml:86(literallayout)
+#, no-wrap
+msgid "\nnpm view express contributors.name contributors.email\n"
+msgstr ""
+
+#. .fi
+#: npm-view.1.xml:90(para)
+msgid "\"Person\" fields are shown as a string if they would be shown as an object. So, for example, this will show the list of npm contributors in the shortened string format. (See npm help 5 <emphasis remap=\"B\">package.json</emphasis> for more on this.)"
+msgstr ""
+
+#: npm-view.1.xml:94(literallayout)
+#, no-wrap
+msgid "\nnpm view npm contributors\n"
+msgstr ""
+
+#. .fi
+#: npm-view.1.xml:98(para)
+msgid "If a version range is provided, then data will be printed for every matching version of the package. This will show which version of jsdom was required by each matching version of yui3:"
+msgstr ""
+
+#: npm-view.1.xml:102(literallayout)
+#, no-wrap
+msgid "\nnpm view yui3@'&gt;0.5.4' dependencies.jsdom\n"
+msgstr ""
+
+#: npm-view.1.xml:107(title)
+msgid "OUTPUT"
+msgstr ""
+
+#: npm-view.1.xml:108(para)
+msgid "If only a single string field for a single version is output, then it will not be colorized or quoted, so as to enable piping the output to another command. If the field is an object, it will be output as a JavaScript object literal."
+msgstr ""
+
+#: npm-view.1.xml:112(para)
+msgid "If the --json flag is given, the outputted fields will be JSON."
+msgstr ""
+
+#: npm-view.1.xml:114(para)
+msgid "If the version range matches multiple versions, than each printed value will be prefixed with the version it applies to."
+msgstr ""
+
+#: npm-view.1.xml:117(para)
+msgid "If multiple fields are requested, than each of them are prefixed with the field name."
+msgstr ""
+
+#: npm-view.1.xml:121(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-view.1.xml:125(para)
+msgid "npm help search"
+msgstr ""
+
+#: npm-view.1.xml:128(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-view.1.xml:131(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-view.1.xml:134(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-view.1.xml:137(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-view.1.xml:140(para)
+msgid "npm help docs"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-view.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

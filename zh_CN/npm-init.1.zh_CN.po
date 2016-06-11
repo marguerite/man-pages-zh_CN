@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-init.1.xml:7(refentrytitle)
+msgid "NPM-INIT"
+msgstr ""
+
+#: npm-init.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-init.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-init.1.xml:12(refname)
+msgid "npm-init"
+msgstr ""
+
+#: npm-init.1.xml:13(refpurpose)
+msgid "Interactively create a package.json file"
+msgstr ""
+
+#: npm-init.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-init.1.xml:18(replaceable)
+msgid "init"
+msgstr ""
+
+#: npm-init.1.xml:19(arg)
+msgid "-f"
+msgstr ""
+
+#: npm-init.1.xml:19(arg)
+msgid "--force"
+msgstr ""
+
+#: npm-init.1.xml:19(arg)
+msgid "-y"
+msgstr ""
+
+#: npm-init.1.xml:19(arg)
+msgid "--yes"
+msgstr ""
+
+#: npm-init.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-init.1.xml:25(para)
+msgid "This will ask you a bunch of questions, and then write a package.json for you."
+msgstr ""
+
+#: npm-init.1.xml:27(para)
+msgid "It attempts to make reasonable guesses about what you want things to be set to, and then writes a package.json file with the options you've selected."
+msgstr ""
+
+#: npm-init.1.xml:30(para)
+msgid "If you already have a package.json file, it'll read that first, and default to the options in there."
+msgstr ""
+
+#: npm-init.1.xml:33(para)
+msgid "It is strictly additive, so it does not delete options from your package.json without a really good reason to do so."
+msgstr ""
+
+#: npm-init.1.xml:36(para)
+msgid "If you invoke it with <option>-f</option>, <option>--force</option>, <option>-y</option>, or <option>--yes</option>, it will use only defaults and not prompt you for any options."
+msgstr ""
+
+#: npm-init.1.xml:40(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-init.1.xml:42(title)
+msgid "scope"
+msgstr ""
+
+#: npm-init.1.xml:46(para)
+msgid "Default: none"
+msgstr ""
+
+#: npm-init.1.xml:49(para)
+msgid "Type: String"
+msgstr ""
+
+#. remap='RE'
+#: npm-init.1.xml:55(para)
+msgid "The scope under which the new module should be created."
+msgstr ""
+
+#: npm-init.1.xml:59(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-init.1.xml:63(para)
+msgid "https://github.com/isaacs/init-package-json"
+msgstr ""
+
+#: npm-init.1.xml:66(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm-init.1.xml:69(para)
+msgid "npm help version"
+msgstr ""
+
+#: npm-init.1.xml:72(para)
+msgid "npm help 7 scope"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-init.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,70 @@
+# marguerite <marguerite@opensuse.org>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: 2015-12-30 10:23+0800\n"
+"Last-Translator: marguerite <marguerite@opensuse.org>\n"
+"Language-Team: Chinese <opensuse-zh@opensuse.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: npm-bundle.1.xml:7(refentrytitle)
+msgid "NPM-BUNDLE"
+msgstr "NPM-BUNDLE"
+
+#: npm-bundle.1.xml:8(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: npm-bundle.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr "2015 年 11 月"
+
+#: npm-bundle.1.xml:12(refname)
+msgid "npm-bundle"
+msgstr "npm-bundle"
+
+#: npm-bundle.1.xml:13(refpurpose)
+msgid "REMOVED"
+msgstr "已移除"
+
+#: npm-bundle.1.xml:17(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: npm-bundle.1.xml:18(para)
+msgid ""
+"The <emphasis remap=\"B\">npm bundle</emphasis> command has been removed in "
+"1.0, for the simple reason that it is no longer necessary, as the default "
+"behavior is now to install packages into the local space."
+msgstr ""
+"<emphasis remap=\"B\">npm bundle</emphasis> 命令已从 1.0 "
+"中移除，原因很简单它不再是必要的了，因为现在的默认行为是将包安装到本地空间。"
+
+#: npm-bundle.1.xml:22(para)
+msgid ""
+"Just use <emphasis remap=\"B\">npm install</emphasis> now to do what <"
+"emphasis remap=\"B\">npm bundle</emphasis> used to do."
+msgstr ""
+"现在可使用 <emphasis remap=\"B\">npm install</emphasis> 来干 <emphasis remap=\"B\">"
+"npm bundle</emphasis> 过去干的事。"
+
+#: npm-bundle.1.xml:25(title)
+msgid "SEE ALSO"
+msgstr "参考"
+
+#: npm-bundle.1.xml:29(para)
+msgid "npm help install"
+msgstr "npm help install"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-bundle.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2015"
+
+

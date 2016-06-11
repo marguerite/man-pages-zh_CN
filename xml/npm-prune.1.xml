@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmprune1'>
+<refmeta>
+<refentrytitle>NPM-PRUNE</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-prune</refname>
+<refpurpose>Remove extraneous packages</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>prune</replaceable></arg>
+    <arg choice='opt'><arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg><arg choice='plain' rep='repeat'><replaceable>&lt;pkg&gt;</replaceable></arg></arg>
+    <arg choice='opt'>--production </arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This command removes "extraneous" packages.  If a package name is
+provided, then only packages matching one of the supplied names are
+removed.</para>
+
+<para>Extraneous packages are packages that are not listed on the parent
+package's dependencies list.</para>
+
+<para>If the <option>--production</option> flag is specified or the <emphasis remap='B'>NODE_ENV</emphasis> environment
+variable is set to <emphasis remap='B'>production</emphasis>, this command will remove the packages
+specified in your <emphasis remap='B'>devDependencies</emphasis>&thinsp;. Setting <option>--production=false</option> will
+negate <emphasis remap='B'>NODE_ENV</emphasis> being set to <emphasis remap='B'>production</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help rm</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help ls</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

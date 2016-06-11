@@ -1,0 +1,420 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-12-30 09:47+0800\n"
+"PO-Revision-Date: 2015-01-17 22:36+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: systemd-analyze.1.xml:8(refentrytitle)
+msgid "SYSTEMD-ANALYZE"
+msgstr "SYSTEMD-ANALYZE"
+
+#: systemd-analyze.1.xml:9(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: systemd-analyze.1.xml:10(refmiscinfo)
+msgid "systemd 210"
+msgstr "systemd 210"
+
+#: systemd-analyze.1.xml:13(refname) systemd-analyze.1.xml:19(command)
+#: systemd-analyze.1.xml:21(replaceable) systemd-analyze.1.xml:24(replaceable)
+#: systemd-analyze.1.xml:28(replaceable) systemd-analyze.1.xml:32(replaceable)
+#: systemd-analyze.1.xml:37(replaceable) systemd-analyze.1.xml:40(replaceable)
+msgid "systemd-analyze"
+msgstr "systemd-analyze"
+
+#: systemd-analyze.1.xml:14(refpurpose)
+msgid "Analyze system boot-up performance"
+msgstr "分析系统引导性能"
+
+#: systemd-analyze.1.xml:19(replaceable) systemd-analyze.1.xml:22(replaceable)
+#: systemd-analyze.1.xml:25(replaceable) systemd-analyze.1.xml:29(replaceable)
+#: systemd-analyze.1.xml:33(replaceable) systemd-analyze.1.xml:38(replaceable)
+#: systemd-analyze.1.xml:41(replaceable) systemd-analyze.1.xml:95(title)
+msgid "OPTIONS"
+msgstr "选项"
+
+#: systemd-analyze.1.xml:20(replaceable)
+msgid "time"
+msgstr "time"
+
+#: systemd-analyze.1.xml:23(replaceable)
+msgid "blame"
+msgstr "blame"
+
+#: systemd-analyze.1.xml:26(replaceable)
+msgid "critical-chain"
+msgstr "critical-chain"
+
+#: systemd-analyze.1.xml:27(replaceable)
+msgid "UNIT"
+msgstr "单元"
+
+#: systemd-analyze.1.xml:30(replaceable)
+msgid "plot"
+msgstr "plot"
+
+#: systemd-analyze.1.xml:31(replaceable) systemd-analyze.1.xml:36(replaceable)
+msgid "&gt;"
+msgstr "&gt;"
+
+#: systemd-analyze.1.xml:31(replaceable)
+msgid "file.svg"
+msgstr "file.svg"
+
+#: systemd-analyze.1.xml:34(replaceable)
+msgid "dot"
+msgstr "dot"
+
+#: systemd-analyze.1.xml:35(replaceable)
+msgid "PATTERN"
+msgstr "模板"
+
+#: systemd-analyze.1.xml:36(replaceable)
+msgid "file.dot"
+msgstr "file.dot"
+
+#: systemd-analyze.1.xml:39(replaceable)
+msgid "dump"
+msgstr "dump"
+
+#: systemd-analyze.1.xml:42(replaceable)
+msgid "set-log-level"
+msgstr "set-log-level"
+
+#: systemd-analyze.1.xml:43(replaceable)
+msgid "LEVEL"
+msgstr "级别"
+
+#: systemd-analyze.1.xml:48(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: systemd-analyze.1.xml:49(para)
+msgid ""
+"<command>systemd-analyze</command> may be used to determine system boot-up "
+"performance statistics and retrieve other state and tracing information from "
+"the system and service manager."
+msgstr ""
+"<command>systemd-analyze</command> 可用于获得系统引导性能统计及其它状态并追踪"
+"来自系统和服务管理器的信息。"
+
+#: systemd-analyze.1.xml:52(para)
+msgid ""
+"<emphasis remap=\"B\">systemd-analyze time</emphasis> prints the time spent "
+"in the kernel before userspace has been reached, the time spent in the "
+"initial RAM disk (initrd) before normal system userspace has been reached, "
+"and the time normal system userspace took to initialize. Note that these "
+"measurements simply measure the time passed up to the point where all system "
+"services have been spawned, but not necessarily until they fully finished "
+"initialization or the disk is idle."
+msgstr ""
+"<emphasis remap=\"B\">systemd-analyze time</emphasis> 输出了在触及用户空间前"
+"花在内核上的时间，触及常规系统用户空间前花在初始内存盘 (initrd) 上的时间，以"
+"及常规系统用户空间初始化花费的时间。注意这些测量标准仅简单测量了到派生出全部"
+"系统服务时花费的时间， 但不一定是到这些服务完全初始化完成或磁盘空闲时的时间。"
+
+#: systemd-analyze.1.xml:55(para)
+msgid ""
+"<emphasis remap=\"B\">systemd-analyze blame</emphasis> prints a list of all "
+"running units, ordered by the time they took to initialize. This information "
+"may be used to optimize boot-up times. Note that the output might be "
+"misleading as the initialization of one service might be slow simply because "
+"it waits for the initialization of another service to complete."
+msgstr ""
+"<emphasis remap=\"B\">systemd-analyze blame</emphasis> 输出了全部运行中单元的"
+"列表，按其初始化花费的时间排序。此信息可用于优化引导时间。注意该输出可能具有"
+"误导性，因为某个服务初始化慢可能只是它在等待其它服务初始化完成。"
+
+#: systemd-analyze.1.xml:58(para)
+msgid ""
+"<emphasis remap=\"B\">systemd-analyze critical-chain [</emphasis><emphasis "
+"remap=\"I\">UNIT...</emphasis><emphasis remap=\"B\">]</emphasis> prints a "
+"tree of the time-critical chain of units (for each of the specified "
+"<emphasis remap=\"I\">UNIT</emphasis>s or for the default target otherwise). "
+"The time after the unit is active or started is printed after the \"@\" "
+"character. The time the unit takes to start is printed after the \"+\" "
+"character. Note that the output might be misleading as the initialization of "
+"one service might depend on socket activation and because of the parallel "
+"execution of units."
+msgstr ""
+"<emphasis remap=\"B\">systemd-analyze critical-chain [</emphasis><emphasis "
+"remap=\"I\">单元...</emphasis><emphasis remap=\"B\">]</emphasis> prints a "
+"tree of the time-critical chain of units (for each of the specified "
+"<emphasis remap=\"I\">UNIT</emphasis>s or for the default target otherwise). "
+"The time after the unit is active or started is printed after the \"@\" "
+"character. The time the unit takes to start is printed after the \"+\" "
+"character. Note that the output might be misleading as the initialization of "
+"one service might depend on socket activation and because of the parallel "
+"execution of units."
+
+#: systemd-analyze.1.xml:62(para)
+msgid ""
+"<emphasis remap=\"B\">systemd-analyze plot</emphasis> prints an SVG graphic "
+"detailing which system services have been started at what time, highlighting "
+"the time they spent on initialization."
+msgstr ""
+
+#: systemd-analyze.1.xml:65(para)
+msgid ""
+"<emphasis remap=\"B\">systemd-analyze dot</emphasis> generates textual "
+"dependency graph description in dot format for further processing with the "
+"GraphViz <citerefentry><refentrytitle>dot</refentrytitle><manvolnum>1</"
+"manvolnum></citerefentry> tool. Use a command line like <emphasis remap=\"B"
+"\">systemd-analyze dot | dot -Tsvg &gt; systemd.svg</emphasis> to generate a "
+"graphical dependency tree. Unless <option>--order</option> or <option>--"
+"require</option> is passed, the generated graph will show both ordering and "
+"requirement dependencies. Optional pattern globbing style specifications (e."
+"g. *.target) may be given at the end. A unit dependency is included in the "
+"graph if any of these patterns match either the origin or destination node."
+msgstr ""
+
+#: systemd-analyze.1.xml:77(para)
+msgid ""
+"<emphasis remap=\"B\">systemd-analyze dump</emphasis> outputs a (usually "
+"very long) human-readable serialization of the complete server state. Its "
+"format is subject to change without notice and should not be parsed by "
+"applications."
+msgstr ""
+
+#: systemd-analyze.1.xml:80(para)
+msgid ""
+"<emphasis remap=\"B\">systemd-analyze set-log-level </emphasis><emphasis "
+"remap=\"I\">LEVEL</emphasis> changes the current log level of the <emphasis "
+"remap=\"B\">systemd</emphasis> daemon to <emphasis remap=\"I\">LEVEL</"
+"emphasis> (accepts the same values as <option>--log-level=</option> "
+"described in <citerefentry><refentrytitle>systemd</"
+"refentrytitle><manvolnum>1</manvolnum></citerefentry>)."
+msgstr ""
+
+#: systemd-analyze.1.xml:90(para)
+msgid ""
+"If no command is passed, <emphasis remap=\"B\">systemd-analyze time</"
+"emphasis> is implied."
+msgstr ""
+
+#: systemd-analyze.1.xml:96(para)
+msgid "The following options are understood:"
+msgstr ""
+
+#: systemd-analyze.1.xml:98(option)
+msgid "--user"
+msgstr ""
+
+#: systemd-analyze.1.xml:99(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"Shows performance data of user sessions instead of the system manager.\n"
+msgstr ""
+
+#: systemd-analyze.1.xml:103(option)
+msgid "--system"
+msgstr ""
+
+#: systemd-analyze.1.xml:104(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"Shows performance data of the system manager. This is the implied default.\n"
+msgstr ""
+
+#. remap='RE'
+#: systemd-analyze.1.xml:108(para)
+msgid "<option>--order</option>, <option>--require</option>"
+msgstr ""
+
+#: systemd-analyze.1.xml:110(para)
+msgid ""
+"When used in conjunction with the <emphasis remap=\"B\">dot</emphasis> "
+"command (see above), selects which dependencies are shown in the dependency "
+"graph. If <option>--order</option> is passed, only dependencies of type "
+"<emphasis remap=\"I\">After=</emphasis> or <emphasis remap=\"I\">Before=</"
+"emphasis> are shown. If <option>--require</option> is passed, only "
+"dependencies of type <emphasis remap=\"I\">Requires=</emphasis>, <emphasis "
+"remap=\"I\">RequiresOverridable=</emphasis>, <emphasis remap=\"I"
+"\">Requisite=</emphasis>, <emphasis remap=\"I\">RequisiteOverridable=</"
+"emphasis>, <emphasis remap=\"I\">Wants=</emphasis> and <emphasis remap=\"I"
+"\">Conflicts=</emphasis> are shown. If neither is passed, this shows "
+"dependencies of all these types."
+msgstr ""
+
+#. remap='RE'
+#: systemd-analyze.1.xml:131(para)
+msgid "<option>--from-pattern=</option>, <option>--to-pattern=</option>"
+msgstr ""
+
+#: systemd-analyze.1.xml:133(para)
+msgid ""
+"When used in conjunction with the <emphasis remap=\"B\">dot</emphasis> "
+"command (see above), this selects which relationships are shown in the "
+"dependency graph. They both require <citerefentry><refentrytitle>glob</"
+"refentrytitle><manvolnum>7</manvolnum></citerefentry> patterns as arguments, "
+"which are matched against left-hand and right-hand, respectively, nodes of a "
+"relationship. Each of these can be used more than once, which means a unit "
+"name must match one of the given values."
+msgstr ""
+
+#: systemd-analyze.1.xml:140(option)
+msgid "--fuzz="
+msgstr ""
+
+#: systemd-analyze.1.xml:140(replaceable)
+msgid "timespan"
+msgstr ""
+
+#: systemd-analyze.1.xml:142(para)
+msgid ""
+"When used in conjunction with the <emphasis remap=\"B\">critical-chain</"
+"emphasis> command (see above), also show units, which finished <emphasis "
+"remap=\"I\">timespan</emphasis> earlier, than the latest unit in the same "
+"level. The unit of <emphasis remap=\"I\">timespan</emphasis> is seconds "
+"unless specified with a different unit, e.g. \"50ms\"."
+msgstr ""
+
+#. remap='RE'
+#: systemd-analyze.1.xml:151(para)
+msgid "<option>-H</option>, <option>--host=</option>"
+msgstr ""
+
+#: systemd-analyze.1.xml:153(para)
+msgid ""
+"Execute the operation remotely. Specify a hostname, or username and hostname "
+"separated by \"@\", to connect to. This will use SSH to talk to the remote "
+"machine manager instance."
+msgstr ""
+
+#. remap='RE'
+#: systemd-analyze.1.xml:157(para)
+msgid "<option>-M</option>, <option>--machine=</option>"
+msgstr ""
+
+#: systemd-analyze.1.xml:158(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"Execute operation on a local container. Specify a container name to connect to.\n"
+msgstr ""
+
+#. remap='RE'
+#: systemd-analyze.1.xml:162(para)
+msgid "<option>-h</option>, <option>--help</option>"
+msgstr ""
+
+#: systemd-analyze.1.xml:163(programlisting)
+#, no-wrap
+msgid ""
+"\n"
+"Print a short help text and exit.\n"
+msgstr ""
+
+#: systemd-analyze.1.xml:167(option)
+msgid "--version"
+msgstr ""
+
+#: systemd-analyze.1.xml:168(programlisting)
+#, no-wrap
+msgid ""
+"\n"
+"Print a short version string and exit.\n"
+msgstr ""
+
+#: systemd-analyze.1.xml:172(option)
+msgid "--no-pager"
+msgstr ""
+
+#: systemd-analyze.1.xml:173(programlisting)
+#, no-wrap
+msgid ""
+"\n"
+"Do not pipe output into a pager.\n"
+msgstr ""
+
+#: systemd-analyze.1.xml:178(title)
+msgid "EXIT STATUS"
+msgstr ""
+
+#: systemd-analyze.1.xml:179(para)
+msgid "On success, 0 is returned, a non-zero failure code otherwise."
+msgstr ""
+
+#: systemd-analyze.1.xml:182(title)
+msgid "EXAMPLES"
+msgstr ""
+
+#: systemd-analyze.1.xml:183(para)
+msgid ""
+"This plots all dependencies of any unit whose name starts with \"avahi-"
+"daemon.\":"
+msgstr ""
+
+#: systemd-analyze.1.xml:188(screen)
+#, no-wrap
+msgid ""
+"\n"
+"$ systemd-analyze dot 'avahi-daemon.*' | dot -Tsvg &gt; avahi.svg\n"
+"$ eog avahi.svg\n"
+msgstr ""
+
+#. remap='RE'
+#: systemd-analyze.1.xml:195(para)
+msgid "This plots the dependencies between all known target units:"
+msgstr ""
+
+#: systemd-analyze.1.xml:199(screen)
+#, no-wrap
+msgid ""
+"\n"
+"systemd-analyze dot --to-pattern='*.target' --from-pattern='*.target' | dot -Tsvg &gt; targets.svg\n"
+"$ eog targets.svg\n"
+msgstr ""
+
+#: systemd-analyze.1.xml:207(title)
+msgid "ENVIRONMENT"
+msgstr ""
+
+#: systemd-analyze.1.xml:208(emphasis)
+msgid "$SYSTEMD_PAGER"
+msgstr ""
+
+#: systemd-analyze.1.xml:210(para)
+msgid ""
+"Pager to use when <option>--no-pager</option> is not given; overrides "
+"<emphasis remap=\"I\">$PAGER</emphasis>. Setting this to an empty string or "
+"the value \"cat\" is equivalent to passing <option>--no-pager</option>."
+msgstr ""
+
+#: systemd-analyze.1.xml:219(emphasis)
+msgid "$SYSTEMD_LESS"
+msgstr ""
+
+#: systemd-analyze.1.xml:221(para)
+msgid ""
+"Override the default options passed to <emphasis remap=\"B\">less</emphasis> "
+"(\"FRSXMK\")."
+msgstr ""
+
+#: systemd-analyze.1.xml:227(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: systemd-analyze.1.xml:228(para)
+msgid ""
+"<citerefentry><refentrytitle>systemd</refentrytitle><manvolnum>1</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>systemctl</"
+"refentrytitle><manvolnum>1</manvolnum></citerefentry>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: systemd-analyze.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""

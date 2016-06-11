@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmaccess1'>
+<refmeta>
+<refentrytitle>NPM-ACCESS</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-access</refname>
+<refpurpose>Set access level on published packages</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>access</replaceable></arg>
+    <arg choice='plain'><replaceable>public</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;package&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>access</replaceable></arg>
+    <arg choice='plain'><replaceable>restricted</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;package&gt;</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>access</replaceable></arg>
+    <arg choice='plain'><replaceable>grant</replaceable></arg>
+    <group choice='plain'><arg choice='plain'><replaceable>&lt;read-only</replaceable></arg><arg choice='plain'><replaceable>read-write&gt;</replaceable></arg><arg choice='plain'><replaceable>&lt;scope:team&gt;</replaceable></arg><arg choice='opt'><replaceable>&lt;package&gt;</replaceable></arg></group>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>access</replaceable></arg>
+    <arg choice='plain'><replaceable>revoke</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;scope:team&gt;</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;package&gt;</replaceable></arg>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>access</replaceable></arg>
+    <arg choice='plain'><replaceable>ls-packages</replaceable></arg>
+    <group choice='opt'><arg choice='plain'><replaceable>&lt;user&gt;</replaceable></arg><arg choice='plain'><replaceable>&lt;scope&gt;</replaceable></arg><arg choice='plain'><replaceable>&lt;scope:team&gt;</replaceable></arg></group>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>access</replaceable></arg>
+    <arg choice='plain'><replaceable>ls-collaborators</replaceable></arg>
+    <arg choice='opt'><arg choice='plain'><replaceable>&lt;package&gt;</replaceable></arg><arg choice='opt'><replaceable>&lt;user&gt;</replaceable></arg></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>access</replaceable></arg>
+    <arg choice='plain'><replaceable>edit</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;package&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Used to set access controls on private packages.</para>
+
+<para>For all of the subcommands, <emphasis remap='B'>npm access</emphasis> will perform actions on the packages
+in the current working directory if no package name is passed to the
+subcommand.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>public / restricted:
+Set a package to be either publicly accessible or restricted.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>grant / revoke:
+Add or remove the ability of users and teams to have read-only or read-write
+access to a package.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>ls-packages:
+Show all of the packages a user or a team is able to access, along with the
+access level, except for read-only public packages (it won't print the whole
+registry listing)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>ls-collaborators:
+Show all of the access privileges for a package. Will only show permissions
+for packages to which you have at least read access. If <emphasis remap='B'>&lt;user&gt;</emphasis> is passed in,
+the list is filtered only to teams <emphasis remap='I'>that</emphasis> user happens to belong to.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>edit:
+Set the access privileges for a package at once using <emphasis remap='B'>$EDITOR</emphasis>&thinsp;.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='details'><title>DETAILS</title>
+<para><emphasis remap='B'>npm access</emphasis> always operates directly on the current registry, configurable
+from the command line using <option>--registry=&lt;registry url&gt;</option>&thinsp;.</para>
+
+<para>Unscoped packages are <emphasis remap='I'>always public</emphasis>&thinsp;.</para>
+
+<para>Scoped packages <emphasis remap='I'>default to restricted</emphasis>, but you can either publish them as
+public using <emphasis remap='B'>npm publish --access=public</emphasis>, or set their access as public using
+<emphasis remap='B'>npm access public</emphasis> after the initial publish.</para>
+
+<para>You must have privileges to set the access of a package:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>You are an owner of an unscoped or scoped package.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>You are a member of the team that owns a scope.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>You have been given read-write privileges for a package, either as a member
+of a team or directly as an owner.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If your account is not paid, then attempts to publish scoped packages will fail
+with an HTTP 402 status code (logically enough), unless you use
+<option>--access=public</option>&thinsp;.</para>
+
+<para>Management of teams and team memberships is done with the <emphasis remap='B'>npm team</emphasis> command.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help team</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help publish</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmsearch1'>
+<refmeta>
+<refentrytitle>NPM-SEARCH</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-search</refname>
+<refpurpose>Search for packages</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>search</replaceable></arg>
+    <group choice='opt'><arg choice='plain'>-l </arg><arg choice='plain'>--long </arg></group>
+    <arg choice='opt'><arg choice='plain'><replaceable>search</replaceable></arg><arg choice='plain' rep='repeat'><replaceable>terms</replaceable></arg></arg>
+    <sbr/>
+</cmdsynopsis>
+<para>aliases: s, se</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Search the registry for packages matching the search terms.</para>
+
+<para>If a term starts with <emphasis remap='B'>/</emphasis>, then it's interpreted as a regular expression.
+A trailing <emphasis remap='B'>/</emphasis> will be ignored in this case.  (Note that many regular
+expression characters must be escaped or quoted in most shells.)</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='long'><title>long</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Display full package descriptions and other long text across multiple
+lines. When disabled (default) search results are truncated to fit
+neatly on a single line. Modules with extremely long names will
+fall on multiple lines.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help view</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

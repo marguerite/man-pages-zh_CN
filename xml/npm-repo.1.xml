@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmrepo1'>
+<refmeta>
+<refentrytitle>NPM-REPO</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-repo</refname>
+<refpurpose>Open package repository page in the browser</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>repo</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;pkg&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This command tries to guess at the likely location of a package's
+repository URL, and then tries to open it using the <option>--browser</option>
+config param. If no package name is provided, it will search for
+a <emphasis remap='B'>package.json</emphasis> in the current folder and use the <emphasis remap='B'>name</emphasis> property.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='browser'><title>browser</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: OS X: <emphasis remap='B'>"open"</emphasis>, Windows: <emphasis remap='B'>"start"</emphasis>, Others: <emphasis remap='B'>"xdg-open"</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The browser that is called by the <emphasis remap='B'>npm repo</emphasis> command to open websites.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help docs</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

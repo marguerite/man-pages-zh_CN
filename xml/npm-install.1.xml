@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npminstall1'>
+<refmeta>
+<refentrytitle>NPM-INSTALL</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-install</refname>
+<refpurpose>Install a package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<para>npm install (with no args, in package dir)</para>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>install</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;name&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>install</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;name&gt;@&lt;tag&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>install</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;name&gt;@&lt;version&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>install</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;name&gt;@&lt;version</replaceable></arg>
+    <arg choice='plain'><replaceable>range&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>install</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;tarball</replaceable></arg>
+    <arg choice='plain'><replaceable>file&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>install</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;tarball</replaceable></arg>
+    <arg choice='plain'><replaceable>url&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>install</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;folder&gt;</replaceable></arg>
+    <sbr/>
+</cmdsynopsis>
+<cmdsynopsis>
+  <command>alias:</command>    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>i</replaceable></arg>
+    <arg choice='plain'><replaceable>common</replaceable></arg>
+    <arg choice='plain'><replaceable>options:</replaceable></arg>
+    <group choice='opt'><arg choice='plain'>-S </arg><arg choice='plain'>--save </arg><arg choice='plain'>-D </arg><arg choice='plain'>--save-dev </arg><arg choice='plain'>-O </arg><arg choice='plain'>--save-optional </arg></group>
+    <group choice='opt'><arg choice='plain'>-E </arg><arg choice='plain'>--save-exact </arg></group>
+    <arg choice='opt'>--dry-run </arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This command installs a package, and any packages that it depends on. If the
+package has a shrinkwrap file, the installation of dependencies will be driven
+by that. See npm help shrinkwrap.</para>
+
+<para>A <emphasis remap='B'>package</emphasis> is:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>a) a folder containing a program described by a package.json file</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>b) a gzipped tarball containing (a)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>c) a url that resolves to (b)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>d) a <emphasis remap='B'>&lt;name&gt;@&lt;version&gt;</emphasis> that is published on the registry (see npm help 7 <emphasis remap='B'>npm-registry</emphasis>) with (c)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>e) a <emphasis remap='B'>&lt;name&gt;@&lt;tag&gt;</emphasis> that points to (d)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>f) a <emphasis remap='B'>&lt;name&gt;</emphasis> that has a "latest" tag satisfying (e)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>g) a <emphasis remap='B'>&lt;git remote url&gt;</emphasis> that resolves to (a)</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Even if you never publish your package, you can still get a lot of
+benefits of using npm if you just want to write a node program (a), and
+perhaps if you also want to be able to easily install it elsewhere
+after packing it up into a tarball (b).</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install</emphasis> (in package directory, no arguments):
+  Install the dependencies in the local node_modules folder.
+  In global mode (ie, with <option>-g</option> or <option>--global</option> appended to the command),
+  it installs the current package context (ie, the current working
+  directory) as a global package.
+  By default, <emphasis remap='B'>npm install</emphasis> will install all modules listed as dependencies.
+  With the <option>--production</option> flag (or when the <emphasis remap='B'>NODE_ENV</emphasis> environment variable
+  is set to <emphasis remap='B'>production</emphasis>), npm will not install modules listed in
+  <emphasis remap='B'>devDependencies</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install &lt;folder&gt;</emphasis>:
+  Install a package that is sitting in a folder on the filesystem.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install &lt;tarball file&gt;</emphasis>:
+  Install a package that is sitting on the filesystem.  Note: if you just want
+  to link a dev directory into your npm root, you can do this more easily by
+  using <emphasis remap='B'>npm link</emphasis>&thinsp;.
+  Example:</para>
+
+<literallayout remap='.nf'>
+    npm install ./package.tgz
+</literallayout> <!-- .fi -->
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install &lt;tarball url&gt;</emphasis>:
+  Fetch the tarball url, and then install it.  In order to distinguish between
+  this and other options, the argument must start with "http://" or "https://"
+  Example:</para>
+
+<literallayout remap='.nf'>
+    npm install https://github.com/indexzero/forever/tarball/v0.5.6
+</literallayout> <!-- .fi -->
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install [&lt;@scope&gt;/]&lt;name&gt; [-S|--save|-D|--save-dev|-O|--save-optional]</emphasis>:
+  Do a <emphasis remap='B'>&lt;name&gt;@&lt;tag&gt;</emphasis> install, where <emphasis remap='B'>&lt;tag&gt;</emphasis> is the "tag" config. (See
+  npm help 7 <emphasis remap='B'>npm-config</emphasis>&thinsp;.)
+  In most cases, this will install the latest version
+  of the module published on npm.
+  Example:</para>
+
+<literallayout remap='.nf'>
+    npm install sax
+</literallayout> <!-- .fi -->
+<para>  <emphasis remap='B'>npm install</emphasis> takes 3 exclusive, optional flags which save or update
+  the package version in your main package.json:</para>
+      <itemizedlist remap='IP+bullet'>
+        <listitem override='bullet'>
+<para><option>-S, --save</option>: Package will appear in your <emphasis remap='B'>dependencies</emphasis>&thinsp;.</para>
+        </listitem>
+        <listitem override='bullet'>
+<para><option>-D, --save-dev</option>: Package will appear in your <emphasis remap='B'>devDependencies</emphasis>&thinsp;.</para>
+        </listitem>
+        <listitem override='bullet'>
+<para><option>-O, --save-optional</option>: Package will appear in your <emphasis remap='B'>optionalDependencies</emphasis>&thinsp;.
+When using any of the above options to save dependencies to your
+package.json, there is an additional, optional flag:</para>
+        </listitem>
+        <listitem override='bullet'>
+<para><option>-E, --save-exact</option>: Saved dependencies will be configured with an
+exact version rather than using npm's default semver range
+operator.
+Further, if you have an <emphasis remap='B'>npm-shrinkwrap.json</emphasis> then it will be updated as
+well.
+<emphasis remap='B'>&lt;scope&gt;</emphasis> is optional. The package will be downloaded from the registry
+associated with the specified scope. If no registry is associated with
+the given scope the default registry is assumed. See npm help 7 <emphasis remap='B'>npm-scope</emphasis>&thinsp;.
+Note: if you do not include the @-symbol on your scope name, npm will
+interpret this as a GitHub repository instead, see below. Scopes names
+must also be followed by a slash.
+Examples:</para>
+
+<literallayout remap='.nf'>
+npm install sax --save
+npm install githubname/reponame
+npm install @myorg/privatepackage
+npm install node-tap --save-dev
+npm install dtrace-provider --save-optional
+npm install readable-stream --save --save-exact
+</literallayout> <!-- .fi -->
+
+        </listitem>
+      </itemizedlist>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<programlisting remap='.nf'>
+**Note**: If there is a file or folder named `&lt;name&gt;` in the current
+working directory, then it will try to install that, and only try to
+fetch the package by name if it is not valid.
+</programlisting> <!-- .fi -->
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;tag&gt;</emphasis>:
+  Install the version of the package that is referenced by the specified tag.
+  If the tag does not exist in the registry data for that package, then this
+  will fail.
+  Example:</para>
+
+<literallayout remap='.nf'>
+    npm install sax@latest
+    npm install @myorg/mypackage@latest
+</literallayout> <!-- .fi -->
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version&gt;</emphasis>:
+  Install the specified version of the package.  This will fail if the
+  version has not been published to the registry.
+  Example:</para>
+
+<literallayout remap='.nf'>
+    npm install sax@0.1.1
+    npm install @myorg/privatepackage@1.5.0
+</literallayout> <!-- .fi -->
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version range&gt;</emphasis>:
+  Install a version of the package matching the specified version range.  This
+  will follow the same rules for resolving dependencies described in npm help 5 <emphasis remap='B'>package.json</emphasis>&thinsp;.
+  Note that most version ranges must be put in quotes so that your shell will
+  treat it as a single argument.
+  Example:</para>
+
+<literallayout remap='.nf'>
+    npm install sax@"&gt;=0.1.0 &lt;0.2.0"
+    npm install @myorg/privatepackage@"&gt;=0.1.0 &lt;0.2.0"
+</literallayout> <!-- .fi -->
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install &lt;git remote url&gt;</emphasis>:
+  Installs the package from the hosted git provider, cloning it with
+  <emphasis remap='B'>git</emphasis>&thinsp;. First it tries via the https (git with github) and if that fails, via ssh.</para>
+
+<literallayout remap='.nf'>
+    &lt;protocol&gt;://[&lt;user&gt;[:&lt;password&gt;]@]&lt;hostname&gt;[:&lt;port&gt;][:][/]&lt;path&gt;[#&lt;commit-ish&gt;]
+</literallayout> <!-- .fi -->
+<para>  <emphasis remap='B'>&lt;protocol&gt;</emphasis> is one of <emphasis remap='B'>git</emphasis>, <emphasis remap='B'>git+ssh</emphasis>, <emphasis remap='B'>git+http</emphasis>, or
+  <emphasis remap='B'>git+https</emphasis>&thinsp;.  If no <emphasis remap='B'>&lt;commit-ish&gt;</emphasis> is specified, then <emphasis remap='B'>master</emphasis> is
+  used.
+  The following git environment variables are recognized by npm and will be added
+  to the environment when running git:</para>
+      <itemizedlist remap='IP+bullet'>
+        <listitem override='bullet'>
+<para><emphasis remap='B'>GIT_ASKPASS</emphasis></para>
+        </listitem>
+        <listitem override='bullet'>
+<para><emphasis remap='B'>GIT_PROXY_COMMAND</emphasis></para>
+        </listitem>
+        <listitem override='bullet'>
+<para><emphasis remap='B'>GIT_SSH</emphasis></para>
+        </listitem>
+        <listitem override='bullet'>
+<para><emphasis remap='B'>GIT_SSH_COMMAND</emphasis></para>
+        </listitem>
+        <listitem override='bullet'>
+<para><emphasis remap='B'>GIT_SSL_CAINFO</emphasis></para>
+        </listitem>
+        <listitem override='bullet'>
+<para><emphasis remap='B'>GIT_SSL_NO_VERIFY</emphasis>
+See the git man page for details.
+Examples:</para>
+
+<literallayout remap='.nf'>
+npm install git+ssh://git@github.com:npm/npm.git#v1.0.27
+npm install git+https://isaacs@github.com/npm/npm.git
+npm install git://github.com/npm/npm.git#v1.0.27
+GIT_SSH_COMMAND='ssh -i ~/.ssh/custom_ident' npm install git+ssh://git@github.com:npm/npm.git
+</literallayout> <!-- .fi -->
+
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install &lt;githubname&gt;/&lt;githubrepo&gt;[#&lt;commit-ish&gt;]</emphasis>:</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install github:&lt;githubname&gt;/&lt;githubrepo&gt;[#&lt;commit-ish&gt;]</emphasis>:
+  Install the package at <emphasis remap='B'>https://github.com/githubname/githubrepo</emphasis> by
+  attempting to clone it using <emphasis remap='B'>git</emphasis>&thinsp;.
+  If you don't specify a <emphasis remap='I'>commit-ish</emphasis> then <emphasis remap='B'>master</emphasis> will be used.
+  Examples:</para>
+
+<literallayout remap='.nf'>
+    npm install mygithubuser/myproject
+    npm install github:mygithubuser/myproject
+</literallayout> <!-- .fi -->
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install gist:[&lt;githubname&gt;/]&lt;gistID&gt;[#&lt;commit-ish&gt;]</emphasis>:
+  Install the package at <emphasis remap='B'>https://gist.github.com/gistID</emphasis> by attempting to
+  clone it using <emphasis remap='B'>git</emphasis>&thinsp;. The GitHub username associated with the gist is
+  optional and will not be saved in <emphasis remap='B'>package.json</emphasis> if <option>-S</option> or <option>--save</option> is used.
+  If you don't specify a <emphasis remap='I'>commit-ish</emphasis> then <emphasis remap='B'>master</emphasis> will be used.
+  Example:</para>
+
+<literallayout remap='.nf'>
+    npm install gist:101a11beef
+</literallayout> <!-- .fi -->
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install bitbucket:&lt;bitbucketname&gt;/&lt;bitbucketrepo&gt;[#&lt;commit-ish&gt;]</emphasis>:
+  Install the package at <emphasis remap='B'>https://bitbucket.org/bitbucketname/bitbucketrepo</emphasis>
+  by attempting to clone it using <emphasis remap='B'>git</emphasis>&thinsp;.
+  If you don't specify a <emphasis remap='I'>commit-ish</emphasis> then <emphasis remap='B'>master</emphasis> will be used.
+  Example:</para>
+
+<literallayout remap='.nf'>
+    npm install bitbucket:mybitbucketuser/myproject
+</literallayout> <!-- .fi -->
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm install gitlab:&lt;gitlabname&gt;/&lt;gitlabrepo&gt;[#&lt;commit-ish&gt;]</emphasis>:
+  Install the package at <emphasis remap='B'>https://gitlab.com/gitlabname/gitlabrepo</emphasis>
+  by attempting to clone it using <emphasis remap='B'>git</emphasis>&thinsp;.
+  If you don't specify a <emphasis remap='I'>commit-ish</emphasis> then <emphasis remap='B'>master</emphasis> will be used.
+  Example:</para>
+
+<literallayout remap='.nf'>
+    npm install gitlab:mygitlabuser/myproject
+</literallayout> <!-- .fi -->
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>You may combine multiple arguments, and even multiple types of arguments.
+For example:</para>
+
+<literallayout remap='.nf'>
+npm install sax@"&gt;=0.1.0 &lt;0.2.0" bench supervisor
+</literallayout> <!-- .fi -->
+
+<para>The <option>--tag</option> argument will apply to all of the specified install targets. If a
+tag with the given name exists, the tagged version is preferred over newer
+versions.</para>
+
+<para>The <option>--dry-run</option> argument will report in the usual way what the install would
+have done without actually installing anything.</para>
+
+<para>The <option>-f</option> or <option>--force</option> argument will force npm to fetch remote resources even if a
+local copy exists on disk.</para>
+
+<literallayout remap='.nf'>
+npm install sax --force
+</literallayout> <!-- .fi -->
+
+<para>The <option>-g</option> or <option>--global</option> argument will cause npm to install the package globally
+rather than locally.  See npm help 5 <emphasis remap='B'>npm-folders</emphasis>&thinsp;.</para>
+
+<para>The <option>--link</option> argument will cause npm to link global installs into the
+local space in some cases.</para>
+
+<para>The <option>--no-bin-links</option> argument will prevent npm from creating symlinks for
+any binaries the package might contain.</para>
+
+<para>The <option>--no-optional</option> argument will prevent optional dependencies from
+being installed.</para>
+
+<para>The <option>--no-shrinkwrap</option> argument, which will ignore an available
+shrinkwrap file and use the package.json instead.</para>
+
+<para>The <option>--nodedir=/path/to/node/source</option> argument will allow npm to find the
+node source code so that npm can compile native modules.</para>
+
+<para>The <option>--only={prod[uction]|dev[elopment]}</option> argument will cause either only
+<emphasis remap='B'>devDependencies</emphasis> or only non-<emphasis remap='B'>devDependencies</emphasis> to be installed regardless of the <emphasis remap='B'>NODE_ENV</emphasis>&thinsp;.</para>
+
+<para>See npm help 7 <emphasis remap='B'>npm-config</emphasis>&thinsp;.  Many of the configuration params have some
+effect on installation, since that's most of what npm does.</para>
+</refsect1>
+
+<refsect1 id='algorithm'><title>ALGORITHM</title>
+<para>To install a package, npm uses the following algorithm:</para>
+
+<programlisting remap='.nf'>
+load the existing node_modules tree from disk
+clone the tree
+fetch the package.json and assorted metadata and add it to the clone
+walk the clone and add any missing dependencies
+  dependencies will be added as close to the top as is possible
+  without breaking any other modules
+compare the original tree with the cloned tree and make a list of
+actions to take to convert one to the other
+execute all of the actions, deepest first
+  kinds of actions are install, update, remove and move
+</programlisting> <!-- .fi -->
+
+<para>For this <emphasis remap='B'>package{dep}</emphasis> structure: <emphasis remap='B'>A{B,C}, B{C}, C{D}</emphasis>,
+this algorithm produces:</para>
+
+<literallayout remap='.nf'>
+A
++-- B
++-- C
++-- D
+</literallayout> <!-- .fi -->
+
+<para>That is, the dependency from B to C is satisfied by the fact that A
+already caused C to be installed at a higher level. D is still installed
+at the top level because nothing conflicts with it.</para>
+
+<para>For <emphasis remap='B'>A{B,C}, B{C,D@1}, C{D@2}</emphasis>, this algorithm produces:</para>
+
+<literallayout remap='.nf'>
+A
++-- B
++-- C
+   `-- D@2
++-- D@1
+</literallayout> <!-- .fi -->
+
+<para>Because B's D@1 will be installed in the top level, C now has to install D@2
+privately for itself.</para>
+
+<para>See npm help 5 folders for a more detailed description of the specific
+folder structures that npm creates.</para>
+
+<refsect2 id='limitations_of_npms_install_algorithm'><title>Limitations of npm's Install Algorithm</title>
+
+<para>There are some very rare and pathological edge-cases where a cycle can
+cause npm to try to install a never-ending tree of packages.  Here is
+the simplest case:</para>
+
+<literallayout remap='.nf'>
+A -&gt; B -&gt; A' -&gt; B' -&gt; A -&gt; B -&gt; A' -&gt; B' -&gt; A -&gt; ...
+</literallayout> <!-- .fi -->
+
+<para>where <emphasis remap='B'>A</emphasis> is some version of a package, and <emphasis remap='B'>A'</emphasis> is a different version
+of the same package.  Because <emphasis remap='B'>B</emphasis> depends on a different version of <emphasis remap='B'>A</emphasis>
+than the one that is already in the tree, it must install a separate
+copy.  The same is true of <emphasis remap='B'>A'</emphasis>, which must install <emphasis remap='B'>B'</emphasis>&thinsp;.  Because <emphasis remap='B'>B'</emphasis>
+depends on the original version of <emphasis remap='B'>A</emphasis>, which has been overridden, the
+cycle falls into infinite regress.</para>
+
+<para>To avoid this situation, npm flat-out refuses to install any
+<email>name@version</email> that is already present anywhere in the tree of package
+folder ancestors.  A more correct, but more complex, solution would be
+to symlink the existing version into the new location.  If this ever
+affects a real use-case, it will be investigated.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help update</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help link</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help rebuild</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 scripts</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help build</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help tag</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help rm</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help shrinkwrap</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

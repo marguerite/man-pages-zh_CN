@@ -1,0 +1,1521 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-config.7.xml:7(refentrytitle)
+msgid "NPM-CONFIG"
+msgstr ""
+
+#: npm-config.7.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: npm-config.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-config.7.xml:12(refname)
+msgid "npm-config"
+msgstr ""
+
+#: npm-config.7.xml:13(refpurpose)
+msgid "More than you probably want to know about npm configuration"
+msgstr ""
+
+#: npm-config.7.xml:17(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-config.7.xml:18(para)
+msgid "npm gets its configuration values from the following sources, sorted by priority:"
+msgstr ""
+
+#: npm-config.7.xml:20(title)
+msgid "Command Line Flags"
+msgstr ""
+
+#: npm-config.7.xml:22(para)
+msgid "Putting <option>--foo bar</option> on the command line sets the <emphasis remap=\"B\">foo</emphasis> configuration parameter to <emphasis remap=\"B\">\"bar\"</emphasis>&thinsp;. A <option>--</option> argument tells the cli parser to stop reading flags. A <option>--flag</option> parameter that is at the <emphasis remap=\"I\">end</emphasis> of the command will be given the value of <emphasis remap=\"B\">true</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:28(title)
+msgid "Environment Variables"
+msgstr ""
+
+#: npm-config.7.xml:30(para)
+msgid "Any environment variables that start with <emphasis remap=\"B\">npm_config_</emphasis> will be interpreted as a configuration parameter. For example, putting <emphasis remap=\"B\">npm_config_foo=bar</emphasis> in your environment will set the <emphasis remap=\"B\">foo</emphasis> configuration parameter to <emphasis remap=\"B\">bar</emphasis>&thinsp;. Any environment configurations that are not given a value will be given the value of <emphasis remap=\"B\">true</emphasis>&thinsp;. Config values are case-insensitive, so <emphasis remap=\"B\">NPM_CONFIG_FOO=bar</emphasis> will work the same."
+msgstr ""
+
+#: npm-config.7.xml:39(title)
+msgid "npmrc Files"
+msgstr ""
+
+#: npm-config.7.xml:41(para)
+msgid "The four relevant files are:"
+msgstr ""
+
+#: npm-config.7.xml:45(para)
+msgid "per-project config file (/path/to/my/project/.npmrc)"
+msgstr ""
+
+#: npm-config.7.xml:48(para)
+msgid "per-user config file (~/.npmrc)"
+msgstr ""
+
+#: npm-config.7.xml:51(para)
+msgid "global config file ($PREFIX/etc/npmrc)"
+msgstr ""
+
+#: npm-config.7.xml:54(para)
+msgid "npm builtin config file (/path/to/npm/npmrc)"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:60(para)
+msgid "See npm help 5 npmrc for more details."
+msgstr ""
+
+#: npm-config.7.xml:63(title)
+msgid "Default Configs"
+msgstr ""
+
+#: npm-config.7.xml:65(para)
+msgid "Run <emphasis remap=\"B\">npm config ls -l</emphasis> to see a set of configuration parameters that are internal to npm, and are defaults if nothing else is specified."
+msgstr ""
+
+#: npm-config.7.xml:70(title)
+msgid "Shorthands and Other CLI Niceties"
+msgstr ""
+
+#: npm-config.7.xml:71(para)
+msgid "The following shorthands are parsed on the command-line:"
+msgstr ""
+
+#: npm-config.7.xml:75(para)
+msgid "<option>-v</option>: <option>--version</option>"
+msgstr ""
+
+#: npm-config.7.xml:78(para)
+msgid "<option>-h</option>, <option>-?</option>, <option>--help</option>, <option>-H</option>: <option>--usage</option>"
+msgstr ""
+
+#: npm-config.7.xml:81(para)
+msgid "<option>-s</option>, <option>--silent</option>: <option>--loglevel silent</option>"
+msgstr ""
+
+#: npm-config.7.xml:84(para)
+msgid "<option>-q</option>, <option>--quiet</option>: <option>--loglevel warn</option>"
+msgstr ""
+
+#: npm-config.7.xml:87(para)
+msgid "<option>-d</option>: <option>--loglevel info</option>"
+msgstr ""
+
+#: npm-config.7.xml:90(para)
+msgid "<option>-dd</option>, <option>--verbose</option>: <option>--loglevel verbose</option>"
+msgstr ""
+
+#: npm-config.7.xml:93(para)
+msgid "<option>-ddd</option>: <option>--loglevel silly</option>"
+msgstr ""
+
+#: npm-config.7.xml:96(para)
+msgid "<option>-g</option>: <option>--global</option>"
+msgstr ""
+
+#: npm-config.7.xml:99(para)
+msgid "<option>-C</option>: <option>--prefix</option>"
+msgstr ""
+
+#: npm-config.7.xml:102(para)
+msgid "<option>-l</option>: <option>--long</option>"
+msgstr ""
+
+#: npm-config.7.xml:105(para)
+msgid "<option>-m</option>: <option>--message</option>"
+msgstr ""
+
+#: npm-config.7.xml:108(para)
+msgid "<option>-p</option>, <option>--porcelain</option>: <option>--parseable</option>"
+msgstr ""
+
+#: npm-config.7.xml:111(para)
+msgid "<option>-reg</option>: <option>--registry</option>"
+msgstr ""
+
+#: npm-config.7.xml:114(para)
+msgid "<option>-f</option>: <option>--force</option>"
+msgstr ""
+
+#: npm-config.7.xml:117(para)
+msgid "<option>-desc</option>: <option>--description</option>"
+msgstr ""
+
+#: npm-config.7.xml:120(para)
+msgid "<option>-S</option>: <option>--save</option>"
+msgstr ""
+
+#: npm-config.7.xml:123(para)
+msgid "<option>-D</option>: <option>--save-dev</option>"
+msgstr ""
+
+#: npm-config.7.xml:126(para)
+msgid "<option>-O</option>: <option>--save-optional</option>"
+msgstr ""
+
+#: npm-config.7.xml:129(para)
+msgid "<option>-B</option>: <option>--save-bundle</option>"
+msgstr ""
+
+#: npm-config.7.xml:132(para)
+msgid "<option>-E</option>: <option>--save-exact</option>"
+msgstr ""
+
+#: npm-config.7.xml:135(para)
+msgid "<option>-y</option>: <option>--yes</option>"
+msgstr ""
+
+#: npm-config.7.xml:138(para)
+msgid "<option>-n</option>: <option>--yes false</option>"
+msgstr ""
+
+#: npm-config.7.xml:141(para)
+msgid "<emphasis remap=\"B\">ll</emphasis> and <emphasis remap=\"B\">la</emphasis> commands: <userinput>ls --long</userinput>"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:147(para)
+msgid "If the specified configuration param resolves unambiguously to a known configuration parameter, then it is expanded to that configuration parameter. For example:"
+msgstr ""
+
+#: npm-config.7.xml:151(literallayout)
+#, no-wrap
+msgid "\nnpm ls --par\n# same as:\nnpm ls --parseable\n"
+msgstr ""
+
+#. .fi
+#: npm-config.7.xml:157(para)
+msgid "If multiple single-character shorthands are strung together, and the resulting combination is unambiguously not some other configuration param, then it is expanded to its various component pieces. For example:"
+msgstr ""
+
+#: npm-config.7.xml:162(literallayout)
+#, no-wrap
+msgid "\nnpm ls -gpld\n# same as:\nnpm ls --global --parseable --long --loglevel info\n"
+msgstr ""
+
+#: npm-config.7.xml:169(title)
+msgid "Per-Package Config Settings"
+msgstr ""
+
+#: npm-config.7.xml:170(para)
+msgid "When running scripts (see npm help 7 <emphasis remap=\"B\">npm-scripts</emphasis>) the package.json \"config\" keys are overwritten in the environment if there is a config param of <emphasis remap=\"B\">&lt;name&gt;[@&lt;version&gt;]:&lt;key&gt;</emphasis>&thinsp;. For example, if the package.json has this:"
+msgstr ""
+
+#: npm-config.7.xml:175(literallayout)
+#, no-wrap
+msgid "\n{ \"name\" : \"foo\"\n, \"config\" : { \"port\" : \"8080\" }\n, \"scripts\" : { \"start\" : \"node server.js\" } }\n"
+msgstr ""
+
+#. .fi
+#: npm-config.7.xml:181(para)
+msgid "and the server.js is this:"
+msgstr ""
+
+#: npm-config.7.xml:183(literallayout)
+#, no-wrap
+msgid "\nhttp.createServer(...).listen(process.env.npm_package_config_port)\n"
+msgstr ""
+
+#. .fi
+#: npm-config.7.xml:187(para)
+msgid "then the user could change the behavior by doing:"
+msgstr ""
+
+#: npm-config.7.xml:189(literallayout)
+#, no-wrap
+msgid "\nnpm config set foo:port 80\n"
+msgstr ""
+
+#. .fi
+#: npm-config.7.xml:193(para)
+msgid "See npm help 5 package.json for more information."
+msgstr ""
+
+#: npm-config.7.xml:196(title)
+msgid "Config Settings"
+msgstr ""
+
+#: npm-config.7.xml:198(title)
+msgid "access"
+msgstr ""
+
+#: npm-config.7.xml:202(para)
+msgid "Default: <emphasis remap=\"B\">restricted</emphasis>"
+msgstr ""
+
+#: npm-config.7.xml:205(para)
+msgid "Type: Access"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:211(para)
+msgid "When publishing scoped packages, the access level defaults to <emphasis remap=\"B\">restricted</emphasis>&thinsp;. If you want your scoped package to be publicly viewable (and installable) set <option>--access=public</option>&thinsp;. The only valid values for <emphasis remap=\"B\">access</emphasis> are <emphasis remap=\"B\">public</emphasis> and <emphasis remap=\"B\">restricted</emphasis>&thinsp;. Unscoped packages <emphasis remap=\"I\">always</emphasis> have an access level of <emphasis remap=\"B\">public</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:217(title)
+msgid "always-auth"
+msgstr ""
+
+#: npm-config.7.xml:221(para) npm-config.7.xml:519(para) npm-config.7.xml:538(para) npm-config.7.xml:575(para) npm-config.7.xml:593(para) npm-config.7.xml:728(para) npm-config.7.xml:828(para) npm-config.7.xml:848(para) npm-config.7.xml:964(para) npm-config.7.xml:1000(para) npm-config.7.xml:1097(para) npm-config.7.xml:1147(para) npm-config.7.xml:1163(para) npm-config.7.xml:1225(para) npm-config.7.xml:1259(para) npm-config.7.xml:1399(para) npm-config.7.xml:1420(para) npm-config.7.xml:1441(para) npm-config.7.xml:1462(para) npm-config.7.xml:1480(para) npm-config.7.xml:1631(para) npm-config.7.xml:1764(para) npm-config.7.xml:1850(para) npm-config.7.xml:1868(para)
+msgid "Default: false"
+msgstr ""
+
+#: npm-config.7.xml:224(para) npm-config.7.xml:258(para) npm-config.7.xml:506(para) npm-config.7.xml:522(para) npm-config.7.xml:541(para) npm-config.7.xml:578(para) npm-config.7.xml:596(para) npm-config.7.xml:715(para) npm-config.7.xml:731(para) npm-config.7.xml:831(para) npm-config.7.xml:851(para) npm-config.7.xml:967(para) npm-config.7.xml:1003(para) npm-config.7.xml:1100(para) npm-config.7.xml:1150(para) npm-config.7.xml:1210(para) npm-config.7.xml:1228(para) npm-config.7.xml:1262(para) npm-config.7.xml:1296(para) npm-config.7.xml:1315(para) npm-config.7.xml:1354(para) npm-config.7.xml:1386(para) npm-config.7.xml:1402(para) npm-config.7.xml:1423(para) npm-config.7.xml:1444(para) npm-config.7.xml:1465(para) npm-config.7.xml:1483(para) npm-config.7.xml:1617(para) npm-config.7.xml:1634(para) npm-config.7.xml:1654(para) npm-config.7.xml:1732(para) npm-config.7.xml:1749(para) npm-config.7.xml:1767(para)
+msgid "Type: Boolean"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:230(para)
+msgid "Force npm to always require authentication when accessing the registry, even for <emphasis remap=\"B\">GET</emphasis> requests."
+msgstr ""
+
+#: npm-config.7.xml:234(title)
+msgid "also"
+msgstr ""
+
+#: npm-config.7.xml:238(para) npm-config.7.xml:810(para) npm-config.7.xml:1180(para) npm-config.7.xml:1333(para)
+msgid "Default: null"
+msgstr ""
+
+#: npm-config.7.xml:241(para) npm-config.7.xml:279(para) npm-config.7.xml:451(para) npm-config.7.xml:697(para) npm-config.7.xml:797(para) npm-config.7.xml:886(para) npm-config.7.xml:902(para) npm-config.7.xml:918(para) npm-config.7.xml:934(para) npm-config.7.xml:987(para) npm-config.7.xml:1053(para) npm-config.7.xml:1116(para) npm-config.7.xml:1183(para) npm-config.7.xml:1505(para) npm-config.7.xml:1527(para) npm-config.7.xml:1547(para) npm-config.7.xml:1563(para) npm-config.7.xml:1579(para) npm-config.7.xml:1673(para) npm-config.7.xml:1693(para) npm-config.7.xml:1837(para)
+msgid "Type: String"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:247(para)
+msgid "When \"dev\" or \"development\" and running local <emphasis remap=\"B\">npm shrinkwrap</emphasis>, <emphasis remap=\"B\">npm outdated</emphasis>, or <emphasis remap=\"B\">npm update</emphasis>, is an alias for <option>--dev</option>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:251(title)
+msgid "bin-links"
+msgstr ""
+
+#: npm-config.7.xml:255(para) npm-config.7.xml:712(para)
+msgid "Default: <emphasis remap=\"B\">true</emphasis>"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:264(para)
+msgid "Tells npm to create symlinks (or <emphasis remap=\"B\">&thinsp;.cmd</emphasis> shims on Windows) for package executables."
+msgstr ""
+
+#: npm-config.7.xml:267(para)
+msgid "Set to false to have it not do this. This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems."
+msgstr ""
+
+#: npm-config.7.xml:272(title)
+msgid "browser"
+msgstr ""
+
+#: npm-config.7.xml:276(para)
+msgid "Default: OS X: <emphasis remap=\"B\">\"open\"</emphasis>, Windows: <emphasis remap=\"B\">\"start\"</emphasis>, Others: <emphasis remap=\"B\">\"xdg-open\"</emphasis>"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:285(para)
+msgid "The browser that is called by the <emphasis remap=\"B\">npm docs</emphasis> command to open websites."
+msgstr ""
+
+#: npm-config.7.xml:288(title)
+msgid "ca"
+msgstr ""
+
+#: npm-config.7.xml:292(para)
+msgid "Default: The npm CA certificate"
+msgstr ""
+
+#: npm-config.7.xml:295(para)
+msgid "Type: String, Array or null"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:301(para)
+msgid "The Certificate Authority signing certificate that is trusted for SSL connections to the registry. Values should be in PEM format with newlines replaced by the string \"&bsol;n\". For example:"
+msgstr ""
+
+#: npm-config.7.xml:305(literallayout)
+#, no-wrap
+msgid "\nca=\"-----BEGIN CERTIFICATE-----&bsol;nXXXX&bsol;nXXXX&bsol;n-----END CERTIFICATE-----\"\n"
+msgstr ""
+
+#. .fi
+#: npm-config.7.xml:309(para)
+msgid "Set to <emphasis remap=\"B\">null</emphasis> to only allow \"known\" registrars, or to a specific CA cert to trust only that specific signing authority."
+msgstr ""
+
+#: npm-config.7.xml:312(para)
+msgid "Multiple CAs can be trusted by specifying an array of certificates:"
+msgstr ""
+
+#: npm-config.7.xml:314(literallayout)
+#, no-wrap
+msgid "\nca[]=\"...\"\nca[]=\"...\"\n"
+msgstr ""
+
+#. .fi
+#: npm-config.7.xml:319(para)
+msgid "See also the <emphasis remap=\"B\">strict-ssl</emphasis> config."
+msgstr ""
+
+#: npm-config.7.xml:322(title)
+msgid "cafile"
+msgstr ""
+
+#: npm-config.7.xml:326(para) npm-config.7.xml:448(para) npm-config.7.xml:984(para)
+msgid "Default: <emphasis remap=\"B\">null</emphasis>"
+msgstr ""
+
+#: npm-config.7.xml:329(para) npm-config.7.xml:347(para) npm-config.7.xml:562(para) npm-config.7.xml:764(para) npm-config.7.xml:867(para) npm-config.7.xml:1166(para) npm-config.7.xml:1245(para) npm-config.7.xml:1601(para) npm-config.7.xml:1715(para) npm-config.7.xml:1800(para) npm-config.7.xml:1890(para)
+msgid "Type: path"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:335(para)
+msgid "A path to a file containing one or multiple Certificate Authority signing certificates. Similar to the <emphasis remap=\"B\">ca</emphasis> setting, but allows for multiple CA's, as well as for the CA information to be stored in a file on disk."
+msgstr ""
+
+#: npm-config.7.xml:340(title)
+msgid "cache"
+msgstr ""
+
+#: npm-config.7.xml:344(para)
+msgid "Default: Windows: <emphasis remap=\"B\">%AppData%&bsol;npm-cache</emphasis>, Posix: <filename>~/.npm</filename>"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:353(para)
+msgid "The location of npm's cache directory. See npm help <emphasis remap=\"B\">npm-cache</emphasis>"
+msgstr ""
+
+#: npm-config.7.xml:356(title)
+msgid "cache-lock-stale"
+msgstr ""
+
+#: npm-config.7.xml:360(para) npm-config.7.xml:677(para)
+msgid "Default: 60000 (1 minute)"
+msgstr ""
+
+#: npm-config.7.xml:363(para) npm-config.7.xml:379(para) npm-config.7.xml:395(para) npm-config.7.xml:411(para) npm-config.7.xml:431(para) npm-config.7.xml:484(para) npm-config.7.xml:629(para) npm-config.7.xml:646(para) npm-config.7.xml:663(para) npm-config.7.xml:680(para)
+msgid "Type: Number"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:369(para)
+msgid "The number of ms before cache folder lockfiles are considered stale."
+msgstr ""
+
+#: npm-config.7.xml:372(title)
+msgid "cache-lock-retries"
+msgstr ""
+
+#: npm-config.7.xml:376(para) npm-config.7.xml:428(para) npm-config.7.xml:643(para)
+msgid "Default: 10"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:385(para)
+msgid "Number of times to retry to acquire a lock on cache folder lockfiles."
+msgstr ""
+
+#: npm-config.7.xml:388(title)
+msgid "cache-lock-wait"
+msgstr ""
+
+#: npm-config.7.xml:392(para) npm-config.7.xml:660(para)
+msgid "Default: 10000 (10 seconds)"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:401(para)
+msgid "Number of ms to wait for cache lock files to expire."
+msgstr ""
+
+#: npm-config.7.xml:404(title)
+msgid "cache-max"
+msgstr ""
+
+#: npm-config.7.xml:408(para) npm-config.7.xml:481(para)
+msgid "Default: Infinity"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:417(para)
+msgid "The maximum time (in seconds) to keep items in the registry cache before re-checking against the registry."
+msgstr ""
+
+#: npm-config.7.xml:420(para) npm-config.7.xml:440(para)
+msgid "Note that no purging is done unless the <emphasis remap=\"B\">npm cache clean</emphasis> command is explicitly used, and that only GET requests use the cache."
+msgstr ""
+
+#: npm-config.7.xml:424(title)
+msgid "cache-min"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:437(para)
+msgid "The minimum time (in seconds) to keep items in the registry cache before re-checking against the registry."
+msgstr ""
+
+#: npm-config.7.xml:444(title)
+msgid "cert"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:457(para)
+msgid "A client certificate to pass when accessing the registry."
+msgstr ""
+
+#: npm-config.7.xml:460(title)
+msgid "color"
+msgstr ""
+
+#: npm-config.7.xml:464(para)
+msgid "Default: true on Posix, false on Windows"
+msgstr ""
+
+#: npm-config.7.xml:467(para)
+msgid "Type: Boolean or <emphasis remap=\"B\">\"always\"</emphasis>"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:473(para)
+msgid "If false, never shows colors. If <emphasis remap=\"B\">\"always\"</emphasis> then always shows colors. If true, then only prints color codes for tty file descriptors."
+msgstr ""
+
+#: npm-config.7.xml:477(title)
+msgid "depth"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:490(para)
+msgid "The depth to go when recursing directories for <emphasis remap=\"B\">npm ls</emphasis>, <emphasis remap=\"B\">npm cache ls</emphasis>, and <emphasis remap=\"B\">npm outdated</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:493(para)
+msgid "For <emphasis remap=\"B\">npm outdated</emphasis>, a setting of <emphasis remap=\"B\">Infinity</emphasis> will be treated as <literal>0</literal> since that gives more useful information. To show the outdated status of all packages and dependents, use a large integer value, e.g., <emphasis remap=\"B\">npm outdated --depth 9999</emphasis>"
+msgstr ""
+
+#: npm-config.7.xml:499(title)
+msgid "description"
+msgstr ""
+
+#: npm-config.7.xml:503(para) npm-config.7.xml:1207(para) npm-config.7.xml:1293(para) npm-config.7.xml:1312(para) npm-config.7.xml:1351(para) npm-config.7.xml:1383(para) npm-config.7.xml:1614(para) npm-config.7.xml:1651(para)
+msgid "Default: true"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:512(para)
+msgid "Show the description in <emphasis remap=\"B\">npm search</emphasis>"
+msgstr ""
+
+#: npm-config.7.xml:515(title)
+msgid "dev"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:528(para)
+msgid "Install <emphasis remap=\"B\">dev-dependencies</emphasis> along with packages."
+msgstr ""
+
+#: npm-config.7.xml:530(para)
+msgid "Note that <emphasis remap=\"B\">dev-dependencies</emphasis> are also installed if the <emphasis remap=\"B\">npat</emphasis> flag is set."
+msgstr ""
+
+#: npm-config.7.xml:534(title)
+msgid "dry-run"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:547(para)
+msgid "Indicates that you don't want npm to make any changes and that it should only report what it would have done. This can be passed into any of the commands that modify your local installation, eg, <emphasis remap=\"B\">install</emphasis>, <emphasis remap=\"B\">update</emphasis>, <emphasis remap=\"B\">dedupe</emphasis>, <emphasis remap=\"B\">uninstall</emphasis>&thinsp;. This is NOT currently honored by network related commands, eg <emphasis remap=\"B\">dist-tags</emphasis>, <emphasis remap=\"B\">owner</emphasis>, <emphasis remap=\"B\">publish</emphasis>, etc."
+msgstr ""
+
+#: npm-config.7.xml:554(title)
+msgid "editor"
+msgstr ""
+
+#: npm-config.7.xml:558(para)
+msgid "Default: <envar>EDITOR</envar> environment variable if set, or <emphasis remap=\"B\">\"vi\"</emphasis> on Posix, or <emphasis remap=\"B\">\"notepad\"</emphasis> on Windows."
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:568(para)
+msgid "The command to run for <emphasis remap=\"B\">npm edit</emphasis> or <emphasis remap=\"B\">npm config edit</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:571(title)
+msgid "engine-strict"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:584(para)
+msgid "If set to true, then npm will stubbornly refuse to install (or even consider installing) any package that claims to not be compatible with the current Node.js version."
+msgstr ""
+
+#: npm-config.7.xml:589(title)
+msgid "force"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:602(para)
+msgid "Makes various commands more forceful."
+msgstr ""
+
+#: npm-config.7.xml:606(para)
+msgid "lifecycle script failure does not block progress."
+msgstr ""
+
+#: npm-config.7.xml:609(para)
+msgid "publishing clobbers previously published versions."
+msgstr ""
+
+#: npm-config.7.xml:612(para)
+msgid "skips cache when requesting from the registry."
+msgstr ""
+
+#: npm-config.7.xml:615(para)
+msgid "prevents checks against clobbering non-npm files."
+msgstr ""
+
+#: npm-config.7.xml:622(title)
+msgid "fetch-retries"
+msgstr ""
+
+#: npm-config.7.xml:626(para)
+msgid "Default: 2"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:635(para)
+msgid "The \"retries\" config for the <emphasis remap=\"B\">retry</emphasis> module to use when fetching packages from the registry."
+msgstr ""
+
+#: npm-config.7.xml:639(title)
+msgid "fetch-retry-factor"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:652(para)
+msgid "The \"factor\" config for the <emphasis remap=\"B\">retry</emphasis> module to use when fetching packages."
+msgstr ""
+
+#: npm-config.7.xml:656(title)
+msgid "fetch-retry-mintimeout"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:669(para)
+msgid "The \"minTimeout\" config for the <emphasis remap=\"B\">retry</emphasis> module to use when fetching packages."
+msgstr ""
+
+#: npm-config.7.xml:673(title)
+msgid "fetch-retry-maxtimeout"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:686(para)
+msgid "The \"maxTimeout\" config for the <emphasis remap=\"B\">retry</emphasis> module to use when fetching packages."
+msgstr ""
+
+#: npm-config.7.xml:690(title)
+msgid "git"
+msgstr ""
+
+#: npm-config.7.xml:694(para)
+msgid "Default: <emphasis remap=\"B\">\"git\"</emphasis>"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:703(para)
+msgid "The command to use for git commands. If git is installed on the computer, but is not in the <envar>PATH</envar>, then set this to the full path to the git binary."
+msgstr ""
+
+#: npm-config.7.xml:708(title)
+msgid "git-tag-version"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:721(para)
+msgid "Tag the commit when using the <emphasis remap=\"B\">npm version</emphasis> command."
+msgstr ""
+
+#: npm-config.7.xml:724(title)
+msgid "global"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:737(para)
+msgid "Operates in \"global\" mode, so that packages are installed into the <emphasis remap=\"B\">prefix</emphasis> folder instead of the current working directory. See npm help 5 <emphasis remap=\"B\">npm-folders</emphasis> for more on the differences in behavior."
+msgstr ""
+
+#: npm-config.7.xml:743(para)
+msgid "packages are installed into the <emphasis remap=\"B\">{prefix}/lib/node_modules</emphasis> folder, instead of the current working directory."
+msgstr ""
+
+#: npm-config.7.xml:747(para)
+msgid "bin files are linked to <emphasis remap=\"B\">{prefix}/bin</emphasis>"
+msgstr ""
+
+#: npm-config.7.xml:750(para)
+msgid "man pages are linked to <emphasis remap=\"B\">{prefix}/share/man</emphasis>"
+msgstr ""
+
+#: npm-config.7.xml:757(title)
+msgid "globalconfig"
+msgstr ""
+
+#: npm-config.7.xml:761(para)
+msgid "Default: {prefix}/etc/npmrc"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:770(para)
+msgid "The config file to read for global config options."
+msgstr ""
+
+#: npm-config.7.xml:773(title)
+msgid "group"
+msgstr ""
+
+#: npm-config.7.xml:777(para)
+msgid "Default: GID of the current process"
+msgstr ""
+
+#: npm-config.7.xml:780(para) npm-config.7.xml:1784(para)
+msgid "Type: String or Number"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:786(para)
+msgid "The group to use when running package scripts in global mode as the root user."
+msgstr ""
+
+#: npm-config.7.xml:790(title)
+msgid "heading"
+msgstr ""
+
+#: npm-config.7.xml:794(para)
+msgid "Default: <emphasis remap=\"B\">\"npm\"</emphasis>"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:803(para)
+msgid "The string that starts all the debugging log output."
+msgstr ""
+
+#: npm-config.7.xml:806(title)
+msgid "https-proxy"
+msgstr ""
+
+#: npm-config.7.xml:813(para) npm-config.7.xml:1336(para) npm-config.7.xml:1370(para)
+msgid "Type: url"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:819(para)
+msgid "A proxy to use for outgoing https requests. If the <emphasis remap=\"B\">HTTPS_PROXY</emphasis> or <emphasis remap=\"B\">https_proxy</emphasis> or <emphasis remap=\"B\">HTTP_PROXY</emphasis> or <emphasis remap=\"B\">http_proxy</emphasis> environment variables are set, proxy settings will be honored by the underlying <emphasis remap=\"B\">request</emphasis> library."
+msgstr ""
+
+#: npm-config.7.xml:824(title)
+msgid "if-present"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:837(para)
+msgid "If true, npm will not exit with an error code when <emphasis remap=\"B\">run-script</emphasis> is invoked for a script that isn't defined in the <emphasis remap=\"B\">scripts</emphasis> section of <emphasis remap=\"B\">package.json</emphasis>&thinsp;. This option can be used when it's desirable to optionally run a script when it's present and fail if the script fails. This is useful, for example, when running scripts that may only apply for some builds in an otherwise generic CI setup."
+msgstr ""
+
+#: npm-config.7.xml:844(title)
+msgid "ignore-scripts"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:857(para)
+msgid "If true, npm does not run scripts specified in package.json files."
+msgstr ""
+
+#: npm-config.7.xml:860(title)
+msgid "init-module"
+msgstr ""
+
+#: npm-config.7.xml:864(para)
+msgid "Default: ~/.npm-init.js"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:873(para)
+msgid "A module that will be loaded by the <emphasis remap=\"B\">npm init</emphasis> command. See the documentation for the init-package-json <emphasis remap=\"I\">https://github.com/isaacs/init-package-json</emphasis> module for more information, or npm help init."
+msgstr ""
+
+#: npm-config.7.xml:879(title)
+msgid "init-author-name"
+msgstr ""
+
+#: npm-config.7.xml:883(para) npm-config.7.xml:899(para) npm-config.7.xml:915(para) npm-config.7.xml:1524(para) npm-config.7.xml:1544(para) npm-config.7.xml:1560(para)
+msgid "Default: \"\""
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:892(para)
+msgid "The value <emphasis remap=\"B\">npm init</emphasis> should use by default for the package author's name."
+msgstr ""
+
+#: npm-config.7.xml:895(title)
+msgid "init-author-email"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:908(para)
+msgid "The value <emphasis remap=\"B\">npm init</emphasis> should use by default for the package author's email."
+msgstr ""
+
+#: npm-config.7.xml:911(title)
+msgid "init-author-url"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:924(para)
+msgid "The value <emphasis remap=\"B\">npm init</emphasis> should use by default for the package author's homepage."
+msgstr ""
+
+#: npm-config.7.xml:927(title)
+msgid "init-license"
+msgstr ""
+
+#: npm-config.7.xml:931(para)
+msgid "Default: \"ISC\""
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:940(para)
+msgid "The value <emphasis remap=\"B\">npm init</emphasis> should use by default for the package license."
+msgstr ""
+
+#: npm-config.7.xml:943(title)
+msgid "init-version"
+msgstr ""
+
+#: npm-config.7.xml:947(para)
+msgid "Default: \"1.0.0\""
+msgstr ""
+
+#: npm-config.7.xml:950(para)
+msgid "Type: semver"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:956(para)
+msgid "The value that <emphasis remap=\"B\">npm init</emphasis> should use by default for the package version number, if not already set in package.json."
+msgstr ""
+
+#: npm-config.7.xml:960(title)
+msgid "json"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:973(para)
+msgid "Whether or not to output JSON data, rather than the normal output."
+msgstr ""
+
+#: npm-config.7.xml:975(para)
+msgid "This feature is currently experimental, and the output data structures for many commands is either not implemented in JSON yet, or subject to change. Only the output from <emphasis remap=\"B\">npm ls --json</emphasis> is currently valid."
+msgstr ""
+
+#: npm-config.7.xml:980(title)
+msgid "key"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:993(para)
+msgid "A client key to pass when accessing the registry."
+msgstr ""
+
+#: npm-config.7.xml:996(title)
+msgid "link"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1009(para)
+msgid "If true, then local installs will link if there is a suitable globally installed package."
+msgstr ""
+
+#: npm-config.7.xml:1012(para)
+msgid "Note that this means that local installs can cause things to be installed into the global space at the same time. The link is only done if one of the two conditions are met:"
+msgstr ""
+
+#: npm-config.7.xml:1018(para)
+msgid "The package is not already installed globally, or"
+msgstr ""
+
+#: npm-config.7.xml:1021(para)
+msgid "the globally installed version is identical to the version that is being installed locally."
+msgstr ""
+
+#: npm-config.7.xml:1029(title)
+msgid "local-address"
+msgstr ""
+
+#: npm-config.7.xml:1033(para)
+msgid "Default: undefined"
+msgstr ""
+
+#: npm-config.7.xml:1036(para)
+msgid "Type: IP Address"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1042(para)
+msgid "The IP address of the local interface to use when making connections to the npm registry. Must be IPv4 in versions of Node prior to 0.12."
+msgstr ""
+
+#: npm-config.7.xml:1046(title)
+msgid "loglevel"
+msgstr ""
+
+#: npm-config.7.xml:1050(para)
+msgid "Default: \"warn\""
+msgstr ""
+
+#: npm-config.7.xml:1056(para)
+msgid "Values: \"silent\", \"error\", \"warn\", \"http\", \"info\", \"verbose\", \"silly\""
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1062(para)
+msgid "What level of logs to report. On failure, <emphasis remap=\"I\">all</emphasis> logs are written to <emphasis remap=\"B\">npm-debug.log</emphasis> in the current working directory."
+msgstr ""
+
+#: npm-config.7.xml:1065(para)
+msgid "Any logs of a higher level than the setting are shown. The default is \"warn\", which shows warn and error output."
+msgstr ""
+
+#: npm-config.7.xml:1069(title)
+msgid "logstream"
+msgstr ""
+
+#: npm-config.7.xml:1073(para)
+msgid "Default: process.stderr"
+msgstr ""
+
+#: npm-config.7.xml:1076(para)
+msgid "Type: Stream"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1082(para)
+msgid "This is the stream that is passed to the npmlog <emphasis remap=\"I\">https://github.com/npm/npmlog</emphasis> module at run time."
+msgstr ""
+
+#: npm-config.7.xml:1085(para)
+msgid "It cannot be set from the command line, but if you are using npm programmatically, you may wish to send logs to somewhere other than stderr."
+msgstr ""
+
+#: npm-config.7.xml:1089(para)
+msgid "If the <emphasis remap=\"B\">color</emphasis> config is set to true, then this stream will receive colored output if it is a TTY."
+msgstr ""
+
+#: npm-config.7.xml:1093(title)
+msgid "long"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1106(para)
+msgid "Show extended information in <emphasis remap=\"B\">npm ls</emphasis> and <emphasis remap=\"B\">npm search</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:1109(title)
+msgid "message"
+msgstr ""
+
+#: npm-config.7.xml:1113(para)
+msgid "Default: \"%s\""
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1122(para)
+msgid "Commit message which is used by <emphasis remap=\"B\">npm version</emphasis> when creating version commit."
+msgstr ""
+
+#: npm-config.7.xml:1124(para)
+msgid "Any \"%s\" in the message will be replaced with the version number."
+msgstr ""
+
+#: npm-config.7.xml:1127(title)
+msgid "node-version"
+msgstr ""
+
+#: npm-config.7.xml:1131(para)
+msgid "Default: process.version"
+msgstr ""
+
+#: npm-config.7.xml:1134(para)
+msgid "Type: semver or false"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1140(para)
+msgid "The node version to use when checking a package's <emphasis remap=\"B\">engines</emphasis> map."
+msgstr ""
+
+#: npm-config.7.xml:1143(title)
+msgid "npat"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1156(para)
+msgid "Run tests on installation."
+msgstr ""
+
+#: npm-config.7.xml:1159(title)
+msgid "onload-script"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1172(para)
+msgid "A node module to <function>require()</function> when npm loads. Useful for programmatic usage."
+msgstr ""
+
+#: npm-config.7.xml:1176(title)
+msgid "only"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1189(para)
+msgid "When \"dev\" or \"development\" and running local <emphasis remap=\"B\">npm install</emphasis> without any arguments, only devDependencies (and their dependencies) are installed."
+msgstr ""
+
+#: npm-config.7.xml:1192(para)
+msgid "When \"dev\" or \"development\" and running local <emphasis remap=\"B\">npm ls</emphasis>, <emphasis remap=\"B\">npm outdated</emphasis>, or <emphasis remap=\"B\">npm update</emphasis>, is an alias for <option>--dev</option>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:1195(para)
+msgid "When \"prod\" or \"production\" and running local <emphasis remap=\"B\">npm install</emphasis> without any arguments, only non-devDependencies (and their dependencies) are installed."
+msgstr ""
+
+#: npm-config.7.xml:1199(para)
+msgid "When \"prod\" or \"production\" and running local <emphasis remap=\"B\">npm ls</emphasis>, <emphasis remap=\"B\">npm outdated</emphasis>, or <emphasis remap=\"B\">npm update</emphasis>, is an alias for <option>--production</option>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:1203(title)
+msgid "optional"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1216(para)
+msgid "Attempt to install packages in the <emphasis remap=\"B\">optionalDependencies</emphasis> object. Note that if these packages fail to install, the overall installation process is not aborted."
+msgstr ""
+
+#: npm-config.7.xml:1221(title)
+msgid "parseable"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1234(para)
+msgid "Output parseable results from commands that write to standard output."
+msgstr ""
+
+#: npm-config.7.xml:1238(title)
+msgid "prefix"
+msgstr ""
+
+#: npm-config.7.xml:1242(para)
+msgid "Default: see npm help 5 folders"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1251(para)
+msgid "The location to install global items. If set on the command line, then it forces non-global commands to run in the specified folder."
+msgstr ""
+
+#: npm-config.7.xml:1255(title)
+msgid "production"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1268(para)
+msgid "Set to true to run in \"production\" mode."
+msgstr ""
+
+#: npm-config.7.xml:1272(term)
+msgid "1."
+msgstr ""
+
+#: npm-config.7.xml:1274(para)
+msgid "devDependencies are not installed at the topmost level when running local <emphasis remap=\"B\">npm install</emphasis> without any arguments."
+msgstr ""
+
+#: npm-config.7.xml:1279(term)
+msgid "2."
+msgstr ""
+
+#: npm-config.7.xml:1281(para)
+msgid "Set the NODE_ENV=\"production\" for lifecycle scripts."
+msgstr ""
+
+#: npm-config.7.xml:1289(title)
+msgid "progress"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1302(para)
+msgid "When set to <emphasis remap=\"B\">true</emphasis>, npm will display a progress bar during time intensive operations, if <emphasis remap=\"B\">process.stderr</emphasis> is a TTY."
+msgstr ""
+
+#: npm-config.7.xml:1305(para)
+msgid "Set to <emphasis remap=\"B\">false</emphasis> to suppress the progress bar."
+msgstr ""
+
+#: npm-config.7.xml:1308(title)
+msgid "proprietary-attribs"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1321(para)
+msgid "Whether or not to include proprietary extended attributes in the tarballs created by npm."
+msgstr ""
+
+#: npm-config.7.xml:1324(para)
+msgid "Unless you are expecting to unpack package tarballs with something other than npm -- particularly a very outdated tar implementation -- leave this as true."
+msgstr ""
+
+#: npm-config.7.xml:1329(title)
+msgid "proxy"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1342(para)
+msgid "A proxy to use for outgoing http requests. If the <emphasis remap=\"B\">HTTP_PROXY</emphasis> or <emphasis remap=\"B\">http_proxy</emphasis> environment variables are set, proxy settings will be honored by the underlying <emphasis remap=\"B\">request</emphasis> library."
+msgstr ""
+
+#: npm-config.7.xml:1347(title)
+msgid "rebuild-bundle"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1360(para)
+msgid "Rebuild bundled dependencies after installation."
+msgstr ""
+
+#: npm-config.7.xml:1363(title)
+msgid "registry"
+msgstr ""
+
+#: npm-config.7.xml:1367(para)
+msgid "Default: https://registry.npmjs.org/"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1376(para)
+msgid "The base URL of the npm package registry."
+msgstr ""
+
+#: npm-config.7.xml:1379(title)
+msgid "rollback"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1392(para)
+msgid "Remove failed installs."
+msgstr ""
+
+#: npm-config.7.xml:1395(title)
+msgid "save"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1408(para)
+msgid "Save installed packages to a package.json file as dependencies."
+msgstr ""
+
+#: npm-config.7.xml:1410(para)
+msgid "When used with the <emphasis remap=\"B\">npm rm</emphasis> command, it removes it from the <emphasis remap=\"B\">dependencies</emphasis> object."
+msgstr ""
+
+#: npm-config.7.xml:1413(para) npm-config.7.xml:1455(para) npm-config.7.xml:1495(para)
+msgid "Only works if there is already a package.json file present."
+msgstr ""
+
+#: npm-config.7.xml:1416(title)
+msgid "save-bundle"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1429(para)
+msgid "If a package would be saved at install time by the use of <option>--save</option>, <option>--save-dev</option>, or <option>--save-optional</option>, then also put it in the <emphasis remap=\"B\">bundleDependencies</emphasis> list."
+msgstr ""
+
+#: npm-config.7.xml:1433(para)
+msgid "When used with the <emphasis remap=\"B\">npm rm</emphasis> command, it removes it from the bundledDependencies list."
+msgstr ""
+
+#: npm-config.7.xml:1437(title)
+msgid "save-dev"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1450(para)
+msgid "Save installed packages to a package.json file as <emphasis remap=\"B\">devDependencies</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:1452(para) npm-config.7.xml:1492(para)
+msgid "When used with the <emphasis remap=\"B\">npm rm</emphasis> command, it removes it from the <emphasis remap=\"B\">devDependencies</emphasis> object."
+msgstr ""
+
+#: npm-config.7.xml:1458(title)
+msgid "save-exact"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1471(para)
+msgid "Dependencies saved to package.json using <option>--save</option>, <option>--save-dev</option> or <option>--save-optional</option> will be configured with an exact version rather than using npm's default semver range operator."
+msgstr ""
+
+#: npm-config.7.xml:1476(title)
+msgid "save-optional"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1489(para)
+msgid "Save installed packages to a package.json file as optionalDependencies."
+msgstr ""
+
+#: npm-config.7.xml:1498(title)
+msgid "save-prefix"
+msgstr ""
+
+#: npm-config.7.xml:1502(para)
+msgid "Default: '^'"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1511(para)
+msgid "Configure how versions of packages installed to a package.json file via <option>--save</option> or <option>--save-dev</option> get prefixed."
+msgstr ""
+
+#: npm-config.7.xml:1514(para)
+msgid "For example if a package has version <literal>1.2.3</literal>, by default its version is set to <emphasis remap=\"B\">^1.2.3</emphasis> which allows minor upgrades for that package, but after <emphasis remap=\"B\">npm config set save-prefix='~'</emphasis> it would be set to <emphasis remap=\"B\">~1.2.3</emphasis> which only allows patch upgrades."
+msgstr ""
+
+#: npm-config.7.xml:1520(title)
+msgid "scope"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1533(para)
+msgid "Associate an operation with a scope for a scoped registry. Useful when logging in to a private registry for the first time: <emphasis remap=\"B\">npm login --scope=@organization --registry=registry.organization.com</emphasis>, which will cause <emphasis remap=\"B\">@organization</emphasis> to be mapped to the registry for future installation of packages specified according to the pattern <emphasis remap=\"B\">@organization/package</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:1540(title)
+msgid "searchopts"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1553(para)
+msgid "Space-separated options that are always passed to search."
+msgstr ""
+
+#: npm-config.7.xml:1556(title)
+msgid "searchexclude"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1569(para)
+msgid "Space-separated options that limit the results from search."
+msgstr ""
+
+#: npm-config.7.xml:1572(title)
+msgid "searchsort"
+msgstr ""
+
+#: npm-config.7.xml:1576(para)
+msgid "Default: \"name\""
+msgstr ""
+
+#: npm-config.7.xml:1582(para)
+msgid "Values: \"name\", \"-name\", \"date\", \"-date\", \"description\", \"-description\", \"keywords\", \"-keywords\""
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1589(para)
+msgid "Indication of which field to sort search results by. Prefix with a <emphasis remap=\"B\">-</emphasis> character to indicate reverse sort."
+msgstr ""
+
+#: npm-config.7.xml:1593(title)
+msgid "shell"
+msgstr ""
+
+#: npm-config.7.xml:1597(para)
+msgid "Default: SHELL environment variable, or \"bash\" on Posix, or \"cmd\" on Windows"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1607(para)
+msgid "The shell to run for the <emphasis remap=\"B\">npm explore</emphasis> command."
+msgstr ""
+
+#: npm-config.7.xml:1610(title)
+msgid "shrinkwrap"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1623(para)
+msgid "If set to false, then ignore <emphasis remap=\"B\">npm-shrinkwrap.json</emphasis> files when installing."
+msgstr ""
+
+#: npm-config.7.xml:1627(title)
+msgid "sign-git-tag"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1640(para)
+msgid "If set to true, then the <emphasis remap=\"B\">npm version</emphasis> command will tag the version using <option>-s</option> to add a signature."
+msgstr ""
+
+#: npm-config.7.xml:1643(para)
+msgid "Note that git requires you to have set up GPG keys in your git configs for this to work properly."
+msgstr ""
+
+#: npm-config.7.xml:1647(title)
+msgid "strict-ssl"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1660(para)
+msgid "Whether or not to do SSL key validation when making requests to the registry via https."
+msgstr ""
+
+#: npm-config.7.xml:1663(para)
+msgid "See also the <emphasis remap=\"B\">ca</emphasis> config."
+msgstr ""
+
+#: npm-config.7.xml:1666(title)
+msgid "tag"
+msgstr ""
+
+#: npm-config.7.xml:1670(para)
+msgid "Default: latest"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1679(para)
+msgid "If you ask npm to install a package and don't tell it a specific version, then it will install the specified tag."
+msgstr ""
+
+#: npm-config.7.xml:1682(para)
+msgid "Also the tag that is added to the package@version specified by the <emphasis remap=\"B\">npm tag</emphasis> command, if no explicit tag is given."
+msgstr ""
+
+#: npm-config.7.xml:1686(title)
+msgid "tag-version-prefix"
+msgstr ""
+
+#: npm-config.7.xml:1690(para)
+msgid "Default: <emphasis remap=\"B\">\"v\"</emphasis>"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1699(para)
+msgid "If set, alters the prefix used when tagging a new version when performing a version increment using <emphasis remap=\"B\">npm-version</emphasis>&thinsp;. To remove the prefix altogether, set it to the empty string: <emphasis remap=\"B\">\"\"</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:1703(para)
+msgid "Because other tools may rely on the convention that npm version tags look like <emphasis remap=\"B\">v1.0.0</emphasis>, <emphasis remap=\"I\">only use this property if it is absolutely necessary</emphasis>&thinsp;. In particular, use care when overriding this setting for public packages."
+msgstr ""
+
+#: npm-config.7.xml:1708(title)
+msgid "tmp"
+msgstr ""
+
+#: npm-config.7.xml:1712(para)
+msgid "Default: TMPDIR environment variable, or \"/tmp\""
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1721(para)
+msgid "Where to store temporary files and folders. All temp files are deleted on success, but left behind on failure for forensic purposes."
+msgstr ""
+
+#: npm-config.7.xml:1725(title)
+msgid "unicode"
+msgstr ""
+
+#: npm-config.7.xml:1729(para)
+msgid "Default: true on windows and mac/unix systems with a unicode locale"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1738(para)
+msgid "When set to true, npm uses unicode characters in the tree output. When false, it uses ascii characters to draw trees."
+msgstr ""
+
+#: npm-config.7.xml:1742(title)
+msgid "unsafe-perm"
+msgstr ""
+
+#: npm-config.7.xml:1746(para)
+msgid "Default: false if running as root, true otherwise"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1755(para)
+msgid "Set to true to suppress the UID/GID switching when running package scripts. If set explicitly to false, then installing as a non-root user will fail."
+msgstr ""
+
+#: npm-config.7.xml:1760(title)
+msgid "usage"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1773(para)
+msgid "Set to show short usage output (like the -H output) instead of complete help when doing npm help <emphasis remap=\"B\">npm-help</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-config.7.xml:1777(title)
+msgid "user"
+msgstr ""
+
+#: npm-config.7.xml:1781(para)
+msgid "Default: \"nobody\""
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1790(para)
+msgid "The UID to set to when running package scripts as root."
+msgstr ""
+
+#: npm-config.7.xml:1793(title)
+msgid "userconfig"
+msgstr ""
+
+#: npm-config.7.xml:1797(para)
+msgid "Default: ~/.npmrc"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1806(para)
+msgid "The location of user-level configuration settings."
+msgstr ""
+
+#: npm-config.7.xml:1809(title)
+msgid "umask"
+msgstr ""
+
+#: npm-config.7.xml:1813(para)
+msgid "Default: 022"
+msgstr ""
+
+#: npm-config.7.xml:1816(para)
+msgid "Type: Octal numeric string in range 0000..0777 (0..511)"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1822(para)
+msgid "The \"umask\" value to use when setting the file creation mode on files and folders."
+msgstr ""
+
+#: npm-config.7.xml:1825(para)
+msgid "Folders and executables are given a mode which is <literal>0777</literal> masked against this value. Other files are given a mode which is <literal>0666</literal> masked against this value. Thus, the defaults are <literal>0755</literal> and <literal>0644</literal> respectively."
+msgstr ""
+
+#: npm-config.7.xml:1830(title)
+msgid "user-agent"
+msgstr ""
+
+#: npm-config.7.xml:1834(para)
+msgid "Default: node/{process.version} {process.platform} {process.arch}"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1843(para)
+msgid "Sets a User-Agent to the request header"
+msgstr ""
+
+#: npm-config.7.xml:1846(title)
+msgid "version"
+msgstr ""
+
+#: npm-config.7.xml:1853(para) npm-config.7.xml:1871(para)
+msgid "Type: boolean"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1859(para)
+msgid "If true, output the npm version and exit successfully."
+msgstr ""
+
+#: npm-config.7.xml:1861(para) npm-config.7.xml:1880(para)
+msgid "Only relevant when specified explicitly on the command line."
+msgstr ""
+
+#: npm-config.7.xml:1864(title)
+msgid "versions"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1877(para)
+msgid "If true, output the npm version as well as node's <emphasis remap=\"B\">process.versions</emphasis> map, and exit successfully."
+msgstr ""
+
+#: npm-config.7.xml:1883(title)
+msgid "viewer"
+msgstr ""
+
+#: npm-config.7.xml:1887(para)
+msgid "Default: \"man\" on Posix, \"browser\" on Windows"
+msgstr ""
+
+#. remap='RE'
+#: npm-config.7.xml:1896(para)
+msgid "The program to use to view help content."
+msgstr ""
+
+#: npm-config.7.xml:1898(para)
+msgid "Set to <emphasis remap=\"B\">\"browser\"</emphasis> to view html help content in the default web browser."
+msgstr ""
+
+#: npm-config.7.xml:1902(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-config.7.xml:1906(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-config.7.xml:1909(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-config.7.xml:1912(para)
+msgid "npm help 7 scripts"
+msgstr ""
+
+#: npm-config.7.xml:1915(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-config.7.xml:1918(para)
+msgid "npm help npm"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-config.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

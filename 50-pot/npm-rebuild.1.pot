@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-rebuild.1.xml:7(refentrytitle)
+msgid "NPM-REBUILD"
+msgstr ""
+
+#: npm-rebuild.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-rebuild.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-rebuild.1.xml:12(refname)
+msgid "npm-rebuild"
+msgstr ""
+
+#: npm-rebuild.1.xml:13(refpurpose)
+msgid "Rebuild a package"
+msgstr ""
+
+#: npm-rebuild.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-rebuild.1.xml:18(replaceable)
+msgid "rebuild"
+msgstr ""
+
+#: npm-rebuild.1.xml:19(replaceable)
+msgid "&lt;@scope&gt;/&lt;name&gt;"
+msgstr ""
+
+#: npm-rebuild.1.xml:22(para)
+msgid "alias: npm rb"
+msgstr ""
+
+#: npm-rebuild.1.xml:26(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-rebuild.1.xml:27(para)
+msgid "This command runs the <emphasis remap=\"B\">npm build</emphasis> command on the matched folders. This is useful when you install a new version of node, and must recompile all your C++ addons with the new binary."
+msgstr ""
+
+#: npm-rebuild.1.xml:32(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-rebuild.1.xml:36(para)
+msgid "npm help build"
+msgstr ""
+
+#: npm-rebuild.1.xml:39(para)
+msgid "npm help install"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-rebuild.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

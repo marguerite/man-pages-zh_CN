@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-cache.1.xml:7(refentrytitle)
+msgid "NPM-CACHE"
+msgstr ""
+
+#: npm-cache.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-cache.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-cache.1.xml:12(refname)
+msgid "npm-cache"
+msgstr ""
+
+#: npm-cache.1.xml:13(refpurpose)
+msgid "Manipulates packages cache"
+msgstr ""
+
+#: npm-cache.1.xml:17(para)
+msgid "npm cache add &lt;tarball file&gt; npm cache add &lt;folder&gt; npm cache add &lt;tarball url&gt; npm cache add &lt;name&gt;@&lt;version&gt;"
+msgstr ""
+
+#: npm-cache.1.xml:22(command) npm-cache.1.xml:27(command)
+msgid "npm"
+msgstr ""
+
+#: npm-cache.1.xml:22(replaceable) npm-cache.1.xml:27(replaceable) npm-cache.1.xml:91(title)
+msgid "cache"
+msgstr ""
+
+#: npm-cache.1.xml:23(replaceable)
+msgid "ls"
+msgstr ""
+
+#: npm-cache.1.xml:24(replaceable) npm-cache.1.xml:29(replaceable)
+msgid "&lt;path&gt;"
+msgstr ""
+
+#: npm-cache.1.xml:28(replaceable)
+msgid "clean"
+msgstr ""
+
+#: npm-cache.1.xml:34(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-cache.1.xml:35(para)
+msgid "Used to add, list, or clear the npm cache folder."
+msgstr ""
+
+#: npm-cache.1.xml:39(para)
+msgid "add: Add the specified package to the local cache. This command is primarily intended to be used internally by npm, but it can provide a way to add data to the local installation cache explicitly."
+msgstr ""
+
+#: npm-cache.1.xml:45(para)
+msgid "ls: Show the data in the cache. Argument is a path to show in the cache folder. Works a bit like the <emphasis remap=\"B\">find</emphasis> program, but limited by the <emphasis remap=\"B\">depth</emphasis> config."
+msgstr ""
+
+#: npm-cache.1.xml:51(para)
+msgid "clean: Delete data out of the cache folder. If an argument is provided, then it specifies a subpath to delete. If no argument is provided, then the entire cache is cleared."
+msgstr ""
+
+#: npm-cache.1.xml:61(title)
+msgid "DETAILS"
+msgstr ""
+
+#: npm-cache.1.xml:62(para)
+msgid "npm stores cache data in the directory specified in <emphasis remap=\"B\">npm config get cache</emphasis>&thinsp;. For each package that is added to the cache, three pieces of information are stored in <emphasis remap=\"B\">{cache}/{name}/{version}</emphasis>:"
+msgstr ""
+
+#: npm-cache.1.xml:68(para)
+msgid "&thinsp;.../package/package.json: The package.json file, as npm sees it."
+msgstr ""
+
+#: npm-cache.1.xml:72(para)
+msgid "&thinsp;.../package.tgz: The tarball for that version."
+msgstr ""
+
+#. remap='RE'
+#: npm-cache.1.xml:79(para)
+msgid "Additionally, whenever a registry request is made, a <emphasis remap=\"B\">&thinsp;.cache.json</emphasis> file is placed at the corresponding URI, to store the ETag and the requested data. This is stored in <emphasis remap=\"B\">{cache}/{hostname}/{path}/.cache.json</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-cache.1.xml:83(para)
+msgid "Commands that make non-essential registry requests (such as <emphasis remap=\"B\">search</emphasis> and <emphasis remap=\"B\">view</emphasis>, or the completion scripts) generally specify a minimum timeout. If the <emphasis remap=\"B\">&thinsp;.cache.json</emphasis> file is younger than the specified timeout, then they do not make an HTTP request to the registry."
+msgstr ""
+
+#: npm-cache.1.xml:89(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-cache.1.xml:93(para)
+msgid "Default: <filename>~/.npm</filename> on Posix, or <emphasis remap=\"B\">%AppData%/npm-cache</emphasis> on Windows."
+msgstr ""
+
+#: npm-cache.1.xml:95(para)
+msgid "The root cache folder."
+msgstr ""
+
+#: npm-cache.1.xml:99(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-cache.1.xml:103(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-cache.1.xml:106(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-cache.1.xml:109(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-cache.1.xml:112(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-cache.1.xml:115(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-cache.1.xml:118(para)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-cache.1.xml:121(para)
+msgid "npm help pack"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-cache.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

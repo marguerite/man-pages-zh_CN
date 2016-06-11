@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-registry.7.xml:7(refentrytitle)
+msgid "NPM-REGISTRY"
+msgstr ""
+
+#: npm-registry.7.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: npm-registry.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-registry.7.xml:12(refname)
+msgid "npm-registry"
+msgstr ""
+
+#: npm-registry.7.xml:13(refpurpose)
+msgid "The JavaScript Package Registry"
+msgstr ""
+
+#: npm-registry.7.xml:17(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-registry.7.xml:18(para)
+msgid "To resolve packages by name and version, npm talks to a registry website that implements the CommonJS Package Registry specification for reading package info."
+msgstr ""
+
+#: npm-registry.7.xml:22(para)
+msgid "Additionally, npm's package registry implementation supports several write APIs as well, to allow for publishing packages and managing user account information."
+msgstr ""
+
+#: npm-registry.7.xml:26(para)
+msgid "The official public npm registry is at &thinsp;<ulink url=\"http://registry.npmjs.org/\">http://registry.npmjs.org/&thinsp;</ulink>. It is powered by a CouchDB database, of which there is a public mirror at &thinsp;<ulink url=\"http://skimdb.npmjs.com/registry\">http://skimdb.npmjs.com/registry&thinsp;</ulink>. The code for the couchapp is available at &thinsp;<ulink url=\"http://github.com/npm/npm-registry-couchapp\">http://github.com/npm/npm-registry-couchapp&thinsp;</ulink>."
+msgstr ""
+
+#: npm-registry.7.xml:31(para)
+msgid "The registry URL used is determined by the scope of the package (see npm help 7 <emphasis remap=\"B\">npm-scope</emphasis>). If no scope is specified, the default registry is used, which is supplied by the <emphasis remap=\"B\">registry</emphasis> config parameter. See npm help <emphasis remap=\"B\">npm-config</emphasis>, npm help 5 <emphasis remap=\"B\">npmrc</emphasis>, and npm help 7 <emphasis remap=\"B\">npm-config</emphasis> for more on managing npm's configuration."
+msgstr ""
+
+#: npm-registry.7.xml:37(title)
+msgid "Can I run my own private registry?"
+msgstr ""
+
+#: npm-registry.7.xml:38(para)
+msgid "Yes!"
+msgstr ""
+
+#: npm-registry.7.xml:40(para)
+msgid "The easiest way is to replicate the couch database, and use the same (or similar) design doc to implement the APIs."
+msgstr ""
+
+#: npm-registry.7.xml:43(para)
+msgid "If you set up continuous replication from the official CouchDB, and then set your internal CouchDB as the registry config, then you'll be able to read any published packages, in addition to your private ones, and by default will only publish internally."
+msgstr ""
+
+#: npm-registry.7.xml:48(para)
+msgid "If you then want to publish a package for the whole world to see, you can simply override the <option>--registry</option> option for that <emphasis remap=\"B\">publish</emphasis> command."
+msgstr ""
+
+#: npm-registry.7.xml:52(title)
+msgid "I don't want my package published in the official registry. It's private."
+msgstr ""
+
+#: npm-registry.7.xml:53(para)
+msgid "Set <emphasis remap=\"B\">\"private\": true</emphasis> in your package.json to prevent it from being published at all, or <emphasis remap=\"B\">\"publishConfig\":{\"registry\":\"<ulink url=\"http://my-internal-registry.local\">http://my-internal-registry.local</ulink>\"}</emphasis> to force it to be published only to your internal registry."
+msgstr ""
+
+#: npm-registry.7.xml:58(para)
+msgid "See npm help 5 <emphasis remap=\"B\">package.json</emphasis> for more info on what goes in the package.json file."
+msgstr ""
+
+#: npm-registry.7.xml:61(title)
+msgid "Will you replicate from my registry into the public one?"
+msgstr ""
+
+#: npm-registry.7.xml:62(para)
+msgid "No. If you want things to be public, then publish them into the public registry using npm. What little security there is would be for nought otherwise."
+msgstr ""
+
+#: npm-registry.7.xml:67(title)
+msgid "Do I have to use couchdb to build a registry that npm can talk to?"
+msgstr ""
+
+#: npm-registry.7.xml:68(para)
+msgid "No, but it's way easier. Basically, yes, you do, or you have to effectively implement the entire CouchDB API anyway."
+msgstr ""
+
+#: npm-registry.7.xml:72(title)
+msgid "Is there a website or something to see package docs and such?"
+msgstr ""
+
+#: npm-registry.7.xml:73(para)
+msgid "Yes, head over to https://npmjs.com/"
+msgstr ""
+
+#: npm-registry.7.xml:76(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-registry.7.xml:80(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-registry.7.xml:83(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-registry.7.xml:86(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-registry.7.xml:89(para)
+msgid "npm help 7 developers"
+msgstr ""
+
+#: npm-registry.7.xml:92(para)
+msgid "npm help 7 disputes"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-registry.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

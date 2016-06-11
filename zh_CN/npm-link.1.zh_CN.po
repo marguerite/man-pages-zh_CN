@@ -1,0 +1,187 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-link.1.xml:7(refentrytitle)
+msgid "NPM-LINK"
+msgstr ""
+
+#: npm-link.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-link.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-link.1.xml:12(refname)
+msgid "npm-link"
+msgstr ""
+
+#: npm-link.1.xml:13(refpurpose)
+msgid "Symlink a package folder"
+msgstr ""
+
+#: npm-link.1.xml:19(function) npm-link.1.xml:24(replaceable)
+msgid "link"
+msgstr ""
+
+#: npm-link.1.xml:19(funcdef)
+msgid "npm <placeholder-1/>"
+msgstr ""
+
+#: npm-link.1.xml:20(parameter)
+msgid "dir"
+msgstr ""
+
+#: npm-link.1.xml:20(paramdef)
+msgid "in package <placeholder-1/>"
+msgstr ""
+
+#: npm-link.1.xml:24(command)
+msgid "npm"
+msgstr ""
+
+#: npm-link.1.xml:25(replaceable)
+msgid "&lt;@scope&gt;/"
+msgstr ""
+
+#: npm-link.1.xml:26(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-link.1.xml:27(replaceable)
+msgid "@&lt;version&gt;"
+msgstr ""
+
+#: npm-link.1.xml:30(para)
+msgid "alias: npm ln"
+msgstr ""
+
+#: npm-link.1.xml:34(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-link.1.xml:35(para)
+msgid "Package linking is a two-step process."
+msgstr ""
+
+#: npm-link.1.xml:37(para)
+msgid "First, <emphasis remap=\"B\">npm link</emphasis> in a package folder will create a globally-installed symbolic link from <emphasis remap=\"B\">prefix/package-name</emphasis> to the current folder (see npm help 7 <emphasis remap=\"B\">npm-config</emphasis> for the value of <emphasis remap=\"B\">prefix</emphasis>)."
+msgstr ""
+
+#: npm-link.1.xml:41(para)
+msgid "Next, in some other location, <emphasis remap=\"B\">npm link package-name</emphasis> will create a symlink from the local <emphasis remap=\"B\">node_modules</emphasis> folder to the global symlink."
+msgstr ""
+
+#: npm-link.1.xml:44(para)
+msgid "Note that <emphasis remap=\"B\">package-name</emphasis> is taken from <emphasis remap=\"B\">package.json</emphasis>, not from directory name."
+msgstr ""
+
+#: npm-link.1.xml:47(para)
+msgid "The package name can be optionally prefixed with a scope. See npm help 7 <emphasis remap=\"B\">npm-scope</emphasis>&thinsp;. The scope must be preceded by an @-symbol and followed by a slash."
+msgstr ""
+
+#: npm-link.1.xml:50(para)
+msgid "When creating tarballs for <emphasis remap=\"B\">npm publish</emphasis>, the linked packages are \"snapshotted\" to their current state by resolving the symbolic links."
+msgstr ""
+
+#: npm-link.1.xml:53(para)
+msgid "This is handy for installing your own stuff, so that you can work on it and test it iteratively without having to continually rebuild."
+msgstr ""
+
+#: npm-link.1.xml:56(para)
+msgid "For example:"
+msgstr ""
+
+#: npm-link.1.xml:58(programlisting)
+#, no-wrap
+msgid "\ncd ~/projects/node-redis    # go into the package directory\nnpm link                    # creates global link\ncd ~/projects/node-bloggy   # go into some other package directory.\nnpm link redis              # link-install the package\n"
+msgstr ""
+
+#. .fi
+#: npm-link.1.xml:65(para)
+msgid "Now, any changes to ~/projects/node-redis will be reflected in ~/projects/node-bloggy/node_modules/node-redis/. Note that the link should be to the package name, not the directory name for that package."
+msgstr ""
+
+#: npm-link.1.xml:69(para)
+msgid "You may also shortcut the two steps in one. For example, to do the above use-case in a shorter way:"
+msgstr ""
+
+#: npm-link.1.xml:72(programlisting)
+#, no-wrap
+msgid "\ncd ~/projects/node-bloggy  # go into the dir of your main project\nnpm link ../node-redis     # link the dir of your dependency\n"
+msgstr ""
+
+#. .fi
+#: npm-link.1.xml:77(para)
+msgid "The second line is the equivalent of doing:"
+msgstr ""
+
+#: npm-link.1.xml:79(literallayout)
+#, no-wrap
+msgid "\n(cd ../node-redis; npm link)\nnpm link node-redis\n"
+msgstr ""
+
+#. .fi
+#: npm-link.1.xml:84(para)
+msgid "That is, it first creates a global link, and then links the global installation target into your project's <emphasis remap=\"B\">node_modules</emphasis> folder."
+msgstr ""
+
+#: npm-link.1.xml:87(para)
+msgid "If your linked package is scoped (see npm help 7 <emphasis remap=\"B\">npm-scope</emphasis>) your link command must include that scope, e.g."
+msgstr ""
+
+#: npm-link.1.xml:90(literallayout)
+#, no-wrap
+msgid "\nnpm link @myorg/privatepackage\n"
+msgstr ""
+
+#: npm-link.1.xml:95(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-link.1.xml:99(para)
+msgid "npm help 7 developers"
+msgstr ""
+
+#: npm-link.1.xml:102(para)
+msgid "npm help 7 faq"
+msgstr ""
+
+#: npm-link.1.xml:105(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm-link.1.xml:108(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-link.1.xml:111(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-link.1.xml:114(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-link.1.xml:117(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-link.1.xml:120(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-link.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

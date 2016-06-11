@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='removingnpm7'>
+<refmeta>
+<refentrytitle>NPM-REMOVAL</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-removal</refname>
+<refpurpose>Cleaning the Slate</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<para>So sad to see you go.</para>
+<cmdsynopsis>
+  <command>sudo</command>    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>uninstall</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'>-g </arg>
+    <sbr/>
+</cmdsynopsis>
+<para>Or, if that fails, get the npm source code, and do:</para>
+<cmdsynopsis>
+  <command>sudo</command>    <arg choice='plain'><replaceable>make</replaceable></arg>
+    <arg choice='plain'><replaceable>uninstall</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='more_severe_uninstalling'><title>More Severe Uninstalling</title>
+<para>Usually, the above instructions are sufficient.  That will remove
+npm, but leave behind anything you've installed.</para>
+
+<para>If that doesn't work, or if you require more drastic measures,
+continue reading.</para>
+
+<para>Note that this is only necessary for globally-installed packages.  Local
+installs are completely contained within a project's <emphasis remap='B'>node_modules</emphasis>
+folder.  Delete that folder, and everything is gone (unless a package's
+install script is particularly ill-behaved).</para>
+
+<para>This assumes that you installed node and npm in the default place.  If
+you configured node with a different <option>--prefix</option>, or installed npm with a
+different prefix setting, then adjust the paths accordingly, replacing
+<filename>/usr/local</filename> with your install prefix.</para>
+
+<para>To remove everything npm-related manually:</para>
+
+<literallayout remap='.nf'>
+rm -rf /usr/local/{lib/node{,/.npm,_modules},bin,share/man}/npm*
+</literallayout> <!-- .fi -->
+
+<para>If you installed things <emphasis remap='I'>with</emphasis> npm, then your best bet is to uninstall
+them with npm first, and then install them again once you have a
+proper install.  This can help find any symlinks that are lying
+around:</para>
+
+<literallayout remap='.nf'>
+ls -laF /usr/local/{lib/node{,/.npm},bin,share/man} | grep npm
+</literallayout> <!-- .fi -->
+
+<para>Prior to version 0.3, npm used shim files for executables and node
+modules.  To track those down, you can do the following:</para>
+
+<literallayout remap='.nf'>
+find /usr/local/{lib/node,bin} -exec grep -l npm &bsol;{&bsol;} &bsol;; ;
+</literallayout> <!-- .fi -->
+
+<para>(This is also in the README file.)</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>README</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help rm</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help prune</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

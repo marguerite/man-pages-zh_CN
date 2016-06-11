@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-explore.1.xml:7(refentrytitle)
+msgid "NPM-EXPLORE"
+msgstr ""
+
+#: npm-explore.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-explore.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-explore.1.xml:12(refname)
+msgid "npm-explore"
+msgstr ""
+
+#: npm-explore.1.xml:13(refpurpose)
+msgid "Browse an installed package"
+msgstr ""
+
+#: npm-explore.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-explore.1.xml:18(replaceable)
+msgid "explore"
+msgstr ""
+
+#: npm-explore.1.xml:19(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-explore.1.xml:20(replaceable)
+msgid "&lt;cmd&gt;"
+msgstr ""
+
+#: npm-explore.1.xml:20(arg)
+msgid "-- <placeholder-1/>"
+msgstr ""
+
+#: npm-explore.1.xml:25(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-explore.1.xml:26(para)
+msgid "Spawn a subshell in the directory of the installed package specified."
+msgstr ""
+
+#: npm-explore.1.xml:28(para)
+msgid "If a command is specified, then it is run in the subshell, which then immediately terminates."
+msgstr ""
+
+#: npm-explore.1.xml:31(para)
+msgid "This is particularly handy in the case of git submodules in the <emphasis remap=\"B\">node_modules</emphasis> folder:"
+msgstr ""
+
+#: npm-explore.1.xml:34(literallayout)
+#, no-wrap
+msgid "\nnpm explore some-dependency -- git pull origin master\n"
+msgstr ""
+
+#. .fi
+#: npm-explore.1.xml:38(para)
+msgid "Note that the package is <emphasis remap=\"I\">not</emphasis> automatically rebuilt afterwards, so be sure to use <emphasis remap=\"B\">npm rebuild &lt;pkg&gt;</emphasis> if you make any changes."
+msgstr ""
+
+#: npm-explore.1.xml:42(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-explore.1.xml:44(title)
+msgid "shell"
+msgstr ""
+
+#: npm-explore.1.xml:48(para)
+msgid "Default: SHELL environment variable, or \"bash\" on Posix, or \"cmd\" on Windows"
+msgstr ""
+
+#: npm-explore.1.xml:52(para)
+msgid "Type: path"
+msgstr ""
+
+#. remap='RE'
+#: npm-explore.1.xml:58(para)
+msgid "The shell to run for the <emphasis remap=\"B\">npm explore</emphasis> command."
+msgstr ""
+
+#: npm-explore.1.xml:62(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-explore.1.xml:66(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-explore.1.xml:69(para)
+msgid "npm help edit"
+msgstr ""
+
+#: npm-explore.1.xml:72(para)
+msgid "npm help rebuild"
+msgstr ""
+
+#: npm-explore.1.xml:75(para)
+msgid "npm help build"
+msgstr ""
+
+#: npm-explore.1.xml:78(para)
+msgid "npm help install"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-explore.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

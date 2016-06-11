@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmlink1'>
+<refmeta>
+<refentrytitle>NPM-LINK</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-link</refname>
+<refpurpose>Symlink a package folder</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<funcsynopsis>
+<funcprototype>
+<funcdef>npm <function>link</function></funcdef>
+    <paramdef>in package <parameter>dir</parameter></paramdef>
+</funcprototype>
+</funcsynopsis>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>link</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;pkg&gt;</replaceable></arg>
+    <arg choice='opt'><replaceable>@&lt;version&gt;</replaceable></arg>
+    <sbr/>
+</cmdsynopsis>
+<para>alias: npm ln</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Package linking is a two-step process.</para>
+
+<para>First, <emphasis remap='B'>npm link</emphasis> in a package folder will create a globally-installed
+symbolic link from <emphasis remap='B'>prefix/package-name</emphasis> to the current folder (see
+npm help 7 <emphasis remap='B'>npm-config</emphasis> for the value of <emphasis remap='B'>prefix</emphasis>).</para>
+
+<para>Next, in some other location, <emphasis remap='B'>npm link package-name</emphasis> will create a
+symlink from the local <emphasis remap='B'>node_modules</emphasis> folder to the global symlink.</para>
+
+<para>Note that <emphasis remap='B'>package-name</emphasis> is taken from <emphasis remap='B'>package.json</emphasis>,
+not from directory name.</para>
+
+<para>The package name can be optionally prefixed with a scope. See npm help 7 <emphasis remap='B'>npm-scope</emphasis>&thinsp;.
+The scope must be preceded by an @-symbol and followed by a slash.</para>
+
+<para>When creating tarballs for <emphasis remap='B'>npm publish</emphasis>, the linked packages are
+"snapshotted" to their current state by resolving the symbolic links.</para>
+
+<para>This is handy for installing your own stuff, so that you can work on it and
+test it iteratively without having to continually rebuild.</para>
+
+<para>For example:</para>
+
+<programlisting remap='.nf'>
+cd ~/projects/node-redis    # go into the package directory
+npm link                    # creates global link
+cd ~/projects/node-bloggy   # go into some other package directory.
+npm link redis              # link-install the package
+</programlisting> <!-- .fi -->
+
+<para>Now, any changes to ~/projects/node-redis will be reflected in
+~/projects/node-bloggy/node_modules/node-redis/. Note that the link should
+be to the package name, not the directory name for that package.</para> 
+
+<para>You may also shortcut the two steps in one.  For example, to do the
+above use-case in a shorter way:</para>
+
+<programlisting remap='.nf'>
+cd ~/projects/node-bloggy  # go into the dir of your main project
+npm link ../node-redis     # link the dir of your dependency
+</programlisting> <!-- .fi -->
+
+<para>The second line is the equivalent of doing:</para>
+
+<literallayout remap='.nf'>
+(cd ../node-redis; npm link)
+npm link node-redis
+</literallayout> <!-- .fi -->
+
+<para>That is, it first creates a global link, and then links the global
+installation target into your project's <emphasis remap='B'>node_modules</emphasis> folder.</para>
+
+<para>If your linked package is scoped (see npm help 7 <emphasis remap='B'>npm-scope</emphasis>) your link command must
+include that scope, e.g.</para>
+
+<literallayout remap='.nf'>
+npm link @myorg/privatepackage
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 7 developers</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 faq</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

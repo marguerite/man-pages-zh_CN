@@ -1,0 +1,1925 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmconfig7'>
+<refmeta>
+<refentrytitle>NPM-CONFIG</refentrytitle>
+<manvolnum>7</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-config</refname>
+<refpurpose>More than you probably want to know about npm configuration</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>npm gets its configuration values from the following sources, sorted by priority:</para>
+
+<refsect2 id='command_line_flags'><title>Command Line Flags</title>
+
+<para>Putting <option>--foo bar</option> on the command line sets the <emphasis remap='B'>foo</emphasis> configuration
+parameter to <emphasis remap='B'>"bar"</emphasis>&thinsp;.  A <option>--</option> argument tells the cli parser to stop
+reading flags.  A <option>--flag</option> parameter that is at the <emphasis remap='I'>end</emphasis> of the
+command will be given the value of <emphasis remap='B'>true</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='environment_variables'><title>Environment Variables</title>
+
+<para>Any environment variables that start with <emphasis remap='B'>npm_config_</emphasis> will be
+interpreted as a configuration parameter.  For example, putting
+<emphasis remap='B'>npm_config_foo=bar</emphasis> in your environment will set the <emphasis remap='B'>foo</emphasis>
+configuration parameter to <emphasis remap='B'>bar</emphasis>&thinsp;.  Any environment configurations that
+are not given a value will be given the value of <emphasis remap='B'>true</emphasis>&thinsp;.  Config
+values are case-insensitive, so <emphasis remap='B'>NPM_CONFIG_FOO=bar</emphasis> will work the
+same.</para>
+</refsect2>
+
+<refsect2 id='npmrc_files'><title>npmrc Files</title>
+
+<para>The four relevant files are:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>per-project config file (/path/to/my/project/.npmrc)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>per-user config file (~/.npmrc)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>global config file ($PREFIX/etc/npmrc)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm builtin config file (/path/to/npm/npmrc)</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>See npm help 5 npmrc for more details.</para>
+</refsect2>
+
+<refsect2 id='default_configs'><title>Default Configs</title>
+
+<para>Run <emphasis remap='B'>npm config ls -l</emphasis> to see a set of configuration parameters that are
+internal to npm, and are defaults if nothing else is specified.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='shorthands_and_other_cli_niceties'><title>Shorthands and Other CLI Niceties</title>
+<para>The following shorthands are parsed on the command-line:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><option>-v</option>: <option>--version</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-h</option>, <option>-?</option>, <option>--help</option>, <option>-H</option>: <option>--usage</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-s</option>, <option>--silent</option>: <option>--loglevel silent</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-q</option>, <option>--quiet</option>: <option>--loglevel warn</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-d</option>: <option>--loglevel info</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-dd</option>, <option>--verbose</option>: <option>--loglevel verbose</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-ddd</option>: <option>--loglevel silly</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-g</option>: <option>--global</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-C</option>: <option>--prefix</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-l</option>: <option>--long</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-m</option>: <option>--message</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-p</option>, <option>--porcelain</option>: <option>--parseable</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-reg</option>: <option>--registry</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-f</option>: <option>--force</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-desc</option>: <option>--description</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-S</option>: <option>--save</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-D</option>: <option>--save-dev</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-O</option>: <option>--save-optional</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-B</option>: <option>--save-bundle</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-E</option>: <option>--save-exact</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-y</option>: <option>--yes</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><option>-n</option>: <option>--yes false</option></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>ll</emphasis> and <emphasis remap='B'>la</emphasis> commands: <userinput>ls --long</userinput></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If the specified configuration param resolves unambiguously to a known
+configuration parameter, then it is expanded to that configuration
+parameter.  For example:</para>
+
+<literallayout remap='.nf'>
+npm ls --par
+# same as:
+npm ls --parseable
+</literallayout> <!-- .fi -->
+
+<para>If multiple single-character shorthands are strung together, and the
+resulting combination is unambiguously not some other configuration
+param, then it is expanded to its various component pieces.  For
+example:</para>
+
+<literallayout remap='.nf'>
+npm ls -gpld
+# same as:
+npm ls --global --parseable --long --loglevel info
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='perpackage_config_settings'><title>Per-Package Config Settings</title>
+<para>When running scripts (see npm help 7 <emphasis remap='B'>npm-scripts</emphasis>) the package.json "config"
+keys are overwritten in the environment if there is a config param of
+<emphasis remap='B'>&lt;name&gt;[@&lt;version&gt;]:&lt;key&gt;</emphasis>&thinsp;.  For example, if the package.json has
+this:</para>
+
+<literallayout remap='.nf'>
+{ "name" : "foo"
+, "config" : { "port" : "8080" }
+, "scripts" : { "start" : "node server.js" } }
+</literallayout> <!-- .fi -->
+
+<para>and the server.js is this:</para>
+
+<literallayout remap='.nf'>
+http.createServer(...).listen(process.env.npm_package_config_port)
+</literallayout> <!-- .fi -->
+
+<para>then the user could change the behavior by doing:</para>
+
+<literallayout remap='.nf'>
+npm config set foo:port 80
+</literallayout> <!-- .fi -->
+
+<para>See npm help 5 package.json for more information.</para>
+</refsect1>
+
+<refsect1 id='config_settings'><title>Config Settings</title>
+
+<refsect2 id='access'><title>access</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <emphasis remap='B'>restricted</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Access</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>When publishing scoped packages, the access level defaults to <emphasis remap='B'>restricted</emphasis>&thinsp;.  If
+you want your scoped package to be publicly viewable (and installable) set
+<option>--access=public</option>&thinsp;. The only valid values for <emphasis remap='B'>access</emphasis> are <emphasis remap='B'>public</emphasis> and
+<emphasis remap='B'>restricted</emphasis>&thinsp;. Unscoped packages <emphasis remap='I'>always</emphasis> have an access level of <emphasis remap='B'>public</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='alwaysauth'><title>always-auth</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Force npm to always require authentication when accessing the registry,
+even for <emphasis remap='B'>GET</emphasis> requests.</para>
+</refsect2>
+
+<refsect2 id='also'><title>also</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: null</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>When "dev" or "development" and running local <emphasis remap='B'>npm shrinkwrap</emphasis>,
+<emphasis remap='B'>npm outdated</emphasis>, or <emphasis remap='B'>npm update</emphasis>, is an alias for <option>--dev</option>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='binlinks'><title>bin-links</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <emphasis remap='B'>true</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Tells npm to create symlinks (or <emphasis remap='B'>&thinsp;.cmd</emphasis> shims on Windows) for package
+executables.</para>
+
+<para>Set to false to have it not do this.  This can be used to work around
+the fact that some file systems don't support symlinks, even on
+ostensibly Unix systems.</para>
+</refsect2>
+
+<refsect2 id='browser'><title>browser</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: OS X: <emphasis remap='B'>"open"</emphasis>, Windows: <emphasis remap='B'>"start"</emphasis>, Others: <emphasis remap='B'>"xdg-open"</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The browser that is called by the <emphasis remap='B'>npm docs</emphasis> command to open websites.</para>
+</refsect2>
+
+<refsect2 id='ca'><title>ca</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: The npm CA certificate</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String, Array or null</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The Certificate Authority signing certificate that is trusted for SSL
+connections to the registry. Values should be in PEM format with newlines
+replaced by the string "&bsol;n". For example:</para>
+
+<literallayout remap='.nf'>
+ca="-----BEGIN CERTIFICATE-----&bsol;nXXXX&bsol;nXXXX&bsol;n-----END CERTIFICATE-----"
+</literallayout> <!-- .fi -->
+
+<para>Set to <emphasis remap='B'>null</emphasis> to only allow "known" registrars, or to a specific CA cert
+to trust only that specific signing authority.</para>
+
+<para>Multiple CAs can be trusted by specifying an array of certificates:</para>
+
+<literallayout remap='.nf'>
+ca[]="..."
+ca[]="..."
+</literallayout> <!-- .fi -->
+
+<para>See also the <emphasis remap='B'>strict-ssl</emphasis> config.</para>
+</refsect2>
+
+<refsect2 id='cafile'><title>cafile</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <emphasis remap='B'>null</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>A path to a file containing one or multiple Certificate Authority signing
+certificates. Similar to the <emphasis remap='B'>ca</emphasis> setting, but allows for multiple CA's, as
+well as for the CA information to be stored in a file on disk.</para>
+</refsect2>
+
+<refsect2 id='cache'><title>cache</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: Windows: <emphasis remap='B'>%AppData%&bsol;npm-cache</emphasis>, Posix: <filename>~/.npm</filename></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The location of npm's cache directory.  See npm help <emphasis remap='B'>npm-cache</emphasis></para>
+</refsect2>
+
+<refsect2 id='cachelockstale'><title>cache-lock-stale</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: 60000 (1 minute)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The number of ms before cache folder lockfiles are considered stale.</para>
+</refsect2>
+
+<refsect2 id='cachelockretries'><title>cache-lock-retries</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: 10</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Number of times to retry to acquire a lock on cache folder lockfiles.</para>
+</refsect2>
+
+<refsect2 id='cachelockwait'><title>cache-lock-wait</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: 10000 (10 seconds)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Number of ms to wait for cache lock files to expire.</para>
+</refsect2>
+
+<refsect2 id='cachemax'><title>cache-max</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: Infinity</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The maximum time (in seconds) to keep items in the registry cache before
+re-checking against the registry.</para>
+
+<para>Note that no purging is done unless the <emphasis remap='B'>npm cache clean</emphasis> command is
+explicitly used, and that only GET requests use the cache.</para>
+</refsect2>
+
+<refsect2 id='cachemin'><title>cache-min</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: 10</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The minimum time (in seconds) to keep items in the registry cache before
+re-checking against the registry.</para>
+
+<para>Note that no purging is done unless the <emphasis remap='B'>npm cache clean</emphasis> command is
+explicitly used, and that only GET requests use the cache.</para>
+</refsect2>
+
+<refsect2 id='cert'><title>cert</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <emphasis remap='B'>null</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>A client certificate to pass when accessing the registry.</para>
+</refsect2>
+
+<refsect2 id='color'><title>color</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true on Posix, false on Windows</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean or <emphasis remap='B'>"always"</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If false, never shows colors.  If <emphasis remap='B'>"always"</emphasis> then always shows colors.
+If true, then only prints color codes for tty file descriptors.</para>
+</refsect2>
+
+<refsect2 id='depth'><title>depth</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: Infinity</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The depth to go when recursing directories for <emphasis remap='B'>npm ls</emphasis>,
+<emphasis remap='B'>npm cache ls</emphasis>, and <emphasis remap='B'>npm outdated</emphasis>&thinsp;.</para>
+
+<para>For <emphasis remap='B'>npm outdated</emphasis>, a setting of <emphasis remap='B'>Infinity</emphasis> will be treated as <literal>0</literal>
+since that gives more useful information.  To show the outdated status
+of all packages and dependents, use a large integer value,
+e.g., <emphasis remap='B'>npm outdated --depth 9999</emphasis></para>
+</refsect2>
+
+<refsect2 id='description2'><title>description</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Show the description in <emphasis remap='B'>npm search</emphasis></para>
+</refsect2>
+
+<refsect2 id='dev'><title>dev</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Install <emphasis remap='B'>dev-dependencies</emphasis> along with packages.</para>
+
+<para>Note that <emphasis remap='B'>dev-dependencies</emphasis> are also installed if the <emphasis remap='B'>npat</emphasis> flag is
+set.</para>
+</refsect2>
+
+<refsect2 id='dryrun'><title>dry-run</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Indicates that you don't want npm to make any changes and that it should
+only report what it would have done.  This can be passed into any of the
+commands that modify your local installation, eg, <emphasis remap='B'>install</emphasis>, <emphasis remap='B'>update</emphasis>,
+<emphasis remap='B'>dedupe</emphasis>, <emphasis remap='B'>uninstall</emphasis>&thinsp;.  This is NOT currently honored by network related
+commands, eg <emphasis remap='B'>dist-tags</emphasis>, <emphasis remap='B'>owner</emphasis>, <emphasis remap='B'>publish</emphasis>, etc.</para>
+</refsect2>
+
+<refsect2 id='editor'><title>editor</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <envar>EDITOR</envar> environment variable if set, or <emphasis remap='B'>"vi"</emphasis> on Posix,
+or <emphasis remap='B'>"notepad"</emphasis> on Windows.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The command to run for <emphasis remap='B'>npm edit</emphasis> or <emphasis remap='B'>npm config edit</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='enginestrict'><title>engine-strict</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If set to true, then npm will stubbornly refuse to install (or even
+consider installing) any package that claims to not be compatible with
+the current Node.js version.</para>
+</refsect2>
+
+<refsect2 id='force'><title>force</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Makes various commands more forceful.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>lifecycle script failure does not block progress.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>publishing clobbers previously published versions.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>skips cache when requesting from the registry.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>prevents checks against clobbering non-npm files.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+
+<refsect2 id='fetchretries'><title>fetch-retries</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: 2</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The "retries" config for the <emphasis remap='B'>retry</emphasis> module to use when fetching
+packages from the registry.</para>
+</refsect2>
+
+<refsect2 id='fetchretryfactor'><title>fetch-retry-factor</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: 10</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The "factor" config for the <emphasis remap='B'>retry</emphasis> module to use when fetching
+packages.</para>
+</refsect2>
+
+<refsect2 id='fetchretrymintimeout'><title>fetch-retry-mintimeout</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: 10000 (10 seconds)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The "minTimeout" config for the <emphasis remap='B'>retry</emphasis> module to use when fetching
+packages.</para>
+</refsect2>
+
+<refsect2 id='fetchretrymaxtimeout'><title>fetch-retry-maxtimeout</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: 60000 (1 minute)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The "maxTimeout" config for the <emphasis remap='B'>retry</emphasis> module to use when fetching
+packages.</para>
+</refsect2>
+
+<refsect2 id='git'><title>git</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <emphasis remap='B'>"git"</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The command to use for git commands.  If git is installed on the
+computer, but is not in the <envar>PATH</envar>, then set this to the full path to
+the git binary.</para>
+</refsect2>
+
+<refsect2 id='gittagversion'><title>git-tag-version</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <emphasis remap='B'>true</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Tag the commit when using the <emphasis remap='B'>npm version</emphasis> command.</para>
+</refsect2>
+
+<refsect2 id='global'><title>global</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Operates in "global" mode, so that packages are installed into the
+<emphasis remap='B'>prefix</emphasis> folder instead of the current working directory.  See
+npm help 5 <emphasis remap='B'>npm-folders</emphasis> for more on the differences in behavior.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>packages are installed into the <emphasis remap='B'>{prefix}/lib/node_modules</emphasis> folder, instead of the
+current working directory.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>bin files are linked to <emphasis remap='B'>{prefix}/bin</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>man pages are linked to <emphasis remap='B'>{prefix}/share/man</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+
+<refsect2 id='globalconfig'><title>globalconfig</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: {prefix}/etc/npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The config file to read for global config options.</para>
+</refsect2>
+
+<refsect2 id='group'><title>group</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: GID of the current process</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String or Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The group to use when running package scripts in global mode as the root
+user.</para>
+</refsect2>
+
+<refsect2 id='heading'><title>heading</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <emphasis remap='B'>"npm"</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The string that starts all the debugging log output.</para>
+</refsect2>
+
+<refsect2 id='httpsproxy'><title>https-proxy</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: null</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: url</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>A proxy to use for outgoing https requests. If the <emphasis remap='B'>HTTPS_PROXY</emphasis> or
+<emphasis remap='B'>https_proxy</emphasis> or <emphasis remap='B'>HTTP_PROXY</emphasis> or <emphasis remap='B'>http_proxy</emphasis> environment variables are set,
+proxy settings will be honored by the underlying <emphasis remap='B'>request</emphasis> library.</para>
+</refsect2>
+
+<refsect2 id='ifpresent'><title>if-present</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If true, npm will not exit with an error code when <emphasis remap='B'>run-script</emphasis> is invoked for
+a script that isn't defined in the <emphasis remap='B'>scripts</emphasis> section of <emphasis remap='B'>package.json</emphasis>&thinsp;. This
+option can be used when it's desirable to optionally run a script when it's
+present and fail if the script fails. This is useful, for example, when running
+scripts that may only apply for some builds in an otherwise generic CI setup.</para>
+</refsect2>
+
+<refsect2 id='ignorescripts'><title>ignore-scripts</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If true, npm does not run scripts specified in package.json files.</para>
+</refsect2>
+
+<refsect2 id='initmodule'><title>init-module</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: ~/.npm-init.js</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>A module that will be loaded by the <emphasis remap='B'>npm init</emphasis> command.  See the
+documentation for the
+init-package-json <emphasis remap='I'>https://github.com/isaacs/init-package-json</emphasis> module
+for more information, or npm help init.</para>
+</refsect2>
+
+<refsect2 id='initauthorname'><title>init-author-name</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: ""</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The value <emphasis remap='B'>npm init</emphasis> should use by default for the package author's name.</para>
+</refsect2>
+
+<refsect2 id='initauthoremail'><title>init-author-email</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: ""</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The value <emphasis remap='B'>npm init</emphasis> should use by default for the package author's email.</para>
+</refsect2>
+
+<refsect2 id='initauthorurl'><title>init-author-url</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: ""</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The value <emphasis remap='B'>npm init</emphasis> should use by default for the package author's homepage.</para>
+</refsect2>
+
+<refsect2 id='initlicense'><title>init-license</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: "ISC"</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The value <emphasis remap='B'>npm init</emphasis> should use by default for the package license.</para>
+</refsect2>
+
+<refsect2 id='initversion'><title>init-version</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: "1.0.0"</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: semver</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The value that <emphasis remap='B'>npm init</emphasis> should use by default for the package
+version number, if not already set in package.json.</para>
+</refsect2>
+
+<refsect2 id='json'><title>json</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Whether or not to output JSON data, rather than the normal output.</para>
+
+<para>This feature is currently experimental, and the output data structures
+for many commands is either not implemented in JSON yet, or subject to
+change.  Only the output from <emphasis remap='B'>npm ls --json</emphasis> is currently valid.</para>
+</refsect2>
+
+<refsect2 id='key'><title>key</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <emphasis remap='B'>null</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>A client key to pass when accessing the registry.</para>
+</refsect2>
+
+<refsect2 id='link'><title>link</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If true, then local installs will link if there is a suitable globally
+installed package.</para>
+
+<para>Note that this means that local installs can cause things to be
+installed into the global space at the same time.  The link is only done
+if one of the two conditions are met:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>The package is not already installed globally, or</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>the globally installed version is identical to the version that is
+being installed locally.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+
+<refsect2 id='localaddress'><title>local-address</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: undefined</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: IP Address</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The IP address of the local interface to use when making connections
+to the npm registry.  Must be IPv4 in versions of Node prior to 0.12.</para>
+</refsect2>
+
+<refsect2 id='loglevel'><title>loglevel</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: "warn"</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Values: "silent", "error", "warn", "http", "info", "verbose", "silly"</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>What level of logs to report.  On failure, <emphasis remap='I'>all</emphasis> logs are written to
+<emphasis remap='B'>npm-debug.log</emphasis> in the current working directory.</para>
+
+<para>Any logs of a higher level than the setting are shown.
+The default is "warn", which shows warn and error output.</para>
+</refsect2>
+
+<refsect2 id='logstream'><title>logstream</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: process.stderr</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Stream</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>This is the stream that is passed to the
+npmlog <emphasis remap='I'>https://github.com/npm/npmlog</emphasis> module at run time.</para>
+
+<para>It cannot be set from the command line, but if you are using npm
+programmatically, you may wish to send logs to somewhere other than
+stderr.</para>
+
+<para>If the <emphasis remap='B'>color</emphasis> config is set to true, then this stream will receive
+colored output if it is a TTY.</para>
+</refsect2>
+
+<refsect2 id='long'><title>long</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Show extended information in <emphasis remap='B'>npm ls</emphasis> and <emphasis remap='B'>npm search</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='message'><title>message</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: "%s"</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Commit message which is used by <emphasis remap='B'>npm version</emphasis> when creating version commit.</para>
+
+<para>Any "%s" in the message will be replaced with the version number.</para>
+</refsect2>
+
+<refsect2 id='nodeversion'><title>node-version</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: process.version</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: semver or false</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The node version to use when checking a package's <emphasis remap='B'>engines</emphasis> map.</para>
+</refsect2>
+
+<refsect2 id='npat'><title>npat</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Run tests on installation.</para>
+</refsect2>
+
+<refsect2 id='onloadscript'><title>onload-script</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>A node module to <function>require()</function> when npm loads.  Useful for programmatic
+usage.</para>
+</refsect2>
+
+<refsect2 id='only'><title>only</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: null</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>When "dev" or "development" and running local <emphasis remap='B'>npm install</emphasis> without any
+arguments, only devDependencies (and their dependencies) are installed.</para>
+
+<para>When "dev" or "development" and running local <emphasis remap='B'>npm ls</emphasis>, <emphasis remap='B'>npm outdated</emphasis>, or
+<emphasis remap='B'>npm update</emphasis>, is an alias for <option>--dev</option>&thinsp;.</para>
+
+<para>When "prod" or "production" and running local <emphasis remap='B'>npm install</emphasis> without any
+arguments, only non-devDependencies (and their dependencies) are
+installed.</para>
+
+<para>When "prod" or "production" and running local <emphasis remap='B'>npm ls</emphasis>, <emphasis remap='B'>npm outdated</emphasis>, or
+<emphasis remap='B'>npm update</emphasis>, is an alias for <option>--production</option>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='optional'><title>optional</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Attempt to install packages in the <emphasis remap='B'>optionalDependencies</emphasis> object.  Note
+that if these packages fail to install, the overall installation
+process is not aborted.</para>
+</refsect2>
+
+<refsect2 id='parseable'><title>parseable</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Output parseable results from commands that write to
+standard output.</para>
+</refsect2>
+
+<refsect2 id='prefix'><title>prefix</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: see npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The location to install global items.  If set on the command line, then
+it forces non-global commands to run in the specified folder.</para>
+</refsect2>
+
+<refsect2 id='production'><title>production</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Set to true to run in "production" mode.</para>
+  <blockquote remap='RS'>
+  <variablelist remap='IP'>
+    <varlistentry>
+    <term>1.</term>
+    <listitem>
+<para>devDependencies are not installed at the topmost level when running
+local <emphasis remap='B'>npm install</emphasis> without any arguments.</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>2.</term>
+    <listitem>
+<para>Set the NODE_ENV="production" for lifecycle scripts.</para>
+
+    </listitem>
+    </varlistentry>
+  </variablelist>
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+
+<refsect2 id='progress'><title>progress</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>When set to <emphasis remap='B'>true</emphasis>, npm will display a progress bar during time intensive
+operations, if <emphasis remap='B'>process.stderr</emphasis> is a TTY.</para>
+
+<para>Set to <emphasis remap='B'>false</emphasis> to suppress the progress bar.</para>
+</refsect2>
+
+<refsect2 id='proprietaryattribs'><title>proprietary-attribs</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Whether or not to include proprietary extended attributes in the
+tarballs created by npm.</para>
+
+<para>Unless you are expecting to unpack package tarballs with something other
+than npm -- particularly a very outdated tar implementation -- leave
+this as true.</para>
+</refsect2>
+
+<refsect2 id='proxy'><title>proxy</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: null</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: url</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>A proxy to use for outgoing http requests. If the <emphasis remap='B'>HTTP_PROXY</emphasis> or
+<emphasis remap='B'>http_proxy</emphasis> environment variables are set, proxy settings will be
+honored by the underlying <emphasis remap='B'>request</emphasis> library.</para>
+</refsect2>
+
+<refsect2 id='rebuildbundle'><title>rebuild-bundle</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Rebuild bundled dependencies after installation.</para>
+</refsect2>
+
+<refsect2 id='registry'><title>registry</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: https://registry.npmjs.org/</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: url</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The base URL of the npm package registry.</para>
+</refsect2>
+
+<refsect2 id='rollback'><title>rollback</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Remove failed installs.</para>
+</refsect2>
+
+<refsect2 id='save'><title>save</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Save installed packages to a package.json file as dependencies.</para>
+
+<para>When used with the <emphasis remap='B'>npm rm</emphasis> command, it removes it from the <emphasis remap='B'>dependencies</emphasis>
+object.</para>
+
+<para>Only works if there is already a package.json file present.</para>
+</refsect2>
+
+<refsect2 id='savebundle'><title>save-bundle</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If a package would be saved at install time by the use of <option>--save</option>,
+<option>--save-dev</option>, or <option>--save-optional</option>, then also put it in the
+<emphasis remap='B'>bundleDependencies</emphasis> list.</para>
+
+<para>When used with the <emphasis remap='B'>npm rm</emphasis> command, it removes it from the
+bundledDependencies list.</para>
+</refsect2>
+
+<refsect2 id='savedev'><title>save-dev</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Save installed packages to a package.json file as <emphasis remap='B'>devDependencies</emphasis>&thinsp;.</para>
+
+<para>When used with the <emphasis remap='B'>npm rm</emphasis> command, it removes it from the
+<emphasis remap='B'>devDependencies</emphasis> object.</para>
+
+<para>Only works if there is already a package.json file present.</para>
+</refsect2>
+
+<refsect2 id='saveexact'><title>save-exact</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Dependencies saved to package.json using <option>--save</option>, <option>--save-dev</option> or
+<option>--save-optional</option> will be configured with an exact version rather than
+using npm's default semver range operator.</para>
+</refsect2>
+
+<refsect2 id='saveoptional'><title>save-optional</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Save installed packages to a package.json file as
+optionalDependencies.</para>
+
+<para>When used with the <emphasis remap='B'>npm rm</emphasis> command, it removes it from the
+<emphasis remap='B'>devDependencies</emphasis> object.</para>
+
+<para>Only works if there is already a package.json file present.</para>
+</refsect2>
+
+<refsect2 id='saveprefix'><title>save-prefix</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: '^'</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Configure how versions of packages installed to a package.json file via
+<option>--save</option> or <option>--save-dev</option> get prefixed.</para>
+
+<para>For example if a package has version <literal>1.2.3</literal>, by default its version is
+set to <emphasis remap='B'>^1.2.3</emphasis> which allows minor upgrades for that package, but after
+<emphasis remap='B'>npm config set save-prefix='~'</emphasis> it would be set to <emphasis remap='B'>~1.2.3</emphasis> which only allows
+patch upgrades.</para>
+</refsect2>
+
+<refsect2 id='scope'><title>scope</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: ""</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Associate an operation with a scope for a scoped registry. Useful when logging
+in to a private registry for the first time:
+<emphasis remap='B'>npm login --scope=@organization --registry=registry.organization.com</emphasis>, which
+will cause <emphasis remap='B'>@organization</emphasis> to be mapped to the registry for future installation
+of packages specified according to the pattern <emphasis remap='B'>@organization/package</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='searchopts'><title>searchopts</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: ""</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Space-separated options that are always passed to search.</para>
+</refsect2>
+
+<refsect2 id='searchexclude'><title>searchexclude</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: ""</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Space-separated options that limit the results from search.</para>
+</refsect2>
+
+<refsect2 id='searchsort'><title>searchsort</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: "name"</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Values: "name", "-name", "date", "-date", "description",
+"-description", "keywords", "-keywords"</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Indication of which field to sort search results by.  Prefix with a <emphasis remap='B'>-</emphasis>
+character to indicate reverse sort.</para>
+</refsect2>
+
+<refsect2 id='shell'><title>shell</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: SHELL environment variable, or "bash" on Posix, or "cmd" on
+Windows</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The shell to run for the <emphasis remap='B'>npm explore</emphasis> command.</para>
+</refsect2>
+
+<refsect2 id='shrinkwrap'><title>shrinkwrap</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If set to false, then ignore <emphasis remap='B'>npm-shrinkwrap.json</emphasis> files when
+installing.</para>
+</refsect2>
+
+<refsect2 id='signgittag'><title>sign-git-tag</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If set to true, then the <emphasis remap='B'>npm version</emphasis> command will tag the version
+using <option>-s</option> to add a signature.</para>
+
+<para>Note that git requires you to have set up GPG keys in your git configs
+for this to work properly.</para>
+</refsect2>
+
+<refsect2 id='strictssl'><title>strict-ssl</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Whether or not to do SSL key validation when making requests to the
+registry via https.</para>
+
+<para>See also the <emphasis remap='B'>ca</emphasis> config.</para>
+</refsect2>
+
+<refsect2 id='tag'><title>tag</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: latest</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If you ask npm to install a package and don't tell it a specific version, then
+it will install the specified tag.</para>
+
+<para>Also the tag that is added to the package@version specified by the <emphasis remap='B'>npm
+tag</emphasis> command, if no explicit tag is given.</para>
+</refsect2>
+
+<refsect2 id='tagversionprefix'><title>tag-version-prefix</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: <emphasis remap='B'>"v"</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If set, alters the prefix used when tagging a new version when performing a
+version increment using  <emphasis remap='B'>npm-version</emphasis>&thinsp;. To remove the prefix altogether, set it
+to the empty string: <emphasis remap='B'>""</emphasis>&thinsp;.</para>
+
+<para>Because other tools may rely on the convention that npm version tags look like
+<emphasis remap='B'>v1.0.0</emphasis>, <emphasis remap='I'>only use this property if it is absolutely necessary</emphasis>&thinsp;. In
+particular, use care when overriding this setting for public packages.</para>
+</refsect2>
+
+<refsect2 id='tmp'><title>tmp</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: TMPDIR environment variable, or "/tmp"</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Where to store temporary files and folders.  All temp files are deleted
+on success, but left behind on failure for forensic purposes.</para>
+</refsect2>
+
+<refsect2 id='unicode'><title>unicode</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: true on windows and mac/unix systems with a unicode locale</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>When set to true, npm uses unicode characters in the tree output.  When
+false, it uses ascii characters to draw trees.</para>
+</refsect2>
+
+<refsect2 id='unsafeperm'><title>unsafe-perm</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false if running as root, true otherwise</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Set to true to suppress the UID/GID switching when running package
+scripts.  If set explicitly to false, then installing as a non-root user
+will fail.</para>
+</refsect2>
+
+<refsect2 id='usage'><title>usage</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Set to show short usage output (like the -H output)
+instead of complete help when doing npm help <emphasis remap='B'>npm-help</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='user'><title>user</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: "nobody"</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String or Number</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The UID to set to when running package scripts as root.</para>
+</refsect2>
+
+<refsect2 id='userconfig'><title>userconfig</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: ~/.npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The location of user-level configuration settings.</para>
+</refsect2>
+
+<refsect2 id='umask'><title>umask</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: 022</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: Octal numeric string in range 0000..0777 (0..511)</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The "umask" value to use when setting the file creation mode on files
+and folders.</para>
+
+<para>Folders and executables are given a mode which is <literal>0777</literal> masked against
+this value.  Other files are given a mode which is <literal>0666</literal> masked against
+this value.  Thus, the defaults are <literal>0755</literal> and <literal>0644</literal> respectively.</para>
+</refsect2>
+
+<refsect2 id='useragent'><title>user-agent</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: node/{process.version} {process.platform} {process.arch}</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Sets a User-Agent to the request header</para>
+</refsect2>
+
+<refsect2 id='version'><title>version</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If true, output the npm version and exit successfully.</para>
+
+<para>Only relevant when specified explicitly on the command line.</para>
+</refsect2>
+
+<refsect2 id='versions'><title>versions</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: false</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: boolean</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If true, output the npm version as well as node's <emphasis remap='B'>process.versions</emphasis> map, and
+exit successfully.</para>
+
+<para>Only relevant when specified explicitly on the command line.</para>
+</refsect2>
+
+<refsect2 id='viewer'><title>viewer</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: "man" on Posix, "browser" on Windows</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: path</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The program to use to view help content.</para>
+
+<para>Set to <emphasis remap='B'>"browser"</emphasis> to view html help content in the default web browser.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 scripts</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help npm</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

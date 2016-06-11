@@ -1,0 +1,242 @@
+'\" t
+.\"     Title: btrfs-mount
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 01/31/2015
+.\"    Manual: Btrfs Manual
+.\"    Source: Btrfs v3.18.2+20150129
+.\"  Language: English
+.\"
+.TH "BTRFS\-MOUNT" "5" "01/31/2015" "Btrfs v3\&.18\&.2+20150129" "Btrfs Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+btrfs-mount \- mount options and supported file attributes for the btrfs filesystem
+.SH "SYNOPSIS"
+.sp
+\fBman btrfs\fR
+.SH "DESCRIPTION"
+.sp
+This document describes mount options specific to the btrfs filesystem\&. Other generic mount options are available,and are described in the \fBmount\fR(8) manpage\&.
+.SH "MOUNT OPTIONS"
+.PP
+\fBalloc_start=\fR\fB\fIbytes\fR\fR
+.RS 4
+Debugging option to force all block allocations above a certain byte threshold on each block device\&. The value is specified in bytes, optionally with a K, M, or G suffix, case insensitive\&. Default is 1MB\&.
+.RE
+.PP
+\fBautodefrag\fR
+.RS 4
+Disable/enable auto defragmentation\&. Auto defragmentation detects small random writes into files and queue them up for the defrag process\&. Works best for small files; Not well suited for large database workloads\&.
+.RE
+.PP
+\fBcheck_int\fR|\fBcheck_int_data\fR|\fBcheck_int_print_mask=\fR\fB\fIvalue\fR\fR
+.RS 4
+These debugging options control the behavior of the integrity checking module (the BTRFS_FS_CHECK_INTEGRITY config option required)\&.
+\fBcheck_int\fR
+enables the integrity checker module, which examines all block write requests to ensure on\-disk consistency, at a large memory and CPU cost\&.
+\fBcheck_int_data\fR
+includes extent data in the integrity checks, and implies the check_int option\&.
+\fBcheck_int_print_mask\fR
+takes a bitmask of BTRFSIC_PRINT_MASK_* values as defined in
+\fIfs/btrfs/check\-integrity\&.c\fR, to control the integrity checker module behavior\&.
+
+See comments at the top of
+\fIfs/btrfs/check\-integrity\&.c\fR
+for more info\&.
+.RE
+.PP
+\fBcommit=\fR\fB\fIseconds\fR\fR
+.RS 4
+Set the interval of periodic commit, 30 seconds by default\&. Higher values defer data being synced to permanent storage with obvious consequences when the system crashes\&. The upper bound is not forced, but a warning is printed if it\(cqs more than 300 seconds (5 minutes)\&.
+.RE
+.PP
+\fBcompress\fR|\fBcompress=\fR\fB\fItype\fR\fR|\fBcompress\-force\fR|\fBcompress\-force=\fR\fB\fItype\fR\fR
+.RS 4
+Control BTRFS file data compression\&. Type may be specified as "zlib" "lzo" or "no" (for no compression, used for remounting)\&. If no type is specified, zlib is used\&. If compress\-force is specified, all files will be compressed, whether or not they compress well\&. If compression is enabled, nodatacow and nodatasum are disabled\&.
+.RE
+.PP
+\fBdegraded\fR
+.RS 4
+Allow mounts to continue with missing devices\&. A read\-write mount may fail with too many devices missing, for example if a stripe member is completely missing\&.
+.RE
+.PP
+\fBdevice=\fR\fB\fIdevicepath\fR\fR
+.RS 4
+Specify a device during mount so that ioctls on the control device can be avoided\&. Especially useful when trying to mount a multi\-device setup as root\&. May be specified multiple times for multiple devices\&.
+.RE
+.PP
+\fBdiscard\fR
+.RS 4
+Disable/enable discard mount option\&. Discard issues frequent commands to let the block device reclaim space freed by the filesystem\&. This is useful for SSD devices, thinly provisioned LUNs and virtual machine images, but may have a significant performance impact\&. (The fstrim command is also available to initiate batch trims from userspace)\&.
+.RE
+.PP
+\fBenospc_debug\fR
+.RS 4
+Disable/enable debugging option to be more verbose in some ENOSPC conditions\&.
+.RE
+.PP
+\fBfatal_errors=\fR\fB\fIaction\fR\fR
+.RS 4
+Action to take when encountering a fatal error\&.
+
+"bug" \- BUG() on a fatal error\&. This is the default\&.
+
+"panic" \- panic() on a fatal error\&.
+.RE
+.PP
+\fBflushoncommit\fR
+.RS 4
+The
+\fBflushoncommit\fR
+mount option forces any data dirtied by a write in a prior transaction to commit as part of the current commit\&. This makes the committed state a fully consistent view of the file system from the application\(cqs perspective (i\&.e\&., it includes all completed file system operations)\&. This was previously the behavior only when a snapshot is created\&.
+.RE
+.PP
+\fBinode_cache\fR
+.RS 4
+Enable free inode number caching\&. Defaults to off due to an overflow problem when the free space crcs don\(cqt fit inside a single page\&.
+.RE
+.PP
+\fBmax_inline=\fR\fB\fIbytes\fR\fR
+.RS 4
+Specify the maximum amount of space, in bytes, that can be inlined in a metadata B\-tree leaf\&. The value is specified in bytes, optionally with a K, M, or G suffix, case insensitive\&. In practice, this value is limited by the root sector size, with some space unavailable due to leaf headers\&. For a 4k sectorsize, max inline data is ~3900 bytes\&.
+.RE
+.PP
+\fBmetadata_ratio=\fR\fB\fIvalue\fR\fR
+.RS 4
+Specify that 1 metadata chunk should be allocated after every
+\fIvalue\fR
+data chunks\&. Off by default\&.
+.RE
+.PP
+\fBnoacl\fR
+.RS 4
+Enable/disable support for Posix Access Control Lists (ACLs)\&. See the
+\fBacl\fR(5) manual page for more information about ACLs\&.
+.RE
+.PP
+\fBnobarrier\fR
+.RS 4
+ensure that certain IOs make it through the device cache and are on persistent storage\&. If disabled on a device with a volatile (non\-battery\-backed) write\-back cache, nobarrier option will lead to filesystem corruption on a system crash or power loss\&.
+.RE
+.PP
+\fBnodatacow\fR
+.RS 4
+Enable/disable data copy\-on\-write for newly created files\&. Nodatacow implies nodatasum, and disables all compression\&.
+.RE
+.PP
+\fBnodatasum\fR
+.RS 4
+Enable/disable data checksumming for newly created files\&. Datasum implies datacow\&.
+.RE
+.PP
+\fBnotreelog\fR
+.RS 4
+Enable/disable the tree logging used for fsync and O_SYNC writes\&.
+.RE
+.PP
+\fBrecovery\fR
+.RS 4
+Enable autorecovery attempts if a bad tree root is found at mount time\&. Currently this scans a list of several previous tree roots and tries to use the first readable\&.
+.RE
+.PP
+\fBrescan_uuid_tree\fR
+.RS 4
+Force check and rebuild procedure of the UUID tree\&. This should not normally be needed\&.
+.RE
+.PP
+\fBskip_balance\fR
+.RS 4
+Skip automatic resume of interrupted balance operation after mount\&. May be resumed with "btrfs balance resume\&."
+.RE
+.PP
+\fBnospace_cache\fR
+.RS 4
+Disable freespace cache loading without clearing the cache\&.
+.RE
+.PP
+\fBclear_cache\fR
+.RS 4
+Force clearing and rebuilding of the disk space cache if something has gone wrong\&.
+.RE
+.PP
+\fBssd\fR|\fBnossd\fR|\fBssd_spread\fR
+.RS 4
+Options to control ssd allocation schemes\&. By default, BTRFS will enable or disable ssd allocation heuristics depending on whether a rotational or nonrotational disk is in use\&. The ssd and nossd options can override this autodetection\&.
+
+The ssd_spread mount option attempts to allocate into big chunks of unused space, and may perform better on low\-end ssds\&. ssd_spread implies ssd, enabling all other ssd heuristics as well\&.
+.RE
+.PP
+\fBsubvol=\fR\fB\fIpath\fR\fR
+.RS 4
+Mount subvolume at
+\fIpath\fR
+rather than the root subvolume\&. The
+\fIpath\fR
+is relative to the top level subvolume\&.
+.RE
+.PP
+\fBsubvolid=\fR\fB\fIID\fR\fR
+.RS 4
+Mount subvolume specified by an ID number rather than the root subvolume\&. This allows mounting of subvolumes which are not in the root of the mounted filesystem\&. You can use "btrfs subvolume list" to see subvolume ID numbers\&.
+.RE
+.PP
+\fBsubvolrootid=\fR\fB\fIobjectid\fR\fR\fB (deprecated)\fR
+.RS 4
+Mount subvolume specified by
+\fIobjectid\fR
+rather than the root subvolume\&. This allows mounting of subvolumes which are not in the root of the mounted filesystem\&. You can use "btrfs subvolume show" to see the object ID for a subvolume\&.
+.RE
+.PP
+\fBthread_pool=\fR\fB\fInumber\fR\fR
+.RS 4
+The number of worker threads to allocate\&. The default number is equal to the number of CPUs + 2, or 8, whichever is smaller\&.
+.RE
+.PP
+\fBuser_subvol_rm_allowed\fR
+.RS 4
+Allow subvolumes to be deleted by a non\-root user\&. Use with caution\&.
+.RE
+.SH "FILE ATTRIBUTES"
+.sp
+The btrfs filesystem supports setting the following file attributes the \fBchattr\fR(1) utility
+.sp
+\fBa\fR \(em append only
+.sp
+\fBA\fR \(em no atime updates
+.sp
+\fBc\fR \(em compressed
+.sp
+\fBC\fR \(em no copy on write
+.sp
+\fBd\fR \(em no dump
+.sp
+\fBD\fR \(em synchronous directory updates
+.sp
+\fBi\fR \(em immutable
+.sp
+\fBS\fR \(em synchronous updates
+.sp
+\fBX\fR \(em no compression
+.sp
+For descriptions of these attribute flags, please refer to the \fBchattr\fR(1) man page\&.
+.SH "SEE ALSO"
+.sp
+\fBchattr\fR(1), \fBmkfs\&.btrfs\fR(8), \fBmount\fR(8), \fBbtrfs\fR(8)

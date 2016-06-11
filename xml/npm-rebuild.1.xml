@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmrebuild1'>
+<refmeta>
+<refentrytitle>NPM-REBUILD</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-rebuild</refname>
+<refpurpose>Rebuild a package</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>rebuild</replaceable></arg>
+    <arg choice='opt' rep='repeat'><replaceable>&lt;@scope&gt;/&lt;name&gt;</replaceable></arg>
+    <sbr/>
+</cmdsynopsis>
+<para>alias: npm rb</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This command runs the <emphasis remap='B'>npm build</emphasis> command on the matched folders.  This is useful
+when you install a new version of node, and must recompile all your C++ addons with
+the new binary.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help build</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help install</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmdocs1'>
+<refmeta>
+<refentrytitle>NPM-DOCS</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-docs</refname>
+<refpurpose>Docs for a package in a web browser maybe</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>docs</replaceable></arg>
+    <arg choice='opt'><arg choice='plain'><replaceable>&lt;pkgname&gt;</replaceable></arg><arg choice='opt' rep='repeat'><replaceable>&lt;pkgname&gt;</replaceable></arg></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>docs</replaceable></arg>
+    <arg choice='plain'><replaceable>.</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>home</replaceable></arg>
+    <arg choice='opt'><arg choice='plain'><replaceable>&lt;pkgname&gt;</replaceable></arg><arg choice='opt' rep='repeat'><replaceable>&lt;pkgname&gt;</replaceable></arg></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>home</replaceable></arg>
+    <arg choice='plain'><replaceable>.</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This command tries to guess at the likely location of a package's
+documentation URL, and then tries to open it using the <option>--browser</option>
+config param. You can pass multiple package names at once. If no
+package name is provided, it will search for a <emphasis remap='B'>package.json</emphasis> in
+the current folder and use the <emphasis remap='B'>name</emphasis> property.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='browser'><title>browser</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: OS X: <emphasis remap='B'>"open"</emphasis>, Windows: <emphasis remap='B'>"start"</emphasis>, Others: <emphasis remap='B'>"xdg-open"</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: String</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The browser that is called by the <emphasis remap='B'>npm docs</emphasis> command to open websites.</para>
+</refsect2>
+
+<refsect2 id='registry'><title>registry</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Default: https://registry.npmjs.org/</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Type: url</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>The base URL of the npm package registry.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help view</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help publish</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

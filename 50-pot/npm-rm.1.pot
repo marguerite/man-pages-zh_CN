@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-rm.1.xml:7(refentrytitle)
+msgid "NPM-RM"
+msgstr ""
+
+#: npm-rm.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-rm.1.xml:9(refmiscinfo)
+msgid "October 2015"
+msgstr ""
+
+#: npm-rm.1.xml:12(refname)
+msgid "npm-rm"
+msgstr ""
+
+#: npm-rm.1.xml:13(refpurpose)
+msgid "Remove a package"
+msgstr ""
+
+#: npm-rm.1.xml:17(para)
+msgid "npm rm &lt;name&gt; npm r &lt;name&gt; npm uninstall &lt;name&gt; npm un &lt;name&gt;"
+msgstr ""
+
+#: npm-rm.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-rm.1.xml:25(para)
+msgid "This uninstalls a package, completely removing everything npm installed on its behalf."
+msgstr ""
+
+#: npm-rm.1.xml:29(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-rm.1.xml:33(para)
+msgid "npm help prune"
+msgstr ""
+
+#: npm-rm.1.xml:36(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-rm.1.xml:39(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-rm.1.xml:42(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-rm.1.xml:45(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-rm.1.xml:48(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-rm.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

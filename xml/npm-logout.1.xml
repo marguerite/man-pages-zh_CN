@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmlogout1'>
+<refmeta>
+<refentrytitle>NPM-LOGOUT</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-logout</refname>
+<refpurpose>Log out of the registry</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>logout</replaceable></arg>
+    <arg choice='opt'>--registry=<replaceable>&lt;url&gt;</replaceable></arg>
+    <arg choice='opt'>--scope=<replaceable>&lt;@scope&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>When logged into a registry that supports token-based authentication, tell the
+server to end this token's session. This will invalidate the token everywhere
+you're using it, not just for the current environment.</para>
+
+<para>When logged into a legacy registry that uses username and password authentication, this will
+clear the credentials in your user configuration. In this case, it will <emphasis remap='I'>only</emphasis> affect
+the current environment.</para>
+
+<para>If <option>--scope</option> is provided, this will find the credentials for the registry
+connected to that scope, if set.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='registry'><title>registry</title>
+
+<para>Default: <ulink url='http://registry.npmjs.org/'>http://registry.npmjs.org/</ulink></para>
+
+<para>The base URL of the npm package registry. If <emphasis remap='B'>scope</emphasis> is also specified,
+it takes precedence.</para>
+</refsect2>
+
+<refsect2 id='scope'><title>scope</title>
+
+<para>Default: none</para>
+
+<para>If specified, the user and login credentials given will be associated
+with the specified scope. See npm help 7 <emphasis remap='B'>npm-scope</emphasis>&thinsp;. You can use both at the same time,
+e.g.</para>
+
+<literallayout remap='.nf'>
+npm adduser --registry=<ulink url='http://myregistry.example.com'>http://myregistry.example.com</ulink> --scope=@myco
+</literallayout> <!-- .fi -->
+
+<para>This will set a registry for the given scope and login or create a user for
+that registry at the same time.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help adduser</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help whoami</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

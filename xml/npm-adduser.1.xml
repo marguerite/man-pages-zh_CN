@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmadduser1'>
+<refmeta>
+<refentrytitle>NPM-ADDUSER</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-adduser</refname>
+<refpurpose>Add a registry user account</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>adduser</replaceable></arg>
+    <arg choice='opt'>--registry=<replaceable>url</replaceable></arg>
+    <arg choice='opt'>--scope=<replaceable>@orgname</replaceable></arg>
+    <arg choice='opt'>--always-auth </arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Create or verify a user named <emphasis remap='B'>&lt;username&gt;</emphasis> in the specified registry, and
+save the credentials to the <emphasis remap='B'>&thinsp;.npmrc</emphasis> file. If no registry is specified,
+the default registry will be used (see npm help 7 <emphasis remap='B'>npm-config</emphasis>).</para>
+
+<para>The username, password, and email are read in from prompts.</para>
+
+<para>To reset your password, go to https://www.npmjs.com/forgot</para>
+
+<para>To change your email address, go to https://www.npmjs.com/email-edit</para>
+
+<para>You may use this command multiple times with the same user account to
+authorize on a new machine.  When authenticating on a new machine,
+the username, password and email address must all match with
+your existing record.</para>
+
+<para><emphasis remap='B'>npm login</emphasis> is an alias to <emphasis remap='B'>adduser</emphasis> and behaves exactly the same way.</para>
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+
+<refsect2 id='registry'><title>registry</title>
+
+<para>Default: <ulink url='http://registry.npmjs.org/'>http://registry.npmjs.org/</ulink></para>
+
+<para>The base URL of the npm package registry. If <emphasis remap='B'>scope</emphasis> is also specified,
+this registry will only be used for packages with that scope. See npm help 7 <emphasis remap='B'>npm-scope</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='scope'><title>scope</title>
+
+<para>Default: none</para>
+
+<para>If specified, the user and login credentials given will be associated
+with the specified scope. See npm help 7 <emphasis remap='B'>npm-scope</emphasis>&thinsp;. You can use both at the same time,
+e.g.</para>
+
+<literallayout remap='.nf'>
+npm adduser --registry=<ulink url='http://myregistry.example.com'>http://myregistry.example.com</ulink> --scope=@myco
+</literallayout> <!-- .fi -->
+
+<para>This will set a registry for the given scope and login or create a user for
+that registry at the same time.</para>
+</refsect2>
+
+<refsect2 id='alwaysauth'><title>always-auth</title>
+
+<para>Default: false</para>
+
+<para>If specified, save configuration indicating that all requests to the given
+registry should include authorization information. Useful for private
+registries. Can be used with <option>--registry</option> and / or <option>--scope</option>, e.g.</para>
+
+<literallayout remap='.nf'>
+npm adduser --registry=<ulink url='http://private-registry.example.com'>http://private-registry.example.com</ulink> --always-auth
+</literallayout> <!-- .fi -->
+
+<para>This will ensure that all requests to that registry (including for tarballs)
+include an authorization header. See <emphasis remap='B'>always-auth</emphasis> in npm help 7 <emphasis remap='B'>npm-config</emphasis> for more
+details on always-auth. Registry-specific configuration of <emphasis remap='B'>always-auth</emphasis> takes
+precedence over any global configuration.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help owner</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help whoami</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

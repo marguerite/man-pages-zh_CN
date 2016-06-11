@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmcompletion1'>
+<refmeta>
+<refentrytitle>NPM-COMPLETION</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-completion</refname>
+<refpurpose>Tab Completion for npm</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<para>source &lt;(npm completion)</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Enables tab-completion in all npm commands.</para>
+
+<para>The synopsis above
+loads the completions into your current shell.  Adding it to
+your ~/.bashrc or ~/.zshrc will make the completions available
+everywhere:</para>
+
+<literallayout remap='.nf'>
+npm completion &gt;&gt; ~/.bashrc
+npm completion &gt;&gt; ~/.zshrc
+</literallayout> <!-- .fi -->
+
+<para>You may of course also pipe the output of npm completion to a file
+such as <filename>/usr/local/etc/bash_completion.d/npm</filename> if you have a system
+that will read that file for you.</para>
+
+<para>When <emphasis remap='B'>COMP_CWORD</emphasis>, <emphasis remap='B'>COMP_LINE</emphasis>, and <emphasis remap='B'>COMP_POINT</emphasis> are defined in the
+environment, <emphasis remap='B'>npm completion</emphasis> acts in "plumbing mode", and outputs
+completions based on the arguments.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 7 developers</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 faq</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help npm</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

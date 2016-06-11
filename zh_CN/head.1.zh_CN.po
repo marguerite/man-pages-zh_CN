@@ -1,50 +1,53 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-08-07 02:38+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: head.1.xml:8(refentrytitle)
 msgid "HEAD"
-msgstr ""
+msgstr "head"
 
 #: head.1.xml:9(manvolnum)
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: head.1.xml:10(refmiscinfo)
 msgid "July 2014"
-msgstr ""
+msgstr "2014 年 7 月"
 
 #: head.1.xml:11(refmiscinfo)
 msgid "GNU coreutils 8.22"
-msgstr ""
+msgstr "GNU coreutils 8.22"
 
 #: head.1.xml:14(refname) head.1.xml:20(command)
 msgid "head"
-msgstr ""
+msgstr "head"
 
 #: head.1.xml:15(refpurpose)
 msgid "output the first part of files"
-msgstr ""
+msgstr "输出文件的首部分"
 
 #: head.1.xml:21(replaceable)
 msgid "OPTION"
-msgstr ""
+msgstr "选项"
 
 #: head.1.xml:22(replaceable)
 msgid "FILE"
-msgstr ""
+msgstr "FILE"
 
 #: head.1.xml:28(title)
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #. Add any additional description here
 #: head.1.xml:31(para)
@@ -53,74 +56,83 @@ msgid ""
 "FILE, precede each with a header giving the file name. With no FILE, or when "
 "FILE is -, read standard input."
 msgstr ""
+"打印每个 FILE 的前 10 行到标准输出。若多于一个 FILE，则在每个文件前冠以文件名作为标题。"
+"若没有 FILE，或 FILE 为 - 时，从标准输入读取。"
 
 #: head.1.xml:35(para)
 msgid ""
 "Mandatory arguments to long options are mandatory for short options too."
-msgstr ""
+msgstr "针对长选项的强制参数对短选项来说也是强制的。"
 
 #: head.1.xml:38(term)
 msgid ""
 "<option>-c</option>, <option>--bytes</option>=<emphasis remap=\"I\">[-]K</"
 "emphasis>"
 msgstr ""
+"<option>-c</option>, <option>--bytes</option>=<emphasis remap=\"I\">[-]K</"
+"emphasis>"
 
 #: head.1.xml:40(para)
 msgid ""
 "print the first K bytes of each file; with the leading '-', print all but "
 "the last K bytes of each file"
-msgstr ""
+msgstr "打印每个文件的前 K 个字节; 使用 '-' 开头，则打印每个文件的后 K 个字节。"
 
 #: head.1.xml:46(term)
 msgid ""
 "<option>-n</option>, <option>--lines</option>=<emphasis remap=\"I\">[-]K</"
 "emphasis>"
 msgstr ""
+"<option>-n</option>, <option>--lines</option>=<emphasis remap=\"I\">[-]K</"
+"emphasis>"
 
 #: head.1.xml:48(para)
 msgid ""
 "print the first K lines instead of the first 10; with the leading '-', print "
 "all but the last K lines of each file"
-msgstr ""
+msgstr "打印首 K 行而非 10 行; 使用 '-' 开头，则打印每个文件的后 K 行"
 
 #: head.1.xml:54(term)
 msgid ""
 "<option>-q</option>, <option>--quiet</option>, <option>--silent</option>"
 msgstr ""
+"<option>-q</option>, <option>--quiet</option>, <option>--silent</option>"
 
 #: head.1.xml:56(para)
 msgid "never print headers giving file names"
-msgstr ""
+msgstr "不输出给出文件名的标题"
 
 #: head.1.xml:60(term)
 msgid "<option>-v</option>, <option>--verbose</option>"
-msgstr ""
+msgstr "<option>-v</option>, <option>--verbose</option>"
 
 #: head.1.xml:62(para)
 msgid "always print headers giving file names"
-msgstr ""
+msgstr "总是输出给出文件名的标题"
 
 #: head.1.xml:66(option)
 msgid "--help"
-msgstr ""
+msgstr "--help"
 
 #: head.1.xml:68(para)
 msgid "display this help and exit"
-msgstr ""
+msgstr "显示此帮助并退出"
 
 #: head.1.xml:72(option)
 msgid "--version"
-msgstr ""
+msgstr "--version"
 
 #: head.1.xml:74(para)
 msgid "output version information and exit"
-msgstr ""
+msgstr "输出版本信息并退出"
 
 #: head.1.xml:76(para)
 msgid ""
 "K may have a multiplier suffix: b 512, kB 1000, K 1024, MB 1000*1000, M "
 "1024*1024, GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y."
 msgstr ""
+"K 可能有一个乘数后缀：b 512, kB 1000, K 1024, MB 1000*1000, M "
+"1024*1024, GB 1000*1000*1000, G 1024*1024*1024, 以此类推到 T, P, E, Z, Y。"
 
 #: head.1.xml:80(para)
 msgid ""
@@ -129,18 +141,22 @@ msgid ""
 "head translation bugs to &lt;<ulink url=\"http://translationproject.org/team/"
 "&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
+"GNU coreutils 在线帮助：&lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> 汇报 "
+"head 翻译故障 &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 
 #: head.1.xml:87(title)
 msgid "AUTHOR"
-msgstr ""
+msgstr "作者"
 
 #: head.1.xml:88(para)
 msgid "Written by David MacKenzie and Jim Meyering."
-msgstr ""
+msgstr "由 David MacKenzie 和 Jim Meyering 编纂。"
 
 #: head.1.xml:91(title)
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "版权"
 
 #: head.1.xml:92(para)
 msgid ""
@@ -150,10 +166,14 @@ msgid ""
 "are free to change and redistribute it. There is NO WARRANTY, to the extent "
 "permitted by law."
 msgstr ""
+"版权所有 &copy; 2013 自由软件基金会。许可证 GPLv3+：GNU 通用公共许可证 "
+"第三版及后续版本 &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>。这是一个自由软件：您可以自由"
+"修订并分发它。在法律允许范围内不作任何保证。"
 
 #: head.1.xml:99(title)
 msgid "SEE ALSO"
-msgstr ""
+msgstr "继续阅读"
 
 #: head.1.xml:100(para)
 msgid ""
@@ -162,16 +182,20 @@ msgid ""
 "<command>head</command> programs are properly installed at your site, the "
 "command"
 msgstr ""
+"<command>head</command> 的完整文档以一本 Texinfo 手册的形式维护。"
+"若您的计算机上妥善安装了  <emphasis remap=\"B\">info</emphasis> 和 "
+"<command>head</command> 程序，这个命令"
 
 #: head.1.xml:108(emphasis)
 msgid "info coreutils ''head invocation''"
-msgstr ""
+msgstr "info coreutils \"head invocation\""
 
 #: head.1.xml:110(para)
 msgid "should give you access to the complete manual."
-msgstr ""
+msgstr "应可让您调阅完整手册。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: head.1.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+

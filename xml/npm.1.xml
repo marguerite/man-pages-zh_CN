@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npm1'>
+<refmeta>
+<refentrytitle>NPM</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm</refname>
+<refpurpose>javascript package manager</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>&lt;command&gt;</replaceable></arg>
+    <arg choice='opt'><replaceable>args</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='version'><title>VERSION</title>
+<para>3.3.12</para>
+</refsect1>
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>npm is the package manager for the Node JavaScript platform.  It puts
+modules in place so that node can find them, and manages dependency
+conflicts intelligently.</para>
+
+<para>It is extremely configurable to support a wide variety of use cases.
+Most commonly, it is used to publish, discover, install, and develop node
+programs.</para>
+
+<para>Run <emphasis remap='B'>npm help</emphasis> to get a list of available commands.</para>
+</refsect1>
+
+<refsect1 id='introduction'><title>INTRODUCTION</title>
+<para>You probably got npm because you want to install stuff.</para>
+
+<para>Use <emphasis remap='B'>npm install blerg</emphasis> to install the latest version of "blerg".  Check out
+npm help <emphasis remap='B'>npm-install</emphasis> for more info.  It can do a lot of stuff.</para>
+
+<para>Use the <emphasis remap='B'>npm search</emphasis> command to show everything that's available.
+Use <emphasis remap='B'>npm ls</emphasis> to show everything you've installed.</para>
+</refsect1>
+
+<refsect1 id='dependencies'><title>DEPENDENCIES</title>
+<para>If a package references to another package with a git URL, npm depends
+on a preinstalled git.</para>
+
+<para>If one of the packages npm tries to install is a native node module and
+requires compiling of C++ Code, npm will use
+node-gyp <emphasis remap='I'>https://github.com/TooTallNate/node-gyp</emphasis> for that task.
+For a Unix system, node-gyp <emphasis remap='I'>https://github.com/TooTallNate/node-gyp</emphasis>
+needs Python, make and a buildchain like GCC. On Windows,
+Python and Microsoft Visual Studio C++ is needed. Python 3 is
+not supported by node-gyp <emphasis remap='I'>https://github.com/TooTallNate/node-gyp</emphasis>&thinsp;.
+For more information visit
+the node-gyp repository <emphasis remap='I'>https://github.com/TooTallNate/node-gyp</emphasis> and
+the node-gyp Wiki <emphasis remap='I'>https://github.com/TooTallNate/node-gyp/wiki</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='directories'><title>DIRECTORIES</title>
+<para>See npm help 5 <emphasis remap='B'>npm-folders</emphasis> to learn about where npm puts stuff.</para>
+
+<para>In particular, npm has two modes of operation:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>global mode:
+<!-- br -->
+npm installs packages into the install prefix at
+<emphasis remap='B'>prefix/lib/node_modules</emphasis> and bins are installed in <emphasis remap='B'>prefix/bin</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>local mode:
+<!-- br -->
+npm installs packages into the current project directory, which
+defaults to the current working directory.  Packages are installed to
+<emphasis remap='B'>&thinsp;./node_modules</emphasis>, and bins are installed to <emphasis remap='B'>&thinsp;./node_modules/.bin</emphasis>&thinsp;.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Local mode is the default.  Use <option>-g</option> or <option>--global</option> on any command to
+operate in global mode instead.</para>
+</refsect1>
+
+<refsect1 id='developer_usage'><title>DEVELOPER USAGE</title>
+<para>If you're using npm to develop and publish your code, check out the
+following help topics:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>json:
+Make a package.json file.  See npm help 5 <emphasis remap='B'>package.json</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>link:
+For linking your current working code into Node's path, so that you
+don't have to reinstall every time you make a change.  Use
+<emphasis remap='B'>npm link</emphasis> to do this.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>install:
+It's a good idea to install things if you don't need the symbolic link.
+Especially, installing other peoples code from the registry is done via
+<emphasis remap='B'>npm install</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>adduser:
+Create an account or log in.  Credentials are stored in the
+user config file.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>publish:
+Use the <emphasis remap='B'>npm publish</emphasis> command to upload your code to the registry.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='configuration'><title>CONFIGURATION</title>
+<para>npm is extremely configurable.  It reads its configuration options from
+5 places.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Command line switches:
+<!-- br -->
+Set a config with <option>--key val</option>&thinsp;.  All keys take a value, even if they
+are booleans (the config parser doesn't know what the options are at
+the time of parsing.)  If no value is provided, then the option is set
+to boolean <emphasis remap='B'>true</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Environment Variables:
+<!-- br -->
+Set any config by prefixing the name in an environment variable with
+<emphasis remap='B'>npm_config_</emphasis>&thinsp;.  For example, <emphasis remap='B'>export npm_config_key=val</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>User Configs:
+<!-- br -->
+The file at $HOME/.npmrc is an ini-formatted list of configs.  If
+present, it is parsed.  If the <emphasis remap='B'>userconfig</emphasis> option is set in the cli
+or env, then that will be used instead.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Global Configs:
+<!-- br -->
+The file found at ../etc/npmrc (from the node executable, by default
+this resolves to /usr/local/etc/npmrc) will be parsed if it is found.
+If the <emphasis remap='B'>globalconfig</emphasis> option is set in the cli, env, or user config,
+then that file is parsed instead.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Defaults:
+<!-- br -->
+npm's default configuration options are defined in
+lib/utils/config-defs.js.  These must not be changed.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>See npm help 7 <emphasis remap='B'>npm-config</emphasis> for much much more information.</para>
+</refsect1>
+
+<refsect1 id='contributions'><title>CONTRIBUTIONS</title>
+<para>Patches welcome!</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>code:
+Read through npm help 7 <emphasis remap='B'>npm-coding-style</emphasis> if you plan to submit code.
+You don't have to agree with it, but you do have to follow it.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>docs:
+If you find an error in the documentation, edit the appropriate markdown
+file in the "doc" folder.  (Don't worry about generating the man page.)</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Contributors are listed in npm's <emphasis remap='B'>package.json</emphasis> file.  You can view them
+easily by doing <emphasis remap='B'>npm view npm contributors</emphasis>&thinsp;.</para>
+
+<para>If you would like to contribute, but don't know what to work on, check
+the issues list or ask on the mailing list.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><ulink url='http://github.com/npm/npm/issues'>http://github.com/npm/npm/issues</ulink></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm-@googlegroups.com</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='bugs'><title>BUGS</title>
+<para>When you find issues, please report them:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>web:
+<ulink url='http://github.com/npm/npm/issues'>http://github.com/npm/npm/issues</ulink></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>email:
+npm-@googlegroups.com</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Be sure to include <emphasis remap='I'>all</emphasis> of the output from the npm command that didn't work
+as expected.  The <emphasis remap='B'>npm-debug.log</emphasis> file is also helpful to provide.</para>
+
+<para>You can also look for isaacs in #node.js on irc://irc.freenode.net.  He
+will no doubt tell you to put the output in a gist or email.</para>
+</refsect1>
+
+<refsect1 id='author'><title>AUTHOR</title>
+<para>Isaac Z. Schlueter <emphasis remap='I'><ulink url='http://blog.izs.me/'>http://blog.izs.me/</ulink></emphasis> ::
+isaacs <emphasis remap='I'>https://github.com/isaacs/</emphasis> ::
+@izs <emphasis remap='I'><ulink url='http://twitter.com/izs'>http://twitter.com/izs</ulink></emphasis> ::
+i@izs.me</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help help</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 faq</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>README</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help install</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 index</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm apihelp npm</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

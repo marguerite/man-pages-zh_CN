@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmrc5'>
+<refmeta>
+<refentrytitle>NPMRC</refentrytitle>
+<manvolnum>5</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npmrc</refname>
+<refpurpose>The npm config files</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>npm gets its config settings from the command line, environment
+variables, and <emphasis remap='B'>npmrc</emphasis> files.</para>
+
+<para>The <emphasis remap='B'>npm config</emphasis> command can be used to update and edit the contents
+of the user and global npmrc files.</para>
+
+<para>For a list of available configuration options, see npm help 7 config.</para>
+</refsect1>
+
+<refsect1 id='files'><title>FILES</title>
+<para>The four relevant files are:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>per-project config file (/path/to/my/project/.npmrc)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>per-user config file (~/.npmrc)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>global config file ($PREFIX/etc/npmrc)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm builtin config file (/path/to/npm/npmrc)</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>All npm config files are an ini-formatted list of <emphasis remap='B'>key = value</emphasis>
+parameters.  Environment variables can be replaced using
+<emphasis remap='B'>${VARIABLE_NAME}</emphasis>&thinsp;. For example:</para>
+
+<literallayout remap='.nf'>
+prefix = ${HOME}/.npm-packages
+</literallayout> <!-- .fi -->
+
+<para>Each of these files is loaded, and config options are resolved in
+priority order.  For example, a setting in the userconfig file would
+override the setting in the globalconfig file.</para>
+
+<para>Array values are specified by adding "[]" after the key name. For
+example:</para>
+
+<literallayout remap='.nf'>
+key[] = "first value"
+key[] = "second value"
+</literallayout> <!-- .fi -->
+
+<para><emphasis remap='B'>NOTE:</emphasis> Because local (per-project or per-user) <emphasis remap='B'>&thinsp;.npmrc</emphasis> files can contain
+sensitive credentials, they must be readable and writable <emphasis remap='I'>only</emphasis> by your user
+account (i.e. must have a mode of <literal>0600</literal>), otherwise they <emphasis remap='I'>will be ignored by
+npm!</emphasis></para>
+
+<refsect2 id='perproject_config_file'><title>Per-project config file</title>
+
+<para>When working locally in a project, a <emphasis remap='B'>&thinsp;.npmrc</emphasis> file in the root of the
+project (ie, a sibling of <emphasis remap='B'>node_modules</emphasis> and <emphasis remap='B'>package.json</emphasis>) will set
+config values specific to this project.</para>
+
+<para>Note that this only applies to the root of the project that you're
+running npm in.  It has no effect when your module is published.  For
+example, you can't publish a module that forces itself to install
+globally, or in a different location.</para>
+
+<para>Additionally, this file is not read in global mode, such as when running
+<emphasis remap='B'>npm install -g</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='peruser_config_file'><title>Per-user config file</title>
+
+<para><emphasis remap='B'>$HOME/.npmrc</emphasis> (or the <emphasis remap='B'>userconfig</emphasis> param, if set in the environment
+or on the command line)</para>
+</refsect2>
+
+<refsect2 id='global_config_file'><title>Global config file</title>
+
+<para><emphasis remap='B'>$PREFIX/etc/npmrc</emphasis> (or the <emphasis remap='B'>globalconfig</emphasis> param, if set above):
+This file is an ini-file formatted list of <emphasis remap='B'>key = value</emphasis> parameters.
+Environment variables can be replaced as above.</para>
+</refsect2>
+
+<refsect2 id='builtin_config_file'><title>Built-in config file</title>
+
+<para><emphasis remap='B'>path/to/npm/itself/npmrc</emphasis></para>
+
+<para>This is an unchangeable "builtin" configuration file that npm keeps
+consistent across updates.  Set fields in here using the <emphasis remap='B'>&thinsp;./configure</emphasis>
+script that comes with npm.  This is primarily for distribution
+maintainers to override default configs in a standard and consistent
+manner.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help npm</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

@@ -1,0 +1,1964 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-01-17 16:30+0800\n"
+"PO-Revision-Date: 2014-08-07 02:13+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: rpm.8.xml:11(date) rpm.8.xml:15(refmiscinfo)
+msgid "09 June 2002"
+msgstr "2002 年 6 月 9 日"
+
+#: rpm.8.xml:13(refentrytitle)
+msgid "RPM"
+msgstr "rpm"
+
+#: rpm.8.xml:14(manvolnum) rpm.8.xml:1223(manvolnum) rpm.8.xml:1224(manvolnum)
+#: rpm.8.xml:1225(manvolnum) rpm.8.xml:1226(manvolnum)
+#: rpm.8.xml:1227(manvolnum) rpm.8.xml:1228(manvolnum)
+msgid "8"
+msgstr "8"
+
+#: rpm.8.xml:16(refmiscinfo)
+msgid "Red Hat, Inc."
+msgstr "Red Hat, Inc."
+
+#: rpm.8.xml:19(refname) rpm.8.xml:1073(emphasis) rpm.8.xml:1083(emphasis)
+#: rpm.8.xml:1089(emphasis)
+msgid "rpm"
+msgstr "rpm"
+
+#: rpm.8.xml:20(refpurpose)
+msgid "RPM Package Manager"
+msgstr "RPM 软件包管理器"
+
+#: rpm.8.xml:29(title)
+msgid "QUERYING AND VERIFYING PACKAGES:"
+msgstr "查询和校验软件包："
+
+#: rpm.8.xml:33(para) rpm.8.xml:578(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-q|--query</option>} "
+"[<emphasis remap=\"B\">select-options</emphasis>] [<emphasis remap=\"B"
+"\">query-options</emphasis>]"
+msgstr ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-q|--query</option>} "
+"[<emphasis remap=\"B\">选择选项</emphasis>] [<emphasis remap=\"B\">查询选项</"
+"emphasis>]"
+
+#: rpm.8.xml:37(para) rpm.8.xml:970(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-V|--verify</option>} "
+"[<emphasis remap=\"B\">select-options</emphasis>] [<emphasis remap=\"B"
+"\">verify-options</emphasis>]"
+msgstr ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-V|--verify</option>} "
+"[<emphasis remap=\"B\">选择选项</emphasis>] [<emphasis remap=\"B\">校验选项</"
+"emphasis>]"
+
+#: rpm.8.xml:42(title)
+msgid "INSTALLING, UPGRADING, AND REMOVING PACKAGES:"
+msgstr "安装、升级和移除软件包："
+
+#: rpm.8.xml:46(para) rpm.8.xml:264(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-i|--install</option>} "
+"[<emphasis remap=\"B\">install-options</emphasis>] <emphasis remap=\"I"
+"\">PACKAGE_FILE</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+msgstr ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-i|--install</option>} "
+"[<emphasis remap=\"B\">安装选项</emphasis>] <emphasis remap=\"I\">软件包文件"
+"</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+
+#: rpm.8.xml:50(para) rpm.8.xml:270(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-U|--upgrade</option>} "
+"[<emphasis remap=\"B\">install-options</emphasis>] <emphasis remap=\"I"
+"\">PACKAGE_FILE</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+msgstr ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-U|--upgrade</option>} "
+"[<emphasis remap=\"B\">安装选项</emphasis>] <emphasis remap=\"I\">软件包文件"
+"</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+
+#: rpm.8.xml:54(para) rpm.8.xml:277(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-F|--freshen</option>} "
+"[<emphasis remap=\"B\">install-options</emphasis>] <emphasis remap=\"I"
+"\">PACKAGE_FILE</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+msgstr ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-F|--freshen</option>} "
+"[<emphasis remap=\"B\">安装选项</emphasis>] <emphasis remap=\"I\">软件包文件"
+"</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+
+#: rpm.8.xml:58(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-e|--erase</option>} "
+"[<option>--allmatches</option>] [<option>--nodeps</option>] [<option>--"
+"noscripts</option>] [<option>--notriggers</option>] [<option>--test</"
+"option>] <emphasis remap=\"I\">PACKAGE_NAME</emphasis><emphasis remap=\"I"
+"\">&nbsp;...</emphasis>"
+msgstr ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-e|--erase</option>} "
+"[<option>--allmatches</option>] [<option>--nodeps</option>] [<option>--"
+"noscripts</option>] [<option>--notriggers</option>] [<option>--test</"
+"option>] <emphasis remap=\"I\">软件包名</emphasis><emphasis remap=\"I"
+"\">&nbsp;...</emphasis>"
+
+#: rpm.8.xml:63(title)
+msgid "MISCELLANEOUS:"
+msgstr "杂项："
+
+#: rpm.8.xml:67(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>--querytags|--showrc</option>}"
+msgstr ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>--querytags|--showrc</option>}"
+
+#: rpm.8.xml:71(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>--setperms|--setugids</"
+"option>} <emphasis remap=\"I\">PACKAGE_NAME</emphasis><emphasis remap=\"I"
+"\"> ...</emphasis>"
+msgstr ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>--setperms|--setugids</"
+"option>} <emphasis remap=\"I\">软件包名</emphasis><emphasis remap=\"I\"> ..."
+"</emphasis>"
+
+#: rpm.8.xml:75(title)
+msgid "select-options"
+msgstr "选择选项"
+
+#: rpm.8.xml:79(para)
+msgid ""
+"[<emphasis remap=\"I\">PACKAGE_NAME</emphasis>] [<option>-a,--all</option>] "
+"[<option>-f,--file </option><emphasis remap=\"I\">FILE</emphasis>] [<option>-"
+"g,--group </option><emphasis remap=\"I\">GROUP</emphasis>] {<option>-p,--"
+"package </option><emphasis remap=\"I\">PACKAGE_FILE</emphasis>] [<option>--"
+"hdrid </option><emphasis remap=\"I\">SHA1</emphasis>] [<option>--pkgid </"
+"option><emphasis remap=\"I\">MD5</emphasis>] [<option>--tid </"
+"option><emphasis remap=\"I\">TID</emphasis>] [<option>--querybynumber </"
+"option><emphasis remap=\"I\">HDRNUM</emphasis>] [<option>--triggeredby </"
+"option><emphasis remap=\"I\">PACKAGE_NAME</emphasis>] [<option>--"
+"whatprovides </option><emphasis remap=\"I\">CAPABILITY</emphasis>] "
+"[<option>--whatrequires </option><emphasis remap=\"I\">CAPABILITY</emphasis>]"
+msgstr ""
+"[<emphasis remap=\"I\">软件包名</emphasis>] [<option>-a,--all</option>] "
+"[<option>-f,--file </option><emphasis remap=\"I\">文件</emphasis>] [<option>-"
+"g,--group </option><emphasis remap=\"I\">组</emphasis>] {<option>-p,--"
+"package </option><emphasis remap=\"I\">软件包文件</emphasis>] [<option>--"
+"hdrid </option><emphasis remap=\"I\">SHA1</emphasis>] [<option>--pkgid </"
+"option><emphasis remap=\"I\">MD5</emphasis>] [<option>--tid </"
+"option><emphasis remap=\"I\">TID</emphasis>] [<option>--querybynumber </"
+"option><emphasis remap=\"I\">HDRNUM</emphasis>] [<option>--triggeredby </"
+"option><emphasis remap=\"I\">软件包名</emphasis>] [<option>--whatprovides </"
+"option><emphasis remap=\"I\">功能</emphasis>] [<option>--whatrequires </"
+"option><emphasis remap=\"I\">功能</emphasis>]"
+
+#: rpm.8.xml:87(title)
+msgid "query-options"
+msgstr "查询选项"
+
+#: rpm.8.xml:91(para)
+msgid ""
+"[<option>--changelog</option>] [<option>-c,--configfiles</option>] "
+"[<option>--conflicts</option>] [<option>-d,--docfiles</option>] [<option>--"
+"dump</option>] [<option>--filesbypkg</option>] [<option>-i,--info</option>] "
+"[<option>--last</option>] [<option>-l,--list</option>] [<option>--obsoletes</"
+"option>] [<option>--provides</option>] [<option>--qf,--queryformat </"
+"option><emphasis remap=\"I\">QUERYFMT</emphasis>] [<option>-R,--requires</"
+"option>] [<option>--scripts</option>] [<option>-s,--state</option>] "
+"[<option>--triggers,--triggerscripts</option>]"
+msgstr ""
+"[<option>--changelog</option>] [<option>-c,--configfiles</option>] "
+"[<option>--conflicts</option>] [<option>-d,--docfiles</option>] [<option>--"
+"dump</option>] [<option>--filesbypkg</option>] [<option>-i,--info</option>] "
+"[<option>--last</option>] [<option>-l,--list</option>] [<option>--obsoletes</"
+"option>] [<option>--provides</option>] [<option>--qf,--queryformat </"
+"option><emphasis remap=\"I\">查询格式</emphasis>] [<option>-R,--requires</"
+"option>] [<option>--scripts</option>] [<option>-s,--state</option>] "
+"[<option>--triggers,--triggerscripts</option>]"
+
+#: rpm.8.xml:99(title)
+msgid "verify-options"
+msgstr "校验选项"
+
+#: rpm.8.xml:103(para)
+msgid ""
+"[<option>--nodeps</option>] [<option>--nofiles</option>] [<option>--"
+"noscripts</option>] [<option>--nodigest</option>] [<option>--nosignature</"
+"option>] [<option>--nolinkto</option>] [<option>--nofiledigest</option>] "
+"[<option>--nosize</option>] [<option>--nouser</option>] [<option>--nogroup</"
+"option>] [<option>--nomtime</option>] [<option>--nomode</option>] [<option>--"
+"nordev</option>] [<option>--nocaps</option>]"
+msgstr ""
+"[<option>--nodeps</option>] [<option>--nofiles</option>] [<option>--"
+"noscripts</option>] [<option>--nodigest</option>] [<option>--nosignature</"
+"option>] [<option>--nolinkto</option>] [<option>--nofiledigest</option>] "
+"[<option>--nosize</option>] [<option>--nouser</option>] [<option>--nogroup</"
+"option>] [<option>--nomtime</option>] [<option>--nomode</option>] [<option>--"
+"nordev</option>] [<option>--nocaps</option>]"
+
+#: rpm.8.xml:111(title)
+msgid "install-options"
+msgstr "安装选项"
+
+#: rpm.8.xml:115(para)
+msgid ""
+"[<option>--allfiles</option>] [<option>--badreloc</option>] [<option>--"
+"excludepath </option><emphasis remap=\"I\">OLDPATH</emphasis>] [<option>--"
+"excludedocs</option>] [<option>--force</option>] [<option>-h,--hash</"
+"option>] [<option>--ignoresize</option>] [<option>--ignorearch</option>] "
+"[<option>--ignoreos</option>] [<option>--includedocs</option>] [<option>--"
+"justdb</option>] [<option>--nocollections</option>] [<option>--nodeps</"
+"option>] [<option>--nodigest</option>] [<option>--nosignature</option>] "
+"[<option>--noorder</option>] [<option>--noscripts</option>] [<option>--"
+"notriggers</option>] [<option>--oldpackage</option>] [<option>--percent</"
+"option>] [<option>--prefix </option><emphasis remap=\"I\">NEWPATH</"
+"emphasis>] [<option>--relocate </option><emphasis remap=\"I\">OLDPATH</"
+"emphasis><emphasis remap=\"B\">=</emphasis><emphasis remap=\"I\">NEWPATH</"
+"emphasis>] [<option>--replacefiles</option>] [<option>--replacepkgs</"
+"option>] [<option>--test</option>]"
+msgstr ""
+"[<option>--allfiles</option>] [<option>--badreloc</option>] [<option>--"
+"excludepath </option><emphasis remap=\"I\">旧路径</emphasis>] [<option>--"
+"excludedocs</option>] [<option>--force</option>] [<option>-h,--hash</"
+"option>] [<option>--ignoresize</option>] [<option>--ignorearch</option>] "
+"[<option>--ignoreos</option>] [<option>--includedocs</option>] [<option>--"
+"justdb</option>] [<option>--nocollections</option>] [<option>--nodeps</"
+"option>] [<option>--nodigest</option>] [<option>--nosignature</option>] "
+"[<option>--noorder</option>] [<option>--noscripts</option>] [<option>--"
+"notriggers</option>] [<option>--oldpackage</option>] [<option>--percent</"
+"option>] [<option>--prefix </option><emphasis remap=\"I\">NEWPATH</"
+"emphasis>] [<option>--relocate </option><emphasis remap=\"I\">OLDPATH</"
+"emphasis><emphasis remap=\"B\">=</emphasis><emphasis remap=\"I\">新路径</"
+"emphasis>] [<option>--replacefiles</option>] [<option>--replacepkgs</"
+"option>] [<option>--test</option>]"
+
+#: rpm.8.xml:129(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: rpm.8.xml:130(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> is a powerful <emphasis remap=\"B"
+"\">Package Manager</emphasis>, which can be used to build, install, query, "
+"verify, update, and erase individual software packages. A <emphasis remap=\"B"
+"\">package</emphasis> consists of an archive of files and meta-data used to "
+"install and erase the archive files. The meta-data includes helper scripts, "
+"file attributes, and descriptive information about the package. <emphasis "
+"remap=\"B\">Packages</emphasis> come in two varieties: binary packages, used "
+"to encapsulate software to be installed, and source packages, containing the "
+"source code and recipe necessary to produce binary packages."
+msgstr ""
+"<emphasis remap=\"B\">rpm</emphasis> 是一个强力的<emphasis remap=\"B\">软件包"
+"管理器</emphasis>，可用于编译、安装、查询、校验、更新和抹去单个软件包。一个"
+"<emphasis remap=\"B\">软件包</emphasis> 由文件存档和用于安装/抹去存档文件的元"
+"数据组成。元数据包括助手脚本、文件属性和关于软件包的描述性信息。<emphasis "
+"remap=\"B\">软件包</emphasis>有两个变种：二进制软件包，用于封装要安装的软件; "
+"和源代码包，包含了产生二进制软件包所需的源代码和编译方法。"
+
+#: rpm.8.xml:142(para)
+msgid ""
+"One of the following basic modes must be selected: <emphasis remap=\"B"
+"\">Query</emphasis>, <emphasis remap=\"B\">Verify</emphasis>, <emphasis "
+"remap=\"B\">Install/Upgrade/Freshen</emphasis>, <emphasis remap=\"B"
+"\">Uninstall</emphasis>, <emphasis remap=\"B\">Set Owners/Groups</emphasis>, "
+"<emphasis remap=\"B\">Show Querytags</emphasis>, and <emphasis remap=\"B"
+"\">Show Configuration</emphasis>."
+msgstr ""
+"必须在以下基本模式中选择一种：<emphasis remap=\"B\">查询</emphasis>, "
+"<emphasis remap=\"B\">校验</emphasis>, <emphasis remap=\"B\">安装/升级/刷新</"
+"emphasis>, <emphasis remap=\"B\">卸载</emphasis>, <emphasis remap=\"B\">设置"
+"所有者/组</emphasis>, <emphasis remap=\"B\">显示查询标签 (Querytag)</"
+"emphasis>， 和<emphasis remap=\"B\">显示配置</emphasis>。"
+
+#: rpm.8.xml:151(title)
+msgid "GENERAL OPTIONS"
+msgstr "常规选项"
+
+#: rpm.8.xml:153(para)
+msgid "These options can be used in all the different modes."
+msgstr "这些选项可用于全部不同模式。"
+
+#: rpm.8.xml:156(option)
+msgid "-?, --help"
+msgstr "-?, --help"
+
+#: rpm.8.xml:158(para)
+msgid "Print a longer usage message then normal."
+msgstr "输出比正常长些的用法消息。"
+
+#: rpm.8.xml:162(option)
+msgid "--version"
+msgstr "--version"
+
+#: rpm.8.xml:164(para)
+msgid ""
+"Print a single line containing the version number of <emphasis remap=\"B"
+"\">rpm</emphasis> being used."
+msgstr ""
+
+#: rpm.8.xml:169(option)
+msgid "--quiet"
+msgstr ""
+
+#: rpm.8.xml:171(para)
+msgid ""
+"Print as little as possible - normally only error messages will be displayed."
+msgstr ""
+
+#: rpm.8.xml:176(option)
+msgid "-v"
+msgstr ""
+
+#: rpm.8.xml:178(para)
+msgid ""
+"Print verbose information - normally routine progress messages will be "
+"displayed."
+msgstr ""
+
+#: rpm.8.xml:183(option)
+msgid "-vv"
+msgstr ""
+
+#: rpm.8.xml:185(para)
+msgid "Print lots of ugly debugging information."
+msgstr ""
+
+#: rpm.8.xml:189(option)
+msgid "--rcfile"
+msgstr ""
+
+#: rpm.8.xml:189(emphasis)
+msgid "FILELIST"
+msgstr ""
+
+#: rpm.8.xml:191(para)
+msgid ""
+"Each of the files in the colon separated <emphasis remap=\"I\">FILELIST</"
+"emphasis> is read sequentially by <emphasis remap=\"B\">rpm</emphasis> for "
+"configuration information. Only the first file in the list must exist, and "
+"tildes will be expanded to the value of <emphasis remap=\"B\">$HOME</"
+"emphasis>. The default <emphasis remap=\"I\">FILELIST</emphasis> is "
+"<filename>/usr/lib/rpm/rpmrc</filename>:<filename>/usr/lib/rpm/redhat/rpmrc</"
+"filename>:<filename>/etc/rpmrc</filename>:<filename>~/.rpmrc</filename>."
+msgstr ""
+
+#: rpm.8.xml:202(option)
+msgid "--pipe"
+msgstr ""
+
+#: rpm.8.xml:202(emphasis)
+msgid "CMD"
+msgstr ""
+
+#: rpm.8.xml:204(para)
+msgid ""
+"Pipes the output of <emphasis remap=\"B\">rpm</emphasis> to the file "
+"<command>CMD</command>."
+msgstr ""
+
+#: rpm.8.xml:208(option)
+msgid "--dbpath"
+msgstr ""
+
+#: rpm.8.xml:208(emphasis) rpm.8.xml:215(emphasis)
+msgid "DIRECTORY"
+msgstr ""
+
+#: rpm.8.xml:210(para)
+msgid ""
+"Use the database in <emphasis remap=\"I\">DIRECTORY</emphasis> rather than "
+"the default path <filename>/var/lib/rpm</filename>"
+msgstr ""
+
+#: rpm.8.xml:215(option)
+msgid "--root"
+msgstr ""
+
+#: rpm.8.xml:217(para)
+msgid ""
+"Use the file system tree rooted at <emphasis remap=\"I\">DIRECTORY</"
+"emphasis> for all operations. Note that this means the database within "
+"<emphasis remap=\"I\">DIRECTORY</emphasis> will be used for dependency "
+"checks and any scriptlet(s) (e.g. <emphasis remap=\"B\">%post</emphasis> if "
+"installing, or <emphasis remap=\"B\">%prep</emphasis> if building, a "
+"package) will be run after a chroot(2) to <emphasis remap=\"I\">DIRECTORY</"
+"emphasis>."
+msgstr ""
+
+#: rpm.8.xml:228(option)
+msgid "-D, --define='"
+msgstr ""
+
+#: rpm.8.xml:228(emphasis)
+msgid "MACRO EXPR"
+msgstr ""
+
+#: rpm.8.xml:228(emphasis) rpm.8.xml:234(emphasis) rpm.8.xml:240(emphasis)
+msgid "'"
+msgstr ""
+
+#: rpm.8.xml:230(para)
+msgid ""
+"Defines <emphasis remap=\"I\">MACRO</emphasis> with value <emphasis remap=\"I"
+"\">EXPR</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:234(option)
+msgid "--undefine='"
+msgstr ""
+
+#: rpm.8.xml:234(replaceable)
+msgid "MACRO"
+msgstr ""
+
+#: rpm.8.xml:236(para)
+msgid "Undefines <emphasis remap=\"I\">MACRO</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:240(option)
+msgid "-E, --eval='"
+msgstr ""
+
+#: rpm.8.xml:240(emphasis)
+msgid "EXPR"
+msgstr ""
+
+#: rpm.8.xml:242(para)
+msgid "Prints macro expansion of <emphasis remap=\"I\">EXPR</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:248(title)
+msgid "INSTALL AND UPGRADE OPTIONS"
+msgstr ""
+
+#: rpm.8.xml:250(para)
+msgid ""
+"In these options, <emphasis remap=\"I\">PACKAGE_FILE</emphasis> can be "
+"either <emphasis remap=\"B\">rpm</emphasis> binary file or ASCII package "
+"manifest (see <emphasis remap=\"B\">PACKAGE SELECTION OPTIONS</emphasis>), "
+"and may be specified as an <emphasis remap=\"B\">ftp</emphasis> or <emphasis "
+"remap=\"B\">http</emphasis> URL, in which case the package will be "
+"downloaded before being installed. See <emphasis remap=\"B\">FTP/HTTP "
+"OPTIONS</emphasis> for information on <emphasis remap=\"B\">rpm</emphasis>'s "
+"internal <emphasis remap=\"B\">ftp</emphasis> and <emphasis remap=\"B"
+"\">http</emphasis> client support."
+msgstr ""
+
+#: rpm.8.xml:262(para)
+msgid "The general form of an rpm install command is"
+msgstr ""
+
+#: rpm.8.xml:266(para)
+msgid "This installs a new package."
+msgstr ""
+
+#: rpm.8.xml:268(para)
+msgid "The general form of an rpm upgrade command is"
+msgstr ""
+
+#: rpm.8.xml:272(para)
+msgid ""
+"This upgrades or installs the package currently installed to a newer "
+"version. This is the same as install, except all other version(s) of the "
+"package are removed after the new package is installed."
+msgstr ""
+
+#: rpm.8.xml:279(para)
+msgid ""
+"This will upgrade packages, but only ones for which an earlier version is "
+"installed."
+msgstr ""
+
+#: rpm.8.xml:284(option)
+msgid "--allfiles"
+msgstr ""
+
+#: rpm.8.xml:286(para)
+msgid ""
+"Installs or upgrades all the missingok files in the package, regardless if "
+"they exist."
+msgstr ""
+
+#: rpm.8.xml:291(option)
+msgid "--badreloc"
+msgstr ""
+
+#: rpm.8.xml:293(para)
+msgid ""
+"Used with <option>--relocate</option>, permit relocations on all file paths, "
+"not just those <emphasis remap=\"I\">OLDPATH</emphasis>'s included in the "
+"binary package relocation hint(s)."
+msgstr ""
+
+#: rpm.8.xml:299(option)
+msgid "--excludepath"
+msgstr ""
+
+#: rpm.8.xml:299(emphasis) rpm.8.xml:468(emphasis)
+msgid "OLDPATH"
+msgstr ""
+
+#: rpm.8.xml:301(para)
+msgid ""
+"Don't install files whose name begins with <emphasis remap=\"I\">OLDPATH</"
+"emphasis>."
+msgstr ""
+
+#: rpm.8.xml:306(option)
+msgid "--excludedocs"
+msgstr ""
+
+#: rpm.8.xml:308(para)
+msgid ""
+"Don't install any files which are marked as documentation (which includes "
+"man pages and texinfo documents)."
+msgstr ""
+
+#: rpm.8.xml:313(option)
+msgid "--force"
+msgstr ""
+
+#: rpm.8.xml:315(para)
+msgid ""
+"Same as using <option>--replacepkgs</option>, <option>--replacefiles</"
+"option>, and <option>--oldpackage</option>."
+msgstr ""
+
+#: rpm.8.xml:322(option)
+msgid "-h, --hash"
+msgstr ""
+
+#: rpm.8.xml:324(para)
+msgid ""
+"Print 50 hash marks as the package archive is unpacked. Use with <option>-"
+"v|--verbose</option> for a nicer display."
+msgstr ""
+
+#: rpm.8.xml:329(option)
+msgid "--ignoresize"
+msgstr ""
+
+#: rpm.8.xml:331(para)
+msgid ""
+"Don't check mount file systems for sufficient disk space before installing "
+"this package."
+msgstr ""
+
+#: rpm.8.xml:336(option)
+msgid "--ignorearch"
+msgstr ""
+
+#: rpm.8.xml:338(para)
+msgid ""
+"Allow installation or upgrading even if the architectures of the binary "
+"package and host don't match."
+msgstr ""
+
+#: rpm.8.xml:343(option)
+msgid "--ignoreos"
+msgstr ""
+
+#: rpm.8.xml:345(para)
+msgid ""
+"Allow installation or upgrading even if the operating systems of the binary "
+"package and host don't match."
+msgstr ""
+
+#: rpm.8.xml:350(option)
+msgid "--includedocs"
+msgstr ""
+
+#: rpm.8.xml:352(para)
+msgid "Install documentation files. This is the default behavior."
+msgstr ""
+
+#: rpm.8.xml:356(option)
+msgid "--justdb"
+msgstr ""
+
+#: rpm.8.xml:358(para)
+msgid "Update only the database, not the filesystem."
+msgstr ""
+
+#: rpm.8.xml:362(option) rpm.8.xml:994(option)
+msgid "--nodigest"
+msgstr ""
+
+#: rpm.8.xml:364(para) rpm.8.xml:996(para)
+msgid "Don't verify package or header digests when reading."
+msgstr ""
+
+#: rpm.8.xml:368(option)
+msgid "--nomanifest"
+msgstr ""
+
+#: rpm.8.xml:370(para)
+msgid "Don't process non-package files as manifests."
+msgstr ""
+
+#: rpm.8.xml:374(option) rpm.8.xml:1012(option)
+msgid "--nosignature"
+msgstr ""
+
+#: rpm.8.xml:376(para) rpm.8.xml:1014(para)
+msgid "Don't verify package or header signatures when reading."
+msgstr ""
+
+#: rpm.8.xml:380(option) rpm.8.xml:522(option) rpm.8.xml:988(option)
+msgid "--nodeps"
+msgstr ""
+
+#: rpm.8.xml:382(para)
+msgid "Don't do a dependency check before installing or upgrading a package."
+msgstr ""
+
+#: rpm.8.xml:387(option)
+msgid "--noorder"
+msgstr ""
+
+#: rpm.8.xml:389(para)
+msgid ""
+"Don't reorder the packages for an install. The list of packages would "
+"normally be reordered to satisfy dependencies."
+msgstr ""
+
+#: rpm.8.xml:394(option) rpm.8.xml:528(option) rpm.8.xml:1006(option)
+msgid "--noscripts"
+msgstr ""
+
+#: rpm.8.xml:395(option) rpm.8.xml:405(option)
+msgid "--nopre"
+msgstr ""
+
+#: rpm.8.xml:396(option) rpm.8.xml:406(option)
+msgid "--nopost"
+msgstr ""
+
+#: rpm.8.xml:397(option) rpm.8.xml:407(option) rpm.8.xml:529(option)
+#: rpm.8.xml:536(option)
+msgid "--nopreun"
+msgstr ""
+
+#: rpm.8.xml:398(option) rpm.8.xml:408(option) rpm.8.xml:530(option)
+#: rpm.8.xml:537(option)
+msgid "--nopostun"
+msgstr ""
+
+#: rpm.8.xml:399(option) rpm.8.xml:409(option)
+msgid "--nopretrans"
+msgstr ""
+
+#: rpm.8.xml:400(option) rpm.8.xml:410(option)
+msgid "--noposttrans"
+msgstr ""
+
+#: rpm.8.xml:402(para)
+msgid ""
+"Don't execute the scriptlet of the same name. The <option>--noscripts</"
+"option> option is equivalent to"
+msgstr ""
+
+#: rpm.8.xml:412(para)
+msgid ""
+"and turns off the execution of the corresponding <emphasis remap=\"B\">%pre</"
+"emphasis>, <emphasis remap=\"B\">%post</emphasis>, <emphasis remap=\"B\">"
+"%preun</emphasis>, <emphasis remap=\"B\">%postun</emphasis><emphasis remap="
+"\"B\">%pretrans</emphasis>, and <emphasis remap=\"B\">%posttrans</emphasis> "
+"scriptlet(s)."
+msgstr ""
+
+#: rpm.8.xml:423(option) rpm.8.xml:546(option)
+msgid "--notriggers"
+msgstr ""
+
+#: rpm.8.xml:424(option) rpm.8.xml:433(option)
+msgid "--notriggerin"
+msgstr ""
+
+#: rpm.8.xml:425(option) rpm.8.xml:434(option) rpm.8.xml:547(option)
+#: rpm.8.xml:553(option)
+msgid "--notriggerun"
+msgstr ""
+
+#: rpm.8.xml:426(option) rpm.8.xml:432(option)
+msgid "--notriggerprein"
+msgstr ""
+
+#: rpm.8.xml:427(option) rpm.8.xml:435(option) rpm.8.xml:548(option)
+#: rpm.8.xml:554(option)
+msgid "--notriggerpostun"
+msgstr ""
+
+#: rpm.8.xml:429(para) rpm.8.xml:550(para)
+msgid ""
+"Don't execute any trigger scriptlet of the named type. The <option>--"
+"notriggers</option> option is equivalent to"
+msgstr ""
+
+#: rpm.8.xml:437(para)
+msgid ""
+"and turns off execution of the corresponding <emphasis remap=\"B\">"
+"%triggerprein</emphasis>, <emphasis remap=\"B\">%triggerin</emphasis>, "
+"<emphasis remap=\"B\">%triggerun</emphasis>, and <emphasis remap=\"B\">"
+"%triggerpostun</emphasis> scriptlet(s)."
+msgstr ""
+
+#: rpm.8.xml:446(option)
+msgid "--oldpackage"
+msgstr ""
+
+#: rpm.8.xml:448(para)
+msgid "Allow an upgrade to replace a newer package with an older one."
+msgstr ""
+
+#: rpm.8.xml:452(option)
+msgid "--percent"
+msgstr ""
+
+#: rpm.8.xml:454(para)
+msgid ""
+"Print percentages as files are unpacked from the package archive. This is "
+"intended to make <emphasis remap=\"B\">rpm</emphasis> easy to run from other "
+"tools."
+msgstr ""
+
+#: rpm.8.xml:460(option)
+msgid "--prefix"
+msgstr ""
+
+#: rpm.8.xml:460(emphasis) rpm.8.xml:468(emphasis)
+msgid "NEWPATH"
+msgstr ""
+
+#: rpm.8.xml:462(para)
+msgid ""
+"For relocatable binary packages, translate all file paths that start with "
+"the installation prefix in the package relocation hint(s) to <emphasis remap="
+"\"I\">NEWPATH</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:468(option)
+msgid "--relocate"
+msgstr ""
+
+#: rpm.8.xml:468(emphasis)
+msgid "="
+msgstr ""
+
+#: rpm.8.xml:470(para)
+msgid ""
+"For relocatable binary packages, translate all file paths that start with "
+"<emphasis remap=\"I\">OLDPATH</emphasis> in the package relocation hint(s) "
+"to <emphasis remap=\"I\">NEWPATH</emphasis>. This option can be used "
+"repeatedly if several <emphasis remap=\"I\">OLDPATH</emphasis>'s in the "
+"package are to be relocated."
+msgstr ""
+
+#: rpm.8.xml:479(option)
+msgid "--replacefiles"
+msgstr ""
+
+#: rpm.8.xml:481(para)
+msgid ""
+"Install the packages even if they replace files from other, already "
+"installed, packages."
+msgstr ""
+
+#: rpm.8.xml:486(option)
+msgid "--replacepkgs"
+msgstr ""
+
+#: rpm.8.xml:488(para)
+msgid ""
+"Install the packages even if some of them are already installed on this "
+"system."
+msgstr ""
+
+#: rpm.8.xml:493(option) rpm.8.xml:563(option)
+msgid "--test"
+msgstr ""
+
+#: rpm.8.xml:495(para)
+msgid ""
+"Do not install the package, simply check for and report potential conflicts."
+msgstr ""
+
+#: rpm.8.xml:502(title)
+msgid "ERASE OPTIONS"
+msgstr ""
+
+#: rpm.8.xml:504(para)
+msgid "The general form of an rpm erase command is"
+msgstr ""
+
+#: rpm.8.xml:507(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> {<option>-e|--erase</option>} "
+"[<option>--allmatches</option>] [<option>--nodeps</option>] [<option>--"
+"noscripts</option>] [<option>--notriggers</option>] [<option>--test</"
+"option>] <emphasis remap=\"I\">PACKAGE_NAME</emphasis><emphasis remap=\"I"
+"\"> ...</emphasis>"
+msgstr ""
+
+#: rpm.8.xml:510(para)
+msgid "The following options may also be used:"
+msgstr ""
+
+#: rpm.8.xml:513(option)
+msgid "--allmatches"
+msgstr ""
+
+#: rpm.8.xml:515(para)
+msgid ""
+"Remove all versions of the package which match <emphasis remap=\"I"
+"\">PACKAGE_NAME</emphasis>. Normally an error is issued if <emphasis remap="
+"\"I\">PACKAGE_NAME</emphasis> matches multiple packages."
+msgstr ""
+
+#: rpm.8.xml:524(para)
+msgid "Don't check dependencies before uninstalling the packages."
+msgstr ""
+
+#: rpm.8.xml:532(para)
+msgid ""
+"Don't execute the scriptlet of the same name. The <option>--noscripts</"
+"option> option during package erase is equivalent to"
+msgstr ""
+
+#: rpm.8.xml:539(para)
+msgid ""
+"and turns off the execution of the corresponding <emphasis remap=\"B\">"
+"%preun</emphasis>, and <emphasis remap=\"B\">%postun</emphasis> scriptlet(s)."
+msgstr ""
+
+#: rpm.8.xml:556(para)
+msgid ""
+"and turns off execution of the corresponding <emphasis remap=\"B\">"
+"%triggerun</emphasis>, and <emphasis remap=\"B\">%triggerpostun</emphasis> "
+"scriptlet(s)."
+msgstr ""
+
+#: rpm.8.xml:565(para)
+msgid ""
+"Don't really uninstall anything, just go through the motions. Useful in "
+"conjunction with the <option>-vv</option> option for debugging."
+msgstr ""
+
+#: rpm.8.xml:573(title)
+msgid "QUERY OPTIONS"
+msgstr ""
+
+#: rpm.8.xml:575(para)
+msgid "The general form of an rpm query command is"
+msgstr ""
+
+#: rpm.8.xml:581(para)
+msgid ""
+"You may specify the format that package information should be printed in. To "
+"do this, you use the"
+msgstr ""
+
+#: rpm.8.xml:584(option)
+msgid "--qf|--queryformat"
+msgstr ""
+
+#: rpm.8.xml:584(emphasis)
+msgid "QUERYFMT"
+msgstr ""
+
+#: rpm.8.xml:586(para)
+msgid ""
+"option, followed by the <emphasis remap=\"I\">QUERYFMT</emphasis> format "
+"string. Query formats are modified versions of the standard <emphasis remap="
+"\"B\">printf(3)</emphasis> formatting. The format is made up of static "
+"strings (which may include standard C character escapes for newlines, tabs, "
+"and other special characters) and <emphasis remap=\"B\">printf(3)</emphasis> "
+"type formatters. As <emphasis remap=\"B\">rpm</emphasis> already knows the "
+"type to print, the type specifier must be omitted however, and replaced by "
+"the name of the header tag to be printed, enclosed by <emphasis remap=\"B"
+"\">{}</emphasis> characters. Tag names are case insensitive, and the leading "
+"<emphasis remap=\"B\">RPMTAG_</emphasis> portion of the tag name may be "
+"omitted as well."
+msgstr ""
+
+#: rpm.8.xml:599(para)
+msgid ""
+"Alternate output formats may be requested by following the tag with "
+"<emphasis remap=\"B\">:</emphasis><emphasis remap=\"I\">typetag</emphasis>. "
+"Currently, the following types are supported:"
+msgstr ""
+
+#: rpm.8.xml:604(emphasis)
+msgid ":armor"
+msgstr ""
+
+#: rpm.8.xml:606(para)
+msgid "Wrap a public key in ASCII armor."
+msgstr ""
+
+#: rpm.8.xml:610(emphasis)
+msgid ":arraysize"
+msgstr ""
+
+#: rpm.8.xml:612(para)
+msgid "Display number of elements in array tags."
+msgstr ""
+
+#: rpm.8.xml:616(emphasis)
+msgid ":base64"
+msgstr ""
+
+#: rpm.8.xml:618(para)
+msgid "Encode binary data using base64."
+msgstr ""
+
+#: rpm.8.xml:622(emphasis)
+msgid ":date"
+msgstr ""
+
+#: rpm.8.xml:624(para)
+msgid "Use strftime(3) \"%c\" format."
+msgstr ""
+
+#: rpm.8.xml:628(emphasis)
+msgid ":day"
+msgstr ""
+
+#: rpm.8.xml:630(para)
+msgid "Use strftime(3) \"%a %b %d %Y\" format."
+msgstr ""
+
+#: rpm.8.xml:634(emphasis)
+msgid ":depflags"
+msgstr ""
+
+#: rpm.8.xml:636(para)
+msgid "Format dependency comparison operator."
+msgstr ""
+
+#: rpm.8.xml:640(emphasis)
+msgid ":deptype"
+msgstr ""
+
+#: rpm.8.xml:642(para)
+msgid "Format dependency type."
+msgstr ""
+
+#: rpm.8.xml:646(emphasis)
+msgid ":expand"
+msgstr ""
+
+#: rpm.8.xml:648(para)
+msgid "Perform macro expansion."
+msgstr ""
+
+#: rpm.8.xml:652(emphasis)
+msgid ":fflags"
+msgstr ""
+
+#: rpm.8.xml:654(para)
+msgid "Format file flags."
+msgstr ""
+
+#: rpm.8.xml:658(emphasis)
+msgid ":fstate"
+msgstr ""
+
+#: rpm.8.xml:660(para)
+msgid "Format file state."
+msgstr ""
+
+#: rpm.8.xml:664(emphasis)
+msgid ":fstatus"
+msgstr ""
+
+#: rpm.8.xml:666(para)
+msgid "Format file verify status."
+msgstr ""
+
+#: rpm.8.xml:670(emphasis)
+msgid ":hex"
+msgstr ""
+
+#: rpm.8.xml:672(para)
+msgid "Format in hexadecimal."
+msgstr ""
+
+#: rpm.8.xml:676(emphasis)
+msgid ":octal"
+msgstr ""
+
+#: rpm.8.xml:678(para)
+msgid "Format in octal."
+msgstr ""
+
+#: rpm.8.xml:682(emphasis)
+msgid ":perms"
+msgstr ""
+
+#: rpm.8.xml:684(para)
+msgid "Format file permissions."
+msgstr ""
+
+#: rpm.8.xml:688(emphasis)
+msgid ":pgpsig"
+msgstr ""
+
+#: rpm.8.xml:690(para)
+msgid "Display signature fingerprint and time."
+msgstr ""
+
+#: rpm.8.xml:694(emphasis)
+msgid ":shescape"
+msgstr ""
+
+#: rpm.8.xml:696(para)
+msgid "Escape single quotes for use in a script."
+msgstr ""
+
+#: rpm.8.xml:700(emphasis)
+msgid ":triggertype"
+msgstr ""
+
+#: rpm.8.xml:702(para)
+msgid "Display trigger suffix."
+msgstr ""
+
+#: rpm.8.xml:706(emphasis)
+msgid ":vflags"
+msgstr ""
+
+#: rpm.8.xml:708(para)
+msgid "File verification flags."
+msgstr ""
+
+#: rpm.8.xml:712(emphasis)
+msgid ":xml"
+msgstr ""
+
+#: rpm.8.xml:714(para)
+msgid "Wrap data in simple xml markup."
+msgstr ""
+
+#: rpm.8.xml:716(para)
+msgid ""
+"For example, to print only the names of the packages queried, you could use "
+"<emphasis remap=\"B\">%{NAME}</emphasis> as the format string. To print the "
+"packages name and distribution information in two columns, you could use "
+"<emphasis remap=\"B\">%-30{NAME}%{DISTRIBUTION}</emphasis>. <emphasis remap="
+"\"B\">rpm</emphasis> will print a list of all of the tags it knows about "
+"when it is invoked with the <option>--querytags</option> argument."
+msgstr ""
+
+#: rpm.8.xml:723(para)
+msgid ""
+"There are two subsets of options for querying: package selection, and "
+"information selection."
+msgstr ""
+
+#: rpm.8.xml:730(title)
+msgid "PACKAGE SELECTION OPTIONS:"
+msgstr ""
+
+#: rpm.8.xml:734(emphasis) rpm.8.xml:821(emphasis) rpm.8.xml:1083(replaceable)
+#: rpm.8.xml:1089(replaceable)
+msgid "PACKAGE_NAME"
+msgstr ""
+
+#: rpm.8.xml:736(para)
+msgid ""
+"Query installed package named <emphasis remap=\"I\">PACKAGE_NAME</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:740(option)
+msgid "-a, --all"
+msgstr ""
+
+#: rpm.8.xml:742(para)
+msgid "Query all installed packages."
+msgstr ""
+
+#: rpm.8.xml:746(option)
+msgid "-f, --file"
+msgstr ""
+
+#: rpm.8.xml:746(emphasis)
+msgid "FILE"
+msgstr ""
+
+#: rpm.8.xml:748(para)
+msgid "Query package owning <emphasis remap=\"I\">FILE</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:752(option)
+msgid "-g, --group"
+msgstr ""
+
+#: rpm.8.xml:752(emphasis)
+msgid "GROUP"
+msgstr ""
+
+#: rpm.8.xml:754(para)
+msgid ""
+"Query packages with the group of <emphasis remap=\"I\">GROUP</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:758(option)
+msgid "--hdrid"
+msgstr ""
+
+#: rpm.8.xml:758(emphasis)
+msgid "SHA1"
+msgstr ""
+
+#: rpm.8.xml:760(para)
+msgid ""
+"Query package that contains a given header identifier, i.e. the <emphasis "
+"remap=\"I\">SHA1</emphasis> digest of the immutable header region."
+msgstr ""
+
+#: rpm.8.xml:765(option)
+msgid "-p, --package"
+msgstr ""
+
+#: rpm.8.xml:765(emphasis)
+msgid "PACKAGE_FILE"
+msgstr ""
+
+#: rpm.8.xml:767(para)
+msgid ""
+"Query an (uninstalled) package <emphasis remap=\"I\">PACKAGE_FILE</"
+"emphasis>. The <emphasis remap=\"I\">PACKAGE_FILE</emphasis> may be "
+"specified as an <emphasis remap=\"B\">ftp</emphasis> or <emphasis remap=\"B"
+"\">http</emphasis> style URL, in which case the package header will be "
+"downloaded and queried. See <emphasis remap=\"B\">FTP/HTTP OPTIONS</"
+"emphasis> for information on <emphasis remap=\"B\">rpm</emphasis>'s internal "
+"<emphasis remap=\"B\">ftp</emphasis> and <emphasis remap=\"B\">http</"
+"emphasis> client support. The <emphasis remap=\"I\">PACKAGE_FILE</emphasis> "
+"argument(s), if not a binary package, will be interpreted as an ASCII "
+"package manifest unless <option>--nomanifest</option> option is used. In "
+"manifests, comments are permitted, starting with a '#', and each line of a "
+"package manifest file may include white space separated glob expressions, "
+"including URL's, that will be expanded to paths that are substituted in "
+"place of the package manifest as additional <emphasis remap=\"I"
+"\">PACKAGE_FILE</emphasis> arguments to the query."
+msgstr ""
+
+#: rpm.8.xml:787(option)
+msgid "--pkgid"
+msgstr ""
+
+#: rpm.8.xml:787(emphasis)
+msgid "MD5"
+msgstr ""
+
+#: rpm.8.xml:789(para)
+msgid ""
+"Query package that contains a given package identifier, i.e. the <emphasis "
+"remap=\"I\">MD5</emphasis> digest of the combined header and payload "
+"contents."
+msgstr ""
+
+#: rpm.8.xml:795(option)
+msgid "--querybynumber"
+msgstr ""
+
+#: rpm.8.xml:795(emphasis)
+msgid "HDRNUM"
+msgstr ""
+
+#: rpm.8.xml:797(para)
+msgid ""
+"Query the <emphasis remap=\"I\">HDRNUM</emphasis>th database entry directly; "
+"this is useful only for debugging."
+msgstr ""
+
+#: rpm.8.xml:802(option)
+msgid "--specfile"
+msgstr ""
+
+#: rpm.8.xml:802(emphasis)
+msgid "SPECFILE"
+msgstr ""
+
+#: rpm.8.xml:804(para)
+msgid ""
+"Parse and query <emphasis remap=\"I\">SPECFILE</emphasis> as if it were a "
+"package. Although not all the information (e.g. file lists) is available, "
+"this type of query permits rpm to be used to extract information from spec "
+"files without having to write a specfile parser."
+msgstr ""
+
+#: rpm.8.xml:812(option)
+msgid "--tid"
+msgstr ""
+
+#: rpm.8.xml:812(emphasis)
+msgid "TID"
+msgstr ""
+
+#: rpm.8.xml:814(para)
+msgid ""
+"Query package(s) that have a given <emphasis remap=\"I\">TID</emphasis> "
+"transaction identifier. A unix time stamp is currently used as a transaction "
+"identifier. All package(s) installed or erased within a single transaction "
+"have a common identifier."
+msgstr ""
+
+#: rpm.8.xml:821(option)
+msgid "--triggeredby"
+msgstr ""
+
+#: rpm.8.xml:823(para)
+msgid ""
+"Query packages that are triggered by package(s) <emphasis remap=\"I"
+"\">PACKAGE_NAME</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:828(option)
+msgid "--whatprovides"
+msgstr ""
+
+#: rpm.8.xml:828(emphasis) rpm.8.xml:834(emphasis)
+msgid "CAPABILITY"
+msgstr ""
+
+#: rpm.8.xml:830(para)
+msgid ""
+"Query all packages that provide the <emphasis remap=\"I\">CAPABILITY</"
+"emphasis> capability."
+msgstr ""
+
+#: rpm.8.xml:834(option)
+msgid "--whatrequires"
+msgstr ""
+
+#: rpm.8.xml:836(para)
+msgid ""
+"Query all packages that require <emphasis remap=\"I\">CAPABILITY</emphasis> "
+"for proper functioning. Note that this does not return what requires a given "
+"package. A package usually provides multiple capabilities and file-names on "
+"which other packages may depend. To see the complete dependencies for a "
+"package, use <option>-e --test </option><emphasis remap=\"I\">PACKAGE_NAME</"
+"emphasis>"
+msgstr ""
+
+#: rpm.8.xml:847(title)
+msgid "PACKAGE QUERY OPTIONS:"
+msgstr ""
+
+#: rpm.8.xml:851(option)
+msgid "--changelog"
+msgstr ""
+
+#: rpm.8.xml:853(para)
+msgid "Display change information for the package."
+msgstr ""
+
+#: rpm.8.xml:857(option)
+msgid "-c, --configfiles"
+msgstr ""
+
+#: rpm.8.xml:859(para)
+msgid "List only configuration files (implies <option>-l</option>)."
+msgstr ""
+
+#: rpm.8.xml:863(option)
+msgid "--conflicts"
+msgstr ""
+
+#: rpm.8.xml:865(para)
+msgid "List capabilities this package conflicts with."
+msgstr ""
+
+#: rpm.8.xml:869(option)
+msgid "-d, --docfiles"
+msgstr ""
+
+#: rpm.8.xml:871(para)
+msgid "List only documentation files (implies <option>-l</option>)."
+msgstr ""
+
+#: rpm.8.xml:875(option)
+msgid "--dump"
+msgstr ""
+
+#: rpm.8.xml:877(para)
+msgid "Dump file information as follows (implies <option>-l</option>):"
+msgstr ""
+
+#: rpm.8.xml:881(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"path size mtime digest mode owner group isconfig isdoc rdev symlink\n"
+"\t\n"
+msgstr ""
+
+#: rpm.8.xml:889(option)
+msgid "--filesbypkg"
+msgstr ""
+
+#: rpm.8.xml:891(para)
+msgid "List all the files in each selected package."
+msgstr ""
+
+#: rpm.8.xml:895(option)
+msgid "-i, --info"
+msgstr ""
+
+#: rpm.8.xml:897(para)
+msgid ""
+"Display package information, including name, version, and description. This "
+"uses the <option>--queryformat</option> if one was specified."
+msgstr ""
+
+#: rpm.8.xml:902(option)
+msgid "--last"
+msgstr ""
+
+#: rpm.8.xml:904(para)
+msgid ""
+"Orders the package listing by install time such that the latest packages are "
+"at the top."
+msgstr ""
+
+#: rpm.8.xml:909(option)
+msgid "-L, --licensefiles"
+msgstr ""
+
+#: rpm.8.xml:911(para)
+msgid "List only license files (implies <option>-l</option>)."
+msgstr ""
+
+#: rpm.8.xml:915(option)
+msgid "-l, --list"
+msgstr ""
+
+#: rpm.8.xml:917(para)
+msgid "List files in package."
+msgstr ""
+
+#: rpm.8.xml:921(option)
+msgid "--obsoletes"
+msgstr ""
+
+#: rpm.8.xml:923(para)
+msgid "List packages this package obsoletes."
+msgstr ""
+
+#: rpm.8.xml:927(option)
+msgid "--provides"
+msgstr ""
+
+#: rpm.8.xml:929(para)
+msgid "List capabilities this package provides."
+msgstr ""
+
+#: rpm.8.xml:933(option)
+msgid "-R, --requires"
+msgstr ""
+
+#: rpm.8.xml:935(para)
+msgid "List capabilities on which this package depends."
+msgstr ""
+
+#: rpm.8.xml:939(option)
+msgid "--scripts"
+msgstr ""
+
+#: rpm.8.xml:941(para)
+msgid ""
+"List the package specific scriptlet(s) that are used as part of the "
+"installation and uninstallation processes."
+msgstr ""
+
+#: rpm.8.xml:946(option)
+msgid "-s, --state"
+msgstr ""
+
+#: rpm.8.xml:948(para)
+msgid ""
+"Display the <emphasis remap=\"I\">states</emphasis> of files in the package "
+"(implies <option>-l</option>). The state of each file is one of <emphasis "
+"remap=\"I\">normal</emphasis>, <emphasis remap=\"I\">not installed</"
+"emphasis>, or <emphasis remap=\"I\">replaced</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:956(option)
+msgid "--triggers, --triggerscripts"
+msgstr ""
+
+#: rpm.8.xml:958(para)
+msgid ""
+"Display the trigger scripts, if any, which are contained in the package."
+msgstr ""
+
+#: rpm.8.xml:965(title)
+msgid "VERIFY OPTIONS"
+msgstr ""
+
+#: rpm.8.xml:967(para)
+msgid "The general form of an rpm verify command is"
+msgstr ""
+
+#: rpm.8.xml:973(para)
+msgid ""
+"Verifying a package compares information about the installed files in the "
+"package with information about the files taken from the package metadata "
+"stored in the rpm database. Among other things, verifying compares the size, "
+"digest, permissions, type, owner and group of each file. Any discrepancies "
+"are displayed. Files that were not installed from the package, for example, "
+"documentation files excluded on installation using the \"<option>--"
+"excludedocs</option>\" option, will be silently ignored."
+msgstr ""
+
+#: rpm.8.xml:983(para)
+msgid ""
+"The package selection options are the same as for package querying "
+"(including package manifest files as arguments). Other options unique to "
+"verify mode are:"
+msgstr ""
+
+#: rpm.8.xml:990(para)
+msgid "Don't verify dependencies of packages."
+msgstr ""
+
+#: rpm.8.xml:1000(option)
+msgid "--nofiles"
+msgstr ""
+
+#: rpm.8.xml:1002(para)
+msgid "Don't verify any attributes of package files."
+msgstr ""
+
+#: rpm.8.xml:1008(para)
+msgid ""
+"Don't execute the <emphasis remap=\"B\">%verifyscript</emphasis> scriptlet "
+"(if any)."
+msgstr ""
+
+#: rpm.8.xml:1018(option)
+msgid "--nolinkto"
+msgstr ""
+
+#: rpm.8.xml:1019(term)
+msgid "<option>--nofiledigest</option> (formerly <option>--nomd5</option>)"
+msgstr "<option>--nofiledigest</option> (之前的 <option>--nomd5</option>)"
+
+#: rpm.8.xml:1020(option)
+msgid "--nosize"
+msgstr "--nosize"
+
+#: rpm.8.xml:1021(option)
+msgid "--nouser"
+msgstr "--nouser"
+
+#: rpm.8.xml:1022(option)
+msgid "--nogroup"
+msgstr "--nogroup"
+
+#: rpm.8.xml:1023(option)
+msgid "--nomtime"
+msgstr "--nomtime"
+
+#: rpm.8.xml:1024(option)
+msgid "--nomode"
+msgstr "--nomode"
+
+#: rpm.8.xml:1025(option)
+msgid "--nordev"
+msgstr "--nordev"
+
+#: rpm.8.xml:1027(para)
+msgid "Don't verify the corresponding file attribute."
+msgstr "不校验相关文件属性。"
+
+#: rpm.8.xml:1029(para)
+msgid ""
+"The format of the output is a string of 9 characters, a possible attribute "
+"marker:"
+msgstr "输出格式是一个 9 字符的字符串，可能出现的属性标记："
+
+#: rpm.8.xml:1033(emphasis)
+msgid "c"
+msgstr "c"
+
+#: rpm.8.xml:1033(emphasis)
+msgid "%config"
+msgstr "%config"
+
+#: rpm.8.xml:1034(emphasis)
+msgid "d"
+msgstr "d"
+
+#: rpm.8.xml:1034(emphasis)
+msgid "%doc"
+msgstr "%doc"
+
+#: rpm.8.xml:1035(emphasis)
+msgid "g"
+msgstr "g"
+
+#: rpm.8.xml:1035(emphasis)
+msgid "%ghost"
+msgstr "%ghost"
+
+#: rpm.8.xml:1036(emphasis)
+msgid "l"
+msgstr "l"
+
+#: rpm.8.xml:1036(emphasis)
+msgid "%license"
+msgstr "%license"
+
+#: rpm.8.xml:1037(emphasis)
+msgid "r"
+msgstr "r"
+
+#: rpm.8.xml:1037(emphasis)
+msgid "%readme"
+msgstr "%readme"
+
+#: rpm.8.xml:1032(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"<placeholder-1/> <placeholder-2/> configuration file.\n"
+"<placeholder-3/> <placeholder-4/> documentation file.\n"
+"<placeholder-5/> <placeholder-6/> file (i.e. the file contents are not included in the package payload).\n"
+"<placeholder-7/> <placeholder-8/> license file.\n"
+"<placeholder-9/> <placeholder-10/> readme file.\n"
+msgstr ""
+"\n"
+"<placeholder-1/> <placeholder-2/> 配置文件。\n"
+"<placeholder-3/> <placeholder-4/> 文档文件。\n"
+"<placeholder-5/> <placeholder-6/> 文件 (即文件内容不包含在软件包有效载荷中)。\n"
+"<placeholder-7/> <placeholder-8/> 许可证文件。\n"
+"<placeholder-9/> <placeholder-10/> readme 文件。\n"
+
+#. .fi
+#: rpm.8.xml:1040(para)
+msgid ""
+"from the package header, followed by the file name. Each of the 9 characters "
+"denotes the result of a comparison of attribute(s) of the file to the value "
+"of those attribute(s) recorded in the database. A single \"<literal>.</"
+"literal>\" (period) means the test passed, while a single \"<emphasis remap="
+"\"B\">?</emphasis>\" (question mark) indicates the test could not be "
+"performed (e.g. file permissions prevent reading). Otherwise, the "
+"(mnemonically em<emphasis remap=\"B\">B</emphasis>oldened) character denotes "
+"failure of the corresponding <option>--verify</option> test:"
+msgstr ""
+
+#: rpm.8.xml:1053(emphasis) rpm.8.xml:1053(filename)
+msgid "S"
+msgstr "S"
+
+#: rpm.8.xml:1054(emphasis)
+msgid "M"
+msgstr "M"
+
+#: rpm.8.xml:1055(literal)
+msgid "5"
+msgstr "5"
+
+#: rpm.8.xml:1056(emphasis)
+msgid "D"
+msgstr "D"
+
+#: rpm.8.xml:1057(emphasis)
+msgid "L"
+msgstr "L"
+
+#: rpm.8.xml:1058(emphasis)
+msgid "U"
+msgstr "U"
+
+#: rpm.8.xml:1059(emphasis)
+msgid "G"
+msgstr "G"
+
+#: rpm.8.xml:1060(emphasis)
+msgid "T"
+msgstr "T"
+
+#: rpm.8.xml:1061(emphasis)
+msgid "P"
+msgstr "P"
+
+#: rpm.8.xml:1052(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"<placeholder-1/> file <placeholder-2/>ize differs\n"
+"<placeholder-3/> <placeholder-4/>ode differs (includes permissions and file type)\n"
+"<placeholder-5/> digest (formerly MD<placeholder-6/> sum) differs\n"
+"<placeholder-7/> <placeholder-8/>evice major/minor number mismatch\n"
+"<placeholder-9/> read<placeholder-10/>ink(2) path mismatch\n"
+"<placeholder-11/> <placeholder-12/>ser ownership differs\n"
+"<placeholder-13/> <placeholder-14/>roup ownership differs\n"
+"<placeholder-15/> m<placeholder-16/>ime differs\n"
+"<placeholder-17/> ca<placeholder-18/>abilities differ\n"
+msgstr ""
+
+#: rpm.8.xml:1069(title)
+msgid "MISCELLANEOUS COMMANDS"
+msgstr ""
+
+#: rpm.8.xml:1073(option)
+msgid "--showrc"
+msgstr ""
+
+#: rpm.8.xml:1075(para)
+msgid ""
+"shows the values <emphasis remap=\"B\">rpm</emphasis> will use for all of "
+"the options are currently set in <emphasis remap=\"I\">rpmrc</emphasis> and "
+"<emphasis remap=\"I\">macros</emphasis> configuration file(s)."
+msgstr ""
+
+#: rpm.8.xml:1083(option)
+msgid "--setperms"
+msgstr ""
+
+#: rpm.8.xml:1085(para)
+msgid "sets permissions of files in the given package."
+msgstr ""
+
+#: rpm.8.xml:1089(option)
+msgid "--setugids"
+msgstr ""
+
+#: rpm.8.xml:1091(para)
+msgid "sets user/group ownership of files in the given package."
+msgstr ""
+
+#: rpm.8.xml:1098(title)
+msgid "FTP/HTTP OPTIONS"
+msgstr "FTP/HTTP 选项"
+
+#: rpm.8.xml:1100(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> can act as an FTP and/or HTTP client so "
+"that packages can be queried or installed from the internet. Package files "
+"for install, upgrade, and query operations may be specified as an <emphasis "
+"remap=\"B\">ftp</emphasis> or <emphasis remap=\"B\">http</emphasis> style "
+"URL:"
+msgstr ""
+
+#: rpm.8.xml:1108(para)
+msgid ""
+"<ulink url=\"ftp://USER\">ftp://USER</ulink>:PASSWORD@HOST:PORT/path/to/"
+"package.rpm"
+msgstr ""
+
+#: rpm.8.xml:1110(para)
+msgid ""
+"If the <emphasis remap=\"B\">:PASSWORD</emphasis> portion is omitted, the "
+"password will be prompted for (once per user/hostname pair). If both the "
+"user and password are omitted, anonymous <emphasis remap=\"B\">ftp</"
+"emphasis> is used. In all cases, passive (PASV) <emphasis remap=\"B\">ftp</"
+"emphasis> transfers are performed."
+msgstr ""
+
+#: rpm.8.xml:1116(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> allows the following options to be used "
+"with ftp URLs:"
+msgstr ""
+
+#: rpm.8.xml:1120(option)
+msgid "--ftpproxy"
+msgstr ""
+
+#: rpm.8.xml:1120(emphasis) rpm.8.xml:1141(emphasis)
+msgid "HOST"
+msgstr ""
+
+#: rpm.8.xml:1122(para)
+msgid ""
+"The host <emphasis remap=\"I\">HOST</emphasis> will be used as a proxy "
+"server for all ftp transfers, which allows users to ftp through firewall "
+"machines which use proxy systems. This option may also be specified by "
+"configuring the macro <emphasis remap=\"B\">%_ftpproxy</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:1129(option)
+msgid "--ftpport"
+msgstr ""
+
+#: rpm.8.xml:1129(emphasis) rpm.8.xml:1150(emphasis)
+msgid "PORT"
+msgstr ""
+
+#: rpm.8.xml:1131(para)
+msgid ""
+"The TCP <emphasis remap=\"I\">PORT</emphasis> number to use for the ftp "
+"connection on the proxy ftp server instead of the default port. This option "
+"may also be specified by configuring the macro <emphasis remap=\"B\">"
+"%_ftpport</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:1136(para)
+msgid ""
+"<emphasis remap=\"B\">rpm</emphasis> allows the following options to be used "
+"with <emphasis remap=\"B\">http</emphasis> URLs:"
+msgstr ""
+
+#: rpm.8.xml:1141(option)
+msgid "--httpproxy"
+msgstr ""
+
+#: rpm.8.xml:1143(para)
+msgid ""
+"The host <emphasis remap=\"I\">HOST</emphasis> will be used as a proxy "
+"server for all <emphasis remap=\"B\">http</emphasis> transfers. This option "
+"may also be specified by configuring the macro <emphasis remap=\"B\">"
+"%_httpproxy</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:1150(option)
+msgid "--httpport"
+msgstr ""
+
+#: rpm.8.xml:1152(para)
+msgid ""
+"The TCP <emphasis remap=\"I\">PORT</emphasis> number to use for the "
+"<emphasis remap=\"B\">http</emphasis> connection on the proxy http server "
+"instead of the default port. This option may also be specified by "
+"configuring the macro <emphasis remap=\"B\">%_httpport</emphasis>."
+msgstr ""
+
+#: rpm.8.xml:1162(title)
+msgid "LEGACY ISSUES"
+msgstr ""
+
+#: rpm.8.xml:1164(title)
+msgid "Executing rpmbuild"
+msgstr ""
+
+#: rpm.8.xml:1166(para)
+msgid ""
+"The build modes of rpm are now resident in the <filename>/usr/bin/rpmbuild</"
+"filename> executable. Install the package containing <emphasis remap=\"B"
+"\">rpmbuild</emphasis> (usually <emphasis remap=\"B\">rpm-build</emphasis>) "
+"and see <citerefentry><refentrytitle>rpmbuild</refentrytitle><manvolnum>8</"
+"manvolnum></citerefentry> for documentation of all the <emphasis remap=\"B"
+"\">rpm</emphasis> build modes."
+msgstr ""
+
+#: rpm.8.xml:1173(title)
+msgid "FILES"
+msgstr "文件"
+
+#: rpm.8.xml:1175(title)
+msgid "rpmrc Configuration"
+msgstr "rpmrc 配置"
+
+#: rpm.8.xml:1178(filename)
+msgid "/usr/lib/rpm/rpmrc"
+msgstr "/usr/lib/rpm/rpmrc"
+
+#: rpm.8.xml:1179(filename)
+msgid "/usr/lib/rpm/redhat/rpmrc"
+msgstr "/usr/lib/rpm/redhat/rpmrc"
+
+#: rpm.8.xml:1180(filename)
+msgid "/etc/rpmrc"
+msgstr "/etc/rpmrc"
+
+#: rpm.8.xml:1181(filename)
+msgid "~/.rpmrc"
+msgstr "~/.rpmrc"
+
+#: rpm.8.xml:1185(title)
+msgid "Macro Configuration"
+msgstr "宏配置"
+
+#: rpm.8.xml:1188(filename)
+msgid "/usr/lib/rpm/macros"
+msgstr "/usr/lib/rpm/macros"
+
+#: rpm.8.xml:1189(filename)
+msgid "/usr/lib/rpm/redhat/macros"
+msgstr "/usr/lib/rpm/redhat/macros"
+
+#: rpm.8.xml:1190(filename)
+msgid "/etc/rpm/macros"
+msgstr "/etc/rpm/macros"
+
+#: rpm.8.xml:1191(filename)
+msgid "~/.rpmmacros"
+msgstr "~/.rpmmacros"
+
+#: rpm.8.xml:1195(title)
+msgid "Database"
+msgstr "数据库"
+
+#: rpm.8.xml:1198(filename)
+msgid "/var/lib/rpm/Basenames"
+msgstr "/var/lib/rpm/Basenames"
+
+#: rpm.8.xml:1199(filename)
+msgid "/var/lib/rpm/Conflictname"
+msgstr "/var/lib/rpm/Conflictname"
+
+#: rpm.8.xml:1200(filename)
+msgid "/var/lib/rpm/Dirnames"
+msgstr "/var/lib/rpm/Dirnames"
+
+#: rpm.8.xml:1201(filename)
+msgid "/var/lib/rpm/Group"
+msgstr "/var/lib/rpm/Group"
+
+#: rpm.8.xml:1202(filename)
+msgid "/var/lib/rpm/Installtid"
+msgstr "/var/lib/rpm/Installtid"
+
+#: rpm.8.xml:1203(filename)
+msgid "/var/lib/rpm/Name"
+msgstr "/var/lib/rpm/Name"
+
+#: rpm.8.xml:1204(filename)
+msgid "/var/lib/rpm/Obsoletename"
+msgstr "/var/lib/rpm/Obsoletename"
+
+#: rpm.8.xml:1205(filename)
+msgid "/var/lib/rpm/Packages"
+msgstr "/var/lib/rpm/Packages"
+
+#: rpm.8.xml:1206(filename)
+msgid "/var/lib/rpm/Providename"
+msgstr "/var/lib/rpm/Providename"
+
+#: rpm.8.xml:1207(filename)
+msgid "/var/lib/rpm/Requirename"
+msgstr "/var/lib/rpm/Requirename"
+
+#: rpm.8.xml:1208(filename)
+msgid "/var/lib/rpm/Sha1header"
+msgstr "/var/lib/rpm/Sha1header"
+
+#: rpm.8.xml:1209(filename)
+msgid "/var/lib/rpm/Sigmd5"
+msgstr "/var/lib/rpm/Sigmd5"
+
+#: rpm.8.xml:1210(filename)
+msgid "/var/lib/rpm/Triggername"
+msgstr "/var/lib/rpm/Triggername"
+
+#: rpm.8.xml:1214(title)
+msgid "Temporary"
+msgstr "临时数据"
+
+#: rpm.8.xml:1216(filename)
+msgid "/var/tmp/rpm*"
+msgstr "/var/tmp/rpm*"
+
+#: rpm.8.xml:1220(title)
+msgid "SEE ALSO"
+msgstr "继续阅读"
+
+#: rpm.8.xml:1222(refentrytitle)
+msgid "popt"
+msgstr "popt"
+
+#: rpm.8.xml:1222(manvolnum)
+msgid "3"
+msgstr "3"
+
+#: rpm.8.xml:1223(refentrytitle)
+msgid "rpm2cpio"
+msgstr "rpm2cpio"
+
+#: rpm.8.xml:1224(refentrytitle)
+msgid "rpmbuild"
+msgstr "rpmbuild"
+
+#: rpm.8.xml:1225(refentrytitle)
+msgid "rpmdb"
+msgstr "rpmdb"
+
+#: rpm.8.xml:1226(refentrytitle)
+msgid "rpmkeys"
+msgstr "rpmkeys"
+
+#: rpm.8.xml:1227(refentrytitle)
+msgid "rpmsign"
+msgstr "rpmsign"
+
+#: rpm.8.xml:1228(refentrytitle)
+msgid "rpmspec"
+msgstr "rpmspec"
+
+#: rpm.8.xml:1221(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"<citerefentry><placeholder-1/><placeholder-2/></citerefentry>,\n"
+"<citerefentry><placeholder-3/><placeholder-4/></citerefentry>,\n"
+"<citerefentry><placeholder-5/><placeholder-6/></citerefentry>,\n"
+"<citerefentry><placeholder-7/><placeholder-8/></citerefentry>,\n"
+"<citerefentry><placeholder-9/><placeholder-10/></citerefentry>,\n"
+"<citerefentry><placeholder-11/><placeholder-12/></citerefentry>,\n"
+"<citerefentry><placeholder-13/><placeholder-14/></citerefentry>,\n"
+msgstr ""
+"\n"
+"<citerefentry><placeholder-1/><placeholder-2/></citerefentry>,\n"
+"<citerefentry><placeholder-3/><placeholder-4/></citerefentry>,\n"
+"<citerefentry><placeholder-5/><placeholder-6/></citerefentry>,\n"
+"<citerefentry><placeholder-7/><placeholder-8/></citerefentry>,\n"
+"<citerefentry><placeholder-9/><placeholder-10/></citerefentry>,\n"
+"<citerefentry><placeholder-11/><placeholder-12/></citerefentry>,\n"
+"<citerefentry><placeholder-13/><placeholder-14/></citerefentry>,\n"
+
+#. .fi
+#: rpm.8.xml:1231(para)
+msgid ""
+"<userinput>rpm --help</userinput> - as rpm supports customizing the options "
+"via popt aliases it's impossible to guarantee that what's described in the "
+"manual matches what's available."
+msgstr ""
+
+#: rpm.8.xml:1236(ulink)
+msgid "http://www.rpm.org/"
+msgstr "http://www.rpm.org/"
+
+#: rpm.8.xml:1236(ulink)
+msgid "http://www.rpm.org/&gt;"
+msgstr "http://www.rpm.org/&gt;"
+
+#: rpm.8.xml:1236(emphasis)
+msgid "<placeholder-1/> &lt;URL:<placeholder-2/>"
+msgstr "<placeholder-1/> &lt;URL:<placeholder-2/>"
+
+#: rpm.8.xml:1240(title)
+msgid "AUTHORS"
+msgstr "作者"
+
+#: rpm.8.xml:1241(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"Marc Ewing &lt;marc@redhat.com&gt;\n"
+"Jeff Johnson &lt;jbj@redhat.com&gt;\n"
+"Erik Troan &lt;ewt@redhat.com&gt;\n"
+msgstr ""
+"\n"
+"Marc Ewing &lt;marc@redhat.com&gt;\n"
+"Jeff Johnson &lt;jbj@redhat.com&gt;\n"
+"Erik Troan &lt;ewt@redhat.com&gt;\n"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: rpm.8.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"

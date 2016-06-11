@@ -1,0 +1,91 @@
+# marguerite <marguerite@opensuse.org>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: 2015-12-30 10:00+0800\n"
+"Last-Translator: marguerite <marguerite@opensuse.org>\n"
+"Language-Team: Chinese <opensuse-zh@opensuse.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: npm-root.1.xml:7(refentrytitle)
+msgid "NPM-ROOT"
+msgstr "NPM-ROOT"
+
+#: npm-root.1.xml:8(manvolnum)
+msgid "1"
+msgstr "1"
+
+#: npm-root.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr "2015 年 11 月"
+
+#: npm-root.1.xml:12(refname)
+msgid "npm-root"
+msgstr "npm-root"
+
+#: npm-root.1.xml:13(refpurpose)
+msgid "Display npm root"
+msgstr "显示 npm 根"
+
+#: npm-root.1.xml:18(command)
+msgid "npm"
+msgstr "npm"
+
+#: npm-root.1.xml:18(replaceable)
+msgid "root"
+msgstr "root"
+
+#: npm-root.1.xml:19(arg)
+msgid "-g"
+msgstr "-g"
+
+#: npm-root.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: npm-root.1.xml:25(para)
+msgid ""
+"Print the effective <emphasis remap=\"B\">node_modules</emphasis> folder to "
+"standard out."
+msgstr "打印有效的 <emphasis remap=\"B\">node_modules</emphasis> 文件夹到标准输出"
+
+#: npm-root.1.xml:28(title)
+msgid "SEE ALSO"
+msgstr "参考"
+
+#: npm-root.1.xml:32(para)
+msgid "npm help prefix"
+msgstr "npm help prefix"
+
+#: npm-root.1.xml:35(para)
+msgid "npm help bin"
+msgstr "npm help bin"
+
+#: npm-root.1.xml:38(para)
+msgid "npm help 5 folders"
+msgstr "npm help 5 folders"
+
+#: npm-root.1.xml:41(para)
+msgid "npm help config"
+msgstr "npm help config"
+
+#: npm-root.1.xml:44(para)
+msgid "npm help 7 config"
+msgstr "npm help 7 config"
+
+#: npm-root.1.xml:47(para)
+msgid "npm help 5 npmrc"
+msgstr "npm help 5 npmrc"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-root.1.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2015"
+
+

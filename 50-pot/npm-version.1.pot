@@ -1,0 +1,304 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-version.1.xml:7(refentrytitle)
+msgid "NPM-VERSION"
+msgstr ""
+
+#: npm-version.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-version.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-version.1.xml:12(refname)
+msgid "npm-version"
+msgstr ""
+
+#: npm-version.1.xml:13(refpurpose)
+msgid "Bump a package version"
+msgstr ""
+
+#: npm-version.1.xml:18(command) npm-version.1.xml:26(replaceable)
+msgid "npm"
+msgstr ""
+
+#: npm-version.1.xml:18(replaceable) npm-version.1.xml:27(replaceable) npm-version.1.xml:37(replaceable)
+msgid "version"
+msgstr ""
+
+#: npm-version.1.xml:19(replaceable)
+msgid "&lt;newversion&gt;"
+msgstr ""
+
+#: npm-version.1.xml:19(replaceable)
+msgid "major"
+msgstr ""
+
+#: npm-version.1.xml:19(replaceable)
+msgid "minor"
+msgstr ""
+
+#: npm-version.1.xml:19(replaceable)
+msgid "patch"
+msgstr ""
+
+#: npm-version.1.xml:19(replaceable)
+msgid "premajor"
+msgstr ""
+
+#: npm-version.1.xml:19(replaceable)
+msgid "preminor"
+msgstr ""
+
+#: npm-version.1.xml:19(replaceable)
+msgid "prepatch"
+msgstr ""
+
+#: npm-version.1.xml:19(replaceable)
+msgid "prerelease"
+msgstr ""
+
+#: npm-version.1.xml:21(replaceable) npm-version.1.xml:28(replaceable) npm-version.1.xml:38(replaceable)
+msgid "'npm"
+msgstr ""
+
+#: npm-version.1.xml:22(arg)
+msgid "-v"
+msgstr ""
+
+#: npm-version.1.xml:22(arg)
+msgid "--version"
+msgstr ""
+
+#: npm-version.1.xml:23(replaceable)
+msgid "'"
+msgstr ""
+
+#: npm-version.1.xml:24(replaceable) npm-version.1.xml:32(replaceable) npm-version.1.xml:40(replaceable)
+msgid "to"
+msgstr ""
+
+#: npm-version.1.xml:25(replaceable)
+msgid "print"
+msgstr ""
+
+#: npm-version.1.xml:29(replaceable) npm-version.1.xml:33(replaceable)
+msgid "view"
+msgstr ""
+
+#: npm-version.1.xml:30(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-version.1.xml:31(replaceable)
+msgid "version'"
+msgstr ""
+
+#: npm-version.1.xml:34(replaceable)
+msgid "a"
+msgstr ""
+
+#: npm-version.1.xml:35(replaceable)
+msgid "package's"
+msgstr ""
+
+#: npm-version.1.xml:36(replaceable)
+msgid "published"
+msgstr ""
+
+#: npm-version.1.xml:39(replaceable)
+msgid "ls'"
+msgstr ""
+
+#: npm-version.1.xml:41(replaceable)
+msgid "inspect"
+msgstr ""
+
+#: npm-version.1.xml:42(replaceable)
+msgid "current"
+msgstr ""
+
+#: npm-version.1.xml:43(replaceable)
+msgid "package/dependency"
+msgstr ""
+
+#: npm-version.1.xml:44(replaceable)
+msgid "versions"
+msgstr ""
+
+#: npm-version.1.xml:49(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-version.1.xml:50(para)
+msgid "Run this in a package directory to bump the version and write the new data back to <emphasis remap=\"B\">package.json</emphasis> and, if present, <emphasis remap=\"B\">npm-shrinkwrap.json</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-version.1.xml:53(para)
+msgid "The <emphasis remap=\"B\">newversion</emphasis> argument should be a valid semver string, <emphasis remap=\"I\">or</emphasis> a valid second argument to semver.inc (one of <emphasis remap=\"B\">patch</emphasis>, <emphasis remap=\"B\">minor</emphasis>, <emphasis remap=\"B\">major</emphasis>, <emphasis remap=\"B\">prepatch</emphasis>, <emphasis remap=\"B\">preminor</emphasis>, <emphasis remap=\"B\">premajor</emphasis>, <emphasis remap=\"B\">prerelease</emphasis>). In the second case, the existing version will be incremented by 1 in the specified field."
+msgstr ""
+
+#: npm-version.1.xml:58(para)
+msgid "If run in a git repo, it will also create a version commit and tag. This behavior is controlled by <emphasis remap=\"B\">git-tag-version</emphasis> (see below), and can be disabled on the command line by running <userinput>npm --no-git-tag-version version</userinput>&thinsp;. It will fail if the working directory is not clean, unless the <option>-f</option> or <option>--force</option> flag is set."
+msgstr ""
+
+#: npm-version.1.xml:64(para)
+msgid "If supplied with <option>-m</option> or <option>--message</option> config option, npm will use it as a commit message when creating a version commit. If the <emphasis remap=\"B\">message</emphasis> config contains <emphasis remap=\"B\">%s</emphasis> then that will be replaced with the resulting version number. For example:"
+msgstr ""
+
+#: npm-version.1.xml:69(literallayout)
+#, no-wrap
+msgid "\nnpm version patch -m \"Upgrade to %s for reasons\"\n"
+msgstr ""
+
+#. .fi
+#: npm-version.1.xml:73(para)
+msgid "If the <emphasis remap=\"B\">sign-git-tag</emphasis> config is set, then the tag will be signed using the <option>-s</option> flag to git. Note that you must have a default GPG key set up in your git config for this to work properly. For example:"
+msgstr ""
+
+#: npm-version.1.xml:82(ulink)
+msgid "http://blog.izs.me/"
+msgstr ""
+
+#: npm-version.1.xml:77(literallayout)
+#, no-wrap
+msgid "\n$ npm config set sign-git-tag true\n$ npm version patch\n\nYou need a passphrase to unlock the secret key for\nuser: \"isaacs (<placeholder-1/>) &lt;i@izs.me&gt;\"\n2048-bit RSA key, ID 6C481CF6, created 2010-08-31\n\nEnter passphrase:\n"
+msgstr ""
+
+#. .fi
+#: npm-version.1.xml:88(para)
+msgid "If <emphasis remap=\"B\">preversion</emphasis>, <emphasis remap=\"B\">version</emphasis>, or <emphasis remap=\"B\">postversion</emphasis> are in the <emphasis remap=\"B\">scripts</emphasis> property of the package.json, they will be executed as part of running <emphasis remap=\"B\">npm version</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-version.1.xml:91(para)
+msgid "The exact order of execution is as follows:"
+msgstr ""
+
+#: npm-version.1.xml:95(term)
+msgid "1."
+msgstr ""
+
+#: npm-version.1.xml:97(para)
+msgid "Check to make sure the git working directory is clean before we get started. Your scripts may add files to the commit in future steps. This step is skipped if the <option>--force</option> flag is set."
+msgstr ""
+
+#: npm-version.1.xml:103(term)
+msgid "2."
+msgstr ""
+
+#: npm-version.1.xml:105(para)
+msgid "Run the <emphasis remap=\"B\">preversion</emphasis> script. These scripts have access to the old <emphasis remap=\"B\">version</emphasis> in package.json. A typical use would be running your full test suite before deploying. Any files you want added to the commit should be explicitly added using <emphasis remap=\"B\">git add</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-version.1.xml:111(term)
+msgid "3."
+msgstr ""
+
+#: npm-version.1.xml:113(para)
+msgid "Bump <emphasis remap=\"B\">version</emphasis> in <emphasis remap=\"B\">package.json</emphasis> as requested (<emphasis remap=\"B\">patch</emphasis>, <emphasis remap=\"B\">minor</emphasis>, <emphasis remap=\"B\">major</emphasis>, etc)."
+msgstr ""
+
+#: npm-version.1.xml:117(term)
+msgid "4."
+msgstr ""
+
+#: npm-version.1.xml:119(para)
+msgid "Run the <emphasis remap=\"B\">version</emphasis> script. These scripts have access to the new <emphasis remap=\"B\">version</emphasis> in package.json (so they can incorporate it into file headers in generated files for example). Again, scripts should explicitly add generated files to the commit using <emphasis remap=\"B\">git add</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-version.1.xml:125(term)
+msgid "5."
+msgstr ""
+
+#: npm-version.1.xml:127(para)
+msgid "Commit and tag."
+msgstr ""
+
+#: npm-version.1.xml:131(term)
+msgid "6."
+msgstr ""
+
+#: npm-version.1.xml:133(para)
+msgid "Run the <emphasis remap=\"B\">postversion</emphasis> script. Use it to clean up the file system or automatically push the commit and/or tag."
+msgstr ""
+
+#. remap='RE'
+#: npm-version.1.xml:141(para)
+msgid "Take the following example:"
+msgstr ""
+
+#: npm-version.1.xml:143(literallayout)
+#, no-wrap
+msgid "\n\"scripts\": {\n  \"preversion\": \"npm test\",\n  \"version\": \"npm run build &amp;&amp; git add -A dist\",\n  \"postversion\": \"git push &amp;&amp; git push --tags &amp;&amp; rm -rf build/temp\"\n}\n"
+msgstr ""
+
+#. .fi
+#: npm-version.1.xml:151(para)
+msgid "This runs all your tests, and proceeds only if they pass. Then runs your <emphasis remap=\"B\">build</emphasis> script, and adds everything in the <emphasis remap=\"B\">dist</emphasis> directory to the commit. After the commit, it pushes the new commit and tag up to the server, and deletes the <emphasis remap=\"B\">build/temp</emphasis> directory."
+msgstr ""
+
+#: npm-version.1.xml:156(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-version.1.xml:158(title)
+msgid "git-tag-version"
+msgstr ""
+
+#: npm-version.1.xml:162(para)
+msgid "Default: true"
+msgstr ""
+
+#: npm-version.1.xml:165(para)
+msgid "Type: Boolean"
+msgstr ""
+
+#. remap='RE'
+#: npm-version.1.xml:171(para)
+msgid "Commit and tag the version change."
+msgstr ""
+
+#: npm-version.1.xml:175(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-version.1.xml:179(para)
+msgid "npm help init"
+msgstr ""
+
+#: npm-version.1.xml:182(para)
+msgid "npm help run-script"
+msgstr ""
+
+#: npm-version.1.xml:185(para)
+msgid "npm help 7 scripts"
+msgstr ""
+
+#: npm-version.1.xml:188(para)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm-version.1.xml:191(para)
+msgid "npm help 7 semver"
+msgstr ""
+
+#: npm-version.1.xml:194(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-version.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,475 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:47+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: semver.7.xml:7(refentrytitle)
+msgid "SEMVER"
+msgstr ""
+
+#: semver.7.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: semver.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: semver.7.xml:12(refname)
+msgid "semver"
+msgstr ""
+
+#: semver.7.xml:13(refpurpose)
+msgid "The semantic versioner for npm"
+msgstr ""
+
+#: semver.7.xml:17(title)
+msgid "Usage"
+msgstr ""
+
+#: semver.7.xml:18(screen)
+#, no-wrap
+msgid "\n$ npm install semver\n\nsemver.valid('1.2.3') // '1.2.3'\nsemver.valid('a.b.c') // null\nsemver.clean('  =v1.2.3   ') // '1.2.3'\nsemver.satisfies('1.2.3', '1.x || &gt;=2.5.0 || 5.0.0 - 7.2.3') // true\nsemver.gt('1.2.3', '9.8.7') // false\nsemver.lt('1.2.3', '9.8.7') // true\n"
+msgstr ""
+
+#. .fi
+#: semver.7.xml:29(para)
+msgid "As a command-line utility:"
+msgstr ""
+
+#: semver.7.xml:31(programlisting)
+#, no-wrap
+msgid "\n$ semver -h\n\nUsage: semver &lt;version&gt; [&lt;version&gt; [...]] [-r &lt;range&gt; | -i &lt;inc&gt; | --preid &lt;identifier&gt; | -l | -rv]\nTest if version(s) satisfy the supplied range(s), and sort them.\n\nMultiple versions or ranges may be supplied, unless increment\noption is specified.  In that case, only a single version may\nbe used, and it is incremented by the specified level\n\nProgram exits successfully if any valid version satisfies\nall supplied ranges, and prints all satisfying versions.\n\nIf no versions are valid, or ranges are not satisfied,\nthen exits failure.\n\nVersions are printed in ascending order, so supplying\nmultiple versions to the utility will just sort them.\n"
+msgstr ""
+
+#: semver.7.xml:52(title)
+msgid "Versions"
+msgstr ""
+
+#: semver.7.xml:53(para)
+msgid "A \"version\" is described by the <emphasis remap=\"B\">v2.0.0</emphasis> specification found at &thinsp;<ulink url=\"http://semver.org/\">http://semver.org/&thinsp;</ulink>."
+msgstr ""
+
+#: semver.7.xml:56(para)
+msgid "A leading <emphasis remap=\"B\">\"=\"</emphasis> or <emphasis remap=\"B\">\"v\"</emphasis> character is stripped off and ignored."
+msgstr ""
+
+#: semver.7.xml:59(title) semver.7.xml:450(title)
+msgid "Ranges"
+msgstr ""
+
+#: semver.7.xml:60(para)
+msgid "A <emphasis remap=\"B\">version range</emphasis> is a set of <emphasis remap=\"B\">comparators</emphasis> which specify versions that satisfy the range."
+msgstr ""
+
+#: semver.7.xml:63(para)
+msgid "A <emphasis remap=\"B\">comparator</emphasis> is composed of an <emphasis remap=\"B\">operator</emphasis> and a <emphasis remap=\"B\">version</emphasis>&thinsp;. The set of primitive <emphasis remap=\"B\">operators</emphasis> is:"
+msgstr ""
+
+#: semver.7.xml:68(para)
+msgid "<emphasis remap=\"B\">&lt;</emphasis> Less than"
+msgstr ""
+
+#: semver.7.xml:71(para)
+msgid "<emphasis remap=\"B\">&lt;=</emphasis> Less than or equal to"
+msgstr ""
+
+#: semver.7.xml:74(para)
+msgid "<emphasis remap=\"B\">&gt;</emphasis> Greater than"
+msgstr ""
+
+#: semver.7.xml:77(para)
+msgid "<emphasis remap=\"B\">&gt;=</emphasis> Greater than or equal to"
+msgstr ""
+
+#: semver.7.xml:80(para)
+msgid "<emphasis remap=\"B\">=</emphasis> Equal. If no operator is specified, then equality is assumed, so this operator is optional, but MAY be included."
+msgstr ""
+
+#. remap='RE'
+#: semver.7.xml:87(para)
+msgid "For example, the comparator <emphasis remap=\"B\">&gt;=1.2.7</emphasis> would match the versions <literal>1.2.7</literal>, <literal>1.2.8</literal>, <literal>2.5.3</literal>, and <literal>1.3.9</literal>, but not the versions <literal>1.2.6</literal> or <literal>1.1.0</literal>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:91(para)
+msgid "Comparators can be joined by whitespace to form a <emphasis remap=\"B\">comparator set</emphasis>, which is satisfied by the <emphasis remap=\"B\">intersection</emphasis> of all of the comparators it includes."
+msgstr ""
+
+#: semver.7.xml:95(para)
+msgid "A range is composed of one or more comparator sets, joined by <emphasis remap=\"B\">||</emphasis>&thinsp;. A version matches a range if and only if every comparator in at least one of the <emphasis remap=\"B\">||</emphasis>-separated comparator sets is satisfied by the version."
+msgstr ""
+
+#: semver.7.xml:99(para)
+msgid "For example, the range <emphasis remap=\"B\">&gt;=1.2.7 &lt;1.3.0</emphasis> would match the versions <literal>1.2.7</literal>, <literal>1.2.8</literal>, and <literal>1.2.99</literal>, but not the versions <literal>1.2.6</literal>, <literal>1.3.0</literal>, or <literal>1.1.0</literal>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:103(para)
+msgid "The range <emphasis remap=\"B\">1.2.7 || &gt;=1.2.9 &lt;2.0.0</emphasis> would match the versions <literal>1.2.7</literal>, <literal>1.2.9</literal>, and <literal>1.4.6</literal>, but not the versions <literal>1.2.8</literal> or <literal>2.0.0</literal>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:106(title)
+msgid "Prerelease Tags"
+msgstr ""
+
+#: semver.7.xml:108(para)
+msgid "If a version has a prerelease tag (for example, <emphasis remap=\"B\">1.2.3-alpha.3</emphasis>) then it will only be allowed to satisfy comparator sets if at least one comparator with the same <emphasis remap=\"B\">[major, minor, patch]</emphasis> tuple also has a prerelease tag."
+msgstr ""
+
+#: semver.7.xml:113(para)
+msgid "For example, the range <emphasis remap=\"B\">&gt;1.2.3-alpha.3</emphasis> would be allowed to match the version <emphasis remap=\"B\">1.2.3-alpha.7</emphasis>, but it would <emphasis remap=\"I\">not</emphasis> be satisfied by <emphasis remap=\"B\">3.4.5-alpha.9</emphasis>, even though <emphasis remap=\"B\">3.4.5-alpha.9</emphasis> is technically \"greater than\" <emphasis remap=\"B\">1.2.3-alpha.3</emphasis> according to the SemVer sort rules. The version range only accepts prerelease tags on the <literal>1.2.3</literal> version. The version <literal>3.4.5</literal><emphasis remap=\"I\">would</emphasis> satisfy the range, because it does not have a prerelease flag, and <literal>3.4.5</literal> is greater than <emphasis remap=\"B\">1.2.3-alpha.7</emphasis>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:121(para)
+msgid "The purpose for this behavior is twofold. First, prerelease versions frequently are updated very quickly, and contain many breaking changes that are (by the author's design) not yet fit for public consumption. Therefore, by default, they are excluded from range matching semantics."
+msgstr ""
+
+#: semver.7.xml:127(para)
+msgid "Second, a user who has opted into using a prerelease version has clearly indicated the intent to use <emphasis remap=\"I\">that specific</emphasis> set of alpha/beta/rc versions. By including a prerelease tag in the range, the user is indicating that they are aware of the risk. However, it is still not appropriate to assume that they have opted into taking a similar risk on the <emphasis remap=\"I\">next</emphasis> set of prerelease versions."
+msgstr ""
+
+#: semver.7.xml:135(title)
+msgid "Prerelease Identifiers"
+msgstr ""
+
+#: semver.7.xml:137(para)
+msgid "The method <emphasis remap=\"B\">&thinsp;.inc</emphasis> takes an additional <emphasis remap=\"B\">identifier</emphasis> string argument that will append the value of the string as a prerelease identifier:"
+msgstr ""
+
+#: semver.7.xml:140(literallayout)
+#, no-wrap
+msgid "\n&gt; semver.inc('1.2.3', 'pre', 'beta')\n&thinsp;'1.2.4-beta.0'\n"
+msgstr ""
+
+#. .fi
+#: semver.7.xml:145(para)
+msgid "command-line example:"
+msgstr ""
+
+#: semver.7.xml:147(screen)
+#, no-wrap
+msgid "\n$ semver 1.2.3 -i prerelease --preid beta\n1.2.4-beta.0\n"
+msgstr ""
+
+#. .fi
+#: semver.7.xml:152(para)
+msgid "Which then can be used to increment further:"
+msgstr ""
+
+#: semver.7.xml:154(screen)
+#, no-wrap
+msgid "\n$ semver 1.2.4-beta.0 -i prerelease\n1.2.4-beta.1\n"
+msgstr ""
+
+#: semver.7.xml:160(title)
+msgid "Advanced Range Syntax"
+msgstr ""
+
+#: semver.7.xml:162(para)
+msgid "Advanced range syntax desugars to primitive comparators in deterministic ways."
+msgstr ""
+
+#: semver.7.xml:165(para)
+msgid "Advanced ranges may be combined in the same way as primitive comparators using white space or <emphasis remap=\"B\">||</emphasis>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:169(title)
+msgid "Hyphen Ranges <userinput>X.Y.Z - A.B.C</userinput>"
+msgstr ""
+
+#: semver.7.xml:171(para)
+msgid "Specifies an inclusive set."
+msgstr ""
+
+#: semver.7.xml:175(para)
+msgid "<userinput>1.2.3 - 2.3.4</userinput> := <emphasis remap=\"B\">&gt;=1.2.3 &lt;=2.3.4</emphasis>"
+msgstr ""
+
+#. remap='RE'
+#: semver.7.xml:181(para)
+msgid "If a partial version is provided as the first version in the inclusive range, then the missing pieces are replaced with zeroes."
+msgstr ""
+
+#: semver.7.xml:186(para)
+msgid "<userinput>1.2 - 2.3.4</userinput> := <emphasis remap=\"B\">&gt;=1.2.0 &lt;=2.3.4</emphasis>"
+msgstr ""
+
+#. remap='RE'
+#: semver.7.xml:192(para)
+msgid "If a partial version is provided as the second version in the inclusive range, then all versions that start with the supplied parts of the tuple are accepted, but nothing that would be greater than the provided tuple parts."
+msgstr ""
+
+#: semver.7.xml:199(para)
+msgid "<userinput>1.2.3 - 2.3</userinput> := <emphasis remap=\"B\">&gt;=1.2.3 &lt;2.4.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:202(para)
+msgid "<userinput>1.2.3 - 2</userinput> := <emphasis remap=\"B\">&gt;=1.2.3 &lt;3.0.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:209(title)
+msgid "X-Ranges <emphasis remap=\"B\">1.2.x</emphasis><emphasis remap=\"B\">1.X</emphasis><emphasis remap=\"B\">1.2.*</emphasis><emphasis remap=\"B\">*</emphasis>"
+msgstr ""
+
+#: semver.7.xml:211(para)
+msgid "Any of <emphasis remap=\"B\">X</emphasis>, <emphasis remap=\"B\">x</emphasis>, or <emphasis remap=\"B\">*</emphasis> may be used to \"stand in\" for one of the numeric values in the <emphasis remap=\"B\">[major, minor, patch]</emphasis> tuple."
+msgstr ""
+
+#: semver.7.xml:216(para)
+msgid "<emphasis remap=\"B\">*</emphasis> := <emphasis remap=\"B\">&gt;=0.0.0</emphasis> (Any version satisfies)"
+msgstr ""
+
+#: semver.7.xml:219(para)
+msgid "<emphasis remap=\"B\">1.x</emphasis> := <emphasis remap=\"B\">&gt;=1.0.0 &lt;2.0.0</emphasis> (Matching major version)"
+msgstr ""
+
+#: semver.7.xml:222(para)
+msgid "<emphasis remap=\"B\">1.2.x</emphasis> := <emphasis remap=\"B\">&gt;=1.2.0 &lt;1.3.0</emphasis> (Matching major and minor versions)"
+msgstr ""
+
+#. remap='RE'
+#: semver.7.xml:228(para)
+msgid "A partial version range is treated as an X-Range, so the special character is in fact optional."
+msgstr ""
+
+#: semver.7.xml:233(para)
+msgid "<emphasis remap=\"B\">\"\"</emphasis> (empty string) := <emphasis remap=\"B\">*</emphasis> := <emphasis remap=\"B\">&gt;=0.0.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:236(para)
+msgid "<literal>1</literal> := <emphasis remap=\"B\">1.x.x</emphasis> := <emphasis remap=\"B\">&gt;=1.0.0 &lt;2.0.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:239(para)
+msgid "<literal>1.2</literal> := <emphasis remap=\"B\">1.2.x</emphasis> := <emphasis remap=\"B\">&gt;=1.2.0 &lt;1.3.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:246(title)
+msgid "Tilde Ranges <emphasis remap=\"B\">~1.2.3</emphasis><emphasis remap=\"B\">~1.2</emphasis><emphasis remap=\"B\">~1</emphasis>"
+msgstr ""
+
+#: semver.7.xml:248(para)
+msgid "Allows patch-level changes if a minor version is specified on the comparator. Allows minor-level changes if not."
+msgstr ""
+
+#: semver.7.xml:253(para)
+msgid "<emphasis remap=\"B\">~1.2.3</emphasis> := <emphasis remap=\"B\">&gt;=1.2.3 &lt;1.(2+1).0</emphasis> := <emphasis remap=\"B\">&gt;=1.2.3 &lt;1.3.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:256(para)
+msgid "<emphasis remap=\"B\">~1.2</emphasis> := <emphasis remap=\"B\">&gt;=1.2.0 &lt;1.(2+1).0</emphasis> := <emphasis remap=\"B\">&gt;=1.2.0 &lt;1.3.0</emphasis> (Same as <emphasis remap=\"B\">1.2.x</emphasis>)"
+msgstr ""
+
+#: semver.7.xml:259(para)
+msgid "<emphasis remap=\"B\">~1</emphasis> := <emphasis remap=\"B\">&gt;=1.0.0 &lt;(1+1).0.0</emphasis> := <emphasis remap=\"B\">&gt;=1.0.0 &lt;2.0.0</emphasis> (Same as <emphasis remap=\"B\">1.x</emphasis>)"
+msgstr ""
+
+#: semver.7.xml:262(para)
+msgid "<emphasis remap=\"B\">~0.2.3</emphasis> := <emphasis remap=\"B\">&gt;=0.2.3 &lt;0.(2+1).0</emphasis> := <emphasis remap=\"B\">&gt;=0.2.3 &lt;0.3.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:265(para)
+msgid "<emphasis remap=\"B\">~0.2</emphasis> := <emphasis remap=\"B\">&gt;=0.2.0 &lt;0.(2+1).0</emphasis> := <emphasis remap=\"B\">&gt;=0.2.0 &lt;0.3.0</emphasis> (Same as <emphasis remap=\"B\">0.2.x</emphasis>)"
+msgstr ""
+
+#: semver.7.xml:268(para)
+msgid "<emphasis remap=\"B\">~0</emphasis> := <emphasis remap=\"B\">&gt;=0.0.0 &lt;(0+1).0.0</emphasis> := <emphasis remap=\"B\">&gt;=0.0.0 &lt;1.0.0</emphasis> (Same as <emphasis remap=\"B\">0.x</emphasis>)"
+msgstr ""
+
+#: semver.7.xml:271(para)
+msgid "<emphasis remap=\"B\">~1.2.3-beta.2</emphasis> := <emphasis remap=\"B\">&gt;=1.2.3-beta.2 &lt;1.3.0</emphasis> Note that prereleases in the <literal>1.2.3</literal> version will be allowed, if they are greater than or equal to <emphasis remap=\"B\">beta.2</emphasis>&thinsp;. So, <emphasis remap=\"B\">1.2.3-beta.4</emphasis> would be allowed, but <emphasis remap=\"B\">1.2.4-beta.2</emphasis> would not, because it is a prerelease of a different <emphasis remap=\"B\">[major, minor, patch]</emphasis> tuple."
+msgstr ""
+
+#: semver.7.xml:282(title)
+msgid "Caret Ranges <emphasis remap=\"B\">^1.2.3</emphasis><emphasis remap=\"B\">^0.2.5</emphasis><emphasis remap=\"B\">^0.0.4</emphasis>"
+msgstr ""
+
+#: semver.7.xml:284(para)
+msgid "Allows changes that do not modify the left-most non-zero digit in the <emphasis remap=\"B\">[major, minor, patch]</emphasis> tuple. In other words, this allows patch and minor updates for versions <literal>1.0.0</literal> and above, patch updates for versions <emphasis remap=\"B\">0.X &gt;=0.1.0</emphasis>, and <emphasis remap=\"I\">no</emphasis> updates for versions <emphasis remap=\"B\">0.0.X</emphasis>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:289(para)
+msgid "Many authors treat a <emphasis remap=\"B\">0.x</emphasis> version as if the <emphasis remap=\"B\">x</emphasis> were the major \"breaking-change\" indicator."
+msgstr ""
+
+#: semver.7.xml:292(para)
+msgid "Caret ranges are ideal when an author may make breaking changes between <literal>0.2.4</literal> and <literal>0.3.0</literal> releases, which is a common practice. However, it presumes that there will <emphasis remap=\"I\">not</emphasis> be breaking changes between <literal>0.2.4</literal> and <literal>0.2.5</literal>&thinsp;. It allows for changes that are presumed to be additive (but non-breaking), according to commonly observed practices."
+msgstr ""
+
+#: semver.7.xml:300(para)
+msgid "<emphasis remap=\"B\">^1.2.3</emphasis> := <emphasis remap=\"B\">&gt;=1.2.3 &lt;2.0.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:303(para)
+msgid "<emphasis remap=\"B\">^0.2.3</emphasis> := <emphasis remap=\"B\">&gt;=0.2.3 &lt;0.3.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:306(para)
+msgid "<emphasis remap=\"B\">^0.0.3</emphasis> := <emphasis remap=\"B\">&gt;=0.0.3 &lt;0.0.4</emphasis>"
+msgstr ""
+
+#: semver.7.xml:309(para)
+msgid "<emphasis remap=\"B\">^1.2.3-beta.2</emphasis> := <emphasis remap=\"B\">&gt;=1.2.3-beta.2 &lt;2.0.0</emphasis> Note that prereleases in the <literal>1.2.3</literal> version will be allowed, if they are greater than or equal to <emphasis remap=\"B\">beta.2</emphasis>&thinsp;. So, <emphasis remap=\"B\">1.2.3-beta.4</emphasis> would be allowed, but <emphasis remap=\"B\">1.2.4-beta.2</emphasis> would not, because it is a prerelease of a different <emphasis remap=\"B\">[major, minor, patch]</emphasis> tuple."
+msgstr ""
+
+#: semver.7.xml:316(para)
+msgid "<emphasis remap=\"B\">^0.0.3-beta</emphasis> := <emphasis remap=\"B\">&gt;=0.0.3-beta &lt;0.0.4</emphasis> Note that prereleases in the <literal>0.0.3</literal> version <emphasis remap=\"I\">only</emphasis> will be allowed, if they are greater than or equal to <emphasis remap=\"B\">beta</emphasis>&thinsp;. So, <emphasis remap=\"B\">0.0.3-pr.2</emphasis> would be allowed."
+msgstr ""
+
+#. remap='RE'
+#: semver.7.xml:324(para)
+msgid "When parsing caret ranges, a missing <emphasis remap=\"B\">patch</emphasis> value desugars to the number <literal>0</literal>, but will allow flexibility within that value, even if the major and minor versions are both <literal>0</literal>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:330(para)
+msgid "<emphasis remap=\"B\">^1.2.x</emphasis> := <emphasis remap=\"B\">&gt;=1.2.0 &lt;2.0.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:333(para)
+msgid "<emphasis remap=\"B\">^0.0.x</emphasis> := <emphasis remap=\"B\">&gt;=0.0.0 &lt;0.1.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:336(para)
+msgid "<emphasis remap=\"B\">^0.0</emphasis> := <emphasis remap=\"B\">&gt;=0.0.0 &lt;0.1.0</emphasis>"
+msgstr ""
+
+#. remap='RE'
+#: semver.7.xml:342(para)
+msgid "A missing <emphasis remap=\"B\">minor</emphasis> and <emphasis remap=\"B\">patch</emphasis> values will desugar to zero, but also allow flexibility within those values, even if the major version is zero."
+msgstr ""
+
+#: semver.7.xml:348(para)
+msgid "<emphasis remap=\"B\">^1.x</emphasis> := <emphasis remap=\"B\">&gt;=1.0.0 &lt;2.0.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:351(para)
+msgid "<emphasis remap=\"B\">^0.x</emphasis> := <emphasis remap=\"B\">&gt;=0.0.0 &lt;1.0.0</emphasis>"
+msgstr ""
+
+#: semver.7.xml:359(title)
+msgid "Functions"
+msgstr ""
+
+#: semver.7.xml:360(para)
+msgid "All methods and classes take a final <emphasis remap=\"B\">loose</emphasis> boolean argument that, if true, will be more forgiving about not-quite-valid semver strings. The resulting output will always be 100% strict, of course."
+msgstr ""
+
+#: semver.7.xml:364(para)
+msgid "Strict-mode Comparators and Ranges will be strict about the SemVer strings that they parse."
+msgstr ""
+
+#: semver.7.xml:369(para)
+msgid "<emphasis remap=\"B\">valid(v)</emphasis>: Return the parsed version, or null if it's not valid."
+msgstr ""
+
+#: semver.7.xml:372(para)
+msgid "<emphasis remap=\"B\">inc(v, release)</emphasis>: Return the version incremented by the release type (<emphasis remap=\"B\">major</emphasis>, <emphasis remap=\"B\">premajor</emphasis>, <emphasis remap=\"B\">minor</emphasis>, <emphasis remap=\"B\">preminor</emphasis>, <emphasis remap=\"B\">patch</emphasis>, <emphasis remap=\"B\">prepatch</emphasis>, or <emphasis remap=\"B\">prerelease</emphasis>), or null if it's not valid"
+msgstr ""
+
+#: semver.7.xml:377(para)
+msgid "<emphasis remap=\"B\">premajor</emphasis> in one call will bump the version up to the next major version and down to a prerelease of that major version. <emphasis remap=\"B\">preminor</emphasis>, and <emphasis remap=\"B\">prepatch</emphasis> work the same way."
+msgstr ""
+
+#: semver.7.xml:382(para)
+msgid "If called from a non-prerelease version, the <emphasis remap=\"B\">prerelease</emphasis> will work the same as <emphasis remap=\"B\">prepatch</emphasis>&thinsp;. It increments the patch version, then makes a prerelease. If the input version is already a prerelease it simply increments it."
+msgstr ""
+
+#: semver.7.xml:391(para)
+msgid "<emphasis remap=\"B\">major(v)</emphasis>: Return the major version number."
+msgstr ""
+
+#: semver.7.xml:394(para)
+msgid "<emphasis remap=\"B\">minor(v)</emphasis>: Return the minor version number."
+msgstr ""
+
+#: semver.7.xml:397(para)
+msgid "<emphasis remap=\"B\">patch(v)</emphasis>: Return the patch version number."
+msgstr ""
+
+#: semver.7.xml:403(title)
+msgid "Comparison"
+msgstr ""
+
+#: semver.7.xml:407(para)
+msgid "<emphasis remap=\"B\">gt(v1, v2)</emphasis>: <emphasis remap=\"B\">v1 &gt; v2</emphasis>"
+msgstr ""
+
+#: semver.7.xml:410(para)
+msgid "<emphasis remap=\"B\">gte(v1, v2)</emphasis>: <emphasis remap=\"B\">v1 &gt;= v2</emphasis>"
+msgstr ""
+
+#: semver.7.xml:413(para)
+msgid "<emphasis remap=\"B\">lt(v1, v2)</emphasis>: <emphasis remap=\"B\">v1 &lt; v2</emphasis>"
+msgstr ""
+
+#: semver.7.xml:416(para)
+msgid "<emphasis remap=\"B\">lte(v1, v2)</emphasis>: <emphasis remap=\"B\">v1 &lt;= v2</emphasis>"
+msgstr ""
+
+#: semver.7.xml:419(para)
+msgid "<emphasis remap=\"B\">eq(v1, v2)</emphasis>: <emphasis remap=\"B\">v1 == v2</emphasis> This is true if they're logically equivalent, even if they're not the exact same string. You already know how to compare strings."
+msgstr ""
+
+#: semver.7.xml:424(para)
+msgid "<emphasis remap=\"B\">neq(v1, v2)</emphasis>: <emphasis remap=\"B\">v1 != v2</emphasis> The opposite of <emphasis remap=\"B\">eq</emphasis>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:427(para)
+msgid "<emphasis remap=\"B\">cmp(v1, comparator, v2)</emphasis>: Pass in a comparison string, and it'll call the corresponding function above. <emphasis remap=\"B\">\"===\"</emphasis> and <emphasis remap=\"B\">\"!==\"</emphasis> do simple string comparison, but are included for completeness. Throws if an invalid comparison string is provided."
+msgstr ""
+
+#: semver.7.xml:433(para)
+msgid "<emphasis remap=\"B\">compare(v1, v2)</emphasis>: Return <literal>0</literal> if <emphasis remap=\"B\">v1 == v2</emphasis>, or <literal>1</literal> if <emphasis remap=\"B\">v1</emphasis> is greater, or <option>-1</option> if <emphasis remap=\"B\">v2</emphasis> is greater. Sorts in ascending order if passed to <emphasis remap=\"B\">Array.sort()</emphasis>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:437(para)
+msgid "<emphasis remap=\"B\">rcompare(v1, v2)</emphasis>: The reverse of compare. Sorts an array of versions in descending order when passed to <emphasis remap=\"B\">Array.sort()</emphasis>&thinsp;."
+msgstr ""
+
+#: semver.7.xml:441(para)
+msgid "<emphasis remap=\"B\">diff(v1, v2)</emphasis>: Returns difference between two versions by the release type (<emphasis remap=\"B\">major</emphasis>, <emphasis remap=\"B\">premajor</emphasis>, <emphasis remap=\"B\">minor</emphasis>, <emphasis remap=\"B\">preminor</emphasis>, <emphasis remap=\"B\">patch</emphasis>, <emphasis remap=\"B\">prepatch</emphasis>, or <emphasis remap=\"B\">prerelease</emphasis>), or null if the versions are the same."
+msgstr ""
+
+#: semver.7.xml:454(para)
+msgid "<emphasis remap=\"B\">validRange(range)</emphasis>: Return the valid range or null if it's not valid"
+msgstr ""
+
+#: semver.7.xml:457(para)
+msgid "<emphasis remap=\"B\">satisfies(version, range)</emphasis>: Return true if the version satisfies the range."
+msgstr ""
+
+#: semver.7.xml:461(para)
+msgid "<emphasis remap=\"B\">maxSatisfying(versions, range)</emphasis>: Return the highest version in the list that satisfies the range, or <emphasis remap=\"B\">null</emphasis> if none of them do."
+msgstr ""
+
+#: semver.7.xml:465(para)
+msgid "<emphasis remap=\"B\">gtr(version, range)</emphasis>: Return <emphasis remap=\"B\">true</emphasis> if version is greater than all the versions possible in the range."
+msgstr ""
+
+#: semver.7.xml:469(para)
+msgid "<emphasis remap=\"B\">ltr(version, range)</emphasis>: Return <emphasis remap=\"B\">true</emphasis> if version is less than all the versions possible in the range."
+msgstr ""
+
+#: semver.7.xml:473(para)
+msgid "<emphasis remap=\"B\">outside(version, range, hilo)</emphasis>: Return true if the version is outside the bounds of the range in either the high or low direction. The <emphasis remap=\"B\">hilo</emphasis> argument must be either the string <emphasis remap=\"B\">&thinsp;'&gt;'</emphasis> or <emphasis remap=\"B\">&thinsp;'&lt;'</emphasis>&thinsp;. (This is the function called by <emphasis remap=\"B\">gtr</emphasis> and <emphasis remap=\"B\">ltr</emphasis>&thinsp;.)"
+msgstr ""
+
+#. remap='RE'
+#: semver.7.xml:482(para)
+msgid "Note that, since ranges may be non-contiguous, a version might not be greater than a range, less than a range, <emphasis remap=\"I\">or</emphasis> satisfy a range! For example, the range <emphasis remap=\"B\">1.2 &lt;1.2.9 || &gt;2.0.0</emphasis> would have a hole from <literal>1.2.9</literal> until <literal>2.0.0</literal>, so the version <literal>1.2.10</literal> would not be greater than the range (because <literal>2.0.1</literal> satisfies, which is higher), nor less than the range (since <literal>1.2.8</literal> satisfies, which is lower), and it also does not satisfy the range."
+msgstr ""
+
+#: semver.7.xml:490(para)
+msgid "If you want to know if a version satisfies or does not satisfy a range, use the <emphasis remap=\"B\">satisfies(version, range)</emphasis> function."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: semver.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

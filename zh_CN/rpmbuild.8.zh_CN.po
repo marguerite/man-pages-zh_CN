@@ -1,0 +1,646 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-01-17 16:30+0800\n"
+"PO-Revision-Date: 2014-08-14 12:34+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: rpmbuild.8.xml:11(date) rpmbuild.8.xml:15(refmiscinfo)
+msgid "09 June 2002"
+msgstr "2002 年 6 月 9 日"
+
+#: rpmbuild.8.xml:13(refentrytitle)
+msgid "RPMBUILD"
+msgstr "rpmbuild"
+
+#: rpmbuild.8.xml:14(manvolnum) rpmbuild.8.xml:373(manvolnum)
+#: rpmbuild.8.xml:374(manvolnum) rpmbuild.8.xml:375(manvolnum)
+#: rpmbuild.8.xml:376(manvolnum) rpmbuild.8.xml:377(manvolnum)
+msgid "8"
+msgstr "8"
+
+#: rpmbuild.8.xml:16(refmiscinfo)
+msgid "Red Hat, Inc."
+msgstr "Red Hat, Inc."
+
+#: rpmbuild.8.xml:19(refname) rpmbuild.8.xml:48(emphasis)
+#: rpmbuild.8.xml:314(emphasis) rpmbuild.8.xml:330(emphasis)
+msgid "rpmbuild"
+msgstr "rpmbuild"
+
+#: rpmbuild.8.xml:20(refpurpose)
+msgid "Build RPM Package(s)"
+msgstr "构建 RPM 软件包"
+
+#: rpmbuild.8.xml:29(title)
+msgid "BUILDING PACKAGES:"
+msgstr "构建软件包："
+
+#: rpmbuild.8.xml:33(para)
+msgid ""
+"<emphasis remap=\"B\">rpmbuild</emphasis> {<option>-ba|-bb|-bp|-bc|-bi|-bl|-"
+"bs</option>} [<emphasis remap=\"B\">rpmbuild-options</emphasis>] <emphasis "
+"remap=\"I\">SPECFILE</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+msgstr ""
+"<emphasis remap=\"B\">rpmbuild</emphasis> {<option>-ba|-bb|-bp|-bc|-bi|-bl|-"
+"bs</option>} [<emphasis remap=\"B\">选项</emphasis>] <emphasis remap=\"I"
+"\">SPECFILE</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+
+#: rpmbuild.8.xml:37(para)
+msgid ""
+"<emphasis remap=\"B\">rpmbuild</emphasis> {<option>-ta|-tb|-tp|-tc|-ti|-tl|-"
+"ts</option>} [<emphasis remap=\"B\">rpmbuild-options</emphasis>] <emphasis "
+"remap=\"I\">TARBALL</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+msgstr ""
+"<emphasis remap=\"B\">rpmbuild</emphasis> {<option>-ta|-tb|-tp|-tc|-ti|-tl|-"
+"ts</option>} [<emphasis remap=\"B\">选项</emphasis>] <emphasis remap=\"I"
+"\">TARBALL</emphasis><emphasis remap=\"I\"> ...</emphasis>"
+
+#: rpmbuild.8.xml:41(para)
+msgid ""
+"<emphasis remap=\"B\">rpmbuild</emphasis> {<option>--rebuild|--recompile</"
+"option>} <emphasis remap=\"I\">SOURCEPKG</emphasis><emphasis remap=\"I\"> ..."
+"</emphasis>"
+msgstr ""
+"<emphasis remap=\"B\">rpmbuild</emphasis> {<option>--rebuild|--recompile</"
+"option>} <emphasis remap=\"I\">SOURCEPKG</emphasis><emphasis remap=\"I\"> ..."
+"</emphasis>"
+
+#: rpmbuild.8.xml:44(title)
+msgid "MISCELLANEOUS:"
+msgstr "杂项："
+
+#: rpmbuild.8.xml:48(option) rpmbuild.8.xml:330(option)
+msgid "--showrc"
+msgstr "--showrc"
+
+#: rpmbuild.8.xml:52(title)
+msgid "rpmbuild-options"
+msgstr "选项"
+
+#: rpmbuild.8.xml:56(para)
+msgid ""
+"[<option>--buildroot </option><emphasis remap=\"I\">DIRECTORY</emphasis>] "
+"[<option>--clean</option>] [<option>--nobuild</option>] [<option>--rmsource</"
+"option>] [<option>--rmspec</option>] [<option>--short-circuit</option>] "
+"[<option>--noclean</option>] [<option>--nocheck</option>] [<option>--target "
+"</option><emphasis remap=\"I\">PLATFORM</emphasis>]"
+msgstr ""
+"[<option>--buildroot </option><emphasis remap=\"I\">文件夹</emphasis>] "
+"[<option>--clean</option>] [<option>--nobuild</option>] [<option>--rmsource</"
+"option>] [<option>--rmspec</option>] [<option>--short-circuit</option>] "
+"[<option>--noclean</option>] [<option>--nocheck</option>] [<option>--target "
+"</option><emphasis remap=\"I\">平台</emphasis>]"
+
+#: rpmbuild.8.xml:64(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: rpmbuild.8.xml:65(para)
+msgid ""
+"<emphasis remap=\"B\">rpmbuild</emphasis> is used to build both binary and "
+"source software packages. A <emphasis remap=\"B\">package</emphasis> "
+"consists of an archive of files and meta-data used to install and erase the "
+"archive files. The meta-data includes helper scripts, file attributes, and "
+"descriptive information about the package. <emphasis remap=\"B\">Packages</"
+"emphasis> come in two varieties: binary packages, used to encapsulate "
+"software to be installed, and source packages, containing the source code "
+"and recipe necessary to produce binary packages."
+msgstr ""
+
+#: rpmbuild.8.xml:75(para)
+msgid ""
+"One of the following basic modes must be selected: <emphasis remap=\"B"
+"\">Build Package</emphasis>, <emphasis remap=\"B\">Build Package from "
+"Tarball</emphasis>, <emphasis remap=\"B\">Recompile Package</emphasis>, "
+"<emphasis remap=\"B\">Show Configuration</emphasis>."
+msgstr ""
+
+#: rpmbuild.8.xml:81(title)
+msgid "GENERAL OPTIONS"
+msgstr "通用选项"
+
+#: rpmbuild.8.xml:83(para)
+msgid "These options can be used in all the different modes."
+msgstr ""
+
+#: rpmbuild.8.xml:86(option)
+msgid "-?, --help"
+msgstr ""
+
+#: rpmbuild.8.xml:88(para)
+msgid "Print a longer usage message then normal."
+msgstr ""
+
+#: rpmbuild.8.xml:92(option)
+msgid "--version"
+msgstr ""
+
+#: rpmbuild.8.xml:94(para)
+msgid ""
+"Print a single line containing the version number of <emphasis remap=\"B"
+"\">rpm</emphasis> being used."
+msgstr ""
+
+#: rpmbuild.8.xml:99(option)
+msgid "--quiet"
+msgstr ""
+
+#: rpmbuild.8.xml:101(para)
+msgid ""
+"Print as little as possible - normally only error messages will be displayed."
+msgstr ""
+
+#: rpmbuild.8.xml:106(option)
+msgid "-v"
+msgstr ""
+
+#: rpmbuild.8.xml:108(para)
+msgid ""
+"Print verbose information - normally routine progress messages will be "
+"displayed."
+msgstr ""
+
+#: rpmbuild.8.xml:113(option)
+msgid "-vv"
+msgstr ""
+
+#: rpmbuild.8.xml:115(para)
+msgid "Print lots of ugly debugging information."
+msgstr ""
+
+#: rpmbuild.8.xml:119(option)
+msgid "--rcfile"
+msgstr ""
+
+#: rpmbuild.8.xml:119(emphasis)
+msgid "FILELIST"
+msgstr ""
+
+#: rpmbuild.8.xml:121(para)
+msgid ""
+"Each of the files in the colon separated <emphasis remap=\"I\">FILELIST</"
+"emphasis> is read sequentially by <emphasis remap=\"B\">rpm</emphasis> for "
+"configuration information. Only the first file in the list must exist, and "
+"tildes will be expanded to the value of <emphasis remap=\"B\">$HOME</"
+"emphasis>. The default <emphasis remap=\"I\">FILELIST</emphasis> is "
+"<filename>/usr/lib/rpm/rpmrc</filename>:<filename>/usr/lib/rpm/redhat/rpmrc</"
+"filename>:<filename>/etc/rpmrc</filename>:<filename>~/.rpmrc</filename>."
+msgstr ""
+
+#: rpmbuild.8.xml:132(option)
+msgid "--pipe"
+msgstr ""
+
+#: rpmbuild.8.xml:132(emphasis)
+msgid "CMD"
+msgstr ""
+
+#: rpmbuild.8.xml:134(para)
+msgid ""
+"Pipes the output of <emphasis remap=\"B\">rpm</emphasis> to the file "
+"<command>CMD</command>."
+msgstr ""
+
+#: rpmbuild.8.xml:138(option)
+msgid "--dbpath"
+msgstr ""
+
+#: rpmbuild.8.xml:138(emphasis) rpmbuild.8.xml:145(emphasis)
+#: rpmbuild.8.xml:235(emphasis)
+msgid "DIRECTORY"
+msgstr ""
+
+#: rpmbuild.8.xml:140(para)
+msgid ""
+"Use the database in <emphasis remap=\"I\">DIRECTORY</emphasis> rather than "
+"the default path <filename>/var/lib/rpm</filename>"
+msgstr ""
+
+#: rpmbuild.8.xml:145(option)
+msgid "--root"
+msgstr ""
+
+#: rpmbuild.8.xml:147(para)
+msgid ""
+"Use the file system tree rooted at <emphasis remap=\"I\">DIRECTORY</"
+"emphasis> for all operations. Note that this means the database within "
+"<emphasis remap=\"I\">DIRECTORY</emphasis> will be used for dependency "
+"checks and any scriptlet(s) (e.g. <emphasis remap=\"B\">%post</emphasis> if "
+"installing, or <emphasis remap=\"B\">%prep</emphasis> if building, a "
+"package) will be run after a chroot(2) to <emphasis remap=\"I\">DIRECTORY</"
+"emphasis>."
+msgstr ""
+
+#: rpmbuild.8.xml:158(option)
+msgid "-D, --define='"
+msgstr ""
+
+#: rpmbuild.8.xml:158(emphasis)
+msgid "MACRO EXPR"
+msgstr ""
+
+#: rpmbuild.8.xml:158(emphasis)
+msgid "'"
+msgstr ""
+
+#: rpmbuild.8.xml:160(para)
+msgid ""
+"Defines <emphasis remap=\"I\">MACRO</emphasis> with value <emphasis remap=\"I"
+"\">EXPR</emphasis>."
+msgstr ""
+
+#: rpmbuild.8.xml:166(title)
+msgid "BUILD OPTIONS"
+msgstr ""
+
+#: rpmbuild.8.xml:168(para)
+msgid "The general form of an rpm build command is"
+msgstr ""
+
+#: rpmbuild.8.xml:171(para)
+msgid ""
+"<emphasis remap=\"B\">rpmbuild</emphasis><option>-b</"
+"option><replaceable>STAGE</replaceable><emphasis remap=\"B\">|-t</"
+"emphasis><emphasis remap=\"I\">STAGE</emphasis> [ <emphasis remap=\"B\"> "
+"rpmbuild-options </emphasis> ] <emphasis remap=\"I\">FILE</"
+"emphasis><emphasis remap=\"I\"> ...</emphasis>"
+msgstr ""
+
+#: rpmbuild.8.xml:175(para)
+msgid ""
+"The argument used is <option>-b</option> if a spec file is being used to "
+"build the package and <option>-t</option> if <emphasis remap=\"B\">rpmbuild</"
+"emphasis> should look inside of a (possibly compressed) tar file for the "
+"spec file to use. After the first argument, the next character (<emphasis "
+"remap=\"I\">STAGE</emphasis>) specifies the stages of building and packaging "
+"to be done and is one of:"
+msgstr ""
+
+#: rpmbuild.8.xml:183(option)
+msgid "-ba"
+msgstr ""
+
+#: rpmbuild.8.xml:185(para)
+msgid ""
+"Build binary and source packages (after doing the %prep, %build, and "
+"%install stages)."
+msgstr ""
+
+#: rpmbuild.8.xml:190(option)
+msgid "-bb"
+msgstr ""
+
+#: rpmbuild.8.xml:192(para)
+msgid ""
+"Build a binary package (after doing the %prep, %build, and %install stages)."
+msgstr ""
+
+#: rpmbuild.8.xml:197(option)
+msgid "-bp"
+msgstr ""
+
+#: rpmbuild.8.xml:199(para)
+msgid ""
+"Executes the \"%prep\" stage from the spec file. Normally this involves "
+"unpacking the sources and applying any patches."
+msgstr ""
+
+#: rpmbuild.8.xml:204(option)
+msgid "-bc"
+msgstr ""
+
+#: rpmbuild.8.xml:206(para)
+msgid ""
+"Do the \"%build\" stage from the spec file (after doing the %prep stage). "
+"This generally involves the equivalent of a \"make\"."
+msgstr ""
+
+#: rpmbuild.8.xml:211(option)
+msgid "-bi"
+msgstr ""
+
+#: rpmbuild.8.xml:213(para)
+msgid ""
+"Do the \"%install\" stage from the spec file (after doing the %prep and "
+"%build stages). This generally involves the equivalent of a \"make install\"."
+msgstr ""
+
+#: rpmbuild.8.xml:219(option)
+msgid "-bl"
+msgstr ""
+
+#: rpmbuild.8.xml:221(para)
+msgid ""
+"Do a \"list check\". The \"%files\" section from the spec file is macro "
+"expanded, and checks are made to verify that each file exists."
+msgstr ""
+
+#: rpmbuild.8.xml:227(option)
+msgid "-bs"
+msgstr ""
+
+#: rpmbuild.8.xml:229(para)
+msgid "Build just the source package."
+msgstr ""
+
+#: rpmbuild.8.xml:231(para)
+msgid "The following options may also be used:"
+msgstr ""
+
+#: rpmbuild.8.xml:235(option)
+msgid "--buildroot"
+msgstr ""
+
+#: rpmbuild.8.xml:237(para)
+msgid ""
+"When building a package, override the BuildRoot tag with directory <emphasis "
+"remap=\"I\">DIRECTORY</emphasis>."
+msgstr ""
+
+#: rpmbuild.8.xml:242(option)
+msgid "--clean"
+msgstr ""
+
+#: rpmbuild.8.xml:244(para)
+msgid "Remove the build tree after the packages are made."
+msgstr ""
+
+#: rpmbuild.8.xml:248(option)
+msgid "--nobuild"
+msgstr ""
+
+#: rpmbuild.8.xml:250(para)
+msgid "Do not execute any build stages. Useful for testing out spec files."
+msgstr ""
+
+#: rpmbuild.8.xml:254(option)
+msgid "--noclean"
+msgstr ""
+
+#: rpmbuild.8.xml:256(para)
+msgid "Do not execute %clean build stage even if present in spec."
+msgstr ""
+
+#: rpmbuild.8.xml:260(option)
+msgid "--nocheck"
+msgstr ""
+
+#: rpmbuild.8.xml:262(para)
+msgid "Do not execute %check build stage even if present in spec."
+msgstr ""
+
+#: rpmbuild.8.xml:266(option)
+msgid "--nodeps"
+msgstr ""
+
+#: rpmbuild.8.xml:268(para)
+msgid "Do not verify build dependencies."
+msgstr ""
+
+#: rpmbuild.8.xml:272(option)
+msgid "--rmsource"
+msgstr ""
+
+#: rpmbuild.8.xml:274(para)
+msgid ""
+"Remove the sources after the build (may also be used standalone, e.g. "
+"\"<emphasis remap=\"B\">rpmbuild</emphasis><option>--rmsource foo.spec</"
+"option>\")."
+msgstr ""
+
+#: rpmbuild.8.xml:279(option)
+msgid "--rmspec"
+msgstr ""
+
+#: rpmbuild.8.xml:281(para)
+msgid ""
+"Remove the spec file after the build (may also be used standalone, eg. "
+"\"<emphasis remap=\"B\">rpmbuild</emphasis><option>--rmspec foo.spec</option>"
+"\")."
+msgstr ""
+
+#: rpmbuild.8.xml:286(option)
+msgid "--short-circuit"
+msgstr ""
+
+#: rpmbuild.8.xml:288(para)
+msgid ""
+"Skip straight to specified stage (i.e., skip all stages leading up to the "
+"specified stage). Only valid with <option>-bc</option>, <option>-bi</"
+"option>, and <option>-bb</option>. Useful for local testing only. Packages "
+"built this way will be marked with an unsatisfiable dependency to prevent "
+"their accidental use."
+msgstr ""
+
+#: rpmbuild.8.xml:296(option)
+msgid "--target"
+msgstr ""
+
+#: rpmbuild.8.xml:296(emphasis)
+msgid "PLATFORM"
+msgstr ""
+
+#: rpmbuild.8.xml:298(para)
+msgid ""
+"When building the package, interpret <emphasis remap=\"I\">PLATFORM</"
+"emphasis> as <emphasis remap=\"B\">arch-vendor-os</emphasis> and set the "
+"macros <emphasis remap=\"B\">%_target</emphasis>, <emphasis remap=\"B\">"
+"%_target_cpu</emphasis>, and <emphasis remap=\"B\">%_target_os</emphasis> "
+"accordingly."
+msgstr ""
+
+#: rpmbuild.8.xml:309(title)
+msgid "REBUILD AND RECOMPILE OPTIONS"
+msgstr ""
+
+#: rpmbuild.8.xml:311(para)
+msgid "There are two other ways to invoke building with rpm:"
+msgstr ""
+
+#: rpmbuild.8.xml:314(option)
+msgid "--rebuild|--recompile"
+msgstr ""
+
+#: rpmbuild.8.xml:314(emphasis)
+msgid "SOURCEPKG"
+msgstr ""
+
+#: rpmbuild.8.xml:314(emphasis)
+msgid "..."
+msgstr ""
+
+#: rpmbuild.8.xml:317(para)
+msgid ""
+"When invoked this way, <emphasis remap=\"B\">rpmbuild</emphasis> installs "
+"the named source package, and does a prep, compile and install. In addition, "
+"<option>--rebuild</option> builds a new binary package. When the build has "
+"completed, the build directory is removed (as in <option>--clean</option>) "
+"and the the sources and spec file for the package are removed."
+msgstr ""
+
+#: rpmbuild.8.xml:325(title)
+msgid "SHOWRC"
+msgstr ""
+
+#: rpmbuild.8.xml:327(para)
+msgid "The command"
+msgstr ""
+
+#: rpmbuild.8.xml:333(para)
+msgid ""
+"shows the values <emphasis remap=\"B\">rpmbuild</emphasis> will use for all "
+"of the options are currently set in <emphasis remap=\"I\">rpmrc</emphasis> "
+"and <emphasis remap=\"I\">macros</emphasis> configuration file(s)."
+msgstr ""
+
+#: rpmbuild.8.xml:341(title)
+msgid "FILES"
+msgstr ""
+
+#: rpmbuild.8.xml:343(title)
+msgid "rpmrc Configuration"
+msgstr ""
+
+#: rpmbuild.8.xml:346(filename)
+msgid "/usr/lib/rpm/rpmrc"
+msgstr ""
+
+#: rpmbuild.8.xml:347(filename)
+msgid "/usr/lib/rpm/redhat/rpmrc"
+msgstr ""
+
+#: rpmbuild.8.xml:348(filename)
+msgid "/etc/rpmrc"
+msgstr ""
+
+#: rpmbuild.8.xml:349(filename)
+msgid "~/.rpmrc"
+msgstr ""
+
+#: rpmbuild.8.xml:353(title)
+msgid "Macro Configuration"
+msgstr ""
+
+#: rpmbuild.8.xml:356(filename)
+msgid "/usr/lib/rpm/macros"
+msgstr ""
+
+#: rpmbuild.8.xml:357(filename)
+msgid "/usr/lib/rpm/redhat/macros"
+msgstr ""
+
+#: rpmbuild.8.xml:358(filename)
+msgid "/etc/rpm/macros"
+msgstr ""
+
+#: rpmbuild.8.xml:359(filename)
+msgid "~/.rpmmacros"
+msgstr ""
+
+#: rpmbuild.8.xml:363(title)
+msgid "Temporary"
+msgstr ""
+
+#: rpmbuild.8.xml:365(filename)
+msgid "/var/tmp/rpm*"
+msgstr ""
+
+#: rpmbuild.8.xml:369(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: rpmbuild.8.xml:371(refentrytitle)
+msgid "gendiff"
+msgstr ""
+
+#: rpmbuild.8.xml:371(manvolnum)
+msgid "1"
+msgstr ""
+
+#: rpmbuild.8.xml:372(refentrytitle)
+msgid "popt"
+msgstr ""
+
+#: rpmbuild.8.xml:372(manvolnum)
+msgid "3"
+msgstr ""
+
+#: rpmbuild.8.xml:373(refentrytitle)
+msgid "rpm"
+msgstr ""
+
+#: rpmbuild.8.xml:374(refentrytitle)
+msgid "rpm2cpio"
+msgstr ""
+
+#: rpmbuild.8.xml:375(refentrytitle)
+msgid "rpmkeys"
+msgstr ""
+
+#: rpmbuild.8.xml:376(refentrytitle)
+msgid "rpmspec"
+msgstr ""
+
+#: rpmbuild.8.xml:377(refentrytitle)
+msgid "rpmsign"
+msgstr ""
+
+#: rpmbuild.8.xml:370(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"<citerefentry><placeholder-1/><placeholder-2/></citerefentry>,\n"
+"<citerefentry><placeholder-3/><placeholder-4/></citerefentry>,\n"
+"<citerefentry><placeholder-5/><placeholder-6/></citerefentry>,\n"
+"<citerefentry><placeholder-7/><placeholder-8/></citerefentry>,\n"
+"<citerefentry><placeholder-9/><placeholder-10/></citerefentry>\n"
+"<citerefentry><placeholder-11/><placeholder-12/></citerefentry>,\n"
+"<citerefentry><placeholder-13/><placeholder-14/></citerefentry>,\n"
+msgstr ""
+
+#. .fi
+#: rpmbuild.8.xml:380(para)
+msgid ""
+"<userinput>rpmbuild --help</userinput> - as rpm supports customizing the "
+"options via popt aliases it's impossible to guarantee that what's described "
+"in the manual matches what's available."
+msgstr ""
+
+#: rpmbuild.8.xml:384(ulink)
+msgid "http://www.rpm.org/"
+msgstr ""
+
+#: rpmbuild.8.xml:384(ulink)
+msgid "http://www.rpm.org/&gt;"
+msgstr ""
+
+#: rpmbuild.8.xml:384(emphasis)
+msgid "<placeholder-1/> &lt;URL:<placeholder-2/>"
+msgstr ""
+
+#: rpmbuild.8.xml:388(title)
+msgid "AUTHORS"
+msgstr ""
+
+#: rpmbuild.8.xml:389(literallayout)
+#, no-wrap
+msgid ""
+"\n"
+"Marc Ewing &lt;marc@redhat.com&gt;\n"
+"Jeff Johnson &lt;jbj@redhat.com&gt;\n"
+"Erik Troan &lt;ewt@redhat.com&gt;\n"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: rpmbuild.8.xml:0(None)
+msgid "translator-credits"
+msgstr ""

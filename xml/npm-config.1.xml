@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmconfig1'>
+<refmeta>
+<refentrytitle>NPM-CONFIG</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-config</refname>
+<refpurpose>Manage the npm configuration files</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>config</replaceable></arg>
+    <arg choice='plain'><replaceable>set</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;key&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;value&gt;</replaceable></arg>
+    <group choice='opt'><arg choice='plain'>-g </arg><arg choice='plain'>--global </arg></group>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>config</replaceable></arg>
+    <arg choice='plain'><replaceable>get</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;key&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>config</replaceable></arg>
+    <arg choice='plain'><replaceable>delete</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;key&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>config</replaceable></arg>
+    <arg choice='plain'><replaceable>list</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>config</replaceable></arg>
+    <arg choice='plain'><replaceable>edit</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>get</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;key&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>set</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;key&gt;</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;value&gt;</replaceable></arg>
+    <group choice='opt'><arg choice='plain'>-g </arg><arg choice='plain'>--global </arg></group>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>npm gets its config settings from the command line, environment
+variables, <emphasis remap='B'>npmrc</emphasis> files, and in some cases, the <emphasis remap='B'>package.json</emphasis> file.</para>
+
+<para>See npm help 5 npmrc for more information about the npmrc files.</para>
+
+<para>See npm help 7 <emphasis remap='B'>npm-config</emphasis> for a more thorough discussion of the mechanisms
+involved.</para>
+
+<para>The <emphasis remap='B'>npm config</emphasis> command can be used to update and edit the contents
+of the user and global npmrc files.</para>
+</refsect1>
+
+<refsect1 id='subcommands'><title>Sub-commands</title>
+<para>Config supports the following sub-commands:</para>
+
+<refsect2 id='set'><title>set</title>
+
+<literallayout remap='.nf'>
+npm config set key value
+</literallayout> <!-- .fi -->
+
+<para>Sets the config key to the value.</para>
+
+<para>If value is omitted, then it sets it to "true".</para>
+</refsect2>
+
+<refsect2 id='get'><title>get</title>
+
+<literallayout remap='.nf'>
+npm config get key
+</literallayout> <!-- .fi -->
+
+<para>Echo the config value to stdout.</para>
+</refsect2>
+
+<refsect2 id='list'><title>list</title>
+
+<literallayout remap='.nf'>
+npm config list
+</literallayout> <!-- .fi -->
+
+<para>Show all the config settings.</para>
+</refsect2>
+
+<refsect2 id='delete'><title>delete</title>
+
+<literallayout remap='.nf'>
+npm config delete key
+</literallayout> <!-- .fi -->
+
+<para>Deletes the key from all configuration files.</para>
+</refsect2>
+
+<refsect2 id='edit'><title>edit</title>
+
+<literallayout remap='.nf'>
+npm config edit
+</literallayout> <!-- .fi -->
+
+<para>Opens the config file in an editor.  Use the <option>--global</option> flag to edit the
+global config.</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help npm</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

@@ -1,0 +1,172 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-restart.1.xml:7(refentrytitle)
+msgid "NPM-RESTART"
+msgstr ""
+
+#: npm-restart.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-restart.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-restart.1.xml:12(refname)
+msgid "npm-restart"
+msgstr ""
+
+#: npm-restart.1.xml:13(refpurpose)
+msgid "Restart a package"
+msgstr ""
+
+#: npm-restart.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-restart.1.xml:18(replaceable) npm-restart.1.xml:58(para)
+msgid "restart"
+msgstr ""
+
+#: npm-restart.1.xml:19(replaceable)
+msgid "&lt;args&gt;"
+msgstr ""
+
+#: npm-restart.1.xml:19(arg)
+msgid "-- <placeholder-1/>"
+msgstr ""
+
+#: npm-restart.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-restart.1.xml:25(para)
+msgid "This restarts a package."
+msgstr ""
+
+#: npm-restart.1.xml:27(para)
+msgid "This runs a package's \"stop\", \"restart\", and \"start\" scripts, and associated pre- and post- scripts, in the order given below:"
+msgstr ""
+
+#: npm-restart.1.xml:32(term)
+msgid "1."
+msgstr ""
+
+#: npm-restart.1.xml:34(para)
+msgid "prerestart"
+msgstr ""
+
+#: npm-restart.1.xml:38(term)
+msgid "2."
+msgstr ""
+
+#: npm-restart.1.xml:40(para)
+msgid "prestop"
+msgstr ""
+
+#: npm-restart.1.xml:44(term)
+msgid "3."
+msgstr ""
+
+#: npm-restart.1.xml:46(para)
+msgid "stop"
+msgstr ""
+
+#: npm-restart.1.xml:50(term)
+msgid "4."
+msgstr ""
+
+#: npm-restart.1.xml:52(para)
+msgid "poststop"
+msgstr ""
+
+#: npm-restart.1.xml:56(term)
+msgid "5."
+msgstr ""
+
+#: npm-restart.1.xml:62(term)
+msgid "6."
+msgstr ""
+
+#: npm-restart.1.xml:64(para)
+msgid "prestart"
+msgstr ""
+
+#: npm-restart.1.xml:68(term)
+msgid "7."
+msgstr ""
+
+#: npm-restart.1.xml:70(para)
+msgid "start"
+msgstr ""
+
+#: npm-restart.1.xml:74(term)
+msgid "8."
+msgstr ""
+
+#: npm-restart.1.xml:76(para)
+msgid "poststart"
+msgstr ""
+
+#: npm-restart.1.xml:80(term)
+msgid "9."
+msgstr ""
+
+#: npm-restart.1.xml:82(para)
+msgid "postrestart"
+msgstr ""
+
+#: npm-restart.1.xml:90(title)
+msgid "NOTE"
+msgstr ""
+
+#: npm-restart.1.xml:91(para)
+msgid "Note that the \"restart\" script is run <emphasis remap=\"B\">in addition to</emphasis> the \"stop\" and \"start\" scripts, not instead of them."
+msgstr ""
+
+#: npm-restart.1.xml:94(para)
+msgid "This is the behavior as of <command>npm</command> major version 2. A change in this behavior will be accompanied by an increase in major version number"
+msgstr ""
+
+#: npm-restart.1.xml:98(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-restart.1.xml:102(para)
+msgid "npm help run-script"
+msgstr ""
+
+#: npm-restart.1.xml:105(para)
+msgid "npm help 7 scripts"
+msgstr ""
+
+#: npm-restart.1.xml:108(para)
+msgid "npm help test"
+msgstr ""
+
+#: npm-restart.1.xml:111(para)
+msgid "npm help start"
+msgstr ""
+
+#: npm-restart.1.xml:114(para)
+msgid "npm help stop"
+msgstr ""
+
+#: npm-restart.1.xml:117(para)
+msgid "npm apihelp restart"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-restart.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

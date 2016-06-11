@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmindex7'>
+<refmeta>
+<refentrytitle>NPM-INDEX</refentrytitle>
+<manvolnum>7</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-index</refname>
+<refpurpose>Index of all npm documentation</refpurpose>
+</refnamediv>
+
+<refsect1 id='npm_help_readme'><title>npm help README\fR</title>
+<para>a JavaScript package manager</para>
+<!-- body begins here -->
+</refsect1>
+
+<refsect1 id='command_line_documentation'><title>Command Line Documentation</title>
+<para>Using npm on the command line</para>
+
+<refsect2 id='npm_help_npm'><title>npm help npm</title>
+
+<para>javascript package manager</para>
+</refsect2>
+
+<refsect2 id='npm_help_access'><title>npm help access</title>
+
+<para>Set access level on published packages</para>
+</refsect2>
+
+<refsect2 id='npm_help_adduser'><title>npm help adduser</title>
+
+<para>Add a registry user account</para>
+</refsect2>
+
+<refsect2 id='npm_help_bin'><title>npm help bin</title>
+
+<para>Display npm bin folder</para>
+</refsect2>
+
+<refsect2 id='npm_help_bugs'><title>npm help bugs</title>
+
+<para>Bugs for a package in a web browser maybe</para>
+</refsect2>
+
+<refsect2 id='npm_help_build'><title>npm help build</title>
+
+<para>Build a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_bundle'><title>npm help bundle</title>
+
+<para>REMOVED</para>
+</refsect2>
+
+<refsect2 id='npm_help_cache'><title>npm help cache</title>
+
+<para>Manipulates packages cache</para>
+</refsect2>
+
+<refsect2 id='npm_help_completion'><title>npm help completion</title>
+
+<para>Tab Completion for npm</para>
+</refsect2>
+
+<refsect2 id='npm_help_config'><title>npm help config</title>
+
+<para>Manage the npm configuration files</para>
+</refsect2>
+
+<refsect2 id='npm_help_dedupe'><title>npm help dedupe</title>
+
+<para>Reduce duplication</para>
+</refsect2>
+
+<refsect2 id='npm_help_deprecate'><title>npm help deprecate</title>
+
+<para>Deprecate a version of a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_disttag'><title>npm help dist-tag</title>
+
+<para>Modify package distribution tags</para>
+</refsect2>
+
+<refsect2 id='npm_help_docs'><title>npm help docs</title>
+
+<para>Docs for a package in a web browser maybe</para>
+</refsect2>
+
+<refsect2 id='npm_help_edit'><title>npm help edit</title>
+
+<para>Edit an installed package</para>
+</refsect2>
+
+<refsect2 id='npm_help_explore'><title>npm help explore</title>
+
+<para>Browse an installed package</para>
+</refsect2>
+
+<refsect2 id='npm_help_helpsearch'><title>npm help help-search</title>
+
+<para>Search npm help documentation</para>
+</refsect2>
+
+<refsect2 id='npm_help_help'><title>npm help help</title>
+
+<para>Get help on npm</para>
+</refsect2>
+
+<refsect2 id='npm_help_init'><title>npm help init</title>
+
+<para>Interactively create a package.json file</para>
+</refsect2>
+
+<refsect2 id='npm_help_install'><title>npm help install</title>
+
+<para>Install a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_link'><title>npm help link</title>
+
+<para>Symlink a package folder</para>
+</refsect2>
+
+<refsect2 id='npm_help_logout'><title>npm help logout</title>
+
+<para>Log out of the registry</para>
+</refsect2>
+
+<refsect2 id='npm_help_ls'><title>npm help ls</title>
+
+<para>List installed packages</para>
+</refsect2>
+
+<refsect2 id='npm_help_outdated'><title>npm help outdated</title>
+
+<para>Check for outdated packages</para>
+</refsect2>
+
+<refsect2 id='npm_help_owner'><title>npm help owner</title>
+
+<para>Manage package owners</para>
+</refsect2>
+
+<refsect2 id='npm_help_pack'><title>npm help pack</title>
+
+<para>Create a tarball from a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_ping'><title>npm help ping</title>
+
+<para>Ping npm registry</para>
+</refsect2>
+
+<refsect2 id='npm_help_prefix'><title>npm help prefix</title>
+
+<para>Display prefix</para>
+</refsect2>
+
+<refsect2 id='npm_help_prune'><title>npm help prune</title>
+
+<para>Remove extraneous packages</para>
+</refsect2>
+
+<refsect2 id='npm_help_publish'><title>npm help publish</title>
+
+<para>Publish a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_rebuild'><title>npm help rebuild</title>
+
+<para>Rebuild a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_repo'><title>npm help repo</title>
+
+<para>Open package repository page in the browser</para>
+</refsect2>
+
+<refsect2 id='npm_help_restart'><title>npm help restart</title>
+
+<para>Restart a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_root'><title>npm help root</title>
+
+<para>Display npm root</para>
+</refsect2>
+
+<refsect2 id='npm_help_runscript'><title>npm help run-script</title>
+
+<para>Run arbitrary package scripts</para>
+</refsect2>
+
+<refsect2 id='npm_help_search'><title>npm help search</title>
+
+<para>Search for packages</para>
+</refsect2>
+
+<refsect2 id='npm_help_shrinkwrap'><title>npm help shrinkwrap</title>
+
+<para>Lock down dependency versions</para>
+</refsect2>
+
+<refsect2 id='npm_help_star'><title>npm help star</title>
+
+<para>Mark your favorite packages</para>
+</refsect2>
+
+<refsect2 id='npm_help_stars'><title>npm help stars</title>
+
+<para>View packages marked as favorites</para>
+</refsect2>
+
+<refsect2 id='npm_help_start'><title>npm help start</title>
+
+<para>Start a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_stop'><title>npm help stop</title>
+
+<para>Stop a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_tag'><title>npm help tag</title>
+
+<para>Tag a published version</para>
+</refsect2>
+
+<refsect2 id='npm_help_team'><title>npm help team</title>
+
+<para>Manage organization teams and team memberships</para>
+</refsect2>
+
+<refsect2 id='npm_help_test'><title>npm help test</title>
+
+<para>Test a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_uninstall'><title>npm help uninstall</title>
+
+<para>Remove a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_unpublish'><title>npm help unpublish</title>
+
+<para>Remove a package from the registry</para>
+</refsect2>
+
+<refsect2 id='npm_help_update'><title>npm help update</title>
+
+<para>Update a package</para>
+</refsect2>
+
+<refsect2 id='npm_help_version'><title>npm help version</title>
+
+<para>Bump a package version</para>
+</refsect2>
+
+<refsect2 id='npm_help_view'><title>npm help view</title>
+
+<para>View registry info</para>
+</refsect2>
+
+<refsect2 id='npm_help_whoami'><title>npm help whoami</title>
+
+<para>Display npm username</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='api_documentation'><title>API Documentation</title>
+<para>Using npm in your Node programs</para>
+</refsect1>
+
+<refsect1 id='files'><title>Files</title>
+<para>File system structures npm uses</para>
+
+<refsect2 id='npm_help_5_folders'><title>npm help 5 folders</title>
+
+<para>Folder Structures Used by npm</para>
+</refsect2>
+
+<refsect2 id='npm_help_5_npmrc'><title>npm help 5 npmrc</title>
+
+<para>The npm config files</para>
+</refsect2>
+
+<refsect2 id='npm_help_5_packagejson'><title>npm help 5 package.json</title>
+
+<para>Specifics of npm's package.json handling</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id='misc'><title>Misc</title>
+<para>Various other bits and bobs</para>
+
+<refsect2 id='npm_help_7_codingstyle'><title>npm help 7 coding-style</title>
+
+<para>npm's "funny" coding style</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_config'><title>npm help 7 config</title>
+
+<para>More than you probably want to know about npm configuration</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_developers'><title>npm help 7 developers</title>
+
+<para>Developer Guide</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_disputes'><title>npm help 7 disputes</title>
+
+<para>Handling Module Name Disputes</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_faq'><title>npm help 7 faq</title>
+
+<para>Frequently Asked Questions</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_index'><title>npm help 7 index</title>
+
+<para>Index of all npm documentation</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_orgs'><title>npm help 7 orgs</title>
+
+<para>Working with Teams &amp; Orgs</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_registry'><title>npm help 7 registry</title>
+
+<para>The JavaScript Package Registry</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_scope'><title>npm help 7 scope</title>
+
+<para>Scoped packages</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_scripts'><title>npm help 7 scripts</title>
+
+<para>How npm handles the "scripts" field</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_removingnpm'><title>npm help 7 removing-npm</title>
+
+<para>Cleaning the Slate</para>
+</refsect2>
+
+<refsect2 id='npm_help_7_semver'><title>npm help 7 semver</title>
+
+<para>The semantic versioner for npm</para>
+</refsect2>
+</refsect1>
+</refentry>
+

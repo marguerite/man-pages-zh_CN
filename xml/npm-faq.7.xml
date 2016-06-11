@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmfaq7'>
+<refmeta>
+<refentrytitle>NPM-FAQ</refentrytitle>
+<manvolnum>7</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-faq</refname>
+<refpurpose>Frequently Asked Questions</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='where_can_i_find_these_docs_in_html'><title>Where can I find these docs in HTML?</title>
+<para>https://docs.npmjs.com/, or run:</para>
+
+<literallayout remap='.nf'>
+npm config set viewer browser
+</literallayout> <!-- .fi -->
+
+<para>This command will set the npm docs to open in your default web browser rather than <emphasis remap='B'>man</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='it_didnt_work'><title>It didn't work.</title>
+<para>Please provide a little more detail, search for the error via Google <emphasis remap='I'>https://google.com</emphasis> or StackOverflow npm <emphasis remap='I'><ulink url='http://stackoverflow.com/search'>http://stackoverflow.com/search</ulink>?q=npm</emphasis> to see if another developer has encountered a similar problem.</para>
+</refsect1>
+
+<refsect1 id='why_didnt_it_work'><title>Why didn't it work?</title>
+<para>I don't know yet.</para>
+
+<para>Try reading the error output first, ensure this is a true npm issue and not a package issue. If you are having an issue with a package dependency, please submit your error to that particular package maintainer.</para>
+
+<para>For any npm issues, try following the instructions, or even retracing your steps. If the issue continues to persist, submit a bug with the steps to reproduce, please include the operating system you are working on, along with the error you recieve.</para>
+</refsect1>
+
+<refsect1 id='where_does_npm_put_stuff'><title>Where does npm put stuff?</title>
+<para>See npm help 5 <emphasis remap='B'>npm-folders</emphasis></para>
+
+<para>tl;dr:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Use the <emphasis remap='B'>npm root</emphasis> command to see where modules go, and the <emphasis remap='B'>npm bin</emphasis>
+command to see where executables go</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Global installs are different from local installs. If you install
+something with the <option>-g</option> flag, then its executables go in <emphasis remap='B'>npm bin -g</emphasis>
+and its modules go in <emphasis remap='B'>npm root -g</emphasis>&thinsp;.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='how_do_i_install_something_on_my_compute'><title>How do I install something on my computer in a central location?</title>
+<para>Install it globally by tacking <option>-g</option> or <option>--global</option> to the command.  (This
+is especially important for command line utilities that need to add
+their bins to the global system <envar>PATH</envar>&thinsp;.)</para>
+</refsect1>
+
+<refsect1 id='i_installed_something_globally_but_i_can'><title>I installed something globally, but I can't <function>require()</function> it</title>
+<para>Install it locally.</para>
+
+<para>The global install location is a place for command-line utilities
+to put their bins in the system <envar>PATH</envar>&thinsp;.  It's not for use with <function>require()</function>&thinsp;.</para>
+
+<para>If you <function>require()</function> a module in your code, then that means it's a
+dependency, and a part of your program.  You need to install it locally
+in your program.</para>
+</refsect1>
+
+<refsect1 id='why_cant_npm_just_put_everything_in_one_'><title>Why can't npm just put everything in one place, like other package managers?</title>
+<para>Not every change is an improvement, but every improvement is a change.
+This would be like asking git to do network IO for every commit.  It's
+not going to happen, because it's a terrible idea that causes more
+problems than it solves.</para>
+
+<para>It is much harder to avoid dependency conflicts without nesting
+dependencies.  This is fundamental to the way that npm works, and has
+proven to be an extremely successful approach.  See npm help 5 <emphasis remap='B'>npm-folders</emphasis> for
+more details.</para>
+
+<para>If you want a package to be installed in one place, and have all your
+programs reference the same copy of it, then use the <emphasis remap='B'>npm link</emphasis> command.
+That's what it's for.  Install it globally, then link it into each
+program that uses it.</para>
+</refsect1>
+
+<refsect1 id='whatever_i_really_want_the_old_style_eve'><title>Whatever, I really want the old style 'everything global' style.</title>
+<para>Write your own package manager.  You could probably even wrap up <emphasis remap='B'>npm</emphasis>
+in a shell script if you really wanted to.</para>
+
+<para>npm will not help you do something that is known to be a bad idea.</para>
+</refsect1>
+
+<refsect1 id='should_i_check_my_fbnode_modulesfp_folde'><title>Should I check my <emphasis remap='B'>node_modules</emphasis> folder into git?</title>
+<para>Usually, no. Allow npm to resolve dependencies for your packages.</para>
+
+<para>For packages you <emphasis remap='B'>deploy</emphasis>, such as websites and apps,
+you should use npm shrinkwrap to lock down your full dependency tree:</para>
+
+<para>https://docs.npmjs.com/cli/shrinkwrap</para>
+
+<para>If you are paranoid about depending on the npm ecosystem,
+you should run a private npm mirror or a private cache.</para>
+
+<para>If you want 100% confidence in being able to reproduce the specific bytes
+included in a deployment, you should use an additional mechanism that can
+verify contents rather than versions. For example,
+Amazon machine images, DigitalOcean snapshots, Heroku slugs, or simple tarballs.</para>
+</refsect1>
+
+<refsect1 id='is_it_npm_or_npm_or_npm'><title>Is it 'npm' or 'NPM' or 'Npm'?</title>
+<para>npm should never be capitalized unless it is being displayed in a
+location that is customarily all-caps (such as the title of man pages.)</para>
+</refsect1>
+
+<refsect1 id='if_npm_is_an_acronym_why_is_it_never_cap'><title>If 'npm' is an acronym, why is it never capitalized?</title>
+<para>Contrary to the belief of many, "npm" is not in fact an abbreviation for
+"Node Package Manager".  It is a recursive bacronymic abbreviation for
+"npm is not an acronym".  (If it was "ninaa", then it would be an
+acronym, and thus incorrectly named.)</para>
+
+<para>"NPM", however, <emphasis remap='I'>is</emphasis> an acronym (more precisely, a capitonym) for the
+National Association of Pastoral Musicians.  You can learn more
+about them at <ulink url='http://npm.org/&thinsp;'>http://npm.org/&thinsp;</ulink>.</para>
+
+<para>In software, "NPM" is a Non-Parametric Mapping utility written by
+Chris Rorden.  You can analyze pictures of brains with it.  Learn more
+about the (capitalized) NPM program at <ulink url='http://www.cabiatl.com/mricro/npm/&thinsp;'>http://www.cabiatl.com/mricro/npm/&thinsp;</ulink>.</para>
+
+<para>The first seed that eventually grew into this flower was a bash utility
+named "pm", which was a shortened descendent of "pkgmakeinst", a
+bash function that was used to install various different things on different
+platforms, most often using Yahoo's <emphasis remap='B'>yinst</emphasis>&thinsp;.  If <emphasis remap='B'>npm</emphasis> was ever an
+acronym for anything, it was <emphasis remap='B'>node pm</emphasis> or maybe <emphasis remap='B'>new pm</emphasis>&thinsp;.</para>
+
+<para>So, in all seriousness, the "npm" project is named after its command-line
+utility, which was organically selected to be easily typed by a right-handed
+programmer using a US QWERTY keyboard layout, ending with the
+right-ring-finger in a postition to type the <emphasis remap='B'>-</emphasis> key for flags and
+other command-line arguments.  That command-line utility is always
+lower-case, though it starts most sentences it is a part of.</para>
+</refsect1>
+
+<refsect1 id='how_do_i_list_installed_packages'><title>How do I list installed packages?</title>
+<para><emphasis remap='B'>npm ls</emphasis></para>
+</refsect1>
+
+<refsect1 id='how_do_i_search_for_packages'><title>How do I search for packages?</title>
+<para><emphasis remap='B'>npm search</emphasis></para>
+
+<para>Arguments are greps.  <emphasis remap='B'>npm search jsdom</emphasis> shows jsdom packages.</para>
+</refsect1>
+
+<refsect1 id='how_do_i_update_npm'><title>How do I update npm?</title>
+<literallayout remap='.nf'>
+npm install npm -g
+</literallayout> <!-- .fi -->
+
+<para>You can also update all outdated local packages by doing <emphasis remap='B'>npm update</emphasis> without
+any arguments, or global packages by doing <emphasis remap='B'>npm update -g</emphasis>&thinsp;.</para>
+
+<para>Occasionally, the version of npm will progress such that the current
+version cannot be properly installed with the version that you have
+installed already.  (Consider, if there is ever a bug in the <emphasis remap='B'>update</emphasis>
+command.)</para>
+
+<para>In those cases, you can do this:</para>
+
+<literallayout remap='.nf'>
+curl https://www.npmjs.com/install.sh | sh
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='what_is_a_fbpackagefp'><title>What is a <emphasis remap='B'>package</emphasis>?</title>
+<para>A package is:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>a) a folder containing a program described by a package.json file</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>b) a gzipped tarball containing (a)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>c) a url that resolves to (b)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>d) a <emphasis remap='B'>&lt;name&gt;@&lt;version&gt;</emphasis> that is published on the registry with (c)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>e) a <emphasis remap='B'>&lt;name&gt;@&lt;tag&gt;</emphasis> that points to (d)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>f) a <emphasis remap='B'>&lt;name&gt;</emphasis> that has a "latest" tag satisfying (e)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>g) a <emphasis remap='B'>git</emphasis> url that, when cloned, results in (a).</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Even if you never publish your package, you can still get a lot of
+benefits of using npm if you just want to write a node program (a), and
+perhaps if you also want to be able to easily install it elsewhere
+after packing it up into a tarball (b).</para>
+
+<para>Git urls can be of the form:</para>
+
+<literallayout remap='.nf'>
+git://github.com/user/project.git#commit-ish
+git+ssh://user@hostname:project.git#commit-ish
+git+<ulink url='http://user'>http://user</ulink>@hostname/project/blah.git#commit-ish
+git+https://user@hostname/project/blah.git#commit-ish
+</literallayout> <!-- .fi -->
+
+<para>The <emphasis remap='B'>commit-ish</emphasis> can be any tag, sha, or branch which can be supplied as
+an argument to <emphasis remap='B'>git checkout</emphasis>&thinsp;.  The default is <emphasis remap='B'>master</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='what_is_a_fbmodulefp'><title>What is a <emphasis remap='B'>module</emphasis>?</title>
+<para>A module is anything that can be loaded with <function>require()</function> in a Node.js
+program.  The following things are all examples of things that can be
+loaded as modules:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>A folder with a <emphasis remap='B'>package.json</emphasis> file containing a <emphasis remap='B'>main</emphasis> field.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>A folder with an <emphasis remap='B'>index.js</emphasis> file in it.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>A JavaScript file.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Most npm packages are modules, because they are libraries that you
+load with <emphasis remap='B'>require</emphasis>&thinsp;.  However, there's no requirement that an npm
+package be a module!  Some only contain an executable command-line
+interface, and don't provide a <emphasis remap='B'>main</emphasis> field for use in Node programs.</para>
+
+<para>Almost all npm packages (at least, those that are Node programs)
+<emphasis remap='I'>contain</emphasis> many modules within them (because every file they load with
+<function>require()</function> is a module).</para>
+
+<para>In the context of a Node program, the <emphasis remap='B'>module</emphasis> is also the thing that
+was loaded <emphasis remap='I'>from</emphasis> a file.  For example, in the following program:</para>
+
+<literallayout remap='.nf'>
+var req = require('request')
+</literallayout> <!-- .fi -->
+
+<para>we might say that "The variable <emphasis remap='B'>req</emphasis> refers to the <emphasis remap='B'>request</emphasis> module".</para>
+</refsect1>
+
+<refsect1 id='so_why_is_it_the_fbnode_modulesfp_folder'><title>So, why is it the <emphasis remap='B'>node_modules</emphasis> folder, but <emphasis remap='B'>package.json</emphasis> file? Why not <emphasis remap='B'>node_packages</emphasis> or <emphasis remap='B'>module.json</emphasis>?</title>
+<para>The <emphasis remap='B'>package.json</emphasis> file defines the package.  (See "What is a
+package?" above.)</para>
+
+<para>The <emphasis remap='B'>node_modules</emphasis> folder is the place Node.js looks for modules.
+(See "What is a module?" above.)</para>
+
+<para>For example, if you create a file at <emphasis remap='B'>node_modules/foo.js</emphasis> and then
+had a program that did <emphasis remap='B'>var f = require('foo.js')</emphasis> then it would load
+the module.  However, <emphasis remap='B'>foo.js</emphasis> is not a "package" in this case,
+because it does not have a package.json.</para>
+
+<para>Alternatively, if you create a package which does not have an
+<emphasis remap='B'>index.js</emphasis> or a <emphasis remap='B'>"main"</emphasis> field in the <emphasis remap='B'>package.json</emphasis> file, then it is
+not a module.  Even if it's installed in <emphasis remap='B'>node_modules</emphasis>, it can't be
+an argument to <function>require()</function>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='fbnode_modulesfp_is_the_name_of_my_deity'><title><emphasis remap='B'>"node_modules"</emphasis> is the name of my deity's arch-rival, and a Forbidden Word in my religion. Can I configure npm to use a different folder?</title>
+<para>No.  This will never happen.  This question comes up sometimes,
+because it seems silly from the outside that npm couldn't just be
+configured to put stuff somewhere else, and then npm could load them
+from there.  It's an arbitrary spelling choice, right?  What's the big
+deal?</para>
+
+<para>At the time of this writing, the string <emphasis remap='B'>&thinsp;'node_modules'</emphasis> appears 151
+times in 53 separate files in npm and node core (excluding tests and
+documentation).</para>
+
+<para>Some of these references are in node's built-in module loader.  Since
+npm is not involved <emphasis remap='B'>at all</emphasis> at run-time, node itself would have to
+be configured to know where you've decided to stick stuff.  Complexity
+hurdle #1.  Since the Node module system is locked, this cannot be
+changed, and is enough to kill this request.  But I'll continue, in
+deference to your deity's delicate feelings regarding spelling.</para>
+
+<para>Many of the others are in dependencies that npm uses, which are not
+necessarily tightly coupled to npm (in the sense that they do not read
+npm's configuration files, etc.)  Each of these would have to be
+configured to take the name of the <emphasis remap='B'>node_modules</emphasis> folder as a
+parameter.  Complexity hurdle #2.</para>
+
+<para>Furthermore, npm has the ability to "bundle" dependencies by adding
+the dep names to the <emphasis remap='B'>"bundledDependencies"</emphasis> list in package.json,
+which causes the folder to be included in the package tarball.  What
+if the author of a module bundles its dependencies, and they use a
+different spelling for <emphasis remap='B'>node_modules</emphasis>?  npm would have to rename the
+folder at publish time, and then be smart enough to unpack it using
+your locally configured name.  Complexity hurdle #3.</para>
+
+<para>Furthermore, what happens when you <emphasis remap='I'>change</emphasis> this name?  Fine, it's
+easy enough the first time, just rename the <emphasis remap='B'>node_modules</emphasis> folders to
+<emphasis remap='B'>&thinsp;./blergyblerp/</emphasis> or whatever name you choose.  But what about when you
+change it again?  npm doesn't currently track any state about past
+configuration settings, so this would be rather difficult to do
+properly.  It would have to track every previous value for this
+config, and always accept any of them, or else yesterday's install may
+be broken tomorrow.  Complexity hurdle #4.</para>
+
+<para>Never going to happen.  The folder is named <emphasis remap='B'>node_modules</emphasis>&thinsp;.  It is
+written indelibly in the Node Way, handed down from the ancient times
+of Node 0.3.</para>
+</refsect1>
+
+<refsect1 id='how_do_i_install_node_with_npm'><title>How do I install node with npm?</title>
+<para>You don't.  Try one of these node version managers:</para>
+
+<para>Unix:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><ulink url='http://github.com/isaacs/nave'>http://github.com/isaacs/nave</ulink></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><ulink url='http://github.com/visionmedia/n'>http://github.com/visionmedia/n</ulink></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><ulink url='http://github.com/creationix/nvm'>http://github.com/creationix/nvm</ulink></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Windows:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><ulink url='http://github.com/marcelklehr/nodist'>http://github.com/marcelklehr/nodist</ulink></para>
+    </listitem>
+    <listitem override='bullet'>
+<para>https://github.com/coreybutler/nvm-windows</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>https://github.com/hakobera/nvmw</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>https://github.com/nanjingboy/nvmw</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='how_can_i_use_npm_for_development'><title>How can I use npm for development?</title>
+<para>See npm help 7 <emphasis remap='B'>npm-developers</emphasis> and npm help 5 <emphasis remap='B'>package.json</emphasis>&thinsp;.</para>
+
+<para>You'll most likely want to <emphasis remap='B'>npm link</emphasis> your development folder.  That's
+awesomely handy.</para>
+
+<para>To set up your own private registry, check out npm help 7 <emphasis remap='B'>npm-registry</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='can_i_list_a_url_as_a_dependency'><title>Can I list a url as a dependency?</title>
+<para>Yes.  It should be a url to a gzipped tarball containing a single folder
+that has a package.json in its root, or a git url.
+(See "what is a package?" above.)</para>
+</refsect1>
+
+<refsect1 id='how_do_i_symlink_to_a_dev_folder_so_i_do'><title>How do I symlink to a dev folder so I don't have to keep re-installing?</title>
+<para>See npm help <emphasis remap='B'>npm-link</emphasis></para>
+</refsect1>
+
+<refsect1 id='the_package_registry_website_what_is_tha'><title>The package registry website. What is that exactly?</title>
+<para>See npm help 7 <emphasis remap='B'>npm-registry</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='i_forgot_my_password_and_cant_publish_ho'><title>I forgot my password, and can't publish. How do I reset it?</title>
+<para>Go to https://npmjs.com/forgot&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='i_get_econnrefused_a_lot_whats_up'><title>I get ECONNREFUSED a lot. What's up?</title>
+<para>Either the registry is down, or node's DNS isn't able to reach out.</para>
+
+<para>To check if the registry is down, open up
+https://registry.npmjs.org/ in a web browser.  This will also tell
+you if you are just unable to access the internet for some reason.</para>
+
+<para>If the registry IS down, let us know by emailing support@npmjs.com
+or posting an issue at https://github.com/npm/npm/issues&thinsp;.  If it's
+down for the world (and not just on your local network) then we're
+probably already being pinged about it.</para>
+
+<para>You can also often get a faster response by visiting the #npm channel
+on Freenode IRC.</para>
+</refsect1>
+
+<refsect1 id='why_no_namespaces'><title>Why no namespaces?</title>
+<para>npm has only one global namespace.  If you want to namespace your own packages,
+you may: simply use the <emphasis remap='B'>-</emphasis> character to separate the names or use scoped
+packages.  npm is a mostly anarchic system.  There is not sufficient need to
+impose namespace rules on everyone.</para>
+
+<para>As of 2.0, npm supports scoped packages, which allow you to publish a group of
+related modules without worrying about name collisions.</para>
+
+<para>Every npm user owns the scope associated with their username.  For example, the
+user named <emphasis remap='B'>npm</emphasis> owns the scope <emphasis remap='B'>@npm</emphasis>&thinsp;.  Scoped packages are published inside a
+scope by naming them as if they were files under the scope directory, e.g., by
+setting <emphasis remap='B'>name</emphasis> in <emphasis remap='B'>package.json</emphasis> to <emphasis remap='B'>@npm/npm</emphasis>&thinsp;.</para>
+
+<para>Scoped packages are supported by the public npm registry. The npm client is
+backwards-compatible with un-scoped registries, so it can be used to work with
+scoped and un-scoped registries at the same time.</para>
+
+<para>Unscoped packages can only depend on other unscoped packages. Scoped packages
+can depend on packages from their own scope, a different scope, or the public
+registry (unscoped).</para>
+
+<para>For the current documentation of scoped packages, see
+https://docs.npmjs.com/misc/scope</para>
+
+<para>References:</para>
+  <blockquote remap='RS'>
+  <variablelist remap='IP'>
+    <varlistentry>
+    <term>1.</term>
+    <listitem>
+<para>For the reasoning behind the "one global namespace", please see  this
+discussion: https://github.com/npm/npm/issues/798 (TL;DR: It doesn't
+actually make things better, and can make them worse.)</para>
+    </listitem>
+    </varlistentry>
+    <varlistentry>
+    <term>2.</term>
+    <listitem>
+<para>For the pre-implementation discussion of the scoped package feature, see
+this discussion: https://github.com/npm/npm/issues/5239</para>
+
+    </listitem>
+    </varlistentry>
+  </variablelist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='who_does_npm'><title>Who does npm?</title>
+<para>npm was originally written by Isaac Z. Schlueter, and many others have
+contributed to it, some of them quite substantially.</para>
+
+<para>The npm open source project, The npm Registry, and the community
+website <emphasis remap='I'>https://www.npmjs.com</emphasis> are maintained and operated by the
+good folks at npm, Inc. <emphasis remap='I'><ulink url='http://www.npmjs.com'>http://www.npmjs.com</ulink></emphasis></para>
+</refsect1>
+
+<refsect1 id='i_have_a_question_or_request_not_address'><title>I have a question or request not addressed here. Where should I put it?</title>
+<para>Post an issue on the github project:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>https://github.com/npm/npm/issues</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='why_does_npm_hate_me'><title>Why does npm hate me?</title>
+<para>npm is not capable of hatred.  It loves everyone, especially you.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help npm</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 developers</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 folders</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

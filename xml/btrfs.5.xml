@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from DocBook+man+troff by doclifter -->
+<refentry id='btrfs5'>
+<!-- ' t
+Title: btrfs&bsol;-mount
+Author: [FIXME: author] [see <ulink url='http://docbook.sf.net/el/author'>http://docbook.sf.net/el/author</ulink>]
+Generator: DocBook XSL Stylesheets v1.78.1 &lt;<ulink url='http://docbook.sf.net/&gt;'>http://docbook.sf.net/&gt;</ulink>
+Date: 01/31/2015
+Manual: Btrfs Manual
+Source: Btrfs v3.18.2+20150129
+Language: English -->
+
+<!-- ".TH "BTRFS&bsol;-MOUNT" "5" "01/31/2015" "Btrfs v3.18.2+20150129" "Btrfs Manual" -->
+
+<!-- * Define some portability stuff -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<ulink url='http://bugs.debian.org/507673'>http://bugs.debian.org/507673</ulink>
+<ulink url='http://lists.gnu.org/archive/html/groff/2009&bsol;-02/msg00013.html'>http://lists.gnu.org/archive/html/groff/2009&bsol;-02/msg00013.html</ulink>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+".ie 0 .ds Aq &apos;'
+".el       .ds Aq ' -->
+
+<!-- * set default formatting -->
+
+<!-- disable hyphenation
+".nh
+disable justification (adjust text to left margin only)
+".ad l -->
+
+<!-- * MAIN CONTENT STARTS HERE * -->
+
+<refnamediv>
+<refname>btrfs-mount</refname>
+<refpurpose>mount options and supported file attributes for the btrfs filesystem</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>man</command>    <arg choice='plain'><replaceable>btrfs</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+
+<para>This document describes mount options specific to the btrfs filesystem. Other generic mount options are available,and are described in the <citerefentry><refentrytitle>mount</refentrytitle><manvolnum>8</manvolnum></citerefentry> manpage.</para>
+</refsect1>
+
+<refsect1 id='mount_options'><title>MOUNT OPTIONS</title>
+<para><emphasis remap='B'>alloc_start=</emphasis><emphasis remap='I'>bytes</emphasis></para>
+<literallayout remap='RS'>
+Debugging option to force all block allocations above a certain byte threshold on each block device. The value is specified in bytes, optionally with a K, M, or G suffix, case insensitive. Default is 1MB.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>autodefrag</emphasis></para>
+<programlisting remap='RS'>
+Disable/enable auto defragmentation. Auto defragmentation detects small random writes into files and queue them up for the defrag process. Works best for small files; Not well suited for large database workloads.
+</programlisting> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>check_int</emphasis>|<emphasis remap='B'>check_int_data</emphasis>|<emphasis remap='B'>check_int_print_mask=</emphasis><emphasis remap='I'>value</emphasis></para>
+  <blockquote remap='RS'>
+<para>These debugging options control the behavior of the integrity checking module (the BTRFS_FS_CHECK_INTEGRITY config option required).
+<emphasis remap='B'>check_int</emphasis>
+enables the integrity checker module, which examines all block write requests to ensure on-disk consistency, at a large memory and CPU cost.
+<emphasis remap='B'>check_int_data</emphasis>
+includes extent data in the integrity checks, and implies the check_int option.
+<emphasis remap='B'>check_int_print_mask</emphasis>
+takes a bitmask of BTRFSIC_PRINT_MASK_* values as defined in
+<emphasis remap='I'>fs/btrfs/check-integrity.c</emphasis>, to control the integrity checker module behavior.</para>
+
+<para>See comments at the top of
+<emphasis remap='I'>fs/btrfs/check-integrity.c</emphasis>
+for more info.
+  </para></blockquote> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>commit=</emphasis><emphasis remap='I'>seconds</emphasis></para>
+<programlisting remap='RS'>
+Set the interval of periodic commit, 30 seconds by default. Higher values defer data being synced to permanent storage with obvious consequences when the system crashes. The upper bound is not forced, but a warning is printed if it&rsquo;s more than 300 seconds (5 minutes).
+</programlisting> <!-- remap='RE' -->
+<para><emphasis remap='B'>compress</emphasis>|<emphasis remap='B'>compress=</emphasis><emphasis remap='I'>type</emphasis>|<emphasis remap='B'>compress-force</emphasis>|<emphasis remap='B'>compress-force=</emphasis><emphasis remap='I'>type</emphasis></para>
+<literallayout remap='RS'>
+Control BTRFS file data compression. Type may be specified as "zlib" "lzo" or "no" (for no compression, used for remounting). If no type is specified, zlib is used. If compress-force is specified, all files will be compressed, whether or not they compress well. If compression is enabled, nodatacow and nodatasum are disabled.
+</literallayout> <!-- remap='RE' -->
+<para><emphasis remap='B'>degraded</emphasis></para>
+<literallayout remap='RS'>
+Allow mounts to continue with missing devices. A read-write mount may fail with too many devices missing, for example if a stripe member is completely missing.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>device=</emphasis><emphasis remap='I'>devicepath</emphasis></para>
+<programlisting remap='RS'>
+Specify a device during mount so that ioctls on the control device can be avoided. Especially useful when trying to mount a multi-device setup as root. May be specified multiple times for multiple devices.
+</programlisting> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>discard</emphasis></para>
+<literallayout remap='RS'>
+Disable/enable discard mount option. Discard issues frequent commands to let the block device reclaim space freed by the filesystem. This is useful for SSD devices, thinly provisioned LUNs and virtual machine images, but may have a significant performance impact. (The fstrim command is also available to initiate batch trims from userspace).
+</literallayout> <!-- remap='RE' -->
+<para><emphasis remap='B'>enospc_debug</emphasis></para>
+<literallayout remap='RS'>
+Disable/enable debugging option to be more verbose in some ENOSPC conditions.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>fatal_errors=</emphasis><emphasis remap='I'>action</emphasis></para>
+  <blockquote remap='RS'>
+<para>Action to take when encountering a fatal error.</para>
+
+<para>"bug" - BUG() on a fatal error. This is the default.</para>
+
+<para>"panic" - panic() on a fatal error.
+  </para></blockquote> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>flushoncommit</emphasis></para>
+  <blockquote remap='RS'>
+<para>The
+<emphasis remap='B'>flushoncommit</emphasis>
+mount option forces any data dirtied by a write in a prior transaction to commit as part of the current commit. This makes the committed state a fully consistent view of the file system from the application&rsquo;s perspective (i.e., it includes all completed file system operations). This was previously the behavior only when a snapshot is created.
+  </para></blockquote> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>inode_cache</emphasis></para>
+<literallayout remap='RS'>
+Enable free inode number caching. Defaults to off due to an overflow problem when the free space crcs don&rsquo;t fit inside a single page.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>max_inline=</emphasis><emphasis remap='I'>bytes</emphasis></para>
+<literallayout remap='RS'>
+Specify the maximum amount of space, in bytes, that can be inlined in a metadata B-tree leaf. The value is specified in bytes, optionally with a K, M, or G suffix, case insensitive. In practice, this value is limited by the root sector size, with some space unavailable due to leaf headers. For a 4k sectorsize, max inline data is ~3900 bytes.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>metadata_ratio=</emphasis><emphasis remap='I'>value</emphasis></para>
+  <blockquote remap='RS'>
+<para>Specify that 1 metadata chunk should be allocated after every
+<emphasis remap='I'>value</emphasis>
+data chunks. Off by default.
+  </para></blockquote> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>noacl</emphasis></para>
+  <blockquote remap='RS'>
+<para>Enable/disable support for Posix Access Control Lists (ACLs). See the
+<citerefentry><refentrytitle>acl</refentrytitle><manvolnum>5</manvolnum></citerefentry> manual page for more information about ACLs.
+  </para></blockquote> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>nobarrier</emphasis></para>
+<literallayout remap='RS'>
+ensure that certain IOs make it through the device cache and are on persistent storage. If disabled on a device with a volatile (non-battery-backed) write-back cache, nobarrier option will lead to filesystem corruption on a system crash or power loss.
+</literallayout> <!-- remap='RE' -->
+<para><emphasis remap='B'>nodatacow</emphasis></para>
+<literallayout remap='RS'>
+Enable/disable data copy-on-write for newly created files. Nodatacow implies nodatasum, and disables all compression.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>nodatasum</emphasis></para>
+<literallayout remap='RS'>
+Enable/disable data checksumming for newly created files. Datasum implies datacow.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>notreelog</emphasis></para>
+<literallayout remap='RS'>
+Enable/disable the tree logging used for fsync and O_SYNC writes.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>recovery</emphasis></para>
+<literallayout remap='RS'>
+Enable autorecovery attempts if a bad tree root is found at mount time. Currently this scans a list of several previous tree roots and tries to use the first readable.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>rescan_uuid_tree</emphasis></para>
+<literallayout remap='RS'>
+Force check and rebuild procedure of the UUID tree. This should not normally be needed.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>skip_balance</emphasis></para>
+<programlisting remap='RS'>
+Skip automatic resume of interrupted balance operation after mount. May be resumed with "btrfs balance resume."
+</programlisting> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>nospace_cache</emphasis></para>
+<literallayout remap='RS'>
+Disable freespace cache loading without clearing the cache.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>clear_cache</emphasis></para>
+<literallayout remap='RS'>
+Force clearing and rebuilding of the disk space cache if something has gone wrong.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>ssd</emphasis>|<emphasis remap='B'>nossd</emphasis>|<emphasis remap='B'>ssd_spread</emphasis></para>
+  <blockquote remap='RS'>
+<para>Options to control ssd allocation schemes. By default, BTRFS will enable or disable ssd allocation heuristics depending on whether a rotational or nonrotational disk is in use. The ssd and nossd options can override this autodetection.</para>
+
+<para>The ssd_spread mount option attempts to allocate into big chunks of unused space, and may perform better on low-end ssds. ssd_spread implies ssd, enabling all other ssd heuristics as well.
+  </para></blockquote> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>subvol=</emphasis><emphasis remap='I'>path</emphasis></para>
+  <blockquote remap='RS'>
+<para>Mount subvolume at
+<emphasis remap='I'>path</emphasis>
+rather than the root subvolume. The
+<emphasis remap='I'>path</emphasis>
+is relative to the top level subvolume.
+  </para></blockquote> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>subvolid=</emphasis><emphasis remap='I'>ID</emphasis></para>
+<literallayout remap='RS'>
+Mount subvolume specified by an ID number rather than the root subvolume. This allows mounting of subvolumes which are not in the root of the mounted filesystem. You can use "btrfs subvolume list" to see subvolume ID numbers.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>subvolrootid=</emphasis><emphasis remap='I'>objectid</emphasis><emphasis remap='B'> (deprecated)</emphasis></para>
+  <blockquote remap='RS'>
+<para>Mount subvolume specified by
+<emphasis remap='I'>objectid</emphasis>
+rather than the root subvolume. This allows mounting of subvolumes which are not in the root of the mounted filesystem. You can use "btrfs subvolume show" to see the object ID for a subvolume.
+  </para></blockquote> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>thread_pool=</emphasis><emphasis remap='I'>number</emphasis></para>
+<literallayout remap='RS'>
+The number of worker threads to allocate. The default number is equal to the number of CPUs + 2, or 8, whichever is smaller.
+</literallayout> <!-- remap='RE' -->
+
+<para><emphasis remap='B'>user_subvol_rm_allowed</emphasis></para>
+<literallayout remap='RS'>
+Allow subvolumes to be deleted by a non-root user. Use with caution.
+</literallayout> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='file_attributes'><title>FILE ATTRIBUTES</title>
+
+<para>The btrfs filesystem supports setting the following file attributes the <citerefentry><refentrytitle>chattr</refentrytitle><manvolnum>1</manvolnum></citerefentry> utility</para>
+
+<para><emphasis remap='B'>a</emphasis> &mdash; append only</para>
+
+<para><emphasis remap='B'>A</emphasis> &mdash; no atime updates</para>
+
+<para><emphasis remap='B'>c</emphasis> &mdash; compressed</para>
+
+<para><emphasis remap='B'>C</emphasis> &mdash; no copy on write</para>
+
+<para><emphasis remap='B'>d</emphasis> &mdash; no dump</para>
+
+<para><emphasis remap='B'>D</emphasis> &mdash; synchronous directory updates</para>
+
+<para><emphasis remap='B'>i</emphasis> &mdash; immutable</para>
+
+<para><emphasis remap='B'>S</emphasis> &mdash; synchronous updates</para>
+
+<para><emphasis remap='B'>X</emphasis> &mdash; no compression</para>
+
+<para>For descriptions of these attribute flags, please refer to the <citerefentry><refentrytitle>chattr</refentrytitle><manvolnum>1</manvolnum></citerefentry> man page.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+
+<para><citerefentry><refentrytitle>chattr</refentrytitle><manvolnum>1</manvolnum></citerefentry>, <citerefentry><refentrytitle>mkfs.btrfs</refentrytitle><manvolnum>8</manvolnum></citerefentry>, <citerefentry><refentrytitle>mount</refentrytitle><manvolnum>8</manvolnum></citerefentry>, <citerefentry><refentrytitle>btrfs</refentrytitle><manvolnum>8</manvolnum></citerefentry></para>
+</refsect1>
+</refentry>
+

@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='semver7'>
+<refmeta>
+<refentrytitle>SEMVER</refentrytitle>
+<manvolnum>7</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>semver</refname>
+<refpurpose>The semantic versioner for npm</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='usage'><title>Usage</title>
+<screen remap='.nf'>
+$ npm install semver
+
+semver.valid('1.2.3') // '1.2.3'
+semver.valid('a.b.c') // null
+semver.clean('  =v1.2.3   ') // '1.2.3'
+semver.satisfies('1.2.3', '1.x || &gt;=2.5.0 || 5.0.0 - 7.2.3') // true
+semver.gt('1.2.3', '9.8.7') // false
+semver.lt('1.2.3', '9.8.7') // true
+</screen> <!-- .fi -->
+
+<para>As a command-line utility:</para>
+
+<programlisting remap='.nf'>
+$ semver -h
+
+Usage: semver &lt;version&gt; [&lt;version&gt; [...]] [-r &lt;range&gt; | -i &lt;inc&gt; | --preid &lt;identifier&gt; | -l | -rv]
+Test if version(s) satisfy the supplied range(s), and sort them.
+
+Multiple versions or ranges may be supplied, unless increment
+option is specified.  In that case, only a single version may
+be used, and it is incremented by the specified level
+
+Program exits successfully if any valid version satisfies
+all supplied ranges, and prints all satisfying versions.
+
+If no versions are valid, or ranges are not satisfied,
+then exits failure.
+
+Versions are printed in ascending order, so supplying
+multiple versions to the utility will just sort them.
+</programlisting> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='versions'><title>Versions</title>
+<para>A "version" is described by the <emphasis remap='B'>v2.0.0</emphasis> specification found at
+<ulink url='http://semver.org/&thinsp;'>http://semver.org/&thinsp;</ulink>.</para>
+
+<para>A leading <emphasis remap='B'>"="</emphasis> or <emphasis remap='B'>"v"</emphasis> character is stripped off and ignored.</para>
+</refsect1>
+
+<refsect1 id='ranges'><title>Ranges</title>
+<para>A <emphasis remap='B'>version range</emphasis> is a set of <emphasis remap='B'>comparators</emphasis> which specify versions
+that satisfy the range.</para>
+
+<para>A <emphasis remap='B'>comparator</emphasis> is composed of an <emphasis remap='B'>operator</emphasis> and a <emphasis remap='B'>version</emphasis>&thinsp;.  The set
+of primitive <emphasis remap='B'>operators</emphasis> is:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&lt;</emphasis> Less than</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&lt;=</emphasis> Less than or equal to</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&gt;</emphasis> Greater than</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&gt;=</emphasis> Greater than or equal to</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>=</emphasis> Equal.  If no operator is specified, then equality is assumed,
+so this operator is optional, but MAY be included.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>For example, the comparator <emphasis remap='B'>&gt;=1.2.7</emphasis> would match the versions
+<literal>1.2.7</literal>, <literal>1.2.8</literal>, <literal>2.5.3</literal>, and <literal>1.3.9</literal>, but not the versions <literal>1.2.6</literal>
+or <literal>1.1.0</literal>&thinsp;.</para>
+
+<para>Comparators can be joined by whitespace to form a <emphasis remap='B'>comparator set</emphasis>,
+which is satisfied by the <emphasis remap='B'>intersection</emphasis> of all of the comparators
+it includes.</para>
+
+<para>A range is composed of one or more comparator sets, joined by <emphasis remap='B'>||</emphasis>&thinsp;.  A
+version matches a range if and only if every comparator in at least
+one of the <emphasis remap='B'>||</emphasis>-separated comparator sets is satisfied by the version.</para>
+
+<para>For example, the range <emphasis remap='B'>&gt;=1.2.7 &lt;1.3.0</emphasis> would match the versions
+<literal>1.2.7</literal>, <literal>1.2.8</literal>, and <literal>1.2.99</literal>, but not the versions <literal>1.2.6</literal>, <literal>1.3.0</literal>,
+or <literal>1.1.0</literal>&thinsp;.</para>
+
+<para>The range <emphasis remap='B'>1.2.7 || &gt;=1.2.9 &lt;2.0.0</emphasis> would match the versions <literal>1.2.7</literal>,
+<literal>1.2.9</literal>, and <literal>1.4.6</literal>, but not the versions <literal>1.2.8</literal> or <literal>2.0.0</literal>&thinsp;.</para>
+
+<refsect2 id='prerelease_tags'><title>Prerelease Tags</title>
+
+<para>If a version has a prerelease tag (for example, <emphasis remap='B'>1.2.3-alpha.3</emphasis>) then
+it will only be allowed to satisfy comparator sets if at least one
+comparator with the same <emphasis remap='B'>[major, minor, patch]</emphasis> tuple also has a
+prerelease tag.</para>
+
+<para>For example, the range <emphasis remap='B'>&gt;1.2.3-alpha.3</emphasis> would be allowed to match the
+version <emphasis remap='B'>1.2.3-alpha.7</emphasis>, but it would <emphasis remap='I'>not</emphasis> be satisfied by
+<emphasis remap='B'>3.4.5-alpha.9</emphasis>, even though <emphasis remap='B'>3.4.5-alpha.9</emphasis> is technically "greater
+than" <emphasis remap='B'>1.2.3-alpha.3</emphasis> according to the SemVer sort rules.  The version
+range only accepts prerelease tags on the <literal>1.2.3</literal> version.  The
+version <literal>3.4.5</literal> <emphasis remap='I'>would</emphasis> satisfy the range, because it does not have a
+prerelease flag, and <literal>3.4.5</literal> is greater than <emphasis remap='B'>1.2.3-alpha.7</emphasis>&thinsp;.</para>
+
+<para>The purpose for this behavior is twofold.  First, prerelease versions
+frequently are updated very quickly, and contain many breaking changes
+that are (by the author's design) not yet fit for public consumption.
+Therefore, by default, they are excluded from range matching
+semantics.</para>
+
+<para>Second, a user who has opted into using a prerelease version has
+clearly indicated the intent to use <emphasis remap='I'>that specific</emphasis> set of
+alpha/beta/rc versions.  By including a prerelease tag in the range,
+the user is indicating that they are aware of the risk.  However, it
+is still not appropriate to assume that they have opted into taking a
+similar risk on the <emphasis remap='I'>next</emphasis> set of prerelease versions.</para>
+</refsect2>
+
+<refsect2 id='prerelease_identifiers'><title>Prerelease Identifiers</title>
+
+<para>The method <emphasis remap='B'>&thinsp;.inc</emphasis> takes an additional <emphasis remap='B'>identifier</emphasis> string argument that
+will append the value of the string as a prerelease identifier:</para>
+
+<literallayout remap='.nf'>
+&gt; semver.inc('1.2.3', 'pre', 'beta')
+&thinsp;'1.2.4-beta.0'
+</literallayout> <!-- .fi -->
+
+<para>command-line example:</para>
+
+<screen remap='.nf'>
+$ semver 1.2.3 -i prerelease --preid beta
+1.2.4-beta.0
+</screen> <!-- .fi -->
+
+<para>Which then can be used to increment further:</para>
+
+<screen remap='.nf'>
+$ semver 1.2.4-beta.0 -i prerelease
+1.2.4-beta.1
+</screen> <!-- .fi -->
+</refsect2>
+
+<refsect2 id='advanced_range_syntax'><title>Advanced Range Syntax</title>
+
+<para>Advanced range syntax desugars to primitive comparators in
+deterministic ways.</para>
+
+<para>Advanced ranges may be combined in the same way as primitive
+comparators using white space or <emphasis remap='B'>||</emphasis>&thinsp;.</para>
+</refsect2>
+
+<refsect2 id='hyphen_ranges_fbxyz__abcfp'><title>Hyphen Ranges <userinput>X.Y.Z - A.B.C</userinput></title>
+
+<para>Specifies an inclusive set.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><userinput>1.2.3 - 2.3.4</userinput> := <emphasis remap='B'>&gt;=1.2.3 &lt;=2.3.4</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If a partial version is provided as the first version in the inclusive
+range, then the missing pieces are replaced with zeroes.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><userinput>1.2 - 2.3.4</userinput> := <emphasis remap='B'>&gt;=1.2.0 &lt;=2.3.4</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>If a partial version is provided as the second version in the
+inclusive range, then all versions that start with the supplied parts
+of the tuple are accepted, but nothing that would be greater than the
+provided tuple parts.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><userinput>1.2.3 - 2.3</userinput> := <emphasis remap='B'>&gt;=1.2.3 &lt;2.4.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><userinput>1.2.3 - 2</userinput> := <emphasis remap='B'>&gt;=1.2.3 &lt;3.0.0</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+
+<refsect2 id='xranges_fb12xfp_fb1xfp_fb12fp_fbfp'><title>X-Ranges <emphasis remap='B'>1.2.x</emphasis> <emphasis remap='B'>1.X</emphasis> <emphasis remap='B'>1.2.*</emphasis> <emphasis remap='B'>*</emphasis></title>
+
+<para>Any of <emphasis remap='B'>X</emphasis>, <emphasis remap='B'>x</emphasis>, or <emphasis remap='B'>*</emphasis> may be used to "stand in" for one of the
+numeric values in the <emphasis remap='B'>[major, minor, patch]</emphasis> tuple.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>*</emphasis> := <emphasis remap='B'>&gt;=0.0.0</emphasis> (Any version satisfies)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>1.x</emphasis> := <emphasis remap='B'>&gt;=1.0.0 &lt;2.0.0</emphasis> (Matching major version)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>1.2.x</emphasis> := <emphasis remap='B'>&gt;=1.2.0 &lt;1.3.0</emphasis> (Matching major and minor versions)</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>A partial version range is treated as an X-Range, so the special
+character is in fact optional.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>""</emphasis> (empty string) := <emphasis remap='B'>*</emphasis> := <emphasis remap='B'>&gt;=0.0.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><literal>1</literal> := <emphasis remap='B'>1.x.x</emphasis> := <emphasis remap='B'>&gt;=1.0.0 &lt;2.0.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><literal>1.2</literal> := <emphasis remap='B'>1.2.x</emphasis> := <emphasis remap='B'>&gt;=1.2.0 &lt;1.3.0</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+
+<refsect2 id='tilde_ranges_fb123fp_fb12fp_fb1fp'><title>Tilde Ranges <emphasis remap='B'>~1.2.3</emphasis> <emphasis remap='B'>~1.2</emphasis> <emphasis remap='B'>~1</emphasis></title>
+
+<para>Allows patch-level changes if a minor version is specified on the
+comparator.  Allows minor-level changes if not.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>~1.2.3</emphasis> := <emphasis remap='B'>&gt;=1.2.3 &lt;1.(2+1).0</emphasis> := <emphasis remap='B'>&gt;=1.2.3 &lt;1.3.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>~1.2</emphasis> := <emphasis remap='B'>&gt;=1.2.0 &lt;1.(2+1).0</emphasis> := <emphasis remap='B'>&gt;=1.2.0 &lt;1.3.0</emphasis> (Same as <emphasis remap='B'>1.2.x</emphasis>)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>~1</emphasis> := <emphasis remap='B'>&gt;=1.0.0 &lt;(1+1).0.0</emphasis> := <emphasis remap='B'>&gt;=1.0.0 &lt;2.0.0</emphasis> (Same as <emphasis remap='B'>1.x</emphasis>)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>~0.2.3</emphasis> := <emphasis remap='B'>&gt;=0.2.3 &lt;0.(2+1).0</emphasis> := <emphasis remap='B'>&gt;=0.2.3 &lt;0.3.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>~0.2</emphasis> := <emphasis remap='B'>&gt;=0.2.0 &lt;0.(2+1).0</emphasis> := <emphasis remap='B'>&gt;=0.2.0 &lt;0.3.0</emphasis> (Same as <emphasis remap='B'>0.2.x</emphasis>)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>~0</emphasis> := <emphasis remap='B'>&gt;=0.0.0 &lt;(0+1).0.0</emphasis> := <emphasis remap='B'>&gt;=0.0.0 &lt;1.0.0</emphasis> (Same as <emphasis remap='B'>0.x</emphasis>)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>~1.2.3-beta.2</emphasis> := <emphasis remap='B'>&gt;=1.2.3-beta.2 &lt;1.3.0</emphasis> Note that prereleases in
+the <literal>1.2.3</literal> version will be allowed, if they are greater than or
+equal to <emphasis remap='B'>beta.2</emphasis>&thinsp;.  So, <emphasis remap='B'>1.2.3-beta.4</emphasis> would be allowed, but
+<emphasis remap='B'>1.2.4-beta.2</emphasis> would not, because it is a prerelease of a
+different <emphasis remap='B'>[major, minor, patch]</emphasis> tuple.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+
+<refsect2 id='caret_ranges_fb123fp_fb025fp_fb004fp'><title>Caret Ranges <emphasis remap='B'>^1.2.3</emphasis> <emphasis remap='B'>^0.2.5</emphasis> <emphasis remap='B'>^0.0.4</emphasis></title>
+
+<para>Allows changes that do not modify the left-most non-zero digit in the
+<emphasis remap='B'>[major, minor, patch]</emphasis> tuple.  In other words, this allows patch and
+minor updates for versions <literal>1.0.0</literal> and above, patch updates for
+versions <emphasis remap='B'>0.X &gt;=0.1.0</emphasis>, and <emphasis remap='I'>no</emphasis> updates for versions <emphasis remap='B'>0.0.X</emphasis>&thinsp;.</para>
+
+<para>Many authors treat a <emphasis remap='B'>0.x</emphasis> version as if the <emphasis remap='B'>x</emphasis> were the major
+"breaking-change" indicator.</para>
+
+<para>Caret ranges are ideal when an author may make breaking changes
+between <literal>0.2.4</literal> and <literal>0.3.0</literal> releases, which is a common practice.
+However, it presumes that there will <emphasis remap='I'>not</emphasis> be breaking changes between
+<literal>0.2.4</literal> and <literal>0.2.5</literal>&thinsp;.  It allows for changes that are presumed to be
+additive (but non-breaking), according to commonly observed practices.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^1.2.3</emphasis> := <emphasis remap='B'>&gt;=1.2.3 &lt;2.0.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^0.2.3</emphasis> := <emphasis remap='B'>&gt;=0.2.3 &lt;0.3.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^0.0.3</emphasis> := <emphasis remap='B'>&gt;=0.0.3 &lt;0.0.4</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^1.2.3-beta.2</emphasis> := <emphasis remap='B'>&gt;=1.2.3-beta.2 &lt;2.0.0</emphasis> Note that prereleases in
+the <literal>1.2.3</literal> version will be allowed, if they are greater than or
+equal to <emphasis remap='B'>beta.2</emphasis>&thinsp;.  So, <emphasis remap='B'>1.2.3-beta.4</emphasis> would be allowed, but
+<emphasis remap='B'>1.2.4-beta.2</emphasis> would not, because it is a prerelease of a
+different <emphasis remap='B'>[major, minor, patch]</emphasis> tuple.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^0.0.3-beta</emphasis> := <emphasis remap='B'>&gt;=0.0.3-beta &lt;0.0.4</emphasis>  Note that prereleases in the
+<literal>0.0.3</literal> version <emphasis remap='I'>only</emphasis> will be allowed, if they are greater than or
+equal to <emphasis remap='B'>beta</emphasis>&thinsp;.  So, <emphasis remap='B'>0.0.3-pr.2</emphasis> would be allowed.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>When parsing caret ranges, a missing <emphasis remap='B'>patch</emphasis> value desugars to the
+number <literal>0</literal>, but will allow flexibility within that value, even if the
+major and minor versions are both <literal>0</literal>&thinsp;.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^1.2.x</emphasis> := <emphasis remap='B'>&gt;=1.2.0 &lt;2.0.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^0.0.x</emphasis> := <emphasis remap='B'>&gt;=0.0.0 &lt;0.1.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^0.0</emphasis> := <emphasis remap='B'>&gt;=0.0.0 &lt;0.1.0</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>A missing <emphasis remap='B'>minor</emphasis> and <emphasis remap='B'>patch</emphasis> values will desugar to zero, but also
+allow flexibility within those values, even if the major version is
+zero.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^1.x</emphasis> := <emphasis remap='B'>&gt;=1.0.0 &lt;2.0.0</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>^0.x</emphasis> := <emphasis remap='B'>&gt;=0.0.0 &lt;1.0.0</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+</refsect1>
+
+<refsect1 id='functions'><title>Functions</title>
+<para>All methods and classes take a final <emphasis remap='B'>loose</emphasis> boolean argument that, if
+true, will be more forgiving about not-quite-valid semver strings.
+The resulting output will always be 100% strict, of course.</para>
+
+<para>Strict-mode Comparators and Ranges will be strict about the SemVer
+strings that they parse.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>valid(v)</emphasis>: Return the parsed version, or null if it's not valid.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>inc(v, release)</emphasis>: Return the version incremented by the release
+type (<emphasis remap='B'>major</emphasis>,   <emphasis remap='B'>premajor</emphasis>, <emphasis remap='B'>minor</emphasis>, <emphasis remap='B'>preminor</emphasis>, <emphasis remap='B'>patch</emphasis>,
+<emphasis remap='B'>prepatch</emphasis>, or <emphasis remap='B'>prerelease</emphasis>), or null if it's not valid</para>
+      <itemizedlist remap='IP+bullet'>
+        <listitem override='bullet'>
+<para><emphasis remap='B'>premajor</emphasis> in one call will bump the version up to the next major
+version and down to a prerelease of that major version.
+<emphasis remap='B'>preminor</emphasis>, and <emphasis remap='B'>prepatch</emphasis> work the same way.</para>
+        </listitem>
+        <listitem override='bullet'>
+<para>If called from a non-prerelease version, the <emphasis remap='B'>prerelease</emphasis> will work the
+same as <emphasis remap='B'>prepatch</emphasis>&thinsp;. It increments the patch version, then makes a
+prerelease. If the input version is already a prerelease it simply
+increments it.</para>
+
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>major(v)</emphasis>: Return the major version number.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>minor(v)</emphasis>: Return the minor version number.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>patch(v)</emphasis>: Return the patch version number.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<refsect2 id='comparison'><title>Comparison</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>gt(v1, v2)</emphasis>: <emphasis remap='B'>v1 &gt; v2</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>gte(v1, v2)</emphasis>: <emphasis remap='B'>v1 &gt;= v2</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>lt(v1, v2)</emphasis>: <emphasis remap='B'>v1 &lt; v2</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>lte(v1, v2)</emphasis>: <emphasis remap='B'>v1 &lt;= v2</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>eq(v1, v2)</emphasis>: <emphasis remap='B'>v1 == v2</emphasis> This is true if they're logically equivalent,
+even if they're not the exact same string.  You already know how to
+compare strings.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>neq(v1, v2)</emphasis>: <emphasis remap='B'>v1 != v2</emphasis> The opposite of <emphasis remap='B'>eq</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>cmp(v1, comparator, v2)</emphasis>: Pass in a comparison string, and it'll call
+the corresponding function above.  <emphasis remap='B'>"==="</emphasis> and <emphasis remap='B'>"!=="</emphasis> do simple
+string comparison, but are included for completeness.  Throws if an
+invalid comparison string is provided.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>compare(v1, v2)</emphasis>: Return <literal>0</literal> if <emphasis remap='B'>v1 == v2</emphasis>, or <literal>1</literal> if <emphasis remap='B'>v1</emphasis> is greater, or <option>-1</option> if
+<emphasis remap='B'>v2</emphasis> is greater.  Sorts in ascending order if passed to <emphasis remap='B'>Array.sort()</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>rcompare(v1, v2)</emphasis>: The reverse of compare.  Sorts an array of versions
+in descending order when passed to <emphasis remap='B'>Array.sort()</emphasis>&thinsp;.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>diff(v1, v2)</emphasis>: Returns difference between two versions by the release type
+(<emphasis remap='B'>major</emphasis>, <emphasis remap='B'>premajor</emphasis>, <emphasis remap='B'>minor</emphasis>, <emphasis remap='B'>preminor</emphasis>, <emphasis remap='B'>patch</emphasis>, <emphasis remap='B'>prepatch</emphasis>, or <emphasis remap='B'>prerelease</emphasis>),
+or null if the versions are the same.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect2>
+
+<refsect2 id='ranges2'><title>Ranges</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>validRange(range)</emphasis>: Return the valid range or null if it's not valid</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>satisfies(version, range)</emphasis>: Return true if the version satisfies the
+range.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>maxSatisfying(versions, range)</emphasis>: Return the highest version in the list
+that satisfies the range, or <emphasis remap='B'>null</emphasis> if none of them do.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>gtr(version, range)</emphasis>: Return <emphasis remap='B'>true</emphasis> if version is greater than all the
+versions possible in the range.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>ltr(version, range)</emphasis>: Return <emphasis remap='B'>true</emphasis> if version is less than all the
+versions possible in the range.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>outside(version, range, hilo)</emphasis>: Return true if the version is outside
+the bounds of the range in either the high or low direction.  The
+<emphasis remap='B'>hilo</emphasis> argument must be either the string <emphasis remap='B'>&thinsp;'&gt;'</emphasis> or <emphasis remap='B'>&thinsp;'&lt;'</emphasis>&thinsp;.  (This is
+the function called by <emphasis remap='B'>gtr</emphasis> and <emphasis remap='B'>ltr</emphasis>&thinsp;.)</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Note that, since ranges may be non-contiguous, a version might not be
+greater than a range, less than a range, <emphasis remap='I'>or</emphasis> satisfy a range!  For
+example, the range <emphasis remap='B'>1.2 &lt;1.2.9 || &gt;2.0.0</emphasis> would have a hole from <literal>1.2.9</literal>
+until <literal>2.0.0</literal>, so the version <literal>1.2.10</literal> would not be greater than the
+range (because <literal>2.0.1</literal> satisfies, which is higher), nor less than the
+range (since <literal>1.2.8</literal> satisfies, which is lower), and it also does not
+satisfy the range.</para>
+
+<para>If you want to know if a version satisfies or does not satisfy a
+range, use the <emphasis remap='B'>satisfies(version, range)</emphasis> function.</para>
+</refsect2>
+</refsect1>
+</refentry>
+

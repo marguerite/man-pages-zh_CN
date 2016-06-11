@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-publish.1.xml:7(refentrytitle)
+msgid "NPM-PUBLISH"
+msgstr ""
+
+#: npm-publish.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-publish.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-publish.1.xml:12(refname)
+msgid "npm-publish"
+msgstr ""
+
+#: npm-publish.1.xml:13(refpurpose)
+msgid "Publish a package"
+msgstr ""
+
+#: npm-publish.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-publish.1.xml:18(replaceable)
+msgid "publish"
+msgstr ""
+
+#: npm-publish.1.xml:19(replaceable)
+msgid "&lt;tarball&gt;"
+msgstr ""
+
+#: npm-publish.1.xml:19(replaceable)
+msgid "&lt;folder&gt;"
+msgstr ""
+
+#: npm-publish.1.xml:20(replaceable)
+msgid "&lt;tag&gt;"
+msgstr ""
+
+#: npm-publish.1.xml:20(arg) npm-publish.1.xml:35(arg)
+msgid "--tag <placeholder-1/>"
+msgstr ""
+
+#: npm-publish.1.xml:21(replaceable)
+msgid "&lt;public"
+msgstr ""
+
+#: npm-publish.1.xml:21(arg)
+msgid "--access <placeholder-1/>"
+msgstr ""
+
+#: npm-publish.1.xml:21(replaceable)
+msgid "restricted&gt;"
+msgstr ""
+
+#: npm-publish.1.xml:25(command)
+msgid "Publishes"
+msgstr ""
+
+#: npm-publish.1.xml:25(replaceable)
+msgid "'.'"
+msgstr ""
+
+#: npm-publish.1.xml:26(replaceable) npm-publish.1.xml:33(replaceable)
+msgid "if"
+msgstr ""
+
+#: npm-publish.1.xml:27(replaceable) npm-publish.1.xml:34(replaceable)
+msgid "no"
+msgstr ""
+
+#: npm-publish.1.xml:28(replaceable)
+msgid "argument"
+msgstr ""
+
+#: npm-publish.1.xml:29(replaceable)
+msgid "supplied"
+msgstr ""
+
+#: npm-publish.1.xml:30(replaceable)
+msgid "Sets"
+msgstr ""
+
+#: npm-publish.1.xml:31(replaceable)
+msgid "tag"
+msgstr ""
+
+#: npm-publish.1.xml:32(replaceable)
+msgid "'latest'"
+msgstr ""
+
+#: npm-publish.1.xml:35(replaceable)
+msgid "specified"
+msgstr ""
+
+#: npm-publish.1.xml:40(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-publish.1.xml:41(para)
+msgid "Publishes a package to the registry so that it can be installed by name. See npm help 7 <emphasis remap=\"B\">npm-developers</emphasis> for details on what's included in the published package, as well as details on how the package is built."
+msgstr ""
+
+#: npm-publish.1.xml:45(para)
+msgid "By default npm will publish to the public registry. This can be overridden by specifying a different default registry or using a npm help 7 <emphasis remap=\"B\">npm-scope</emphasis> in the name (see npm help 5 <emphasis remap=\"B\">package.json</emphasis>)."
+msgstr ""
+
+#: npm-publish.1.xml:51(para)
+msgid "<emphasis remap=\"B\">&lt;folder&gt;</emphasis>: A folder containing a package.json file"
+msgstr ""
+
+#: npm-publish.1.xml:55(para)
+msgid "<emphasis remap=\"B\">&lt;tarball&gt;</emphasis>: A url or file path to a gzipped tar archive containing a single folder with a package.json file inside."
+msgstr ""
+
+#: npm-publish.1.xml:60(para)
+msgid "<emphasis remap=\"B\">[--tag &lt;tag&gt;]</emphasis> Registers the published package with the given tag, such that <emphasis remap=\"B\">npm install &lt;name&gt;@&lt;tag&gt;</emphasis> will install this version. By default, <emphasis remap=\"B\">npm publish</emphasis> updates and <emphasis remap=\"B\">npm install</emphasis> installs the <emphasis remap=\"B\">latest</emphasis> tag."
+msgstr ""
+
+#: npm-publish.1.xml:66(para)
+msgid "<emphasis remap=\"B\">[--access &lt;public|restricted&gt;]</emphasis> Tells the registry whether this package should be published as public or restricted. Only applies to scoped packages, which default to <emphasis remap=\"B\">restricted</emphasis>&thinsp;. If you don't have a paid account, you must publish with <option>--access public</option> to publish scoped packages."
+msgstr ""
+
+#. remap='RE'
+#: npm-publish.1.xml:76(para)
+msgid "Fails if the package name and version combination already exists in the specified registry."
+msgstr ""
+
+#: npm-publish.1.xml:79(para)
+msgid "Once a package is published with a given name and version, that specific name and version combination can never be used again, even if it is removed with npm help unpublish."
+msgstr ""
+
+#: npm-publish.1.xml:84(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-publish.1.xml:88(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-publish.1.xml:91(para)
+msgid "npm help 7 scope"
+msgstr ""
+
+#: npm-publish.1.xml:94(para)
+msgid "npm help adduser"
+msgstr ""
+
+#: npm-publish.1.xml:97(para)
+msgid "npm help owner"
+msgstr ""
+
+#: npm-publish.1.xml:100(para)
+msgid "npm help deprecate"
+msgstr ""
+
+#: npm-publish.1.xml:103(para)
+msgid "npm help tag"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-publish.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

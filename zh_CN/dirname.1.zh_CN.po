@@ -1,50 +1,53 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-08-07 02:48+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: dirname.1.xml:8(refentrytitle)
 msgid "DIRNAME"
-msgstr ""
+msgstr "dirname"
 
 #: dirname.1.xml:9(manvolnum)
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: dirname.1.xml:10(refmiscinfo)
 msgid "July 2014"
-msgstr ""
+msgstr "2014 年 7 月"
 
 #: dirname.1.xml:11(refmiscinfo)
 msgid "GNU coreutils 8.22"
-msgstr ""
+msgstr "GNU coreutils 8.22"
 
 #: dirname.1.xml:14(refname) dirname.1.xml:20(command)
 msgid "dirname"
-msgstr ""
+msgstr "dirname"
 
 #: dirname.1.xml:15(refpurpose)
 msgid "strip last component from file name"
-msgstr ""
+msgstr "剔除文件名的最后部分"
 
 #: dirname.1.xml:21(replaceable)
 msgid "OPTION"
-msgstr ""
+msgstr "选项"
 
 #: dirname.1.xml:22(replaceable)
 msgid "NAME"
-msgstr ""
+msgstr "名称"
 
 #: dirname.1.xml:28(title)
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #. Add any additional description here
 #: dirname.1.xml:31(para)
@@ -55,55 +58,55 @@ msgstr ""
 
 #: dirname.1.xml:35(term)
 msgid "<option>-z</option>, <option>--zero</option>"
-msgstr ""
+msgstr "<option>-z</option>, <option>--zero</option>"
 
 #: dirname.1.xml:37(para)
 msgid "separate output with NUL rather than newline"
-msgstr ""
+msgstr "输出以 NUL 而不是新行分隔"
 
 #: dirname.1.xml:41(option)
 msgid "--help"
-msgstr ""
+msgstr "--help"
 
 #: dirname.1.xml:43(para)
 msgid "display this help and exit"
-msgstr ""
+msgstr "显示此帮助并退出"
 
 #: dirname.1.xml:47(option)
 msgid "--version"
-msgstr ""
+msgstr "--version"
 
 #: dirname.1.xml:49(para)
 msgid "output version information and exit"
-msgstr ""
+msgstr "输出版本信息并退出"
 
 #: dirname.1.xml:55(title)
 msgid "EXAMPLES"
-msgstr ""
+msgstr "范例"
 
 #: dirname.1.xml:58(term)
 msgid "dirname /usr/bin/"
-msgstr ""
+msgstr "dirname /usr/bin/"
 
 #: dirname.1.xml:60(para)
 msgid "-&gt; \"/usr\""
-msgstr ""
+msgstr "-&gt; \"/usr\""
 
 #: dirname.1.xml:64(term)
 msgid "dirname dir1/str dir2/str"
-msgstr ""
+msgstr "dirname dir1/str dir2/str"
 
 #: dirname.1.xml:66(para)
 msgid "-&gt; \"dir1\" followed by \"dir2\""
-msgstr ""
+msgstr "-&gt; \"dir1\" 跟着下一行是 \"dir2\""
 
 #: dirname.1.xml:70(term)
 msgid "dirname stdio.h"
-msgstr ""
+msgstr "dirname stdio.h"
 
 #: dirname.1.xml:72(para)
 msgid "-&gt; \".\""
-msgstr ""
+msgstr "-&gt; \".\""
 
 #: dirname.1.xml:74(para)
 msgid ""
@@ -112,18 +115,22 @@ msgid ""
 "dirname translation bugs to &lt;<ulink url=\"http://translationproject.org/"
 "team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 msgstr ""
+"GNU coreutils 在线帮助：&lt;<ulink url=\"http://www.gnu.org/software/"
+"coreutils/&gt;\">http://www.gnu.org/software/coreutils/&gt;</ulink> 汇报 "
+"dirname 翻译故障 &lt;<ulink url=\"http://translationproject.org/"
+"team/&gt;\">http://translationproject.org/team/&gt;</ulink>"
 
 #: dirname.1.xml:81(title)
 msgid "AUTHOR"
-msgstr ""
+msgstr "作者"
 
 #: dirname.1.xml:82(para)
 msgid "Written by David MacKenzie and Jim Meyering."
-msgstr ""
+msgstr "由 David MacKenzie 和 Jim Meyering 编纂。"
 
 #: dirname.1.xml:85(title)
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "版权"
 
 #: dirname.1.xml:86(para)
 msgid ""
@@ -133,10 +140,14 @@ msgid ""
 "are free to change and redistribute it. There is NO WARRANTY, to the extent "
 "permitted by law."
 msgstr ""
+"版权所有 &copy; 2013 自由软件基金会。许可证 GPLv3+：GNU 通用公共许可证 "
+"第三版及后续版本 &lt;<ulink url=\"http://gnu.org/licenses/gpl.html&gt;"
+"\">http://gnu.org/licenses/gpl.html&gt;</ulink>。这是一个自由软件：您可以自由"
+"修订并分发它。在法律允许范围内不作任何保证。"
 
 #: dirname.1.xml:93(title)
 msgid "SEE ALSO"
-msgstr ""
+msgstr "继续阅读"
 
 #: dirname.1.xml:94(para)
 msgid ""
@@ -144,6 +155,9 @@ msgid ""
 "manvolnum></citerefentry>, <citerefentry><refentrytitle>readlink</"
 "refentrytitle><manvolnum>1</manvolnum></citerefentry>"
 msgstr ""
+"<citerefentry><refentrytitle>basename</refentrytitle><manvolnum>1</"
+"manvolnum></citerefentry>, <citerefentry><refentrytitle>readlink</"
+"refentrytitle><manvolnum>1</manvolnum></citerefentry>"
 
 #: dirname.1.xml:96(para)
 msgid ""
@@ -152,16 +166,20 @@ msgid ""
 "<command>dirname</command> programs are properly installed at your site, the "
 "command"
 msgstr ""
+"<command>dirname</command> 的完整文档以一本 Texinfo 手册的形式维护。"
+"若您的计算机上妥善安装了  <emphasis remap=\"B\">info</emphasis> 和 "
+"<command>dirname</command> 程序，这个命令"
 
 #: dirname.1.xml:104(emphasis)
 msgid "info coreutils ''dirname invocation''"
-msgstr ""
+msgstr "info coreutils \"dirname invocation\""
 
 #: dirname.1.xml:106(para)
 msgid "should give you access to the complete manual."
-msgstr ""
+msgstr "应可让您调阅完整手册。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: dirname.1.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2014"
+

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmview1'>
+<refmeta>
+<refentrytitle>NPM-VIEW</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-view</refname>
+<refpurpose>View registry info</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>view</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;@scope&gt;/</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;name&gt;</replaceable></arg>
+    <arg choice='opt'><replaceable>@&lt;version&gt;</replaceable></arg>
+    <arg choice='opt'><arg choice='plain'><replaceable>&lt;field&gt;</replaceable></arg><arg choice='opt' rep='repeat'><replaceable>.&lt;subfield&gt;</replaceable></arg></arg>
+    <sbr/>
+</cmdsynopsis>
+<para>aliases: info, show, v</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This command shows data about a package and prints it to the stream
+referenced by the <emphasis remap='B'>outfd</emphasis> config, which defaults to stdout.</para>
+
+<para>To show the package registry entry for the <emphasis remap='B'>connect</emphasis> package, you can do
+this:</para>
+
+<literallayout remap='.nf'>
+npm view connect
+</literallayout> <!-- .fi -->
+
+<para>The default version is "latest" if unspecified.</para>
+
+<para>Field names can be specified after the package descriptor.
+For example, to show the dependencies of the <emphasis remap='B'>ronn</emphasis> package at version
+0.3.5, you could do the following:</para>
+
+<literallayout remap='.nf'>
+npm view ronn@0.3.5 dependencies
+</literallayout> <!-- .fi -->
+
+<para>You can view child fields by separating them with a period.
+To view the git repository URL for the latest version of npm, you could
+do this:</para>
+
+<literallayout remap='.nf'>
+npm view npm repository.url
+</literallayout> <!-- .fi -->
+
+<para>This makes it easy to view information about a dependency with a bit of
+shell scripting.  For example, to view all the data about the version of
+opts that ronn depends on, you can do this:</para>
+
+<literallayout remap='.nf'>
+npm view opts@$(npm view ronn dependencies.opts)
+</literallayout> <!-- .fi -->
+
+<para>For fields that are arrays, requesting a non-numeric field will return
+all of the values from the objects in the list.  For example, to get all
+the contributor names for the "express" project, you can do this:</para>
+
+<literallayout remap='.nf'>
+npm view express contributors.email
+</literallayout> <!-- .fi -->
+
+<para>You may also use numeric indices in square braces to specifically select
+an item in an array field.  To just get the email address of the first
+contributor in the list, you can do this:</para>
+
+<literallayout remap='.nf'>
+npm view express contributors[0].email
+</literallayout> <!-- .fi -->
+
+<para>Multiple fields may be specified, and will be printed one after another.
+For example, to get all the contributor names and email addresses, you
+can do this:</para>
+
+<literallayout remap='.nf'>
+npm view express contributors.name contributors.email
+</literallayout> <!-- .fi -->
+
+<para>"Person" fields are shown as a string if they would be shown as an
+object.  So, for example, this will show the list of npm contributors in
+the shortened string format.  (See npm help 5 <emphasis remap='B'>package.json</emphasis> for more on this.)</para>
+
+<literallayout remap='.nf'>
+npm view npm contributors
+</literallayout> <!-- .fi -->
+
+<para>If a version range is provided, then data will be printed for every
+matching version of the package.  This will show which version of jsdom
+was required by each matching version of yui3:</para>
+
+<literallayout remap='.nf'>
+npm view yui3@'&gt;0.5.4' dependencies.jsdom
+</literallayout> <!-- .fi -->
+</refsect1>
+
+<refsect1 id='output'><title>OUTPUT</title>
+<para>If only a single string field for a single version is output, then it
+will not be colorized or quoted, so as to enable piping the output to
+another command. If the field is an object, it will be output as a JavaScript object literal.</para>
+
+<para>If the --json flag is given, the outputted fields will be JSON.</para>
+
+<para>If the version range matches multiple versions, than each printed value
+will be prefixed with the version it applies to.</para>
+
+<para>If multiple fields are requested, than each of them are prefixed with
+the field name.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help search</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 config</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 npmrc</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help docs</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

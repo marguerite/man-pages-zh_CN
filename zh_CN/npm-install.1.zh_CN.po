@@ -1,0 +1,547 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-install.1.xml:7(refentrytitle)
+msgid "NPM-INSTALL"
+msgstr ""
+
+#: npm-install.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-install.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-install.1.xml:12(refname)
+msgid "npm-install"
+msgstr ""
+
+#: npm-install.1.xml:13(refpurpose)
+msgid "Install a package"
+msgstr ""
+
+#: npm-install.1.xml:17(para)
+msgid "npm install (with no args, in package dir)"
+msgstr ""
+
+#: npm-install.1.xml:19(command) npm-install.1.xml:22(replaceable) npm-install.1.xml:26(replaceable) npm-install.1.xml:30(replaceable) npm-install.1.xml:35(replaceable) npm-install.1.xml:39(replaceable) npm-install.1.xml:43(replaceable) npm-install.1.xml:49(replaceable)
+msgid "npm"
+msgstr ""
+
+#: npm-install.1.xml:19(replaceable) npm-install.1.xml:23(replaceable) npm-install.1.xml:27(replaceable) npm-install.1.xml:31(replaceable) npm-install.1.xml:36(replaceable) npm-install.1.xml:40(replaceable) npm-install.1.xml:44(replaceable)
+msgid "install"
+msgstr ""
+
+#: npm-install.1.xml:20(replaceable) npm-install.1.xml:24(replaceable) npm-install.1.xml:28(replaceable) npm-install.1.xml:32(replaceable)
+msgid "&lt;@scope&gt;/"
+msgstr ""
+
+#: npm-install.1.xml:21(replaceable)
+msgid "&lt;name&gt;"
+msgstr ""
+
+#: npm-install.1.xml:25(replaceable)
+msgid "&lt;name&gt;@&lt;tag&gt;"
+msgstr ""
+
+#: npm-install.1.xml:29(replaceable)
+msgid "&lt;name&gt;@&lt;version&gt;"
+msgstr ""
+
+#: npm-install.1.xml:33(replaceable)
+msgid "&lt;name&gt;@&lt;version"
+msgstr ""
+
+#: npm-install.1.xml:34(replaceable)
+msgid "range&gt;"
+msgstr ""
+
+#: npm-install.1.xml:37(replaceable) npm-install.1.xml:41(replaceable)
+msgid "&lt;tarball"
+msgstr ""
+
+#: npm-install.1.xml:38(replaceable)
+msgid "file&gt;"
+msgstr ""
+
+#: npm-install.1.xml:42(replaceable)
+msgid "url&gt;"
+msgstr ""
+
+#: npm-install.1.xml:45(replaceable)
+msgid "&lt;folder&gt;"
+msgstr ""
+
+#: npm-install.1.xml:49(command)
+msgid "alias:"
+msgstr ""
+
+#: npm-install.1.xml:50(replaceable)
+msgid "i"
+msgstr ""
+
+#: npm-install.1.xml:51(replaceable)
+msgid "common"
+msgstr ""
+
+#: npm-install.1.xml:52(replaceable)
+msgid "options:"
+msgstr ""
+
+#: npm-install.1.xml:53(arg)
+msgid "-S"
+msgstr ""
+
+#: npm-install.1.xml:53(arg)
+msgid "--save"
+msgstr ""
+
+#: npm-install.1.xml:53(arg)
+msgid "-D"
+msgstr ""
+
+#: npm-install.1.xml:53(arg)
+msgid "--save-dev"
+msgstr ""
+
+#: npm-install.1.xml:53(arg)
+msgid "-O"
+msgstr ""
+
+#: npm-install.1.xml:53(arg)
+msgid "--save-optional"
+msgstr ""
+
+#: npm-install.1.xml:54(arg)
+msgid "-E"
+msgstr ""
+
+#: npm-install.1.xml:54(arg)
+msgid "--save-exact"
+msgstr ""
+
+#: npm-install.1.xml:55(arg)
+msgid "--dry-run"
+msgstr ""
+
+#: npm-install.1.xml:60(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-install.1.xml:61(para)
+msgid "This command installs a package, and any packages that it depends on. If the package has a shrinkwrap file, the installation of dependencies will be driven by that. See npm help shrinkwrap."
+msgstr ""
+
+#: npm-install.1.xml:65(para)
+msgid "A <emphasis remap=\"B\">package</emphasis> is:"
+msgstr ""
+
+#: npm-install.1.xml:69(para)
+msgid "a) a folder containing a program described by a package.json file"
+msgstr ""
+
+#: npm-install.1.xml:72(para)
+msgid "b) a gzipped tarball containing (a)"
+msgstr ""
+
+#: npm-install.1.xml:75(para)
+msgid "c) a url that resolves to (b)"
+msgstr ""
+
+#: npm-install.1.xml:78(para)
+msgid "d) a <emphasis remap=\"B\">&lt;name&gt;@&lt;version&gt;</emphasis> that is published on the registry (see npm help 7 <emphasis remap=\"B\">npm-registry</emphasis>) with (c)"
+msgstr ""
+
+#: npm-install.1.xml:81(para)
+msgid "e) a <emphasis remap=\"B\">&lt;name&gt;@&lt;tag&gt;</emphasis> that points to (d)"
+msgstr ""
+
+#: npm-install.1.xml:84(para)
+msgid "f) a <emphasis remap=\"B\">&lt;name&gt;</emphasis> that has a \"latest\" tag satisfying (e)"
+msgstr ""
+
+#: npm-install.1.xml:87(para)
+msgid "g) a <emphasis remap=\"B\">&lt;git remote url&gt;</emphasis> that resolves to (a)"
+msgstr ""
+
+#. remap='RE'
+#: npm-install.1.xml:93(para)
+msgid "Even if you never publish your package, you can still get a lot of benefits of using npm if you just want to write a node program (a), and perhaps if you also want to be able to easily install it elsewhere after packing it up into a tarball (b)."
+msgstr ""
+
+#: npm-install.1.xml:100(para)
+msgid "<emphasis remap=\"B\">npm install</emphasis> (in package directory, no arguments): Install the dependencies in the local node_modules folder. In global mode (ie, with <option>-g</option> or <option>--global</option> appended to the command), it installs the current package context (ie, the current working directory) as a global package. By default, <emphasis remap=\"B\">npm install</emphasis> will install all modules listed as dependencies. With the <option>--production</option> flag (or when the <emphasis remap=\"B\">NODE_ENV</emphasis> environment variable is set to <emphasis remap=\"B\">production</emphasis>), npm will not install modules listed in <emphasis remap=\"B\">devDependencies</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-install.1.xml:111(para)
+msgid "<emphasis remap=\"B\">npm install &lt;folder&gt;</emphasis>: Install a package that is sitting in a folder on the filesystem."
+msgstr ""
+
+#: npm-install.1.xml:115(para)
+msgid "<emphasis remap=\"B\">npm install &lt;tarball file&gt;</emphasis>: Install a package that is sitting on the filesystem. Note: if you just want to link a dev directory into your npm root, you can do this more easily by using <emphasis remap=\"B\">npm link</emphasis>&thinsp;. Example:"
+msgstr ""
+
+#: npm-install.1.xml:121(literallayout)
+#, no-wrap
+msgid "\n    npm install ./package.tgz\n"
+msgstr ""
+
+#: npm-install.1.xml:126(para)
+msgid "<emphasis remap=\"B\">npm install &lt;tarball url&gt;</emphasis>: Fetch the tarball url, and then install it. In order to distinguish between this and other options, the argument must start with \"http://\" or \"https://\" Example:"
+msgstr ""
+
+#: npm-install.1.xml:131(literallayout)
+#, no-wrap
+msgid "\n    npm install https://github.com/indexzero/forever/tarball/v0.5.6\n"
+msgstr ""
+
+#: npm-install.1.xml:136(para)
+msgid "<emphasis remap=\"B\">npm install [&lt;@scope&gt;/]&lt;name&gt; [-S|--save|-D|--save-dev|-O|--save-optional]</emphasis>: Do a <emphasis remap=\"B\">&lt;name&gt;@&lt;tag&gt;</emphasis> install, where <emphasis remap=\"B\">&lt;tag&gt;</emphasis> is the \"tag\" config. (See npm help 7 <emphasis remap=\"B\">npm-config</emphasis>&thinsp;.) In most cases, this will install the latest version of the module published on npm. Example:"
+msgstr ""
+
+#: npm-install.1.xml:143(literallayout)
+#, no-wrap
+msgid "\n    npm install sax\n"
+msgstr ""
+
+#. .fi
+#: npm-install.1.xml:146(para)
+msgid "<emphasis remap=\"B\">npm install</emphasis> takes 3 exclusive, optional flags which save or update the package version in your main package.json:"
+msgstr ""
+
+#: npm-install.1.xml:150(para)
+msgid "<option>-S, --save</option>: Package will appear in your <emphasis remap=\"B\">dependencies</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-install.1.xml:153(para)
+msgid "<option>-D, --save-dev</option>: Package will appear in your <emphasis remap=\"B\">devDependencies</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-install.1.xml:156(para)
+msgid "<option>-O, --save-optional</option>: Package will appear in your <emphasis remap=\"B\">optionalDependencies</emphasis>&thinsp;. When using any of the above options to save dependencies to your package.json, there is an additional, optional flag:"
+msgstr ""
+
+#: npm-install.1.xml:161(para)
+msgid "<option>-E, --save-exact</option>: Saved dependencies will be configured with an exact version rather than using npm's default semver range operator. Further, if you have an <emphasis remap=\"B\">npm-shrinkwrap.json</emphasis> then it will be updated as well. <emphasis remap=\"B\">&lt;scope&gt;</emphasis> is optional. The package will be downloaded from the registry associated with the specified scope. If no registry is associated with the given scope the default registry is assumed. See npm help 7 <emphasis remap=\"B\">npm-scope</emphasis>&thinsp;. Note: if you do not include the @-symbol on your scope name, npm will interpret this as a GitHub repository instead, see below. Scopes names must also be followed by a slash. Examples:"
+msgstr ""
+
+#: npm-install.1.xml:174(literallayout)
+#, no-wrap
+msgid "\nnpm install sax --save\nnpm install githubname/reponame\nnpm install @myorg/privatepackage\nnpm install node-tap --save-dev\nnpm install dtrace-provider --save-optional\nnpm install readable-stream --save --save-exact\n"
+msgstr ""
+
+#. remap='RE'
+#: npm-install.1.xml:190(programlisting)
+#, no-wrap
+msgid "\n**Note**: If there is a file or folder named `&lt;name&gt;` in the current\nworking directory, then it will try to install that, and only try to\nfetch the package by name if it is not valid.\n"
+msgstr ""
+
+#: npm-install.1.xml:198(para)
+msgid "<emphasis remap=\"B\">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;tag&gt;</emphasis>: Install the version of the package that is referenced by the specified tag. If the tag does not exist in the registry data for that package, then this will fail. Example:"
+msgstr ""
+
+#: npm-install.1.xml:204(literallayout)
+#, no-wrap
+msgid "\n    npm install sax@latest\n    npm install @myorg/mypackage@latest\n"
+msgstr ""
+
+#: npm-install.1.xml:210(para)
+msgid "<emphasis remap=\"B\">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version&gt;</emphasis>: Install the specified version of the package. This will fail if the version has not been published to the registry. Example:"
+msgstr ""
+
+#: npm-install.1.xml:215(literallayout)
+#, no-wrap
+msgid "\n    npm install sax@0.1.1\n    npm install @myorg/privatepackage@1.5.0\n"
+msgstr ""
+
+#: npm-install.1.xml:221(para)
+msgid "<emphasis remap=\"B\">npm install [&lt;@scope&gt;/]&lt;name&gt;@&lt;version range&gt;</emphasis>: Install a version of the package matching the specified version range. This will follow the same rules for resolving dependencies described in npm help 5 <emphasis remap=\"B\">package.json</emphasis>&thinsp;. Note that most version ranges must be put in quotes so that your shell will treat it as a single argument. Example:"
+msgstr ""
+
+#: npm-install.1.xml:228(literallayout)
+#, no-wrap
+msgid "\n    npm install sax@\"&gt;=0.1.0 &lt;0.2.0\"\n    npm install @myorg/privatepackage@\"&gt;=0.1.0 &lt;0.2.0\"\n"
+msgstr ""
+
+#: npm-install.1.xml:234(para)
+msgid "<emphasis remap=\"B\">npm install &lt;git remote url&gt;</emphasis>: Installs the package from the hosted git provider, cloning it with <emphasis remap=\"B\">git</emphasis>&thinsp;. First it tries via the https (git with github) and if that fails, via ssh."
+msgstr ""
+
+#: npm-install.1.xml:238(literallayout)
+#, no-wrap
+msgid "\n    &lt;protocol&gt;://[&lt;user&gt;[:&lt;password&gt;]@]&lt;hostname&gt;[:&lt;port&gt;][:][/]&lt;path&gt;[#&lt;commit-ish&gt;]\n"
+msgstr ""
+
+#. .fi
+#: npm-install.1.xml:241(para)
+msgid "<emphasis remap=\"B\">&lt;protocol&gt;</emphasis> is one of <emphasis remap=\"B\">git</emphasis>, <emphasis remap=\"B\">git+ssh</emphasis>, <emphasis remap=\"B\">git+http</emphasis>, or <emphasis remap=\"B\">git+https</emphasis>&thinsp;. If no <emphasis remap=\"B\">&lt;commit-ish&gt;</emphasis> is specified, then <emphasis remap=\"B\">master</emphasis> is used. The following git environment variables are recognized by npm and will be added to the environment when running git:"
+msgstr ""
+
+#: npm-install.1.xml:248(emphasis)
+msgid "GIT_ASKPASS"
+msgstr ""
+
+#: npm-install.1.xml:251(emphasis)
+msgid "GIT_PROXY_COMMAND"
+msgstr ""
+
+#: npm-install.1.xml:254(emphasis)
+msgid "GIT_SSH"
+msgstr ""
+
+#: npm-install.1.xml:257(emphasis)
+msgid "GIT_SSH_COMMAND"
+msgstr ""
+
+#: npm-install.1.xml:260(emphasis)
+msgid "GIT_SSL_CAINFO"
+msgstr ""
+
+#: npm-install.1.xml:263(para)
+msgid "<emphasis remap=\"B\">GIT_SSL_NO_VERIFY</emphasis> See the git man page for details. Examples:"
+msgstr ""
+
+#: npm-install.1.xml:267(literallayout)
+#, no-wrap
+msgid "\nnpm install git+ssh://git@github.com:npm/npm.git#v1.0.27\nnpm install git+https://isaacs@github.com/npm/npm.git\nnpm install git://github.com/npm/npm.git#v1.0.27\nGIT_SSH_COMMAND='ssh -i ~/.ssh/custom_ident' npm install git+ssh://git@github.com:npm/npm.git\n"
+msgstr ""
+
+#: npm-install.1.xml:278(para)
+msgid "<emphasis remap=\"B\">npm install &lt;githubname&gt;/&lt;githubrepo&gt;[#&lt;commit-ish&gt;]</emphasis>:"
+msgstr ""
+
+#: npm-install.1.xml:281(para)
+msgid "<emphasis remap=\"B\">npm install github:&lt;githubname&gt;/&lt;githubrepo&gt;[#&lt;commit-ish&gt;]</emphasis>: Install the package at <emphasis remap=\"B\">https://github.com/githubname/githubrepo</emphasis> by attempting to clone it using <emphasis remap=\"B\">git</emphasis>&thinsp;. If you don't specify a <emphasis remap=\"I\">commit-ish</emphasis> then <emphasis remap=\"B\">master</emphasis> will be used. Examples:"
+msgstr ""
+
+#: npm-install.1.xml:287(literallayout)
+#, no-wrap
+msgid "\n    npm install mygithubuser/myproject\n    npm install github:mygithubuser/myproject\n"
+msgstr ""
+
+#: npm-install.1.xml:293(para)
+msgid "<emphasis remap=\"B\">npm install gist:[&lt;githubname&gt;/]&lt;gistID&gt;[#&lt;commit-ish&gt;]</emphasis>: Install the package at <emphasis remap=\"B\">https://gist.github.com/gistID</emphasis> by attempting to clone it using <emphasis remap=\"B\">git</emphasis>&thinsp;. The GitHub username associated with the gist is optional and will not be saved in <emphasis remap=\"B\">package.json</emphasis> if <option>-S</option> or <option>--save</option> is used. If you don't specify a <emphasis remap=\"I\">commit-ish</emphasis> then <emphasis remap=\"B\">master</emphasis> will be used. Example:"
+msgstr ""
+
+#: npm-install.1.xml:300(literallayout)
+#, no-wrap
+msgid "\n    npm install gist:101a11beef\n"
+msgstr ""
+
+#: npm-install.1.xml:305(para)
+msgid "<emphasis remap=\"B\">npm install bitbucket:&lt;bitbucketname&gt;/&lt;bitbucketrepo&gt;[#&lt;commit-ish&gt;]</emphasis>: Install the package at <emphasis remap=\"B\">https://bitbucket.org/bitbucketname/bitbucketrepo</emphasis> by attempting to clone it using <emphasis remap=\"B\">git</emphasis>&thinsp;. If you don't specify a <emphasis remap=\"I\">commit-ish</emphasis> then <emphasis remap=\"B\">master</emphasis> will be used. Example:"
+msgstr ""
+
+#: npm-install.1.xml:311(literallayout)
+#, no-wrap
+msgid "\n    npm install bitbucket:mybitbucketuser/myproject\n"
+msgstr ""
+
+#: npm-install.1.xml:316(para)
+msgid "<emphasis remap=\"B\">npm install gitlab:&lt;gitlabname&gt;/&lt;gitlabrepo&gt;[#&lt;commit-ish&gt;]</emphasis>: Install the package at <emphasis remap=\"B\">https://gitlab.com/gitlabname/gitlabrepo</emphasis> by attempting to clone it using <emphasis remap=\"B\">git</emphasis>&thinsp;. If you don't specify a <emphasis remap=\"I\">commit-ish</emphasis> then <emphasis remap=\"B\">master</emphasis> will be used. Example:"
+msgstr ""
+
+#: npm-install.1.xml:322(literallayout)
+#, no-wrap
+msgid "\n    npm install gitlab:mygitlabuser/myproject\n"
+msgstr ""
+
+#. remap='RE'
+#: npm-install.1.xml:330(para)
+msgid "You may combine multiple arguments, and even multiple types of arguments. For example:"
+msgstr ""
+
+#: npm-install.1.xml:333(literallayout)
+#, no-wrap
+msgid "\nnpm install sax@\"&gt;=0.1.0 &lt;0.2.0\" bench supervisor\n"
+msgstr ""
+
+#. .fi
+#: npm-install.1.xml:337(para)
+msgid "The <option>--tag</option> argument will apply to all of the specified install targets. If a tag with the given name exists, the tagged version is preferred over newer versions."
+msgstr ""
+
+#: npm-install.1.xml:341(para)
+msgid "The <option>--dry-run</option> argument will report in the usual way what the install would have done without actually installing anything."
+msgstr ""
+
+#: npm-install.1.xml:344(para)
+msgid "The <option>-f</option> or <option>--force</option> argument will force npm to fetch remote resources even if a local copy exists on disk."
+msgstr ""
+
+#: npm-install.1.xml:347(literallayout)
+#, no-wrap
+msgid "\nnpm install sax --force\n"
+msgstr ""
+
+#. .fi
+#: npm-install.1.xml:351(para)
+msgid "The <option>-g</option> or <option>--global</option> argument will cause npm to install the package globally rather than locally. See npm help 5 <emphasis remap=\"B\">npm-folders</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-install.1.xml:354(para)
+msgid "The <option>--link</option> argument will cause npm to link global installs into the local space in some cases."
+msgstr ""
+
+#: npm-install.1.xml:357(para)
+msgid "The <option>--no-bin-links</option> argument will prevent npm from creating symlinks for any binaries the package might contain."
+msgstr ""
+
+#: npm-install.1.xml:360(para)
+msgid "The <option>--no-optional</option> argument will prevent optional dependencies from being installed."
+msgstr ""
+
+#: npm-install.1.xml:363(para)
+msgid "The <option>--no-shrinkwrap</option> argument, which will ignore an available shrinkwrap file and use the package.json instead."
+msgstr ""
+
+#: npm-install.1.xml:366(para)
+msgid "The <option>--nodedir=/path/to/node/source</option> argument will allow npm to find the node source code so that npm can compile native modules."
+msgstr ""
+
+#: npm-install.1.xml:369(para)
+msgid "The <option>--only={prod[uction]|dev[elopment]}</option> argument will cause either only <emphasis remap=\"B\">devDependencies</emphasis> or only non-<emphasis remap=\"B\">devDependencies</emphasis> to be installed regardless of the <emphasis remap=\"B\">NODE_ENV</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-install.1.xml:372(para)
+msgid "See npm help 7 <emphasis remap=\"B\">npm-config</emphasis>&thinsp;. Many of the configuration params have some effect on installation, since that's most of what npm does."
+msgstr ""
+
+#: npm-install.1.xml:376(title)
+msgid "ALGORITHM"
+msgstr ""
+
+#: npm-install.1.xml:377(para)
+msgid "To install a package, npm uses the following algorithm:"
+msgstr ""
+
+#: npm-install.1.xml:379(programlisting)
+#, no-wrap
+msgid "\nload the existing node_modules tree from disk\nclone the tree\nfetch the package.json and assorted metadata and add it to the clone\nwalk the clone and add any missing dependencies\n  dependencies will be added as close to the top as is possible\n  without breaking any other modules\ncompare the original tree with the cloned tree and make a list of\nactions to take to convert one to the other\nexecute all of the actions, deepest first\n  kinds of actions are install, update, remove and move\n"
+msgstr ""
+
+#. .fi
+#: npm-install.1.xml:392(para)
+msgid "For this <emphasis remap=\"B\">package{dep}</emphasis> structure: <emphasis remap=\"B\">A{B,C}, B{C}, C{D}</emphasis>, this algorithm produces:"
+msgstr ""
+
+#: npm-install.1.xml:395(literallayout)
+#, no-wrap
+msgid "\nA\n+-- B\n+-- C\n+-- D\n"
+msgstr ""
+
+#. .fi
+#: npm-install.1.xml:402(para)
+msgid "That is, the dependency from B to C is satisfied by the fact that A already caused C to be installed at a higher level. D is still installed at the top level because nothing conflicts with it."
+msgstr ""
+
+#: npm-install.1.xml:406(para)
+msgid "For <emphasis remap=\"B\">A{B,C}, B{C,D@1}, C{D@2}</emphasis>, this algorithm produces:"
+msgstr ""
+
+#: npm-install.1.xml:408(literallayout)
+#, no-wrap
+msgid "\nA\n+-- B\n+-- C\n   `-- D@2\n+-- D@1\n"
+msgstr ""
+
+#. .fi
+#: npm-install.1.xml:416(para)
+msgid "Because B's D@1 will be installed in the top level, C now has to install D@2 privately for itself."
+msgstr ""
+
+#: npm-install.1.xml:419(para)
+msgid "See npm help 5 folders for a more detailed description of the specific folder structures that npm creates."
+msgstr ""
+
+#: npm-install.1.xml:422(title)
+msgid "Limitations of npm's Install Algorithm"
+msgstr ""
+
+#: npm-install.1.xml:424(para)
+msgid "There are some very rare and pathological edge-cases where a cycle can cause npm to try to install a never-ending tree of packages. Here is the simplest case:"
+msgstr ""
+
+#: npm-install.1.xml:428(literallayout)
+#, no-wrap
+msgid "\nA -&gt; B -&gt; A' -&gt; B' -&gt; A -&gt; B -&gt; A' -&gt; B' -&gt; A -&gt; ...\n"
+msgstr ""
+
+#. .fi
+#: npm-install.1.xml:432(para)
+msgid "where <emphasis remap=\"B\">A</emphasis> is some version of a package, and <emphasis remap=\"B\">A'</emphasis> is a different version of the same package. Because <emphasis remap=\"B\">B</emphasis> depends on a different version of <emphasis remap=\"B\">A</emphasis> than the one that is already in the tree, it must install a separate copy. The same is true of <emphasis remap=\"B\">A'</emphasis>, which must install <emphasis remap=\"B\">B'</emphasis>&thinsp;. Because <emphasis remap=\"B\">B'</emphasis> depends on the original version of <emphasis remap=\"B\">A</emphasis>, which has been overridden, the cycle falls into infinite regress."
+msgstr ""
+
+#: npm-install.1.xml:439(para)
+msgid "To avoid this situation, npm flat-out refuses to install any <email>name@version</email> that is already present anywhere in the tree of package folder ancestors. A more correct, but more complex, solution would be to symlink the existing version into the new location. If this ever affects a real use-case, it will be investigated."
+msgstr ""
+
+#: npm-install.1.xml:447(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-install.1.xml:451(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-install.1.xml:454(para)
+msgid "npm help update"
+msgstr ""
+
+#: npm-install.1.xml:457(para)
+msgid "npm help link"
+msgstr ""
+
+#: npm-install.1.xml:460(para)
+msgid "npm help rebuild"
+msgstr ""
+
+#: npm-install.1.xml:463(para)
+msgid "npm help 7 scripts"
+msgstr ""
+
+#: npm-install.1.xml:466(para)
+msgid "npm help build"
+msgstr ""
+
+#: npm-install.1.xml:469(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-install.1.xml:472(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-install.1.xml:475(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-install.1.xml:478(para)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-install.1.xml:481(para)
+msgid "npm help tag"
+msgstr ""
+
+#: npm-install.1.xml:484(para)
+msgid "npm help rm"
+msgstr ""
+
+#: npm-install.1.xml:487(para)
+msgid "npm help shrinkwrap"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-install.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmstars1'>
+<refmeta>
+<refentrytitle>NPM-STARS</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-stars</refname>
+<refpurpose>View packages marked as favorites</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>stars</replaceable></arg>
+    <arg choice='opt'><replaceable>&lt;user&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>If you have starred a lot of neat things and want to find them again
+quickly this command lets you do just that.</para>
+
+<para>You may also want to see your friend's favorite packages, in this case
+you will most certainly enjoy this command.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help star</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help view</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help whoami</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help adduser</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

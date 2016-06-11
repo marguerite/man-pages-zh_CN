@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-repo.1.xml:7(refentrytitle)
+msgid "NPM-REPO"
+msgstr ""
+
+#: npm-repo.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-repo.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-repo.1.xml:12(refname)
+msgid "npm-repo"
+msgstr ""
+
+#: npm-repo.1.xml:13(refpurpose)
+msgid "Open package repository page in the browser"
+msgstr ""
+
+#: npm-repo.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-repo.1.xml:18(replaceable)
+msgid "repo"
+msgstr ""
+
+#: npm-repo.1.xml:19(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-repo.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-repo.1.xml:25(para)
+msgid "This command tries to guess at the likely location of a package's repository URL, and then tries to open it using the <option>--browser</option> config param. If no package name is provided, it will search for a <emphasis remap=\"B\">package.json</emphasis> in the current folder and use the <emphasis remap=\"B\">name</emphasis> property."
+msgstr ""
+
+#: npm-repo.1.xml:31(title)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: npm-repo.1.xml:33(title)
+msgid "browser"
+msgstr ""
+
+#: npm-repo.1.xml:37(para)
+msgid "Default: OS X: <emphasis remap=\"B\">\"open\"</emphasis>, Windows: <emphasis remap=\"B\">\"start\"</emphasis>, Others: <emphasis remap=\"B\">\"xdg-open\"</emphasis>"
+msgstr ""
+
+#: npm-repo.1.xml:40(para)
+msgid "Type: String"
+msgstr ""
+
+#. remap='RE'
+#: npm-repo.1.xml:46(para)
+msgid "The browser that is called by the <emphasis remap=\"B\">npm repo</emphasis> command to open websites."
+msgstr ""
+
+#: npm-repo.1.xml:50(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-repo.1.xml:54(para)
+msgid "npm help docs"
+msgstr ""
+
+#: npm-repo.1.xml:57(para)
+msgid "npm help config"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-repo.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

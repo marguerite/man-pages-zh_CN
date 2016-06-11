@@ -1,0 +1,592 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-index.7.xml:7(refentrytitle)
+msgid "NPM-INDEX"
+msgstr ""
+
+#: npm-index.7.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: npm-index.7.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-index.7.xml:12(refname)
+msgid "npm-index"
+msgstr ""
+
+#: npm-index.7.xml:13(refpurpose) npm-index.7.xml:328(para)
+msgid "Index of all npm documentation"
+msgstr ""
+
+#: npm-index.7.xml:16(title)
+msgid "npm help README\\fR"
+msgstr ""
+
+#: npm-index.7.xml:17(para)
+msgid "a JavaScript package manager"
+msgstr ""
+
+#: npm-index.7.xml:21(title)
+msgid "Command Line Documentation"
+msgstr ""
+
+#: npm-index.7.xml:22(para)
+msgid "Using npm on the command line"
+msgstr ""
+
+#: npm-index.7.xml:24(title)
+msgid "npm help npm"
+msgstr ""
+
+#: npm-index.7.xml:26(para)
+msgid "javascript package manager"
+msgstr ""
+
+#: npm-index.7.xml:29(title)
+msgid "npm help access"
+msgstr ""
+
+#: npm-index.7.xml:31(para)
+msgid "Set access level on published packages"
+msgstr ""
+
+#: npm-index.7.xml:34(title)
+msgid "npm help adduser"
+msgstr ""
+
+#: npm-index.7.xml:36(para)
+msgid "Add a registry user account"
+msgstr ""
+
+#: npm-index.7.xml:39(title)
+msgid "npm help bin"
+msgstr ""
+
+#: npm-index.7.xml:41(para)
+msgid "Display npm bin folder"
+msgstr ""
+
+#: npm-index.7.xml:44(title)
+msgid "npm help bugs"
+msgstr ""
+
+#: npm-index.7.xml:46(para)
+msgid "Bugs for a package in a web browser maybe"
+msgstr ""
+
+#: npm-index.7.xml:49(title)
+msgid "npm help build"
+msgstr ""
+
+#: npm-index.7.xml:51(para)
+msgid "Build a package"
+msgstr ""
+
+#: npm-index.7.xml:54(title)
+msgid "npm help bundle"
+msgstr ""
+
+#: npm-index.7.xml:56(para)
+msgid "REMOVED"
+msgstr ""
+
+#: npm-index.7.xml:59(title)
+msgid "npm help cache"
+msgstr ""
+
+#: npm-index.7.xml:61(para)
+msgid "Manipulates packages cache"
+msgstr ""
+
+#: npm-index.7.xml:64(title)
+msgid "npm help completion"
+msgstr ""
+
+#: npm-index.7.xml:66(para)
+msgid "Tab Completion for npm"
+msgstr ""
+
+#: npm-index.7.xml:69(title)
+msgid "npm help config"
+msgstr ""
+
+#: npm-index.7.xml:71(para)
+msgid "Manage the npm configuration files"
+msgstr ""
+
+#: npm-index.7.xml:74(title)
+msgid "npm help dedupe"
+msgstr ""
+
+#: npm-index.7.xml:76(para)
+msgid "Reduce duplication"
+msgstr ""
+
+#: npm-index.7.xml:79(title)
+msgid "npm help deprecate"
+msgstr ""
+
+#: npm-index.7.xml:81(para)
+msgid "Deprecate a version of a package"
+msgstr ""
+
+#: npm-index.7.xml:84(title)
+msgid "npm help dist-tag"
+msgstr ""
+
+#: npm-index.7.xml:86(para)
+msgid "Modify package distribution tags"
+msgstr ""
+
+#: npm-index.7.xml:89(title)
+msgid "npm help docs"
+msgstr ""
+
+#: npm-index.7.xml:91(para)
+msgid "Docs for a package in a web browser maybe"
+msgstr ""
+
+#: npm-index.7.xml:94(title)
+msgid "npm help edit"
+msgstr ""
+
+#: npm-index.7.xml:96(para)
+msgid "Edit an installed package"
+msgstr ""
+
+#: npm-index.7.xml:99(title)
+msgid "npm help explore"
+msgstr ""
+
+#: npm-index.7.xml:101(para)
+msgid "Browse an installed package"
+msgstr ""
+
+#: npm-index.7.xml:104(title)
+msgid "npm help help-search"
+msgstr ""
+
+#: npm-index.7.xml:106(para)
+msgid "Search npm help documentation"
+msgstr ""
+
+#: npm-index.7.xml:109(title)
+msgid "npm help help"
+msgstr ""
+
+#: npm-index.7.xml:111(para)
+msgid "Get help on npm"
+msgstr ""
+
+#: npm-index.7.xml:114(title)
+msgid "npm help init"
+msgstr ""
+
+#: npm-index.7.xml:116(para)
+msgid "Interactively create a package.json file"
+msgstr ""
+
+#: npm-index.7.xml:119(title)
+msgid "npm help install"
+msgstr ""
+
+#: npm-index.7.xml:121(para)
+msgid "Install a package"
+msgstr ""
+
+#: npm-index.7.xml:124(title)
+msgid "npm help link"
+msgstr ""
+
+#: npm-index.7.xml:126(para)
+msgid "Symlink a package folder"
+msgstr ""
+
+#: npm-index.7.xml:129(title)
+msgid "npm help logout"
+msgstr ""
+
+#: npm-index.7.xml:131(para)
+msgid "Log out of the registry"
+msgstr ""
+
+#: npm-index.7.xml:134(title)
+msgid "npm help ls"
+msgstr ""
+
+#: npm-index.7.xml:136(para)
+msgid "List installed packages"
+msgstr ""
+
+#: npm-index.7.xml:139(title)
+msgid "npm help outdated"
+msgstr ""
+
+#: npm-index.7.xml:141(para)
+msgid "Check for outdated packages"
+msgstr ""
+
+#: npm-index.7.xml:144(title)
+msgid "npm help owner"
+msgstr ""
+
+#: npm-index.7.xml:146(para)
+msgid "Manage package owners"
+msgstr ""
+
+#: npm-index.7.xml:149(title)
+msgid "npm help pack"
+msgstr ""
+
+#: npm-index.7.xml:151(para)
+msgid "Create a tarball from a package"
+msgstr ""
+
+#: npm-index.7.xml:154(title)
+msgid "npm help ping"
+msgstr ""
+
+#: npm-index.7.xml:156(para)
+msgid "Ping npm registry"
+msgstr ""
+
+#: npm-index.7.xml:159(title)
+msgid "npm help prefix"
+msgstr ""
+
+#: npm-index.7.xml:161(para)
+msgid "Display prefix"
+msgstr ""
+
+#: npm-index.7.xml:164(title)
+msgid "npm help prune"
+msgstr ""
+
+#: npm-index.7.xml:166(para)
+msgid "Remove extraneous packages"
+msgstr ""
+
+#: npm-index.7.xml:169(title)
+msgid "npm help publish"
+msgstr ""
+
+#: npm-index.7.xml:171(para)
+msgid "Publish a package"
+msgstr ""
+
+#: npm-index.7.xml:174(title)
+msgid "npm help rebuild"
+msgstr ""
+
+#: npm-index.7.xml:176(para)
+msgid "Rebuild a package"
+msgstr ""
+
+#: npm-index.7.xml:179(title)
+msgid "npm help repo"
+msgstr ""
+
+#: npm-index.7.xml:181(para)
+msgid "Open package repository page in the browser"
+msgstr ""
+
+#: npm-index.7.xml:184(title)
+msgid "npm help restart"
+msgstr ""
+
+#: npm-index.7.xml:186(para)
+msgid "Restart a package"
+msgstr ""
+
+#: npm-index.7.xml:189(title)
+msgid "npm help root"
+msgstr ""
+
+#: npm-index.7.xml:191(para)
+msgid "Display npm root"
+msgstr ""
+
+#: npm-index.7.xml:194(title)
+msgid "npm help run-script"
+msgstr ""
+
+#: npm-index.7.xml:196(para)
+msgid "Run arbitrary package scripts"
+msgstr ""
+
+#: npm-index.7.xml:199(title)
+msgid "npm help search"
+msgstr ""
+
+#: npm-index.7.xml:201(para)
+msgid "Search for packages"
+msgstr ""
+
+#: npm-index.7.xml:204(title)
+msgid "npm help shrinkwrap"
+msgstr ""
+
+#: npm-index.7.xml:206(para)
+msgid "Lock down dependency versions"
+msgstr ""
+
+#: npm-index.7.xml:209(title)
+msgid "npm help star"
+msgstr ""
+
+#: npm-index.7.xml:211(para)
+msgid "Mark your favorite packages"
+msgstr ""
+
+#: npm-index.7.xml:214(title)
+msgid "npm help stars"
+msgstr ""
+
+#: npm-index.7.xml:216(para)
+msgid "View packages marked as favorites"
+msgstr ""
+
+#: npm-index.7.xml:219(title)
+msgid "npm help start"
+msgstr ""
+
+#: npm-index.7.xml:221(para)
+msgid "Start a package"
+msgstr ""
+
+#: npm-index.7.xml:224(title)
+msgid "npm help stop"
+msgstr ""
+
+#: npm-index.7.xml:226(para)
+msgid "Stop a package"
+msgstr ""
+
+#: npm-index.7.xml:229(title)
+msgid "npm help tag"
+msgstr ""
+
+#: npm-index.7.xml:231(para)
+msgid "Tag a published version"
+msgstr ""
+
+#: npm-index.7.xml:234(title)
+msgid "npm help team"
+msgstr ""
+
+#: npm-index.7.xml:236(para)
+msgid "Manage organization teams and team memberships"
+msgstr ""
+
+#: npm-index.7.xml:239(title)
+msgid "npm help test"
+msgstr ""
+
+#: npm-index.7.xml:241(para)
+msgid "Test a package"
+msgstr ""
+
+#: npm-index.7.xml:244(title)
+msgid "npm help uninstall"
+msgstr ""
+
+#: npm-index.7.xml:246(para)
+msgid "Remove a package"
+msgstr ""
+
+#: npm-index.7.xml:249(title)
+msgid "npm help unpublish"
+msgstr ""
+
+#: npm-index.7.xml:251(para)
+msgid "Remove a package from the registry"
+msgstr ""
+
+#: npm-index.7.xml:254(title)
+msgid "npm help update"
+msgstr ""
+
+#: npm-index.7.xml:256(para)
+msgid "Update a package"
+msgstr ""
+
+#: npm-index.7.xml:259(title)
+msgid "npm help version"
+msgstr ""
+
+#: npm-index.7.xml:261(para)
+msgid "Bump a package version"
+msgstr ""
+
+#: npm-index.7.xml:264(title)
+msgid "npm help view"
+msgstr ""
+
+#: npm-index.7.xml:266(para)
+msgid "View registry info"
+msgstr ""
+
+#: npm-index.7.xml:269(title)
+msgid "npm help whoami"
+msgstr ""
+
+#: npm-index.7.xml:271(para)
+msgid "Display npm username"
+msgstr ""
+
+#: npm-index.7.xml:275(title)
+msgid "API Documentation"
+msgstr ""
+
+#: npm-index.7.xml:276(para)
+msgid "Using npm in your Node programs"
+msgstr ""
+
+#: npm-index.7.xml:279(title)
+msgid "Files"
+msgstr ""
+
+#: npm-index.7.xml:280(para)
+msgid "File system structures npm uses"
+msgstr ""
+
+#: npm-index.7.xml:282(title)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-index.7.xml:284(para)
+msgid "Folder Structures Used by npm"
+msgstr ""
+
+#: npm-index.7.xml:287(title)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-index.7.xml:289(para)
+msgid "The npm config files"
+msgstr ""
+
+#: npm-index.7.xml:292(title)
+msgid "npm help 5 package.json"
+msgstr ""
+
+#: npm-index.7.xml:294(para)
+msgid "Specifics of npm's package.json handling"
+msgstr ""
+
+#: npm-index.7.xml:298(title)
+msgid "Misc"
+msgstr ""
+
+#: npm-index.7.xml:299(para)
+msgid "Various other bits and bobs"
+msgstr ""
+
+#: npm-index.7.xml:301(title)
+msgid "npm help 7 coding-style"
+msgstr ""
+
+#: npm-index.7.xml:303(para)
+msgid "npm's \"funny\" coding style"
+msgstr ""
+
+#: npm-index.7.xml:306(title)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-index.7.xml:308(para)
+msgid "More than you probably want to know about npm configuration"
+msgstr ""
+
+#: npm-index.7.xml:311(title)
+msgid "npm help 7 developers"
+msgstr ""
+
+#: npm-index.7.xml:313(para)
+msgid "Developer Guide"
+msgstr ""
+
+#: npm-index.7.xml:316(title)
+msgid "npm help 7 disputes"
+msgstr ""
+
+#: npm-index.7.xml:318(para)
+msgid "Handling Module Name Disputes"
+msgstr ""
+
+#: npm-index.7.xml:321(title)
+msgid "npm help 7 faq"
+msgstr ""
+
+#: npm-index.7.xml:323(para)
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: npm-index.7.xml:326(title)
+msgid "npm help 7 index"
+msgstr ""
+
+#: npm-index.7.xml:331(title)
+msgid "npm help 7 orgs"
+msgstr ""
+
+#: npm-index.7.xml:333(para)
+msgid "Working with Teams &amp; Orgs"
+msgstr ""
+
+#: npm-index.7.xml:336(title)
+msgid "npm help 7 registry"
+msgstr ""
+
+#: npm-index.7.xml:338(para)
+msgid "The JavaScript Package Registry"
+msgstr ""
+
+#: npm-index.7.xml:341(title)
+msgid "npm help 7 scope"
+msgstr ""
+
+#: npm-index.7.xml:343(para)
+msgid "Scoped packages"
+msgstr ""
+
+#: npm-index.7.xml:346(title)
+msgid "npm help 7 scripts"
+msgstr ""
+
+#: npm-index.7.xml:348(para)
+msgid "How npm handles the \"scripts\" field"
+msgstr ""
+
+#: npm-index.7.xml:351(title)
+msgid "npm help 7 removing-npm"
+msgstr ""
+
+#: npm-index.7.xml:353(para)
+msgid "Cleaning the Slate"
+msgstr ""
+
+#: npm-index.7.xml:356(title)
+msgid "npm help 7 semver"
+msgstr ""
+
+#: npm-index.7.xml:358(para)
+msgid "The semantic versioner for npm"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-index.7.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

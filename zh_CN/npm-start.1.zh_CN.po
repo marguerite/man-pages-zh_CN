@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-start.1.xml:7(refentrytitle)
+msgid "NPM-START"
+msgstr ""
+
+#: npm-start.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-start.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-start.1.xml:12(refname)
+msgid "npm-start"
+msgstr ""
+
+#: npm-start.1.xml:13(refpurpose)
+msgid "Start a package"
+msgstr ""
+
+#: npm-start.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-start.1.xml:18(replaceable)
+msgid "start"
+msgstr ""
+
+#: npm-start.1.xml:19(replaceable)
+msgid "&lt;args&gt;"
+msgstr ""
+
+#: npm-start.1.xml:19(arg)
+msgid "-- <placeholder-1/>"
+msgstr ""
+
+#: npm-start.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-start.1.xml:25(para)
+msgid "This runs a package's \"start\" script, if one was provided."
+msgstr ""
+
+#: npm-start.1.xml:28(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-start.1.xml:32(para)
+msgid "npm help run-script"
+msgstr ""
+
+#: npm-start.1.xml:35(para)
+msgid "npm help 7 scripts"
+msgstr ""
+
+#: npm-start.1.xml:38(para)
+msgid "npm help test"
+msgstr ""
+
+#: npm-start.1.xml:41(para)
+msgid "npm help restart"
+msgstr ""
+
+#: npm-start.1.xml:44(para)
+msgid "npm help stop"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-start.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

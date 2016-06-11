@@ -1,50 +1,53 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-08-09 23:22+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: rm.1.xml:8(refentrytitle)
 msgid "RM"
-msgstr ""
+msgstr "rm"
 
 #: rm.1.xml:9(manvolnum)
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: rm.1.xml:10(refmiscinfo)
 msgid "July 2014"
-msgstr ""
+msgstr "2014 年 7 月"
 
 #: rm.1.xml:11(refmiscinfo)
 msgid "GNU coreutils 8.22"
-msgstr ""
+msgstr "GNU coreutils 8.22"
 
 #: rm.1.xml:14(refname) rm.1.xml:20(command)
 msgid "rm"
-msgstr ""
+msgstr "rm"
 
 #: rm.1.xml:15(refpurpose)
 msgid "remove files or directories"
-msgstr ""
+msgstr "移除文件或文件夹"
 
 #: rm.1.xml:21(replaceable)
 msgid "OPTION"
-msgstr ""
+msgstr "选项"
 
 #: rm.1.xml:22(replaceable)
 msgid "FILE"
-msgstr ""
+msgstr "FILE"
 
 #: rm.1.xml:28(title)
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #: rm.1.xml:29(para)
 msgid ""
@@ -52,6 +55,8 @@ msgid ""
 "<command>rm</command> removes each specified file. By default, it does not "
 "remove directories."
 msgstr ""
+"本手册页介绍了 GNU 版本的 <command>rm</command>，<command>rm</command>"
+"会移除每个指定的文件。默认情况下，它不移除文件夹。"
 
 #: rm.1.xml:36(para)
 msgid ""
@@ -62,6 +67,10 @@ msgid ""
 "entire operation. If the response is not affirmative, the entire command is "
 "aborted."
 msgstr ""
+"若给出了 <option>-l</option> 或 <option>--interactive=once</option> 选项，并且"
+"有多于三个文件或给出了 <option>-r</option>，<option>-R</option>，或 <option>"
+"--recursive</option>，则 <command>rm</command> 会提示用户是否继续整个操作。"
+"若回应不是正面的，则会中职整个命令。"
 
 #: rm.1.xml:43(para)
 msgid ""
@@ -71,34 +80,38 @@ msgid ""
 "given, <command>rm</command> prompts the user for whether to remove the "
 "file. If the response is not affirmative, the file is skipped."
 msgstr ""
+"否则，若某文件不可写、标准输入是一个终端，并且未给出 <option>-f</option> 或 <option>"
+"--force</option> 选项，或给出了 <option>-i</option> 或 <option>--interactive=always<"
+"/option>"
+"选项，<command>rm</command> 会提示用户是否移除该文件。若回应不是正面的，则会跳过该文件。"
 
 #: rm.1.xml:51(title)
 msgid "OPTIONS"
-msgstr ""
+msgstr "选项"
 
 #: rm.1.xml:52(para)
 msgid "Remove (unlink) the FILE(s)."
-msgstr ""
+msgstr "移除 (取消链接) 该 FILE。"
 
 #: rm.1.xml:55(term)
 msgid "<option>-f</option>, <option>--force</option>"
-msgstr ""
+msgstr "<option>-f</option>, <option>--force</option>"
 
 #: rm.1.xml:57(para)
 msgid "ignore nonexistent files and arguments, never prompt"
-msgstr ""
+msgstr "忽略不存在的文件和参数，从不提示"
 
 #: rm.1.xml:61(option)
 msgid "-i"
-msgstr ""
+msgstr "-i"
 
 #: rm.1.xml:63(para)
 msgid "prompt before every removal"
-msgstr ""
+msgstr "每次移除前提示"
 
 #: rm.1.xml:67(option)
 msgid "-I"
-msgstr ""
+msgstr "-I"
 
 #: rm.1.xml:69(para)
 msgid ""
@@ -106,20 +119,24 @@ msgid ""
 "recursively; less intrusive than <option>-i</option>, while still giving "
 "protection against most mistakes"
 msgstr ""
+"在移除多于三个文件，或递归移除前提示一次; 比起 <option>-i</option> 来更少叨扰你，同时仍"
+"能够保护不受大多数错误的危害。"
 
 #: rm.1.xml:75(term)
 msgid "<option>--interactive</option>[=<emphasis remap=\"I\">WHEN</emphasis>]"
-msgstr ""
+msgstr "<option>--interactive</option>[=<emphasis remap=\"I\">WHEN</emphasis>]"
 
 #: rm.1.xml:77(para)
 msgid ""
 "prompt according to WHEN: never, once (<option>-I</option>), or always "
 "(<option>-i</option>); without WHEN, prompt always"
 msgstr ""
+"根据 WHEN 提示：never, once (<option>-I</option>)，或 always (<option>-i</option>);"
+"没有 WHEN 则总是提示"
 
 #: rm.1.xml:82(option)
 msgid "--one-file-system"
-msgstr ""
+msgstr "--one-file-system"
 
 #: rm.1.xml:84(para)
 msgid ""
@@ -202,7 +219,7 @@ msgstr ""
 
 #: rm.1.xml:138(para)
 msgid "rm ./-foo"
-msgstr ""
+msgstr "rm ./-foo"
 
 #: rm.1.xml:140(para)
 msgid ""
@@ -275,3 +292,4 @@ msgstr ""
 #: rm.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
+

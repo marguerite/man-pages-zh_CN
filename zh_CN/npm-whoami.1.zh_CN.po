@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-whoami.1.xml:7(refentrytitle)
+msgid "NPM-WHOAMI"
+msgstr ""
+
+#: npm-whoami.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-whoami.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-whoami.1.xml:12(refname)
+msgid "npm-whoami"
+msgstr ""
+
+#: npm-whoami.1.xml:13(refpurpose)
+msgid "Display npm username"
+msgstr ""
+
+#: npm-whoami.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-whoami.1.xml:18(replaceable)
+msgid "whoami"
+msgstr ""
+
+#: npm-whoami.1.xml:19(replaceable)
+msgid "&lt;registry&gt;"
+msgstr ""
+
+#: npm-whoami.1.xml:19(arg)
+msgid "--registry <placeholder-1/>"
+msgstr ""
+
+#: npm-whoami.1.xml:24(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-whoami.1.xml:25(para)
+msgid "Print the <emphasis remap=\"B\">username</emphasis> config to standard output."
+msgstr ""
+
+#: npm-whoami.1.xml:28(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-whoami.1.xml:32(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-whoami.1.xml:35(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-whoami.1.xml:38(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#: npm-whoami.1.xml:41(para)
+msgid "npm help adduser"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-whoami.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

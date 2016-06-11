@@ -1,0 +1,466 @@
+# marguerite <marguerite@opensuse.org>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: 2015-12-30 10:34+0800\n"
+"Last-Translator: marguerite <marguerite@opensuse.org>\n"
+"Language-Team: Chinese <opensuse-zh@opensuse.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: npm-folders.5.xml:7(refentrytitle)
+msgid "NPM-FOLDERS"
+msgstr "NPM-FOLDERS"
+
+#: npm-folders.5.xml:8(manvolnum)
+msgid "5"
+msgstr "5"
+
+#: npm-folders.5.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr "2015 年 11 月"
+
+#: npm-folders.5.xml:12(refname)
+msgid "npm-folders"
+msgstr "npm-folders"
+
+#: npm-folders.5.xml:13(refpurpose)
+msgid "Folder Structures Used by npm"
+msgstr "npm 所用的文件夹结构"
+
+#: npm-folders.5.xml:17(title)
+msgid "DESCRIPTION"
+msgstr "描述"
+
+#: npm-folders.5.xml:18(para)
+msgid "npm puts various things on your computer. That's its job."
+msgstr "npm 在您的计算机上放各种东西。这是它的任务。"
+
+#: npm-folders.5.xml:20(para)
+msgid "This document will tell you what it puts where."
+msgstr "这份文档将告诉您它放东西的位置。"
+
+#: npm-folders.5.xml:22(title)
+msgid "tl;dr"
+msgstr "tl;dr"
+
+#: npm-folders.5.xml:26(para)
+msgid ""
+"Local install (default): puts stuff in <emphasis remap=\"B\">"
+"&thinsp;./node_modules</emphasis> of the current package root."
+msgstr ""
+"本地安装 (默认)：将东西放在当前包的根目录下的 <emphasis remap=\"B\">&thinsp;./node_modules<"
+"/emphasis> 中。"
+
+#: npm-folders.5.xml:30(para)
+msgid ""
+"Global install (with <option>-g</option>): puts stuff in /usr/local or "
+"wherever node is installed."
+msgstr "全局安装 (使用 <option>-g</option>)：将东西放到 /usr/local 或 node 的安装位置。"
+
+#: npm-folders.5.xml:34(para)
+msgid ""
+"Install it <emphasis remap=\"B\">locally</emphasis> if you're going to <"
+"function>require()</function> it."
+msgstr ""
+
+#: npm-folders.5.xml:37(para)
+msgid ""
+"Install it <emphasis remap=\"B\">globally</emphasis> if you're going to run "
+"it on the command line."
+msgstr ""
+
+#: npm-folders.5.xml:40(para)
+msgid ""
+"If you need both, then install it in both places, or use <emphasis "
+"remap=\"B\">npm link</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-folders.5.xml:47(title)
+msgid "prefix Configuration"
+msgstr ""
+
+#: npm-folders.5.xml:49(para)
+msgid ""
+"The <emphasis remap=\"B\">prefix</emphasis> config defaults to the location "
+"where node is installed. On most systems, this is <filename>/usr/local<"
+"/filename>, and most of the time is the same as node's <emphasis remap=\"B\">"
+"process.installPrefix</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-folders.5.xml:53(para)
+msgid ""
+"On windows, this is the exact location of the node.exe binary. On Unix "
+"systems, it's one level up, since node is typically installed at <emphasis "
+"remap=\"B\">{prefix}/bin/node</emphasis> rather than <emphasis remap=\"B\">"
+"{prefix}/node.exe</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-folders.5.xml:57(para)
+msgid ""
+"When the <emphasis remap=\"B\">global</emphasis> flag is set, npm installs "
+"things into this prefix. When it is not set, it uses the root of the current "
+"package, or the current working directory if not in a package already."
+msgstr ""
+
+#: npm-folders.5.xml:62(title)
+msgid "Node Modules"
+msgstr ""
+
+#: npm-folders.5.xml:64(para)
+msgid ""
+"Packages are dropped into the <emphasis remap=\"B\">node_modules</emphasis> "
+"folder under the <emphasis remap=\"B\">prefix</emphasis>&thinsp;. When "
+"installing locally, this means that you can <emphasis remap=\"B\">"
+"require(\"packagename\")</emphasis> to load its main module, or <emphasis "
+"remap=\"B\">require(\"packagename/lib/path/to/sub/module\")</emphasis> to "
+"load other modules."
+msgstr ""
+
+#: npm-folders.5.xml:69(para)
+msgid ""
+"Global installs on Unix systems go to <emphasis remap=\"B\">"
+"{prefix}/lib/node_modules</emphasis>&thinsp;. Global installs on Windows go "
+"to <emphasis remap=\"B\">{prefix}/node_modules</emphasis> (that is, no <"
+"emphasis remap=\"B\">lib</emphasis> folder.)"
+msgstr ""
+
+#: npm-folders.5.xml:73(para)
+msgid ""
+"Scoped packages are installed the same way, except they are grouped together "
+"in a sub-folder of the relevant <emphasis remap=\"B\">node_modules</emphasis> "
+"folder with the name of that scope prefix by the @ symbol, e.g. <emphasis "
+"remap=\"B\">npm install @myorg/package</emphasis> would place the package in "
+"<emphasis remap=\"B\">{prefix}/node_modules/@myorg/package</emphasis>"
+"&thinsp;. See npm help 7 <emphasis remap=\"B\">scopes</emphasis> for more "
+"details."
+msgstr ""
+
+#: npm-folders.5.xml:79(para)
+msgid ""
+"If you wish to <function>require()</function> a package, then install it "
+"locally."
+msgstr ""
+
+#: npm-folders.5.xml:82(title)
+msgid "Executables"
+msgstr ""
+
+#: npm-folders.5.xml:84(para)
+msgid ""
+"When in global mode, executables are linked into <emphasis remap=\"B\">"
+"{prefix}/bin</emphasis> on Unix, or directly into <emphasis remap=\"B\">"
+"{prefix}</emphasis> on Windows."
+msgstr ""
+
+#: npm-folders.5.xml:87(para)
+msgid ""
+"When in local mode, executables are linked into <emphasis remap=\"B\">"
+"&thinsp;./node_modules/.bin</emphasis> so that they can be made available to "
+"scripts run through npm. (For example, so that a test runner will be in the "
+"path when you run <emphasis remap=\"B\">npm test</emphasis>&thinsp;.)"
+msgstr ""
+
+#: npm-folders.5.xml:93(title)
+msgid "Man Pages"
+msgstr "手册页"
+
+#: npm-folders.5.xml:95(para)
+msgid ""
+"When in global mode, man pages are linked into <emphasis remap=\"B\">"
+"{prefix}/share/man</emphasis>&thinsp;."
+msgstr ""
+"全局模式下，手册页链接到 <emphasis remap=\"B\">{prefix}/share/man</emphasis>&thinsp;。"
+
+#: npm-folders.5.xml:97(para)
+msgid "When in local mode, man pages are not installed."
+msgstr "本地模式下不安装手册页。"
+
+#: npm-folders.5.xml:99(para)
+msgid "Man pages are not installed on Windows systems."
+msgstr "Windows 系统上不安装手册页。"
+
+#: npm-folders.5.xml:102(title)
+msgid "Cache"
+msgstr "Cache"
+
+#: npm-folders.5.xml:104(para)
+msgid ""
+"See npm help <emphasis remap=\"B\">npm-cache</emphasis>&thinsp;. Cache files "
+"are stored in <filename>~/.npm</filename> on Posix, or <filename>~/npm-cache<"
+"/filename> on Windows."
+msgstr ""
+"参考 npm help <emphasis remap=\"B\">npm-cache</emphasis>&thinsp;。Posix 上缓存文件存储在 "
+"<filename>~/.npm</filename>，Windows 上存储在 <filename>~/npm-cache</filename>。"
+
+#: npm-folders.5.xml:107(para)
+msgid ""
+"This is controlled by the <emphasis remap=\"B\">cache</emphasis> "
+"configuration param."
+msgstr "这是由配置参数 <emphasis remap=\"B\">cache</emphasis> 控制的。"
+
+#: npm-folders.5.xml:110(title)
+msgid "Temp Files"
+msgstr "临时文件"
+
+#: npm-folders.5.xml:112(para)
+msgid ""
+"Temporary files are stored by default in the folder specified by the <"
+"emphasis remap=\"B\">tmp</emphasis> config, which defaults to the TMPDIR, "
+"TMP, or TEMP environment variables, or <filename>/tmp</filename> on Unix and "
+"<emphasis remap=\"B\">c:&bsol;windows&bsol;temp</emphasis> on Windows."
+msgstr ""
+
+#: npm-folders.5.xml:116(para)
+msgid ""
+"Temp files are given a unique folder under this root for each run of the "
+"program, and are deleted upon successful exit."
+msgstr ""
+
+#: npm-folders.5.xml:121(title)
+msgid "More Information"
+msgstr "更多信息"
+
+#: npm-folders.5.xml:122(para)
+msgid ""
+"When installing locally, npm first tries to find an appropriate <emphasis "
+"remap=\"B\">prefix</emphasis> folder. This is so that <emphasis remap=\"B\">"
+"npm install foo@1.2.3</emphasis> will install to the sensible root of your "
+"package, even if you happen to have <emphasis remap=\"B\">cd</emphasis>ed "
+"into some other folder."
+msgstr ""
+
+#: npm-folders.5.xml:127(para)
+msgid ""
+"Starting at the $PWD, npm will walk up the folder tree checking for a folder "
+"that contains either a <emphasis remap=\"B\">package.json</emphasis> file, or "
+"a <emphasis remap=\"B\">node_modules</emphasis> folder. If such a thing is "
+"found, then that is treated as the effective \"current directory\" for the "
+"purpose of running npm commands. (This behavior is inspired by and similar to "
+"git's .git-folder seeking logic when running git commands in a working dir.)"
+msgstr ""
+
+#: npm-folders.5.xml:134(para)
+msgid "If no package root is found, then the current folder is used."
+msgstr "若未找到包的根目录则使用当前文件夹。"
+
+#: npm-folders.5.xml:136(para)
+msgid ""
+"When you run <emphasis remap=\"B\">npm install foo@1.2.3</emphasis>, then the "
+"package is loaded into the cache, and then unpacked into <emphasis "
+"remap=\"B\">&thinsp;./node_modules/foo</emphasis>&thinsp;. Then, any of foo's "
+"dependencies are similarly unpacked into <emphasis remap=\"B\">"
+"&thinsp;./node_modules/foo/node_modules/...</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-folders.5.xml:141(para)
+msgid ""
+"Any bin files are symlinked to <emphasis remap=\"B\">"
+"&thinsp;./node_modules/.bin/</emphasis>, so that they may be found by npm "
+"scripts when necessary."
+msgstr ""
+
+#: npm-folders.5.xml:144(title)
+msgid "Global Installation"
+msgstr "全局安装"
+
+#: npm-folders.5.xml:146(para)
+msgid ""
+"If the <emphasis remap=\"B\">global</emphasis> configuration is set to true, "
+"then npm will install packages \"globally\"."
+msgstr ""
+
+#: npm-folders.5.xml:149(para)
+msgid ""
+"For global installation, packages are installed roughly the same way, but "
+"using the folders described above."
+msgstr ""
+
+#: npm-folders.5.xml:153(title)
+msgid "Cycles, Conflicts, and Folder Parsimony"
+msgstr ""
+
+#: npm-folders.5.xml:155(para)
+msgid ""
+"Cycles are handled using the property of node's module system that it walks "
+"up the directories looking for <emphasis remap=\"B\">node_modules</emphasis> "
+"folders. So, at every stage, if a package is already installed in an ancestor "
+"<emphasis remap=\"B\">node_modules</emphasis> folder, then it is not "
+"installed at the current location."
+msgstr ""
+
+#: npm-folders.5.xml:160(para)
+msgid ""
+"Consider the case above, where <userinput>foo -&gt; bar -&gt; baz</userinput>"
+"&thinsp;. Imagine if, in addition to that, baz depended on bar, so you'd "
+"have: <userinput>foo -&gt; bar -&gt; baz -&gt; bar -&gt; baz ...</userinput>"
+"&thinsp;. However, since the folder structure is: <emphasis remap=\"B\">"
+"foo/node_modules/bar/node_modules/baz</emphasis>, there's no need to put "
+"another copy of bar into <emphasis remap=\"B\">&thinsp;.../baz/node_modules<"
+"/emphasis>, since when it calls require(\"bar\"), it will get the copy that "
+"is installed in <emphasis remap=\"B\">foo/node_modules/bar</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-folders.5.xml:168(para)
+msgid ""
+"This shortcut is only used if the exact same version would be installed in "
+"multiple nested <emphasis remap=\"B\">node_modules</emphasis> folders. It is "
+"still possible to have <emphasis remap=\"B\">a/node_modules/b/node_modules/a<"
+"/emphasis> if the two \"a\" packages are different versions. However, without "
+"repeating the exact same package multiple times, an infinite regress will "
+"always be prevented."
+msgstr ""
+
+#: npm-folders.5.xml:175(para)
+msgid ""
+"Another optimization can be made by installing dependencies at the highest "
+"level possible, below the localized \"target\" folder."
+msgstr ""
+
+#: npm-folders.5.xml:179(title)
+msgid "Example"
+msgstr ""
+
+#: npm-folders.5.xml:181(para)
+msgid "Consider this dependency graph:"
+msgstr ""
+
+#: npm-folders.5.xml:183(literallayout)
+#, no-wrap
+msgid ""
+"\nfoo\n+-- blerg@1.2.5\n+-- bar@1.2.3\n|   +-- blerg@1.x (latest=1.3.7)\n|   "
+"+-- baz@2.x\n|   |   `-- quux@3.x\n|   |       `-- bar@1.2.3 (cycle)\n|   `-- "
+"asdf@*\n`-- baz@1.2.3\n    `-- quux@3.x\n        `-- bar\n"
+msgstr ""
+
+#. .fi
+#: npm-folders.5.xml:197(para)
+msgid "In this case, we might expect a folder structure like this:"
+msgstr ""
+
+#: npm-folders.5.xml:199(literallayout)
+#, no-wrap
+msgid ""
+"\nfoo\n+-- node_modules\n    +-- blerg (1.2.5) &lt;---[A]\n    +-- bar "
+"(1.2.3) &lt;---[B]\n    |   `-- node_modules\n    |       +-- baz (2.0.2) "
+"&lt;---[C]\n    |       |   `-- node_modules\n    |       |       `-- quux "
+"(3.2.0)\n    |       `-- asdf (2.3.4)\n    `-- baz (1.2.3) &lt;---[D]\n       "
+" `-- node_modules\n            `-- quux (3.2.0) &lt;---[E]\n"
+msgstr ""
+
+#. .fi
+#: npm-folders.5.xml:214(para)
+msgid ""
+"Since foo depends directly on <email>bar@1.2.3</email> and <email>baz@1.2.3<"
+"/email>, those are installed in foo's <emphasis remap=\"B\">node_modules<"
+"/emphasis> folder."
+msgstr ""
+
+#: npm-folders.5.xml:217(para)
+msgid ""
+"Even though the latest copy of blerg is 1.3.7, foo has a specific dependency "
+"on version 1.2.5. So, that gets installed at [A]. Since the parent "
+"installation of blerg satisfies bar's dependency on <email>blerg@1.x</email>, "
+"it does not install another copy under [B]."
+msgstr ""
+
+#: npm-folders.5.xml:222(para)
+msgid ""
+"Bar [B] also has dependencies on baz and asdf, so those are installed in "
+"bar's <emphasis remap=\"B\">node_modules</emphasis> folder. Because it "
+"depends on <email>baz@2.x</email>, it cannot re-use the <email>baz@1.2.3<"
+"/email> installed in the parent <emphasis remap=\"B\">node_modules</emphasis> "
+"folder [D], and must install its own copy [C]."
+msgstr ""
+
+#: npm-folders.5.xml:227(para)
+msgid ""
+"Underneath bar, the <userinput>baz -&gt; quux -&gt; bar</userinput> "
+"dependency creates a cycle. However, because bar is already in quux's "
+"ancestry [B], it does not unpack another copy of bar into that folder."
+msgstr ""
+
+#: npm-folders.5.xml:231(para)
+msgid ""
+"Underneath <userinput>foo -&gt; baz</userinput> [D], quux's [E] folder tree "
+"is empty, because its dependency on bar is satisfied by the parent folder "
+"copy installed at [B]."
+msgstr ""
+
+#: npm-folders.5.xml:234(para)
+msgid ""
+"For a graphical breakdown of what is installed where, use <emphasis "
+"remap=\"B\">npm ls</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-folders.5.xml:237(title)
+msgid "Publishing"
+msgstr ""
+
+#: npm-folders.5.xml:239(para)
+msgid ""
+"Upon publishing, npm will look in the <emphasis remap=\"B\">node_modules<"
+"/emphasis> folder. If any of the items there are not in the <emphasis "
+"remap=\"B\">bundledDependencies</emphasis> array, then they will not be "
+"included in the package tarball."
+msgstr ""
+
+#: npm-folders.5.xml:243(para)
+msgid ""
+"This allows a package maintainer to install all of their dependencies (and "
+"dev dependencies) locally, but only re-publish those items that cannot be "
+"found elsewhere. See npm help 5 <emphasis remap=\"B\">package.json</emphasis> "
+"for more information."
+msgstr ""
+
+#: npm-folders.5.xml:249(title)
+msgid "SEE ALSO"
+msgstr "参考"
+
+#: npm-folders.5.xml:253(para)
+msgid "npm help 7 faq"
+msgstr "npm help 7 faq"
+
+#: npm-folders.5.xml:256(para)
+msgid "npm help 5 package.json"
+msgstr "npm help 5 package.json"
+
+#: npm-folders.5.xml:259(para)
+msgid "npm help install"
+msgstr "npm help install"
+
+#: npm-folders.5.xml:262(para)
+msgid "npm help pack"
+msgstr "npm help pack"
+
+#: npm-folders.5.xml:265(para)
+msgid "npm help cache"
+msgstr "npm help cache"
+
+#: npm-folders.5.xml:268(para)
+msgid "npm help config"
+msgstr "npm help config"
+
+#: npm-folders.5.xml:271(para)
+msgid "npm help 5 npmrc"
+msgstr "npm help 5 npmrc"
+
+#: npm-folders.5.xml:274(para)
+msgid "npm help 7 config"
+msgstr "npm help 7 config"
+
+#: npm-folders.5.xml:277(para)
+msgid "npm help publish"
+msgstr "npm help publish"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-folders.5.xml:0(None)
+msgid "translator-credits"
+msgstr "玛格丽特 · 苏 <marguerite@opensuse.org>, 2015"
+
+

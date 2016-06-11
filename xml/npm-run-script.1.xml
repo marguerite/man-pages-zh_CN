@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmrunscript1'>
+<refmeta>
+<refentrytitle>NPM-RUN-SCRIPT</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-run-script</refname>
+<refpurpose>Run arbitrary package scripts</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>run-script</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;command&gt;</replaceable></arg>
+    <arg choice='opt' rep='repeat'>-- <replaceable>&lt;args&gt;</replaceable></arg>
+    <sbr/>
+</cmdsynopsis>
+<para>alias: npm run</para>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>This runs an arbitrary command from a package's <emphasis remap='B'>"scripts"</emphasis> object.  If no
+<emphasis remap='B'>"command"</emphasis> is provided, it will list the available scripts.  <emphasis remap='B'>run[-script]</emphasis> is
+used by the test, start, restart, and stop commands, but can be called
+directly, as well. When the scripts in the package are printed out, they're
+separated into lifecycle (test, start, restart) and directly-run scripts.</para>
+
+<para>As of <email>npm@2.0.0</email> <emphasis remap='I'><ulink url='http://blog.npmjs.org/post/98131109725/npm-2-0-0'>http://blog.npmjs.org/post/98131109725/npm-2-0-0</ulink></emphasis>, you can
+use custom arguments when executing scripts. The special option <option>--</option> is used by
+getopt <emphasis remap='I'><ulink url='http://goo.gl/KxMmtG'>http://goo.gl/KxMmtG</ulink></emphasis> to delimit the end of the options. npm will pass
+all the arguments after the <option>--</option> directly to your script:</para>
+
+<literallayout remap='.nf'>
+npm run test -- --grep="pattern"
+</literallayout> <!-- .fi -->
+
+<para>The arguments will only be passed to the script specified after <emphasis remap='B'>npm run</emphasis>
+and not to any pre or post script.</para>
+
+<para>The <emphasis remap='B'>env</emphasis> script is a special built-in command that can be used to list
+environment variables that will be available to the script at runtime. If an
+"env" command is defined in your package it will take precedence over the
+built-in.</para>
+
+<para>In addition to the shell's pre-existing <envar>PATH</envar>, <emphasis remap='B'>npm run</emphasis> adds
+<emphasis remap='B'>node_modules/.bin</emphasis> to the <envar>PATH</envar> provided to scripts. Any binaries provided by
+locally-installed dependencies can be used without the <emphasis remap='B'>node_modules/.bin</emphasis>
+prefix. For example, if there is a <emphasis remap='B'>devDependency</emphasis> on <emphasis remap='B'>tap</emphasis> in your package,
+you should write:</para>
+
+<literallayout remap='.nf'>
+"scripts": {"test": "tap test/&bsol;*.js"}
+</literallayout> <!-- .fi -->
+
+<para>instead of <emphasis remap='B'>"scripts": {"test": "node_modules/.bin/tap test/&bsol;*.js"}</emphasis> to run your tests.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 7 scripts</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help test</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help start</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help restart</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help stop</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

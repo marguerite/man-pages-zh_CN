@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-test.1.xml:7(refentrytitle)
+msgid "NPM-TEST"
+msgstr ""
+
+#: npm-test.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-test.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-test.1.xml:12(refname)
+msgid "npm-test"
+msgstr ""
+
+#: npm-test.1.xml:13(refpurpose)
+msgid "Test a package"
+msgstr ""
+
+#: npm-test.1.xml:18(command) npm-test.1.xml:20(replaceable)
+msgid "npm"
+msgstr ""
+
+#: npm-test.1.xml:18(replaceable)
+msgid "test"
+msgstr ""
+
+#: npm-test.1.xml:19(replaceable) npm-test.1.xml:22(replaceable)
+msgid "&lt;args&gt;"
+msgstr ""
+
+#: npm-test.1.xml:19(arg) npm-test.1.xml:22(arg)
+msgid "-- <placeholder-1/>"
+msgstr ""
+
+#: npm-test.1.xml:21(replaceable)
+msgid "tst"
+msgstr ""
+
+#: npm-test.1.xml:27(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-test.1.xml:28(para)
+msgid "This runs a package's \"test\" script, if one was provided."
+msgstr ""
+
+#: npm-test.1.xml:30(para)
+msgid "To run tests as a condition of installation, set the <emphasis remap=\"B\">npat</emphasis> config to true."
+msgstr ""
+
+#: npm-test.1.xml:34(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-test.1.xml:38(para)
+msgid "npm help run-script"
+msgstr ""
+
+#: npm-test.1.xml:41(para)
+msgid "npm help 7 scripts"
+msgstr ""
+
+#: npm-test.1.xml:44(para)
+msgid "npm help start"
+msgstr ""
+
+#: npm-test.1.xml:47(para)
+msgid "npm help restart"
+msgstr ""
+
+#: npm-test.1.xml:50(para)
+msgid "npm help stop"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-test.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

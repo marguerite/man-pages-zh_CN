@@ -1,35 +1,38 @@
+# 玛格丽特 · 苏 <marguerite@opensuse.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-31 17:41+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2014-08-07 02:26+0800\n"
+"Last-Translator: 玛格丽特 · 苏 <marguerite@opensuse.org>\n"
+"Language-Team: Chinese Simplified <opensuse-zh@opensuse.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: mkfifo.1.xml:8(refentrytitle)
 msgid "MKFIFO"
-msgstr ""
+msgstr "mkfifo"
 
 #: mkfifo.1.xml:9(manvolnum)
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: mkfifo.1.xml:10(refmiscinfo)
 msgid "July 2014"
-msgstr ""
+msgstr "2014 年 7 月"
 
 #: mkfifo.1.xml:11(refmiscinfo)
 msgid "GNU coreutils 8.22"
-msgstr ""
+msgstr "GNU coreutils 8.22"
 
 #: mkfifo.1.xml:14(refname) mkfifo.1.xml:20(command)
 #: mkfifo.1.xml:79(refentrytitle)
 msgid "mkfifo"
-msgstr ""
+msgstr "mkfifo"
 
 #: mkfifo.1.xml:15(refpurpose)
 msgid "make FIFOs (named pipes)"
@@ -152,3 +155,4 @@ msgstr ""
 #: mkfifo.1.xml:0(None)
 msgid "translator-credits"
 msgstr ""
+

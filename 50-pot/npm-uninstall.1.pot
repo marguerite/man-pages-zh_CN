@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-12-30 09:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: npm-uninstall.1.xml:7(refentrytitle)
+msgid "NPM-RM"
+msgstr ""
+
+#: npm-uninstall.1.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: npm-uninstall.1.xml:9(refmiscinfo)
+msgid "November 2015"
+msgstr ""
+
+#: npm-uninstall.1.xml:12(refname)
+msgid "npm-rm"
+msgstr ""
+
+#: npm-uninstall.1.xml:13(refpurpose)
+msgid "Remove a package"
+msgstr ""
+
+#: npm-uninstall.1.xml:18(command)
+msgid "npm"
+msgstr ""
+
+#: npm-uninstall.1.xml:18(replaceable)
+msgid "uninstall"
+msgstr ""
+
+#: npm-uninstall.1.xml:19(replaceable)
+msgid "&lt;@scope&gt;/"
+msgstr ""
+
+#: npm-uninstall.1.xml:20(replaceable)
+msgid "&lt;pkg&gt;"
+msgstr ""
+
+#: npm-uninstall.1.xml:21(replaceable)
+msgid "@&lt;version&gt;"
+msgstr ""
+
+#: npm-uninstall.1.xml:22(arg)
+msgid "-S"
+msgstr ""
+
+#: npm-uninstall.1.xml:22(arg)
+msgid "--save"
+msgstr ""
+
+#: npm-uninstall.1.xml:22(arg)
+msgid "-D"
+msgstr ""
+
+#: npm-uninstall.1.xml:22(arg)
+msgid "--save-dev"
+msgstr ""
+
+#: npm-uninstall.1.xml:22(arg)
+msgid "-O"
+msgstr ""
+
+#: npm-uninstall.1.xml:22(arg)
+msgid "--save-optional"
+msgstr ""
+
+#: npm-uninstall.1.xml:25(para)
+msgid "aliases: remove, rm, r, un, unlink"
+msgstr ""
+
+#: npm-uninstall.1.xml:29(title)
+msgid "DESCRIPTION"
+msgstr ""
+
+#: npm-uninstall.1.xml:30(para)
+msgid "This uninstalls a package, completely removing everything npm installed on its behalf."
+msgstr ""
+
+#: npm-uninstall.1.xml:33(para)
+msgid "Example:"
+msgstr ""
+
+#: npm-uninstall.1.xml:35(literallayout)
+#, no-wrap
+msgid "\nnpm uninstall sax\n"
+msgstr ""
+
+#. .fi
+#: npm-uninstall.1.xml:39(para)
+msgid "In global mode (ie, with <option>-g</option> or <option>--global</option> appended to the command), it uninstalls the current package context as a global package."
+msgstr ""
+
+#: npm-uninstall.1.xml:42(para)
+msgid "<emphasis remap=\"B\">npm uninstall</emphasis> takes 3 exclusive, optional flags which save or update the package version in your main package.json:"
+msgstr ""
+
+#: npm-uninstall.1.xml:47(para)
+msgid "<option>-S, --save</option>: Package will be removed from your <emphasis remap=\"B\">dependencies</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-uninstall.1.xml:50(para)
+msgid "<option>-D, --save-dev</option>: Package will be removed from your <emphasis remap=\"B\">devDependencies</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-uninstall.1.xml:53(para)
+msgid "<option>-O, --save-optional</option>: Package will be removed from your <emphasis remap=\"B\">optionalDependencies</emphasis>&thinsp;."
+msgstr ""
+
+#. remap='RE'
+#: npm-uninstall.1.xml:59(para)
+msgid "Further, if you have an <emphasis remap=\"B\">npm-shrinkwrap.json</emphasis> then it will be updated as well."
+msgstr ""
+
+#: npm-uninstall.1.xml:62(para)
+msgid "Scope is optional and follows the usual rules for npm help 7 <emphasis remap=\"B\">npm-scope</emphasis>&thinsp;."
+msgstr ""
+
+#: npm-uninstall.1.xml:64(para)
+msgid "Examples:"
+msgstr ""
+
+#: npm-uninstall.1.xml:66(literallayout)
+#, no-wrap
+msgid "\nnpm uninstall sax --save\nnpm uninstall @myorg/privatepackage --save\nnpm uninstall node-tap --save-dev\nnpm uninstall dtrace-provider --save-optional\n"
+msgstr ""
+
+#: npm-uninstall.1.xml:74(title)
+msgid "SEE ALSO"
+msgstr ""
+
+#: npm-uninstall.1.xml:78(para)
+msgid "npm help prune"
+msgstr ""
+
+#: npm-uninstall.1.xml:81(para)
+msgid "npm help install"
+msgstr ""
+
+#: npm-uninstall.1.xml:84(para)
+msgid "npm help 5 folders"
+msgstr ""
+
+#: npm-uninstall.1.xml:87(para)
+msgid "npm help config"
+msgstr ""
+
+#: npm-uninstall.1.xml:90(para)
+msgid "npm help 7 config"
+msgstr ""
+
+#: npm-uninstall.1.xml:93(para)
+msgid "npm help 5 npmrc"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: npm-uninstall.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

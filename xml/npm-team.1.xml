@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmteam1'>
+<refmeta>
+<refentrytitle>NPM-TEAM</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-team</refname>
+<refpurpose>Manage organization teams and team memberships</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<para>npm team create &lt;scope:team&gt;
+npm team destroy &lt;scope:team&gt;
+npm team add &lt;scope:team&gt; &lt;user&gt;
+npm team rm &lt;scope:team&gt; &lt;user&gt;</para>
+<cmdsynopsis>
+  <command>npm</command>    <arg choice='plain'><replaceable>team</replaceable></arg>
+    <arg choice='plain'><replaceable>ls</replaceable></arg>
+    <group choice='plain'><arg choice='plain'><replaceable>&lt;scope&gt;</replaceable></arg><arg choice='plain'><replaceable>&lt;scope:team&gt;</replaceable></arg></group>
+    <arg choice='plain'><replaceable>npm</replaceable></arg>
+    <arg choice='plain'><replaceable>team</replaceable></arg>
+    <arg choice='plain'><replaceable>edit</replaceable></arg>
+    <arg choice='plain'><replaceable>&lt;scope:team&gt;</replaceable></arg>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>Used to manage teams in organizations, and change team memberships. Does not
+handle permissions for packages.</para>
+
+<para>Teams must always be fully qualified with the organization/scope they belong to
+when operating on them, separated by a colon (<emphasis remap='B'>:</emphasis>). That is, if you have a
+<emphasis remap='B'>developers</emphasis> team on a <emphasis remap='B'>foo</emphasis> organization, you must always refer to that team as
+<emphasis remap='B'>developers:foo</emphasis> in these commands.</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>create / destroy:
+Create a new team, or destroy an existing one.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>add / rm:
+Add a user to an existing team, or remove a user from a team they belong to.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>ls:
+If performed on an organization name, will return a list of existing teams
+under that organization. If performed on a team, it will instead return a list
+of all users belonging to that particular team.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='details'><title>DETAILS</title>
+<para><emphasis remap='B'>npm team</emphasis> always operates directly on the current registry, configurable from
+the command line using <option>--registry=&lt;registry url&gt;</option>&thinsp;.</para>
+
+<para>In order to create teams and manage team membership, you must be a <emphasis remap='I'>team admin</emphasis>
+under the given organization. Listing teams and team memberships may be done by
+any member of the organizations.</para>
+
+<para>Organization creation and management of team admins and <emphasis remap='I'>organization</emphasis> members
+is done through the website, not the npm CLI.</para>
+
+<para>To use teams to manage permissions on packages belonging to your organization,
+use the <emphasis remap='B'>npm access</emphasis> command to grant or revoke the appropriate permissions.</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help access</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+

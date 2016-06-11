@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+                   "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<!-- lifted from man+troff by doclifter -->
+<refentry id='npmdevelopers7'>
+<refmeta>
+<refentrytitle>NPM-DEVELOPERS</refentrytitle>
+<manvolnum>7</manvolnum>
+<refmiscinfo class='source'>November 2015</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>npm-developers</refname>
+<refpurpose>Developer Guide</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+
+<refsect1 id='description'><title>DESCRIPTION</title>
+<para>So, you've decided to use npm to develop (and maybe publish/deploy)
+your project.</para>
+
+<para>Fantastic!</para>
+
+<para>There are a few things that you need to do above the simple steps
+that your users will do to install your program.</para>
+</refsect1>
+
+<refsect1 id='about_these_documents'><title>About These Documents</title>
+<para>These are man pages.  If you install npm, you should be able to
+then do <emphasis remap='B'>man npm-thing</emphasis> to get the documentation on a particular
+topic, or <emphasis remap='B'>npm help thing</emphasis> to see the same information.</para>
+</refsect1>
+
+<refsect1 id='what_is_a_fbpackagefp'><title>What is a <emphasis remap='B'>package</emphasis></title>
+<para>A package is:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>a) a folder containing a program described by a package.json file</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>b) a gzipped tarball containing (a)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>c) a url that resolves to (b)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>d) a <emphasis remap='B'>&lt;name&gt;@&lt;version&gt;</emphasis> that is published on the registry with (c)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>e) a <emphasis remap='B'>&lt;name&gt;@&lt;tag&gt;</emphasis> that points to (d)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>f) a <emphasis remap='B'>&lt;name&gt;</emphasis> that has a "latest" tag satisfying (e)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>g) a <emphasis remap='B'>git</emphasis> url that, when cloned, results in (a).</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Even if you never publish your package, you can still get a lot of
+benefits of using npm if you just want to write a node program (a), and
+perhaps if you also want to be able to easily install it elsewhere
+after packing it up into a tarball (b).</para>
+
+<para>Git urls can be of the form:</para>
+
+<literallayout remap='.nf'>
+git://github.com/user/project.git#commit-ish
+git+ssh://user@hostname:project.git#commit-ish
+git+<ulink url='http://user'>http://user</ulink>@hostname/project/blah.git#commit-ish
+git+https://user@hostname/project/blah.git#commit-ish
+</literallayout> <!-- .fi -->
+
+<para>The <emphasis remap='B'>commit-ish</emphasis> can be any tag, sha, or branch which can be supplied as
+an argument to <emphasis remap='B'>git checkout</emphasis>&thinsp;.  The default is <emphasis remap='B'>master</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='the_packagejson_file'><title>The package.json File</title>
+<para>You need to have a <emphasis remap='B'>package.json</emphasis> file in the root of your project to do
+much of anything with npm.  That is basically the whole interface.</para>
+
+<para>See npm help 5 <emphasis remap='B'>package.json</emphasis> for details about what goes in that file.  At the very
+least, you need:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>name:
+This should be a string that identifies your project.  Please do not
+use the name to specify that it runs on node, or is in JavaScript.
+You can use the "engines" field to explicitly state the versions of
+node (or whatever else) that your program requires, and it's pretty
+well assumed that it's javascript.
+It does not necessarily need to match your github repository name.
+So, <emphasis remap='B'>node-foo</emphasis> and <emphasis remap='B'>bar-js</emphasis> are bad names.  <emphasis remap='B'>foo</emphasis> or <emphasis remap='B'>bar</emphasis> are better.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>version:
+A semver-compatible version.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>engines:
+Specify the versions of node (or whatever else) that your program
+runs on.  The node API changes a lot, and there may be bugs or new
+functionality that you depend on.  Be explicit.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>author:
+Take some credit.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>scripts:
+If you have a special compilation or installation script, then you
+should put it in the <emphasis remap='B'>scripts</emphasis> object.  You should definitely have at
+least a basic smoke-test command as the "scripts.test" field.
+See npm help 7 scripts.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>main:
+If you have a single module that serves as the entry point to your
+program (like what the "foo" package gives you at require("foo")),
+then you need to specify that in the "main" field.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>directories:
+This is an object mapping names to folders.  The best ones to include are
+"lib" and "doc", but if you use "man" to specify a folder full of man pages,
+they'll get installed just like these ones.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>You can use <emphasis remap='B'>npm init</emphasis> in the root of your package in order to get you
+started with a pretty basic package.json file.  See npm help <emphasis remap='B'>npm-init</emphasis> for
+more info.</para>
+</refsect1>
+
+<refsect1 id='keeping_files_fioutfr_of_your_package'><title>Keeping files <emphasis remap='I'>out</emphasis> of your package</title>
+<para>Use a <emphasis remap='B'>&thinsp;.npmignore</emphasis> file to keep stuff out of your package.  If there's
+no <emphasis remap='B'>&thinsp;.npmignore</emphasis> file, but there <emphasis remap='I'>is</emphasis> a <emphasis remap='B'>&thinsp;.gitignore</emphasis> file, then npm will
+ignore the stuff matched by the <emphasis remap='B'>&thinsp;.gitignore</emphasis> file.  If you <emphasis remap='I'>want</emphasis> to
+include something that is excluded by your <emphasis remap='B'>&thinsp;.gitignore</emphasis> file, you can
+create an empty <emphasis remap='B'>&thinsp;.npmignore</emphasis> file to override it. Like <emphasis remap='B'>git</emphasis>, <emphasis remap='B'>npm</emphasis> looks
+for <emphasis remap='B'>&thinsp;.npmignore</emphasis> and <emphasis remap='B'>&thinsp;.gitignore</emphasis> files in all subdirectories of your
+package, not only the root directory.</para>
+
+<para><emphasis remap='B'>&thinsp;.npmignore</emphasis> files follow the same pattern rules <emphasis remap='I'><ulink url='http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository'>http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository</ulink>#Ignoring-Files</emphasis>
+as <emphasis remap='B'>&thinsp;.gitignore</emphasis> files:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>Blank lines or lines starting with <emphasis remap='B'>#</emphasis> are ignored.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>Standard glob patterns work.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>You can end patterns with a forward slash <emphasis remap='B'>/</emphasis> to specify a directory.</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>You can negate a pattern by starting it with an exclamation point <emphasis remap='B'>!</emphasis>&thinsp;.</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>By default, the following paths and files are ignored, so there's no
+need to add them to <emphasis remap='B'>&thinsp;.npmignore</emphasis> explicitly:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&thinsp;.*.swp</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&thinsp;._*</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&thinsp;.DS_Store</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&thinsp;.git</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&thinsp;.hg</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&thinsp;.npmrc</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&thinsp;.lock-wscript</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&thinsp;.svn</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>&thinsp;.wafpickle-*</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>config.gypi</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>CVS</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>npm-debug.log</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+
+<para>Additionally, everything in <emphasis remap='B'>node_modules</emphasis> is ignored, except for
+bundled dependencies. npm automatically handles this for you, so don't
+bother adding <emphasis remap='B'>node_modules</emphasis> to <emphasis remap='B'>&thinsp;.npmignore</emphasis>&thinsp;.</para>
+
+<para>The following paths and files are never ignored, so adding them to
+<emphasis remap='B'>&thinsp;.npmignore</emphasis> is pointless:</para>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>package.json</emphasis></para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>README</emphasis> (and its variants)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>CHANGELOG</emphasis> (and its variants)</para>
+    </listitem>
+    <listitem override='bullet'>
+<para><emphasis remap='B'>LICENSE</emphasis> / <emphasis remap='B'>LICENCE</emphasis></para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+
+<refsect1 id='link_packages'><title>Link Packages</title>
+<para><emphasis remap='B'>npm link</emphasis> is designed to install a development package and see the
+changes in real time without having to keep re-installing it.  (You do
+need to either re-link or <emphasis remap='B'>npm rebuild -g</emphasis> to update compiled packages,
+of course.)</para>
+
+<para>More info at npm help <emphasis remap='B'>npm-link</emphasis>&thinsp;.</para>
+</refsect1>
+
+<refsect1 id='before_publishing_make_sure_your_package'><title>Before Publishing: Make Sure Your Package Installs and Works</title>
+<para><emphasis remap='B'>This is important.</emphasis></para>
+
+<para>If you can not install it locally, you'll have
+problems trying to publish it.  Or, worse yet, you'll be able to
+publish it, but you'll be publishing a broken or pointless package.
+So don't do that.</para>
+
+<para>In the root of your package, do this:</para>
+
+<literallayout remap='.nf'>
+npm install . -g
+</literallayout> <!-- .fi -->
+
+<para>That'll show you that it's working.  If you'd rather just create a symlink
+package that points to your working directory, then do this:</para>
+
+<literallayout remap='.nf'>
+npm link
+</literallayout> <!-- .fi -->
+
+<para>Use <emphasis remap='B'>npm ls -g</emphasis> to see if it's there.</para>
+
+<para>To test a local install, go into some other folder, and then do:</para>
+
+<literallayout remap='.nf'>
+cd ../some-other-folder
+npm install ../my-package
+</literallayout> <!-- .fi -->
+
+<para>to install it locally into the node_modules folder in that other place.</para>
+
+<para>Then go into the node-repl, and try using require("my-thing") to
+bring in your module's main module.</para>
+</refsect1>
+
+<refsect1 id='create_a_user_account'><title>Create a User Account</title>
+<para>Create a user with the adduser command.  It works like this:</para>
+
+<literallayout remap='.nf'>
+npm adduser
+</literallayout> <!-- .fi -->
+
+<para>and then follow the prompts.</para>
+
+<para>This is documented better in npm help adduser.</para>
+</refsect1>
+
+<refsect1 id='publish_your_package'><title>Publish your package</title>
+<para>This part's easy.  IN the root of your folder, do this:</para>
+
+<literallayout remap='.nf'>
+npm publish
+</literallayout> <!-- .fi -->
+
+<para>You can give publish a url to a tarball, or a filename of a tarball,
+or a path to a folder.</para>
+
+<para>Note that pretty much <emphasis remap='B'>everything in that folder will be exposed</emphasis>
+by default.  So, if you have secret stuff in there, use a
+<emphasis remap='B'>&thinsp;.npmignore</emphasis> file to list out the globs to ignore, or publish
+from a fresh checkout.</para>
+</refsect1>
+
+<refsect1 id='brag_about_it'><title>Brag about it</title>
+<para>Send emails, write blogs, blab in IRC.</para>
+
+<para>Tell the world how easy it is to install your program!</para>
+</refsect1>
+
+<refsect1 id='see_also'><title>SEE ALSO</title>
+  <blockquote remap='RS'>
+  <itemizedlist remap='IP+bullet'>
+    <listitem override='bullet'>
+<para>npm help 7 faq</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help npm</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help init</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 5 package.json</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 scripts</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help publish</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help adduser</para>
+    </listitem>
+    <listitem override='bullet'>
+<para>npm help 7 registry</para>
+
+    </listitem>
+  </itemizedlist>
+  </blockquote> <!-- remap='RE' -->
+</refsect1>
+</refentry>
+
